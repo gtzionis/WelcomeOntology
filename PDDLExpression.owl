@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/PDDLExpression.owl#"
+     xml:base=" https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/PDDLExpression.owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:expr="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/PDDLExpression.owl">
+        <rdfs:comment>
+
+    Ontology elements for capturing conditions and effects using PDDL syntax
+  
+</rdfs:comment>
+        <owl:versionInfo>
+
+    $Id: PDDLExpression.owl,v 1.00
+  
+</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/PDDLExpression.owl#refURI -->
+
+    <owl:AnnotationProperty rdf:about="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/PDDLExpression.owl#refURI"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+
+
+    <owl:ObjectProperty rdf:about="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#expressionLanguage"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+
+    <owl:DatatypeProperty rdf:about="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#expressionBody"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+
+    <owl:Class rdf:about="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#Condition"/>
+    
+
+
+
+    <owl:Class rdf:about="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#Expression"/>
+    
+
+
+    <owl:Class rdf:about="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#LogicLanguage"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/PDDLExpression.owl#PDDL-Condition -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/PDDLExpression.owl#PDDL-Condition">
+        <rdfs:subClassOf rdf:resource="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#Condition"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/PDDLExpression.owl#PDDL-Expression"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/PDDLExpression.owl#PDDL-Expression -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/PDDLExpression.owl#PDDL-Expression">
+        <rdfs:subClassOf rdf:resource="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#Expression"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#expressionLanguage"/>
+                <owl:hasValue rdf:resource="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/PDDLExpression.owl#PDDL"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#expressionBody"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/PDDLExpression.owl#PDDL -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/PDDLExpression.owl#PDDL">
+        <rdf:type rdf:resource="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#LogicLanguage"/>
+        <refURI rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://planning.cis.strath.ac.uk/competition/</refURI>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
