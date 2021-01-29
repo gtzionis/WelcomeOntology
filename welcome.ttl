@@ -4,34 +4,16 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix process: <http://www.daml.org/services/owl-s/1.1/Process.owl> .
+@prefix profile: <http://www.daml.org/services/owl-s/1.1/Profile.owl> .
+@prefix service: <http://www.daml.org/services/owl-s/1.1/Service.owl> .
 @prefix welcome: <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#> .
 @base <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl> .
 
 <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl> rdf:type owl:Ontology ;
-                                                                               owl:imports <http://www.daml.org/services/owl-s/1.2/Grounding.owl> ,
-                                                                                           <http://www.daml.org/services/owl-s/1.2/Process.owl> ,
-                                                                                           <http://www.daml.org/services/owl-s/1.2/Profile.owl> ,
-                                                                                           <http://www.daml.org/services/owl-s/1.2/Service.owl> .
-
-#################################################################
-#    Annotation properties
-#################################################################
-
-###  http://www.daml.org/services/owl-s/1.2/Profile.owl#hasInput
-<http://www.daml.org/services/owl-s/1.2/Profile.owl#hasInput> rdf:type owl:AnnotationProperty .
-
-
-###  http://www.daml.org/services/owl-s/1.2/Profile.owl#has_process
-<http://www.daml.org/services/owl-s/1.2/Profile.owl#has_process> rdf:type owl:AnnotationProperty .
-
-
-###  http://www.daml.org/services/owl-s/1.2/Profile.owl#serviceName
-<http://www.daml.org/services/owl-s/1.2/Profile.owl#serviceName> rdf:type owl:AnnotationProperty .
-
-
-###  http://www.daml.org/services/owl-s/1.2/Profile.owl#textDescription
-<http://www.daml.org/services/owl-s/1.2/Profile.owl#textDescription> rdf:type owl:AnnotationProperty .
-
+                                                                               owl:imports <http://www.daml.org/services/owl-s/1.1/Process.owl> ,
+                                                                                           <http://www.daml.org/services/owl-s/1.1/Profile.owl> ,
+                                                                                           <http://www.daml.org/services/owl-s/1.1/Service.owl> .
 
 #################################################################
 #    Object Properties
@@ -601,12 +583,12 @@ welcome:isPovidedBy rdf:type owl:ObjectProperty .
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isRegistered
 welcome:isRegistered rdf:type owl:ObjectProperty ;
                      rdfs:subPropertyOf owl:topObjectProperty ;
-                     rdfs:domain <http://www.daml.org/services/owl-s/1.2/Service.owl#Service> .
+                     rdfs:domain <http://www.daml.org/services/owl-s/1.1/Service.owl#Service> .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isRelatedToUser
 welcome:isRelatedToUser rdf:type owl:ObjectProperty ;
-                        rdfs:domain <http://www.daml.org/services/owl-s/1.2/Service.owl#Service> ;
+                        rdfs:domain <http://www.daml.org/services/owl-s/1.1/Service.owl#Service> ;
                         rdfs:range welcome:DialogueUser .
 
 
@@ -847,8 +829,8 @@ welcome:toPeriod rdf:type owl:DatatypeProperty ;
 #    Classes
 #################################################################
 
-###  http://www.daml.org/services/owl-s/1.2/Profile.owl#Profile
-<http://www.daml.org/services/owl-s/1.2/Profile.owl#Profile> rdf:type owl:Class .
+###  http://www.daml.org/services/owl-s/1.1/Profile.owl#Profile
+<http://www.daml.org/services/owl-s/1.1/Profile.owl#Profile> rdf:type owl:Class .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AddressInfo
@@ -1082,6 +1064,11 @@ welcome:HostingInformation rdf:type owl:Class ;
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#IDCountry
 welcome:IDCountry rdf:type owl:Class ;
                   rdfs:subClassOf welcome:Personal .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#IDNumber
+welcome:IDNumber rdf:type owl:Class ;
+                 rdfs:subClassOf welcome:Personal .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#IDType
@@ -1467,7 +1454,7 @@ welcome:Monday rdf:type owl:NamedIndividual ,
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Passport_renewal
 welcome:Passport_renewal rdf:type owl:NamedIndividual ,
-                                  <http://www.daml.org/services/owl-s/1.2/Service.owl#Service> ;
+                                  <http://www.daml.org/services/owl-s/1.1/Service.owl#Service> ;
                          welcome:isRegistered "false"^^xsd:boolean .
 
 
@@ -1551,12 +1538,12 @@ welcome:col_legi_sagrat_cor rdf:type owl:NamedIndividual ,
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#first_reception_process
 welcome:first_reception_process rdf:type owl:NamedIndividual ,
-                                         <http://www.daml.org/services/owl-s/1.2/Process.owl#Process> .
+                                         <http://www.daml.org/services/owl-s/1.1/Process.owl#Process> .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#first_reception_result
 welcome:first_reception_result rdf:type owl:NamedIndividual ,
-                                        <http://www.daml.org/services/owl-s/1.2/Process.owl#Result> .
+                                        <http://www.daml.org/services/owl-s/1.1/Process.owl#Result> .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hosting_center
