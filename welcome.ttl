@@ -1510,13 +1510,13 @@ welcome:Weekday rdf:type owl:NamedIndividual ,
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#carrer_de_san_sebastia
 welcome:carrer_de_san_sebastia rdf:type owl:NamedIndividual ,
                                         welcome:StreetName ;
-                               rdfs:label "Carrer de Sant Sebastià" .
+                               rdfs:label "Carrer de Sant Sebastia" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#carrer_de_valència
 welcome:carrer_de_valència rdf:type owl:NamedIndividual ,
                                     welcome:StreetName ;
-                           rdfs:label "Carrer de València" .
+                           rdfs:label "Carrer de Valencia" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#catalan_language
@@ -1533,7 +1533,7 @@ welcome:catalan_language rdf:type owl:NamedIndividual ,
 welcome:col_legi_sagrat_cor rdf:type owl:NamedIndividual ,
                                      welcome:Building ,
                                      welcome:TrainingOffice ;
-                            rdfs:label "Col·legi Sagrat Cor" .
+                            rdfs:label "Col legi Sagrat Cor" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#first_reception_process
@@ -1692,50 +1692,50 @@ welcome:training_office_1 rdf:type owl:NamedIndividual ,
                                                                                                    welcome:Telephone_number .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Oficina_d'Atenció_Ciutadana_de_Plaça_Didó_-_OAC
-<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Oficina_d'Atenció_Ciutadana_de_Plaça_Didó_-_OAC> rdf:type owl:NamedIndividual ,
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Oficina_d'Atencio_Ciutadana_de_Placa_Dido_-_OAC
+<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Oficina_d'Atencio_Ciutadana_de_Placa_Dido_-_OAC> rdf:type owl:NamedIndividual ,
                                                                                                                                        welcome:RegistrationOffice ;
                                                                                                                               welcome:hasPhysicalAddress welcome:physical_address_2 .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Oficina_d'Atenció_Ciutadana_del_Districte_2_-_OAC
-<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Oficina_d'Atenció_Ciutadana_del_Districte_2_-_OAC> rdf:type owl:NamedIndividual ,
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Oficina_d'Atencio_Ciutadana_del_Districte_2_-_OAC
+<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Oficina_d'Atencio_Ciutadana_del_Districte_2_-_OAC> rdf:type owl:NamedIndividual ,
                                                                                                                                          welcome:RegistrationOffice .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Oficina_d'Atenció_Ciutadana_del_Districte_3_-_OAC
-<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Oficina_d'Atenció_Ciutadana_del_Districte_3_-_OAC> rdf:type owl:NamedIndividual ,
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Oficina_d'Atencio_Ciutadana_del_Districte_3_-_OAC
+<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Oficina_d'Atencio_Ciutadana_del_Districte_3_-_OAC> rdf:type owl:NamedIndividual ,
                                                                                                                                          welcome:RegistrationOffice .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Oficina_d'Atenció_Ciutadana_del_Districte_4_-_OAC
-<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Oficina_d'Atenció_Ciutadana_del_Districte_4_-_OAC> rdf:type owl:NamedIndividual ,
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Oficina_d'Atencio_Ciutadana_del_Districte_4_-_OAC
+<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Oficina_d'Atencio_Ciutadana_del_Districte_4_-_OAC> rdf:type owl:NamedIndividual ,
                                                                                                                                          welcome:RegistrationOffice .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Oficina_d'Atenció_Ciutadana_del_Districte_5_-_OAC
-<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Oficina_d'Atenció_Ciutadana_del_Districte_5_-_OAC> rdf:type owl:NamedIndividual ,
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Oficina_d'Atencio_Ciutadana_del_Districte_5_-_OAC
+<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Oficina_d'Atencio_Ciutadana_del_Districte_5_-_OAC> rdf:type owl:NamedIndividual ,
                                                                                                                                          welcome:RegistrationOffice .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Oficina_d'Atenció_Ciutadana_del_Districte_6_-_OAC
-<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Oficina_d'Atenció_Ciutadana_del_Districte_6_-_OAC> rdf:type owl:NamedIndividual ,
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Oficina_d'Atencio_Ciutadana_del_Districte_6_-_OAC
+<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Oficina_d'Atencio_Ciutadana_del_Districte_6_-_OAC> rdf:type owl:NamedIndividual ,
                                                                                                                                          welcome:RegistrationOffice .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Oficina_d'Atenció_Ciutadana_del_Districte_7_-_OAC
-<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Oficina_d'Atenció_Ciutadana_del_Districte_7_-_OAC> rdf:type owl:NamedIndividual ,
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Oficina_d'Atencio_Ciutadana_del_Districte_7_-_OAC
+<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Oficina_d'Atencio_Ciutadana_del_Districte_7_-_OAC> rdf:type owl:NamedIndividual ,
                                                                                                                                          welcome:RegistrationOffice .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Oficina_d'Atenció_Ciutadana_de_l'Àrea_de_Drets_Socials
-<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Oficina_d'Atenció_Ciutadana_de_l'Àrea_de_Drets_Socials> rdf:type owl:NamedIndividual ,
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Oficina_d'Atencio_Ciutadana_de_l'Area_de_Drets_Socials
+<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Oficina_d'Atencio_Ciutadana_de_l'Area_de_Drets_Socials> rdf:type owl:NamedIndividual ,
                                                                                                                                               welcome:RegistrationOffice ;
                                                                                                                                      welcome:hasPhysicalAddress welcome:physical_address_1 .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Oficina_d’Atenció_Ciutadana_–_OAC
-<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Oficina_d’Atenció_Ciutadana_–_OAC> rdf:type owl:NamedIndividual ,
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Oficina_d’Atencio_Ciutadana_–_OAC
+<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Oficina_d’Atencio_Ciutadana_–_OAC> rdf:type owl:NamedIndividual ,
                                                                                                                          welcome:RegistrationOffice .
 
 
