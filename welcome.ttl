@@ -1452,6 +1452,11 @@ welcome:Monday rdf:type owl:NamedIndividual ,
                         welcome:Day .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Oficina_d_Atencio_Ciutadana_-_OAC
+welcome:Oficina_d_Atencio_Ciutadana_-_OAC rdf:type owl:NamedIndividual ,
+                                                   welcome:RegistrationOffice .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Passport_renewal
 welcome:Passport_renewal rdf:type owl:NamedIndividual ,
                                   <http://www.daml.org/services/owl-s/1.1/Service.owl#Service> ;
@@ -1513,8 +1518,8 @@ welcome:carrer_de_san_sebastia rdf:type owl:NamedIndividual ,
                                rdfs:label "Carrer de Sant Sebastia" .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#carrer_de_valència
-welcome:carrer_de_valència rdf:type owl:NamedIndividual ,
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#carrer_de_valencia
+welcome:carrer_de_valencia rdf:type owl:NamedIndividual ,
                                     welcome:StreetName ;
                            rdfs:label "Carrer de Valencia" .
 
@@ -1575,7 +1580,7 @@ welcome:physical_address_3 rdf:type owl:NamedIndividual ,
                                     welcome:PhysicalAddress ;
                            welcome:hasCity welcome:Terrassa ;
                            welcome:hasCountry welcome:Spain ;
-                           welcome:hasStreetName welcome:carrer_de_valència ;
+                           welcome:hasStreetName welcome:carrer_de_valencia ;
                            welcome:hasStreetNumber <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#142> .
 
 
@@ -1732,11 +1737,6 @@ welcome:training_office_1 rdf:type owl:NamedIndividual ,
 <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Oficina_d'Atencio_Ciutadana_de_l'Area_de_Drets_Socials> rdf:type owl:NamedIndividual ,
                                                                                                                                               welcome:RegistrationOffice ;
                                                                                                                                      welcome:hasPhysicalAddress welcome:physical_address_1 .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Oficina_d’Atencio_Ciutadana_–_OAC
-<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Oficina_d’Atencio_Ciutadana_–_OAC> rdf:type owl:NamedIndividual ,
-                                                                                                                         welcome:RegistrationOffice .
 
 
 ###  https://www.terrassa.cat/primera-acollida-ciutadania
