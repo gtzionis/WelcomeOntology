@@ -1,0 +1,2867 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.owl">
+    <Prefix name="" IRI="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.owl#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="process" IRI="http://www.daml.org/services/owl-s/1.1/Process.owl"/>
+    <Prefix name="profile" IRI="http://www.daml.org/services/owl-s/1.1/Profile.owl"/>
+    <Prefix name="service" IRI="http://www.daml.org/services/owl-s/1.1/Service.owl"/>
+    <Prefix name="welcome" IRI="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.owl#"/>
+    <Import>http://www.daml.org/services/owl-s/1.1/Process.owl</Import>
+    <Import>http://www.daml.org/services/owl-s/1.1/Profile.owl</Import>
+    <Import>http://www.daml.org/services/owl-s/1.1/Service.owl</Import>
+    <Declaration>
+        <Class IRI="http://www.daml.org/services/owl-s/1.1/Profile.owl#Profile"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AccessCatalanTraining"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AccessLabourTraining"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AccessSocietyTraining"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AccessSpanishTraining"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AddressInfo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AsylumClaim"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Birthday"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Building"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BuildingName"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BuildingType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CatalanCourse"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#City"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CityOfBirth"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CompletionYear"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ContactInformation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ContainerTranscription"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ContextInformation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Coordinates"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Country"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CountryOfBirth"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Course"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CourseInstitution"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CourseSociety"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DIP"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DIPParameters"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DIPStatus"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DIPType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Day"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Descriptors"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DetectedEntity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DetectedRelation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Dialogue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DialogueCommunication"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DialogueSession"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DialogueSystemTurn"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DialogueTurn"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DialogueUser"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DialogueUserTurn"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DoorNumber"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Duration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#E-mail"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#E-mailNotification"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Education"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Entrance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FirstSurname"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FloorNumber"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Gender"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GovermentalOrganisation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HostingInformation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IDCountry"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IDNumber"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IDType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Illiteracy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InterestRegistration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InternetAddress"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#KnowledgeCatalan"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#KnowledgeLabour"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#KnowledgeSociety"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#KnowledgeSpanish"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LabourMarketCourses"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LabourModule"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Landline"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Language"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LanguageModule"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LearningHandicap"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Location"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MaritalStatus"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MobilePhone"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mobile_phone_number"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Modules"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Municipality"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Name"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Nationality"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NotificationPreferences"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Office"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Organisation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Other"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Participant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Person"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Personal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PersonalInformation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PhysicalAddress"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PlannerRequest"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PostCode"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PreviousResidenceCatalonia"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PreviousResidenceOther"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PreviousResidenceSpain"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Province"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Registered"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RegistrationOffice"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RegistrationYear"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Request"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Role"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SMSNotification"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SecondSurname"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ServiceRequest"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Slot"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SocietyModule"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SpanishCourse"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SpatialLocation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SpeechAct"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SpeechActContainer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StayingPeriod"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StreetName"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StreetNumber"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StreetType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SystemDemand"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SystemInfo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SystemLanguage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Telephone_number"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Temporal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Time"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Training"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TrainingOffice"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Transcription"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TurnTranscrption"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Webpage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#YearArrival"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ZipCode"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#literacy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/hasContainerTranscription"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasAge"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCity"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasClosingTime"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCountry"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCountryOfOrigin"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIP"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPAge"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPConfirmCommunication"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPConfirmLanguage"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPConfirmedCommunciation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPCountryOfOrigin"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPGreet"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPInformDocumentsNeeded"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPInformLabourModule"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPInformLabourModuleAddress"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPInformLabourModuleHours"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPInformLanguageModule"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPInformLanguageModuleAddress"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPInformLanguageModuleHours"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPInformMessage"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPInformNeedRegistration"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPInformOfficeHours"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPInformOverview"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPInformResumeApplication"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPInformSocietyModule"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPInformSocietyModuleAddress"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPInformSocietyModuleHours"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPInstantiation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPObtainBirthday"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPObtainCityOfBirth"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPObtainCountryOfBirth"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPObtainEMailNotifications"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPObtainEmail"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPObtainFirstSurname"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPObtainGender"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPObtainIDCountry"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPObtainIDNumber"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPObtainIDType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPObtainInterest"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPObtainLandline"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPObtainMobilePhone"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPObtainName"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPObtainNationality"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPObtainNotificationPreferences"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPObtainRegistrationStatus"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPObtainResidenceAddressCity"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPObtainResidenceAddressNumber"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPObtainResidenceAddressStreet"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPObtainSMSNotifications"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPObtainSecondSurname"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPObtainStreetName"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPObtainStreetNumber"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPObtainStreetType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPTimeArrivalCurrentResidence"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIPinformOfficeAddress"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDetectedEntity"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDetectedRelation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDetectedRole"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDialogueTurn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDialogueUser"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasFirstName"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasHostingInfo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasInferredSpeechActObject"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasInfoForDMS"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasInputRDFContents"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasLastName"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasMobilePhone"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasName"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasNextContainer"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasNextDIP"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasOntologyType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasOpeningTime"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasOperatingDay"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasParticipant"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPersonalInformation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPhysicalAddress"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPredicateRelation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasRequestType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSlot"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSlotTemplate"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSpeechActAgent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSpeechActContainer"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSpeechActObject"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSpeechActType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasStatus"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasStayingPeriod"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasStreetName"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasStreetNumber"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSystemResponse"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTelephone"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTemporalInformation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTurnTranscription"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasWebpage"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasZipCode"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hostedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isCountryOriginOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isEntity1"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isEntity2"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isFirstNameOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isHostingInfoOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isIDof"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isInvolvedInDialogueSession"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isLastNameOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isNameOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPersonalInformationOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPhysicalAddressOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPovidedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isRegistered"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isRelatedToUser"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isStayingPeriodOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isTranscriptionOfContainer"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isTranscriptionOfTurn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#offersCourse"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#repliesToUserResponse"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#DIPId"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#confidenceScore"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#coordinates"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#fromPeriod"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasAltAddress"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasAltCity"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasAltClosingTime"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasAltName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasAltOpeningTime"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasAltPhone"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasAltStreetNumber"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasAltWebPage"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasAltZipCode"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasContainerId"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasCourseName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasDIPLanguageScore"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasDipType"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasDuration"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasEntityAnchor"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasEntityConfidence"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasEntityId"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasEntityLink"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasEntityType"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasFirstName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasLastName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasNumberAttempts"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasNumberHours"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasOperatingDay"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasRelationId"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasStatus"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasTimestamp"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasUserId"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#heldRoleFrom"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#heldRoleTo"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#isActive"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#isActiveSession"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#isAdult"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#isLastContainer"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#isOptional"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#isRegistered"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#isUnaccompanied"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#lat"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#long"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#timestamp"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#toPeriod"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Completed"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Crta._de_Montcada"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FailedAnalysis"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Friday"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Monday"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#OAC_Cambrils"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#OAC_Districte2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#OAC_Districte3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#OAC_Districte4"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#OAC_Districte5"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#OAC_Districte6"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#OAC_Districte7"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#OAC_DretsSocials"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#OAC_PlacaDido"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Passport_renewal"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Pending"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Servei_de_primera_acollida_Terrassa"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Spain"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SpatialLocation_1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Syria"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TCNClarifyRequest"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Terrassa"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TopicSwitch"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#UnclearAnalysis"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Weekday"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#carrer_de_san_sebastia"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#carrer_de_valencia"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#catalanLanguage"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#catalan_language"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#col_legi_sagrat_cor"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#first_reception_process"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#first_reception_result"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#hosting_center"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#labourCourse"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#module_a"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#module_b"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#module_c"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#physical_address_1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#physical_address_2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#physical_address_3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#physical_address_4"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#raval_de_montserrat"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#registration_office_terrassa"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#societyCourse"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#spanishLanguage"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#training_office_1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#08223"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#14"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#142"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#15"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#19"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#21"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#35"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#596"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#66"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#9"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#937_315_982"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://www.terrassa.cat/primera-acollida-ciutadania"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#KIF"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#AlwaysTrue"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#nil"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.daml.org/services/owl-s/1.1/Process.owl#ThisPerform"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#SWRL"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.daml.org/services/owl-s/1.1/Process.owl#TheServer"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.daml.org/services/owl-s/1.1/Process.owl#TheClient"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#DRS"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#AccessCatalanTraining"/>
+        <Class IRI="#Training"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AccessLabourTraining"/>
+        <Class IRI="#Training"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AccessSocietyTraining"/>
+        <Class IRI="#Training"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AccessSpanishTraining"/>
+        <Class IRI="#Training"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AddressInfo"/>
+        <Class IRI="#ContactInformation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AsylumClaim"/>
+        <Class IRI="#Other"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Birthday"/>
+        <Class IRI="#Personal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Building"/>
+        <Class IRI="#PhysicalAddress"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BuildingName"/>
+        <Class IRI="#AddressInfo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BuildingType"/>
+        <Class IRI="#AddressInfo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CatalanCourse"/>
+        <Class IRI="#Training"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#City"/>
+        <Class IRI="#PhysicalAddress"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CityOfBirth"/>
+        <Class IRI="#Personal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CompletionYear"/>
+        <Class IRI="#Education"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ContactInformation"/>
+        <Class IRI="#Descriptors"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ContainerTranscription"/>
+        <Class IRI="#Transcription"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ContextInformation"/>
+        <Class IRI="#Descriptors"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Coordinates"/>
+        <Class IRI="#ContactInformation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Country"/>
+        <Class IRI="#PhysicalAddress"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CountryOfBirth"/>
+        <Class IRI="#Personal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Course"/>
+        <Class IRI="#Education"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CourseInstitution"/>
+        <Class IRI="#Education"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CourseSociety"/>
+        <Class IRI="#Training"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DIP"/>
+        <Class IRI="#DialogueCommunication"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DIPParameters"/>
+        <Class IRI="#DialogueCommunication"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DIPStatus"/>
+        <Class IRI="#DIPParameters"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DIPType"/>
+        <Class IRI="#DIPParameters"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Day"/>
+        <Class IRI="#Temporal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DetectedEntity"/>
+        <Class IRI="#DialogueCommunication"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DetectedRelation"/>
+        <Class IRI="#DialogueCommunication"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dialogue"/>
+        <Class IRI="#DialogueCommunication"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DialogueSession"/>
+        <Class IRI="#Dialogue"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DialogueSystemTurn"/>
+        <Class IRI="#DialogueTurn"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DialogueTurn"/>
+        <Class IRI="#Dialogue"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DialogueTurn"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasDialogueTurn"/>
+            <Class IRI="#SpeechActContainer"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DialogueUser"/>
+        <Class IRI="#Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DialogueUserTurn"/>
+        <Class IRI="#DialogueTurn"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DoorNumber"/>
+        <Class IRI="#AddressInfo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Duration"/>
+        <Class IRI="#Education"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#E-mail"/>
+        <Class IRI="#InternetAddress"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#E-mail"/>
+        <Class IRI="#Personal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#E-mailNotification"/>
+        <Class IRI="#Personal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Education"/>
+        <Class IRI="#PersonalInformation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Entrance"/>
+        <Class IRI="#AddressInfo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FirstSurname"/>
+        <Class IRI="#Personal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FloorNumber"/>
+        <Class IRI="#AddressInfo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Gender"/>
+        <Class IRI="#Personal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GovermentalOrganisation"/>
+        <Class IRI="#Organisation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HostingInformation"/>
+        <Class IRI="#Descriptors"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IDCountry"/>
+        <Class IRI="#Personal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IDNumber"/>
+        <Class IRI="#Personal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IDType"/>
+        <Class IRI="#Personal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Illiteracy"/>
+        <Class IRI="#Other"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InternetAddress"/>
+        <Class IRI="#ContactInformation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#KnowledgeCatalan"/>
+        <Class IRI="#Training"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#KnowledgeLabour"/>
+        <Class IRI="#Training"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#KnowledgeSociety"/>
+        <Class IRI="#Training"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#KnowledgeSpanish"/>
+        <Class IRI="#Training"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LabourMarketCourses"/>
+        <Class IRI="#Training"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LabourModule"/>
+        <Class IRI="#Modules"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Landline"/>
+        <Class IRI="#Personal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LanguageModule"/>
+        <Class IRI="#Modules"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LearningHandicap"/>
+        <Class IRI="#Other"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Location"/>
+        <Class IRI="#ContextInformation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MaritalStatus"/>
+        <Class IRI="#Other"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MobilePhone"/>
+        <Class IRI="#Personal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mobile_phone_number"/>
+        <Class IRI="#PhysicalAddress"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Municipality"/>
+        <Class IRI="#AddressInfo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Name"/>
+        <Class IRI="#Personal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Nationality"/>
+        <Class IRI="#Personal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NotificationPreferences"/>
+        <Class IRI="#Personal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Office"/>
+        <Class IRI="#GovermentalOrganisation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Other"/>
+        <Class IRI="#PersonalInformation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Participant"/>
+        <Class IRI="#DialogueCommunication"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Participant"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasDetectedEntity"/>
+            <Class IRI="#DetectedEntity"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Participant"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasDetectedRole"/>
+            <Class IRI="#Role"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Personal"/>
+        <Class IRI="#PersonalInformation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PersonalInformation"/>
+        <Class IRI="#Descriptors"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PhysicalAddress"/>
+        <Class IRI="#ContactInformation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PlannerRequest"/>
+        <Class IRI="#Request"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PostCode"/>
+        <Class IRI="#AddressInfo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PreviousResidenceCatalonia"/>
+        <Class IRI="#Other"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PreviousResidenceOther"/>
+        <Class IRI="#Other"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PreviousResidenceSpain"/>
+        <Class IRI="#Other"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Province"/>
+        <Class IRI="#AddressInfo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RegistrationOffice"/>
+        <Class IRI="#Office"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RegistrationYear"/>
+        <Class IRI="#Other"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Role"/>
+        <Class IRI="#DialogueCommunication"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SMSNotification"/>
+        <Class IRI="#Personal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SecondSurname"/>
+        <Class IRI="#Personal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ServiceRequest"/>
+        <Class IRI="#Request"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Slot"/>
+        <Class IRI="#DialogueCommunication"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SocietyModule"/>
+        <Class IRI="#Modules"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpanishCourse"/>
+        <Class IRI="#Training"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpatialLocation"/>
+        <Class IRI="#Location"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpeechAct"/>
+        <Class IRI="#DialogueCommunication"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpeechAct"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasDetectedEntity"/>
+            <Class IRI="#DetectedEntity"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpeechActContainer"/>
+        <Class IRI="#Dialogue"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StayingPeriod"/>
+        <Class IRI="#Temporal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StreetName"/>
+        <Class IRI="#AddressInfo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StreetName"/>
+        <Class IRI="#PhysicalAddress"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StreetNumber"/>
+        <Class IRI="#AddressInfo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StreetNumber"/>
+        <Class IRI="#PhysicalAddress"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StreetType"/>
+        <Class IRI="#AddressInfo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SystemDemand"/>
+        <Class IRI="#DIPType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SystemInfo"/>
+        <Class IRI="#DIPType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SystemLanguage"/>
+        <Class IRI="#Language"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Telephone_number"/>
+        <Class IRI="#PhysicalAddress"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Temporal"/>
+        <Class IRI="#ContextInformation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Time"/>
+        <Class IRI="#Temporal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Training"/>
+        <Class IRI="#PersonalInformation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TrainingOffice"/>
+        <Class IRI="#Office"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Transcription"/>
+        <Class IRI="#DialogueCommunication"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TurnTranscrption"/>
+        <Class IRI="#Transcription"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Webpage"/>
+        <Class IRI="#InternetAddress"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#YearArrival"/>
+        <Class IRI="#Other"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ZipCode"/>
+        <Class IRI="#PhysicalAddress"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#literacy"/>
+        <Class IRI="#Other"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#AsylumClaim"/>
+        <Class IRI="#Illiteracy"/>
+        <Class IRI="#LearningHandicap"/>
+        <Class IRI="#MaritalStatus"/>
+        <Class IRI="#PreviousResidenceCatalonia"/>
+        <Class IRI="#PreviousResidenceOther"/>
+        <Class IRI="#PreviousResidenceSpain"/>
+        <Class IRI="#RegistrationYear"/>
+        <Class IRI="#YearArrival"/>
+        <Class IRI="#literacy"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#AsylumClaim"/>
+        <Class IRI="#LearningHandicap"/>
+        <Class IRI="#MaritalStatus"/>
+        <Class IRI="#PreviousResidenceCatalonia"/>
+        <Class IRI="#PreviousResidenceOther"/>
+        <Class IRI="#PreviousResidenceSpain"/>
+        <Class IRI="#YearArrival"/>
+        <Class IRI="#literacy"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Birthday"/>
+        <Class IRI="#CityOfBirth"/>
+        <Class IRI="#E-mail"/>
+        <Class IRI="#E-mailNotification"/>
+        <Class IRI="#FirstSurname"/>
+        <Class IRI="#IDType"/>
+        <Class IRI="#Landline"/>
+        <Class IRI="#MobilePhone"/>
+        <Class IRI="#Nationality"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#BuildingName"/>
+        <Class IRI="#BuildingType"/>
+        <Class IRI="#DoorNumber"/>
+        <Class IRI="#Entrance"/>
+        <Class IRI="#FloorNumber"/>
+        <Class IRI="#Municipality"/>
+        <Class IRI="#PostCode"/>
+        <Class IRI="#Province"/>
+        <Class IRI="#StreetName"/>
+        <Class IRI="#StreetNumber"/>
+        <Class IRI="#StreetType"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#CatalanCourse"/>
+        <Class IRI="#CourseSociety"/>
+        <Class IRI="#KnowledgeCatalan"/>
+        <Class IRI="#KnowledgeLabour"/>
+        <Class IRI="#KnowledgeSociety"/>
+        <Class IRI="#KnowledgeSpanish"/>
+        <Class IRI="#LabourMarketCourses"/>
+        <Class IRI="#SpanishCourse"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#CompletionYear"/>
+        <Class IRI="#Course"/>
+        <Class IRI="#CourseInstitution"/>
+        <Class IRI="#Duration"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#DIPStatus"/>
+        <NamedIndividual IRI="#Completed"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#StreetName"/>
+        <NamedIndividual IRI="#Crta._de_Montcada"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DIPStatus"/>
+        <NamedIndividual IRI="#FailedAnalysis"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Day"/>
+        <NamedIndividual IRI="#Friday"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Day"/>
+        <NamedIndividual IRI="#Monday"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#RegistrationOffice"/>
+        <NamedIndividual IRI="#OAC_Cambrils"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#RegistrationOffice"/>
+        <NamedIndividual IRI="#OAC_Districte2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#RegistrationOffice"/>
+        <NamedIndividual IRI="#OAC_Districte3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#RegistrationOffice"/>
+        <NamedIndividual IRI="#OAC_Districte4"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#RegistrationOffice"/>
+        <NamedIndividual IRI="#OAC_Districte5"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#RegistrationOffice"/>
+        <NamedIndividual IRI="#OAC_Districte6"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#RegistrationOffice"/>
+        <NamedIndividual IRI="#OAC_Districte7"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#RegistrationOffice"/>
+        <NamedIndividual IRI="#OAC_DretsSocials"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#RegistrationOffice"/>
+        <NamedIndividual IRI="#OAC_PlacaDido"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.daml.org/services/owl-s/1.1/Service.owl#Service"/>
+        <NamedIndividual IRI="#Passport_renewal"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DIPStatus"/>
+        <NamedIndividual IRI="#Pending"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Country"/>
+        <NamedIndividual IRI="#Spain"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SpatialLocation"/>
+        <NamedIndividual IRI="#SpatialLocation_1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DIPStatus"/>
+        <NamedIndividual IRI="#TCNClarifyRequest"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#City"/>
+        <NamedIndividual IRI="#Terrassa"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DIPStatus"/>
+        <NamedIndividual IRI="#TopicSwitch"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DIPStatus"/>
+        <NamedIndividual IRI="#UnclearAnalysis"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Day"/>
+        <NamedIndividual IRI="#Weekday"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#StreetName"/>
+        <NamedIndividual IRI="#carrer_de_san_sebastia"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#StreetName"/>
+        <NamedIndividual IRI="#carrer_de_valencia"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Course"/>
+        <NamedIndividual IRI="#catalanLanguage"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Course"/>
+        <NamedIndividual IRI="#catalan_language"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Building"/>
+        <NamedIndividual IRI="#col_legi_sagrat_cor"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#TrainingOffice"/>
+        <NamedIndividual IRI="#col_legi_sagrat_cor"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.daml.org/services/owl-s/1.1/Process.owl#Process"/>
+        <NamedIndividual IRI="#first_reception_process"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.daml.org/services/owl-s/1.1/Process.owl#Result"/>
+        <NamedIndividual IRI="#first_reception_result"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#HostingInformation"/>
+        <NamedIndividual IRI="#hosting_center"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Course"/>
+        <NamedIndividual IRI="#labourCourse"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#LanguageModule"/>
+        <NamedIndividual IRI="#module_a"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#LabourModule"/>
+        <NamedIndividual IRI="#module_b"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SocietyModule"/>
+        <NamedIndividual IRI="#module_c"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PhysicalAddress"/>
+        <NamedIndividual IRI="#physical_address_1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PhysicalAddress"/>
+        <NamedIndividual IRI="#physical_address_2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PhysicalAddress"/>
+        <NamedIndividual IRI="#physical_address_3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PhysicalAddress"/>
+        <NamedIndividual IRI="#physical_address_4"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#StreetName"/>
+        <NamedIndividual IRI="#raval_de_montserrat"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#RegistrationOffice"/>
+        <NamedIndividual IRI="#registration_office_terrassa"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Course"/>
+        <NamedIndividual IRI="#societyCourse"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Course"/>
+        <NamedIndividual IRI="#spanishLanguage"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#TrainingOffice"/>
+        <NamedIndividual IRI="#training_office_1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ZipCode"/>
+        <NamedIndividual IRI="#08223"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Time"/>
+        <NamedIndividual IRI="#1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#StreetNumber"/>
+        <NamedIndividual IRI="#14"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#StreetNumber"/>
+        <NamedIndividual IRI="#142"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Time"/>
+        <NamedIndividual IRI="#15"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Time"/>
+        <NamedIndividual IRI="#19"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Time"/>
+        <NamedIndividual IRI="#21"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#StreetNumber"/>
+        <NamedIndividual IRI="#596"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#StreetNumber"/>
+        <NamedIndividual IRI="#66"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Time"/>
+        <NamedIndividual IRI="#9"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Telephone_number"/>
+        <NamedIndividual IRI="#937_315_982"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Webpage"/>
+        <NamedIndividual IRI="https://www.terrassa.cat/primera-acollida-ciutadania"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasClosingTime"/>
+        <NamedIndividual IRI="#catalan_language"/>
+        <NamedIndividual IRI="#21"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasOpeningTime"/>
+        <NamedIndividual IRI="#catalan_language"/>
+        <NamedIndividual IRI="#19"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasOperatingDay"/>
+        <NamedIndividual IRI="#catalan_language"/>
+        <NamedIndividual IRI="#Friday"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasOperatingDay"/>
+        <NamedIndividual IRI="#catalan_language"/>
+        <NamedIndividual IRI="#Monday"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isPovidedBy"/>
+        <NamedIndividual IRI="#catalan_language"/>
+        <NamedIndividual IRI="#training_office_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offersCourse"/>
+        <NamedIndividual IRI="#module_a"/>
+        <NamedIndividual IRI="#catalanLanguage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offersCourse"/>
+        <NamedIndividual IRI="#module_a"/>
+        <NamedIndividual IRI="#spanishLanguage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offersCourse"/>
+        <NamedIndividual IRI="#module_b"/>
+        <NamedIndividual IRI="#labourCourse"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offersCourse"/>
+        <NamedIndividual IRI="#module_c"/>
+        <NamedIndividual IRI="#societyCourse"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCity"/>
+        <NamedIndividual IRI="#physical_address_1"/>
+        <NamedIndividual IRI="#Terrassa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCountry"/>
+        <NamedIndividual IRI="#physical_address_1"/>
+        <NamedIndividual IRI="#Spain"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasStreetName"/>
+        <NamedIndividual IRI="#physical_address_1"/>
+        <NamedIndividual IRI="#carrer_de_san_sebastia"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasStreetNumber"/>
+        <NamedIndividual IRI="#physical_address_1"/>
+        <NamedIndividual IRI="#66"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCity"/>
+        <NamedIndividual IRI="#physical_address_2"/>
+        <NamedIndividual IRI="#Terrassa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCountry"/>
+        <NamedIndividual IRI="#physical_address_2"/>
+        <NamedIndividual IRI="#Spain"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasStreetName"/>
+        <NamedIndividual IRI="#physical_address_2"/>
+        <NamedIndividual IRI="#raval_de_montserrat"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasStreetNumber"/>
+        <NamedIndividual IRI="#physical_address_2"/>
+        <NamedIndividual IRI="#14"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCity"/>
+        <NamedIndividual IRI="#physical_address_3"/>
+        <NamedIndividual IRI="#Terrassa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCountry"/>
+        <NamedIndividual IRI="#physical_address_3"/>
+        <NamedIndividual IRI="#Spain"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasStreetName"/>
+        <NamedIndividual IRI="#physical_address_3"/>
+        <NamedIndividual IRI="#carrer_de_valencia"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasStreetNumber"/>
+        <NamedIndividual IRI="#physical_address_3"/>
+        <NamedIndividual IRI="#142"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCity"/>
+        <NamedIndividual IRI="#physical_address_4"/>
+        <NamedIndividual IRI="#Terrassa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasName"/>
+        <NamedIndividual IRI="#physical_address_4"/>
+        <NamedIndividual IRI="#Servei_de_primera_acollida_Terrassa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasStreetName"/>
+        <NamedIndividual IRI="#physical_address_4"/>
+        <NamedIndividual IRI="#Crta._de_Montcada"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasStreetNumber"/>
+        <NamedIndividual IRI="#physical_address_4"/>
+        <NamedIndividual IRI="#596"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTelephone"/>
+        <NamedIndividual IRI="#physical_address_4"/>
+        <NamedIndividual IRI="#937_315_982"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasWebpage"/>
+        <NamedIndividual IRI="#physical_address_4"/>
+        <NamedIndividual IRI="https://www.terrassa.cat/primera-acollida-ciutadania"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasZipCode"/>
+        <NamedIndividual IRI="#physical_address_4"/>
+        <NamedIndividual IRI="#08223"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasClosingTime"/>
+        <NamedIndividual IRI="#registration_office_terrassa"/>
+        <NamedIndividual IRI="#15"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasOpeningTime"/>
+        <NamedIndividual IRI="#registration_office_terrassa"/>
+        <NamedIndividual IRI="#9"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasOperatingDay"/>
+        <NamedIndividual IRI="#registration_office_terrassa"/>
+        <NamedIndividual IRI="#Weekday"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasPhysicalAddress"/>
+        <NamedIndividual IRI="#registration_office_terrassa"/>
+        <NamedIndividual IRI="#physical_address_2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasName"/>
+        <NamedIndividual IRI="#training_office_1"/>
+        <NamedIndividual IRI="#col_legi_sagrat_cor"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offersCourse"/>
+        <NamedIndividual IRI="#training_office_1"/>
+        <NamedIndividual IRI="#catalan_language"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isRegistered"/>
+        <NamedIndividual IRI="#Passport_renewal"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasAltAddress"/>
+        <NamedIndividual IRI="#SpatialLocation_1"/>
+        <Literal>Tsimiski 7</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasCourseName"/>
+        <NamedIndividual IRI="#catalanLanguage"/>
+        <Literal>Catalan</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasNumberHours"/>
+        <NamedIndividual IRI="#catalanLanguage"/>
+        <Literal>90h</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasCourseName"/>
+        <NamedIndividual IRI="#labourCourse"/>
+        <Literal>Labour Market and Employment</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasNumberHours"/>
+        <NamedIndividual IRI="#labourCourse"/>
+        <Literal>15h</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasDipType"/>
+        <NamedIndividual IRI="#module_a"/>
+        <Literal>LanguageModule</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasName"/>
+        <NamedIndividual IRI="#module_a"/>
+        <Literal>Languages</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasDipType"/>
+        <NamedIndividual IRI="#module_b"/>
+        <Literal>LabourModule</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasName"/>
+        <NamedIndividual IRI="#module_b"/>
+        <Literal>Labour market knowledge</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasDipType"/>
+        <NamedIndividual IRI="#module_c"/>
+        <Literal>SocietyModule</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasName"/>
+        <NamedIndividual IRI="#module_c"/>
+        <Literal>Catalan Society</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasCourseName"/>
+        <NamedIndividual IRI="#societyCourse"/>
+        <Literal>Your municipality and the services you can apply for.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasNumberHours"/>
+        <NamedIndividual IRI="#societyCourse"/>
+        <Literal>15h</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasCourseName"/>
+        <NamedIndividual IRI="#spanishLanguage"/>
+        <Literal>Spanish</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasNumberHours"/>
+        <NamedIndividual IRI="#spanishLanguage"/>
+        <Literal>90h</Literal>
+    </DataPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasAge"/>
+        <ObjectProperty IRI="#hasPersonalInformation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasCity"/>
+        <ObjectProperty IRI="#hasPhysicalAddress"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasClosingTime"/>
+        <ObjectProperty IRI="#hasTemporalInformation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasCountry"/>
+        <ObjectProperty IRI="#hasPhysicalAddress"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasCountryOfOrigin"/>
+        <ObjectProperty IRI="#hasPersonalInformation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPAge"/>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPConfirmCommunication"/>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPConfirmLanguage"/>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPConfirmedCommunciation"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPCountryOfOrigin"/>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPGreet"/>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPInformDocumentsNeeded"/>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPInformLabourModule"/>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPInformLabourModuleAddress"/>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPInformLabourModuleHours"/>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPInformLanguageModule"/>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPInformLanguageModuleAddress"/>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPInformLanguageModuleHours"/>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPInformMessage"/>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPInformNeedRegistration"/>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPInformOfficeHours"/>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPInformOverview"/>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPInformResumeApplication"/>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPInformSocietyModule"/>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPInformSocietyModuleAddress"/>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPInformSocietyModuleHours"/>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPObtainBirthday"/>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPObtainCityOfBirth"/>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPObtainCountryOfBirth"/>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPObtainEMailNotifications"/>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPObtainEmail"/>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPObtainFirstSurname"/>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPObtainGender"/>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPObtainIDCountry"/>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPObtainIDNumber"/>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPObtainIDType"/>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPObtainInterest"/>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPObtainLandline"/>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPObtainMobilePhone"/>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPObtainName"/>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPObtainNationality"/>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPObtainNotificationPreferences"/>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPObtainRegistrationStatus"/>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPObtainResidenceAddressCity"/>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPObtainResidenceAddressNumber"/>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPObtainResidenceAddressStreet"/>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPObtainSMSNotifications"/>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPObtainSecondSurname"/>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPObtainStreetName"/>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPObtainStreetNumber"/>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPObtainStreetType"/>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPTimeArrivalCurrentResidence"/>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDIPinformOfficeAddress"/>
+        <ObjectProperty IRI="#hasDIPParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasFirstName"/>
+        <ObjectProperty IRI="#hasPersonalInformation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasHostingInfo"/>
+        <ObjectProperty IRI="#hasPersonalInformation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasInferredSpeechActObject"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasLastName"/>
+        <ObjectProperty IRI="#hasPersonalInformation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasName"/>
+        <ObjectProperty IRI="#hasPersonalInformation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasOpeningTime"/>
+        <ObjectProperty IRI="#hasTemporalInformation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasOperatingDay"/>
+        <ObjectProperty IRI="#hasTemporalInformation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPhysicalAddress"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasRequestType"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasStayingPeriod"/>
+        <ObjectProperty IRI="#hasTemporalInformation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasStreetName"/>
+        <ObjectProperty IRI="#hasPhysicalAddress"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasStreetNumber"/>
+        <ObjectProperty IRI="#hasPhysicalAddress"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasZipCode"/>
+        <ObjectProperty IRI="#hasPhysicalAddress"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isCountryOriginOf"/>
+        <ObjectProperty IRI="#isPersonalInformationOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isFirstNameOf"/>
+        <ObjectProperty IRI="#isPersonalInformationOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isHostingInfoOf"/>
+        <ObjectProperty IRI="#isPersonalInformationOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isIDof"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isLastNameOf"/>
+        <ObjectProperty IRI="#isPersonalInformationOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isNameOf"/>
+        <ObjectProperty IRI="#isPersonalInformationOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isPhysicalAddressOf"/>
+        <ObjectProperty IRI="#isPersonalInformationOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isRegistered"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#repliesToUserResponse"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/hasContainerTranscription"/>
+        <ObjectProperty IRI="#isTranscriptionOfContainer"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasCountryOfOrigin"/>
+        <ObjectProperty IRI="#isCountryOriginOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasDialogueUser"/>
+        <ObjectProperty IRI="#isInvolvedInDialogueSession"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasFirstName"/>
+        <ObjectProperty IRI="#isFirstNameOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasHostingInfo"/>
+        <ObjectProperty IRI="#isHostingInfoOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasLastName"/>
+        <ObjectProperty IRI="#isLastNameOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasName"/>
+        <ObjectProperty IRI="#isNameOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasSystemResponse"/>
+        <ObjectProperty IRI="#repliesToUserResponse"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasTurnTranscription"/>
+        <ObjectProperty IRI="#isTranscriptionOfTurn"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isPovidedBy"/>
+        <ObjectProperty IRI="#offersCourse"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/hasContainerTranscription"/>
+        <Class IRI="#SpeechActContainer"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDIP"/>
+        <Class IRI="#SpeechActContainer"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDetectedEntity"/>
+        <Class IRI="#SpeechActContainer"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDetectedRelation"/>
+        <Class IRI="#SpeechActContainer"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDialogueTurn"/>
+        <Class IRI="#DialogueSession"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDialogueUser"/>
+        <Class IRI="#DialogueSession"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasFirstName"/>
+        <Class IRI="#Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasInputRDFContents"/>
+        <Class IRI="#Slot"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasLastName"/>
+        <Class IRI="#Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasMobilePhone"/>
+        <Class IRI="#Organisation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasMobilePhone"/>
+        <Class IRI="#Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasNextContainer"/>
+        <Class IRI="#SpeechActContainer"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasOntologyType"/>
+        <Class IRI="#Slot"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPhysicalAddress"/>
+        <Class IRI="#Organisation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPhysicalAddress"/>
+        <Class IRI="#Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSlot"/>
+        <Class IRI="#DIP"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSpeechActContainer"/>
+        <Class IRI="#DialogueTurn"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSpeechActType"/>
+        <Class IRI="#SpeechActContainer"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasStatus"/>
+        <Class IRI="#DIP"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasStatus"/>
+        <Class IRI="#Slot"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSystemResponse"/>
+        <Class IRI="#DialogueUserTurn"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasTelephone"/>
+        <Class IRI="#Organisation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasTelephone"/>
+        <Class IRI="#Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasTurnTranscription"/>
+        <Class IRI="#DialogueTurn"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasWebpage"/>
+        <Class IRI="#Webpage"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isEntity1"/>
+        <Class IRI="#DetectedRelation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isInvolvedInDialogueSession"/>
+        <Class IRI="#DialogueUser"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isRegistered"/>
+        <Class IRI="http://www.daml.org/services/owl-s/1.1/Service.owl#Service"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isRelatedToUser"/>
+        <Class IRI="http://www.daml.org/services/owl-s/1.1/Service.owl#Service"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isTranscriptionOfContainer"/>
+        <Class IRI="#Transcription"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#repliesToUserResponse"/>
+        <Class IRI="#DialogueSystemTurn"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/hasContainerTranscription"/>
+        <Class IRI="#ContainerTranscription"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCity"/>
+        <Class IRI="#City"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCountry"/>
+        <Class IRI="#Country"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCountryOfOrigin"/>
+        <Class IRI="#Country"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDIP"/>
+        <Class IRI="#DIP"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDetectedEntity"/>
+        <Class IRI="#DetectedEntity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDetectedRelation"/>
+        <Class IRI="#DetectedRelation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDialogueTurn"/>
+        <Class IRI="#DialogueTurn"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDialogueUser"/>
+        <Class IRI="#DialogueUser"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasNextContainer"/>
+        <Class IRI="#SpeechActContainer"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPhysicalAddress"/>
+        <Class IRI="#PhysicalAddress"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSlot"/>
+        <Class IRI="#Slot"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSpeechActAgent"/>
+        <Class IRI="#DialogueUser"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSpeechActContainer"/>
+        <Class IRI="#SpeechActContainer"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSpeechActType"/>
+        <Class IRI="#SpeechAct"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasStatus"/>
+        <Class IRI="#DIPStatus"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasStreetName"/>
+        <Class IRI="#StreetName"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasStreetNumber"/>
+        <Class IRI="#StreetNumber"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSystemResponse"/>
+        <Class IRI="#DialogueSystemTurn"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTemporalInformation"/>
+        <Class IRI="#Temporal"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTurnTranscription"/>
+        <Class IRI="#TurnTranscrption"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasZipCode"/>
+        <Class IRI="#ZipCode"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isEntity1"/>
+        <Class IRI="#DetectedEntity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isInvolvedInDialogueSession"/>
+        <Class IRI="#DialogueSession"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isRelatedToUser"/>
+        <Class IRI="#DialogueUser"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isTranscriptionOfContainer"/>
+        <Class IRI="#SpeechActContainer"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#repliesToUserResponse"/>
+        <Class IRI="#DialogueUserTurn"/>
+    </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#coordinates"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#fromPeriod"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#heldRoleFrom"/>
+        <DataProperty IRI="#fromPeriod"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#heldRoleTo"/>
+        <DataProperty IRI="#toPeriod"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#lat"/>
+        <DataProperty IRI="#coordinates"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#long"/>
+        <DataProperty IRI="#coordinates"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#toPeriod"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <DataPropertyDomain>
+        <DataProperty IRI="#confidenceScore"/>
+        <Class IRI="#Slot"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#coordinates"/>
+        <Class IRI="#Location"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#coordinates"/>
+        <Class IRI="#PhysicalAddress"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasContainerId"/>
+        <Class IRI="#SpeechActContainer"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasNumberAttempts"/>
+        <Class IRI="#Slot"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasUserId"/>
+        <Class IRI="#DialogueUser"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#isActive"/>
+        <Class IRI="#DIP"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#isActiveSession"/>
+        <Class IRI="#DialogueSession"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#isLastContainer"/>
+        <Class IRI="#SpeechActContainer"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#isOptional"/>
+        <Class IRI="#Slot"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#confidenceScore"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasNumberAttempts"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#heldRoleFrom"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#heldRoleTo"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#isActive"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#isActiveSession"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#isAdult"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#isLastContainer"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#isRegistered"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#isUnaccompanied"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#lat"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#long"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#Person</IRI>
+        <Literal>http://xmlns.com/foaf/0.1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SpatialLocation</IRI>
+        <Literal>Spatial information is the information of the physical address. Due to this, this is associated with an address name, number, city, country and zip code.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SpeechAct</IRI>
+        <Literal></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SpeechActContainer</IRI>
+        <Literal>SpeechActContainer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#carrer_de_san_sebastia</IRI>
+        <Literal>Carrer de Sant Sebastia</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#carrer_de_valencia</IRI>
+        <Literal>Carrer de Valencia</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#col_legi_sagrat_cor</IRI>
+        <Literal>Col legi Sagrat Cor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#coordinates</IRI>
+        <Literal>coordinates</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#lat</IRI>
+        <Literal>latitude</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#long</IRI>
+        <Literal>longitude</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#module_a</IRI>
+        <Literal>informLanguageModule</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#module_b</IRI>
+        <Literal>informLabourModule</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#module_c</IRI>
+        <Literal>informSocietyModule</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#physical_address_1</IRI>
+        <Literal></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#raval_de_montserrat</IRI>
+        <Literal>Raval de Montserrat</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
