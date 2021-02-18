@@ -1461,8 +1461,8 @@ welcome:Completed rdf:type owl:NamedIndividual ,
                            welcome:DIPStatus .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Crta._de_Montcada
-welcome:Crta._de_Montcada rdf:type owl:NamedIndividual ,
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Crta_de_Montcada
+welcome:Crta_de_Montcada rdf:type owl:NamedIndividual ,
                                    welcome:StreetName .
 
 
