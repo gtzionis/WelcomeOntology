@@ -1463,7 +1463,7 @@ welcome:Completed rdf:type owl:NamedIndividual ,
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Crta_de_Montcada
 welcome:Crta_de_Montcada rdf:type owl:NamedIndividual ,
-                                   welcome:StreetName .
+                                  welcome:StreetName .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#FailedAnalysis
@@ -1694,7 +1694,6 @@ welcome:physical_address_4 rdf:type owl:NamedIndividual ,
                                     welcome:PhysicalAddress ;
                            welcome:hasCity welcome:Terrassa ;
                            welcome:hasName welcome:Servei_de_primera_acollida_Terrassa ;
-                           welcome:hasStreetName welcome:Crta._de_Montcada ;
                            welcome:hasStreetNumber <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#596> ;
                            welcome:hasTelephone <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#937_315_982> ;
                            welcome:hasWebpage <https://www.terrassa.cat/primera-acollida-ciutadania> ;
