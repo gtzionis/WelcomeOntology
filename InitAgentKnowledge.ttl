@@ -5,10 +5,12 @@
 @prefix gn: <http://www.geonames.org/ontology#> .
 @prefix profile: <http://www.daml.org/services/owl-s/1.1/Profile.owl> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix pddlexpr: <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/PDDLExpression.owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix service: <http://www.daml.org/services/owl-s/1.1/Service.owl> .
+@prefix ajan: <http://www.ajan.de/ajan-ns#> .
 
 :isTranscriptionOfContainer a owl:ObjectProperty;
   rdfs:domain :Transcription;
@@ -845,8 +847,6 @@
 
 :Completed a :DIPStatus, owl:NamedIndividual .
 
-:Crta._de_Montcada a :StreetName, owl:NamedIndividual .
-
 :FailedAnalysis a :DIPStatus, owl:NamedIndividual .
 
 :Friday a :Day, owl:NamedIndividual .
@@ -932,8 +932,7 @@
 :module_a a :LanguageModule, owl:NamedIndividual;
   rdfs:label "informLanguageModule";
   :offersCourse :catalanLanguage, :spanishLanguage;
-  :hasDipType "LanguageModule";
-  :moduleName "Languages" .
+  :hasDipType "LanguageModule" .
 
 :spanishLanguage a :Course, owl:NamedIndividual;
   :hasCourseName "Spanish";
@@ -942,14 +941,12 @@
 :module_b a :LabourModule, owl:NamedIndividual;
   rdfs:label "informLabourModule";
   :offersCourse :labourCourse;
-  :hasDipType "LabourModule";
-  :moduleName "Labour market knowledge" .
+  :hasDipType "LabourModule" .
 
 :module_c a :SocietyModule, owl:NamedIndividual;
   rdfs:label "informSocietyModule";
   :offersCourse :societyCourse;
-  :hasDipType "SocietyModule";
-  :moduleName "Catalan Society" .
+  :hasDipType "SocietyModule" .
 
 :societyCourse a :Course, owl:NamedIndividual;
   :hasCourseName "Your municipality and the services you can apply for.";
@@ -986,7 +983,6 @@
 :physical_address_4 a :PhysicalAddress, owl:NamedIndividual;
   :hasCity :Terrassa;
   :hasName :Servei_de_primera_acollida_Terrassa;
-  :hasStreetName :Crta._de_Montcada;
   :hasStreetNumber :596;
   :hasTelephone :937_315_982;
   :hasWebpage <https://www.terrassa.cat/primera-acollida-ciutadania>;
@@ -1021,24 +1017,26 @@
 
 :moduleName a owl:DatatypeProperty .
 
+_:node181 a owl:Restriction;
+  owl:someValuesFrom :SpeechActContainer;
+  owl:onProperty :hasDialogueTurn .
+
+_:node182 a owl:Restriction;
+  owl:allValuesFrom :DetectedEntity;
+  owl:onProperty :hasDetectedEntity .
+
+_:node183 a owl:Restriction;
+  owl:allValuesFrom :Role;
+  owl:onProperty :hasDetectedRole .
+
+_:node184 a owl:Restriction;
+  owl:allValuesFrom :DetectedEntity;
+  owl:onProperty :hasDetectedEntity .
+
 :Template a owl:Class;
   rdfs:subClassOf :DialogueCommunication .
 
-_:node181 a owl:Restriction;
-  owl:onProperty :hasDialogueTurn;
-  owl:someValuesFrom :SpeechActContainer .
-
-_:node182 a owl:Restriction;
-  owl:onProperty :hasDetectedEntity;
-  owl:allValuesFrom :DetectedEntity .
-
-_:node183 a owl:Restriction;
-  owl:onProperty :hasDetectedRole;
-  owl:allValuesFrom :Role .
-
-_:node184 a owl:Restriction;
-  owl:onProperty :hasDetectedEntity;
-  owl:allValuesFrom :DetectedEntity .
+:Crta_de_Montcada a :StreetName, owl:NamedIndividual .
 
 _:node185 a owl:AllDisjointClasses;
   owl:members _:node186 .
@@ -1212,7 +1210,7 @@ _:node240 rdf:first :Duration;
     <http://www.daml.org/services/owl-s/1.1/Process.owl>, <http://www.daml.org/services/owl-s/1.1/Profile.owl>,
     <http://www.daml.org/services/owl-s/1.1/Service.owl> .
 
-:initialization <http://www.ajan.de/ajan-ns#agentInitKnowledge> rdf:nil, <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl>,
+:initialization ajan:agentInitKnowledge rdf:nil, <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl>,
     owl:ObjectProperty, :isTranscriptionOfContainer, :SpeechActContainer, :ContainerTranscription,
     :hasAge, :hasPersonalInformation, :hasCity, :hasPhysicalAddress, :City, :hasClosingTime,
     :hasTemporalInformation, :hasCountry, :Country, :hasCountryOfOrigin, :isCountryOriginOf,
@@ -1269,21 +1267,27 @@ _:node240 rdf:first :Duration;
     :SpanishCourse, :SpatialLocation, "Spatial information is the information of the physical address. Due to this, this is associated with an address name, number, city, country and zip code.",
     "", "SpeechActContainer", :StayingPeriod, :StreetType, :SystemDemand, :SystemInfo,
     :SystemLanguage, :Telephone_number, :Time, :TrainingOffice, :YearArrival, :literacy,
-    :Completed, :Crta._de_Montcada, :FailedAnalysis, :Friday, :Monday, :OAC_Cambrils,
-    :OAC_Districte2, :OAC_Districte3, :OAC_Districte4, :OAC_Districte5, :OAC_Districte6,
-    :OAC_Districte7, :OAC_DretsSocials, :OAC_PlacaDido, :Pending, :Servei_de_primera_acollida_Terrassa,
-    :Spain, :SpatialLocation_1, :Syria, :TCNClarifyRequest, :Terrassa, :TopicSwitch, :UnclearAnalysis,
-    :Weekday, :carrer_de_san_sebastia, :carrer_de_valencia, :catalanLanguage, :catalan_language,
-    :21, :19, :training_office_1, :col_legi_sagrat_cor, :first_reception_process, :first_reception_result,
-    :hosting_center, :labourCourse, :module_a, :spanishLanguage, :module_b, :module_c,
-    :societyCourse, :physical_address_1, :66, :physical_address_2, :raval_de_montserrat,
-    :14, :physical_address_3, :142, :physical_address_4, :596, :937_315_982, <https://www.terrassa.cat/primera-acollida-ciutadania>,
+    :Completed, :FailedAnalysis, :Friday, :Monday, :OAC_Cambrils, :OAC_Districte2, :OAC_Districte3,
+    :OAC_Districte4, :OAC_Districte5, :OAC_Districte6, :OAC_Districte7, :OAC_DretsSocials,
+    :OAC_PlacaDido, :Pending, :Servei_de_primera_acollida_Terrassa, :Spain, :SpatialLocation_1,
+    :Syria, :TCNClarifyRequest, :Terrassa, :TopicSwitch, :UnclearAnalysis, :Weekday, :carrer_de_san_sebastia,
+    :carrer_de_valencia, :catalanLanguage, :catalan_language, :21, :19, :training_office_1,
+    :col_legi_sagrat_cor, :first_reception_process, :first_reception_result, :hosting_center,
+    :labourCourse, :module_a, :spanishLanguage, :module_b, :module_c, :societyCourse,
+    :physical_address_1, :66, :physical_address_2, :raval_de_montserrat, :14, :physical_address_3,
+    :142, :physical_address_4, :596, :937_315_982, <https://www.terrassa.cat/primera-acollida-ciutadania>,
     :08223, :registration_office_terrassa, :15, :9, :1, :35, owl:AllDisjointClasses, :hasContainerTranscription,
-    :moduleName, :Template, _:node181, _:node182, _:node183, _:node184, _:node185, _:node186,
-    _:node187, _:node188, _:node189, _:node190, _:node191, _:node192, _:node193, _:node194,
-    _:node195, _:node196, _:node197, _:node198, _:node199, _:node200, _:node201, _:node202,
-    _:node203, _:node204, _:node205, _:node206, _:node207, _:node208, _:node209, _:node210,
-    _:node211, _:node212, _:node213, _:node214, _:node215, _:node216, _:node217, _:node218,
-    _:node219, _:node220, _:node221, _:node222, _:node223, _:node224, _:node225, _:node226,
-    _:node227, _:node228, _:node229, _:node230, _:node231, _:node232, _:node233, _:node234,
-    _:node235, _:node236, _:node237, _:node238, _:node239, _:node240 .
+    :moduleName, _:node181, _:node182, _:node183, _:node184, :Template, :Crta_de_Montcada,
+    _:node185, _:node186, _:node187, _:node188, _:node189, _:node190, _:node191, _:node192,
+    _:node193, _:node194, _:node195, _:node196, _:node197, _:node198, _:node199, _:node200,
+    _:node201, _:node202, _:node203, _:node204, _:node205, _:node206, _:node207, _:node208,
+    _:node209, _:node210, _:node211, _:node212, _:node213, _:node214, _:node215, _:node216,
+    _:node217, _:node218, _:node219, _:node220, _:node221, _:node222, _:node223, _:node224,
+    _:node225, _:node226, _:node227, _:node228, _:node229, _:node230, _:node231, _:node232,
+    _:node233, _:node234, _:node235, _:node236, _:node237, _:node238, _:node239, _:node240 .
+
+:module_a :moduleName "Languages" .
+
+:module_b :moduleName "Labour market knowledge" .
+
+:module_c :moduleName "Catalan Society" .
