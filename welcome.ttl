@@ -386,12 +386,20 @@ welcome:hasName rdf:type owl:ObjectProperty ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNextContainer
 welcome:hasNextContainer rdf:type owl:ObjectProperty ;
+                         owl:inverseOf welcome:hasPreviousContainer ;
                          rdfs:domain welcome:SpeechActContainer ;
                          rdfs:range welcome:SpeechActContainer .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNextDIP
 welcome:hasNextDIP rdf:type owl:ObjectProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNextTurn
+welcome:hasNextTurn rdf:type owl:ObjectProperty ;
+                    owl:inverseOf welcome:hasPrevTurn ;
+                    rdfs:domain welcome:DialogueTurn ;
+                    rdfs:range welcome:DialogueTurn .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasOntologyType
@@ -428,6 +436,17 @@ welcome:hasPhysicalAddress rdf:type owl:ObjectProperty ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasPredicateRelation
 welcome:hasPredicateRelation rdf:type owl:ObjectProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasPrevTurn
+welcome:hasPrevTurn rdf:type owl:ObjectProperty ;
+                    rdfs:domain welcome:DialogueTurn ;
+                    rdfs:range welcome:DialogueTurn .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasPreviousContainer
+welcome:hasPreviousContainer rdf:type owl:ObjectProperty ;
+                             rdfs:domain welcome:SpeechActContainer .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasRequestType
@@ -513,6 +532,13 @@ welcome:hasTurnTranscription rdf:type owl:ObjectProperty ;
                              owl:inverseOf welcome:isTranscriptionOfTurn ;
                              rdfs:domain welcome:DialogueTurn ;
                              rdfs:range welcome:TurnTranscrption .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasUserResponse
+welcome:hasUserResponse rdf:type owl:ObjectProperty ;
+                        owl:inverseOf welcome:repliesToSystemReponse ;
+                        rdfs:domain welcome:DialogueSystemTurn ;
+                        rdfs:range welcome:DialogueUserTurn .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasWebpage
@@ -618,6 +644,12 @@ welcome:isTranscriptionOfTurn rdf:type owl:ObjectProperty .
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#offersCourse
 welcome:offersCourse rdf:type owl:ObjectProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#repliesToSystemReponse
+welcome:repliesToSystemReponse rdf:type owl:ObjectProperty ;
+                               rdfs:domain welcome:DialogueUserTurn ;
+                               rdfs:range welcome:DialogueSystemTurn .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#repliesToUserResponse
