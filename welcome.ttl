@@ -20,8 +20,7 @@
 #################################################################
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasAge
-welcome:hasAge rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf welcome:hasPersonalInformation .
+welcome:hasAge rdf:type owl:ObjectProperty .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasCity
@@ -48,11 +47,10 @@ welcome:hasCountry rdf:type owl:ObjectProperty ;
                    rdfs:range welcome:Country .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasCountryOfOrigin
-welcome:hasCountryOfOrigin rdf:type owl:ObjectProperty ;
-                           rdfs:subPropertyOf welcome:hasPersonalInformation ;
-                           owl:inverseOf welcome:isCountryOriginOf ;
-                           rdfs:range welcome:Country .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasCountryOrigin
+welcome:hasCountryOrigin rdf:type owl:ObjectProperty ;
+                         owl:inverseOf welcome:isCountryOriginOf ;
+                         rdfs:range welcome:Country .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasDIP
@@ -338,16 +336,28 @@ welcome:hasDialogueUser rdf:type owl:ObjectProperty ;
                         rdfs:range welcome:DialogueUser .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasEmail
+welcome:hasEmail rdf:type owl:ObjectProperty ;
+                 owl:inverseOf welcome:isEmailOf ;
+                 rdfs:domain welcome:Person ;
+                 rdfs:range welcome:E-mail .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasFirstName
 welcome:hasFirstName rdf:type owl:ObjectProperty ;
-                     rdfs:subPropertyOf welcome:hasPersonalInformation ;
                      owl:inverseOf welcome:isFirstNameOf ;
                      rdfs:domain welcome:Person .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasFirstSurname
+welcome:hasFirstSurname rdf:type owl:ObjectProperty ;
+                        owl:inverseOf welcome:isFirstSurnameOf ;
+                        rdfs:domain welcome:Person ;
+                        rdfs:range welcome:FirstSurname .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasHostingInfo
 welcome:hasHostingInfo rdf:type owl:ObjectProperty ;
-                       rdfs:subPropertyOf welcome:hasPersonalInformation ;
                        owl:inverseOf welcome:isHostingInfoOf .
 
 
@@ -365,13 +375,6 @@ welcome:hasInputRDFContents rdf:type owl:ObjectProperty ;
                             rdfs:domain welcome:Slot .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasLastName
-welcome:hasLastName rdf:type owl:ObjectProperty ;
-                    rdfs:subPropertyOf welcome:hasPersonalInformation ;
-                    owl:inverseOf welcome:isLastNameOf ;
-                    rdfs:domain welcome:Person .
-
-
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasMobilePhone
 welcome:hasMobilePhone rdf:type owl:ObjectProperty ;
                        rdfs:domain welcome:Organisation ,
@@ -380,8 +383,9 @@ welcome:hasMobilePhone rdf:type owl:ObjectProperty ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasName
 welcome:hasName rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf welcome:hasPersonalInformation ;
-                owl:inverseOf welcome:isNameOf .
+                owl:inverseOf welcome:isNameOf ;
+                rdfs:domain welcome:Name ;
+                rdfs:range welcome:Person .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNextContainer
@@ -420,10 +424,6 @@ welcome:hasOperatingDay rdf:type owl:ObjectProperty ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasParticipant
 welcome:hasParticipant rdf:type owl:ObjectProperty .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasPersonalInformation
-welcome:hasPersonalInformation rdf:type owl:ObjectProperty .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasPhysicalAddress
@@ -541,6 +541,13 @@ welcome:hasUserResponse rdf:type owl:ObjectProperty ;
                         rdfs:range welcome:DialogueUserTurn .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasUsername
+welcome:hasUsername rdf:type owl:ObjectProperty ;
+                    owl:inverseOf welcome:isUsernameOf ;
+                    rdfs:domain welcome:Person ;
+                    rdfs:range welcome:Username .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasWebpage
 welcome:hasWebpage rdf:type owl:ObjectProperty ;
                    rdfs:domain welcome:Webpage .
@@ -557,8 +564,13 @@ welcome:hostedBy rdf:type owl:ObjectProperty .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isCountryOriginOf
-welcome:isCountryOriginOf rdf:type owl:ObjectProperty ;
-                          rdfs:subPropertyOf welcome:isPersonalInformationOf .
+welcome:isCountryOriginOf rdf:type owl:ObjectProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isEmailOf
+welcome:isEmailOf rdf:type owl:ObjectProperty ;
+                  rdfs:domain welcome:E-mail ;
+                  rdfs:range welcome:Person .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isEntity1
@@ -572,13 +584,17 @@ welcome:isEntity2 rdf:type owl:ObjectProperty .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isFirstNameOf
-welcome:isFirstNameOf rdf:type owl:ObjectProperty ;
-                      rdfs:subPropertyOf welcome:isPersonalInformationOf .
+welcome:isFirstNameOf rdf:type owl:ObjectProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isFirstSurnameOf
+welcome:isFirstSurnameOf rdf:type owl:ObjectProperty ;
+                         rdfs:domain welcome:FirstSurname ;
+                         rdfs:range welcome:Person .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isHostingInfoOf
-welcome:isHostingInfoOf rdf:type owl:ObjectProperty ;
-                        rdfs:subPropertyOf welcome:isPersonalInformationOf .
+welcome:isHostingInfoOf rdf:type owl:ObjectProperty .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isIDof
@@ -592,23 +608,14 @@ welcome:isInvolvedInDialogueSession rdf:type owl:ObjectProperty ;
                                     rdfs:range welcome:DialogueSession .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isLastNameOf
-welcome:isLastNameOf rdf:type owl:ObjectProperty ;
-                     rdfs:subPropertyOf welcome:isPersonalInformationOf .
-
-
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isNameOf
 welcome:isNameOf rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf welcome:isPersonalInformationOf .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isPersonalInformationOf
-welcome:isPersonalInformationOf rdf:type owl:ObjectProperty .
+                 rdfs:domain welcome:Person ;
+                 rdfs:range welcome:Name .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isPhysicalAddressOf
-welcome:isPhysicalAddressOf rdf:type owl:ObjectProperty ;
-                            rdfs:subPropertyOf welcome:isPersonalInformationOf .
+welcome:isPhysicalAddressOf rdf:type owl:ObjectProperty .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isPovidedBy
@@ -642,6 +649,12 @@ welcome:isTranscriptionOfContainer rdf:type owl:ObjectProperty ;
 welcome:isTranscriptionOfTurn rdf:type owl:ObjectProperty .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isUsernameOf
+welcome:isUsernameOf rdf:type owl:ObjectProperty ;
+                     rdfs:domain welcome:Username ;
+                     rdfs:range welcome:Person .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#offersCourse
 welcome:offersCourse rdf:type owl:ObjectProperty .
 
@@ -657,6 +670,19 @@ welcome:repliesToUserResponse rdf:type owl:ObjectProperty ;
                               rdfs:subPropertyOf owl:topObjectProperty ;
                               rdfs:domain welcome:DialogueSystemTurn ;
                               rdfs:range welcome:DialogueUserTurn .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#speaksLanguage
+welcome:speaksLanguage rdf:type owl:ObjectProperty ;
+                       owl:inverseOf welcome:spokenBy ;
+                       rdfs:domain welcome:Person ;
+                       rdfs:range welcome:Language .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#spokenBy
+welcome:spokenBy rdf:type owl:ObjectProperty ;
+                 rdfs:domain welcome:Language ;
+                 rdfs:range welcome:Person .
 
 
 #################################################################
@@ -801,10 +827,10 @@ welcome:heldRoleTo rdf:type owl:DatatypeProperty ;
                    rdfs:range xsd:integer .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isActive
-welcome:isActive rdf:type owl:DatatypeProperty ;
-                 rdfs:domain welcome:DIP ;
-                 rdfs:range xsd:boolean .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isActiveDIP
+welcome:isActiveDIP rdf:type owl:DatatypeProperty ;
+                    rdfs:domain welcome:DIP ;
+                    rdfs:range xsd:boolean .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isActiveSession
@@ -1468,6 +1494,11 @@ welcome:Transcription rdf:type owl:Class ;
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#TurnTranscrption
 welcome:TurnTranscrption rdf:type owl:Class ;
                          rdfs:subClassOf welcome:Transcription .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Username
+welcome:Username rdf:type owl:Class ;
+                 rdfs:subClassOf welcome:Personal .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Webpage
