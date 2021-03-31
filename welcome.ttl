@@ -396,7 +396,9 @@ welcome:hasNextContainer rdf:type owl:ObjectProperty ;
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNextDIP
-welcome:hasNextDIP rdf:type owl:ObjectProperty .
+welcome:hasNextDIP rdf:type owl:ObjectProperty ;
+                   rdfs:domain welcome:DIP ;
+                   rdfs:range welcome:DIP .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNextTurn
@@ -563,6 +565,12 @@ welcome:hasZipCode rdf:type owl:ObjectProperty ;
 welcome:hostedBy rdf:type owl:ObjectProperty .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#involvesDIP
+welcome:involvesDIP rdf:type owl:ObjectProperty ;
+                    rdfs:domain welcome:DialogueSession ;
+                    rdfs:range welcome:DIP .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isCountryOriginOf
 welcome:isCountryOriginOf rdf:type owl:ObjectProperty .
 
@@ -606,6 +614,12 @@ welcome:isIDof rdf:type owl:ObjectProperty ;
 welcome:isInvolvedInDialogueSession rdf:type owl:ObjectProperty ;
                                     rdfs:domain welcome:DialogueUser ;
                                     rdfs:range welcome:DialogueSession .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isInvolvedInSession
+welcome:isInvolvedInSession rdf:type owl:ObjectProperty ;
+                            rdfs:domain welcome:DIP ;
+                            rdfs:range welcome:DialogueSession .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isNameOf
@@ -685,6 +699,19 @@ welcome:spokenBy rdf:type owl:ObjectProperty ;
                  rdfs:range welcome:Person .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#triggeredByTurn
+welcome:triggeredByTurn rdf:type owl:ObjectProperty ;
+                        owl:inverseOf welcome:triggersDIP ;
+                        rdfs:domain welcome:DIP ;
+                        rdfs:range welcome:DialogueTurn .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#triggersDIP
+welcome:triggersDIP rdf:type owl:ObjectProperty ;
+                    rdfs:domain welcome:DialogueTurn ;
+                    rdfs:range welcome:DIP .
+
+
 #################################################################
 #    Data properties
 #################################################################
@@ -692,6 +719,10 @@ welcome:spokenBy rdf:type owl:ObjectProperty ;
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIPId
 welcome:DIPId rdf:type owl:DatatypeProperty ,
                        owl:FunctionalProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#belongsToGraph
+welcome:belongsToGraph rdf:type owl:DatatypeProperty .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#confidenceScore
@@ -837,6 +868,12 @@ welcome:isActiveDIP rdf:type owl:DatatypeProperty ;
 welcome:isActiveSession rdf:type owl:DatatypeProperty ;
                         rdfs:domain welcome:DialogueSession ;
                         rdfs:range xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isActiveSlot
+welcome:isActiveSlot rdf:type owl:DatatypeProperty ;
+                     rdfs:domain welcome:Slot ;
+                     rdfs:range xsd:boolean .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isAdult
@@ -1704,7 +1741,8 @@ welcome:labourCourse rdf:type owl:NamedIndividual ,
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#module_a
 welcome:module_a rdf:type owl:NamedIndividual ,
-                          welcome:LanguageModule ;
+                          welcome:LanguageModule ,
+                          welcome:Modules ;
                  welcome:offersCourse welcome:catalanLanguage ,
                                       welcome:spanishLanguage ;
                  welcome:hasDipType "LanguageModule" ;
@@ -1714,7 +1752,8 @@ welcome:module_a rdf:type owl:NamedIndividual ,
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#module_b
 welcome:module_b rdf:type owl:NamedIndividual ,
-                          welcome:LabourModule ;
+                          welcome:LabourModule ,
+                          welcome:Modules ;
                  welcome:offersCourse welcome:labourCourse ;
                  welcome:hasDipType "LabourModule" ;
                  welcome:moduleName "Labour market knowledge" ;
@@ -1723,6 +1762,7 @@ welcome:module_b rdf:type owl:NamedIndividual ,
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#module_c
 welcome:module_c rdf:type owl:NamedIndividual ,
+                          welcome:Modules ,
                           welcome:SocietyModule ;
                  welcome:offersCourse welcome:societyCourse ;
                  welcome:hasDipType "SocietyModule" ;
