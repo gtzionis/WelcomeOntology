@@ -3,7 +3,9 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix actor: <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl> .
 @prefix process: <http://www.daml.org/services/owl-s/1.1/Process.owl> .
 @prefix profile: <http://www.daml.org/services/owl-s/1.1/Profile.owl> .
 @prefix service: <http://www.daml.org/services/owl-s/1.1/Service.owl> .
@@ -16,8 +18,42 @@
                                                                                            <http://www.daml.org/services/owl-s/1.1/Service.owl> .
 
 #################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/identifier
+<http://purl.org/dc/terms/identifier> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2003/01/geo/wgs84_pos#lat
+<http://www.w3.org/2003/01/geo/wgs84_pos#lat> rdf:type owl:AnnotationProperty ;
+                                              rdfs:comment "The WGS84 latitude of a SpatialThing (decimal degrees)." ;
+                                              rdfs:label "latitude" ;
+                                              rdfs:domain <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> .
+
+
+###  http://www.w3.org/2003/01/geo/wgs84_pos#long
+<http://www.w3.org/2003/01/geo/wgs84_pos#long> rdf:type owl:AnnotationProperty ;
+                                               rdfs:comment "The WGS84 longitude of a SpatialThing (decimal degrees)." ;
+                                               rdfs:label "longitude" ;
+                                               rdfs:domain <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> .
+
+
+###  http://www.w3.org/2007/05/powder-s#describedby
+<http://www.w3.org/2007/05/powder-s#describedby> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
 #    Object Properties
 #################################################################
+
+###  http://www.w3.org/ns/locn#address
+locn:address rdf:type owl:ObjectProperty ;
+             rdfs:range locn:Address ;
+             <http://purl.org/dc/terms/identifier> "locn:address"@en ;
+             rdfs:comment "The locn:address property relationship associates any resource with the <a href=\"#locn:Address\">Address</a> Class "^^rdf:XMLLiteral ;
+             rdfs:label "address"@en .
+
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasAge
 welcome:hasAge rdf:type owl:ObjectProperty .
@@ -716,6 +752,66 @@ welcome:triggersDIP rdf:type owl:ObjectProperty ;
 #    Data properties
 #################################################################
 
+###  http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#email
+<http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#email> rdf:type owl:DatatypeProperty ;
+                                                                rdfs:domain <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#Actor> ;
+                                                                rdfs:range xsd:string .
+
+
+###  http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#fax
+<http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#fax> rdf:type owl:DatatypeProperty ;
+                                                              rdfs:domain <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#Actor> ;
+                                                              rdfs:range xsd:string .
+
+
+###  http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#name
+<http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#name> rdf:type owl:DatatypeProperty ;
+                                                               rdfs:domain <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#Actor> ;
+                                                               rdfs:range xsd:string .
+
+
+###  http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#phone
+<http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#phone> rdf:type owl:DatatypeProperty ;
+                                                                rdfs:domain <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#Actor> ;
+                                                                rdfs:range xsd:string .
+
+
+###  http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#physicalAddress
+<http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#physicalAddress> rdf:type owl:DatatypeProperty ;
+                                                                          rdfs:domain <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#Actor> ;
+                                                                          rdfs:range xsd:string .
+
+
+###  http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#title
+<http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#title> rdf:type owl:DatatypeProperty ;
+                                                                rdfs:domain <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#Actor> ;
+                                                                rdfs:range xsd:string .
+
+
+###  http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#webURL
+<http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#webURL> rdf:type owl:DatatypeProperty ;
+                                                                 rdfs:domain <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#Actor> ;
+                                                                 rdfs:range xsd:string .
+
+
+###  http://www.w3.org/ns/locn#fullAddress
+locn:fullAddress rdf:type owl:DatatypeProperty ;
+                 rdfs:domain locn:Address ;
+                 rdfs:range rdfs:Literal ;
+                 <http://purl.org/dc/terms/identifier> "locn:fullAddress"@en ;
+                 rdfs:comment "The complete address written as a string, with or without formatting. The domain of locn:fullAddress is locn:Address."@en ;
+                 rdfs:label "full address"@en .
+
+
+###  http://www.w3.org/ns/locn#postCode
+locn:postCode rdf:type owl:DatatypeProperty ;
+              rdfs:domain locn:Address ;
+              rdfs:range rdfs:Literal ;
+              <http://purl.org/dc/terms/identifier> "locn:postCode"@en ;
+              rdfs:comment "The post code (a.k.a postal code, zip code etc.). Post codes are common elements in many countries' postal address systems. The domain of locn:postCode is locn:Address."@en ;
+              rdfs:label "post code"@en .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIPId
 welcome:DIPId rdf:type owl:DatatypeProperty ,
                        owl:FunctionalProperty .
@@ -735,7 +831,8 @@ welcome:confidenceScore rdf:type owl:DatatypeProperty ,
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#coordinates
 welcome:coordinates rdf:type owl:DatatypeProperty ;
                     rdfs:subPropertyOf owl:topDataProperty ;
-                    rdfs:domain welcome:Location ,
+                    rdfs:domain locn:Address ,
+                                welcome:Location ,
                                 welcome:PhysicalAddress ;
                     rdfs:label "coordinates" .
 
@@ -745,40 +842,16 @@ welcome:fromPeriod rdf:type owl:DatatypeProperty ;
                    rdfs:subPropertyOf owl:topDataProperty .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasAltAddress
-welcome:hasAltAddress rdf:type owl:DatatypeProperty .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasAddress
+welcome:hasAddress rdf:type owl:DatatypeProperty .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasAltCity
-welcome:hasAltCity rdf:type owl:DatatypeProperty .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasCity
+welcome:hasCity rdf:type owl:DatatypeProperty .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasAltClosingTime
-welcome:hasAltClosingTime rdf:type owl:DatatypeProperty .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasAltName
-welcome:hasAltName rdf:type owl:DatatypeProperty .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasAltOpeningTime
-welcome:hasAltOpeningTime rdf:type owl:DatatypeProperty .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasAltPhone
-welcome:hasAltPhone rdf:type owl:DatatypeProperty .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasAltStreetNumber
-welcome:hasAltStreetNumber rdf:type owl:DatatypeProperty .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasAltWebPage
-welcome:hasAltWebPage rdf:type owl:DatatypeProperty .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasAltZipCode
-welcome:hasAltZipCode rdf:type owl:DatatypeProperty .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasClosingTime
+welcome:hasClosingTime rdf:type owl:DatatypeProperty .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasContainerId
@@ -822,6 +895,10 @@ welcome:hasEntityLink rdf:type owl:DatatypeProperty .
 welcome:hasEntityType rdf:type owl:DatatypeProperty .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasName
+welcome:hasName rdf:type owl:DatatypeProperty .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNumberAttempts
 welcome:hasNumberAttempts rdf:type owl:DatatypeProperty ,
                                    owl:FunctionalProperty ;
@@ -833,8 +910,20 @@ welcome:hasNumberAttempts rdf:type owl:DatatypeProperty ,
 welcome:hasNumberHours rdf:type owl:DatatypeProperty .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasOpeningTime
+welcome:hasOpeningTime rdf:type owl:DatatypeProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasPhone
+welcome:hasPhone rdf:type owl:DatatypeProperty .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasRelationId
 welcome:hasRelationId rdf:type owl:DatatypeProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStreetNumber
+welcome:hasStreetNumber rdf:type owl:DatatypeProperty .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTimestamp
@@ -844,6 +933,14 @@ welcome:hasTimestamp rdf:type owl:DatatypeProperty .
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasUserId
 welcome:hasUserId rdf:type owl:DatatypeProperty ;
                   rdfs:domain welcome:DialogueUser .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasWebPage
+welcome:hasWebPage rdf:type owl:DatatypeProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasZipCode
+welcome:hasZipCode rdf:type owl:DatatypeProperty .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#heldRoleFrom
@@ -930,8 +1027,27 @@ welcome:toPeriod rdf:type owl:DatatypeProperty ;
 #    Classes
 #################################################################
 
+###  http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#Actor
+<http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#Actor> rdf:type owl:Class ;
+                                                                rdfs:subClassOf owl:Thing ;
+                                                                rdfs:comment """
+      Actor represents a Requester or Provider who might request or offer a service.
+      The original Actor definition was provided within DAML-S V0.5, V0.6 and V0.7
+    """ ;
+                                                                rdfs:label "DefaultActor" .
+
+
 ###  http://www.daml.org/services/owl-s/1.1/Profile.owl#Profile
 <http://www.daml.org/services/owl-s/1.1/Profile.owl#Profile> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/locn#Address
+locn:Address rdf:type owl:Class ;
+             owl:equivalentClass welcome:PhysicalAddress ;
+             <http://purl.org/dc/terms/identifier> "locn:Address"@en ;
+             rdfs:comment "An &quot;address representation&quot; as defined in the <a href=\"https://inspire-twg.jrc.ec.europa.eu/inspire-fc.html#_C2538\">data specifications</a> of the EU INSPIRE Directive. The <a href=\"#locn:addressId\">locn:addressId</a> property may be used to link this Address to other representations."^^rdf:XMLLiteral ;
+             rdfs:label "Address"@en ;
+             <http://www.w3.org/2007/05/powder-s#describedby> <https://joinup.ec.europa.eu/system/files/project/Core_Vocabularies-Business_Location_Person-Specification-v0.3_0.zip> .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AccessCatalanTraining
@@ -1562,189 +1678,323 @@ welcome:literacy rdf:type owl:Class ;
 #    Individuals
 #################################################################
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Athens
+welcome:Athens rdf:type owl:NamedIndividual ,
+                        welcome:City ,
+                        welcome:Location .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Cambrils
+welcome:Cambrils rdf:type owl:NamedIndividual ,
+                          welcome:City ,
+                          welcome:Location ;
+                 welcome:lat 41.06667 ;
+                 welcome:long 1.06036 .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Completed
 welcome:Completed rdf:type owl:NamedIndividual ,
-                           welcome:DIPStatus .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Crta_de_Montcada
-welcome:Crta_de_Montcada rdf:type owl:NamedIndividual ,
-                                  welcome:StreetName .
+                           welcome:DIPStatus ;
+                  rdfs:label "Status completed" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#FailedAnalysis
 welcome:FailedAnalysis rdf:type owl:NamedIndividual ,
-                                welcome:DIPStatus .
+                                welcome:DIPStatus ;
+                       rdfs:label "Status failed analysis" .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Friday
-welcome:Friday rdf:type owl:NamedIndividual ,
-                        welcome:Day .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Monday
-welcome:Monday rdf:type owl:NamedIndividual ,
-                        welcome:Day .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Greece
+welcome:Greece rdf:type owl:NamedIndividual ,
+                        welcome:Country ,
+                        welcome:Location .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OAC_Cambrils
 welcome:OAC_Cambrils rdf:type owl:NamedIndividual ,
-                              welcome:RegistrationOffice .
+                              <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#Actor> ,
+                              welcome:RegistrationOffice ;
+                     locn:address welcome:address_cambrils ;
+                     <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#phone> "977 794 579" ;
+                     <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#webURL> "https://www.cambrils.cat/" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OAC_Districte2
 welcome:OAC_Districte2 rdf:type owl:NamedIndividual ,
-                                welcome:RegistrationOffice .
+                                <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#Actor> ,
+                                welcome:RegistrationOffice ;
+                       locn:address welcome:address_districte2 ;
+                       <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#phone> "937 397 000" ,
+                                                                                       "https://www.terrassa.cat/" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OAC_Districte3
 welcome:OAC_Districte3 rdf:type owl:NamedIndividual ,
-                                welcome:RegistrationOffice .
+                                <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#Actor> ,
+                                welcome:RegistrationOffice ;
+                       locn:address welcome:address_districte3 ;
+                       <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#phone> "937 397 000" ;
+                       <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#webURL> "https://www.terrassa.cat/" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OAC_Districte4
 welcome:OAC_Districte4 rdf:type owl:NamedIndividual ,
-                                welcome:RegistrationOffice .
+                                <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#Actor> ,
+                                welcome:RegistrationOffice ;
+                       locn:address welcome:address_districte4 ;
+                       <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#phone> "937 397 000" ;
+                       <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#webURL> "https://www.terrassa.cat/" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OAC_Districte5
 welcome:OAC_Districte5 rdf:type owl:NamedIndividual ,
-                                welcome:RegistrationOffice .
+                                <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#Actor> ,
+                                welcome:RegistrationOffice ;
+                       locn:address welcome:address_districte5 ;
+                       <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#phone> "937 397 000" ;
+                       <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#webURL> "https://www.terrassa.cat/" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OAC_Districte6
 welcome:OAC_Districte6 rdf:type owl:NamedIndividual ,
-                                welcome:RegistrationOffice .
+                                <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#Actor> ,
+                                welcome:RegistrationOffice ;
+                       locn:address welcome:address_districte6 ;
+                       <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#phone> "937 397 000" ;
+                       <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#webURL> "https://www.terrassa.cat/" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OAC_Districte7
 welcome:OAC_Districte7 rdf:type owl:NamedIndividual ,
-                                welcome:RegistrationOffice .
+                                <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#Actor> ,
+                                welcome:RegistrationOffice ;
+                       locn:address welcome:address_districte7 ;
+                       <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#phone> "937 397 000" ;
+                       <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#webURL> "https://www.terrassa.cat/" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OAC_DretsSocials
 welcome:OAC_DretsSocials rdf:type owl:NamedIndividual ,
-                                  welcome:RegistrationOffice .
+                                  <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#Actor> ,
+                                  welcome:RegistrationOffice ;
+                         locn:address welcome:address_dretssocial ;
+                         <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#phone> "937 397 000" ;
+                         <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#webURL> "https://www.terrassa.cat/" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OAC_PlacaDido
 welcome:OAC_PlacaDido rdf:type owl:NamedIndividual ,
-                               welcome:RegistrationOffice .
+                               <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#Actor> ,
+                               welcome:RegistrationOffice ;
+                      locn:address welcome:address_placadido ;
+                      <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#phone> "937 397 000" ;
+                      <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#webURL> "https://www.terrassa.cat/" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Pending
 welcome:Pending rdf:type owl:NamedIndividual ,
-                         welcome:DIPStatus .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Servei_de_primera_acollida_Terrassa
-welcome:Servei_de_primera_acollida_Terrassa rdf:type owl:NamedIndividual .
+                         welcome:DIPStatus ;
+                rdfs:label "Status pending" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Spain
 welcome:Spain rdf:type owl:NamedIndividual ,
-                       welcome:Country .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SpatialLocation_1
-welcome:SpatialLocation_1 rdf:type owl:NamedIndividual ,
-                                   welcome:SpatialLocation ;
-                          welcome:hasAltAddress "Tsimiski 7"^^xsd:string .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Syria
-welcome:Syria rdf:type owl:NamedIndividual .
+                       welcome:Country ,
+                       welcome:Location ;
+              welcome:lat 40.46366 ;
+              welcome:long -3.74922 .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#TCNClarifyRequest
 welcome:TCNClarifyRequest rdf:type owl:NamedIndividual ,
-                                   welcome:DIPStatus .
+                                   welcome:DIPStatus ;
+                          rdfs:label "Status tcn clarify request" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Terrassa
 welcome:Terrassa rdf:type owl:NamedIndividual ,
-                          welcome:City .
+                          welcome:City ,
+                          welcome:Location ;
+                 welcome:lat 41.56321 ;
+                 welcome:long 2.00887 .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Thessaloniki
+welcome:Thessaloniki rdf:type owl:NamedIndividual ,
+                              welcome:City ,
+                              welcome:Location .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#TopicSwitch
 welcome:TopicSwitch rdf:type owl:NamedIndividual ,
-                             welcome:DIPStatus .
+                             welcome:DIPStatus ;
+                    rdfs:label "Status topic switch" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#UnclearAnalysis
 welcome:UnclearAnalysis rdf:type owl:NamedIndividual ,
-                                 welcome:DIPStatus .
+                                 welcome:DIPStatus ;
+                        rdfs:label "Status unclear analysis" .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Weekday
-welcome:Weekday rdf:type owl:NamedIndividual ,
-                         welcome:Day .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#address_cambrils
+welcome:address_cambrils rdf:type owl:NamedIndividual ,
+                                  locn:Address ,
+                                  welcome:Location ;
+                         welcome:hasCity welcome:Cambrils ;
+                         welcome:hasCountry welcome:Spain ;
+                         <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#physicalAddress> "Pl. de l'Ajuntament, 4 - 43850 Cambrils" ;
+                         welcome:lat 41.07132 ;
+                         welcome:long 1.05808 ;
+                         rdfs:comment "Oficina d'Atencio Ciutadana - OAC" .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#carrer_de_san_sebastia
-welcome:carrer_de_san_sebastia rdf:type owl:NamedIndividual ,
-                                        welcome:StreetName ;
-                               rdfs:label "Carrer de Sant Sebastia" .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#address_districte2
+welcome:address_districte2 rdf:type owl:NamedIndividual ,
+                                    locn:Address ,
+                                    welcome:Location ;
+                           welcome:hasCity welcome:Terrassa ;
+                           welcome:hasCountry welcome:Spain ;
+                           <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#physicalAddress> "Av de Barcelona, 180 (08222 Terrassa)" ;
+                           welcome:lat 41.56453 ;
+                           welcome:long 2.02751 ;
+                           rdfs:comment "Oficina d'Atenció Ciutadana del Districte 2 - OAC" .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#carrer_de_valencia
-welcome:carrer_de_valencia rdf:type owl:NamedIndividual ,
-                                    welcome:StreetName ;
-                           rdfs:label "Carrer de Valencia" .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#address_districte3
+welcome:address_districte3 rdf:type owl:NamedIndividual ,
+                                    locn:Address ,
+                                    welcome:Location ;
+                           welcome:hasCity welcome:Terrassa ;
+                           welcome:hasCountry welcome:Spain ;
+                           <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#physicalAddress> "Pl de Can Palet, 1 (08223 Terrassa)" ;
+                           welcome:lat 41.55578 ;
+                           welcome:long 41.55578 ;
+                           rdfs:comment "Oficina d'Atenció Ciutadana del Districte 3 - OAC" .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#catalanLanguage
-welcome:catalanLanguage rdf:type owl:NamedIndividual ,
-                                 welcome:Course ;
-                        welcome:hasCourseName "Catalan" ;
-                        welcome:hasNumberHours "90h" .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#address_districte4
+welcome:address_districte4 rdf:type owl:NamedIndividual ,
+                                    locn:Address ,
+                                    welcome:Location ;
+                           welcome:hasCity welcome:Terrassa ;
+                           welcome:hasCountry welcome:Spain ;
+                           <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#physicalAddress> "Av d' Àngel Sallent, 55 (08224 Terrassa)" ;
+                           welcome:lat 41.55743 ;
+                           welcome:long 2.00004 ;
+                           rdfs:comment "Oficina d'Atenció Ciutadana del Districte 4 - OAC" .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#catalan_language
-welcome:catalan_language rdf:type owl:NamedIndividual ,
-                                  welcome:Course ;
-                         welcome:hasClosingTime <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#21> ;
-                         welcome:hasOpeningTime <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#19> ;
-                         welcome:hasOperatingDay welcome:Friday ,
-                                                 welcome:Monday ;
-                         welcome:isPovidedBy welcome:training_office_1 .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#address_districte5
+welcome:address_districte5 rdf:type owl:NamedIndividual ,
+                                    locn:Address ,
+                                    welcome:Location ;
+                           welcome:hasCity welcome:Terrassa ;
+                           welcome:hasCountry welcome:Spain ;
+                           <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#physicalAddress> "Pl de la Cultura, 5 (08225 Terrassa)" ;
+                           welcome:lat 41.57692 ;
+                           welcome:long 2.00634 ;
+                           rdfs:comment "Oficina d'Atenció Ciutadana del Districte 5 - OAC" .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#col_legi_sagrat_cor
-welcome:col_legi_sagrat_cor rdf:type owl:NamedIndividual ,
-                                     welcome:Building ,
-                                     welcome:TrainingOffice ;
-                            rdfs:label "Col legi Sagrat Cor" .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#address_districte6
+welcome:address_districte6 rdf:type owl:NamedIndividual ,
+                                    locn:Address ,
+                                    welcome:Location ;
+                           welcome:hasCity welcome:Terrassa ;
+                           welcome:hasCountry welcome:Spain ;
+                           <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#physicalAddress> "Rm de Francesc Macià, 189 (08226 Terrassa)" ;
+                           welcome:lat 41.5774 ;
+                           welcome:long 2.02494 ;
+                           rdfs:comment "Oficina d'Atenció Ciutadana del Districte 6 - OAC" .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#first_reception_process
-welcome:first_reception_process rdf:type owl:NamedIndividual ,
-                                         <http://www.daml.org/services/owl-s/1.1/Process.owl#Process> .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#address_districte7
+welcome:address_districte7 rdf:type owl:NamedIndividual ,
+                                    locn:Address ,
+                                    welcome:Location ;
+                           welcome:hasCity welcome:Terrassa ;
+                           welcome:hasCountry welcome:Spain ;
+                           <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#physicalAddress> "Ca d' Amèrica, 33 (08228 Terrassa)" ;
+                           welcome:lat 41.53707 ;
+                           welcome:long 2.04197 ;
+                           rdfs:comment "Oficina d'Atenció Ciutadana del Districte 7 - OAC" .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#first_reception_result
-welcome:first_reception_result rdf:type owl:NamedIndividual ,
-                                        <http://www.daml.org/services/owl-s/1.1/Process.owl#Result> .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#address_dretssocial
+welcome:address_dretssocial rdf:type owl:NamedIndividual ,
+                                     locn:Address ,
+                                     welcome:Location ;
+                            welcome:hasCity welcome:Terrassa ;
+                            welcome:hasCountry welcome:Spain ;
+                            <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#physicalAddress> "Cr de Montcada, 596 (08223 Terrassa)" ;
+                            welcome:lat 41.55858 ;
+                            welcome:long 2.0284 ;
+                            rdfs:comment "Oficina d'Atencio Ciutadana de l'Area de Drets Socials" .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hosting_center
-welcome:hosting_center rdf:type owl:NamedIndividual ,
-                                welcome:HostingInformation .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#address_placadido
+welcome:address_placadido rdf:type owl:NamedIndividual ,
+                                   locn:Address ,
+                                   welcome:Location ;
+                          welcome:hasCity welcome:Terrassa ;
+                          welcome:hasCountry welcome:Spain ;
+                          <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#physicalAddress> "Pl Didó, 5 (08221 Terrassa)" ;
+                          welcome:lat 41.56382 ;
+                          welcome:long 2.01006 ;
+                          rdfs:comment "Oficina d'Atenció Ciutadana de Plaça Didó - OAC" .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#labourCourse
-welcome:labourCourse rdf:type owl:NamedIndividual ,
-                              welcome:Course ;
-                     welcome:hasCourseName "Labour Market and Employment" ;
-                     welcome:hasNumberHours "15h" .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#address_praksisAthens
+welcome:address_praksisAthens rdf:type owl:NamedIndividual ,
+                                       locn:Address ,
+                                       welcome:Location ;
+                              welcome:hasCity welcome:Athens ;
+                              welcome:hasCountry welcome:Greece .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#address_praksisThessaloniki
+welcome:address_praksisThessaloniki rdf:type owl:NamedIndividual ,
+                                             locn:Address ,
+                                             welcome:Location ;
+                                    welcome:hasCity welcome:Thessaloniki ;
+                                    welcome:hasCountry welcome:Greece .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#course_catalanLanguage
+welcome:course_catalanLanguage rdf:type owl:NamedIndividual ,
+                                        welcome:Course ;
+                               welcome:hasCourseName "Catalan" ;
+                               welcome:hasNumberHours "90h" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#course_labourCourse
+welcome:course_labourCourse rdf:type owl:NamedIndividual ,
+                                     welcome:Course ;
+                            welcome:hasCourseName "Labour Market and Employment" ;
+                            welcome:hasNumberHours "15h" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#course_societyCourse
+welcome:course_societyCourse rdf:type owl:NamedIndividual ,
+                                      welcome:Course ;
+                             welcome:hasCourseName "Your municipality and the services you can apply for." ;
+                             welcome:hasNumberHours "15h" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#course_spanishLanguage
+welcome:course_spanishLanguage rdf:type owl:NamedIndividual ,
+                                        welcome:Course ;
+                               welcome:hasCourseName "Spanish" ;
+                               welcome:hasNumberHours "90h" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#module_a
 welcome:module_a rdf:type owl:NamedIndividual ,
                           welcome:LanguageModule ,
                           welcome:Modules ;
-                 welcome:offersCourse welcome:catalanLanguage ,
-                                      welcome:spanishLanguage ;
+                 welcome:offersCourse welcome:course_catalanLanguage ,
+                                      welcome:course_spanishLanguage ;
                  welcome:hasDipType "LanguageModule" ;
                  welcome:moduleName "Languages" ;
                  rdfs:label "informLanguageModule" .
@@ -1754,7 +2004,7 @@ welcome:module_a rdf:type owl:NamedIndividual ,
 welcome:module_b rdf:type owl:NamedIndividual ,
                           welcome:LabourModule ,
                           welcome:Modules ;
-                 welcome:offersCourse welcome:labourCourse ;
+                 welcome:offersCourse welcome:course_labourCourse ;
                  welcome:hasDipType "LabourModule" ;
                  welcome:moduleName "Labour market knowledge" ;
                  rdfs:label "informLabourModule" .
@@ -1764,149 +2014,26 @@ welcome:module_b rdf:type owl:NamedIndividual ,
 welcome:module_c rdf:type owl:NamedIndividual ,
                           welcome:Modules ,
                           welcome:SocietyModule ;
-                 welcome:offersCourse welcome:societyCourse ;
+                 welcome:offersCourse welcome:course_societyCourse ;
                  welcome:hasDipType "SocietyModule" ;
                  welcome:moduleName "Catalan Society" ;
                  rdfs:label "informSocietyModule" .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#physical_address_1
-welcome:physical_address_1 rdf:type owl:NamedIndividual ,
-                                    welcome:PhysicalAddress ;
-                           welcome:hasCity welcome:Terrassa ;
-                           welcome:hasCountry welcome:Spain ;
-                           welcome:hasStreetName welcome:carrer_de_san_sebastia ;
-                           welcome:hasStreetNumber <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#66> ;
-                           rdfs:comment "" .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#praksisAthens
+welcome:praksisAthens rdf:type owl:NamedIndividual ,
+                               <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#Actor> ,
+                               welcome:Office ;
+                      <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#email> "info@praksis.gr" ;
+                      <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#phone> "210-8213704" .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#physical_address_2
-welcome:physical_address_2 rdf:type owl:NamedIndividual ,
-                                    welcome:PhysicalAddress ;
-                           welcome:hasCity welcome:Terrassa ;
-                           welcome:hasCountry welcome:Spain ;
-                           welcome:hasStreetName welcome:raval_de_montserrat ;
-                           welcome:hasStreetNumber <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#14> .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#physical_address_3
-welcome:physical_address_3 rdf:type owl:NamedIndividual ,
-                                    welcome:PhysicalAddress ;
-                           welcome:hasCity welcome:Terrassa ;
-                           welcome:hasCountry welcome:Spain ;
-                           welcome:hasStreetName welcome:carrer_de_valencia ;
-                           welcome:hasStreetNumber <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#142> .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#physical_address_4
-welcome:physical_address_4 rdf:type owl:NamedIndividual ,
-                                    welcome:PhysicalAddress ;
-                           welcome:hasCity welcome:Terrassa ;
-                           welcome:hasName welcome:Servei_de_primera_acollida_Terrassa ;
-                           welcome:hasStreetNumber <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#596> ;
-                           welcome:hasTelephone <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#937_315_982> ;
-                           welcome:hasWebpage <https://www.terrassa.cat/primera-acollida-ciutadania> ;
-                           welcome:hasZipCode <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#08223> .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#raval_de_montserrat
-welcome:raval_de_montserrat rdf:type owl:NamedIndividual ,
-                                     welcome:StreetName ;
-                            rdfs:label "Raval de Montserrat" .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#registration_office_terrassa
-welcome:registration_office_terrassa rdf:type owl:NamedIndividual ,
-                                              welcome:RegistrationOffice ;
-                                     welcome:hasClosingTime <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#15> ;
-                                     welcome:hasOpeningTime <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#9> ;
-                                     welcome:hasOperatingDay welcome:Weekday ;
-                                     welcome:hasPhysicalAddress welcome:physical_address_2 .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#societyCourse
-welcome:societyCourse rdf:type owl:NamedIndividual ,
-                               welcome:Course ;
-                      welcome:hasCourseName "Your municipality and the services you can apply for." ;
-                      welcome:hasNumberHours "15h" .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#spanishLanguage
-welcome:spanishLanguage rdf:type owl:NamedIndividual ,
-                                 welcome:Course ;
-                        welcome:hasCourseName "Spanish" ;
-                        welcome:hasNumberHours "90h" .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#training_office_1
-welcome:training_office_1 rdf:type owl:NamedIndividual ,
-                                   welcome:TrainingOffice ;
-                          welcome:hasName welcome:col_legi_sagrat_cor ;
-                          welcome:offersCourse welcome:catalan_language .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#08223
-<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#08223> rdf:type owl:NamedIndividual ,
-                                                                                             welcome:ZipCode .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#1
-<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#1> rdf:type owl:NamedIndividual ,
-                                                                                         welcome:Time .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#14
-<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#14> rdf:type owl:NamedIndividual ,
-                                                                                          welcome:StreetNumber .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#142
-<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#142> rdf:type owl:NamedIndividual ,
-                                                                                           welcome:StreetNumber .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#15
-<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#15> rdf:type owl:NamedIndividual ,
-                                                                                          welcome:Time .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#19
-<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#19> rdf:type owl:NamedIndividual ,
-                                                                                          welcome:Time .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#21
-<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#21> rdf:type owl:NamedIndividual ,
-                                                                                          welcome:Time .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#35
-<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#35> rdf:type owl:NamedIndividual .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#596
-<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#596> rdf:type owl:NamedIndividual ,
-                                                                                           welcome:StreetNumber .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#66
-<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#66> rdf:type owl:NamedIndividual ,
-                                                                                          welcome:StreetNumber .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#9
-<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#9> rdf:type owl:NamedIndividual ,
-                                                                                         welcome:Time .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#937_315_982
-<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#937_315_982> rdf:type owl:NamedIndividual ,
-                                                                                                   welcome:Telephone_number .
-
-
-###  https://www.terrassa.cat/primera-acollida-ciutadania
-<https://www.terrassa.cat/primera-acollida-ciutadania> rdf:type owl:NamedIndividual ,
-                                                                welcome:Webpage .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#praksisThessaloniki
+welcome:praksisThessaloniki rdf:type owl:NamedIndividual ,
+                                     <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#Actor> ,
+                                     welcome:Office ;
+                            <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#email> "info@praksis.gr" ;
+                            <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#phone> "2310-556145" .
 
 
 #################################################################
