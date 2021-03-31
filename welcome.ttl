@@ -445,8 +445,7 @@ welcome:hasNextTurn rdf:type owl:ObjectProperty ;
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasOntologyType
-welcome:hasOntologyType rdf:type owl:ObjectProperty ,
-                                 owl:FunctionalProperty ;
+welcome:hasOntologyType rdf:type owl:ObjectProperty ;
                         rdfs:domain welcome:Slot .
 
 
@@ -813,8 +812,7 @@ locn:postCode rdf:type owl:DatatypeProperty ;
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIPId
-welcome:DIPId rdf:type owl:DatatypeProperty ,
-                       owl:FunctionalProperty .
+welcome:DIPId rdf:type owl:DatatypeProperty .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#belongsToGraph
@@ -822,10 +820,9 @@ welcome:belongsToGraph rdf:type owl:DatatypeProperty .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#confidenceScore
-welcome:confidenceScore rdf:type owl:DatatypeProperty ,
-                                 owl:FunctionalProperty ;
+welcome:confidenceScore rdf:type owl:DatatypeProperty ;
                         rdfs:domain welcome:Slot ;
-                        rdfs:range xsd:float .
+                        rdfs:range xsd:integer .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#coordinates
@@ -900,8 +897,7 @@ welcome:hasName rdf:type owl:DatatypeProperty .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNumberAttempts
-welcome:hasNumberAttempts rdf:type owl:DatatypeProperty ,
-                                   owl:FunctionalProperty ;
+welcome:hasNumberAttempts rdf:type owl:DatatypeProperty ;
                           rdfs:domain welcome:Slot ;
                           rdfs:range xsd:integer .
 
@@ -985,10 +981,8 @@ welcome:isLastContainer rdf:type owl:DatatypeProperty ;
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isOptional
-welcome:isOptional rdf:type owl:DatatypeProperty ,
-                            owl:FunctionalProperty ;
-                   rdfs:domain welcome:Slot ;
-                   rdfs:range xsd:boolean .
+welcome:isOptional rdf:type owl:DatatypeProperty ;
+                   rdfs:domain welcome:Slot .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isUnaccompanied
