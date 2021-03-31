@@ -1715,6 +1715,7 @@ welcome:OAC_Cambrils rdf:type owl:NamedIndividual ,
                               actor:Actor ,
                               welcome:RegistrationOffice ;
                      locn:address welcome:address_cambrils ;
+                     actor:name "Oficina d'Atencio Ciutadana - OAC" ;
                      actor:phone "977 794 579" ;
                      actor:webURL "https://www.cambrils.cat/" .
 
@@ -1724,8 +1725,9 @@ welcome:OAC_Districte2 rdf:type owl:NamedIndividual ,
                                 actor:Actor ,
                                 welcome:RegistrationOffice ;
                        locn:address welcome:address_districte2 ;
-                       actor:phone "937 397 000" ,
-                                   "https://www.terrassa.cat/" .
+                       actor:name "Oficina d'Atenció Ciutadana del Districte 2 - OAC" ;
+                       actor:phone "937 397 000" ;
+                       actor:webURL "https://www.terrassa.cat/" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OAC_Districte3
@@ -1733,6 +1735,7 @@ welcome:OAC_Districte3 rdf:type owl:NamedIndividual ,
                                 actor:Actor ,
                                 welcome:RegistrationOffice ;
                        locn:address welcome:address_districte3 ;
+                       actor:name "Oficina d'Atenció Ciutadana del Districte 3 - OAC" ;
                        actor:phone "937 397 000" ;
                        actor:webURL "https://www.terrassa.cat/" .
 
@@ -1742,6 +1745,7 @@ welcome:OAC_Districte4 rdf:type owl:NamedIndividual ,
                                 actor:Actor ,
                                 welcome:RegistrationOffice ;
                        locn:address welcome:address_districte4 ;
+                       actor:name "Oficina d'Atenció Ciutadana del Districte 4 - OAC" ;
                        actor:phone "937 397 000" ;
                        actor:webURL "https://www.terrassa.cat/" .
 
@@ -1751,6 +1755,7 @@ welcome:OAC_Districte5 rdf:type owl:NamedIndividual ,
                                 actor:Actor ,
                                 welcome:RegistrationOffice ;
                        locn:address welcome:address_districte5 ;
+                       actor:name "Oficina d'Atenció Ciutadana del Districte 5 - OAC" ;
                        actor:phone "937 397 000" ;
                        actor:webURL "https://www.terrassa.cat/" .
 
@@ -1760,6 +1765,7 @@ welcome:OAC_Districte6 rdf:type owl:NamedIndividual ,
                                 actor:Actor ,
                                 welcome:RegistrationOffice ;
                        locn:address welcome:address_districte6 ;
+                       actor:name "Oficina d'Atenció Ciutadana del Districte 6 - OAC" ;
                        actor:phone "937 397 000" ;
                        actor:webURL "https://www.terrassa.cat/" .
 
@@ -1769,6 +1775,7 @@ welcome:OAC_Districte7 rdf:type owl:NamedIndividual ,
                                 actor:Actor ,
                                 welcome:RegistrationOffice ;
                        locn:address welcome:address_districte7 ;
+                       actor:name "Oficina d'Atenció Ciutadana del Districte 7 - OAC" ;
                        actor:phone "937 397 000" ;
                        actor:webURL "https://www.terrassa.cat/" .
 
@@ -1778,6 +1785,7 @@ welcome:OAC_DretsSocials rdf:type owl:NamedIndividual ,
                                   actor:Actor ,
                                   welcome:RegistrationOffice ;
                          locn:address welcome:address_dretssocial ;
+                         actor:name "Oficina d'Atencio Ciutadana de l'Area de Drets Socials" ;
                          actor:phone "937 397 000" ;
                          actor:webURL "https://www.terrassa.cat/" .
 
@@ -1787,6 +1795,7 @@ welcome:OAC_PlacaDido rdf:type owl:NamedIndividual ,
                                actor:Actor ,
                                welcome:RegistrationOffice ;
                       locn:address welcome:address_placadido ;
+                      actor:name "Oficina d'Atenció Ciutadana de Plaça Didó - OAC" ;
                       actor:phone "937 397 000" ;
                       actor:webURL "https://www.terrassa.cat/" .
 
@@ -1845,8 +1854,7 @@ welcome:address_cambrils rdf:type owl:NamedIndividual ,
                          welcome:hasCountry welcome:Spain ;
                          actor:physicalAddress "Pl. de l'Ajuntament, 4 - 43850 Cambrils" ;
                          welcome:lat 41.07132 ;
-                         welcome:long 1.05808 ;
-                         rdfs:comment "Oficina d'Atencio Ciutadana - OAC" .
+                         welcome:long 1.05808 .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#address_districte2
@@ -1857,8 +1865,7 @@ welcome:address_districte2 rdf:type owl:NamedIndividual ,
                            welcome:hasCountry welcome:Spain ;
                            actor:physicalAddress "Av de Barcelona, 180 (08222 Terrassa)" ;
                            welcome:lat 41.56453 ;
-                           welcome:long 2.02751 ;
-                           rdfs:comment "Oficina d'Atenció Ciutadana del Districte 2 - OAC" .
+                           welcome:long 2.02751 .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#address_districte3
@@ -1881,8 +1888,7 @@ welcome:address_districte4 rdf:type owl:NamedIndividual ,
                            welcome:hasCountry welcome:Spain ;
                            actor:physicalAddress "Av d' Àngel Sallent, 55 (08224 Terrassa)" ;
                            welcome:lat 41.55743 ;
-                           welcome:long 2.00004 ;
-                           rdfs:comment "Oficina d'Atenció Ciutadana del Districte 4 - OAC" .
+                           welcome:long 2.00004 .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#address_districte5
@@ -1893,8 +1899,7 @@ welcome:address_districte5 rdf:type owl:NamedIndividual ,
                            welcome:hasCountry welcome:Spain ;
                            actor:physicalAddress "Pl de la Cultura, 5 (08225 Terrassa)" ;
                            welcome:lat 41.57692 ;
-                           welcome:long 2.00634 ;
-                           rdfs:comment "Oficina d'Atenció Ciutadana del Districte 5 - OAC" .
+                           welcome:long 2.00634 .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#address_districte6
@@ -1905,8 +1910,7 @@ welcome:address_districte6 rdf:type owl:NamedIndividual ,
                            welcome:hasCountry welcome:Spain ;
                            actor:physicalAddress "Rm de Francesc Macià, 189 (08226 Terrassa)" ;
                            welcome:lat 41.5774 ;
-                           welcome:long 2.02494 ;
-                           rdfs:comment "Oficina d'Atenció Ciutadana del Districte 6 - OAC" .
+                           welcome:long 2.02494 .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#address_districte7
@@ -1917,8 +1921,7 @@ welcome:address_districte7 rdf:type owl:NamedIndividual ,
                            welcome:hasCountry welcome:Spain ;
                            actor:physicalAddress "Ca d' Amèrica, 33 (08228 Terrassa)" ;
                            welcome:lat 41.53707 ;
-                           welcome:long 2.04197 ;
-                           rdfs:comment "Oficina d'Atenció Ciutadana del Districte 7 - OAC" .
+                           welcome:long 2.04197 .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#address_dretssocial
@@ -1929,8 +1932,7 @@ welcome:address_dretssocial rdf:type owl:NamedIndividual ,
                             welcome:hasCountry welcome:Spain ;
                             actor:physicalAddress "Cr de Montcada, 596 (08223 Terrassa)" ;
                             welcome:lat 41.55858 ;
-                            welcome:long 2.0284 ;
-                            rdfs:comment "Oficina d'Atencio Ciutadana de l'Area de Drets Socials" .
+                            welcome:long 2.0284 .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#address_placadido
@@ -1941,8 +1943,7 @@ welcome:address_placadido rdf:type owl:NamedIndividual ,
                           welcome:hasCountry welcome:Spain ;
                           actor:physicalAddress "Pl Didó, 5 (08221 Terrassa)" ;
                           welcome:lat 41.56382 ;
-                          welcome:long 2.01006 ;
-                          rdfs:comment "Oficina d'Atenció Ciutadana de Plaça Didó - OAC" .
+                          welcome:long 2.01006 .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#address_praksisAthens
@@ -1953,8 +1954,7 @@ welcome:address_praksisAthens rdf:type owl:NamedIndividual ,
                               welcome:hasCountry welcome:Greece ;
                               actor:physicalAddress "23, Sarpidonos Street, Athens, Greece" ;
                               welcome:lat 37.99919 ;
-                              welcome:long 23.70559 ;
-                              rdfs:comment "Community Center Athens" .
+                              welcome:long 23.70559 .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#address_praksisThessaloniki
@@ -1965,8 +1965,7 @@ welcome:address_praksisThessaloniki rdf:type owl:NamedIndividual ,
                                     welcome:hasCountry welcome:Greece ;
                                     actor:physicalAddress "1, Arkadioupoleon & Agiou Dimitriou Streets, Thessaloniki, Greece" ;
                                     welcome:lat 40.64376 ;
-                                    welcome:long 22.9371 ;
-                                    rdfs:comment "Polyclinic Thessaloniki" .
+                                    welcome:long 22.9371 .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#course_catalanLanguage
@@ -1999,8 +1998,7 @@ welcome:course_spanishLanguage rdf:type owl:NamedIndividual ,
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#module_a
 welcome:module_a rdf:type owl:NamedIndividual ,
-                          welcome:LanguageModule ,
-                          welcome:Modules ;
+                          welcome:LanguageModule ;
                  welcome:offersCourse welcome:course_catalanLanguage ,
                                       welcome:course_spanishLanguage ;
                  welcome:hasDipType "LanguageModule" ;
@@ -2010,8 +2008,7 @@ welcome:module_a rdf:type owl:NamedIndividual ,
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#module_b
 welcome:module_b rdf:type owl:NamedIndividual ,
-                          welcome:LabourModule ,
-                          welcome:Modules ;
+                          welcome:LabourModule ;
                  welcome:offersCourse welcome:course_labourCourse ;
                  welcome:hasDipType "LabourModule" ;
                  welcome:moduleName "Labour market knowledge" ;
@@ -2020,7 +2017,6 @@ welcome:module_b rdf:type owl:NamedIndividual ,
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#module_c
 welcome:module_c rdf:type owl:NamedIndividual ,
-                          welcome:Modules ,
                           welcome:SocietyModule ;
                  welcome:offersCourse welcome:course_societyCourse ;
                  welcome:hasDipType "SocietyModule" ;
@@ -2032,7 +2028,9 @@ welcome:module_c rdf:type owl:NamedIndividual ,
 welcome:praksisAthens rdf:type owl:NamedIndividual ,
                                actor:Actor ,
                                welcome:Office ;
+                      locn:address welcome:address_praksisAthens ;
                       actor:email "info@praksis.gr" ;
+                      actor:name "Community Center Athens" ;
                       actor:phone "210-8213704" .
 
 
@@ -2040,7 +2038,9 @@ welcome:praksisAthens rdf:type owl:NamedIndividual ,
 welcome:praksisThessaloniki rdf:type owl:NamedIndividual ,
                                      actor:Actor ,
                                      welcome:Office ;
+                            locn:address welcome:address_praksisThessaloniki ;
                             actor:email "info@praksis.gr" ;
+                            actor:name "Polyclinic Thessaloniki" ;
                             actor:phone "2310-556145" .
 
 
