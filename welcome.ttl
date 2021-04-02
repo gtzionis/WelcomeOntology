@@ -2119,7 +2119,7 @@ welcome:module_labour rdf:type owl:NamedIndividual ,
                       welcome:offersCourse welcome:course_labourCourse ;
                       gn:nearby welcome:poi_2 ;
                       welcome:moduleName "Labour market knowledge" ;
-                      <http://purl.org/dc/terms/isRequiredBy> "informLabourModule" .
+                      <http://purl.org/dc/terms/isRequiredBy> "InformLabourModule" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#module_labour_hours
@@ -2128,7 +2128,7 @@ welcome:module_labour_hours rdf:type owl:NamedIndividual ,
                             schema:dayOfWeek schema:Wednesday ;
                             schema:closes "21:00" ;
                             schema:opens "19:00" ;
-                            <http://purl.org/dc/terms/isRequiredBy> "informLabourModuleHours" .
+                            <http://purl.org/dc/terms/isRequiredBy> "InformLabourModuleHours" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#module_language
@@ -2139,7 +2139,7 @@ welcome:module_language rdf:type owl:NamedIndividual ,
                                              welcome:course_spanishLanguage ;
                         gn:nearby welcome:poi_1 ;
                         welcome:moduleName "Languages" ;
-                        <http://purl.org/dc/terms/isRequiredBy> "informLanguageModule" .
+                        <http://purl.org/dc/terms/isRequiredBy> "InformLanguageModule" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#module_language_hours
@@ -2149,7 +2149,7 @@ welcome:module_language_hours rdf:type owl:NamedIndividual ,
                                                schema:Monday ;
                               schema:closes "21:00" ;
                               schema:opens "19:00" ;
-                              <http://purl.org/dc/terms/isRequiredBy> "informLanguageModuleHours" .
+                              <http://purl.org/dc/terms/isRequiredBy> "InformLanguageModuleHours" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#module_society
@@ -2159,7 +2159,7 @@ welcome:module_society rdf:type owl:NamedIndividual ,
                        welcome:offersCourse welcome:course_societyCourse ;
                        gn:nearby welcome:poi_3 ;
                        welcome:moduleName "Catalan Society" ;
-                       <http://purl.org/dc/terms/isRequiredBy> "informSocietyModule" .
+                       <http://purl.org/dc/terms/isRequiredBy> "InformSocietyModule" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#module_society_hours
@@ -2168,27 +2168,28 @@ welcome:module_society_hours rdf:type owl:NamedIndividual ,
                              schema:dayOfWeek schema:Wednesday ;
                              schema:closes "21:00" ;
                              schema:opens "19:00" ;
-                             <http://purl.org/dc/terms/isRequiredBy> "informSocietyModuleHours" .
+                             <http://purl.org/dc/terms/isRequiredBy> "InformSocietyModuleHours" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#poi_1
 welcome:poi_1 rdf:type owl:NamedIndividual ,
                        welcome:POI ;
               actor:name "Col-legi Sagrat Cor" ;
-              <http://purl.org/dc/terms/isRequiredBy> "informLanguageModuleAddress" .
+              <http://purl.org/dc/terms/isRequiredBy> "InformLanguageModuleAddress" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#poi_2
 welcome:poi_2 rdf:type owl:NamedIndividual ,
                        welcome:POI ;
               actor:name "City Council Building" ;
-              <http://purl.org/dc/terms/isRequiredBy> "informLabourModuleAddress" .
+              <http://purl.org/dc/terms/isRequiredBy> "InformLabourModuleAddress" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#poi_3
 welcome:poi_3 rdf:type owl:NamedIndividual ,
                        welcome:POI ;
-              actor:name "City Council building" .
+              actor:name "City Council Building" ;
+              <http://purl.org/dc/terms/isRequiredBy> "InformSocietyModuleAddress" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#praksisAthens
