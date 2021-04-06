@@ -87,6 +87,13 @@ welcome:hasCity rdf:type owl:ObjectProperty ;
                 rdfs:range welcome:City .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasCityOfBirth
+welcome:hasCityOfBirth rdf:type owl:ObjectProperty ;
+                       owl:inverseOf welcome:isCityOfBirthOf ;
+                       rdfs:domain welcome:Person ;
+                       rdfs:range welcome:CityOfBirth .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasClosingTime
 welcome:hasClosingTime rdf:type owl:ObjectProperty ;
                        rdfs:subPropertyOf welcome:hasTemporalInformation .
@@ -634,6 +641,12 @@ welcome:involvesDIP rdf:type owl:ObjectProperty ;
                     rdfs:range welcome:DIP .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isCityOfBirthOf
+welcome:isCityOfBirthOf rdf:type owl:ObjectProperty ;
+                        rdfs:domain welcome:CityOfBirth ;
+                        rdfs:range welcome:Person .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isCountryOriginOf
 welcome:isCountryOriginOf rdf:type owl:ObjectProperty .
 
@@ -872,7 +885,6 @@ welcome:confidenceScore rdf:type owl:DatatypeProperty ,
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#coordinates
 welcome:coordinates rdf:type owl:DatatypeProperty ;
-                    rdfs:subPropertyOf owl:topDataProperty ;
                     rdfs:domain locn:Address ,
                                 welcome:Location ,
                                 welcome:PhysicalAddress ;
@@ -1040,14 +1052,18 @@ welcome:isUnaccompanied rdf:type owl:DatatypeProperty ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#lat
 welcome:lat rdf:type owl:DatatypeProperty ;
-            rdfs:subPropertyOf welcome:coordinates ;
+            rdfs:domain locn:Address ,
+                        welcome:Location ,
+                        welcome:PhysicalAddress ;
             rdfs:range xsd:double ;
             rdfs:label "latitude"^^xsd:string .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#long
 welcome:long rdf:type owl:DatatypeProperty ;
-             rdfs:subPropertyOf welcome:coordinates ;
+             rdfs:domain locn:Address ,
+                         welcome:Location ,
+                         welcome:PhysicalAddress ;
              rdfs:range xsd:double ;
              rdfs:label "longitude"^^xsd:string .
 
@@ -1498,6 +1514,100 @@ welcome:Modules rdf:type owl:Class .
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Municipality
 welcome:Municipality rdf:type owl:Class ;
                      rdfs:subClassOf welcome:AddressInfo .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NER
+welcome:NER rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NER_CARDINAL
+welcome:NER_CARDINAL rdf:type owl:Class ;
+                     rdfs:subClassOf welcome:NER .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NER_DATE
+welcome:NER_DATE rdf:type owl:Class ;
+                 rdfs:subClassOf welcome:NER .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NER_EVENT
+welcome:NER_EVENT rdf:type owl:Class ;
+                  rdfs:subClassOf welcome:NER .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NER_FAC
+welcome:NER_FAC rdf:type owl:Class ;
+                rdfs:subClassOf welcome:NER .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NER_GPE
+welcome:NER_GPE rdf:type owl:Class ;
+                rdfs:subClassOf welcome:NER .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NER_LANGUAGE
+welcome:NER_LANGUAGE rdf:type owl:Class ;
+                     rdfs:subClassOf welcome:NER .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NER_LAW
+welcome:NER_LAW rdf:type owl:Class ;
+                rdfs:subClassOf welcome:NER .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NER_LOC
+welcome:NER_LOC rdf:type owl:Class ;
+                rdfs:subClassOf welcome:NER .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NER_MONEY
+welcome:NER_MONEY rdf:type owl:Class ;
+                  rdfs:subClassOf welcome:NER .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NER_NORP
+welcome:NER_NORP rdf:type owl:Class ;
+                 rdfs:subClassOf welcome:NER .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NER_ORDINAL
+welcome:NER_ORDINAL rdf:type owl:Class ;
+                    rdfs:subClassOf welcome:NER .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NER_ORG
+welcome:NER_ORG rdf:type owl:Class ;
+                rdfs:subClassOf welcome:NER .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NER_PERCENT
+welcome:NER_PERCENT rdf:type owl:Class ;
+                    rdfs:subClassOf welcome:NER .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NER_PERSON
+welcome:NER_PERSON rdf:type owl:Class ;
+                   rdfs:subClassOf welcome:NER .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NER_PRODUCT
+welcome:NER_PRODUCT rdf:type owl:Class ;
+                    rdfs:subClassOf welcome:NER .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NER_QUANTITY
+welcome:NER_QUANTITY rdf:type owl:Class ;
+                     rdfs:subClassOf welcome:NER .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NER_TIME
+welcome:NER_TIME rdf:type owl:Class ;
+                 rdfs:subClassOf welcome:NER .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NER_WORK_OF_ART
+welcome:NER_WORK_OF_ART rdf:type owl:Class ;
+                        rdfs:subClassOf welcome:NER .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Name
@@ -2327,6 +2437,29 @@ schema:Wednesday rdf:type owl:NamedIndividual ,
                 welcome:Course
                 welcome:CourseInstitution
                 welcome:Duration
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( welcome:NER_CARDINAL
+                welcome:NER_DATE
+                welcome:NER_EVENT
+                welcome:NER_FAC
+                welcome:NER_GPE
+                welcome:NER_LANGUAGE
+                welcome:NER_LAW
+                welcome:NER_LOC
+                welcome:NER_MONEY
+                welcome:NER_NORP
+                welcome:NER_ORDINAL
+                welcome:NER_ORG
+                welcome:NER_PERCENT
+                welcome:NER_PERSON
+                welcome:NER_PRODUCT
+                welcome:NER_QUANTITY
+                welcome:NER_TIME
+                welcome:NER_WORK_OF_ART
               )
 ] .
 
