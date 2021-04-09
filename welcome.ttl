@@ -465,12 +465,6 @@ welcome:hasNextContainer rdf:type owl:ObjectProperty ;
                          rdfs:range welcome:SpeechActContainer .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNextDIP
-welcome:hasNextDIP rdf:type owl:ObjectProperty ;
-                   rdfs:domain welcome:DIP ;
-                   rdfs:range welcome:DIP .
-
-
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNextTurn
 welcome:hasNextTurn rdf:type owl:ObjectProperty ;
                     owl:inverseOf welcome:hasPrevTurn ;
@@ -977,6 +971,11 @@ welcome:hasRelationId rdf:type owl:DatatypeProperty .
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStreetNumber
 welcome:hasStreetNumber rdf:type owl:DatatypeProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTemplateId
+welcome:hasTemplateId rdf:type owl:DatatypeProperty ;
+                      rdfs:range xsd:string .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTimestamp
