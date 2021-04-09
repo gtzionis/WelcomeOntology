@@ -500,7 +500,6 @@ welcome:hasParticipant rdf:type owl:ObjectProperty .
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasPhysicalAddress
 welcome:hasPhysicalAddress rdf:type owl:ObjectProperty ;
-                           rdfs:subPropertyOf owl:topObjectProperty ;
                            rdfs:domain welcome:Organisation ,
                                        welcome:Person ;
                            rdfs:range welcome:PhysicalAddress .
@@ -1389,6 +1388,11 @@ welcome:FirstSurname rdf:type owl:Class ;
                      rdfs:subClassOf welcome:Personal .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#FirstTimeAsylumClaim
+welcome:FirstTimeAsylumClaim rdf:type owl:Class ;
+                             rdfs:subClassOf welcome:Other .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#FloorNumber
 welcome:FloorNumber rdf:type owl:Class ;
                     rdfs:subClassOf welcome:AddressInfo .
@@ -1433,6 +1437,11 @@ welcome:Illiteracy rdf:type owl:Class ;
 welcome:InterestRegistration rdf:type owl:Class .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#InternetAccess
+welcome:InternetAccess rdf:type owl:Class ;
+                       rdfs:subClassOf welcome:Other .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#InternetAddress
 welcome:InternetAddress rdf:type owl:Class ;
                         rdfs:subClassOf welcome:ContactInformation .
@@ -1446,6 +1455,11 @@ welcome:KnowledgeCatalan rdf:type owl:Class ;
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#KnowledgeLabour
 welcome:KnowledgeLabour rdf:type owl:Class ;
                         rdfs:subClassOf welcome:Training .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#KnowledgeSkype
+welcome:KnowledgeSkype rdf:type owl:Class ;
+                       rdfs:subClassOf welcome:Other .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#KnowledgeSociety
@@ -2360,34 +2374,6 @@ schema:Wednesday rdf:type owl:NamedIndividual ,
 #################################################################
 #    General axioms
 #################################################################
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( welcome:AsylumClaim
-                welcome:Illiteracy
-                welcome:LearningHandicap
-                welcome:MaritalStatus
-                welcome:PreviousResidenceCatalonia
-                welcome:PreviousResidenceOther
-                welcome:PreviousResidenceSpain
-                welcome:RegistrationYear
-                welcome:YearArrival
-                welcome:literacy
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( welcome:AsylumClaim
-                welcome:LearningHandicap
-                welcome:MaritalStatus
-                welcome:PreviousResidenceCatalonia
-                welcome:PreviousResidenceOther
-                welcome:PreviousResidenceSpain
-                welcome:YearArrival
-                welcome:literacy
-              )
-] .
-
 
 [ rdf:type owl:AllDisjointClasses ;
   owl:members ( welcome:Birthday
