@@ -519,6 +519,10 @@ welcome:hasRequestType rdf:type owl:ObjectProperty ;
                        rdfs:subPropertyOf owl:topObjectProperty .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasSkypeInfo
+welcome:hasSkypeInfo rdf:type owl:ObjectProperty .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasSlot
 welcome:hasSlot rdf:type owl:ObjectProperty ;
                 rdfs:domain welcome:DIP ;
@@ -738,6 +742,10 @@ welcome:isUsernameOf rdf:type owl:ObjectProperty ;
                      rdfs:range welcome:Person .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#offeredBy
+welcome:offeredBy rdf:type owl:ObjectProperty .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#offersCourse
 welcome:offersCourse rdf:type owl:ObjectProperty .
 
@@ -753,6 +761,10 @@ welcome:repliesToUserResponse rdf:type owl:ObjectProperty ;
                               rdfs:subPropertyOf owl:topObjectProperty ;
                               rdfs:domain welcome:DialogueSystemTurn ;
                               rdfs:range welcome:DialogueUserTurn .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#requiresLanguage
+welcome:requiresLanguage rdf:type owl:ObjectProperty .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#speaksLanguage
@@ -969,6 +981,10 @@ welcome:hasPhone rdf:type owl:DatatypeProperty .
 welcome:hasRelationId rdf:type owl:DatatypeProperty .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasSkypeId
+welcome:hasSkypeId rdf:type owl:DatatypeProperty .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStreetNumber
 welcome:hasStreetNumber rdf:type owl:DatatypeProperty .
 
@@ -1124,16 +1140,6 @@ spaciallyIntersects(P1, P2) :- lat(P1, LAT), long(P1, LONG), alt(P1, ALT),
 
 sameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P2).
   """ ,
-                             """ 
-Uniquely identified by lat/long/alt. i.e.
-
-spaciallyIntersects(P1, P2) :- lat(P1, LAT), long(P1, LONG), alt(P1, ALT),
-  lat(P2, LAT), long(P2, LONG), alt(P2, ALT).
-
-sameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P2).
-  """ ,
-                             """A point, typically described using a coordinate system relative to Earth, such as WGS84.
-  """ ,
                              """A point, typically described using a coordinate system relative to Earth, such as WGS84.
   """ ;
                 rdfs:label "point" .
@@ -1142,9 +1148,6 @@ sameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P
 ###  http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing
 wgs84_pos:SpatialThing rdf:type owl:Class ;
                        rdfs:comment """Anything with spatial extent, i.e. size, shape, or position.
- e.g. people, places, bowling balls, as well as abstract areas like cubes.
-""" ,
-                                    """Anything with spatial extent, i.e. size, shape, or position.
  e.g. people, places, bowling balls, as well as abstract areas like cubes.
 """ ;
                        rdfs:label "SpatialThing" .
@@ -1187,6 +1190,11 @@ welcome:AddressInfo rdf:type owl:Class ;
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AsylumClaim
 welcome:AsylumClaim rdf:type owl:Class ;
                     rdfs:subClassOf welcome:Other .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AsylumOffice
+welcome:AsylumOffice rdf:type owl:Class ;
+                     rdfs:subClassOf welcome:Office .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Birthday
@@ -1758,6 +1766,11 @@ welcome:ServiceRequest rdf:type owl:Class ;
                        rdfs:subClassOf welcome:Request .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SkypeInformation
+welcome:SkypeInformation rdf:type owl:Class ;
+                         rdfs:subClassOf welcome:Descriptors .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Slot
 welcome:Slot rdf:type owl:Class ;
              rdfs:subClassOf welcome:DialogueCommunication .
@@ -1917,10 +1930,17 @@ gn:Feature rdf:type owl:Class .
 #    Individuals
 #################################################################
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Arabic
+welcome:Arabic rdf:type owl:NamedIndividual ,
+                        welcome:Language .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Athens
 welcome:Athens rdf:type owl:NamedIndividual ,
                         welcome:City ,
-                        welcome:Location .
+                        welcome:Location ;
+               welcome:lat 37.9838 ;
+               welcome:long 23.72753 .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Cambrils
@@ -1937,16 +1957,42 @@ welcome:Completed rdf:type owl:NamedIndividual ,
                   rdfs:label "Status completed" .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Crete
+welcome:Crete rdf:type owl:NamedIndividual ,
+                       welcome:City ,
+                       welcome:Location ;
+              welcome:lat 35.24011 ;
+              welcome:long 24.80926 .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#English
+welcome:English rdf:type owl:NamedIndividual ,
+                         welcome:Language .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#FailedAnalysis
 welcome:FailedAnalysis rdf:type owl:NamedIndividual ,
                                 welcome:DIPStatus ;
                        rdfs:label "Status failed analysis" .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#French
+welcome:French rdf:type owl:NamedIndividual ,
+                        welcome:Language .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Greece
 welcome:Greece rdf:type owl:NamedIndividual ,
                         welcome:Country ,
                         welcome:Location .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Leros
+welcome:Leros rdf:type owl:NamedIndividual ,
+                       welcome:City ,
+                       welcome:Location ;
+              welcome:lat 37.14091 ;
+              welcome:long 26.84884 .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OAC_Cambrils
@@ -2039,10 +2085,26 @@ welcome:OAC_PlacaDido rdf:type owl:NamedIndividual ,
                       actor:webURL "https://www.terrassa.cat/" .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Patra
+welcome:Patra rdf:type owl:NamedIndividual ,
+                       welcome:City ,
+                       welcome:Location ;
+              welcome:lat 38.20882 ;
+              welcome:long 21.78531 .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Pending
 welcome:Pending rdf:type owl:NamedIndividual ,
                          welcome:DIPStatus ;
                 rdfs:label "Status pending" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Rodos
+welcome:Rodos rdf:type owl:NamedIndividual ,
+                       welcome:City ,
+                       welcome:Location ;
+              welcome:lat 36.43405 ;
+              welcome:long 28.21763 .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Spain
@@ -2070,7 +2132,9 @@ welcome:Terrassa rdf:type owl:NamedIndividual ,
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Thessaloniki
 welcome:Thessaloniki rdf:type owl:NamedIndividual ,
                               welcome:City ,
-                              welcome:Location .
+                              welcome:Location ;
+                     welcome:lat 40.64006 ;
+                     welcome:long 22.94441 .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#TopicSwitch
@@ -2115,8 +2179,7 @@ welcome:address_districte3 rdf:type owl:NamedIndividual ,
                            welcome:hasCountry welcome:Spain ;
                            actor:physicalAddress "Pl de Can Palet, 1 (08223 Terrassa)" ;
                            welcome:lat 41.55578 ;
-                           welcome:long 41.55578 ;
-                           rdfs:comment "Oficina d'Atenció Ciutadana del Districte 3 - OAC" .
+                           welcome:long 41.55578 .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#address_districte4
@@ -2193,7 +2256,8 @@ welcome:address_praksisAthens rdf:type owl:NamedIndividual ,
                               welcome:hasCountry welcome:Greece ;
                               actor:physicalAddress "23, Sarpidonos Street, Athens, Greece" ;
                               welcome:lat 37.99919 ;
-                              welcome:long 23.70559 .
+                              welcome:long 23.70559 ;
+                              <http://purl.org/dc/terms/isRequiredBy> "informAddress" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#address_praksisThessaloniki
@@ -2204,7 +2268,68 @@ welcome:address_praksisThessaloniki rdf:type owl:NamedIndividual ,
                                     welcome:hasCountry welcome:Greece ;
                                     actor:physicalAddress "1, Arkadioupoleon & Agiou Dimitriou Streets, Thessaloniki, Greece" ;
                                     welcome:lat 40.64376 ;
-                                    welcome:long 22.9371 .
+                                    welcome:long 22.9371 ;
+                                    <http://purl.org/dc/terms/isRequiredBy> "informAddress" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#asylum_Attica
+welcome:asylum_Attica rdf:type owl:NamedIndividual ,
+                               welcome:AsylumOffice ,
+                               welcome:Office ;
+                      welcome:hasCity welcome:Athens ;
+                      welcome:hasHoursSpec welcome:slot_ar_attica_1 ,
+                                           welcome:slot_ar_attica_2 ,
+                                           welcome:slot_ef_attica_1 ,
+                                           welcome:slot_ef_attica_2 .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#asylum_Crete
+welcome:asylum_Crete rdf:type owl:NamedIndividual ,
+                              welcome:AsylumOffice ,
+                              welcome:Office ;
+                     welcome:hasCity welcome:Crete ;
+                     welcome:hasHoursSpec welcome:slot_ar_crete ,
+                                          welcome:slot_ef_crete .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#asylum_Leros
+welcome:asylum_Leros rdf:type owl:NamedIndividual ,
+                              welcome:AsylumOffice ,
+                              welcome:Office ;
+                     welcome:hasCity welcome:Leros ;
+                     welcome:hasHoursSpec welcome:slot_ar_leros .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#asylum_Patra
+welcome:asylum_Patra rdf:type owl:NamedIndividual ,
+                              welcome:AsylumOffice ,
+                              welcome:Office ;
+                     welcome:hasCity welcome:Patra ;
+                     welcome:hasHoursSpec welcome:slot_ar_patra .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#asylum_Rodos
+welcome:asylum_Rodos rdf:type owl:NamedIndividual ,
+                              welcome:AsylumOffice ,
+                              welcome:Office ;
+                     welcome:hasCity welcome:Rodos ;
+                     welcome:hasHoursSpec welcome:slot_ar_rodos .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#asylum_Syria
+welcome:asylum_Syria rdf:type owl:NamedIndividual ,
+                              welcome:AsylumOffice ,
+                              welcome:Office ;
+                     welcome:hasHoursSpec welcome:slot_ar_syria .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#asylum_Thes
+welcome:asylum_Thes rdf:type owl:NamedIndividual ,
+                             welcome:AsylumOffice ,
+                             welcome:Office ;
+                    welcome:hasCity welcome:Thessaloniki ;
+                    welcome:hasHoursSpec welcome:slot_ar_thes ,
+                                         welcome:slot_ef_thes .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#course_catalanLanguage
@@ -2322,7 +2447,9 @@ welcome:praksisAthens rdf:type owl:NamedIndividual ,
                       locn:address welcome:address_praksisAthens ;
                       actor:email "info@praksis.gr" ;
                       actor:name "Community Center Athens" ;
-                      actor:phone "210-8213704" .
+                      actor:phone "210-8213704" ;
+                      <http://purl.org/dc/terms/isRequiredBy> "informEmail" ,
+                                                              "informTelephoneNumber" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#praksisThessaloniki
@@ -2332,7 +2459,135 @@ welcome:praksisThessaloniki rdf:type owl:NamedIndividual ,
                             locn:address welcome:address_praksisThessaloniki ;
                             actor:email "info@praksis.gr" ;
                             actor:name "Polyclinic Thessaloniki" ;
-                            actor:phone "2310-556145" .
+                            actor:phone "2310-556145" ;
+                            <http://purl.org/dc/terms/isRequiredBy> "informEmail" ,
+                                                                    "informTelephoneNumber" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#skype_informArabic
+welcome:skype_informArabic rdf:type owl:NamedIndividual ,
+                                    welcome:SkypeInformation ;
+                           welcome:requiresLanguage welcome:Arabic ;
+                           welcome:hasSkypeId "asylum.service.arabic" ;
+                           <http://purl.org/dc/terms/isRequiredBy> "informSkypeID" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#skype_informEnglish
+welcome:skype_informEnglish rdf:type owl:NamedIndividual ,
+                                     welcome:SkypeInformation ;
+                            welcome:requiresLanguage welcome:English ,
+                                                     welcome:French ;
+                            welcome:hasSkypeId "asylum.service" ;
+                            <http://purl.org/dc/terms/isRequiredBy> "informSkypeID" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#slot_ar_attica_1
+welcome:slot_ar_attica_1 rdf:type owl:NamedIndividual ,
+                                  schema:OpeningHoursSpecification ;
+                         welcome:hasSkypeInfo welcome:skype_informArabic ;
+                         schema:dayOfWeek schema:Monday ;
+                         schema:closes "09:00" ;
+                         schema:opens "08:00" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#slot_ar_attica_2
+welcome:slot_ar_attica_2 rdf:type owl:NamedIndividual ,
+                                  schema:OpeningHoursSpecification ;
+                         welcome:hasSkypeInfo welcome:skype_informArabic ;
+                         schema:dayOfWeek schema:Monday ,
+                                          schema:Thursday ;
+                         schema:closes "12:00" ;
+                         schema:opens "11:00" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#slot_ar_crete
+welcome:slot_ar_crete rdf:type owl:NamedIndividual ,
+                               schema:OpeningHoursSpecification ;
+                      welcome:hasSkypeInfo welcome:skype_informArabic ;
+                      schema:dayOfWeek schema:Monday ;
+                      schema:closes "10:00" ;
+                      schema:opens "09:00" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#slot_ar_leros
+welcome:slot_ar_leros rdf:type owl:NamedIndividual ,
+                               schema:OpeningHoursSpecification ;
+                      welcome:hasSkypeInfo welcome:skype_informArabic ;
+                      schema:dayOfWeek schema:Monday ;
+                      schema:closes "10:00" ;
+                      schema:opens "09:00" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#slot_ar_patra
+welcome:slot_ar_patra rdf:type owl:NamedIndividual ,
+                               schema:OpeningHoursSpecification ;
+                      welcome:hasSkypeInfo welcome:skype_informArabic ;
+                      schema:dayOfWeek schema:Monday ;
+                      schema:closes "09:00" ;
+                      schema:opens "08:00" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#slot_ar_rodos
+welcome:slot_ar_rodos rdf:type owl:NamedIndividual ,
+                               schema:OpeningHoursSpecification ;
+                      welcome:hasSkypeInfo welcome:skype_informArabic ;
+                      schema:dayOfWeek schema:Tuesday ;
+                      schema:closes "12:00" ;
+                      schema:opens "10:00" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#slot_ar_syria
+welcome:slot_ar_syria rdf:type owl:NamedIndividual ,
+                               schema:OpeningHoursSpecification ;
+                      welcome:hasSkypeInfo welcome:skype_informArabic ;
+                      schema:dayOfWeek schema:Wednesday ;
+                      schema:closes "12:00" ;
+                      schema:opens "11:00" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#slot_ar_thes
+welcome:slot_ar_thes rdf:type owl:NamedIndividual ,
+                              schema:OpeningHoursSpecification ;
+                     welcome:hasSkypeInfo welcome:skype_informArabic ;
+                     schema:dayOfWeek schema:Tuesday ;
+                     schema:closes "12:00" ;
+                     schema:opens "10:00" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#slot_ef_attica_1
+welcome:slot_ef_attica_1 rdf:type owl:NamedIndividual ,
+                                  schema:OpeningHoursSpecification ;
+                         welcome:hasSkypeInfo welcome:skype_informEnglish ;
+                         schema:dayOfWeek schema:Wednesday ;
+                         schema:closes "10:00" ;
+                         schema:opens "09:00" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#slot_ef_attica_2
+welcome:slot_ef_attica_2 rdf:type owl:NamedIndividual ,
+                                  schema:OpeningHoursSpecification ;
+                         welcome:hasSkypeInfo welcome:skype_informEnglish ;
+                         schema:dayOfWeek schema:Friday ;
+                         schema:closes "10:00" ;
+                         schema:opens "09:00" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#slot_ef_crete
+welcome:slot_ef_crete rdf:type owl:NamedIndividual ,
+                               schema:OpeningHoursSpecification ;
+                      welcome:hasSkypeInfo welcome:skype_informEnglish ;
+                      schema:dayOfWeek schema:Wednesday ;
+                      schema:closes "10:00" ;
+                      schema:opens "09:00" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#slot_ef_thes
+welcome:slot_ef_thes rdf:type owl:NamedIndividual ,
+                              schema:OpeningHoursSpecification ;
+                     welcome:hasSkypeInfo welcome:skype_informEnglish ;
+                     schema:dayOfWeek schema:Friday ;
+                     schema:closes "10:00" ;
+                     schema:opens "09:00" .
 
 
 ###  https://schema.org/Friday
