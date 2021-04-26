@@ -458,6 +458,11 @@ welcome:hasName rdf:type owl:ObjectProperty ;
                 rdfs:range welcome:Person .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNamedGraph
+welcome:hasNamedGraph rdf:type owl:ObjectProperty ;
+                      rdfs:domain welcome:DIP .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNextContainer
 welcome:hasNextContainer rdf:type owl:ObjectProperty ;
                          owl:inverseOf welcome:hasPreviousContainer ;
@@ -708,12 +713,6 @@ welcome:isPhysicalAddressOf rdf:type owl:ObjectProperty .
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isPovidedBy
 welcome:isPovidedBy rdf:type owl:ObjectProperty ;
                     owl:inverseOf welcome:offersCourse .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isRegistered
-welcome:isRegistered rdf:type owl:ObjectProperty ;
-                     rdfs:subPropertyOf owl:topObjectProperty ;
-                     rdfs:domain <http://www.daml.org/services/owl-s/1.1/Service.owl#Service> .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isRelatedToUser
