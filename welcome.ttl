@@ -1,13 +1,19 @@
 @prefix : <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#> .
+@prefix gn: <https://www.geonames.org/ontology#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix actor: <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#> .
+@prefix schema: <https://schema.org/> .
 @prefix process: <http://www.daml.org/services/owl-s/1.1/Process.owl> .
 @prefix profile: <http://www.daml.org/services/owl-s/1.1/Profile.owl> .
 @prefix service: <http://www.daml.org/services/owl-s/1.1/Service.owl> .
 @prefix welcome: <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#> .
+@prefix geovocab: <http://geovocab.org/spatial#> .
+@prefix wgs84_pos: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @base <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl> .
 
 <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl> rdf:type owl:Ontology ;
@@ -746,6 +752,11 @@ welcome:hasNumberHours rdf:type owl:DatatypeProperty .
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasRelationId
 welcome:hasRelationId rdf:type owl:DatatypeProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTemplateId
+welcome:hasTemplateId rdf:type owl:DatatypeProperty ;
+                      rdfs:range xsd:string .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTimestamp
