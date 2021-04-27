@@ -750,9 +750,9 @@ welcome:hasNumberHours rdf:type owl:DatatypeProperty .
 welcome:hasRelationId rdf:type owl:DatatypeProperty .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasSlotTemplate
-welcome:hasSlotTemplate rdf:type owl:DatatypeProperty ;
-                        rdfs:range xsd:string .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTemplateId
+welcome:hasTemplateId rdf:type owl:DatatypeProperty ;
+                      rdfs:range xsd:string .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTimestamp
