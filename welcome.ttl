@@ -1999,6 +1999,7 @@ welcome:OAC_Cambrils rdf:type owl:NamedIndividual ,
                               actor:Actor ,
                               welcome:RegistrationOffice ;
                      locn:address welcome:address_cambrils ;
+                     actor:email "" ;
                      actor:name "Oficina d'Atencio Ciutadana - OAC" ;
                      actor:phone "977 794 579" ;
                      actor:webURL "https://www.cambrils.cat/" .
@@ -2009,6 +2010,7 @@ welcome:OAC_Districte2 rdf:type owl:NamedIndividual ,
                                 actor:Actor ,
                                 welcome:RegistrationOffice ;
                        locn:address welcome:address_districte2 ;
+                       actor:email "" ;
                        actor:name "Oficina d'Atenció Ciutadana del Districte 2 - OAC" ;
                        actor:phone "937 397 000" ;
                        actor:webURL "https://www.terrassa.cat/" .
@@ -2019,6 +2021,7 @@ welcome:OAC_Districte3 rdf:type owl:NamedIndividual ,
                                 actor:Actor ,
                                 welcome:RegistrationOffice ;
                        locn:address welcome:address_districte3 ;
+                       actor:email "" ;
                        actor:name "Oficina d'Atenció Ciutadana del Districte 3 - OAC" ;
                        actor:phone "937 397 000" ;
                        actor:webURL "https://www.terrassa.cat/" .
@@ -2029,6 +2032,7 @@ welcome:OAC_Districte4 rdf:type owl:NamedIndividual ,
                                 actor:Actor ,
                                 welcome:RegistrationOffice ;
                        locn:address welcome:address_districte4 ;
+                       actor:email "" ;
                        actor:name "Oficina d'Atenció Ciutadana del Districte 4 - OAC" ;
                        actor:phone "937 397 000" ;
                        actor:webURL "https://www.terrassa.cat/" .
@@ -2039,6 +2043,7 @@ welcome:OAC_Districte5 rdf:type owl:NamedIndividual ,
                                 actor:Actor ,
                                 welcome:RegistrationOffice ;
                        locn:address welcome:address_districte5 ;
+                       actor:email "" ;
                        actor:name "Oficina d'Atenció Ciutadana del Districte 5 - OAC" ;
                        actor:phone "937 397 000" ;
                        actor:webURL "https://www.terrassa.cat/" .
@@ -2049,6 +2054,7 @@ welcome:OAC_Districte6 rdf:type owl:NamedIndividual ,
                                 actor:Actor ,
                                 welcome:RegistrationOffice ;
                        locn:address welcome:address_districte6 ;
+                       actor:email "" ;
                        actor:name "Oficina d'Atenció Ciutadana del Districte 6 - OAC" ;
                        actor:phone "937 397 000" ;
                        actor:webURL "https://www.terrassa.cat/" .
@@ -2059,6 +2065,7 @@ welcome:OAC_Districte7 rdf:type owl:NamedIndividual ,
                                 actor:Actor ,
                                 welcome:RegistrationOffice ;
                        locn:address welcome:address_districte7 ;
+                       actor:email "" ;
                        actor:name "Oficina d'Atenció Ciutadana del Districte 7 - OAC" ;
                        actor:phone "937 397 000" ;
                        actor:webURL "https://www.terrassa.cat/" .
@@ -2069,6 +2076,7 @@ welcome:OAC_DretsSocials rdf:type owl:NamedIndividual ,
                                   actor:Actor ,
                                   welcome:RegistrationOffice ;
                          locn:address welcome:address_dretssocial ;
+                         actor:email "" ;
                          actor:name "Oficina d'Atencio Ciutadana de l'Area de Drets Socials" ;
                          actor:phone "937 397 000" ;
                          actor:webURL "https://www.terrassa.cat/" .
@@ -2079,6 +2087,7 @@ welcome:OAC_PlacaDido rdf:type owl:NamedIndividual ,
                                actor:Actor ,
                                welcome:RegistrationOffice ;
                       locn:address welcome:address_placadido ;
+                      actor:email "" ;
                       actor:name "Oficina d'Atenció Ciutadana de Plaça Didó - OAC" ;
                       actor:phone "937 397 000" ;
                       actor:webURL "https://www.terrassa.cat/" .
@@ -2442,11 +2451,12 @@ welcome:poi_3 rdf:type owl:NamedIndividual ,
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#praksisAthens
 welcome:praksisAthens rdf:type owl:NamedIndividual ,
                                actor:Actor ,
-                               welcome:Office ;
+                               welcome:RegistrationOffice ;
                       locn:address welcome:address_praksisAthens ;
                       actor:email "info@praksis.gr" ;
                       actor:name "Community Center Athens" ;
                       actor:phone "210-8213704" ;
+                      actor:webURL "" ;
                       <http://purl.org/dc/terms/isRequiredBy> "informEmail" ,
                                                               "informTelephoneNumber" .
 
@@ -2454,11 +2464,12 @@ welcome:praksisAthens rdf:type owl:NamedIndividual ,
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#praksisThessaloniki
 welcome:praksisThessaloniki rdf:type owl:NamedIndividual ,
                                      actor:Actor ,
-                                     welcome:Office ;
+                                     welcome:RegistrationOffice ;
                             locn:address welcome:address_praksisThessaloniki ;
                             actor:email "info@praksis.gr" ;
                             actor:name "Polyclinic Thessaloniki" ;
                             actor:phone "2310-556145" ;
+                            actor:webURL "" ;
                             <http://purl.org/dc/terms/isRequiredBy> "informEmail" ,
                                                                     "informTelephoneNumber" .
 
