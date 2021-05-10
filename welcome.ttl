@@ -4,6 +4,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix locn: <http://www.w3.org/ns/locn#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix actor: <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#> .
@@ -1129,12 +1130,12 @@ geovocab:Feature rdf:type owl:Class ;
 
 ###  http://purl.org/dc/terms/Agent
 <http://purl.org/dc/terms/Agent> rdf:type owl:Class ;
-                                 owl:equivalentClass <http://xmlns.com/foaf/0.1/Agent> .
+                                 owl:equivalentClass foaf:Agent .
 
 
 ###  http://schema.org/Person
 <http://schema.org/Person> rdf:type owl:Class ;
-                           owl:equivalentClass <http://xmlns.com/foaf/0.1/Person> .
+                           owl:equivalentClass foaf:Person .
 
 
 ###  http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#Actor
@@ -1185,30 +1186,30 @@ locn:Address rdf:type owl:Class ;
 
 
 ###  http://xmlns.com/foaf/0.1/Agent
-<http://xmlns.com/foaf/0.1/Agent> rdf:type owl:Class ;
-                                  rdfs:comment "An agent (eg. person, group, software or physical artifact)." ;
-                                  rdfs:label "Agent" ;
-                                  <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+foaf:Agent rdf:type owl:Class ;
+           rdfs:comment "An agent (eg. person, group, software or physical artifact)." ;
+           rdfs:label "Agent" ;
+           <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
 
 
 ###  http://xmlns.com/foaf/0.1/Organization
-<http://xmlns.com/foaf/0.1/Organization> rdf:type owl:Class ;
-                                         owl:disjointWith <http://xmlns.com/foaf/0.1/Person> .
+foaf:Organization rdf:type owl:Class ;
+                  owl:disjointWith foaf:Person .
 
 
 ###  http://xmlns.com/foaf/0.1/Person
-<http://xmlns.com/foaf/0.1/Person> rdf:type owl:Class ;
-                                   rdfs:subClassOf wgs84_pos:SpatialThing ,
-                                                   <http://xmlns.com/foaf/0.1/Agent> ;
-                                   owl:disjointWith <http://xmlns.com/foaf/0.1/Project> ;
-                                   rdfs:comment "A person." ;
-                                   rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> ;
-                                   rdfs:label "Person" ;
-                                   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+foaf:Person rdf:type owl:Class ;
+            rdfs:subClassOf wgs84_pos:SpatialThing ,
+                            foaf:Agent ;
+            owl:disjointWith foaf:Project ;
+            rdfs:comment "A person." ;
+            rdfs:isDefinedBy foaf: ;
+            rdfs:label "Person" ;
+            <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
 
 
 ###  http://xmlns.com/foaf/0.1/Project
-<http://xmlns.com/foaf/0.1/Project> rdf:type owl:Class .
+foaf:Project rdf:type owl:Class .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AccessCatalanTraining
@@ -1400,7 +1401,7 @@ welcome:DialogueTurn rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DialogueUser
 welcome:DialogueUser rdf:type owl:Class ;
-                     rdfs:subClassOf <http://xmlns.com/foaf/0.1/Agent> .
+                     rdfs:subClassOf foaf:Agent .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DialogueUserTurn
@@ -2170,7 +2171,7 @@ welcome:Rodos rdf:type owl:NamedIndividual ,
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SimulationAgent
 welcome:SimulationAgent rdf:type owl:NamedIndividual ,
-                                 <http://xmlns.com/foaf/0.1/Agent> ;
+                                 foaf:Agent ;
                         welcome:hasScheduleAction welcome:sa_1 ,
                                                   welcome:sa_2 ,
                                                   welcome:sa_3 ,
