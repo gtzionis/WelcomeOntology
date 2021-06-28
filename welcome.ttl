@@ -404,7 +404,7 @@ welcome:hasDialogueUser rdf:type owl:ObjectProperty ;
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasEmail
 welcome:hasEmail rdf:type owl:ObjectProperty ;
                  owl:inverseOf welcome:isEmailOf ;
-                 rdfs:range welcome:E-mail .
+                 rdfs:range welcome:Email .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasFirstName
@@ -651,7 +651,7 @@ welcome:isCountryOriginOf rdf:type owl:ObjectProperty .
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isEmailOf
 welcome:isEmailOf rdf:type owl:ObjectProperty ;
-                  rdfs:domain welcome:E-mail .
+                  rdfs:domain welcome:Email .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isEntity1
@@ -1180,7 +1180,7 @@ wgs84_pos:SpatialThing rdf:type owl:Class ;
 locn:Address rdf:type owl:Class ;
              owl:equivalentClass welcome:PhysicalAddress ;
              <http://purl.org/dc/terms/identifier> "locn:Address"@en ;
-             rdfs:comment "An &quot;address representation&quot; as defined in the <a href=\"https://inspire-twg.jrc.ec.europa.eu/inspire-fc.html#_C2538\">data specifications</a> of the EU INSPIRE Directive. The <a href=\"#locn:addressId\">locn:addressId</a> property may be used to link this Address to other representations."^^rdf:XMLLiteral ;
+             rdfs:comment "An &quot;address representation&quot; as defined in the <a href=\"https://inspire-twg.jrc.ec.europa.eu/inspire-fc.html#_C2538\">data specifications</a> of the EU INSPIRE Directive. The <a href=\"#locn:addressId\">locn:addressId</a> property may be used to link this Address to other representations."^^xsd:string ;
              rdfs:label "Address"@en ;
              <http://www.w3.org/2007/05/powder-s#describedby> <https://joinup.ec.europa.eu/system/files/project/Core_Vocabularies-Business_Location_Person-Specification-v0.3_0.zip> .
 
@@ -1237,6 +1237,11 @@ welcome:AddressInfo rdf:type owl:Class ;
                     rdfs:subClassOf welcome:ContactInformation .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AppointmentConcern
+welcome:AppointmentConcern rdf:type owl:Class ;
+                           rdfs:subClassOf welcome:Descriptors .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AsylumClaim
 welcome:AsylumClaim rdf:type owl:Class ;
                     rdfs:subClassOf welcome:Other .
@@ -1272,6 +1277,31 @@ welcome:CatalanCourse rdf:type owl:Class ;
                       rdfs:subClassOf welcome:Training .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Certificate
+welcome:Certificate rdf:type owl:Class ;
+                    rdfs:subClassOf welcome:Education .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CertificateCatalan
+welcome:CertificateCatalan rdf:type owl:Class ;
+                           rdfs:subClassOf welcome:Certificate .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CertificateCatalanSociety
+welcome:CertificateCatalanSociety rdf:type owl:Class ;
+                                  rdfs:subClassOf welcome:Certificate .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CertificateLabourMarket
+welcome:CertificateLabourMarket rdf:type owl:Class ;
+                                rdfs:subClassOf welcome:Certificate .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CertificateSpanish
+welcome:CertificateSpanish rdf:type owl:Class ;
+                           rdfs:subClassOf welcome:Certificate .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#City
 welcome:City rdf:type owl:Class ;
              rdfs:subClassOf welcome:PhysicalAddress .
@@ -1285,6 +1315,26 @@ welcome:CityOfBirth rdf:type owl:Class ;
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CompletionYear
 welcome:CompletionYear rdf:type owl:Class ;
                        rdfs:subClassOf welcome:Education .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CompletionYearCatalan
+welcome:CompletionYearCatalan rdf:type owl:Class ;
+                              rdfs:subClassOf welcome:CompletionYear .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CompletionYearCatalanSociety
+welcome:CompletionYearCatalanSociety rdf:type owl:Class ;
+                                     rdfs:subClassOf welcome:CompletionYear .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CompletionYearLabourMarket
+welcome:CompletionYearLabourMarket rdf:type owl:Class ;
+                                   rdfs:subClassOf welcome:CompletionYear .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CompletionYearSpanish
+welcome:CompletionYearSpanish rdf:type owl:Class ;
+                              rdfs:subClassOf welcome:CompletionYear .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ContactInformation
@@ -1325,6 +1375,51 @@ welcome:Course rdf:type owl:Class ;
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CourseInstitution
 welcome:CourseInstitution rdf:type owl:Class ;
                           rdfs:subClassOf welcome:Education .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CourseInstitutionCatalan
+welcome:CourseInstitutionCatalan rdf:type owl:Class ;
+                                 rdfs:subClassOf welcome:CourseInstitution .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CourseInstitutionCatalanSociety
+welcome:CourseInstitutionCatalanSociety rdf:type owl:Class ;
+                                        rdfs:subClassOf welcome:CourseInstitution .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CourseInstitutionLabourMarket
+welcome:CourseInstitutionLabourMarket rdf:type owl:Class ;
+                                      rdfs:subClassOf welcome:CourseInstitution .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CourseInstitutionSpanish
+welcome:CourseInstitutionSpanish rdf:type owl:Class ;
+                                 rdfs:subClassOf welcome:CourseInstitution .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CourseName
+welcome:CourseName rdf:type owl:Class ;
+                   rdfs:subClassOf welcome:Education .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CourseNameCatalan
+welcome:CourseNameCatalan rdf:type owl:Class ;
+                          rdfs:subClassOf welcome:CourseName .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CourseNameCatalanSociety
+welcome:CourseNameCatalanSociety rdf:type owl:Class ;
+                                 rdfs:subClassOf welcome:CourseName .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CourseNameLabourMarket
+welcome:CourseNameLabourMarket rdf:type owl:Class ;
+                               rdfs:subClassOf welcome:CourseName .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CourseNameSpanish
+welcome:CourseNameSpanish rdf:type owl:Class ;
+                          rdfs:subClassOf welcome:CourseName .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CourseSociety
@@ -1419,20 +1514,40 @@ welcome:Duration rdf:type owl:Class ;
                  rdfs:subClassOf welcome:Education .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#E-mail
-welcome:E-mail rdf:type owl:Class ;
-               rdfs:subClassOf welcome:InternetAddress ,
-                               welcome:Personal .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DurationCatalan
+welcome:DurationCatalan rdf:type owl:Class ;
+                        rdfs:subClassOf welcome:Duration .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#E-mailNotification
-welcome:E-mailNotification rdf:type owl:Class ;
-                           rdfs:subClassOf welcome:Personal .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DurationCatalanSociety
+welcome:DurationCatalanSociety rdf:type owl:Class ;
+                               rdfs:subClassOf welcome:Duration .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DurationLabourMarket
+welcome:DurationLabourMarket rdf:type owl:Class ;
+                             rdfs:subClassOf welcome:Duration .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DurationSpanish
+welcome:DurationSpanish rdf:type owl:Class ;
+                        rdfs:subClassOf welcome:Duration .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Education
 welcome:Education rdf:type owl:Class ;
                   rdfs:subClassOf welcome:PersonalInformation .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Email
+welcome:Email rdf:type owl:Class ;
+              rdfs:subClassOf welcome:InternetAddress ,
+                              welcome:Personal .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#EmailNotifications
+welcome:EmailNotifications rdf:type owl:Class ;
+                           rdfs:subClassOf welcome:Personal .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Entrance
@@ -1796,9 +1911,9 @@ welcome:Role rdf:type owl:Class ;
              rdfs:subClassOf welcome:DialogueCommunication .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SMSNotification
-welcome:SMSNotification rdf:type owl:Class ;
-                        rdfs:subClassOf welcome:Personal .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SMSNotifications
+welcome:SMSNotifications rdf:type owl:Class ;
+                         rdfs:subClassOf welcome:Personal .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SecondSurname
@@ -2448,7 +2563,7 @@ welcome:module_labour rdf:type owl:NamedIndividual ,
                       welcome:offersCourse welcome:course_labourCourse ;
                       gn:nearby welcome:poi_2 ;
                       welcome:moduleName "Labour market knowledge" ;
-                      <http://purl.org/dc/terms/isRequiredBy> "InformLabourModule" .
+                      <http://purl.org/dc/terms/isRequiredBy> "informLabourModule" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#module_labour_hours
@@ -2457,7 +2572,7 @@ welcome:module_labour_hours rdf:type owl:NamedIndividual ,
                             schema:dayOfWeek schema:Wednesday ;
                             schema:closes "21:00" ;
                             schema:opens "19:00" ;
-                            <http://purl.org/dc/terms/isRequiredBy> "InformLabourModuleHours" .
+                            <http://purl.org/dc/terms/isRequiredBy> "informLabourModuleHours" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#module_language
@@ -2468,7 +2583,7 @@ welcome:module_language rdf:type owl:NamedIndividual ,
                                              welcome:course_spanishLanguage ;
                         gn:nearby welcome:poi_1 ;
                         welcome:moduleName "Languages" ;
-                        <http://purl.org/dc/terms/isRequiredBy> "InformLanguageModule" .
+                        <http://purl.org/dc/terms/isRequiredBy> "informLanguageModule" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#module_language_hours
@@ -2478,7 +2593,7 @@ welcome:module_language_hours rdf:type owl:NamedIndividual ,
                                                schema:Monday ;
                               schema:closes "21:00" ;
                               schema:opens "19:00" ;
-                              <http://purl.org/dc/terms/isRequiredBy> "InformLanguageModuleHours" .
+                              <http://purl.org/dc/terms/isRequiredBy> "informLanguageModuleHours" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#module_society
@@ -2488,7 +2603,7 @@ welcome:module_society rdf:type owl:NamedIndividual ,
                        welcome:offersCourse welcome:course_societyCourse ;
                        gn:nearby welcome:poi_3 ;
                        welcome:moduleName "Catalan Society" ;
-                       <http://purl.org/dc/terms/isRequiredBy> "InformSocietyModule" .
+                       <http://purl.org/dc/terms/isRequiredBy> "informSocietyModule" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#module_society_hours
@@ -2497,28 +2612,28 @@ welcome:module_society_hours rdf:type owl:NamedIndividual ,
                              schema:dayOfWeek schema:Wednesday ;
                              schema:closes "21:00" ;
                              schema:opens "19:00" ;
-                             <http://purl.org/dc/terms/isRequiredBy> "InformSocietyModuleHours" .
+                             <http://purl.org/dc/terms/isRequiredBy> "informSocietyModuleHours" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#poi_1
 welcome:poi_1 rdf:type owl:NamedIndividual ,
                        welcome:POI ;
               actor:name "Col-legi Sagrat Cor" ;
-              <http://purl.org/dc/terms/isRequiredBy> "InformLanguageModuleAddress" .
+              <http://purl.org/dc/terms/isRequiredBy> "informLanguageModuleAddress" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#poi_2
 welcome:poi_2 rdf:type owl:NamedIndividual ,
                        welcome:POI ;
               actor:name "City Council Building" ;
-              <http://purl.org/dc/terms/isRequiredBy> "InformLabourModuleAddress" .
+              <http://purl.org/dc/terms/isRequiredBy> "informLabourModuleAddress" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#poi_3
 welcome:poi_3 rdf:type owl:NamedIndividual ,
                        welcome:POI ;
               actor:name "City Council Building" ;
-              <http://purl.org/dc/terms/isRequiredBy> "InformSocietyModuleAddress" .
+              <http://purl.org/dc/terms/isRequiredBy> "informSocietyModuleAddress" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#praksisAthens
@@ -2751,8 +2866,8 @@ schema:Wednesday rdf:type owl:NamedIndividual ,
 [ rdf:type owl:AllDisjointClasses ;
   owl:members ( welcome:Birthday
                 welcome:CityOfBirth
-                welcome:E-mail
-                welcome:E-mailNotification
+                welcome:Email
+                welcome:EmailNotifications
                 welcome:FirstSurname
                 welcome:IDType
                 welcome:Landline
@@ -2792,10 +2907,55 @@ schema:Wednesday rdf:type owl:NamedIndividual ,
 
 
 [ rdf:type owl:AllDisjointClasses ;
+  owl:members ( welcome:CertificateCatalan
+                welcome:CertificateCatalanSociety
+                welcome:CertificateLabourMarket
+                welcome:CertificateSpanish
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
   owl:members ( welcome:CompletionYear
                 welcome:Course
                 welcome:CourseInstitution
                 welcome:Duration
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( welcome:CompletionYearCatalan
+                welcome:CompletionYearCatalanSociety
+                welcome:CompletionYearLabourMarket
+                welcome:CompletionYearSpanish
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( welcome:CourseInstitutionCatalan
+                welcome:CourseInstitutionCatalanSociety
+                welcome:CourseInstitutionLabourMarket
+                welcome:CourseInstitutionSpanish
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( welcome:CourseNameCatalan
+                welcome:CourseNameCatalanSociety
+                welcome:CourseNameLabourMarket
+                welcome:CourseNameSpanish
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( welcome:DurationCatalan
+                welcome:DurationCatalanSociety
+                welcome:DurationLabourMarket
+                welcome:DurationSpanish
               )
 ] .
 
