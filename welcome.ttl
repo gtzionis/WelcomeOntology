@@ -74,7 +74,7 @@ wgs84_pos:long rdf:type owl:AnnotationProperty ;
 locn:address rdf:type owl:ObjectProperty ;
              rdfs:range locn:Address ;
              <http://purl.org/dc/terms/identifier> "locn:address"@en ;
-             rdfs:comment "The locn:address property relationship associates any resource with the <a href=\"#locn:Address\">Address</a> Class "^^rdf:XMLLiteral ;
+             rdfs:comment "The locn:address property relationship associates any resource with the <a href=\"#locn:Address\">Address</a> Class"^^xsd:string ;
              rdfs:label "address"@en .
 
 
@@ -535,6 +535,10 @@ welcome:hasSlot rdf:type owl:ObjectProperty ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasSlotTemplate
 welcome:hasSlotTemplate rdf:type owl:ObjectProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasSlotType
+welcome:hasSlotType rdf:type owl:ObjectProperty .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasSpeechActAgent
@@ -2171,7 +2175,9 @@ welcome:OAC_Cambrils rdf:type owl:NamedIndividual ,
                      actor:email "" ;
                      actor:name "Oficina d'Atencio Ciutadana - OAC" ;
                      actor:phone "977 794 579" ;
-                     actor:webURL "https://www.cambrils.cat/" .
+                     actor:webURL "https://www.cambrils.cat/" ;
+                     schema:closes "17:00" ;
+                     schema:opens "09:00" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OAC_Districte2
@@ -2182,7 +2188,9 @@ welcome:OAC_Districte2 rdf:type owl:NamedIndividual ,
                        actor:email "" ;
                        actor:name "Oficina d'Atenció Ciutadana del Districte 2 - OAC" ;
                        actor:phone "937 397 000" ;
-                       actor:webURL "https://www.terrassa.cat/" .
+                       actor:webURL "https://www.terrassa.cat/" ;
+                       schema:closes "17:00" ;
+                       schema:opens "09:00" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OAC_Districte3
@@ -2193,7 +2201,9 @@ welcome:OAC_Districte3 rdf:type owl:NamedIndividual ,
                        actor:email "" ;
                        actor:name "Oficina d'Atenció Ciutadana del Districte 3 - OAC" ;
                        actor:phone "937 397 000" ;
-                       actor:webURL "https://www.terrassa.cat/" .
+                       actor:webURL "https://www.terrassa.cat/" ;
+                       schema:closes "17:00" ;
+                       schema:opens "09:00" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OAC_Districte4
@@ -2204,7 +2214,9 @@ welcome:OAC_Districte4 rdf:type owl:NamedIndividual ,
                        actor:email "" ;
                        actor:name "Oficina d'Atenció Ciutadana del Districte 4 - OAC" ;
                        actor:phone "937 397 000" ;
-                       actor:webURL "https://www.terrassa.cat/" .
+                       actor:webURL "https://www.terrassa.cat/" ;
+                       schema:closes "17:00" ;
+                       schema:opens "09:00" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OAC_Districte5
@@ -2215,7 +2227,9 @@ welcome:OAC_Districte5 rdf:type owl:NamedIndividual ,
                        actor:email "" ;
                        actor:name "Oficina d'Atenció Ciutadana del Districte 5 - OAC" ;
                        actor:phone "937 397 000" ;
-                       actor:webURL "https://www.terrassa.cat/" .
+                       actor:webURL "https://www.terrassa.cat/" ;
+                       schema:closes "17:00" ;
+                       schema:opens "09:00" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OAC_Districte6
@@ -2226,7 +2240,9 @@ welcome:OAC_Districte6 rdf:type owl:NamedIndividual ,
                        actor:email "" ;
                        actor:name "Oficina d'Atenció Ciutadana del Districte 6 - OAC" ;
                        actor:phone "937 397 000" ;
-                       actor:webURL "https://www.terrassa.cat/" .
+                       actor:webURL "https://www.terrassa.cat/" ;
+                       schema:closes "17:00" ;
+                       schema:opens "09:00" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OAC_Districte7
@@ -2237,7 +2253,9 @@ welcome:OAC_Districte7 rdf:type owl:NamedIndividual ,
                        actor:email "" ;
                        actor:name "Oficina d'Atenció Ciutadana del Districte 7 - OAC" ;
                        actor:phone "937 397 000" ;
-                       actor:webURL "https://www.terrassa.cat/" .
+                       actor:webURL "https://www.terrassa.cat/" ;
+                       schema:closes "17:00" ;
+                       schema:opens "09:00" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OAC_DretsSocials
@@ -2248,7 +2266,9 @@ welcome:OAC_DretsSocials rdf:type owl:NamedIndividual ,
                          actor:email "" ;
                          actor:name "Oficina d'Atencio Ciutadana de l'Area de Drets Socials" ;
                          actor:phone "937 397 000" ;
-                         actor:webURL "https://www.terrassa.cat/" .
+                         actor:webURL "https://www.terrassa.cat/" ;
+                         schema:closes "17:00" ;
+                         schema:opens "09:00" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OAC_PlacaDido
@@ -2259,7 +2279,9 @@ welcome:OAC_PlacaDido rdf:type owl:NamedIndividual ,
                       actor:email "" ;
                       actor:name "Oficina d'Atenció Ciutadana de Plaça Didó - OAC" ;
                       actor:phone "937 397 000" ;
-                      actor:webURL "https://www.terrassa.cat/" .
+                      actor:webURL "https://www.terrassa.cat/" ;
+                      schema:closes "17:00" ;
+                      schema:opens "09:00" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Patra
