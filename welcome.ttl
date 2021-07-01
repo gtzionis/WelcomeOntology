@@ -441,6 +441,12 @@ welcome:hasRequestType rdf:type owl:ObjectProperty ;
                        rdfs:subPropertyOf owl:topObjectProperty .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasScenario
+welcome:hasScenario rdf:type owl:ObjectProperty ;
+                    rdfs:domain welcome:Minigame ;
+                    rdfs:range welcome:Scenario .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasSlot
 welcome:hasSlot rdf:type owl:ObjectProperty ;
                 rdfs:domain welcome:DIP ;
@@ -466,6 +472,12 @@ welcome:hasSpeechActObject rdf:type owl:ObjectProperty .
 welcome:hasSpeechActType rdf:type owl:ObjectProperty ;
                          rdfs:domain welcome:SpeechActContainer ;
                          rdfs:range welcome:SpeechAct .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStage
+welcome:hasStage rdf:type owl:ObjectProperty ;
+                 rdfs:domain welcome:Scenario ;
+                 rdfs:range welcome:Stage .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStatus
@@ -818,6 +830,10 @@ welcome:lat rdf:type owl:DatatypeProperty ;
             rdfs:label "latitude"^^xsd:string .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#locked
+welcome:locked rdf:type owl:DatatypeProperty .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#long
 welcome:long rdf:type owl:DatatypeProperty ;
              rdfs:subPropertyOf welcome:coordinates ;
@@ -829,6 +845,22 @@ welcome:long rdf:type owl:DatatypeProperty ;
 welcome:moduleName rdf:type owl:DatatypeProperty .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#scenarioID
+welcome:scenarioID rdf:type owl:DatatypeProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#score
+welcome:score rdf:type owl:DatatypeProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#stage
+welcome:stage rdf:type owl:DatatypeProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#time
+welcome:time rdf:type owl:DatatypeProperty .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#timestamp
 welcome:timestamp rdf:type owl:DatatypeProperty .
 
@@ -836,6 +868,14 @@ welcome:timestamp rdf:type owl:DatatypeProperty .
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#toPeriod
 welcome:toPeriod rdf:type owl:DatatypeProperty ;
                  rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#versionJsonNumber
+welcome:versionJsonNumber rdf:type owl:DatatypeProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#wrongAnswer
+welcome:wrongAnswer rdf:type owl:DatatypeProperty .
 
 
 #################################################################
@@ -1182,6 +1222,10 @@ welcome:MaritalStatus rdf:type owl:Class ;
                       rdfs:subClassOf welcome:Other .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Minigame
+welcome:Minigame rdf:type owl:Class .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#MobilePhone
 welcome:MobilePhone rdf:type owl:Class ;
                     rdfs:subClassOf welcome:Personal .
@@ -1321,6 +1365,10 @@ welcome:SMSNotification rdf:type owl:Class ;
                         rdfs:subClassOf welcome:Personal .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Scenario
+welcome:Scenario rdf:type owl:Class .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SecondSurname
 welcome:SecondSurname rdf:type owl:Class ;
                       rdfs:subClassOf welcome:Personal .
@@ -1366,6 +1414,10 @@ welcome:SpeechAct rdf:type owl:Class ;
 welcome:SpeechActContainer rdf:type owl:Class ;
                            rdfs:subClassOf welcome:Dialogue ;
                            rdfs:label "SpeechActContainer"^^xsd:string .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Stage
+welcome:Stage rdf:type owl:Class .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#StayingPeriod
