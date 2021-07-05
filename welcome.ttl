@@ -1020,6 +1020,10 @@ welcome:hasUserId rdf:type owl:DatatypeProperty ;
                   rdfs:domain welcome:DialogueUser .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasValue
+welcome:hasValue rdf:type owl:DatatypeProperty .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasWebPage
 welcome:hasWebPage rdf:type owl:DatatypeProperty .
 
@@ -2116,6 +2120,11 @@ welcome:YearArrival rdf:type owl:Class ;
                     rdfs:subClassOf welcome:Other .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#YearArrivalCountry
+welcome:YearArrivalCountry rdf:type owl:Class ;
+                           rdfs:subClassOf welcome:Other .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ZipCode
 welcome:ZipCode rdf:type owl:Class ;
                 rdfs:subClassOf welcome:PhysicalAddress .
@@ -2156,13 +2165,15 @@ gn:Feature rdf:type owl:Class .
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Arabic
 welcome:Arabic rdf:type owl:NamedIndividual ,
-                        welcome:Language .
+                        welcome:Language ;
+               welcome:hasValue "Arabic" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Athens
 welcome:Athens rdf:type owl:NamedIndividual ,
                         welcome:City ,
                         welcome:Location ;
+               welcome:hasValue "Athens" ;
                welcome:lat 37.9838 ;
                welcome:long 23.72753 .
 
@@ -2171,6 +2182,7 @@ welcome:Athens rdf:type owl:NamedIndividual ,
 welcome:Cambrils rdf:type owl:NamedIndividual ,
                           welcome:City ,
                           welcome:Location ;
+                 welcome:hasValue "Cambrils" ;
                  welcome:lat 41.06667 ;
                  welcome:long 1.06036 .
 
@@ -2185,13 +2197,15 @@ welcome:Completed rdf:type owl:NamedIndividual ,
 welcome:Crete rdf:type owl:NamedIndividual ,
                        welcome:City ,
                        welcome:Location ;
+              welcome:hasValue "Crete" ;
               welcome:lat 35.24011 ;
               welcome:long 24.80926 .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#English
 welcome:English rdf:type owl:NamedIndividual ,
-                         welcome:Language .
+                         welcome:Language ;
+                welcome:hasValue "English" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#FailedAnalysis
@@ -2202,19 +2216,22 @@ welcome:FailedAnalysis rdf:type owl:NamedIndividual ,
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#French
 welcome:French rdf:type owl:NamedIndividual ,
-                        welcome:Language .
+                        welcome:Language ;
+               welcome:hasValue "French" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Greece
 welcome:Greece rdf:type owl:NamedIndividual ,
                         welcome:Country ,
-                        welcome:Location .
+                        welcome:Location ;
+               welcome:hasValue "Greece" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Leros
 welcome:Leros rdf:type owl:NamedIndividual ,
                        welcome:City ,
                        welcome:Location ;
+              welcome:hasValue "Leros" ;
               welcome:lat 37.14091 ;
               welcome:long 26.84884 .
 
@@ -2340,6 +2357,7 @@ welcome:OAC_PlacaDido rdf:type owl:NamedIndividual ,
 welcome:Patra rdf:type owl:NamedIndividual ,
                        welcome:City ,
                        welcome:Location ;
+              welcome:hasValue "Patra" ;
               welcome:lat 38.20882 ;
               welcome:long 21.78531 .
 
@@ -2354,6 +2372,7 @@ welcome:Pending rdf:type owl:NamedIndividual ,
 welcome:Rodos rdf:type owl:NamedIndividual ,
                        welcome:City ,
                        welcome:Location ;
+              welcome:hasValue "Rodos" ;
               welcome:lat 36.43405 ;
               welcome:long 28.21763 .
 
@@ -2371,6 +2390,7 @@ welcome:SimulationAgent rdf:type owl:NamedIndividual ,
 welcome:Spain rdf:type owl:NamedIndividual ,
                        welcome:Country ,
                        welcome:Location ;
+              welcome:hasValue "Spain" ;
               welcome:lat 40.46366 ;
               welcome:long -3.74922 .
 
@@ -2395,6 +2415,7 @@ welcome:TCNClarifyRequest rdf:type owl:NamedIndividual ,
 welcome:Terrassa rdf:type owl:NamedIndividual ,
                           welcome:City ,
                           welcome:Location ;
+                 welcome:hasValue "Terrassa" ;
                  welcome:lat 41.56321 ;
                  welcome:long 2.00887 .
 
@@ -2403,6 +2424,7 @@ welcome:Terrassa rdf:type owl:NamedIndividual ,
 welcome:Thessaloniki rdf:type owl:NamedIndividual ,
                               welcome:City ,
                               welcome:Location ;
+                     welcome:hasValue "Thessaloniki" ;
                      welcome:lat 40.64006 ;
                      welcome:long 22.94441 .
 
