@@ -798,6 +798,10 @@ welcome:triggersDIP rdf:type owl:ObjectProperty ;
                     rdfs:range welcome:DIP .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#worksFor
+welcome:worksFor rdf:type owl:ObjectProperty .
+
+
 ###  https://schema.org/actionStatus
 schema:actionStatus rdf:type owl:ObjectProperty ;
                     rdfs:domain <https://schema.org/ScheduleAction#ScheduleAction> ;
@@ -1667,6 +1671,11 @@ welcome:InternetAddress rdf:type owl:Class ;
                         rdfs:subClassOf welcome:ContactInformation .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#JobCenter
+welcome:JobCenter rdf:type owl:Class ;
+                  rdfs:subClassOf welcome:Office .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#KnowledgeCatalan
 welcome:KnowledgeCatalan rdf:type owl:Class ;
                          rdfs:subClassOf welcome:Training .
@@ -2227,6 +2236,20 @@ welcome:Greece rdf:type owl:NamedIndividual ,
                welcome:hasValue "Greece" .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Hamm
+welcome:Hamm rdf:type owl:NamedIndividual ,
+                      welcome:City ,
+                      welcome:Location ;
+             welcome:hasValue "Hamm" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:Hamm ;
+   owl:annotatedProperty welcome:hasValue ;
+   owl:annotatedTarget "Hamm" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informAuthority"
+ ] .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Leros
 welcome:Leros rdf:type owl:NamedIndividual ,
                        welcome:City ,
@@ -2383,7 +2406,17 @@ welcome:SimulationAgent rdf:type owl:NamedIndividual ,
                         welcome:hasScheduleAction welcome:sa_1 ,
                                                   welcome:sa_2 ,
                                                   welcome:sa_3 ,
-                                                  welcome:sa_4 .
+                                                  welcome:sa_4 ;
+                        welcome:worksFor welcome:jobcenter ;
+                        welcome:hasName "Mr. Muller" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:SimulationAgent ;
+   owl:annotatedProperty welcome:hasName ;
+   owl:annotatedTarget "Mr. Muller" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informAuthority" ,
+                                           "informPersonNameIntro"
+ ] .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Spain
@@ -2397,12 +2430,20 @@ welcome:Spain rdf:type owl:NamedIndividual ,
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Status_Free
 welcome:Status_Free rdf:type owl:NamedIndividual ,
-                             schema:ActionStatusType .
+                             schema:ActionStatusType ;
+                    welcome:hasValue "Free" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Status_Rejected
+welcome:Status_Rejected rdf:type owl:NamedIndividual ,
+                                 schema:ActionStatusType ;
+                        welcome:hasValue "Rejected" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Status_Reserved
 welcome:Status_Reserved rdf:type owl:NamedIndividual ,
-                                 schema:ActionStatusType .
+                                 schema:ActionStatusType ;
+                        welcome:hasValue "Reserved" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#TCNClarifyRequest
@@ -2624,6 +2665,44 @@ welcome:asylum_Thes rdf:type owl:NamedIndividual ,
                                          welcome:slot_ef_thes .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#caritasContactPerson
+welcome:caritasContactPerson rdf:type owl:NamedIndividual ,
+                                      foaf:Agent ;
+                             welcome:worksFor welcome:jobcenter ;
+                             actor:email "meyer.mrs@hammjobcenter.de" ;
+                             actor:phone "02381-144 270" ;
+                             actor:webURL "www.test.com" ;
+                             welcome:hasName "Mrs. Meyer" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:caritasContactPerson ;
+   owl:annotatedProperty welcome:hasName ;
+   owl:annotatedTarget "Mrs. Meyer" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informContactPerson"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:caritasContactPerson ;
+   owl:annotatedProperty actor:email ;
+   owl:annotatedTarget "meyer.mrs@hammjobcenter.de" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informContactOtherInfo"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:caritasContactPerson ;
+   owl:annotatedProperty actor:phone ;
+   owl:annotatedTarget "02381-144 270" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informContactPhone"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:caritasContactPerson ;
+   owl:annotatedProperty actor:webURL ;
+   owl:annotatedTarget "www.test.com" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informContactOtherInfo"
+ ] .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#course_catalanLanguage
 welcome:course_catalanLanguage rdf:type owl:NamedIndividual ,
                                         welcome:Course ;
@@ -2650,6 +2729,20 @@ welcome:course_spanishLanguage rdf:type owl:NamedIndividual ,
                                         welcome:Course ;
                                welcome:hasCourseName "Spanish" ;
                                welcome:hasNumberHours "90h" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#jobcenter
+welcome:jobcenter rdf:type owl:NamedIndividual ,
+                           welcome:JobCenter ;
+                  welcome:hasCity welcome:Hamm ;
+                  welcome:hasName "Job Center" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:jobcenter ;
+   owl:annotatedProperty welcome:hasName ;
+   owl:annotatedTarget "Job Center" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informAuthority"
+ ] .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#module_labour
@@ -2764,7 +2857,8 @@ welcome:sa_1 rdf:type owl:NamedIndividual ,
              schema:actionStatus welcome:Status_Free ;
              schema:scheduledTime schema:Monday ;
              schema:endTime "10:30" ;
-             schema:startTime "10:00" .
+             schema:startTime "10:00" ;
+             <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#sa_2
@@ -2773,7 +2867,8 @@ welcome:sa_2 rdf:type owl:NamedIndividual ,
              schema:actionStatus welcome:Status_Free ;
              schema:scheduledTime schema:Monday ;
              schema:endTime "12:30" ;
-             schema:startTime "12:00" .
+             schema:startTime "12:00" ;
+             <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#sa_3
@@ -2782,7 +2877,8 @@ welcome:sa_3 rdf:type owl:NamedIndividual ,
              schema:actionStatus welcome:Status_Free ;
              schema:scheduledTime schema:Monday ;
              schema:endTime "14:30" ;
-             schema:startTime "14:00" .
+             schema:startTime "14:00" ;
+             <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#sa_4
@@ -2791,7 +2887,8 @@ welcome:sa_4 rdf:type owl:NamedIndividual ,
              schema:actionStatus welcome:Status_Free ;
              schema:scheduledTime schema:Monday ;
              schema:endTime "16:30" ;
-             schema:startTime "16:00" .
+             schema:startTime "16:00" ;
+             <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#skype_informArabic
@@ -2922,12 +3019,14 @@ welcome:slot_ef_thes rdf:type owl:NamedIndividual ,
 
 ###  https://schema.org/Friday
 schema:Friday rdf:type owl:NamedIndividual ,
-                       schema:DayOfWeek .
+                       schema:DayOfWeek ;
+              welcome:hasValue "Friday" .
 
 
 ###  https://schema.org/Monday
 schema:Monday rdf:type owl:NamedIndividual ,
-                       schema:DayOfWeek .
+                       schema:DayOfWeek ;
+              welcome:hasValue "Monday" .
 
 
 ###  https://schema.org/Staturday
@@ -2942,17 +3041,20 @@ schema:Sunday rdf:type owl:NamedIndividual ,
 
 ###  https://schema.org/Thursday
 schema:Thursday rdf:type owl:NamedIndividual ,
-                         schema:DayOfWeek .
+                         schema:DayOfWeek ;
+                welcome:hasValue "Thursday" .
 
 
 ###  https://schema.org/Tuesday
 schema:Tuesday rdf:type owl:NamedIndividual ,
-                        schema:DayOfWeek .
+                        schema:DayOfWeek ;
+               welcome:hasValue "Tuesday" .
 
 
 ###  https://schema.org/Wednesday
 schema:Wednesday rdf:type owl:NamedIndividual ,
-                          schema:DayOfWeek .
+                          schema:DayOfWeek ;
+                 welcome:hasValue "Wednesday" .
 
 
 #################################################################
