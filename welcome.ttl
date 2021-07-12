@@ -4,6 +4,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix locn: <http://www.w3.org/ns/locn#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix actor: <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#> .
@@ -19,21 +20,78 @@
 <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl> rdf:type owl:Ontology ;
                                                                                owl:imports <http://www.daml.org/services/owl-s/1.1/Process.owl> ,
                                                                                            <http://www.daml.org/services/owl-s/1.1/Profile.owl> ,
-                                                                                           <http://www.daml.org/services/owl-s/1.1/Service.owl> .
+                                                                                           <http://www.daml.org/services/owl-s/1.1/Service.owl> ;
+                                                                               <http://purl.org/vocab/vann/preferredNamespacePrefix> "welcome" ;
+                                                                               rdfs:label "Welcome Global Ontology" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/identifier
+<http://purl.org/dc/terms/identifier> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/isRequiredBy
+<http://purl.org/dc/terms/isRequiredBy> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/usageNote
+<http://purl.org/vocab/vann/usageNote> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2003/01/geo/wgs84_pos#lat
+wgs84_pos:lat rdf:type owl:AnnotationProperty ;
+              rdfs:comment "The WGS84 latitude of a SpatialThing (decimal degrees)." ;
+              rdfs:label "latitude" ;
+              rdfs:domain wgs84_pos:SpatialThing .
+
+
+###  http://www.w3.org/2003/01/geo/wgs84_pos#long
+wgs84_pos:long rdf:type owl:AnnotationProperty ;
+               rdfs:comment "The WGS84 longitude of a SpatialThing (decimal degrees)." ;
+               rdfs:label "longitude" ;
+               rdfs:domain wgs84_pos:SpatialThing .
+
+
+###  http://www.w3.org/2003/06/sw-vocab-status/ns#term_status
+<http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2007/05/powder-s#describedby
+<http://www.w3.org/2007/05/powder-s#describedby> rdf:type owl:AnnotationProperty .
+
 
 #################################################################
 #    Object Properties
 #################################################################
 
+###  http://www.w3.org/ns/locn#address
+locn:address rdf:type owl:ObjectProperty ;
+             rdfs:range locn:Address ;
+             <http://purl.org/dc/terms/identifier> "locn:address"@en ;
+             rdfs:comment "The locn:address property relationship associates any resource with the <a href=\"#locn:Address\">Address</a> Class"^^xsd:string ;
+             rdfs:label "address"@en .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasAge
-welcome:hasAge rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf welcome:hasPersonalInformation .
+welcome:hasAge rdf:type owl:ObjectProperty .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasCity
 welcome:hasCity rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf welcome:hasPhysicalAddress ;
                 rdfs:range welcome:City .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasCityOfBirth
+welcome:hasCityOfBirth rdf:type owl:ObjectProperty ;
+                       owl:inverseOf welcome:isCityOfBirthOf ;
+                       rdfs:range welcome:CityOfBirth .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasClosingTime
@@ -54,11 +112,10 @@ welcome:hasCountry rdf:type owl:ObjectProperty ;
                    rdfs:range welcome:Country .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasCountryOfOrigin
-welcome:hasCountryOfOrigin rdf:type owl:ObjectProperty ;
-                           rdfs:subPropertyOf welcome:hasPersonalInformation ;
-                           owl:inverseOf welcome:isCountryOriginOf ;
-                           rdfs:range welcome:Country .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasCountryOrigin
+welcome:hasCountryOrigin rdf:type owl:ObjectProperty ;
+                         owl:inverseOf welcome:isCountryOriginOf ;
+                         rdfs:range welcome:Country .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasDIP
@@ -344,17 +401,31 @@ welcome:hasDialogueUser rdf:type owl:ObjectProperty ;
                         rdfs:range welcome:DialogueUser .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasEmail
+welcome:hasEmail rdf:type owl:ObjectProperty ;
+                 owl:inverseOf welcome:isEmailOf ;
+                 rdfs:range welcome:Email .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasFirstName
 welcome:hasFirstName rdf:type owl:ObjectProperty ;
-                     rdfs:subPropertyOf welcome:hasPersonalInformation ;
-                     owl:inverseOf welcome:isFirstNameOf ;
-                     rdfs:domain welcome:Person .
+                     owl:inverseOf welcome:isFirstNameOf .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasFirstSurname
+welcome:hasFirstSurname rdf:type owl:ObjectProperty ;
+                        owl:inverseOf welcome:isFirstSurnameOf ;
+                        rdfs:range welcome:FirstSurname .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasHostingInfo
 welcome:hasHostingInfo rdf:type owl:ObjectProperty ;
-                       rdfs:subPropertyOf welcome:hasPersonalInformation ;
                        owl:inverseOf welcome:isHostingInfoOf .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasHoursSpec
+welcome:hasHoursSpec rdf:type owl:ObjectProperty ;
+                     rdfs:range schema:OpeningHoursSpecification .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasInferredSpeechActObject
@@ -371,33 +442,34 @@ welcome:hasInputRDFContents rdf:type owl:ObjectProperty ;
                             rdfs:domain welcome:Slot .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasLastName
-welcome:hasLastName rdf:type owl:ObjectProperty ;
-                    rdfs:subPropertyOf welcome:hasPersonalInformation ;
-                    owl:inverseOf welcome:isLastNameOf ;
-                    rdfs:domain welcome:Person .
-
-
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasMobilePhone
 welcome:hasMobilePhone rdf:type owl:ObjectProperty ;
-                       rdfs:domain welcome:Organisation ,
-                                   welcome:Person .
+                       rdfs:domain welcome:Organisation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasName
 welcome:hasName rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf welcome:hasPersonalInformation ;
-                owl:inverseOf welcome:isNameOf .
+                owl:inverseOf welcome:isNameOf ;
+                rdfs:domain welcome:Name .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNamedGraph
+welcome:hasNamedGraph rdf:type owl:ObjectProperty ;
+                      rdfs:domain welcome:DIP .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNextContainer
 welcome:hasNextContainer rdf:type owl:ObjectProperty ;
+                         owl:inverseOf welcome:hasPreviousContainer ;
                          rdfs:domain welcome:SpeechActContainer ;
                          rdfs:range welcome:SpeechActContainer .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNextDIP
-welcome:hasNextDIP rdf:type owl:ObjectProperty .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNextTurn
+welcome:hasNextTurn rdf:type owl:ObjectProperty ;
+                    owl:inverseOf welcome:hasPrevTurn ;
+                    rdfs:domain welcome:DialogueTurn ;
+                    rdfs:range welcome:DialogueTurn .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasOntologyType
@@ -420,20 +492,25 @@ welcome:hasOperatingDay rdf:type owl:ObjectProperty ;
 welcome:hasParticipant rdf:type owl:ObjectProperty .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasPersonalInformation
-welcome:hasPersonalInformation rdf:type owl:ObjectProperty .
-
-
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasPhysicalAddress
 welcome:hasPhysicalAddress rdf:type owl:ObjectProperty ;
-                           rdfs:subPropertyOf owl:topObjectProperty ;
-                           rdfs:domain welcome:Organisation ,
-                                       welcome:Person ;
+                           rdfs:domain welcome:Organisation ;
                            rdfs:range welcome:PhysicalAddress .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasPredicateRelation
 welcome:hasPredicateRelation rdf:type owl:ObjectProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasPrevTurn
+welcome:hasPrevTurn rdf:type owl:ObjectProperty ;
+                    rdfs:domain welcome:DialogueTurn ;
+                    rdfs:range welcome:DialogueTurn .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasPreviousContainer
+welcome:hasPreviousContainer rdf:type owl:ObjectProperty ;
+                             rdfs:domain welcome:SpeechActContainer .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasRequestType
@@ -447,10 +524,27 @@ welcome:hasScenario rdf:type owl:ObjectProperty ;
                     rdfs:range welcome:Scenario .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasScheduleAction
+welcome:hasScheduleAction rdf:type owl:ObjectProperty ;
+                          rdfs:range <https://schema.org/ScheduleAction#ScheduleAction> .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasSkypeInfo
+welcome:hasSkypeInfo rdf:type owl:ObjectProperty .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasSlot
 welcome:hasSlot rdf:type owl:ObjectProperty ;
                 rdfs:domain welcome:DIP ;
                 rdfs:range welcome:Slot .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasSlotTemplate
+welcome:hasSlotTemplate rdf:type owl:ObjectProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasSlotType
+welcome:hasSlotType rdf:type owl:ObjectProperty .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasSpeechActAgent
@@ -513,8 +607,7 @@ welcome:hasSystemResponse rdf:type owl:ObjectProperty ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTelephone
 welcome:hasTelephone rdf:type owl:ObjectProperty ;
-                     rdfs:domain welcome:Organisation ,
-                                 welcome:Person .
+                     rdfs:domain welcome:Organisation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTemporalInformation
@@ -527,6 +620,19 @@ welcome:hasTurnTranscription rdf:type owl:ObjectProperty ;
                              owl:inverseOf welcome:isTranscriptionOfTurn ;
                              rdfs:domain welcome:DialogueTurn ;
                              rdfs:range welcome:TurnTranscrption .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasUserResponse
+welcome:hasUserResponse rdf:type owl:ObjectProperty ;
+                        owl:inverseOf welcome:repliesToSystemReponse ;
+                        rdfs:domain welcome:DialogueSystemTurn ;
+                        rdfs:range welcome:DialogueUserTurn .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasUsername
+welcome:hasUsername rdf:type owl:ObjectProperty ;
+                    owl:inverseOf welcome:isUsernameOf ;
+                    rdfs:range welcome:Username .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasWebpage
@@ -544,9 +650,24 @@ welcome:hasZipCode rdf:type owl:ObjectProperty ;
 welcome:hostedBy rdf:type owl:ObjectProperty .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#involvesDIP
+welcome:involvesDIP rdf:type owl:ObjectProperty ;
+                    rdfs:domain welcome:DialogueSession ;
+                    rdfs:range welcome:DIP .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isCityOfBirthOf
+welcome:isCityOfBirthOf rdf:type owl:ObjectProperty ;
+                        rdfs:domain welcome:CityOfBirth .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isCountryOriginOf
-welcome:isCountryOriginOf rdf:type owl:ObjectProperty ;
-                          rdfs:subPropertyOf welcome:isPersonalInformationOf .
+welcome:isCountryOriginOf rdf:type owl:ObjectProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isEmailOf
+welcome:isEmailOf rdf:type owl:ObjectProperty ;
+                  rdfs:domain welcome:Email .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isEntity1
@@ -560,13 +681,16 @@ welcome:isEntity2 rdf:type owl:ObjectProperty .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isFirstNameOf
-welcome:isFirstNameOf rdf:type owl:ObjectProperty ;
-                      rdfs:subPropertyOf welcome:isPersonalInformationOf .
+welcome:isFirstNameOf rdf:type owl:ObjectProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isFirstSurnameOf
+welcome:isFirstSurnameOf rdf:type owl:ObjectProperty ;
+                         rdfs:domain welcome:FirstSurname .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isHostingInfoOf
-welcome:isHostingInfoOf rdf:type owl:ObjectProperty ;
-                        rdfs:subPropertyOf welcome:isPersonalInformationOf .
+welcome:isHostingInfoOf rdf:type owl:ObjectProperty .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isIDof
@@ -580,34 +704,24 @@ welcome:isInvolvedInDialogueSession rdf:type owl:ObjectProperty ;
                                     rdfs:range welcome:DialogueSession .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isLastNameOf
-welcome:isLastNameOf rdf:type owl:ObjectProperty ;
-                     rdfs:subPropertyOf welcome:isPersonalInformationOf .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isInvolvedInSession
+welcome:isInvolvedInSession rdf:type owl:ObjectProperty ;
+                            rdfs:domain welcome:DIP ;
+                            rdfs:range welcome:DialogueSession .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isNameOf
 welcome:isNameOf rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf welcome:isPersonalInformationOf .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isPersonalInformationOf
-welcome:isPersonalInformationOf rdf:type owl:ObjectProperty .
+                 rdfs:range welcome:Name .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isPhysicalAddressOf
-welcome:isPhysicalAddressOf rdf:type owl:ObjectProperty ;
-                            rdfs:subPropertyOf welcome:isPersonalInformationOf .
+welcome:isPhysicalAddressOf rdf:type owl:ObjectProperty .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isPovidedBy
 welcome:isPovidedBy rdf:type owl:ObjectProperty ;
                     owl:inverseOf welcome:offersCourse .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isRegistered
-welcome:isRegistered rdf:type owl:ObjectProperty ;
-                     rdfs:subPropertyOf owl:topObjectProperty ;
-                     rdfs:domain <http://www.daml.org/services/owl-s/1.1/Service.owl#Service> .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isRelatedToUser
@@ -630,8 +744,23 @@ welcome:isTranscriptionOfContainer rdf:type owl:ObjectProperty ;
 welcome:isTranscriptionOfTurn rdf:type owl:ObjectProperty .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isUsernameOf
+welcome:isUsernameOf rdf:type owl:ObjectProperty ;
+                     rdfs:domain welcome:Username .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#offeredBy
+welcome:offeredBy rdf:type owl:ObjectProperty .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#offersCourse
 welcome:offersCourse rdf:type owl:ObjectProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#repliesToSystemReponse
+welcome:repliesToSystemReponse rdf:type owl:ObjectProperty ;
+                               rdfs:domain welcome:DialogueUserTurn ;
+                               rdfs:range welcome:DialogueSystemTurn .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#repliesToUserResponse
@@ -641,13 +770,136 @@ welcome:repliesToUserResponse rdf:type owl:ObjectProperty ;
                               rdfs:range welcome:DialogueUserTurn .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#requiresLanguage
+welcome:requiresLanguage rdf:type owl:ObjectProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#speaksLanguage
+welcome:speaksLanguage rdf:type owl:ObjectProperty ;
+                       owl:inverseOf welcome:spokenBy ;
+                       rdfs:range welcome:Language .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#spokenBy
+welcome:spokenBy rdf:type owl:ObjectProperty ;
+                 rdfs:domain welcome:Language .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#triggeredByTurn
+welcome:triggeredByTurn rdf:type owl:ObjectProperty ;
+                        owl:inverseOf welcome:triggersDIP ;
+                        rdfs:domain welcome:DIP ;
+                        rdfs:range welcome:DialogueTurn .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#triggersDIP
+welcome:triggersDIP rdf:type owl:ObjectProperty ;
+                    rdfs:domain welcome:DialogueTurn ;
+                    rdfs:range welcome:DIP .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#worksFor
+welcome:worksFor rdf:type owl:ObjectProperty .
+
+
+###  https://schema.org/actionStatus
+schema:actionStatus rdf:type owl:ObjectProperty ;
+                    rdfs:domain <https://schema.org/ScheduleAction#ScheduleAction> ;
+                    rdfs:range schema:ActionStatusType .
+
+
+###  https://schema.org/dayOfWeek
+schema:dayOfWeek rdf:type owl:ObjectProperty ;
+                 rdfs:domain schema:OpeningHoursSpecification ;
+                 rdfs:range schema:DayOfWeek .
+
+
+###  https://schema.org/scheduledTime
+schema:scheduledTime rdf:type owl:ObjectProperty ;
+                     rdfs:domain <https://schema.org/ScheduleAction#ScheduleAction> ;
+                     rdfs:range schema:DayOfWeek .
+
+
+###  https://www.geonames.org/ontology#nearby
+gn:nearby rdf:type owl:ObjectProperty ,
+                   owl:SymmetricProperty ;
+          rdfs:domain gn:Feature ;
+          rdfs:range gn:Feature ;
+          rdfs:comment "A feature close to the reference feature"@en ;
+          rdfs:label "nearby"@en .
+
+
 #################################################################
 #    Data properties
 #################################################################
 
+###  http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#email
+actor:email rdf:type owl:DatatypeProperty ;
+            rdfs:domain actor:Actor ;
+            rdfs:range xsd:string .
+
+
+###  http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#fax
+actor:fax rdf:type owl:DatatypeProperty ;
+          rdfs:domain actor:Actor ;
+          rdfs:range xsd:string .
+
+
+###  http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#name
+actor:name rdf:type owl:DatatypeProperty ;
+           rdfs:domain actor:Actor ;
+           rdfs:range xsd:string .
+
+
+###  http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#phone
+actor:phone rdf:type owl:DatatypeProperty ;
+            rdfs:domain actor:Actor ;
+            rdfs:range xsd:string .
+
+
+###  http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#physicalAddress
+actor:physicalAddress rdf:type owl:DatatypeProperty ;
+                      rdfs:domain actor:Actor ;
+                      rdfs:range xsd:string .
+
+
+###  http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#title
+actor:title rdf:type owl:DatatypeProperty ;
+            rdfs:domain actor:Actor ;
+            rdfs:range xsd:string .
+
+
+###  http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#webURL
+actor:webURL rdf:type owl:DatatypeProperty ;
+             rdfs:domain actor:Actor ;
+             rdfs:range xsd:string .
+
+
+###  http://www.w3.org/ns/locn#fullAddress
+locn:fullAddress rdf:type owl:DatatypeProperty ;
+                 rdfs:domain locn:Address ;
+                 rdfs:range rdfs:Literal ;
+                 <http://purl.org/dc/terms/identifier> "locn:fullAddress"@en ;
+                 rdfs:comment "The complete address written as a string, with or without formatting. The domain of locn:fullAddress is locn:Address."@en ;
+                 rdfs:label "full address"@en .
+
+
+###  http://www.w3.org/ns/locn#postCode
+locn:postCode rdf:type owl:DatatypeProperty ;
+              rdfs:domain locn:Address ;
+              rdfs:range rdfs:Literal ;
+              <http://purl.org/dc/terms/identifier> "locn:postCode"@en ;
+              rdfs:comment "The post code (a.k.a postal code, zip code etc.). Post codes are common elements in many countries' postal address systems. The domain of locn:postCode is locn:Address."@en ;
+              rdfs:label "post code"@en .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIPId
 welcome:DIPId rdf:type owl:DatatypeProperty ,
                        owl:FunctionalProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#belongsToGraph
+welcome:belongsToGraph rdf:type owl:DatatypeProperty .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#confidenceScore
@@ -659,8 +911,8 @@ welcome:confidenceScore rdf:type owl:DatatypeProperty ,
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#coordinates
 welcome:coordinates rdf:type owl:DatatypeProperty ;
-                    rdfs:subPropertyOf owl:topDataProperty ;
-                    rdfs:domain welcome:Location ,
+                    rdfs:domain locn:Address ,
+                                welcome:Location ,
                                 welcome:PhysicalAddress ;
                     rdfs:label "coordinates" .
 
@@ -670,40 +922,16 @@ welcome:fromPeriod rdf:type owl:DatatypeProperty ;
                    rdfs:subPropertyOf owl:topDataProperty .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasAltAddress
-welcome:hasAltAddress rdf:type owl:DatatypeProperty .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasAddress
+welcome:hasAddress rdf:type owl:DatatypeProperty .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasAltCity
-welcome:hasAltCity rdf:type owl:DatatypeProperty .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasCity
+welcome:hasCity rdf:type owl:DatatypeProperty .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasAltClosingTime
-welcome:hasAltClosingTime rdf:type owl:DatatypeProperty .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasAltName
-welcome:hasAltName rdf:type owl:DatatypeProperty .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasAltOpeningTime
-welcome:hasAltOpeningTime rdf:type owl:DatatypeProperty .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasAltPhone
-welcome:hasAltPhone rdf:type owl:DatatypeProperty .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasAltStreetNumber
-welcome:hasAltStreetNumber rdf:type owl:DatatypeProperty .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasAltWebPage
-welcome:hasAltWebPage rdf:type owl:DatatypeProperty .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasAltZipCode
-welcome:hasAltZipCode rdf:type owl:DatatypeProperty .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasClosingTime
+welcome:hasClosingTime rdf:type owl:DatatypeProperty .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasContainerId
@@ -747,6 +975,10 @@ welcome:hasEntityLink rdf:type owl:DatatypeProperty .
 welcome:hasEntityType rdf:type owl:DatatypeProperty .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasName
+welcome:hasName rdf:type owl:DatatypeProperty .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNumberAttempts
 welcome:hasNumberAttempts rdf:type owl:DatatypeProperty ,
                                    owl:FunctionalProperty ;
@@ -758,8 +990,24 @@ welcome:hasNumberAttempts rdf:type owl:DatatypeProperty ,
 welcome:hasNumberHours rdf:type owl:DatatypeProperty .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasOpeningTime
+welcome:hasOpeningTime rdf:type owl:DatatypeProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasPhone
+welcome:hasPhone rdf:type owl:DatatypeProperty .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasRelationId
 welcome:hasRelationId rdf:type owl:DatatypeProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasSkypeId
+welcome:hasSkypeId rdf:type owl:DatatypeProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStreetNumber
+welcome:hasStreetNumber rdf:type owl:DatatypeProperty .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTemplateId
@@ -776,6 +1024,18 @@ welcome:hasUserId rdf:type owl:DatatypeProperty ;
                   rdfs:domain welcome:DialogueUser .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasValue
+welcome:hasValue rdf:type owl:DatatypeProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasWebPage
+welcome:hasWebPage rdf:type owl:DatatypeProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasZipCode
+welcome:hasZipCode rdf:type owl:DatatypeProperty .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#heldRoleFrom
 welcome:heldRoleFrom rdf:type owl:DatatypeProperty ;
                      rdfs:subPropertyOf welcome:fromPeriod ;
@@ -788,16 +1048,22 @@ welcome:heldRoleTo rdf:type owl:DatatypeProperty ;
                    rdfs:range xsd:integer .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isActive
-welcome:isActive rdf:type owl:DatatypeProperty ;
-                 rdfs:domain welcome:DIP ;
-                 rdfs:range xsd:boolean .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isActiveDIP
+welcome:isActiveDIP rdf:type owl:DatatypeProperty ;
+                    rdfs:domain welcome:DIP ;
+                    rdfs:range xsd:boolean .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isActiveSession
 welcome:isActiveSession rdf:type owl:DatatypeProperty ;
                         rdfs:domain welcome:DialogueSession ;
                         rdfs:range xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isActiveSlot
+welcome:isActiveSlot rdf:type owl:DatatypeProperty ;
+                     rdfs:domain welcome:Slot ;
+                     rdfs:range xsd:boolean .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isAdult
@@ -825,18 +1091,24 @@ welcome:isUnaccompanied rdf:type owl:DatatypeProperty ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#lat
 welcome:lat rdf:type owl:DatatypeProperty ;
-            rdfs:subPropertyOf welcome:coordinates ;
+            rdfs:domain locn:Address ,
+                        welcome:Location ,
+                        welcome:PhysicalAddress ;
             rdfs:range xsd:double ;
             rdfs:label "latitude"^^xsd:string .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#locked
-welcome:locked rdf:type owl:DatatypeProperty .
+welcome:locked rdf:type owl:DatatypeProperty ;
+               rdfs:domain welcome:Scenario ;
+               rdfs:range xsd:boolean .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#long
 welcome:long rdf:type owl:DatatypeProperty ;
-             rdfs:subPropertyOf welcome:coordinates ;
+             rdfs:domain locn:Address ,
+                         welcome:Location ,
+                         welcome:PhysicalAddress ;
              rdfs:range xsd:double ;
              rdfs:label "longitude"^^xsd:string .
 
@@ -846,7 +1118,9 @@ welcome:moduleName rdf:type owl:DatatypeProperty .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#scenarioID
-welcome:scenarioID rdf:type owl:DatatypeProperty .
+welcome:scenarioID rdf:type owl:DatatypeProperty ;
+                   rdfs:domain welcome:Scenario ;
+                   rdfs:range xsd:string .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#score
@@ -878,12 +1152,120 @@ welcome:versionJsonNumber rdf:type owl:DatatypeProperty .
 welcome:wrongAnswer rdf:type owl:DatatypeProperty .
 
 
+###  https://schema.org/closes
+schema:closes rdf:type owl:DatatypeProperty .
+
+
+###  https://schema.org/endTime
+schema:endTime rdf:type owl:DatatypeProperty ;
+               rdfs:domain <https://schema.org/ScheduleAction#ScheduleAction> ;
+               rdfs:range xsd:dateTime .
+
+
+###  https://schema.org/opens
+schema:opens rdf:type owl:DatatypeProperty .
+
+
+###  https://schema.org/startTime
+schema:startTime rdf:type owl:DatatypeProperty ;
+                 rdfs:domain <https://schema.org/ScheduleAction#ScheduleAction> ;
+                 rdfs:range xsd:dateTime .
+
+
 #################################################################
 #    Classes
 #################################################################
 
+###  http://geovocab.org/spatial#Feature
+geovocab:Feature rdf:type owl:Class ;
+                 owl:equivalentClass gn:Feature ;
+                 rdfs:comment "A geographical feature, capable of holding spatial relations." ;
+                 rdfs:label "Feature" ;
+                 <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" .
+
+
+###  http://purl.org/dc/terms/Agent
+<http://purl.org/dc/terms/Agent> rdf:type owl:Class ;
+                                 owl:equivalentClass foaf:Agent .
+
+
+###  http://schema.org/Person
+<http://schema.org/Person> rdf:type owl:Class ;
+                           owl:equivalentClass foaf:Person .
+
+
+###  http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#Actor
+actor:Actor rdf:type owl:Class ;
+            rdfs:subClassOf owl:Thing ;
+            rdfs:comment """
+      Actor represents a Requester or Provider who might request or offer a service.
+      The original Actor definition was provided within DAML-S V0.5, V0.6 and V0.7
+    """ ;
+            rdfs:label "DefaultActor" .
+
+
 ###  http://www.daml.org/services/owl-s/1.1/Profile.owl#Profile
 <http://www.daml.org/services/owl-s/1.1/Profile.owl#Profile> rdf:type owl:Class .
+
+
+###  http://www.w3.org/2003/01/geo/wgs84_pos#Point
+wgs84_pos:Point rdf:type owl:Class ;
+                rdfs:subClassOf wgs84_pos:SpatialThing ;
+                rdfs:comment """ 
+Uniquely identified by lat/long/alt. i.e.
+
+spaciallyIntersects(P1, P2) :- lat(P1, LAT), long(P1, LONG), alt(P1, ALT),
+  lat(P2, LAT), long(P2, LONG), alt(P2, ALT).
+
+sameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P2).
+  """ ,
+                             """A point, typically described using a coordinate system relative to Earth, such as WGS84.
+  """ ;
+                rdfs:label "point" .
+
+
+###  http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing
+wgs84_pos:SpatialThing rdf:type owl:Class ;
+                       rdfs:comment """Anything with spatial extent, i.e. size, shape, or position.
+ e.g. people, places, bowling balls, as well as abstract areas like cubes.
+""" ;
+                       rdfs:label "SpatialThing" .
+
+
+###  http://www.w3.org/ns/locn#Address
+locn:Address rdf:type owl:Class ;
+             owl:equivalentClass welcome:PhysicalAddress ;
+             <http://purl.org/dc/terms/identifier> "locn:Address"@en ;
+             rdfs:comment "An &quot;address representation&quot; as defined in the <a href=\"https://inspire-twg.jrc.ec.europa.eu/inspire-fc.html#_C2538\">data specifications</a> of the EU INSPIRE Directive. The <a href=\"#locn:addressId\">locn:addressId</a> property may be used to link this Address to other representations."^^xsd:string ;
+             rdfs:label "Address"@en ;
+             <http://www.w3.org/2007/05/powder-s#describedby> <https://joinup.ec.europa.eu/system/files/project/Core_Vocabularies-Business_Location_Person-Specification-v0.3_0.zip> .
+
+
+###  http://xmlns.com/foaf/0.1/Agent
+foaf:Agent rdf:type owl:Class ;
+           rdfs:comment "An agent (eg. person, group, software or physical artifact)." ;
+           rdfs:label "Agent" ;
+           <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+
+###  http://xmlns.com/foaf/0.1/Organization
+foaf:Organization rdf:type owl:Class ;
+                  owl:disjointWith foaf:Person .
+
+
+###  http://xmlns.com/foaf/0.1/Person
+foaf:Person rdf:type owl:Class ;
+            rdfs:subClassOf wgs84_pos:SpatialThing ,
+                            foaf:Agent ;
+            owl:disjointWith foaf:Project ;
+            rdfs:comment "A person." ;
+            rdfs:isDefinedBy foaf: ;
+            rdfs:label "Person" ;
+            <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+
+###  http://xmlns.com/foaf/0.1/Project
+foaf:Project rdf:type owl:Class .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AccessCatalanTraining
@@ -911,9 +1293,24 @@ welcome:AddressInfo rdf:type owl:Class ;
                     rdfs:subClassOf welcome:ContactInformation .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AppointmentConcern
+welcome:AppointmentConcern rdf:type owl:Class ;
+                           rdfs:subClassOf welcome:Descriptors .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AsylumClaim
 welcome:AsylumClaim rdf:type owl:Class ;
                     rdfs:subClassOf welcome:Other .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AsylumOffice
+welcome:AsylumOffice rdf:type owl:Class ;
+                     rdfs:subClassOf welcome:Office .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Avatar
+welcome:Avatar rdf:type owl:Class ;
+               rdfs:subClassOf foaf:Agent .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Birthday
@@ -941,6 +1338,31 @@ welcome:CatalanCourse rdf:type owl:Class ;
                       rdfs:subClassOf welcome:Training .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Certificate
+welcome:Certificate rdf:type owl:Class ;
+                    rdfs:subClassOf welcome:Education .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CertificateCatalan
+welcome:CertificateCatalan rdf:type owl:Class ;
+                           rdfs:subClassOf welcome:Certificate .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CertificateCatalanSociety
+welcome:CertificateCatalanSociety rdf:type owl:Class ;
+                                  rdfs:subClassOf welcome:Certificate .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CertificateLabourMarket
+welcome:CertificateLabourMarket rdf:type owl:Class ;
+                                rdfs:subClassOf welcome:Certificate .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CertificateSpanish
+welcome:CertificateSpanish rdf:type owl:Class ;
+                           rdfs:subClassOf welcome:Certificate .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#City
 welcome:City rdf:type owl:Class ;
              rdfs:subClassOf welcome:PhysicalAddress .
@@ -954,6 +1376,26 @@ welcome:CityOfBirth rdf:type owl:Class ;
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CompletionYear
 welcome:CompletionYear rdf:type owl:Class ;
                        rdfs:subClassOf welcome:Education .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CompletionYearCatalan
+welcome:CompletionYearCatalan rdf:type owl:Class ;
+                              rdfs:subClassOf welcome:CompletionYear .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CompletionYearCatalanSociety
+welcome:CompletionYearCatalanSociety rdf:type owl:Class ;
+                                     rdfs:subClassOf welcome:CompletionYear .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CompletionYearLabourMarket
+welcome:CompletionYearLabourMarket rdf:type owl:Class ;
+                                   rdfs:subClassOf welcome:CompletionYear .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CompletionYearSpanish
+welcome:CompletionYearSpanish rdf:type owl:Class ;
+                              rdfs:subClassOf welcome:CompletionYear .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ContactInformation
@@ -994,6 +1436,51 @@ welcome:Course rdf:type owl:Class ;
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CourseInstitution
 welcome:CourseInstitution rdf:type owl:Class ;
                           rdfs:subClassOf welcome:Education .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CourseInstitutionCatalan
+welcome:CourseInstitutionCatalan rdf:type owl:Class ;
+                                 rdfs:subClassOf welcome:CourseInstitution .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CourseInstitutionCatalanSociety
+welcome:CourseInstitutionCatalanSociety rdf:type owl:Class ;
+                                        rdfs:subClassOf welcome:CourseInstitution .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CourseInstitutionLabourMarket
+welcome:CourseInstitutionLabourMarket rdf:type owl:Class ;
+                                      rdfs:subClassOf welcome:CourseInstitution .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CourseInstitutionSpanish
+welcome:CourseInstitutionSpanish rdf:type owl:Class ;
+                                 rdfs:subClassOf welcome:CourseInstitution .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CourseName
+welcome:CourseName rdf:type owl:Class ;
+                   rdfs:subClassOf welcome:Education .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CourseNameCatalan
+welcome:CourseNameCatalan rdf:type owl:Class ;
+                          rdfs:subClassOf welcome:CourseName .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CourseNameCatalanSociety
+welcome:CourseNameCatalanSociety rdf:type owl:Class ;
+                                 rdfs:subClassOf welcome:CourseName .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CourseNameLabourMarket
+welcome:CourseNameLabourMarket rdf:type owl:Class ;
+                               rdfs:subClassOf welcome:CourseName .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CourseNameSpanish
+welcome:CourseNameSpanish rdf:type owl:Class ;
+                          rdfs:subClassOf welcome:CourseName .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CourseSociety
@@ -1070,7 +1557,7 @@ welcome:DialogueTurn rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DialogueUser
 welcome:DialogueUser rdf:type owl:Class ;
-                     rdfs:subClassOf welcome:Person .
+                     rdfs:subClassOf foaf:Agent .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DialogueUserTurn
@@ -1088,20 +1575,40 @@ welcome:Duration rdf:type owl:Class ;
                  rdfs:subClassOf welcome:Education .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#E-mail
-welcome:E-mail rdf:type owl:Class ;
-               rdfs:subClassOf welcome:InternetAddress ,
-                               welcome:Personal .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DurationCatalan
+welcome:DurationCatalan rdf:type owl:Class ;
+                        rdfs:subClassOf welcome:Duration .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#E-mailNotification
-welcome:E-mailNotification rdf:type owl:Class ;
-                           rdfs:subClassOf welcome:Personal .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DurationCatalanSociety
+welcome:DurationCatalanSociety rdf:type owl:Class ;
+                               rdfs:subClassOf welcome:Duration .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DurationLabourMarket
+welcome:DurationLabourMarket rdf:type owl:Class ;
+                             rdfs:subClassOf welcome:Duration .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DurationSpanish
+welcome:DurationSpanish rdf:type owl:Class ;
+                        rdfs:subClassOf welcome:Duration .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Education
 welcome:Education rdf:type owl:Class ;
                   rdfs:subClassOf welcome:PersonalInformation .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Email
+welcome:Email rdf:type owl:Class ;
+              rdfs:subClassOf welcome:InternetAddress ,
+                              welcome:Personal .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#EmailNotifications
+welcome:EmailNotifications rdf:type owl:Class ;
+                           rdfs:subClassOf welcome:Personal .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Entrance
@@ -1112,6 +1619,11 @@ welcome:Entrance rdf:type owl:Class ;
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#FirstSurname
 welcome:FirstSurname rdf:type owl:Class ;
                      rdfs:subClassOf welcome:Personal .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#FirstTimeAsylumClaim
+welcome:FirstTimeAsylumClaim rdf:type owl:Class ;
+                             rdfs:subClassOf welcome:Other .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#FloorNumber
@@ -1158,9 +1670,19 @@ welcome:Illiteracy rdf:type owl:Class ;
 welcome:InterestRegistration rdf:type owl:Class .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#InternetAccess
+welcome:InternetAccess rdf:type owl:Class ;
+                       rdfs:subClassOf welcome:Other .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#InternetAddress
 welcome:InternetAddress rdf:type owl:Class ;
                         rdfs:subClassOf welcome:ContactInformation .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#JobCenter
+welcome:JobCenter rdf:type owl:Class ;
+                  rdfs:subClassOf welcome:Office .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#KnowledgeCatalan
@@ -1171,6 +1693,11 @@ welcome:KnowledgeCatalan rdf:type owl:Class ;
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#KnowledgeLabour
 welcome:KnowledgeLabour rdf:type owl:Class ;
                         rdfs:subClassOf welcome:Training .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#KnowledgeSkype
+welcome:KnowledgeSkype rdf:type owl:Class ;
+                       rdfs:subClassOf welcome:Other .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#KnowledgeSociety
@@ -1245,6 +1772,100 @@ welcome:Municipality rdf:type owl:Class ;
                      rdfs:subClassOf welcome:AddressInfo .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NER
+welcome:NER rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NER_CARDINAL
+welcome:NER_CARDINAL rdf:type owl:Class ;
+                     rdfs:subClassOf welcome:NER .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NER_DATE
+welcome:NER_DATE rdf:type owl:Class ;
+                 rdfs:subClassOf welcome:NER .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NER_EVENT
+welcome:NER_EVENT rdf:type owl:Class ;
+                  rdfs:subClassOf welcome:NER .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NER_FAC
+welcome:NER_FAC rdf:type owl:Class ;
+                rdfs:subClassOf welcome:NER .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NER_GPE
+welcome:NER_GPE rdf:type owl:Class ;
+                rdfs:subClassOf welcome:NER .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NER_LANGUAGE
+welcome:NER_LANGUAGE rdf:type owl:Class ;
+                     rdfs:subClassOf welcome:NER .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NER_LAW
+welcome:NER_LAW rdf:type owl:Class ;
+                rdfs:subClassOf welcome:NER .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NER_LOC
+welcome:NER_LOC rdf:type owl:Class ;
+                rdfs:subClassOf welcome:NER .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NER_MONEY
+welcome:NER_MONEY rdf:type owl:Class ;
+                  rdfs:subClassOf welcome:NER .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NER_NORP
+welcome:NER_NORP rdf:type owl:Class ;
+                 rdfs:subClassOf welcome:NER .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NER_ORDINAL
+welcome:NER_ORDINAL rdf:type owl:Class ;
+                    rdfs:subClassOf welcome:NER .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NER_ORG
+welcome:NER_ORG rdf:type owl:Class ;
+                rdfs:subClassOf welcome:NER .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NER_PERCENT
+welcome:NER_PERCENT rdf:type owl:Class ;
+                    rdfs:subClassOf welcome:NER .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NER_PERSON
+welcome:NER_PERSON rdf:type owl:Class ;
+                   rdfs:subClassOf welcome:NER .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NER_PRODUCT
+welcome:NER_PRODUCT rdf:type owl:Class ;
+                    rdfs:subClassOf welcome:NER .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NER_QUANTITY
+welcome:NER_QUANTITY rdf:type owl:Class ;
+                     rdfs:subClassOf welcome:NER .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NER_TIME
+welcome:NER_TIME rdf:type owl:Class ;
+                 rdfs:subClassOf welcome:NER .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NER_WORK_OF_ART
+welcome:NER_WORK_OF_ART rdf:type owl:Class ;
+                        rdfs:subClassOf welcome:NER .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Name
 welcome:Name rdf:type owl:Class ;
              rdfs:subClassOf welcome:Personal .
@@ -1274,6 +1895,11 @@ welcome:Other rdf:type owl:Class ;
               rdfs:subClassOf welcome:PersonalInformation .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#POI
+welcome:POI rdf:type owl:Class ;
+            rdfs:subClassOf wgs84_pos:Point .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Participant
 welcome:Participant rdf:type owl:Class ;
                     rdfs:subClassOf welcome:DialogueCommunication ,
@@ -1285,11 +1911,6 @@ welcome:Participant rdf:type owl:Class ;
                                       owl:onProperty welcome:hasDetectedRole ;
                                       owl:allValuesFrom welcome:Role
                                     ] .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Person
-welcome:Person rdf:type owl:Class ;
-               rdfs:isDefinedBy "http://xmlns.com/foaf/0.1" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Personal
@@ -1360,9 +1981,9 @@ welcome:Role rdf:type owl:Class ;
              rdfs:subClassOf welcome:DialogueCommunication .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SMSNotification
-welcome:SMSNotification rdf:type owl:Class ;
-                        rdfs:subClassOf welcome:Personal .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SMSNotifications
+welcome:SMSNotifications rdf:type owl:Class ;
+                         rdfs:subClassOf welcome:Personal .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Scenario
@@ -1377,6 +1998,11 @@ welcome:SecondSurname rdf:type owl:Class ;
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ServiceRequest
 welcome:ServiceRequest rdf:type owl:Class ;
                        rdfs:subClassOf welcome:Request .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SkypeInformation
+welcome:SkypeInformation rdf:type owl:Class ;
+                         rdfs:subClassOf welcome:Descriptors .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Slot
@@ -1497,6 +2123,11 @@ welcome:TurnTranscrption rdf:type owl:Class ;
                          rdfs:subClassOf welcome:Transcription .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Username
+welcome:Username rdf:type owl:Class ;
+                 rdfs:subClassOf welcome:Personal .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Webpage
 welcome:Webpage rdf:type owl:Class ;
                 rdfs:subClassOf welcome:InternetAddress .
@@ -1505,6 +2136,11 @@ welcome:Webpage rdf:type owl:Class ;
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#YearArrival
 welcome:YearArrival rdf:type owl:Class ;
                     rdfs:subClassOf welcome:Other .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#YearArrivalCountry
+welcome:YearArrivalCountry rdf:type owl:Class ;
+                           rdfs:subClassOf welcome:Other .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ZipCode
@@ -1517,352 +2153,917 @@ welcome:literacy rdf:type owl:Class ;
                  rdfs:subClassOf welcome:Other .
 
 
+###  https://schema.org/ActionStatusType
+schema:ActionStatusType rdf:type owl:Class .
+
+
+###  https://schema.org/DayOfWeek
+schema:DayOfWeek rdf:type owl:Class ;
+                 rdfs:subClassOf welcome:Temporal ;
+                 rdfs:comment "The day of the week, e.g. used to specify to which day the opening hours of an OpeningHoursSpecification refer." .
+
+
+###  https://schema.org/OpeningHoursSpecification
+schema:OpeningHoursSpecification rdf:type owl:Class ;
+                                 <http://purl.org/vocab/vann/usageNote> "The Core Public Organization Vocabulary makes full use of schema.org’s openingHours property to provide details of regular operations. The Opening Hours Specification  class can be used to provide details of exceptional circumstances, such as being closed on public holidays. Note that the property schema:opens is not used, therefore the contact point is closed. More specific closures can be indicated by including the schema:validFrom and schema:validThrough properties."@en ;
+                                 rdfs:label "opening hours specification"@en .
+
+
+###  https://schema.org/ScheduleAction#ScheduleAction
+<https://schema.org/ScheduleAction#ScheduleAction> rdf:type owl:Class .
+
+
+###  https://www.geonames.org/ontology#Feature
+gn:Feature rdf:type owl:Class .
+
+
 #################################################################
 #    Individuals
 #################################################################
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Arabic
+welcome:Arabic rdf:type owl:NamedIndividual ,
+                        welcome:Language ;
+               welcome:hasValue "Arabic" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Athens
+welcome:Athens rdf:type owl:NamedIndividual ,
+                        welcome:City ,
+                        welcome:Location ;
+               welcome:hasValue "Athens" ;
+               welcome:lat 37.9838 ;
+               welcome:long 23.72753 .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Cambrils
+welcome:Cambrils rdf:type owl:NamedIndividual ,
+                          welcome:City ,
+                          welcome:Location ;
+                 welcome:hasValue "Cambrils" ;
+                 welcome:lat 41.06667 ;
+                 welcome:long 1.06036 .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Completed
 welcome:Completed rdf:type owl:NamedIndividual ,
-                           welcome:DIPStatus .
+                           welcome:DIPStatus ;
+                  rdfs:label "Status completed" .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Crta_de_Montcada
-welcome:Crta_de_Montcada rdf:type owl:NamedIndividual ,
-                                  welcome:StreetName .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Crete
+welcome:Crete rdf:type owl:NamedIndividual ,
+                       welcome:City ,
+                       welcome:Location ;
+              welcome:hasValue "Crete" ;
+              welcome:lat 35.24011 ;
+              welcome:long 24.80926 .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#English
+welcome:English rdf:type owl:NamedIndividual ,
+                         welcome:Language ;
+                welcome:hasValue "English" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#FailedAnalysis
 welcome:FailedAnalysis rdf:type owl:NamedIndividual ,
-                                welcome:DIPStatus .
+                                welcome:DIPStatus ;
+                       rdfs:label "Status failed analysis" .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Friday
-welcome:Friday rdf:type owl:NamedIndividual ,
-                        welcome:Day .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#French
+welcome:French rdf:type owl:NamedIndividual ,
+                        welcome:Language ;
+               welcome:hasValue "French" .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Monday
-welcome:Monday rdf:type owl:NamedIndividual ,
-                        welcome:Day .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Greece
+welcome:Greece rdf:type owl:NamedIndividual ,
+                        welcome:Country ,
+                        welcome:Location ;
+               welcome:hasValue "Greece" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Hamm
+welcome:Hamm rdf:type owl:NamedIndividual ,
+                      welcome:City ,
+                      welcome:Location ;
+             welcome:hasValue "Hamm" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:Hamm ;
+   owl:annotatedProperty welcome:hasValue ;
+   owl:annotatedTarget "Hamm" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informAuthority"
+ ] .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Leros
+welcome:Leros rdf:type owl:NamedIndividual ,
+                       welcome:City ,
+                       welcome:Location ;
+              welcome:hasValue "Leros" ;
+              welcome:lat 37.14091 ;
+              welcome:long 26.84884 .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OAC_Cambrils
 welcome:OAC_Cambrils rdf:type owl:NamedIndividual ,
-                              welcome:RegistrationOffice .
+                              actor:Actor ,
+                              welcome:RegistrationOffice ;
+                     locn:address welcome:address_cambrils ;
+                     actor:email "" ;
+                     actor:name "Oficina d'Atencio Ciutadana - OAC" ;
+                     actor:phone "977 794 579" ;
+                     actor:webURL "https://www.cambrils.cat/" ;
+                     schema:closes "17:00" ;
+                     schema:opens "09:00" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OAC_Districte2
 welcome:OAC_Districte2 rdf:type owl:NamedIndividual ,
-                                welcome:RegistrationOffice .
+                                actor:Actor ,
+                                welcome:RegistrationOffice ;
+                       locn:address welcome:address_districte2 ;
+                       actor:email "" ;
+                       actor:name "Oficina d'Atenció Ciutadana del Districte 2 - OAC" ;
+                       actor:phone "937 397 000" ;
+                       actor:webURL "https://www.terrassa.cat/" ;
+                       schema:closes "17:00" ;
+                       schema:opens "09:00" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OAC_Districte3
 welcome:OAC_Districte3 rdf:type owl:NamedIndividual ,
-                                welcome:RegistrationOffice .
+                                actor:Actor ,
+                                welcome:RegistrationOffice ;
+                       locn:address welcome:address_districte3 ;
+                       actor:email "" ;
+                       actor:name "Oficina d'Atenció Ciutadana del Districte 3 - OAC" ;
+                       actor:phone "937 397 000" ;
+                       actor:webURL "https://www.terrassa.cat/" ;
+                       schema:closes "17:00" ;
+                       schema:opens "09:00" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OAC_Districte4
 welcome:OAC_Districte4 rdf:type owl:NamedIndividual ,
-                                welcome:RegistrationOffice .
+                                actor:Actor ,
+                                welcome:RegistrationOffice ;
+                       locn:address welcome:address_districte4 ;
+                       actor:email "" ;
+                       actor:name "Oficina d'Atenció Ciutadana del Districte 4 - OAC" ;
+                       actor:phone "937 397 000" ;
+                       actor:webURL "https://www.terrassa.cat/" ;
+                       schema:closes "17:00" ;
+                       schema:opens "09:00" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OAC_Districte5
 welcome:OAC_Districte5 rdf:type owl:NamedIndividual ,
-                                welcome:RegistrationOffice .
+                                actor:Actor ,
+                                welcome:RegistrationOffice ;
+                       locn:address welcome:address_districte5 ;
+                       actor:email "" ;
+                       actor:name "Oficina d'Atenció Ciutadana del Districte 5 - OAC" ;
+                       actor:phone "937 397 000" ;
+                       actor:webURL "https://www.terrassa.cat/" ;
+                       schema:closes "17:00" ;
+                       schema:opens "09:00" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OAC_Districte6
 welcome:OAC_Districte6 rdf:type owl:NamedIndividual ,
-                                welcome:RegistrationOffice .
+                                actor:Actor ,
+                                welcome:RegistrationOffice ;
+                       locn:address welcome:address_districte6 ;
+                       actor:email "" ;
+                       actor:name "Oficina d'Atenció Ciutadana del Districte 6 - OAC" ;
+                       actor:phone "937 397 000" ;
+                       actor:webURL "https://www.terrassa.cat/" ;
+                       schema:closes "17:00" ;
+                       schema:opens "09:00" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OAC_Districte7
 welcome:OAC_Districte7 rdf:type owl:NamedIndividual ,
-                                welcome:RegistrationOffice .
+                                actor:Actor ,
+                                welcome:RegistrationOffice ;
+                       locn:address welcome:address_districte7 ;
+                       actor:email "" ;
+                       actor:name "Oficina d'Atenció Ciutadana del Districte 7 - OAC" ;
+                       actor:phone "937 397 000" ;
+                       actor:webURL "https://www.terrassa.cat/" ;
+                       schema:closes "17:00" ;
+                       schema:opens "09:00" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OAC_DretsSocials
 welcome:OAC_DretsSocials rdf:type owl:NamedIndividual ,
-                                  welcome:RegistrationOffice .
+                                  actor:Actor ,
+                                  welcome:RegistrationOffice ;
+                         locn:address welcome:address_dretssocial ;
+                         actor:email "" ;
+                         actor:name "Oficina d'Atencio Ciutadana de l'Area de Drets Socials" ;
+                         actor:phone "937 397 000" ;
+                         actor:webURL "https://www.terrassa.cat/" ;
+                         schema:closes "17:00" ;
+                         schema:opens "09:00" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OAC_PlacaDido
 welcome:OAC_PlacaDido rdf:type owl:NamedIndividual ,
-                               welcome:RegistrationOffice .
+                               actor:Actor ,
+                               welcome:RegistrationOffice ;
+                      locn:address welcome:address_placadido ;
+                      actor:email "" ;
+                      actor:name "Oficina d'Atenció Ciutadana de Plaça Didó - OAC" ;
+                      actor:phone "937 397 000" ;
+                      actor:webURL "https://www.terrassa.cat/" ;
+                      schema:closes "17:00" ;
+                      schema:opens "09:00" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Patra
+welcome:Patra rdf:type owl:NamedIndividual ,
+                       welcome:City ,
+                       welcome:Location ;
+              welcome:hasValue "Patra" ;
+              welcome:lat 38.20882 ;
+              welcome:long 21.78531 .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Pending
 welcome:Pending rdf:type owl:NamedIndividual ,
-                         welcome:DIPStatus .
+                         welcome:DIPStatus ;
+                rdfs:label "Status pending" .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Servei_de_primera_acollida_Terrassa
-welcome:Servei_de_primera_acollida_Terrassa rdf:type owl:NamedIndividual .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Rodos
+welcome:Rodos rdf:type owl:NamedIndividual ,
+                       welcome:City ,
+                       welcome:Location ;
+              welcome:hasValue "Rodos" ;
+              welcome:lat 36.43405 ;
+              welcome:long 28.21763 .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SimulationAgent
+welcome:SimulationAgent rdf:type owl:NamedIndividual ,
+                                 foaf:Agent ;
+                        welcome:hasScheduleAction welcome:sa_1 ,
+                                                  welcome:sa_2 ,
+                                                  welcome:sa_3 ,
+                                                  welcome:sa_4 ;
+                        welcome:worksFor welcome:jobcenter ;
+                        welcome:hasName "Mr. Muller" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:SimulationAgent ;
+   owl:annotatedProperty welcome:hasName ;
+   owl:annotatedTarget "Mr. Muller" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informPersonName" ,
+                                           "informPersonNameIntro"
+ ] .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Spain
 welcome:Spain rdf:type owl:NamedIndividual ,
-                       welcome:Country .
+                       welcome:Country ,
+                       welcome:Location ;
+              welcome:hasValue "Spain" ;
+              welcome:lat 40.46366 ;
+              welcome:long -3.74922 .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SpatialLocation_1
-welcome:SpatialLocation_1 rdf:type owl:NamedIndividual ,
-                                   welcome:SpatialLocation ;
-                          welcome:hasAltAddress "Tsimiski 7"^^xsd:string .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Status_Free
+welcome:Status_Free rdf:type owl:NamedIndividual ,
+                             schema:ActionStatusType ;
+                    welcome:hasValue "Free" .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Syria
-welcome:Syria rdf:type owl:NamedIndividual .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Status_Rejected
+welcome:Status_Rejected rdf:type owl:NamedIndividual ,
+                                 schema:ActionStatusType ;
+                        welcome:hasValue "Rejected" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Status_Reserved
+welcome:Status_Reserved rdf:type owl:NamedIndividual ,
+                                 schema:ActionStatusType ;
+                        welcome:hasValue "Reserved" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#TCNClarifyRequest
 welcome:TCNClarifyRequest rdf:type owl:NamedIndividual ,
-                                   welcome:DIPStatus .
+                                   welcome:DIPStatus ;
+                          rdfs:label "Status tcn clarify request" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Terrassa
 welcome:Terrassa rdf:type owl:NamedIndividual ,
-                          welcome:City .
+                          welcome:City ,
+                          welcome:Location ;
+                 welcome:hasValue "Terrassa" ;
+                 welcome:lat 41.56321 ;
+                 welcome:long 2.00887 .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Thessaloniki
+welcome:Thessaloniki rdf:type owl:NamedIndividual ,
+                              welcome:City ,
+                              welcome:Location ;
+                     welcome:hasValue "Thessaloniki" ;
+                     welcome:lat 40.64006 ;
+                     welcome:long 22.94441 .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#TopicSwitch
 welcome:TopicSwitch rdf:type owl:NamedIndividual ,
-                             welcome:DIPStatus .
+                             welcome:DIPStatus ;
+                    rdfs:label "Status topic switch" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#UnclearAnalysis
 welcome:UnclearAnalysis rdf:type owl:NamedIndividual ,
-                                 welcome:DIPStatus .
+                                 welcome:DIPStatus ;
+                        rdfs:label "Status unclear analysis" .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Weekday
-welcome:Weekday rdf:type owl:NamedIndividual ,
-                         welcome:Day .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#address_cambrils
+welcome:address_cambrils rdf:type owl:NamedIndividual ,
+                                  locn:Address ,
+                                  welcome:Location ;
+                         welcome:hasCity welcome:Cambrils ;
+                         welcome:hasCountry welcome:Spain ;
+                         actor:physicalAddress "Pl. de l'Ajuntament, 4 - 43850 Cambrils" ;
+                         welcome:lat 41.07132 ;
+                         welcome:long 1.05808 .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#carrer_de_san_sebastia
-welcome:carrer_de_san_sebastia rdf:type owl:NamedIndividual ,
-                                        welcome:StreetName ;
-                               rdfs:label "Carrer de Sant Sebastia" .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#carrer_de_valencia
-welcome:carrer_de_valencia rdf:type owl:NamedIndividual ,
-                                    welcome:StreetName ;
-                           rdfs:label "Carrer de Valencia" .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#catalanLanguage
-welcome:catalanLanguage rdf:type owl:NamedIndividual ,
-                                 welcome:Course ;
-                        welcome:hasCourseName "Catalan" ;
-                        welcome:hasNumberHours "90h" .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#catalan_language
-welcome:catalan_language rdf:type owl:NamedIndividual ,
-                                  welcome:Course ;
-                         welcome:hasClosingTime <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#21> ;
-                         welcome:hasOpeningTime <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#19> ;
-                         welcome:hasOperatingDay welcome:Friday ,
-                                                 welcome:Monday ;
-                         welcome:isPovidedBy welcome:training_office_1 .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#col_legi_sagrat_cor
-welcome:col_legi_sagrat_cor rdf:type owl:NamedIndividual ,
-                                     welcome:Building ,
-                                     welcome:TrainingOffice ;
-                            rdfs:label "Col legi Sagrat Cor" .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#first_reception_process
-welcome:first_reception_process rdf:type owl:NamedIndividual ,
-                                         <http://www.daml.org/services/owl-s/1.1/Process.owl#Process> .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#first_reception_result
-welcome:first_reception_result rdf:type owl:NamedIndividual ,
-                                        <http://www.daml.org/services/owl-s/1.1/Process.owl#Result> .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hosting_center
-welcome:hosting_center rdf:type owl:NamedIndividual ,
-                                welcome:HostingInformation .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#labourCourse
-welcome:labourCourse rdf:type owl:NamedIndividual ,
-                              welcome:Course ;
-                     welcome:hasCourseName "Labour Market and Employment" ;
-                     welcome:hasNumberHours "15h" .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#module_a
-welcome:module_a rdf:type owl:NamedIndividual ,
-                          welcome:LanguageModule ;
-                 welcome:offersCourse welcome:catalanLanguage ,
-                                      welcome:spanishLanguage ;
-                 welcome:hasDipType "LanguageModule" ;
-                 welcome:moduleName "Languages" ;
-                 rdfs:label "informLanguageModule" .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#module_b
-welcome:module_b rdf:type owl:NamedIndividual ,
-                          welcome:LabourModule ;
-                 welcome:offersCourse welcome:labourCourse ;
-                 welcome:hasDipType "LabourModule" ;
-                 welcome:moduleName "Labour market knowledge" ;
-                 rdfs:label "informLabourModule" .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#module_c
-welcome:module_c rdf:type owl:NamedIndividual ,
-                          welcome:SocietyModule ;
-                 welcome:offersCourse welcome:societyCourse ;
-                 welcome:hasDipType "SocietyModule" ;
-                 welcome:moduleName "Catalan Society" ;
-                 rdfs:label "informSocietyModule" .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#physical_address_1
-welcome:physical_address_1 rdf:type owl:NamedIndividual ,
-                                    welcome:PhysicalAddress ;
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#address_districte2
+welcome:address_districte2 rdf:type owl:NamedIndividual ,
+                                    locn:Address ,
+                                    welcome:Location ;
                            welcome:hasCity welcome:Terrassa ;
                            welcome:hasCountry welcome:Spain ;
-                           welcome:hasStreetName welcome:carrer_de_san_sebastia ;
-                           welcome:hasStreetNumber <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#66> ;
-                           rdfs:comment "" .
+                           actor:physicalAddress "Av de Barcelona, 180 (08222 Terrassa)" ;
+                           welcome:lat 41.56453 ;
+                           welcome:long 2.02751 .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#physical_address_2
-welcome:physical_address_2 rdf:type owl:NamedIndividual ,
-                                    welcome:PhysicalAddress ;
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#address_districte3
+welcome:address_districte3 rdf:type owl:NamedIndividual ,
+                                    locn:Address ,
+                                    welcome:Location ;
                            welcome:hasCity welcome:Terrassa ;
                            welcome:hasCountry welcome:Spain ;
-                           welcome:hasStreetName welcome:raval_de_montserrat ;
-                           welcome:hasStreetNumber <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#14> .
+                           actor:physicalAddress "Pl de Can Palet, 1 (08223 Terrassa)" ;
+                           welcome:lat 41.55578 ;
+                           welcome:long 41.55578 .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#physical_address_3
-welcome:physical_address_3 rdf:type owl:NamedIndividual ,
-                                    welcome:PhysicalAddress ;
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#address_districte4
+welcome:address_districte4 rdf:type owl:NamedIndividual ,
+                                    locn:Address ,
+                                    welcome:Location ;
                            welcome:hasCity welcome:Terrassa ;
                            welcome:hasCountry welcome:Spain ;
-                           welcome:hasStreetName welcome:carrer_de_valencia ;
-                           welcome:hasStreetNumber <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#142> .
+                           actor:physicalAddress "Av d' Àngel Sallent, 55 (08224 Terrassa)" ;
+                           welcome:lat 41.55743 ;
+                           welcome:long 2.00004 .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#physical_address_4
-welcome:physical_address_4 rdf:type owl:NamedIndividual ,
-                                    welcome:PhysicalAddress ;
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#address_districte5
+welcome:address_districte5 rdf:type owl:NamedIndividual ,
+                                    locn:Address ,
+                                    welcome:Location ;
                            welcome:hasCity welcome:Terrassa ;
-                           welcome:hasName welcome:Servei_de_primera_acollida_Terrassa ;
-                           welcome:hasStreetNumber <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#596> ;
-                           welcome:hasTelephone <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#937_315_982> ;
-                           welcome:hasWebpage <https://www.terrassa.cat/primera-acollida-ciutadania> ;
-                           welcome:hasZipCode <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#08223> .
+                           welcome:hasCountry welcome:Spain ;
+                           actor:physicalAddress "Pl de la Cultura, 5 (08225 Terrassa)" ;
+                           welcome:lat 41.57692 ;
+                           welcome:long 2.00634 .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#raval_de_montserrat
-welcome:raval_de_montserrat rdf:type owl:NamedIndividual ,
-                                     welcome:StreetName ;
-                            rdfs:label "Raval de Montserrat" .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#address_districte6
+welcome:address_districte6 rdf:type owl:NamedIndividual ,
+                                    locn:Address ,
+                                    welcome:Location ;
+                           welcome:hasCity welcome:Terrassa ;
+                           welcome:hasCountry welcome:Spain ;
+                           actor:physicalAddress "Rm de Francesc Macià, 189 (08226 Terrassa)" ;
+                           welcome:lat 41.5774 ;
+                           welcome:long 2.02494 .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#registration_office_terrassa
-welcome:registration_office_terrassa rdf:type owl:NamedIndividual ,
-                                              welcome:RegistrationOffice ;
-                                     welcome:hasClosingTime <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#15> ;
-                                     welcome:hasOpeningTime <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#9> ;
-                                     welcome:hasOperatingDay welcome:Weekday ;
-                                     welcome:hasPhysicalAddress welcome:physical_address_2 .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#address_districte7
+welcome:address_districte7 rdf:type owl:NamedIndividual ,
+                                    locn:Address ,
+                                    welcome:Location ;
+                           welcome:hasCity welcome:Terrassa ;
+                           welcome:hasCountry welcome:Spain ;
+                           actor:physicalAddress "Ca d' Amèrica, 33 (08228 Terrassa)" ;
+                           welcome:lat 41.53707 ;
+                           welcome:long 2.04197 .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#societyCourse
-welcome:societyCourse rdf:type owl:NamedIndividual ,
-                               welcome:Course ;
-                      welcome:hasCourseName "Your municipality and the services you can apply for." ;
-                      welcome:hasNumberHours "15h" .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#address_dretssocial
+welcome:address_dretssocial rdf:type owl:NamedIndividual ,
+                                     locn:Address ,
+                                     welcome:Location ;
+                            welcome:hasCity welcome:Terrassa ;
+                            welcome:hasCountry welcome:Spain ;
+                            actor:physicalAddress "Cr de Montcada, 596 (08223 Terrassa)" ;
+                            welcome:lat 41.55858 ;
+                            welcome:long 2.0284 .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#spanishLanguage
-welcome:spanishLanguage rdf:type owl:NamedIndividual ,
-                                 welcome:Course ;
-                        welcome:hasCourseName "Spanish" ;
-                        welcome:hasNumberHours "90h" .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#address_placadido
+welcome:address_placadido rdf:type owl:NamedIndividual ,
+                                   locn:Address ,
+                                   welcome:Location ;
+                          welcome:hasCity welcome:Terrassa ;
+                          welcome:hasCountry welcome:Spain ;
+                          actor:physicalAddress "Pl Didó, 5 (08221 Terrassa)" ;
+                          welcome:lat 41.56382 ;
+                          welcome:long 2.01006 .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#training_office_1
-welcome:training_office_1 rdf:type owl:NamedIndividual ,
-                                   welcome:TrainingOffice ;
-                          welcome:hasName welcome:col_legi_sagrat_cor ;
-                          welcome:offersCourse welcome:catalan_language .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#address_praksisAthens
+welcome:address_praksisAthens rdf:type owl:NamedIndividual ,
+                                       locn:Address ,
+                                       welcome:Location ;
+                              welcome:hasCity welcome:Athens ;
+                              welcome:hasCountry welcome:Greece ;
+                              actor:physicalAddress "23, Sarpidonos Street, Athens, Greece" ;
+                              welcome:lat 37.99919 ;
+                              welcome:long 23.70559 ;
+                              <http://purl.org/dc/terms/isRequiredBy> "informAddress" .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#08223
-<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#08223> rdf:type owl:NamedIndividual ,
-                                                                                             welcome:ZipCode .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#address_praksisThessaloniki
+welcome:address_praksisThessaloniki rdf:type owl:NamedIndividual ,
+                                             locn:Address ,
+                                             welcome:Location ;
+                                    welcome:hasCity welcome:Thessaloniki ;
+                                    welcome:hasCountry welcome:Greece ;
+                                    actor:physicalAddress "1, Arkadioupoleon & Agiou Dimitriou Streets, Thessaloniki, Greece" ;
+                                    welcome:lat 40.64376 ;
+                                    welcome:long 22.9371 ;
+                                    <http://purl.org/dc/terms/isRequiredBy> "informAddress" .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#1
-<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#1> rdf:type owl:NamedIndividual ,
-                                                                                         welcome:Time .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#asylum_Attica
+welcome:asylum_Attica rdf:type owl:NamedIndividual ,
+                               welcome:AsylumOffice ,
+                               welcome:Office ;
+                      welcome:hasCity welcome:Athens ;
+                      welcome:hasHoursSpec welcome:slot_ar_attica_1 ,
+                                           welcome:slot_ar_attica_2 ,
+                                           welcome:slot_ef_attica_1 ,
+                                           welcome:slot_ef_attica_2 .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#14
-<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#14> rdf:type owl:NamedIndividual ,
-                                                                                          welcome:StreetNumber .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#asylum_Crete
+welcome:asylum_Crete rdf:type owl:NamedIndividual ,
+                              welcome:AsylumOffice ,
+                              welcome:Office ;
+                     welcome:hasCity welcome:Crete ;
+                     welcome:hasHoursSpec welcome:slot_ar_crete ,
+                                          welcome:slot_ef_crete .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#142
-<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#142> rdf:type owl:NamedIndividual ,
-                                                                                           welcome:StreetNumber .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#asylum_Leros
+welcome:asylum_Leros rdf:type owl:NamedIndividual ,
+                              welcome:AsylumOffice ,
+                              welcome:Office ;
+                     welcome:hasCity welcome:Leros ;
+                     welcome:hasHoursSpec welcome:slot_ar_leros .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#15
-<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#15> rdf:type owl:NamedIndividual ,
-                                                                                          welcome:Time .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#asylum_Patra
+welcome:asylum_Patra rdf:type owl:NamedIndividual ,
+                              welcome:AsylumOffice ,
+                              welcome:Office ;
+                     welcome:hasCity welcome:Patra ;
+                     welcome:hasHoursSpec welcome:slot_ar_patra .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#19
-<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#19> rdf:type owl:NamedIndividual ,
-                                                                                          welcome:Time .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#asylum_Rodos
+welcome:asylum_Rodos rdf:type owl:NamedIndividual ,
+                              welcome:AsylumOffice ,
+                              welcome:Office ;
+                     welcome:hasCity welcome:Rodos ;
+                     welcome:hasHoursSpec welcome:slot_ar_rodos .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#21
-<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#21> rdf:type owl:NamedIndividual ,
-                                                                                          welcome:Time .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#asylum_Syria
+welcome:asylum_Syria rdf:type owl:NamedIndividual ,
+                              welcome:AsylumOffice ,
+                              welcome:Office ;
+                     welcome:hasHoursSpec welcome:slot_ar_syria .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#35
-<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#35> rdf:type owl:NamedIndividual .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#asylum_Thes
+welcome:asylum_Thes rdf:type owl:NamedIndividual ,
+                             welcome:AsylumOffice ,
+                             welcome:Office ;
+                    welcome:hasCity welcome:Thessaloniki ;
+                    welcome:hasHoursSpec welcome:slot_ar_thes ,
+                                         welcome:slot_ef_thes .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#596
-<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#596> rdf:type owl:NamedIndividual ,
-                                                                                           welcome:StreetNumber .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#caritasContactPerson
+welcome:caritasContactPerson rdf:type owl:NamedIndividual ,
+                                      foaf:Agent ;
+                             welcome:worksFor welcome:jobcenter ;
+                             actor:email "meyer.mrs@hammjobcenter.de" ;
+                             actor:phone "02381-144 270" ;
+                             actor:webURL "www.test.com" ;
+                             welcome:hasName "Mrs. Meyer" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:caritasContactPerson ;
+   owl:annotatedProperty welcome:hasName ;
+   owl:annotatedTarget "Mrs. Meyer" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informContactPerson"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:caritasContactPerson ;
+   owl:annotatedProperty actor:email ;
+   owl:annotatedTarget "meyer.mrs@hammjobcenter.de" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informContactOtherInfo"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:caritasContactPerson ;
+   owl:annotatedProperty actor:phone ;
+   owl:annotatedTarget "02381-144 270" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informContactPhone"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:caritasContactPerson ;
+   owl:annotatedProperty actor:webURL ;
+   owl:annotatedTarget "www.test.com" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informContactOtherInfo"
+ ] .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#66
-<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#66> rdf:type owl:NamedIndividual ,
-                                                                                          welcome:StreetNumber .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#course_catalanLanguage
+welcome:course_catalanLanguage rdf:type owl:NamedIndividual ,
+                                        welcome:Course ;
+                               welcome:hasCourseName "Catalan" ;
+                               welcome:hasNumberHours "90h" .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#9
-<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#9> rdf:type owl:NamedIndividual ,
-                                                                                         welcome:Time .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#course_labourCourse
+welcome:course_labourCourse rdf:type owl:NamedIndividual ,
+                                     welcome:Course ;
+                            welcome:hasCourseName "Labour Market and Employment" ;
+                            welcome:hasNumberHours "15h" .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#937_315_982
-<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#937_315_982> rdf:type owl:NamedIndividual ,
-                                                                                                   welcome:Telephone_number .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#course_societyCourse
+welcome:course_societyCourse rdf:type owl:NamedIndividual ,
+                                      welcome:Course ;
+                             welcome:hasCourseName "Your municipality and the services you can apply for." ;
+                             welcome:hasNumberHours "15h" .
 
 
-###  https://www.terrassa.cat/primera-acollida-ciutadania
-<https://www.terrassa.cat/primera-acollida-ciutadania> rdf:type owl:NamedIndividual ,
-                                                                welcome:Webpage .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#course_spanishLanguage
+welcome:course_spanishLanguage rdf:type owl:NamedIndividual ,
+                                        welcome:Course ;
+                               welcome:hasCourseName "Spanish" ;
+                               welcome:hasNumberHours "90h" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#jobcenter
+welcome:jobcenter rdf:type owl:NamedIndividual ,
+                           welcome:JobCenter ;
+                  welcome:hasCity welcome:Hamm ;
+                  welcome:hasName "Job Center" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:jobcenter ;
+   owl:annotatedProperty welcome:hasName ;
+   owl:annotatedTarget "Job Center" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informAuthority"
+ ] .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#module_labour
+welcome:module_labour rdf:type owl:NamedIndividual ,
+                               welcome:LabourModule ;
+                      welcome:hasHoursSpec welcome:module_labour_hours ;
+                      welcome:offersCourse welcome:course_labourCourse ;
+                      gn:nearby welcome:poi_2 ;
+                      welcome:moduleName "Labour market knowledge" ;
+                      <http://purl.org/dc/terms/isRequiredBy> "informLabourModule" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#module_labour_hours
+welcome:module_labour_hours rdf:type owl:NamedIndividual ,
+                                     schema:OpeningHoursSpecification ;
+                            schema:dayOfWeek schema:Wednesday ;
+                            schema:closes "21:00" ;
+                            schema:opens "19:00" ;
+                            <http://purl.org/dc/terms/isRequiredBy> "informLabourModuleHours" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#module_language
+welcome:module_language rdf:type owl:NamedIndividual ,
+                                 welcome:LanguageModule ;
+                        welcome:hasHoursSpec welcome:module_language_hours ;
+                        welcome:offersCourse welcome:course_catalanLanguage ,
+                                             welcome:course_spanishLanguage ;
+                        gn:nearby welcome:poi_1 ;
+                        welcome:moduleName "Languages" ;
+                        <http://purl.org/dc/terms/isRequiredBy> "informLanguageModule" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#module_language_hours
+welcome:module_language_hours rdf:type owl:NamedIndividual ,
+                                       schema:OpeningHoursSpecification ;
+                              schema:dayOfWeek schema:Friday ,
+                                               schema:Monday ;
+                              schema:closes "21:00" ;
+                              schema:opens "19:00" ;
+                              <http://purl.org/dc/terms/isRequiredBy> "informLanguageModuleHours" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#module_society
+welcome:module_society rdf:type owl:NamedIndividual ,
+                                welcome:SocietyModule ;
+                       welcome:hasHoursSpec welcome:module_society_hours ;
+                       welcome:offersCourse welcome:course_societyCourse ;
+                       gn:nearby welcome:poi_3 ;
+                       welcome:moduleName "Catalan Society" ;
+                       <http://purl.org/dc/terms/isRequiredBy> "informSocietyModule" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#module_society_hours
+welcome:module_society_hours rdf:type owl:NamedIndividual ,
+                                      schema:OpeningHoursSpecification ;
+                             schema:dayOfWeek schema:Wednesday ;
+                             schema:closes "21:00" ;
+                             schema:opens "19:00" ;
+                             <http://purl.org/dc/terms/isRequiredBy> "informSocietyModuleHours" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#poi_1
+welcome:poi_1 rdf:type owl:NamedIndividual ,
+                       welcome:POI ;
+              actor:name "Col-legi Sagrat Cor" ;
+              <http://purl.org/dc/terms/isRequiredBy> "informLanguageModuleAddress" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#poi_2
+welcome:poi_2 rdf:type owl:NamedIndividual ,
+                       welcome:POI ;
+              actor:name "City Council Building" ;
+              <http://purl.org/dc/terms/isRequiredBy> "informLabourModuleAddress" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#poi_3
+welcome:poi_3 rdf:type owl:NamedIndividual ,
+                       welcome:POI ;
+              actor:name "City Council Building" ;
+              <http://purl.org/dc/terms/isRequiredBy> "informSocietyModuleAddress" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#praksisAthens
+welcome:praksisAthens rdf:type owl:NamedIndividual ,
+                               actor:Actor ,
+                               welcome:RegistrationOffice ;
+                      locn:address welcome:address_praksisAthens ;
+                      actor:email "info@praksis.gr" ;
+                      actor:name "Community Center Athens" ;
+                      actor:phone "210-8213704" ;
+                      actor:webURL "" ;
+                      <http://purl.org/dc/terms/isRequiredBy> "informEmail" ,
+                                                              "informTelephoneNumber" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#praksisThessaloniki
+welcome:praksisThessaloniki rdf:type owl:NamedIndividual ,
+                                     actor:Actor ,
+                                     welcome:RegistrationOffice ;
+                            locn:address welcome:address_praksisThessaloniki ;
+                            actor:email "info@praksis.gr" ;
+                            actor:name "Polyclinic Thessaloniki" ;
+                            actor:phone "2310-556145" ;
+                            actor:webURL "" ;
+                            <http://purl.org/dc/terms/isRequiredBy> "informEmail" ,
+                                                                    "informTelephoneNumber" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#sa_1
+welcome:sa_1 rdf:type owl:NamedIndividual ,
+                      <https://schema.org/ScheduleAction#ScheduleAction> ;
+             schema:actionStatus welcome:Status_Free ;
+             schema:scheduledTime schema:Monday ;
+             schema:endTime "10:30" ;
+             schema:startTime "10:00" ;
+             <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#sa_2
+welcome:sa_2 rdf:type owl:NamedIndividual ,
+                      <https://schema.org/ScheduleAction#ScheduleAction> ;
+             schema:actionStatus welcome:Status_Free ;
+             schema:scheduledTime schema:Monday ;
+             schema:endTime "12:30" ;
+             schema:startTime "12:00" ;
+             <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#sa_3
+welcome:sa_3 rdf:type owl:NamedIndividual ,
+                      <https://schema.org/ScheduleAction#ScheduleAction> ;
+             schema:actionStatus welcome:Status_Free ;
+             schema:scheduledTime schema:Monday ;
+             schema:endTime "14:30" ;
+             schema:startTime "14:00" ;
+             <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#sa_4
+welcome:sa_4 rdf:type owl:NamedIndividual ,
+                      <https://schema.org/ScheduleAction#ScheduleAction> ;
+             schema:actionStatus welcome:Status_Free ;
+             schema:scheduledTime schema:Monday ;
+             schema:endTime "16:30" ;
+             schema:startTime "16:00" ;
+             <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#skype_informArabic
+welcome:skype_informArabic rdf:type owl:NamedIndividual ,
+                                    welcome:SkypeInformation ;
+                           welcome:requiresLanguage welcome:Arabic ;
+                           welcome:hasSkypeId "asylum.service.arabic" ;
+                           <http://purl.org/dc/terms/isRequiredBy> "informSkypeID" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#skype_informEnglish
+welcome:skype_informEnglish rdf:type owl:NamedIndividual ,
+                                     welcome:SkypeInformation ;
+                            welcome:requiresLanguage welcome:English ,
+                                                     welcome:French ;
+                            welcome:hasSkypeId "asylum.service" ;
+                            <http://purl.org/dc/terms/isRequiredBy> "informSkypeID" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#slot_ar_attica_1
+welcome:slot_ar_attica_1 rdf:type owl:NamedIndividual ,
+                                  schema:OpeningHoursSpecification ;
+                         welcome:hasSkypeInfo welcome:skype_informArabic ;
+                         schema:dayOfWeek schema:Monday ;
+                         schema:closes "09:00" ;
+                         schema:opens "08:00" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#slot_ar_attica_2
+welcome:slot_ar_attica_2 rdf:type owl:NamedIndividual ,
+                                  schema:OpeningHoursSpecification ;
+                         welcome:hasSkypeInfo welcome:skype_informArabic ;
+                         schema:dayOfWeek schema:Monday ,
+                                          schema:Thursday ;
+                         schema:closes "12:00" ;
+                         schema:opens "11:00" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#slot_ar_crete
+welcome:slot_ar_crete rdf:type owl:NamedIndividual ,
+                               schema:OpeningHoursSpecification ;
+                      welcome:hasSkypeInfo welcome:skype_informArabic ;
+                      schema:dayOfWeek schema:Monday ;
+                      schema:closes "10:00" ;
+                      schema:opens "09:00" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#slot_ar_leros
+welcome:slot_ar_leros rdf:type owl:NamedIndividual ,
+                               schema:OpeningHoursSpecification ;
+                      welcome:hasSkypeInfo welcome:skype_informArabic ;
+                      schema:dayOfWeek schema:Monday ;
+                      schema:closes "10:00" ;
+                      schema:opens "09:00" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#slot_ar_patra
+welcome:slot_ar_patra rdf:type owl:NamedIndividual ,
+                               schema:OpeningHoursSpecification ;
+                      welcome:hasSkypeInfo welcome:skype_informArabic ;
+                      schema:dayOfWeek schema:Monday ;
+                      schema:closes "09:00" ;
+                      schema:opens "08:00" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#slot_ar_rodos
+welcome:slot_ar_rodos rdf:type owl:NamedIndividual ,
+                               schema:OpeningHoursSpecification ;
+                      welcome:hasSkypeInfo welcome:skype_informArabic ;
+                      schema:dayOfWeek schema:Tuesday ;
+                      schema:closes "12:00" ;
+                      schema:opens "10:00" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#slot_ar_syria
+welcome:slot_ar_syria rdf:type owl:NamedIndividual ,
+                               schema:OpeningHoursSpecification ;
+                      welcome:hasSkypeInfo welcome:skype_informArabic ;
+                      schema:dayOfWeek schema:Wednesday ;
+                      schema:closes "12:00" ;
+                      schema:opens "11:00" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#slot_ar_thes
+welcome:slot_ar_thes rdf:type owl:NamedIndividual ,
+                              schema:OpeningHoursSpecification ;
+                     welcome:hasSkypeInfo welcome:skype_informArabic ;
+                     schema:dayOfWeek schema:Tuesday ;
+                     schema:closes "12:00" ;
+                     schema:opens "10:00" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#slot_ef_attica_1
+welcome:slot_ef_attica_1 rdf:type owl:NamedIndividual ,
+                                  schema:OpeningHoursSpecification ;
+                         welcome:hasSkypeInfo welcome:skype_informEnglish ;
+                         schema:dayOfWeek schema:Wednesday ;
+                         schema:closes "10:00" ;
+                         schema:opens "09:00" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#slot_ef_attica_2
+welcome:slot_ef_attica_2 rdf:type owl:NamedIndividual ,
+                                  schema:OpeningHoursSpecification ;
+                         welcome:hasSkypeInfo welcome:skype_informEnglish ;
+                         schema:dayOfWeek schema:Friday ;
+                         schema:closes "10:00" ;
+                         schema:opens "09:00" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#slot_ef_crete
+welcome:slot_ef_crete rdf:type owl:NamedIndividual ,
+                               schema:OpeningHoursSpecification ;
+                      welcome:hasSkypeInfo welcome:skype_informEnglish ;
+                      schema:dayOfWeek schema:Wednesday ;
+                      schema:closes "10:00" ;
+                      schema:opens "09:00" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#slot_ef_thes
+welcome:slot_ef_thes rdf:type owl:NamedIndividual ,
+                              schema:OpeningHoursSpecification ;
+                     welcome:hasSkypeInfo welcome:skype_informEnglish ;
+                     schema:dayOfWeek schema:Friday ;
+                     schema:closes "10:00" ;
+                     schema:opens "09:00" .
+
+
+###  https://schema.org/Friday
+schema:Friday rdf:type owl:NamedIndividual ,
+                       schema:DayOfWeek ;
+              welcome:hasValue "Friday" .
+
+
+###  https://schema.org/Monday
+schema:Monday rdf:type owl:NamedIndividual ,
+                       schema:DayOfWeek ;
+              welcome:hasValue "Monday" .
+
+
+###  https://schema.org/Staturday
+schema:Staturday rdf:type owl:NamedIndividual ,
+                          schema:DayOfWeek .
+
+
+###  https://schema.org/Sunday
+schema:Sunday rdf:type owl:NamedIndividual ,
+                       schema:DayOfWeek .
+
+
+###  https://schema.org/Thursday
+schema:Thursday rdf:type owl:NamedIndividual ,
+                         schema:DayOfWeek ;
+                welcome:hasValue "Thursday" .
+
+
+###  https://schema.org/Tuesday
+schema:Tuesday rdf:type owl:NamedIndividual ,
+                        schema:DayOfWeek ;
+               welcome:hasValue "Tuesday" .
+
+
+###  https://schema.org/Wednesday
+schema:Wednesday rdf:type owl:NamedIndividual ,
+                          schema:DayOfWeek ;
+                 welcome:hasValue "Wednesday" .
 
 
 #################################################################
@@ -1870,38 +3071,10 @@ welcome:training_office_1 rdf:type owl:NamedIndividual ,
 #################################################################
 
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( welcome:AsylumClaim
-                welcome:Illiteracy
-                welcome:LearningHandicap
-                welcome:MaritalStatus
-                welcome:PreviousResidenceCatalonia
-                welcome:PreviousResidenceOther
-                welcome:PreviousResidenceSpain
-                welcome:RegistrationYear
-                welcome:YearArrival
-                welcome:literacy
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( welcome:AsylumClaim
-                welcome:LearningHandicap
-                welcome:MaritalStatus
-                welcome:PreviousResidenceCatalonia
-                welcome:PreviousResidenceOther
-                welcome:PreviousResidenceSpain
-                welcome:YearArrival
-                welcome:literacy
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
   owl:members ( welcome:Birthday
                 welcome:CityOfBirth
-                welcome:E-mail
-                welcome:E-mailNotification
+                welcome:Email
+                welcome:EmailNotifications
                 welcome:FirstSurname
                 welcome:IDType
                 welcome:Landline
@@ -1941,10 +3114,78 @@ welcome:training_office_1 rdf:type owl:NamedIndividual ,
 
 
 [ rdf:type owl:AllDisjointClasses ;
+  owl:members ( welcome:CertificateCatalan
+                welcome:CertificateCatalanSociety
+                welcome:CertificateLabourMarket
+                welcome:CertificateSpanish
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
   owl:members ( welcome:CompletionYear
                 welcome:Course
                 welcome:CourseInstitution
                 welcome:Duration
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( welcome:CompletionYearCatalan
+                welcome:CompletionYearCatalanSociety
+                welcome:CompletionYearLabourMarket
+                welcome:CompletionYearSpanish
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( welcome:CourseInstitutionCatalan
+                welcome:CourseInstitutionCatalanSociety
+                welcome:CourseInstitutionLabourMarket
+                welcome:CourseInstitutionSpanish
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( welcome:CourseNameCatalan
+                welcome:CourseNameCatalanSociety
+                welcome:CourseNameLabourMarket
+                welcome:CourseNameSpanish
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( welcome:DurationCatalan
+                welcome:DurationCatalanSociety
+                welcome:DurationLabourMarket
+                welcome:DurationSpanish
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( welcome:NER_CARDINAL
+                welcome:NER_DATE
+                welcome:NER_EVENT
+                welcome:NER_FAC
+                welcome:NER_GPE
+                welcome:NER_LANGUAGE
+                welcome:NER_LAW
+                welcome:NER_LOC
+                welcome:NER_MONEY
+                welcome:NER_NORP
+                welcome:NER_ORDINAL
+                welcome:NER_ORG
+                welcome:NER_PERCENT
+                welcome:NER_PERSON
+                welcome:NER_PRODUCT
+                welcome:NER_QUANTITY
+                welcome:NER_TIME
+                welcome:NER_WORK_OF_ART
               )
 ] .
 
