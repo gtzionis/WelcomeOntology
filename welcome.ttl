@@ -1373,14 +1373,12 @@ welcome:CertificateSpanish rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#City
 welcome:City rdf:type owl:Class ;
-             rdfs:subClassOf welcome:PhysicalAddress ;
-             <http://purl.org/dc/terms/isRequiredBy> "obtainResidenceAddressCity" .
+             rdfs:subClassOf welcome:PhysicalAddress .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CityOfBirth
 welcome:CityOfBirth rdf:type owl:Class ;
-                    rdfs:subClassOf welcome:Personal ;
-                    <http://purl.org/dc/terms/isRequiredBy> "obtainCityOfBirth" .
+                    rdfs:subClassOf welcome:Personal .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CompletionYear
@@ -1435,8 +1433,7 @@ welcome:Country rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CountryOfBirth
 welcome:CountryOfBirth rdf:type owl:Class ;
-                       rdfs:subClassOf welcome:Personal ;
-                       <http://purl.org/dc/terms/isRequiredBy> "obtainCountryOfBirth" .
+                       rdfs:subClassOf welcome:Personal .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Course
@@ -1629,8 +1626,7 @@ welcome:Entrance rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#FirstSurname
 welcome:FirstSurname rdf:type owl:Class ;
-                     rdfs:subClassOf welcome:Personal ;
-                     <http://purl.org/dc/terms/isRequiredBy> "obtainFirstSurname" .
+                     rdfs:subClassOf welcome:Personal .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#FirstTimeAsylumClaim
@@ -1738,8 +1734,7 @@ welcome:Landline rdf:type owl:Class ;
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Language
-welcome:Language rdf:type owl:Class ;
-                 <http://purl.org/dc/terms/isRequiredBy> "confirmLanguage" .
+welcome:Language rdf:type owl:Class .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#LanguageModule
@@ -1881,14 +1876,12 @@ welcome:NER_WORK_OF_ART rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Name
 welcome:Name rdf:type owl:Class ;
-             rdfs:subClassOf welcome:Personal ;
-             <http://purl.org/dc/terms/isRequiredBy> "obtainName" .
+             rdfs:subClassOf welcome:Personal .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Nationality
 welcome:Nationality rdf:type owl:Class ;
-                    rdfs:subClassOf welcome:Personal ;
-                    <http://purl.org/dc/terms/isRequiredBy> "obtainNationality" .
+                    rdfs:subClassOf welcome:Personal .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NotificationPreferences
@@ -2007,8 +2000,7 @@ welcome:Scenario rdf:type owl:Class .
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SecondSurname
 welcome:SecondSurname rdf:type owl:Class ;
-                      rdfs:subClassOf welcome:Personal ;
-                      <http://purl.org/dc/terms/isRequiredBy> "obtainSecondSurname" .
+                      rdfs:subClassOf welcome:Personal .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ServiceRequest
@@ -2070,16 +2062,13 @@ welcome:StayingPeriod rdf:type owl:Class ;
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#StreetName
 welcome:StreetName rdf:type owl:Class ;
                    rdfs:subClassOf welcome:AddressInfo ,
-                                   welcome:PhysicalAddress ;
-                   <http://purl.org/dc/terms/isRequiredBy> "obtainResidenceAddressStreet" ,
-                                                           "obtainStreetType" .
+                                   welcome:PhysicalAddress .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#StreetNumber
 welcome:StreetNumber rdf:type owl:Class ;
                      rdfs:subClassOf welcome:AddressInfo ,
-                                     welcome:PhysicalAddress ;
-                     <http://purl.org/dc/terms/isRequiredBy> "obtainResidenceAddressNumber" .
+                                     welcome:PhysicalAddress .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#StreetType
