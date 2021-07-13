@@ -917,6 +917,10 @@ welcome:coordinates rdf:type owl:DatatypeProperty ;
                     rdfs:label "coordinates" .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#daytime
+welcome:daytime rdf:type owl:DatatypeProperty .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#fromPeriod
 welcome:fromPeriod rdf:type owl:DatatypeProperty ;
                    rdfs:subPropertyOf owl:topDataProperty .
@@ -1125,6 +1129,10 @@ welcome:scenarioID rdf:type owl:DatatypeProperty ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#score
 welcome:score rdf:type owl:DatatypeProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#slotOrder
+welcome:slotOrder rdf:type owl:DatatypeProperty .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#stage
@@ -2424,9 +2432,15 @@ welcome:Rodos rdf:type owl:NamedIndividual ,
 welcome:SimulationAgent rdf:type owl:NamedIndividual ,
                                  foaf:Agent ;
                         welcome:hasScheduleAction welcome:sa_1 ,
+                                                  welcome:sa_10 ,
+                                                  welcome:sa_11 ,
+                                                  welcome:sa_12 ,
                                                   welcome:sa_2 ,
-                                                  welcome:sa_3 ,
-                                                  welcome:sa_4 ;
+                                                  welcome:sa_5 ,
+                                                  welcome:sa_6 ,
+                                                  welcome:sa_7 ,
+                                                  welcome:sa_8 ,
+                                                  welcome:sa_9 ;
                         welcome:worksFor welcome:jobcenter ;
                         welcome:hasName "Mr. Muller" .
 
@@ -2876,9 +2890,47 @@ welcome:sa_1 rdf:type owl:NamedIndividual ,
                       <https://schema.org/ScheduleAction#ScheduleAction> ;
              schema:actionStatus welcome:Status_Free ;
              schema:scheduledTime schema:Monday ;
+             welcome:daytime "morning" ;
+             welcome:slotOrder 1 ;
              schema:endTime "10:30" ;
              schema:startTime "10:00" ;
              <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#sa_10
+welcome:sa_10 rdf:type owl:NamedIndividual ,
+                       <https://schema.org/ScheduleAction#ScheduleAction> ;
+              schema:actionStatus welcome:Status_Free ;
+              schema:scheduledTime schema:Thursday ;
+              welcome:daytime "morning" ;
+              welcome:slotOrder 8 ;
+              schema:endTime "10:30" ;
+              schema:startTime "10:00" ;
+              <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#sa_11
+welcome:sa_11 rdf:type owl:NamedIndividual ,
+                       <https://schema.org/ScheduleAction#ScheduleAction> ;
+              schema:actionStatus welcome:Status_Free ;
+              schema:scheduledTime schema:Friday ;
+              welcome:daytime "morning" ;
+              welcome:slotOrder 9 ;
+              schema:endTime "10:30" ;
+              schema:startTime "10:00" ;
+              <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#sa_12
+welcome:sa_12 rdf:type owl:NamedIndividual ,
+                       <https://schema.org/ScheduleAction#ScheduleAction> ;
+              schema:actionStatus welcome:Status_Free ;
+              schema:scheduledTime schema:Friday ;
+              welcome:daytime "afternoon" ;
+              welcome:slotOrder 10 ;
+              schema:endTime "13:30" ;
+              schema:startTime "13:00" ;
+              <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#sa_2
@@ -2886,26 +2938,68 @@ welcome:sa_2 rdf:type owl:NamedIndividual ,
                       <https://schema.org/ScheduleAction#ScheduleAction> ;
              schema:actionStatus welcome:Status_Free ;
              schema:scheduledTime schema:Monday ;
+             welcome:daytime "afternoon" ;
+             welcome:slotOrder 2 ;
+             schema:endTime "13:30" ;
+             schema:startTime "13:00" ;
+             <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#sa_5
+welcome:sa_5 rdf:type owl:NamedIndividual ,
+                      <https://schema.org/ScheduleAction#ScheduleAction> ;
+             schema:actionStatus welcome:Status_Free ;
+             schema:scheduledTime schema:Tuesday ;
+             welcome:daytime "morning" ;
+             welcome:slotOrder 3 ;
+             schema:endTime "11:30" ;
+             schema:startTime "11:00" ;
+             <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#sa_6
+welcome:sa_6 rdf:type owl:NamedIndividual ,
+                      <https://schema.org/ScheduleAction#ScheduleAction> ;
+             schema:actionStatus welcome:Status_Free ;
+             schema:scheduledTime schema:Tuesday ;
+             welcome:daytime "afternoon" ;
+             welcome:slotOrder 4 ;
              schema:endTime "12:30" ;
              schema:startTime "12:00" ;
              <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#sa_3
-welcome:sa_3 rdf:type owl:NamedIndividual ,
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#sa_7
+welcome:sa_7 rdf:type owl:NamedIndividual ,
                       <https://schema.org/ScheduleAction#ScheduleAction> ;
              schema:actionStatus welcome:Status_Free ;
-             schema:scheduledTime schema:Monday ;
-             schema:endTime "14:30" ;
-             schema:startTime "14:00" ;
+             schema:scheduledTime schema:Wednesday ;
+             welcome:daytime "morning" ;
+             welcome:slotOrder 5 ;
+             schema:endTime "09:30" ;
+             schema:startTime "09:00" ;
              <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#sa_4
-welcome:sa_4 rdf:type owl:NamedIndividual ,
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#sa_8
+welcome:sa_8 rdf:type owl:NamedIndividual ,
                       <https://schema.org/ScheduleAction#ScheduleAction> ;
              schema:actionStatus welcome:Status_Free ;
-             schema:scheduledTime schema:Monday ;
+             schema:scheduledTime schema:Wednesday ;
+             welcome:daytime "afternoon" ;
+             welcome:slotOrder 6 ;
+             schema:endTime "13:30" ;
+             schema:startTime "13:00" ;
+             <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#sa_9
+welcome:sa_9 rdf:type owl:NamedIndividual ,
+                      <https://schema.org/ScheduleAction#ScheduleAction> ;
+             schema:actionStatus welcome:Status_Free ;
+             schema:scheduledTime schema:Thursday ;
+             welcome:daytime "afternoon" ;
+             welcome:slotOrder 7 ;
              schema:endTime "16:30" ;
              schema:startTime "16:00" ;
              <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
