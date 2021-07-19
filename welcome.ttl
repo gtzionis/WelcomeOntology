@@ -925,6 +925,10 @@ welcome:coordinates rdf:type owl:DatatypeProperty ;
 welcome:daytime rdf:type owl:DatatypeProperty .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#duration
+welcome:duration rdf:type owl:DatatypeProperty .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#fromPeriod
 welcome:fromPeriod rdf:type owl:DatatypeProperty ;
                    rdfs:subPropertyOf owl:topDataProperty .
@@ -1123,6 +1127,10 @@ welcome:long rdf:type owl:DatatypeProperty ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#moduleName
 welcome:moduleName rdf:type owl:DatatypeProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#percentage
+welcome:percentage rdf:type owl:DatatypeProperty .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#scenarioID
@@ -1378,12 +1386,16 @@ welcome:CertificateSpanish rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#City
 welcome:City rdf:type owl:Class ;
-             rdfs:subClassOf welcome:PhysicalAddress .
+             rdfs:subClassOf welcome:PhysicalAddress ;
+             <http://purl.org/dc/terms/component> "NLG" ,
+                                                  "obtainResidenceAddressCity" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CityOfBirth
 welcome:CityOfBirth rdf:type owl:Class ;
-                    rdfs:subClassOf welcome:Personal .
+                    rdfs:subClassOf welcome:Personal ;
+                    <http://purl.org/dc/terms/isRequiredBy> "NLG" ,
+                                                            "obtainCityOfBirth" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CompletionYear
@@ -1433,12 +1445,17 @@ welcome:Coordinates rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Country
 welcome:Country rdf:type owl:Class ;
-                rdfs:subClassOf welcome:PhysicalAddress .
+                rdfs:subClassOf welcome:PhysicalAddress ;
+                <http://purl.org/dc/terms/component> "NLG" ;
+                <http://purl.org/dc/terms/isRequiredBy> "obtainFirstApplication" ,
+                                                        "obtainResidenceAddressCity" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CountryOfBirth
 welcome:CountryOfBirth rdf:type owl:Class ;
-                       rdfs:subClassOf welcome:Personal .
+                       rdfs:subClassOf welcome:Personal ;
+                       <http://purl.org/dc/terms/component> "NLG" ;
+                       <http://purl.org/dc/terms/isRequiredBy> "obtainCountryOfBirth" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Course
@@ -1631,7 +1648,9 @@ welcome:Entrance rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#FirstSurname
 welcome:FirstSurname rdf:type owl:Class ;
-                     rdfs:subClassOf welcome:Personal .
+                     rdfs:subClassOf welcome:Personal ;
+                     <http://purl.org/dc/terms/component> "NLG" ;
+                     <http://purl.org/dc/terms/isRequiredBy> "obtainFirstSurname" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#FirstTimeAsylumClaim
@@ -1730,7 +1749,7 @@ welcome:LabourMarketCourses rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#LabourModule
 welcome:LabourModule rdf:type owl:Class ;
-                     rdfs:subClassOf welcome:Modules .
+                     rdfs:subClassOf welcome:Module .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Landline
@@ -1746,7 +1765,7 @@ welcome:Language rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#LanguageModule
 welcome:LanguageModule rdf:type owl:Class ;
-                       rdfs:subClassOf welcome:Modules .
+                       rdfs:subClassOf welcome:Module .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#LearningHandicap
@@ -1778,8 +1797,8 @@ welcome:Mobile_phone_number rdf:type owl:Class ;
                             rdfs:subClassOf welcome:PhysicalAddress .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Modules
-welcome:Modules rdf:type owl:Class .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Module
+welcome:Module rdf:type owl:Class .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Municipality
@@ -1883,12 +1902,16 @@ welcome:NER_WORK_OF_ART rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Name
 welcome:Name rdf:type owl:Class ;
-             rdfs:subClassOf welcome:Personal .
+             rdfs:subClassOf welcome:Personal ;
+             <http://purl.org/dc/terms/component> "NLG" ;
+             <http://purl.org/dc/terms/isRequiredBy> "obtainName" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Nationality
 welcome:Nationality rdf:type owl:Class ;
-                    rdfs:subClassOf welcome:Personal .
+                    rdfs:subClassOf welcome:Personal ;
+                    <http://purl.org/dc/terms/component> "NLG" ;
+                    <http://purl.org/dc/terms/isRequiredBy> "obtainNationality" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NotificationPreferences
@@ -2027,7 +2050,7 @@ welcome:Slot rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SocietyModule
 welcome:SocietyModule rdf:type owl:Class ;
-                      rdfs:subClassOf welcome:Modules .
+                      rdfs:subClassOf welcome:Module .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SpanishCourse
@@ -2069,13 +2092,17 @@ welcome:StayingPeriod rdf:type owl:Class ;
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#StreetName
 welcome:StreetName rdf:type owl:Class ;
                    rdfs:subClassOf welcome:AddressInfo ,
-                                   welcome:PhysicalAddress .
+                                   welcome:PhysicalAddress ;
+                   <http://purl.org/dc/terms/component> "NLG" ;
+                   <http://purl.org/dc/terms/isRequiredBy> "obtainResidenceAddressStreet" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#StreetNumber
 welcome:StreetNumber rdf:type owl:Class ;
                      rdfs:subClassOf welcome:AddressInfo ,
-                                     welcome:PhysicalAddress .
+                                     welcome:PhysicalAddress ;
+                     <http://purl.org/dc/terms/component> "NLG" ;
+                     <http://purl.org/dc/terms/isRequiredBy> "obtainResidenceAddressNumber" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#StreetType
@@ -2218,6 +2245,11 @@ welcome:Cambrils rdf:type owl:NamedIndividual ,
                  welcome:hasValue "Cambrils" ;
                  welcome:lat 41.06667 ;
                  welcome:long 1.06036 .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Catalan
+welcome:Catalan rdf:type owl:NamedIndividual ,
+                         welcome:Language .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Completed
@@ -2456,6 +2488,11 @@ welcome:Spain rdf:type owl:NamedIndividual ,
               welcome:hasValue "Spain" ;
               welcome:lat 40.46366 ;
               welcome:long -3.74922 .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Spanish
+welcome:Spanish rdf:type owl:NamedIndividual ,
+                         welcome:Language .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Status_Free
@@ -2772,6 +2809,43 @@ welcome:jobcenter rdf:type owl:NamedIndividual ,
    owl:annotatedProperty welcome:hasName ;
    owl:annotatedTarget "Job Center" ;
    <http://purl.org/dc/terms/isRequiredBy> "informAuthority"
+ ] .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#module
+welcome:module rdf:type owl:NamedIndividual ,
+                        welcome:Module ;
+               welcome:requiresLanguage welcome:Catalan ,
+                                        welcome:Spanish ;
+               welcome:duration "2 years" ;
+               welcome:percentage "75%" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:module ;
+   owl:annotatedProperty welcome:requiresLanguage ;
+   owl:annotatedTarget welcome:Catalan ;
+   <http://purl.org/dc/terms/isRequiredBy> "informDetailsLanguage"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:module ;
+   owl:annotatedProperty welcome:requiresLanguage ;
+   owl:annotatedTarget welcome:Spanish ;
+   <http://purl.org/dc/terms/isRequiredBy> "informDetailsLanguage"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:module ;
+   owl:annotatedProperty welcome:duration ;
+   owl:annotatedTarget "2 years" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informDetailsTime"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:module ;
+   owl:annotatedProperty welcome:percentage ;
+   owl:annotatedTarget "75%" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informDetailsCompletion"
  ] .
 
 
