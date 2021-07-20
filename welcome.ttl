@@ -1314,6 +1314,10 @@ welcome:AddressInfo rdf:type owl:Class ;
                     rdfs:subClassOf welcome:ContactInformation .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#App
+welcome:App rdf:type owl:Class .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AppointmentConcern
 welcome:AppointmentConcern rdf:type owl:Class ;
                            rdfs:subClassOf welcome:Descriptors .
@@ -1447,7 +1451,8 @@ welcome:Coordinates rdf:type owl:Class ;
 welcome:Country rdf:type owl:Class ;
                 rdfs:subClassOf welcome:PhysicalAddress ;
                 <http://purl.org/dc/terms/component> "NLG" ;
-                <http://purl.org/dc/terms/isRequiredBy> "obtainFirstApplication" ,
+                <http://purl.org/dc/terms/isRequiredBy> "obtainCity" ,
+                                                        "obtainFirstApplication" ,
                                                         "obtainResidenceAddressCity" .
 
 
@@ -1904,7 +1909,8 @@ welcome:NER_WORK_OF_ART rdf:type owl:Class ;
 welcome:Name rdf:type owl:Class ;
              rdfs:subClassOf welcome:Personal ;
              <http://purl.org/dc/terms/component> "NLG" ;
-             <http://purl.org/dc/terms/isRequiredBy> "obtainName" .
+             <http://purl.org/dc/terms/isRequiredBy> "informEnd" ,
+                                                     "obtainName" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Nationality
@@ -2229,6 +2235,34 @@ welcome:Arabic rdf:type owl:NamedIndividual ,
                welcome:hasValue "Arabic" .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AsylumOffice
+welcome:AsylumOffice rdf:type owl:NamedIndividual ,
+                              welcome:Office ;
+                     welcome:hasValue "Asylum Office" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:AsylumOffice ;
+   owl:annotatedProperty welcome:hasValue ;
+   owl:annotatedTarget "Asylum Office" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informNeedRegistration"
+ ] .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AsylumService
+welcome:AsylumService rdf:type owl:NamedIndividual ,
+                               <http://www.daml.org/services/owl-s/1.1/Service.owl#Service> ;
+                      welcome:hasValue "Asylum Service" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:AsylumService ;
+   owl:annotatedProperty welcome:hasValue ;
+   owl:annotatedTarget "Asylum Service" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informAccess" ,
+                                           "informConnection" ,
+                                           "informPurpose"
+ ] .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Athens
 welcome:Athens rdf:type owl:NamedIndividual ,
                         welcome:City ,
@@ -2447,6 +2481,29 @@ welcome:Pending rdf:type owl:NamedIndividual ,
                 rdfs:label "Status pending" .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#PraksisNGO
+welcome:PraksisNGO rdf:type owl:NamedIndividual ,
+                            foaf:Agent ;
+                   actor:webURL "https://praksis.gr/contact/" ;
+                   welcome:hasValue "PRAKSIS NGO" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:PraksisNGO ;
+   owl:annotatedProperty actor:webURL ;
+   owl:annotatedTarget "https://praksis.gr/contact/" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informGenericPRAKSISContact"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:PraksisNGO ;
+   owl:annotatedProperty welcome:hasValue ;
+   owl:annotatedTarget "PRAKSIS NGO" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informGenericPRAKSISContact" ,
+                                           "informNeedContact" ,
+                                           "informPRAKSISContact"
+ ] .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Rodos
 welcome:Rodos rdf:type owl:NamedIndividual ,
                        welcome:City ,
@@ -2478,6 +2535,26 @@ welcome:SimulationAgent rdf:type owl:NamedIndividual ,
    owl:annotatedTarget "Mr. Muller" ;
    <http://purl.org/dc/terms/isRequiredBy> "informPersonName" ,
                                            "informPersonNameIntro"
+ ] .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Skype
+welcome:Skype rdf:type owl:NamedIndividual ,
+                       welcome:App ;
+              welcome:hasValue "Skype" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:Skype ;
+   owl:annotatedProperty welcome:hasValue ;
+   owl:annotatedTarget "Skype" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informAccess" ,
+                                           "informDownload" ,
+                                           "informNGOSupport," ,
+                                           "informNeedSkype" ,
+                                           "informSkypeID" ,
+                                           "informTimeSlot" ,
+                                           "informTimeSlotSkypeID" ,
+                                           "obtainKnowledgeSkypeCreation"
  ] .
 
 
@@ -2743,13 +2820,6 @@ welcome:caritasContactPerson rdf:type owl:NamedIndividual ,
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:caritasContactPerson ;
-   owl:annotatedProperty welcome:hasName ;
-   owl:annotatedTarget "Mrs. Meyer" ;
-   <http://purl.org/dc/terms/isRequiredBy> "informContactPerson"
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource welcome:caritasContactPerson ;
    owl:annotatedProperty actor:email ;
    owl:annotatedTarget "meyer.mrs@hammjobcenter.de" ;
    <http://purl.org/dc/terms/isRequiredBy> "informContactOtherInfo"
@@ -2767,6 +2837,13 @@ welcome:caritasContactPerson rdf:type owl:NamedIndividual ,
    owl:annotatedProperty actor:webURL ;
    owl:annotatedTarget "www.test.com" ;
    <http://purl.org/dc/terms/isRequiredBy> "informContactOtherInfo"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:caritasContactPerson ;
+   owl:annotatedProperty welcome:hasName ;
+   owl:annotatedTarget "Mrs. Meyer" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informContactPerson"
  ] .
 
 
