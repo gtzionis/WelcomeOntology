@@ -1125,6 +1125,10 @@ welcome:long rdf:type owl:DatatypeProperty ;
              rdfs:label "longitude"^^xsd:string .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#moduleLabel
+welcome:moduleLabel rdf:type owl:DatatypeProperty .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#moduleName
 welcome:moduleName rdf:type owl:DatatypeProperty .
 
@@ -2858,21 +2862,63 @@ welcome:course_catalanLanguage rdf:type owl:NamedIndividual ,
 welcome:course_labourCourse rdf:type owl:NamedIndividual ,
                                      welcome:Course ;
                             welcome:hasCourseName "Labour Market and Employment" ;
-                            welcome:hasNumberHours "15h" .
+                            welcome:hasNumberHours 15 .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:course_labourCourse ;
+   owl:annotatedProperty welcome:hasCourseName ;
+   owl:annotatedTarget "Labour Market and Employment" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informLabourModule"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:course_labourCourse ;
+   owl:annotatedProperty welcome:hasNumberHours ;
+   owl:annotatedTarget 15 ;
+   <http://purl.org/dc/terms/isRequiredBy> "informLabourModule"
+ ] .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#course_societyCourse
 welcome:course_societyCourse rdf:type owl:NamedIndividual ,
                                       welcome:Course ;
                              welcome:hasCourseName "Your municipality and the services you can apply for." ;
-                             welcome:hasNumberHours "15h" .
+                             welcome:hasNumberHours 15 .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:course_societyCourse ;
+   owl:annotatedProperty welcome:hasCourseName ;
+   owl:annotatedTarget "Your municipality and the services you can apply for." ;
+   rdfs:comment "informSocietyModule"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:course_societyCourse ;
+   owl:annotatedProperty welcome:hasNumberHours ;
+   owl:annotatedTarget 15 ;
+   rdfs:comment "informSocietyModule"
+ ] .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#course_spanishLanguage
 welcome:course_spanishLanguage rdf:type owl:NamedIndividual ,
                                         welcome:Course ;
                                welcome:hasCourseName "Spanish" ;
-                               welcome:hasNumberHours "90h" .
+                               welcome:hasNumberHours 90 .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:course_spanishLanguage ;
+   owl:annotatedProperty welcome:hasCourseName ;
+   owl:annotatedTarget "Spanish" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informLanguageModule"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:course_spanishLanguage ;
+   owl:annotatedProperty welcome:hasNumberHours ;
+   owl:annotatedTarget 90 ;
+   <http://purl.org/dc/terms/isRequiredBy> "informLanguageModule"
+ ] .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#jobcenter
@@ -2932,8 +2978,25 @@ welcome:module_labour rdf:type owl:NamedIndividual ,
                       welcome:hasHoursSpec welcome:module_labour_hours ;
                       welcome:offersCourse welcome:course_labourCourse ;
                       gn:nearby welcome:poi_2 ;
+                      welcome:moduleLabel "B" ;
                       welcome:moduleName "Labour market knowledge" ;
                       <http://purl.org/dc/terms/isRequiredBy> "informLabourModule" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:module_labour ;
+   owl:annotatedProperty welcome:moduleLabel ;
+   owl:annotatedTarget "B" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informLabourModule" ,
+                                           "informLabourModuleAddress" ,
+                                           "informLabourModuleHours"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:module_labour ;
+   owl:annotatedProperty welcome:moduleName ;
+   owl:annotatedTarget "Labour market knowledge" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informLabourModule"
+ ] .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#module_labour_hours
@@ -2944,6 +3007,27 @@ welcome:module_labour_hours rdf:type owl:NamedIndividual ,
                             schema:opens "19:00" ;
                             <http://purl.org/dc/terms/isRequiredBy> "informLabourModuleHours" .
 
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:module_labour_hours ;
+   owl:annotatedProperty schema:dayOfWeek ;
+   owl:annotatedTarget schema:Wednesday ;
+   <http://purl.org/dc/terms/isRequiredBy> "informLabourModuleHours"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:module_labour_hours ;
+   owl:annotatedProperty schema:closes ;
+   owl:annotatedTarget "21:00" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informLabourModuleHours"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:module_labour_hours ;
+   owl:annotatedProperty schema:opens ;
+   owl:annotatedTarget "19:00" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informLabourModuleHours"
+ ] .
+
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#module_language
 welcome:module_language rdf:type owl:NamedIndividual ,
@@ -2952,8 +3036,25 @@ welcome:module_language rdf:type owl:NamedIndividual ,
                         welcome:offersCourse welcome:course_catalanLanguage ,
                                              welcome:course_spanishLanguage ;
                         gn:nearby welcome:poi_1 ;
+                        welcome:moduleLabel "A" ;
                         welcome:moduleName "Languages" ;
                         <http://purl.org/dc/terms/isRequiredBy> "informLanguageModule" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:module_language ;
+   owl:annotatedProperty welcome:moduleLabel ;
+   owl:annotatedTarget "A" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informLanguageModule" ,
+                                           "informLanguageModuleAddress" ,
+                                           "informLanguageModuleHours"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:module_language ;
+   owl:annotatedProperty welcome:moduleName ;
+   owl:annotatedTarget "Languages" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informLanguageModule"
+ ] .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#module_language_hours
@@ -2965,6 +3066,34 @@ welcome:module_language_hours rdf:type owl:NamedIndividual ,
                               schema:opens "19:00" ;
                               <http://purl.org/dc/terms/isRequiredBy> "informLanguageModuleHours" .
 
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:module_language_hours ;
+   owl:annotatedProperty schema:dayOfWeek ;
+   owl:annotatedTarget schema:Friday ;
+   <http://purl.org/dc/terms/isRequiredBy> "informLanguageModuleHours"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:module_language_hours ;
+   owl:annotatedProperty schema:dayOfWeek ;
+   owl:annotatedTarget schema:Monday ;
+   <http://purl.org/dc/terms/isRequiredBy> "informLanguageModuleHours"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:module_language_hours ;
+   owl:annotatedProperty schema:closes ;
+   owl:annotatedTarget "21:00" ;
+   rdfs:comment "informLanguageModuleHours"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:module_language_hours ;
+   owl:annotatedProperty schema:opens ;
+   owl:annotatedTarget "19:00" ;
+   rdfs:comment "informLanguageModuleHours"
+ ] .
+
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#module_society
 welcome:module_society rdf:type owl:NamedIndividual ,
@@ -2972,8 +3101,25 @@ welcome:module_society rdf:type owl:NamedIndividual ,
                        welcome:hasHoursSpec welcome:module_society_hours ;
                        welcome:offersCourse welcome:course_societyCourse ;
                        gn:nearby welcome:poi_3 ;
+                       welcome:moduleLabel "C" ;
                        welcome:moduleName "Catalan Society" ;
                        <http://purl.org/dc/terms/isRequiredBy> "informSocietyModule" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:module_society ;
+   owl:annotatedProperty welcome:moduleLabel ;
+   owl:annotatedTarget "C" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informSocietyModule" ,
+                                           "informSocietyModuleAddress" ,
+                                           "informSocietyModuleHours"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:module_society ;
+   owl:annotatedProperty welcome:moduleName ;
+   owl:annotatedTarget "Catalan Society" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informSocietyModule"
+ ] .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#module_society_hours
@@ -2984,12 +3130,40 @@ welcome:module_society_hours rdf:type owl:NamedIndividual ,
                              schema:opens "19:00" ;
                              <http://purl.org/dc/terms/isRequiredBy> "informSocietyModuleHours" .
 
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:module_society_hours ;
+   owl:annotatedProperty schema:dayOfWeek ;
+   owl:annotatedTarget schema:Wednesday ;
+   <http://purl.org/dc/terms/isRequiredBy> "informSocietyModuleHours"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:module_society_hours ;
+   owl:annotatedProperty schema:closes ;
+   owl:annotatedTarget "21:00" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informSocietyModuleHours"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:module_society_hours ;
+   owl:annotatedProperty schema:opens ;
+   owl:annotatedTarget "19:00" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informSocietyModuleHours"
+ ] .
+
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#poi_1
 welcome:poi_1 rdf:type owl:NamedIndividual ,
                        welcome:POI ;
               actor:name "Col-legi Sagrat Cor" ;
               <http://purl.org/dc/terms/isRequiredBy> "informLanguageModuleAddress" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:poi_1 ;
+   owl:annotatedProperty actor:name ;
+   owl:annotatedTarget "Col-legi Sagrat Cor" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informLanguageModuleAddress"
+ ] .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#poi_2
@@ -2998,12 +3172,26 @@ welcome:poi_2 rdf:type owl:NamedIndividual ,
               actor:name "City Council Building" ;
               <http://purl.org/dc/terms/isRequiredBy> "informLabourModuleAddress" .
 
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:poi_2 ;
+   owl:annotatedProperty actor:name ;
+   owl:annotatedTarget "City Council Building" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informLabourModuleAddress"
+ ] .
+
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#poi_3
 welcome:poi_3 rdf:type owl:NamedIndividual ,
                        welcome:POI ;
               actor:name "City Council Building" ;
               <http://purl.org/dc/terms/isRequiredBy> "informSocietyModuleAddress" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:poi_3 ;
+   owl:annotatedProperty actor:name ;
+   owl:annotatedTarget "City Council Building" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informSocietyModuleAddress"
+ ] .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#praksisAthens
