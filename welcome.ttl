@@ -1659,7 +1659,8 @@ welcome:Entrance rdf:type owl:Class ;
 welcome:FirstSurname rdf:type owl:Class ;
                      rdfs:subClassOf welcome:Personal ;
                      <http://purl.org/dc/terms/component> "NLG" ;
-                     <http://purl.org/dc/terms/isRequiredBy> "obtainFirstSurname" .
+                     <http://purl.org/dc/terms/isRequiredBy> "confirmFirstSurname" ,
+                                                             "obtainFirstSurname" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#FirstTimeAsylumClaim
@@ -2104,7 +2105,8 @@ welcome:StreetName rdf:type owl:Class ;
                    rdfs:subClassOf welcome:AddressInfo ,
                                    welcome:PhysicalAddress ;
                    <http://purl.org/dc/terms/component> "NLG" ;
-                   <http://purl.org/dc/terms/isRequiredBy> "obtainResidenceAddressStreet" .
+                   <http://purl.org/dc/terms/isRequiredBy> "obtainResidenceAddressStreet" ,
+                                                           "obtainStreetType" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#StreetNumber
