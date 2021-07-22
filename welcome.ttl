@@ -921,6 +921,10 @@ welcome:coordinates rdf:type owl:DatatypeProperty ;
                     rdfs:label "coordinates" .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#dayOfWeek
+welcome:dayOfWeek rdf:type owl:DatatypeProperty .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#daytime
 welcome:daytime rdf:type owl:DatatypeProperty .
 
@@ -1099,6 +1103,10 @@ welcome:isOptional rdf:type owl:DatatypeProperty ,
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isUnaccompanied
 welcome:isUnaccompanied rdf:type owl:DatatypeProperty ;
                         rdfs:range xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#languageName
+welcome:languageName rdf:type owl:DatatypeProperty .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#lat
@@ -2236,7 +2244,7 @@ gn:Feature rdf:type owl:Class .
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Arabic
 welcome:Arabic rdf:type owl:NamedIndividual ,
                         welcome:Language ;
-               welcome:hasValue "Arabic" .
+               welcome:languageName "Arabic" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AsylumOffice
@@ -2288,11 +2296,11 @@ welcome:Cambrils rdf:type owl:NamedIndividual ,
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Catalan
 welcome:Catalan rdf:type owl:NamedIndividual ,
                          welcome:Language ;
-                welcome:hasValue "Catalan" .
+                welcome:languageName "Catalan" .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:Catalan ;
-   owl:annotatedProperty welcome:hasValue ;
+   owl:annotatedProperty welcome:languageName ;
    owl:annotatedTarget "Catalan" ;
    <http://purl.org/dc/terms/isRequiredBy> "informDetailsLanguage"
  ] .
@@ -2316,7 +2324,7 @@ welcome:Crete rdf:type owl:NamedIndividual ,
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#English
 welcome:English rdf:type owl:NamedIndividual ,
                          welcome:Language ;
-                welcome:hasValue "English" .
+                welcome:languageName "English" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#FailedAnalysis
@@ -2328,7 +2336,7 @@ welcome:FailedAnalysis rdf:type owl:NamedIndividual ,
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#French
 welcome:French rdf:type owl:NamedIndividual ,
                         welcome:Language ;
-               welcome:hasValue "French" .
+               welcome:languageName "French" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Greece
@@ -2603,11 +2611,11 @@ welcome:Spain rdf:type owl:NamedIndividual ,
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Spanish
 welcome:Spanish rdf:type owl:NamedIndividual ,
                          welcome:Language ;
-                welcome:hasValue "Spanish" .
+                welcome:languageName "Spanish" .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:Spanish ;
-   owl:annotatedProperty welcome:hasValue ;
+   owl:annotatedProperty welcome:languageName ;
    owl:annotatedTarget "Spanish" ;
    <http://purl.org/dc/terms/isRequiredBy> "informDetailsLanguage"
  ] .
@@ -3478,11 +3486,11 @@ welcome:slot_ef_thes rdf:type owl:NamedIndividual ,
 ###  https://schema.org/Friday
 schema:Friday rdf:type owl:NamedIndividual ,
                        schema:DayOfWeek ;
-              welcome:hasValue "Fridays" .
+              welcome:dayOfWeek "Fridays" .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource schema:Friday ;
-   owl:annotatedProperty welcome:hasValue ;
+   owl:annotatedProperty welcome:dayOfWeek ;
    owl:annotatedTarget "Fridays" ;
    <http://purl.org/dc/terms/isRequiredBy> "informLanguageModuleHours"
  ] .
@@ -3491,11 +3499,11 @@ schema:Friday rdf:type owl:NamedIndividual ,
 ###  https://schema.org/Monday
 schema:Monday rdf:type owl:NamedIndividual ,
                        schema:DayOfWeek ;
-              welcome:hasValue "Mondays" .
+              welcome:dayOfWeek "Mondays" .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource schema:Monday ;
-   owl:annotatedProperty welcome:hasValue ;
+   owl:annotatedProperty welcome:dayOfWeek ;
    owl:annotatedTarget "Mondays" ;
    <http://purl.org/dc/terms/isRequiredBy> "informLanguageModuleHours"
  ] .
@@ -3504,35 +3512,35 @@ schema:Monday rdf:type owl:NamedIndividual ,
 ###  https://schema.org/Saturday
 schema:Saturday rdf:type owl:NamedIndividual ,
                          schema:DayOfWeek ;
-                welcome:hasValue "Saturdays" .
+                welcome:dayOfWeek "Saturdays" .
 
 
 ###  https://schema.org/Sunday
 schema:Sunday rdf:type owl:NamedIndividual ,
                        schema:DayOfWeek ;
-              welcome:hasValue "Sundays" .
+              welcome:dayOfWeek "Sundays" .
 
 
 ###  https://schema.org/Thursday
 schema:Thursday rdf:type owl:NamedIndividual ,
                          schema:DayOfWeek ;
-                welcome:hasValue "Thursdays" .
+                welcome:dayOfWeek "Thursdays" .
 
 
 ###  https://schema.org/Tuesday
 schema:Tuesday rdf:type owl:NamedIndividual ,
                         schema:DayOfWeek ;
-               welcome:hasValue "Tuesdays" .
+               welcome:dayOfWeek "Tuesdays" .
 
 
 ###  https://schema.org/Wednesday
 schema:Wednesday rdf:type owl:NamedIndividual ,
                           schema:DayOfWeek ;
-                 welcome:hasValue "Wednesdays" .
+                 welcome:dayOfWeek "Wednesdays" .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource schema:Wednesday ;
-   owl:annotatedProperty welcome:hasValue ;
+   owl:annotatedProperty welcome:dayOfWeek ;
    owl:annotatedTarget "Wednesdays" ;
    <http://purl.org/dc/terms/isRequiredBy> "informLabourModuleHours" ,
                                            "informSocietyModuleHours"
