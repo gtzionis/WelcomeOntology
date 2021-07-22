@@ -1210,8 +1210,7 @@ geovocab:Feature rdf:type owl:Class ;
 
 
 ###  http://purl.org/dc/terms/Agent
-<http://purl.org/dc/terms/Agent> rdf:type owl:Class ;
-                                 owl:equivalentClass foaf:Agent .
+<http://purl.org/dc/terms/Agent> rdf:type owl:Class .
 
 
 ###  http://schema.org/Person
@@ -2362,6 +2361,27 @@ welcome:Leros rdf:type owl:NamedIndividual ,
               welcome:long 26.84884 .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NGO_DTASF
+welcome:NGO_DTASF rdf:type owl:NamedIndividual ,
+                           foaf:Agent ;
+                  actor:webURL "https://treballiaferssocials.gencat.cat/ca/ambits_tematics/immigracio/" ;
+                  welcome:hasValue "DTASF" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:NGO_DTASF ;
+   owl:annotatedProperty welcome:hasValue ;
+   owl:annotatedTarget "DTASF" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informGenericDTASFContact"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:NGO_DTASF ;
+   owl:annotatedProperty actor:webURL ;
+   owl:annotatedTarget "https://treballiaferssocials.gencat.cat/ca/ambits_tematics/immigracio/" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informGenericDTASFContact"
+ ] .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OAC_Cambrils
 welcome:OAC_Cambrils rdf:type owl:NamedIndividual ,
                               actor:Actor ,
@@ -2502,18 +2522,18 @@ welcome:PraksisNGO rdf:type owl:NamedIndividual ,
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:PraksisNGO ;
+   owl:annotatedProperty actor:webURL ;
+   owl:annotatedTarget "https://praksis.gr/contact/" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informGenericPRAKSISContact"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:PraksisNGO ;
    owl:annotatedProperty welcome:hasValue ;
    owl:annotatedTarget "PRAKSIS NGO" ;
    <http://purl.org/dc/terms/isRequiredBy> "informGenericPRAKSISContact" ,
                                            "informNeedContact" ,
                                            "informPRAKSISContact"
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource welcome:PraksisNGO ;
-   owl:annotatedProperty actor:webURL ;
-   owl:annotatedTarget "https://praksis.gr/contact/" ;
-   <http://purl.org/dc/terms/isRequiredBy> "informGenericPRAKSISContact"
  ] .
 
 
@@ -3080,14 +3100,14 @@ welcome:module_language_hours rdf:type owl:NamedIndividual ,
    owl:annotatedSource welcome:module_language_hours ;
    owl:annotatedProperty schema:closes ;
    owl:annotatedTarget "21:00" ;
-   rdfs:comment "informLanguageModuleHours"
+   <http://purl.org/dc/terms/isRequiredBy> "informLanguageModuleHours"
  ] .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:module_language_hours ;
    owl:annotatedProperty schema:opens ;
    owl:annotatedTarget "19:00" ;
-   rdfs:comment "informLanguageModuleHours"
+   <http://purl.org/dc/terms/isRequiredBy> "informLanguageModuleHours"
  ] .
 
 
