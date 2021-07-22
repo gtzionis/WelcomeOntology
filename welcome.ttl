@@ -2213,7 +2213,6 @@ schema:ActionStatusType rdf:type owl:Class .
 
 ###  https://schema.org/DayOfWeek
 schema:DayOfWeek rdf:type owl:Class ;
-                 rdfs:subClassOf welcome:Temporal ;
                  rdfs:comment "The day of the week, e.g. used to specify to which day the opening hours of an OpeningHoursSpecification refer." .
 
 
@@ -2289,7 +2288,15 @@ welcome:Cambrils rdf:type owl:NamedIndividual ,
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Catalan
 welcome:Catalan rdf:type owl:NamedIndividual ,
-                         welcome:Language .
+                         welcome:Language ;
+                welcome:hasValue "Catalan" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:Catalan ;
+   owl:annotatedProperty welcome:hasValue ;
+   owl:annotatedTarget "Catalan" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informDetailsLanguage"
+ ] .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Completed
@@ -2495,18 +2502,18 @@ welcome:PraksisNGO rdf:type owl:NamedIndividual ,
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:PraksisNGO ;
-   owl:annotatedProperty actor:webURL ;
-   owl:annotatedTarget "https://praksis.gr/contact/" ;
-   <http://purl.org/dc/terms/isRequiredBy> "informGenericPRAKSISContact"
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource welcome:PraksisNGO ;
    owl:annotatedProperty welcome:hasValue ;
    owl:annotatedTarget "PRAKSIS NGO" ;
    <http://purl.org/dc/terms/isRequiredBy> "informGenericPRAKSISContact" ,
                                            "informNeedContact" ,
                                            "informPRAKSISContact"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:PraksisNGO ;
+   owl:annotatedProperty actor:webURL ;
+   owl:annotatedTarget "https://praksis.gr/contact/" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informGenericPRAKSISContact"
  ] .
 
 
@@ -2575,7 +2582,15 @@ welcome:Spain rdf:type owl:NamedIndividual ,
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Spanish
 welcome:Spanish rdf:type owl:NamedIndividual ,
-                         welcome:Language .
+                         welcome:Language ;
+                welcome:hasValue "Spanish" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:Spanish ;
+   owl:annotatedProperty welcome:hasValue ;
+   owl:annotatedTarget "Spanish" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informDetailsLanguage"
+ ] .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Status_Free
@@ -2857,7 +2872,21 @@ welcome:caritasContactPerson rdf:type owl:NamedIndividual ,
 welcome:course_catalanLanguage rdf:type owl:NamedIndividual ,
                                         welcome:Course ;
                                welcome:hasCourseName "Catalan" ;
-                               welcome:hasNumberHours "90h" .
+                               welcome:hasNumberHours 90 .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:course_catalanLanguage ;
+   owl:annotatedProperty welcome:hasCourseName ;
+   owl:annotatedTarget "Catalan" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informLanguageModule"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:course_catalanLanguage ;
+   owl:annotatedProperty welcome:hasNumberHours ;
+   owl:annotatedTarget 90 ;
+   <http://purl.org/dc/terms/isRequiredBy> "informLanguageModule"
+ ] .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#course_labourCourse
@@ -2891,14 +2920,14 @@ welcome:course_societyCourse rdf:type owl:NamedIndividual ,
    owl:annotatedSource welcome:course_societyCourse ;
    owl:annotatedProperty welcome:hasCourseName ;
    owl:annotatedTarget "Your municipality and the services you can apply for." ;
-   rdfs:comment "informSocietyModule"
+   <http://purl.org/dc/terms/isRequiredBy> "informSocietyModule"
  ] .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:course_societyCourse ;
    owl:annotatedProperty welcome:hasNumberHours ;
    owl:annotatedTarget 15 ;
-   rdfs:comment "informSocietyModule"
+   <http://purl.org/dc/terms/isRequiredBy> "informSocietyModule"
  ] .
 
 
@@ -2944,20 +2973,6 @@ welcome:module rdf:type owl:NamedIndividual ,
                                         welcome:Spanish ;
                welcome:duration "2 years" ;
                welcome:percentage "75%" .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource welcome:module ;
-   owl:annotatedProperty welcome:requiresLanguage ;
-   owl:annotatedTarget welcome:Catalan ;
-   <http://purl.org/dc/terms/isRequiredBy> "informDetailsLanguage"
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource welcome:module ;
-   owl:annotatedProperty welcome:requiresLanguage ;
-   owl:annotatedTarget welcome:Spanish ;
-   <http://purl.org/dc/terms/isRequiredBy> "informDetailsLanguage"
- ] .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:module ;
@@ -3008,13 +3023,6 @@ welcome:module_labour_hours rdf:type owl:NamedIndividual ,
                             schema:closes "21:00" ;
                             schema:opens "19:00" ;
                             <http://purl.org/dc/terms/isRequiredBy> "informLabourModuleHours" .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource welcome:module_labour_hours ;
-   owl:annotatedProperty schema:dayOfWeek ;
-   owl:annotatedTarget schema:Wednesday ;
-   <http://purl.org/dc/terms/isRequiredBy> "informLabourModuleHours"
- ] .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:module_labour_hours ;
@@ -3070,20 +3078,6 @@ welcome:module_language_hours rdf:type owl:NamedIndividual ,
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:module_language_hours ;
-   owl:annotatedProperty schema:dayOfWeek ;
-   owl:annotatedTarget schema:Friday ;
-   <http://purl.org/dc/terms/isRequiredBy> "informLanguageModuleHours"
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource welcome:module_language_hours ;
-   owl:annotatedProperty schema:dayOfWeek ;
-   owl:annotatedTarget schema:Monday ;
-   <http://purl.org/dc/terms/isRequiredBy> "informLanguageModuleHours"
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource welcome:module_language_hours ;
    owl:annotatedProperty schema:closes ;
    owl:annotatedTarget "21:00" ;
    rdfs:comment "informLanguageModuleHours"
@@ -3131,13 +3125,6 @@ welcome:module_society_hours rdf:type owl:NamedIndividual ,
                              schema:closes "21:00" ;
                              schema:opens "19:00" ;
                              <http://purl.org/dc/terms/isRequiredBy> "informSocietyModuleHours" .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource welcome:module_society_hours ;
-   owl:annotatedProperty schema:dayOfWeek ;
-   owl:annotatedTarget schema:Wednesday ;
-   <http://purl.org/dc/terms/isRequiredBy> "informSocietyModuleHours"
- ] .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:module_society_hours ;
@@ -3471,41 +3458,65 @@ welcome:slot_ef_thes rdf:type owl:NamedIndividual ,
 ###  https://schema.org/Friday
 schema:Friday rdf:type owl:NamedIndividual ,
                        schema:DayOfWeek ;
-              welcome:hasValue "Friday" .
+              welcome:hasValue "Fridays" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource schema:Friday ;
+   owl:annotatedProperty welcome:hasValue ;
+   owl:annotatedTarget "Fridays" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informLanguageModuleHours"
+ ] .
 
 
 ###  https://schema.org/Monday
 schema:Monday rdf:type owl:NamedIndividual ,
                        schema:DayOfWeek ;
-              welcome:hasValue "Monday" .
+              welcome:hasValue "Mondays" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource schema:Monday ;
+   owl:annotatedProperty welcome:hasValue ;
+   owl:annotatedTarget "Mondays" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informLanguageModuleHours"
+ ] .
 
 
-###  https://schema.org/Staturday
-schema:Staturday rdf:type owl:NamedIndividual ,
-                          schema:DayOfWeek .
+###  https://schema.org/Saturday
+schema:Saturday rdf:type owl:NamedIndividual ,
+                         schema:DayOfWeek ;
+                welcome:hasValue "Saturdays" .
 
 
 ###  https://schema.org/Sunday
 schema:Sunday rdf:type owl:NamedIndividual ,
-                       schema:DayOfWeek .
+                       schema:DayOfWeek ;
+              welcome:hasValue "Sundays" .
 
 
 ###  https://schema.org/Thursday
 schema:Thursday rdf:type owl:NamedIndividual ,
                          schema:DayOfWeek ;
-                welcome:hasValue "Thursday" .
+                welcome:hasValue "Thursdays" .
 
 
 ###  https://schema.org/Tuesday
 schema:Tuesday rdf:type owl:NamedIndividual ,
                         schema:DayOfWeek ;
-               welcome:hasValue "Tuesday" .
+               welcome:hasValue "Tuesdays" .
 
 
 ###  https://schema.org/Wednesday
 schema:Wednesday rdf:type owl:NamedIndividual ,
                           schema:DayOfWeek ;
-                 welcome:hasValue "Wednesday" .
+                 welcome:hasValue "Wednesdays" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource schema:Wednesday ;
+   owl:annotatedProperty welcome:hasValue ;
+   owl:annotatedTarget "Wednesdays" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informLabourModuleHours" ,
+                                           "informSocietyModuleHours"
+ ] .
 
 
 #################################################################
