@@ -929,6 +929,10 @@ welcome:coordinates rdf:type owl:DatatypeProperty ;
 welcome:countryName rdf:type owl:DatatypeProperty .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#courseName
+welcome:courseName rdf:type owl:DatatypeProperty .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#dayOfWeek
 welcome:dayOfWeek rdf:type owl:DatatypeProperty .
 
@@ -2372,7 +2376,8 @@ welcome:Catalonia rdf:type owl:NamedIndividual ,
    owl:annotatedSource welcome:Catalonia ;
    owl:annotatedProperty welcome:regionName ;
    owl:annotatedTarget "Catalonia" ;
-   <http://purl.org/dc/terms/isRequiredBy> "obtainYearArrivalRegion"
+   <http://purl.org/dc/terms/isRequiredBy> "obtainKnowledgeLabour" ,
+                                           "obtainYearArrivalRegion"
  ] .
 
 
@@ -2928,6 +2933,50 @@ welcome:caritasContactPerson rdf:type owl:NamedIndividual ,
    owl:annotatedProperty welcome:hasName ;
    owl:annotatedTarget "Mrs. Meyer" ;
    <http://purl.org/dc/terms/isRequiredBy> "informContactPerson"
+ ] .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#courseTopic
+welcome:courseTopic rdf:type owl:NamedIndividual ;
+                    welcome:courseName "Catalan Society" ,
+                                       "Catalan language" ,
+                                       "Labour Market" ,
+                                       "Spanish language" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:courseTopic ;
+   owl:annotatedProperty welcome:courseName ;
+   owl:annotatedTarget "Catalan Society" ;
+   <http://purl.org/dc/terms/isRequiredBy> "obtainCourseNameCatalanSociety" ,
+                                           "obtainCoursesSociety" ,
+                                           "obtainKnowledgeSociety"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:courseTopic ;
+   owl:annotatedProperty welcome:courseName ;
+   owl:annotatedTarget "Catalan language" ;
+   <http://purl.org/dc/terms/isRequiredBy> "obtainCourseNameCatalan" ,
+                                           "obtainCoursesCatalan" ,
+                                           "obtainKnowledgeCatalan"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:courseTopic ;
+   owl:annotatedProperty welcome:courseName ;
+   owl:annotatedTarget "Labour Market" ;
+   <http://purl.org/dc/terms/isRequiredBy> "obtainCourseNameLabourMarket" ,
+                                           "obtainCoursesLabour" ,
+                                           "obtainKnowledgeLabour"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:courseTopic ;
+   owl:annotatedProperty welcome:courseName ;
+   owl:annotatedTarget "Spanish language" ;
+   <http://purl.org/dc/terms/isRequiredBy> "obtainCourseNameSpanish" ,
+                                           "obtainCoursesSpanish" ,
+                                           "obtainKnowledgeSpanish"
  ] .
 
 
