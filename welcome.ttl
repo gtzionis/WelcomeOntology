@@ -902,6 +902,10 @@ welcome:DIPId rdf:type owl:DatatypeProperty ,
                        owl:FunctionalProperty .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#agentName
+welcome:agentName rdf:type owl:DatatypeProperty .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#belongsToGraph
 welcome:belongsToGraph rdf:type owl:DatatypeProperty .
 
@@ -919,6 +923,10 @@ welcome:coordinates rdf:type owl:DatatypeProperty ;
                                 welcome:Location ,
                                 welcome:PhysicalAddress ;
                     rdfs:label "coordinates" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#countryName
+welcome:countryName rdf:type owl:DatatypeProperty .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#dayOfWeek
@@ -1143,6 +1151,10 @@ welcome:moduleName rdf:type owl:DatatypeProperty .
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#percentage
 welcome:percentage rdf:type owl:DatatypeProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#regionName
+welcome:regionName rdf:type owl:DatatypeProperty .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#scenarioID
@@ -1402,8 +1414,9 @@ welcome:CertificateSpanish rdf:type owl:Class ;
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#City
 welcome:City rdf:type owl:Class ;
              rdfs:subClassOf welcome:PhysicalAddress ;
-             <http://purl.org/dc/terms/component> "NLG" ,
-                                                  "obtainResidenceAddressCity" .
+             <http://purl.org/dc/terms/component> "NLG" ;
+             <http://purl.org/dc/terms/isRequiredBy> "obtainResidenceAddressCity" ,
+                                                     "obtainYearArrival" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CityOfBirth
@@ -1697,7 +1710,9 @@ welcome:HostingInformation rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#IDCountry
 welcome:IDCountry rdf:type owl:Class ;
-                  rdfs:subClassOf welcome:Personal .
+                  rdfs:subClassOf welcome:Personal ;
+                  <http://purl.org/dc/terms/component> "NLG" ;
+                  <http://purl.org/dc/terms/isRequiredBy> "obtainNationality" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#IDNumber
@@ -1927,9 +1942,7 @@ welcome:Name rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Nationality
 welcome:Nationality rdf:type owl:Class ;
-                    rdfs:subClassOf welcome:Personal ;
-                    <http://purl.org/dc/terms/component> "NLG" ;
-                    <http://purl.org/dc/terms/isRequiredBy> "obtainNationality" .
+                    rdfs:subClassOf welcome:Personal .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NotificationPreferences
@@ -2012,6 +2025,11 @@ welcome:PreviousResidenceSpain rdf:type owl:Class ;
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Province
 welcome:Province rdf:type owl:Class ;
                  rdfs:subClassOf welcome:AddressInfo .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Region
+welcome:Region rdf:type owl:Class ;
+               rdfs:subClassOf welcome:PhysicalAddress .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Registered
@@ -2241,6 +2259,45 @@ gn:Feature rdf:type owl:Class .
 #    Individuals
 #################################################################
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AgentNGO
+welcome:AgentNGO rdf:type owl:NamedIndividual ,
+                          foaf:Agent ;
+                 actor:webURL "https://praksis.gr/contact/" ,
+                              "https://treballiaferssocials.gencat.cat/ca/ambits_tematics/immigracio/" ;
+                 welcome:agentName "DTASF" ,
+                                   "PRAKSIS NGO" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:AgentNGO ;
+   owl:annotatedProperty actor:webURL ;
+   owl:annotatedTarget "https://praksis.gr/contact/" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informGenericPRAKSISContact"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:AgentNGO ;
+   owl:annotatedProperty actor:webURL ;
+   owl:annotatedTarget "https://treballiaferssocials.gencat.cat/ca/ambits_tematics/immigracio/" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informGenericDTASFContact"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:AgentNGO ;
+   owl:annotatedProperty welcome:agentName ;
+   owl:annotatedTarget "DTASF" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informGenericDTASFContact"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:AgentNGO ;
+   owl:annotatedProperty welcome:agentName ;
+   owl:annotatedTarget "PRAKSIS NGO" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informGenericPRAKSISContact" ,
+                                           "informNeedContact" ,
+                                           "informPRAKSISContact"
+ ] .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Arabic
 welcome:Arabic rdf:type owl:NamedIndividual ,
                         welcome:Language ;
@@ -2306,6 +2363,19 @@ welcome:Catalan rdf:type owl:NamedIndividual ,
  ] .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Catalonia
+welcome:Catalonia rdf:type owl:NamedIndividual ,
+                           welcome:Region ;
+                  welcome:regionName "Catalonia" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:Catalonia ;
+   owl:annotatedProperty welcome:regionName ;
+   owl:annotatedTarget "Catalonia" ;
+   <http://purl.org/dc/terms/isRequiredBy> "obtainYearArrivalRegion"
+ ] .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Completed
 welcome:Completed rdf:type owl:NamedIndividual ,
                            welcome:DIPStatus ;
@@ -2343,6 +2413,7 @@ welcome:French rdf:type owl:NamedIndividual ,
 welcome:Greece rdf:type owl:NamedIndividual ,
                         welcome:Country ,
                         welcome:Location ;
+               welcome:countryName "Greece" ;
                welcome:hasValue "Greece" .
 
 
@@ -2367,27 +2438,6 @@ welcome:Leros rdf:type owl:NamedIndividual ,
               welcome:hasValue "Leros" ;
               welcome:lat 37.14091 ;
               welcome:long 26.84884 .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NGO_DTASF
-welcome:NGO_DTASF rdf:type owl:NamedIndividual ,
-                           foaf:Agent ;
-                  actor:webURL "https://treballiaferssocials.gencat.cat/ca/ambits_tematics/immigracio/" ;
-                  welcome:hasValue "DTASF" .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource welcome:NGO_DTASF ;
-   owl:annotatedProperty welcome:hasValue ;
-   owl:annotatedTarget "DTASF" ;
-   <http://purl.org/dc/terms/isRequiredBy> "informGenericDTASFContact"
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource welcome:NGO_DTASF ;
-   owl:annotatedProperty actor:webURL ;
-   owl:annotatedTarget "https://treballiaferssocials.gencat.cat/ca/ambits_tematics/immigracio/" ;
-   <http://purl.org/dc/terms/isRequiredBy> "informGenericDTASFContact"
- ] .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OAC_Cambrils
@@ -2522,29 +2572,6 @@ welcome:Pending rdf:type owl:NamedIndividual ,
                 rdfs:label "Status pending" .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#PraksisNGO
-welcome:PraksisNGO rdf:type owl:NamedIndividual ,
-                            foaf:Agent ;
-                   actor:webURL "https://praksis.gr/contact/" ;
-                   welcome:hasValue "PRAKSIS NGO" .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource welcome:PraksisNGO ;
-   owl:annotatedProperty actor:webURL ;
-   owl:annotatedTarget "https://praksis.gr/contact/" ;
-   <http://purl.org/dc/terms/isRequiredBy> "informGenericPRAKSISContact"
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource welcome:PraksisNGO ;
-   owl:annotatedProperty welcome:hasValue ;
-   owl:annotatedTarget "PRAKSIS NGO" ;
-   <http://purl.org/dc/terms/isRequiredBy> "informGenericPRAKSISContact" ,
-                                           "informNeedContact" ,
-                                           "informPRAKSISContact"
- ] .
-
-
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Rodos
 welcome:Rodos rdf:type owl:NamedIndividual ,
                        welcome:City ,
@@ -2603,9 +2630,17 @@ welcome:Skype rdf:type owl:NamedIndividual ,
 welcome:Spain rdf:type owl:NamedIndividual ,
                        welcome:Country ,
                        welcome:Location ;
+              welcome:countryName "Spain" ;
               welcome:hasValue "Spain" ;
               welcome:lat 40.46366 ;
               welcome:long -3.74922 .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:Spain ;
+   owl:annotatedProperty welcome:countryName ;
+   owl:annotatedTarget "Spain" ;
+   <http://purl.org/dc/terms/isRequiredBy> "obtainAsylumClaim"
+ ] .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Spanish
