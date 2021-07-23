@@ -98,11 +98,6 @@ welcome:hasCityOfBirth rdf:type owl:ObjectProperty ;
                        rdfs:range welcome:CityOfBirth .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasClosingTime
-welcome:hasClosingTime rdf:type owl:ObjectProperty ;
-                       rdfs:subPropertyOf welcome:hasTemporalInformation .
-
-
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasContainerTranscription
 welcome:hasContainerTranscription rdf:type owl:ObjectProperty ;
                                   owl:inverseOf welcome:isTranscriptionOfContainer ;
@@ -451,12 +446,6 @@ welcome:hasMobilePhone rdf:type owl:ObjectProperty ;
                        rdfs:domain welcome:Organisation .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasName
-welcome:hasName rdf:type owl:ObjectProperty ;
-                owl:inverseOf welcome:isNameOf ;
-                rdfs:domain welcome:Name .
-
-
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNamedGraph
 welcome:hasNamedGraph rdf:type owl:ObjectProperty ;
                       rdfs:domain welcome:DIP .
@@ -480,11 +469,6 @@ welcome:hasNextTurn rdf:type owl:ObjectProperty ;
 welcome:hasOntologyType rdf:type owl:ObjectProperty ,
                                  owl:FunctionalProperty ;
                         rdfs:domain welcome:Slot .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasOpeningTime
-welcome:hasOpeningTime rdf:type owl:ObjectProperty ;
-                       rdfs:subPropertyOf welcome:hasTemporalInformation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasOperatingDay
@@ -642,12 +626,6 @@ welcome:hasUsername rdf:type owl:ObjectProperty ;
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasWebpage
 welcome:hasWebpage rdf:type owl:ObjectProperty ;
                    rdfs:domain welcome:Webpage .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasZipCode
-welcome:hasZipCode rdf:type owl:ObjectProperty ;
-                   rdfs:subPropertyOf welcome:hasPhysicalAddress ;
-                   rdfs:range welcome:ZipCode .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hostedBy
@@ -954,10 +932,6 @@ welcome:fromPeriod rdf:type owl:DatatypeProperty ;
 welcome:hasAddress rdf:type owl:DatatypeProperty .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasCity
-welcome:hasCity rdf:type owl:DatatypeProperty .
-
-
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasClosingTime
 welcome:hasClosingTime rdf:type owl:DatatypeProperty .
 
@@ -1032,10 +1006,6 @@ welcome:hasRelationId rdf:type owl:DatatypeProperty .
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasSkypeId
 welcome:hasSkypeId rdf:type owl:DatatypeProperty .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStreetNumber
-welcome:hasStreetNumber rdf:type owl:DatatypeProperty .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTemplateId
