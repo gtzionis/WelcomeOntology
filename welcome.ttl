@@ -2902,7 +2902,8 @@ welcome:caritasContactPerson rdf:type owl:NamedIndividual ,
    owl:annotatedSource welcome:caritasContactPerson ;
    owl:annotatedProperty welcome:hasName ;
    owl:annotatedTarget "Mrs. Meyer" ;
-   <http://purl.org/dc/terms/isRequiredBy> "informContactPerson"
+   <http://purl.org/dc/terms/isRequiredBy> "informContactPerson" ,
+                                           "obtainDetailsKnown"
  ] .
 
 
