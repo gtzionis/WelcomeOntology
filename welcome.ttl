@@ -915,6 +915,10 @@ welcome:courseName rdf:type owl:DatatypeProperty .
 welcome:dayOfWeek rdf:type owl:DatatypeProperty .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#dayOfWeekNoRepeat
+welcome:dayOfWeekNoRepeat rdf:type owl:DatatypeProperty .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#daytime
 welcome:daytime rdf:type owl:DatatypeProperty .
 
@@ -1115,6 +1119,10 @@ welcome:long rdf:type owl:DatatypeProperty ;
              rdfs:label "longitude"^^xsd:string .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#matterConcern
+welcome:matterConcern rdf:type owl:DatatypeProperty .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#moduleLabel
 welcome:moduleLabel rdf:type owl:DatatypeProperty .
 
@@ -1135,6 +1143,10 @@ welcome:regionName rdf:type owl:DatatypeProperty .
 welcome:scenarioID rdf:type owl:DatatypeProperty ;
                    rdfs:domain welcome:Scenario ;
                    rdfs:range xsd:string .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#scenarioName
+welcome:scenarioName rdf:type owl:DatatypeProperty .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#score
@@ -2599,6 +2611,31 @@ welcome:SimulationAgent rdf:type owl:NamedIndividual ,
  ] .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SimulationConcern
+welcome:SimulationConcern rdf:type owl:NamedIndividual ;
+                          welcome:matterConcern "the progress of your job search" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:SimulationConcern ;
+   owl:annotatedProperty welcome:matterConcern ;
+   owl:annotatedTarget "the progress of your job search" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informMatterConcern"
+ ] .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SimulationScenario
+welcome:SimulationScenario rdf:type owl:NamedIndividual ,
+                                    welcome:Scenario ;
+                           welcome:scenarioName "how to make an appointment by simulating a phone call" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:SimulationScenario ;
+   owl:annotatedProperty welcome:scenarioName ;
+   owl:annotatedTarget "how to make an appointment by simulating a phone call" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informSimulation"
+ ] .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Skype
 welcome:Skype rdf:type owl:NamedIndividual ,
                        welcome:App ;
@@ -3560,7 +3597,8 @@ welcome:slot_ef_thes rdf:type owl:NamedIndividual ,
 ###  https://schema.org/Friday
 schema:Friday rdf:type owl:NamedIndividual ,
                        schema:DayOfWeek ;
-              welcome:dayOfWeek "Fridays" .
+              welcome:dayOfWeek "Fridays" ;
+              welcome:dayOfWeekNoRepeat "Friday" .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource schema:Friday ;
@@ -3573,7 +3611,8 @@ schema:Friday rdf:type owl:NamedIndividual ,
 ###  https://schema.org/Monday
 schema:Monday rdf:type owl:NamedIndividual ,
                        schema:DayOfWeek ;
-              welcome:dayOfWeek "Mondays" .
+              welcome:dayOfWeek "Mondays" ;
+              welcome:dayOfWeekNoRepeat "Monday" .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource schema:Monday ;
@@ -3586,31 +3625,36 @@ schema:Monday rdf:type owl:NamedIndividual ,
 ###  https://schema.org/Saturday
 schema:Saturday rdf:type owl:NamedIndividual ,
                          schema:DayOfWeek ;
-                welcome:dayOfWeek "Saturdays" .
+                welcome:dayOfWeek "Saturdays" ;
+                welcome:dayOfWeekNoRepeat "Saturday" .
 
 
 ###  https://schema.org/Sunday
 schema:Sunday rdf:type owl:NamedIndividual ,
                        schema:DayOfWeek ;
-              welcome:dayOfWeek "Sundays" .
+              welcome:dayOfWeek "Sundays" ;
+              welcome:dayOfWeekNoRepeat "Sunday" .
 
 
 ###  https://schema.org/Thursday
 schema:Thursday rdf:type owl:NamedIndividual ,
                          schema:DayOfWeek ;
-                welcome:dayOfWeek "Thursdays" .
+                welcome:dayOfWeek "Thursdays" ;
+                welcome:dayOfWeekNoRepeat "Thursday" .
 
 
 ###  https://schema.org/Tuesday
 schema:Tuesday rdf:type owl:NamedIndividual ,
                         schema:DayOfWeek ;
-               welcome:dayOfWeek "Tuesdays" .
+               welcome:dayOfWeek "Tuesdays" ;
+               welcome:dayOfWeekNoRepeat "Tuesday" .
 
 
 ###  https://schema.org/Wednesday
 schema:Wednesday rdf:type owl:NamedIndividual ,
                           schema:DayOfWeek ;
-                 welcome:dayOfWeek "Wednesdays" .
+                 welcome:dayOfWeek "Wednesdays" ;
+                 welcome:dayOfWeekNoRepeat "Wednesday" .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource schema:Wednesday ;
