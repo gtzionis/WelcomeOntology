@@ -2363,6 +2363,8 @@ welcome:Catalonia rdf:type owl:NamedIndividual ,
    owl:annotatedProperty welcome:regionName ;
    owl:annotatedTarget "Catalonia" ;
    <http://purl.org/dc/terms/isRequiredBy> "obtainKnowledgeLabour" ,
+                                           "obtainPreviousResidenceCatalonia" ,
+                                           "obtainRegistrationYear" ,
                                            "obtainYearArrivalRegion"
  ] .
 
@@ -2630,7 +2632,8 @@ welcome:Spain rdf:type owl:NamedIndividual ,
    owl:annotatedSource welcome:Spain ;
    owl:annotatedProperty welcome:countryName ;
    owl:annotatedTarget "Spain" ;
-   <http://purl.org/dc/terms/isRequiredBy> "obtainAsylumClaim"
+   <http://purl.org/dc/terms/isRequiredBy> "obtainAsylumClaim" ,
+                                           "obtainPreviousResidenceSpain"
  ] .
 
 
