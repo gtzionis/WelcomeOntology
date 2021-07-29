@@ -2306,19 +2306,6 @@ welcome:Arabic rdf:type owl:NamedIndividual ,
                welcome:languageName "Arabic" .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AsylumOffice
-welcome:AsylumOffice rdf:type owl:NamedIndividual ,
-                              welcome:Office ;
-                     welcome:hasValue "Asylum Office" .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource welcome:AsylumOffice ;
-   owl:annotatedProperty welcome:hasValue ;
-   owl:annotatedTarget "Asylum Office" ;
-   <http://purl.org/dc/terms/isRequiredBy> "informNeedRegistration"
- ] .
-
-
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AsylumService
 welcome:AsylumService rdf:type owl:NamedIndividual ,
                                <http://www.daml.org/services/owl-s/1.1/Service.owl#Service> ;
@@ -2394,6 +2381,19 @@ welcome:Crete rdf:type owl:NamedIndividual ,
               welcome:hasValue "Crete" ;
               welcome:lat 35.24011 ;
               welcome:long 24.80926 .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DepartmentName
+welcome:DepartmentName rdf:type owl:NamedIndividual ,
+                                welcome:Office ;
+                       welcome:hasValue "Asylum Office" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:DepartmentName ;
+   owl:annotatedProperty welcome:hasValue ;
+   owl:annotatedTarget "Asylum Office" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informNeedRegistration"
+ ] .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#English
