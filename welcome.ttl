@@ -2258,7 +2258,8 @@ welcome:AgentNGO rdf:type owl:NamedIndividual ,
                  welcome:agentName "CARITAS" ,
                                    "DTASF" ,
                                    "PRAKSIS NGO" ;
-                 welcome:contactPurpose "inform you where such a service is available" .
+                 welcome:contactPurpose "inform you where such a service is available" ,
+                                        "schedule an appointment with a professional" .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:AgentNGO ;
@@ -2274,6 +2275,13 @@ welcome:AgentNGO rdf:type owl:NamedIndividual ,
    owl:annotatedProperty welcome:contactPurpose ;
    owl:annotatedTarget "inform you where such a service is available" ;
    <http://purl.org/dc/terms/isRequiredBy> "informPRAKSISContact"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:AgentNGO ;
+   owl:annotatedProperty welcome:contactPurpose ;
+   owl:annotatedTarget "schedule an appointment with a professional" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informNeedContact"
  ] .
 
 [ rdf:type owl:Axiom ;
@@ -2336,21 +2344,6 @@ welcome:AppName rdf:type owl:NamedIndividual ,
 welcome:Arabic rdf:type owl:NamedIndividual ,
                         welcome:Language ;
                welcome:languageName "Arabic" .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AsylumService
-welcome:AsylumService rdf:type owl:NamedIndividual ,
-                               <http://www.daml.org/services/owl-s/1.1/Service.owl#Service> ;
-                      welcome:hasValue "Asylum Service" .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource welcome:AsylumService ;
-   owl:annotatedProperty welcome:hasValue ;
-   owl:annotatedTarget "Asylum Service" ;
-   <http://purl.org/dc/terms/isRequiredBy> "informAccess" ,
-                                           "informConnection" ,
-                                           "informPurpose"
- ] .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Athens
@@ -2616,6 +2609,21 @@ welcome:Rodos rdf:type owl:NamedIndividual ,
               welcome:hasValue "Rodos" ;
               welcome:lat 36.43405 ;
               welcome:long 28.21763 .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ServiceName
+welcome:ServiceName rdf:type owl:NamedIndividual ,
+                             <http://www.daml.org/services/owl-s/1.1/Service.owl#Service> ;
+                    welcome:hasValue "Asylum Service" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:ServiceName ;
+   owl:annotatedProperty welcome:hasValue ;
+   owl:annotatedTarget "Asylum Service" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informAccess" ,
+                                           "informConnection" ,
+                                           "informPurpose"
+ ] .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SimulationAgent
