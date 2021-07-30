@@ -1785,7 +1785,8 @@ welcome:Landline rdf:type owl:Class ;
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Language
 welcome:Language rdf:type owl:Class ;
                  <http://purl.org/dc/terms/component> "NLG" ;
-                 <http://purl.org/dc/terms/isRequiredBy> "confirmLanguage" .
+                 <http://purl.org/dc/terms/isRequiredBy> "confirmLanguage" ,
+                                                         "informTimeSlot" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#LanguageModule
