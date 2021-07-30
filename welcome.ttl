@@ -1465,7 +1465,8 @@ welcome:Coordinates rdf:type owl:Class ;
 welcome:Country rdf:type owl:Class ;
                 rdfs:subClassOf welcome:PhysicalAddress ;
                 <http://purl.org/dc/terms/component> "NLG" ;
-                <http://purl.org/dc/terms/isRequiredBy> "obtainCity" ,
+                <http://purl.org/dc/terms/isRequiredBy> "obtainAsylumClaim" ,
+                                                        "obtainCity" ,
                                                         "obtainFirstApplication" ,
                                                         "obtainResidenceAddressCity" .
 
@@ -2689,8 +2690,7 @@ welcome:Spain rdf:type owl:NamedIndividual ,
    owl:annotatedSource welcome:Spain ;
    owl:annotatedProperty welcome:countryName ;
    owl:annotatedTarget "Spain" ;
-   <http://purl.org/dc/terms/isRequiredBy> "obtainAsylumClaim" ,
-                                           "obtainPreviousResidenceSpain"
+   <http://purl.org/dc/terms/isRequiredBy> "obtainPreviousResidenceSpain"
  ] .
 
 
