@@ -1104,7 +1104,6 @@ welcome:lat rdf:type owl:DatatypeProperty ;
             rdfs:domain locn:Address ,
                         welcome:Location ,
                         welcome:PhysicalAddress ;
-            rdfs:range xsd:double ;
             rdfs:label "latitude"^^xsd:string .
 
 
@@ -1119,7 +1118,6 @@ welcome:long rdf:type owl:DatatypeProperty ;
              rdfs:domain locn:Address ,
                          welcome:Location ,
                          welcome:PhysicalAddress ;
-             rdfs:range xsd:double ;
              rdfs:label "longitude"^^xsd:string .
 
 
@@ -1193,8 +1191,7 @@ schema:closes rdf:type owl:DatatypeProperty .
 
 ###  https://schema.org/endTime
 schema:endTime rdf:type owl:DatatypeProperty ;
-               rdfs:domain <https://schema.org/ScheduleAction#ScheduleAction> ;
-               rdfs:range xsd:dateTime .
+               rdfs:domain <https://schema.org/ScheduleAction#ScheduleAction> .
 
 
 ###  https://schema.org/opens
@@ -1203,8 +1200,7 @@ schema:opens rdf:type owl:DatatypeProperty .
 
 ###  https://schema.org/startTime
 schema:startTime rdf:type owl:DatatypeProperty ;
-                 rdfs:domain <https://schema.org/ScheduleAction#ScheduleAction> ;
-                 rdfs:range xsd:dateTime .
+                 rdfs:domain <https://schema.org/ScheduleAction#ScheduleAction> .
 
 
 #################################################################
