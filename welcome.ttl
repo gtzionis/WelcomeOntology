@@ -3071,13 +3071,13 @@ welcome:course_labourCourse rdf:type owl:NamedIndividual ,
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#course_societyCourse
 welcome:course_societyCourse rdf:type owl:NamedIndividual ,
                                       welcome:Course ;
-                             welcome:hasCourseName "Your municipality and the services you can apply for." ;
+                             welcome:hasCourseName "Your municipality and the services you can apply for" ;
                              welcome:hasNumberHours 15 .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:course_societyCourse ;
    owl:annotatedProperty welcome:hasCourseName ;
-   owl:annotatedTarget "Your municipality and the services you can apply for." ;
+   owl:annotatedTarget "Your municipality and the services you can apply for" ;
    <http://purl.org/dc/terms/isRequiredBy> "informSocietyModule"
  ] .
 
