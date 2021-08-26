@@ -752,8 +752,8 @@ welcome:repliesToUserResponse rdf:type owl:ObjectProperty ;
                               rdfs:range welcome:DialogueUserTurn .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#requiresLanguage
-welcome:requiresLanguage rdf:type owl:ObjectProperty .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#requiresLang
+welcome:requiresLang rdf:type owl:ObjectProperty .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#speaksLanguage
@@ -1141,6 +1141,10 @@ welcome:percentage rdf:type owl:DatatypeProperty .
 welcome:regionName rdf:type owl:DatatypeProperty .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#requiresLanguage
+welcome:requiresLanguage rdf:type owl:DatatypeProperty .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#scenarioID
 welcome:scenarioID rdf:type owl:DatatypeProperty ;
                    rdfs:domain welcome:Scenario ;
@@ -1236,6 +1240,10 @@ actor:Actor rdf:type owl:Class ;
 
 ###  http://www.daml.org/services/owl-s/1.1/Profile.owl#Profile
 <http://www.daml.org/services/owl-s/1.1/Profile.owl#Profile> rdf:type owl:Class .
+
+
+###  http://www.daml.org/services/owl-s/1.1/Service.owl#Service
+<http://www.daml.org/services/owl-s/1.1/Service.owl#Service> rdf:type owl:Class .
 
 
 ###  http://www.w3.org/2003/01/geo/wgs84_pos#Point
@@ -2367,11 +2375,19 @@ welcome:Cambrils rdf:type owl:NamedIndividual ,
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Catalan
 welcome:Catalan rdf:type owl:NamedIndividual ,
                          welcome:Language ;
-                welcome:languageName "Catalan" .
+                welcome:languageName "Catalan" ;
+                welcome:requiresLanguage "Catalan" .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:Catalan ;
    owl:annotatedProperty welcome:languageName ;
+   owl:annotatedTarget "Catalan" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informDetailsLanguage"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:Catalan ;
+   owl:annotatedProperty welcome:requiresLanguage ;
    owl:annotatedTarget "Catalan" ;
    <http://purl.org/dc/terms/isRequiredBy> "informDetailsLanguage"
  ] .
@@ -2696,11 +2712,12 @@ welcome:Spain rdf:type owl:NamedIndividual ,
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Spanish
 welcome:Spanish rdf:type owl:NamedIndividual ,
                          welcome:Language ;
-                welcome:languageName "Spanish" .
+                welcome:languageName "Spanish" ;
+                welcome:requiresLanguage "Spanish" .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:Spanish ;
-   owl:annotatedProperty welcome:languageName ;
+   owl:annotatedProperty welcome:requiresLanguage ;
    owl:annotatedTarget "Spanish" ;
    <http://purl.org/dc/terms/isRequiredBy> "informDetailsLanguage"
  ] .
@@ -3127,8 +3144,8 @@ welcome:jobcenter rdf:type owl:NamedIndividual ,
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#module
 welcome:module rdf:type owl:NamedIndividual ,
                         welcome:Module ;
-               welcome:requiresLanguage welcome:Catalan ,
-                                        welcome:Spanish ;
+               welcome:requiresLang welcome:Catalan ,
+                                    welcome:Spanish ;
                welcome:duration "2 years" ;
                welcome:percentage "75%" .
 
@@ -3490,7 +3507,7 @@ welcome:sa_9 rdf:type owl:NamedIndividual ,
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#skype_informArabic
 welcome:skype_informArabic rdf:type owl:NamedIndividual ,
                                     welcome:SkypeInformation ;
-                           welcome:requiresLanguage welcome:Arabic ;
+                           welcome:requiresLang welcome:Arabic ;
                            welcome:hasSkypeId "asylum.service.arabic" ;
                            <http://purl.org/dc/terms/isRequiredBy> "informSkypeID" .
 
@@ -3498,8 +3515,8 @@ welcome:skype_informArabic rdf:type owl:NamedIndividual ,
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#skype_informEnglish
 welcome:skype_informEnglish rdf:type owl:NamedIndividual ,
                                      welcome:SkypeInformation ;
-                            welcome:requiresLanguage welcome:English ,
-                                                     welcome:French ;
+                            welcome:requiresLang welcome:English ,
+                                                 welcome:French ;
                             welcome:hasSkypeId "asylum.service" ;
                             <http://purl.org/dc/terms/isRequiredBy> "informSkypeID" .
 
