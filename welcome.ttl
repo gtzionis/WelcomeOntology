@@ -1426,8 +1426,8 @@ welcome:City rdf:type owl:Class ;
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CityOfBirth
 welcome:CityOfBirth rdf:type owl:Class ;
                     rdfs:subClassOf welcome:Personal ;
-                    <http://purl.org/dc/terms/isRequiredBy> "NLG" ,
-                                                            "obtainCityOfBirth" .
+                    <http://purl.org/dc/terms/component> "NLG" ;
+                    <http://purl.org/dc/terms/isRequiredBy> "obtainCityOfBirth" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CompletionYear
