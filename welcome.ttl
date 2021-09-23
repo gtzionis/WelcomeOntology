@@ -2816,7 +2816,7 @@ welcome:address_cambrils rdf:type owl:NamedIndividual ,
                                   welcome:Location ;
                          welcome:hasCity welcome:Cambrils ;
                          welcome:hasCountry welcome:Spain ;
-                         actor:physicalAddress "Pl. de l'Ajuntament, 4 - 43850 Cambrils" ;
+                         actor:physicalAddress "Pl. de l'Ajuntament 4, 43850, Cambrils" ;
                          welcome:lat 41.07132 ;
                          welcome:long 1.05808 .
 
@@ -2827,7 +2827,7 @@ welcome:address_districte2 rdf:type owl:NamedIndividual ,
                                     welcome:Location ;
                            welcome:hasCity welcome:Terrassa ;
                            welcome:hasCountry welcome:Spain ;
-                           actor:physicalAddress "Av de Barcelona, 180 (08222 Terrassa)" ;
+                           actor:physicalAddress "Av de Barcelona 180,  08222, Terrassa" ;
                            welcome:lat 41.56453 ;
                            welcome:long 2.02751 .
 
@@ -2838,7 +2838,7 @@ welcome:address_districte3 rdf:type owl:NamedIndividual ,
                                     welcome:Location ;
                            welcome:hasCity welcome:Terrassa ;
                            welcome:hasCountry welcome:Spain ;
-                           actor:physicalAddress "Pl de Can Palet, 1 (08223 Terrassa)" ;
+                           actor:physicalAddress "Pl de Can Palet 1, 08223, Terrassa" ;
                            welcome:lat 41.55578 ;
                            welcome:long 41.55578 .
 
@@ -2849,7 +2849,7 @@ welcome:address_districte4 rdf:type owl:NamedIndividual ,
                                     welcome:Location ;
                            welcome:hasCity welcome:Terrassa ;
                            welcome:hasCountry welcome:Spain ;
-                           actor:physicalAddress "Av d' Àngel Sallent, 55 (08224 Terrassa)" ;
+                           actor:physicalAddress "Av d' Angel Sallent 55, 08224, Terrassa" ;
                            welcome:lat 41.55743 ;
                            welcome:long 2.00004 .
 
@@ -2860,7 +2860,7 @@ welcome:address_districte5 rdf:type owl:NamedIndividual ,
                                     welcome:Location ;
                            welcome:hasCity welcome:Terrassa ;
                            welcome:hasCountry welcome:Spain ;
-                           actor:physicalAddress "Pl de la Cultura, 5 (08225 Terrassa)" ;
+                           actor:physicalAddress "Pl de la Cultura 5,  08225, Terrassa" ;
                            welcome:lat 41.57692 ;
                            welcome:long 2.00634 .
 
@@ -2871,7 +2871,7 @@ welcome:address_districte6 rdf:type owl:NamedIndividual ,
                                     welcome:Location ;
                            welcome:hasCity welcome:Terrassa ;
                            welcome:hasCountry welcome:Spain ;
-                           actor:physicalAddress "Rm de Francesc Macià, 189 (08226 Terrassa)" ;
+                           actor:physicalAddress "Rm de Francesc Macia 189, 08226, Terrassa" ;
                            welcome:lat 41.5774 ;
                            welcome:long 2.02494 .
 
@@ -2882,7 +2882,7 @@ welcome:address_districte7 rdf:type owl:NamedIndividual ,
                                     welcome:Location ;
                            welcome:hasCity welcome:Terrassa ;
                            welcome:hasCountry welcome:Spain ;
-                           actor:physicalAddress "Ca d' Amèrica, 33 (08228 Terrassa)" ;
+                           actor:physicalAddress "Ca d' America 33, 08228, Terrassa" ;
                            welcome:lat 41.53707 ;
                            welcome:long 2.04197 .
 
@@ -2893,7 +2893,7 @@ welcome:address_dretssocial rdf:type owl:NamedIndividual ,
                                      welcome:Location ;
                             welcome:hasCity welcome:Terrassa ;
                             welcome:hasCountry welcome:Spain ;
-                            actor:physicalAddress "Cr de Montcada, 596 (08223 Terrassa)" ;
+                            actor:physicalAddress "Cr de Montcada 596,  08223, Terrassa" ;
                             welcome:lat 41.55858 ;
                             welcome:long 2.0284 .
 
@@ -2904,7 +2904,7 @@ welcome:address_placadido rdf:type owl:NamedIndividual ,
                                    welcome:Location ;
                           welcome:hasCity welcome:Terrassa ;
                           welcome:hasCountry welcome:Spain ;
-                          actor:physicalAddress "Pl Didó, 5 (08221 Terrassa)" ;
+                          actor:physicalAddress "Pl Dido 5, 08221, Terrassa" ;
                           welcome:lat 41.56382 ;
                           welcome:long 2.01006 .
 
@@ -2915,7 +2915,7 @@ welcome:address_praksisAthens rdf:type owl:NamedIndividual ,
                                        welcome:Location ;
                               welcome:hasCity welcome:Athens ;
                               welcome:hasCountry welcome:Greece ;
-                              actor:physicalAddress "23, Sarpidonos Street, Athens, Greece" ;
+                              actor:physicalAddress "Sarpidonos 23 Street, Athens, Greece" ;
                               welcome:lat 37.99919 ;
                               welcome:long 23.70559 ;
                               <http://purl.org/dc/terms/isRequiredBy> "informAddress" .
@@ -2927,7 +2927,7 @@ welcome:address_praksisThessaloniki rdf:type owl:NamedIndividual ,
                                              welcome:Location ;
                                     welcome:hasCity welcome:Thessaloniki ;
                                     welcome:hasCountry welcome:Greece ;
-                                    actor:physicalAddress "1, Arkadioupoleon & Agiou Dimitriou Streets, Thessaloniki, Greece" ;
+                                    actor:physicalAddress "Arkadioupoleon and Agiou Dimitriou 1 Streets, Thessaloniki, Greece" ;
                                     welcome:lat 40.64376 ;
                                     welcome:long 22.9371 ;
                                     <http://purl.org/dc/terms/isRequiredBy> "informAddress" .
