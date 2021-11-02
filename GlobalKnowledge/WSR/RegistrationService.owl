@@ -1,189 +1,97 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://localhost:8080/services/RegistrationService.owl#"
-     xml:base="http://localhost:8080/services/RegistrationService.owl"
-     xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:expr="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:vann="http://purl.org/vocab/vann/"
-     xmlns:terms="http://purl.org/dc/terms/"
-     xmlns:process="http://www.daml.org/services/owl-s/1.1/Process.owl#"
-     xmlns:profile="http://www.daml.org/services/owl-s/1.1/Profile.owl#"
-     xmlns:service="http://www.daml.org/services/owl-s/1.1/Service.owl#"
-     xmlns:welcome="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#"
-     xmlns:pddlexpr="http://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/PDDLExpression.owl#"
-     xmlns:powder-s="http://www.w3.org/2007/05/powder-s#"
-     xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#"
-     xmlns:PDDLExpression="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/PDDLExpression.owl#">
-    <owl:Ontology rdf:about="http://localhost:8080/services/RegistrationService.owl">
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"    
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:welcome="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#"
+    xmlns:service="http://www.daml.org/services/owl-s/1.1/Service.owl#"
+	xmlns:process="http://www.daml.org/services/owl-s/1.1/Process.owl#" 
+	xmlns:profile="http://www.daml.org/services/owl-s/1.1/Profile.owl#"
+   	xmlns:expr="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#"  
+	xmlns:pddlexpr="http://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/PDDLExpression.owl#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	xml:base="http://localhost:8080/services/RegistrationService.owl">
+	<owl:Ontology rdf:about="http://localhost:8080/services/RegistrationService.owl">
+		<owl:imports rdf:resource="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl"/>
+		<owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.1/Service.owl"/>
+		<owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl"/>
+        <owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.1/Profile.owl"/> 
         <owl:imports rdf:resource="http://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/PDDLExpression.owl"/>
-        <owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl"/>
-        <owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.1/Profile.owl"/>
-        <owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.1/Service.owl"/>
-        <owl:imports rdf:resource="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Semantic Service Description Registration Service in Catalonia</rdfs:comment>
-    </owl:Ontology>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/PDDLExpression.owl#PDDL-Expression -->
-
-    <owl:Class rdf:about="http://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/PDDLExpression.owl#PDDL-Expression"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Individuals
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://localhost:8080/services/RegistrationService.owl#InformNeedRegistration -->
-
-    <owl:NamedIndividual rdf:about="http://localhost:8080/services/RegistrationService.owl#InformNeedRegistration">
-        <rdf:type rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#Output"/>
-        <welcome:hasSlotTemplate rdf:resource="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#TemplateInformRegistraton"/>
-        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template</process:parameterType>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://localhost:8080/services/RegistrationService.owl#ObtainFirstSurname -->
-
-    <owl:NamedIndividual rdf:about="http://localhost:8080/services/RegistrationService.owl#ObtainFirstSurname">
-        <rdf:type rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#Local"/>
-        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#FirstSurname</process:parameterType>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://localhost:8080/services/RegistrationService.owl#ObtainRegistrationServiceInfo -->
-
-    <owl:NamedIndividual rdf:about="http://localhost:8080/services/RegistrationService.owl#ObtainRegistrationServiceInfo">
-        <rdf:type rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#AtomicProcess"/>
-        <process:hasInput rdf:resource="http://localhost:8080/services/RegistrationService.owl#ObtainResidenceAddressCity"/>
-        <process:hasInput rdf:resource="http://localhost:8080/services/RegistrationService.owl#ObtainResidenceAddressNumber"/>
-        <process:hasInput rdf:resource="http://localhost:8080/services/RegistrationService.owl#ObtainResidenceAddressStreet"/>
-        <process:hasLocal rdf:resource="http://localhost:8080/services/RegistrationService.owl#ObtainFirstSurname"/>
-        <process:hasOutput rdf:resource="http://localhost:8080/services/RegistrationService.owl#InformNeedRegistration"/>
-        <process:hasPrecondition rdf:resource="http://localhost:8080/services/RegistrationService.owl#RegistrationCondition"/>
-        <process:hasResult rdf:resource="http://localhost:8080/services/RegistrationService.owl#RegistrationResult"/>
-        <service:describes rdf:resource="http://localhost:8080/services/RegistrationService.owl#RegistrationService"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://localhost:8080/services/RegistrationService.owl#ObtainResidenceAddressCity -->
-
-    <owl:NamedIndividual rdf:about="http://localhost:8080/services/RegistrationService.owl#ObtainResidenceAddressCity">
-        <rdf:type rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#Input"/>
-        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#City</process:parameterType>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://localhost:8080/services/RegistrationService.owl#ObtainResidenceAddressNumber -->
-
-    <owl:NamedIndividual rdf:about="http://localhost:8080/services/RegistrationService.owl#ObtainResidenceAddressNumber">
-        <rdf:type rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#Input"/>
-        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#StreetNumber</process:parameterType>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://localhost:8080/services/RegistrationService.owl#ObtainResidenceAddressStreet -->
-
-    <owl:NamedIndividual rdf:about="http://localhost:8080/services/RegistrationService.owl#ObtainResidenceAddressStreet">
-        <rdf:type rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#Input"/>
-        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#StreetName</process:parameterType>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://localhost:8080/services/RegistrationService.owl#RegistrationCondition -->
-
-    <owl:NamedIndividual rdf:about="http://localhost:8080/services/RegistrationService.owl#RegistrationCondition">
-        <rdf:type rdf:resource="http://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/PDDLExpression.owl#PDDL-Expression"/>
-        <expr:expressionBody rdf:datatype="http://www.w3.org/2001/XMLSchema#string">(not (https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Registered ?http://localhost:8080/services/RegistrationService.owl#ObtainFirstSurname)) </expr:expressionBody>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://localhost:8080/services/RegistrationService.owl#RegistrationProfile -->
-
-    <owl:NamedIndividual rdf:about="http://localhost:8080/services/RegistrationService.owl#RegistrationProfile">
-        <rdf:type rdf:resource="http://www.daml.org/services/owl-s/1.1/Profile.owl#Profile"/>
-        <profile:contactInformation rdf:resource="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OAC_Cambrils"/>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Semantic Service Description Registration Service in Catalonia</rdfs:comment>
+	</owl:Ontology>
+  
+	<service:Service rdf:ID="RegistrationService">
+        <service:describedBy rdf:resource="#ObtainRegistrationServiceInfo"/>
+        <service:presents rdf:resource="#RegistrationProfile"/>
+	</service:Service>
+  
+	<process:AtomicProcess rdf:ID="ObtainRegistrationServiceInfo">
+		<service:describes rdf:resource="#RegistrationService"/>
+		<!-- Precondition -->
+		<process:hasPrecondition>
+			<pddlexpr:PDDL-Expression rdf:ID="RegistrationCondition">
+				<expr:expressionBody rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+				>(not (https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Registered ?http://localhost:8080/services/RegistrationService.owl#ObtainFirstSurname)) </expr:expressionBody>
+			</pddlexpr:PDDL-Expression>
+		</process:hasPrecondition>
+		<process:hasOutput>
+		  <process:Output rdf:ID="InformNeedRegistration">
+				<welcome:hasSlotTemplate rdf:resource="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#TemplateInformRegistraton"/>
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template</process:parameterType>
+		  </process:Output>
+		</process:hasOutput>
+		<process:hasInput>
+		  <process:Input rdf:ID="ObtainResidenceAddressCity">
+			<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#City</process:parameterType>
+		  </process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="ObtainResidenceAddressStreet">
+				 <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#StreetName</process:parameterType>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="ObtainResidenceAddressNumber">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#StreetNumber</process:parameterType>
+			</process:Input>
+		</process:hasInput>
+		<process:hasLocal>
+			<process:Local rdf:ID="ObtainFirstSurname">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#FirstSurname</process:parameterType>
+			</process:Local>
+		</process:hasLocal>
+		<process:hasResult>
+			<process:Result rdf:ID="RegistrationResult">
+				<process:hasEffect>
+					<pddlexpr:PDDL-Expression>
+						<expr:expressionBody rdf:datatype="http://www.w3.org/2001/XMLSchema#string">(https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Registered ?http://localhost:8080/services/RegistrationService.owl#ObtainFirstSurname) </expr:expressionBody>
+					</pddlexpr:PDDL-Expression>
+				</process:hasEffect>
+			</process:Result>
+		</process:hasResult>
+	</process:AtomicProcess>
+	
+	<profile:Profile rdf:ID="RegistrationProfile">
+		<!--  #########	 Non-Functional Description ######################## --> 
+		<profile:serviceName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Catalan Registration</profile:serviceName>        
+		<profile:textDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Everybody must first register at the registration office. For signing up in the population register, you have to provide the following information: i)Identity document (passport, foreigner identity card or  provisional asylum seeker document) ii) Proof of your address (property deeds, rental contract, supplies bill, letter of authorisation from the person identified as the lessee in the contract, and iii)Level of studies </profile:textDescription>
+		<profile:contactInformation rdf:resource="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OAC_Districte7"/>
         <profile:contactInformation rdf:resource="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OAC_Districte2"/>
-        <profile:contactInformation rdf:resource="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OAC_Districte3"/>
-        <profile:contactInformation rdf:resource="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OAC_Districte4"/>
-        <profile:contactInformation rdf:resource="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OAC_Districte5"/>
-        <profile:contactInformation rdf:resource="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OAC_Districte6"/>
-        <profile:contactInformation rdf:resource="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OAC_Districte7"/>
+        <profile:contactInformation rdf:resource="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OAC_Districte6"/> 
+		<profile:contactInformation rdf:resource="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OAC_Districte4"/>	
+		<profile:contactInformation rdf:resource="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OAC_Districte3"/>			
+		<profile:contactInformation rdf:resource="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OAC_Cambrils"/>
         <profile:contactInformation rdf:resource="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OAC_DretsSocials"/>
-        <profile:contactInformation rdf:resource="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OAC_PlacaDido"/>
-        <profile:hasInput rdf:resource="http://localhost:8080/services/RegistrationService.owl#ObtainResidenceAddressCity"/>
-        <profile:hasInput rdf:resource="http://localhost:8080/services/RegistrationService.owl#ObtainResidenceAddressNumber"/>
-        <profile:hasInput rdf:resource="http://localhost:8080/services/RegistrationService.owl#ObtainResidenceAddressStreet"/>
-        <profile:hasOutput rdf:resource="http://localhost:8080/services/RegistrationService.owl#InformNeedRegistration"/>
-        <profile:hasPrecondition rdf:resource="http://localhost:8080/services/RegistrationService.owl#RegistrationCondition"/>
-        <profile:hasResult rdf:resource="http://localhost:8080/services/RegistrationService.owl#RegistrationResult"/>
-        <service:presentedBy rdf:resource="http://localhost:8080/services/RegistrationService.owl#RegistrationService"/>
-        <profile:serviceName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Catalan Registration</profile:serviceName>
-        <profile:textDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Everybody must first register at the registration office. For signing up in the population register, you have to provide the following information: i)Identity document (passport, foreigner identity card or  provisional asylum seeker document) ii) Proof of your address (property deeds, rental contract, supplies bill, letter of authorisation from the person identified as the lessee in the contract, and iii)Level of studies </profile:textDescription>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://localhost:8080/services/RegistrationService.owl#RegistrationResult -->
-
-    <owl:NamedIndividual rdf:about="http://localhost:8080/services/RegistrationService.owl#RegistrationResult">
-        <rdf:type rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#Result"/>
-        <process:hasEffect>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/PDDLExpression.owl#PDDL-Expression"/>
-                <expr:expressionBody rdf:datatype="http://www.w3.org/2001/XMLSchema#string">(https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Registered ?http://localhost:8080/services/RegistrationService.owl#ObtainFirstSurname) </expr:expressionBody>
-            </rdf:Description>
-        </process:hasEffect>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://localhost:8080/services/RegistrationService.owl#RegistrationService -->
-
-    <owl:NamedIndividual rdf:about="http://localhost:8080/services/RegistrationService.owl#RegistrationService">
-        <rdf:type rdf:resource="http://www.daml.org/services/owl-s/1.1/Service.owl#Service"/>
-        <service:describedBy rdf:resource="http://localhost:8080/services/RegistrationService.owl#ObtainRegistrationServiceInfo"/>
-        <service:presents rdf:resource="http://localhost:8080/services/RegistrationService.owl#RegistrationProfile"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#TemplateInformRegistraton -->
-
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#TemplateInformRegistraton"/>
+		<profile:contactInformation rdf:resource="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OAC_Districte5"/>
+		<profile:contactInformation rdf:resource="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OAC_PlacaDido"/>
+		<!--  #########	 Functional Description ######################## --> 
+		<profile:hasInput rdf:resource="#ObtainResidenceAddressCity"/>
+		<profile:hasInput rdf:resource="#ObtainResidenceAddressStreet"/>
+		<profile:hasInput rdf:resource="#ObtainResidenceAddressNumber"/>
+		<profile:hasOutput rdf:resource="#InformNeedRegistration"/>
+		<profile:hasPrecondition rdf:resource="#RegistrationCondition"/>
+		<profile:hasResult rdf:resource="#RegistrationResult"/>
+		<service:presentedBy rdf:resource="#RegistrationService"/>
+	</profile:Profile>   
 </rdf:RDF>
-
-
-
-<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
-
