@@ -1,0 +1,23 @@
+@prefix : <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ajan: <http://www.ajan.de/ajan-ns#> .
+
+<http://localhost:8080/welcome/integration/coordination/ajan/agents/Agent1> ajan:agentName "Agent1" ;
+	:hasStatus :active ;
+	rdf:type ajan:Agent .
+
+<http://localhost:8080/welcome/integration/coordination/ajan/agents/Agent2> ajan:agentName "Agent2" ;
+	:hasStatus :active ;
+	rdf:type ajan:Agent .
+
+<http://localhost:8080/welcome/integration/coordination/ajan/agents/Agent3> ajan:agentName "Agent3" ;
+	:hasStatus :active ;
+	rdf:type ajan:Agent .
+
+<http://localhost:8080/welcome/integration/coordination/ajan/agents/Agent4> ajan:agentName "Agent4" ;
+	:hasStatus :in_coordination ;
+	rdf:type ajan:Agent .
+
+<http://localhost:8080/welcome/integration/coordination/ajan/agents/Agent5> ajan:agentName "Agent5" ;
+	:hasStatus :inactive ;
+	rdf:type ajan:Agent .
