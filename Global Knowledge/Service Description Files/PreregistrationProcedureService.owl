@@ -24,7 +24,7 @@
     </owl:Ontology>
 
 	<!-- ******************************************* -->
-	<!-- 			Version: 28 July 2021			 -->
+	<!-- 			Version: 06 Sept 2021			 -->
 	<!-- ******************************************* -->
 	<service:Service rdf:ID="PreregistrationProcedureService">
         <service:describedBy rdf:resource="#MakeSkypeAppointmentComposite"/>

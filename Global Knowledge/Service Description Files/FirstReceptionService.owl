@@ -24,7 +24,7 @@
     </owl:Ontology>
 
 	<!-- ******************************************* -->
-	<!-- 			Version: 25 June 2021			 -->
+	<!-- 			Version: 28 Oct 2021			 -->
 	<!-- ******************************************* -->
 	<service:Service rdf:ID="FirstReceptionService">
         <service:describedBy rdf:resource="#FillFormComposite"/>
@@ -36,10 +36,15 @@
 		<!-- Precondition -->
 		<process:hasPrecondition>
 			<pddlexpr:PDDL-Expression rdf:ID="FirstReceptionCondition">
-				<expr:expressionBody rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-				> (https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Registered ?http://localhost:8080/services/FirstReceptionService.owl#ObtainFirstSurnameComposed) </expr:expressionBody>
+				<expr:expressionBody rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> (https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DialogueUser ?http://localhost:8080/services/PreregistrationProcedureService.owl#TCNDialogueUser) </expr:expressionBody>
 			</pddlexpr:PDDL-Expression>
 		</process:hasPrecondition>
+		<!-- List of Local -->
+		<process:hasLocal>
+			<process:Local rdf:ID="TCNDialogueUser">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DialogueUser</process:parameterType>
+			</process:Local>
+		</process:hasLocal>
 		<!-- List of Inputs and Outputs -->
 		<process:hasInput>
 			<process:Input rdf:ID="obtainStatusComposed">
@@ -187,7 +192,7 @@
 		</process:hasInput>
 		<process:hasInput>
 			<process:Input rdf:ID="obtainCertificateCatalanSocietyComposed">
-				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CertificateCatalan</process:parameterType>
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CertificateCatalanSociety</process:parameterType>
 				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand</welcome:hasSlotType>
 				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TObtainCertificate</welcome:hasTemplateId>
 				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
@@ -2888,7 +2893,7 @@ Furthermore, the Reception Certificate could be used in legal immigration requir
 		</process:hasInput>
 		<process:hasInput>
 			<process:Input rdf:ID="obtainCertificateCatalanSociety">
-				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CertificateCatalan</process:parameterType>
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CertificateCatalanSociety</process:parameterType>
 				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand</welcome:hasSlotType>
 				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TObtainCertificate</welcome:hasTemplateId>
 				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
