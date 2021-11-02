@@ -1,0 +1,1138 @@
+@prefix : <http://localhost:8080/services/SimulatePhoneAppointmentService.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix expr: <http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix objList: <http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#> .
+@prefix process: <http://www.daml.org/services/owl-s/1.1/Process.owl#> .
+@prefix profile: <http://www.daml.org/services/owl-s/1.1/Profile.owl#> .
+@prefix service: <http://www.daml.org/services/owl-s/1.1/Service.owl#> .
+@prefix welcome: <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#> .
+@prefix pddlexpr: <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/PDDLExpression.owl#> .
+@base <http://localhost:8080/services/SimulatePhoneAppointmentService.owl> .
+
+<http://localhost:8080/services/SimulatePhoneAppointmentService.owl> rdf:type owl:Ontology ;
+                                                                      owl:imports <http://www.daml.org/services/owl-s/1.1/Process.owl> ,
+                                                                                  <http://www.daml.org/services/owl-s/1.1/Profile.owl> ,
+                                                                                  <http://www.daml.org/services/owl-s/1.1/Service.owl> ,
+                                                                                  <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/PDDLExpression.owl> ,
+                                                                                  <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl> ;
+                                                                      rdfs:comment "Semantic Service Description Simulate an Appointment by Phone with Authority - Job Center"^^xsd:string .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasSlotType
+welcome:hasSlotType rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#InformContact
+:InformContact rdf:type owl:NamedIndividual ,
+                        process:AtomicProcess ;
+               process:hasInput :informContactPerson ,
+                                :obtainDetailsKnown ,
+                                :reactiveFlag .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#InformContactDetails
+:InformContactDetails rdf:type owl:NamedIndividual ,
+                               process:AtomicProcess ;
+                      process:hasInput :informContactOtherInfo ,
+                                       :informContactPhone ,
+                                       :obtainConfirmationContactDetails ,
+                                       :reactiveFlag .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#InformContactDetailsPerform
+:InformContactDetailsPerform rdf:type owl:NamedIndividual ,
+                                      process:Perform ;
+                             process:hasDataFrom _:genid1 ,
+                                                 _:genid3 ,
+                                                 _:genid5 ,
+                                                 _:genid7 ;
+                             process:process :InformContactDetails .
+
+_:genid1 rdf:type process:InputBinding ;
+          process:toParam :informContactPhone ;
+          process:valueSource _:genid2 .
+
+_:genid3 rdf:type process:InputBinding ;
+          process:toParam :informContactOtherInfo ;
+          process:valueSource _:genid4 .
+
+_:genid5 rdf:type process:InputBinding ;
+          process:toParam :obtainConfirmationContactDetails ;
+          process:valueSource _:genid6 .
+
+_:genid7 rdf:type process:InputBinding ;
+          process:toParam :reactiveFlag ;
+          process:valueSource _:genid8 .
+
+_:genid2 rdf:type process:ValueOf ;
+          process:fromProcess process:TheParentPerform ;
+          process:theVar :informContactPhoneComposed .
+
+_:genid4 rdf:type process:ValueOf ;
+          process:fromProcess process:TheParentPerform ;
+          process:theVar :informContactOtherInfoComposed .
+
+_:genid6 rdf:type process:ValueOf ;
+          process:fromProcess process:TheParentPerform ;
+          process:theVar :obtainConfirmationContactDetailsComposed .
+
+_:genid8 rdf:type process:ValueOf ;
+          process:fromProcess process:TheParentPerform ;
+          process:theVar :reactiveFlagComposed .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#InformContactNGO
+:InformContactNGO rdf:type owl:NamedIndividual ,
+                           process:AtomicProcess ;
+                  process:hasInput :informGenericCARITASContact ,
+                                   :obtainConfirmation .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#InformContactNGOPerform
+:InformContactNGOPerform rdf:type owl:NamedIndividual ,
+                                  process:Perform ;
+                         process:hasDataFrom _:genid9 ,
+                                             _:genid11 ;
+                         process:process :InformContactNGO .
+
+_:genid9 rdf:type process:InputBinding ;
+          process:toParam :informGenericCARITASContact ;
+          process:valueSource _:genid10 .
+
+_:genid11 rdf:type process:InputBinding ;
+           process:toParam :obtainConfirmation ;
+           process:valueSource _:genid12 .
+
+_:genid10 rdf:type process:ValueOf ;
+           process:fromProcess process:TheParentPerform ;
+           process:theVar :informGenericCARITASContactComposed .
+
+_:genid12 rdf:type process:ValueOf ;
+           process:fromProcess process:TheParentPerform ;
+           process:theVar :obtainConfirmationComposed .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#InformContactPerform
+:InformContactPerform rdf:type owl:NamedIndividual ,
+                               process:Perform ;
+                      process:hasDataFrom _:genid13 ,
+                                          _:genid15 ,
+                                          _:genid17 ;
+                      process:process :InformContact .
+
+_:genid13 rdf:type process:InputBinding ;
+           process:toParam :informContactPerson ;
+           process:valueSource _:genid14 .
+
+_:genid15 rdf:type process:InputBinding ;
+           process:toParam :obtainDetailsKnown ;
+           process:valueSource _:genid16 .
+
+_:genid17 rdf:type process:InputBinding ;
+           process:toParam :reactiveFlag ;
+           process:valueSource _:genid18 .
+
+_:genid14 rdf:type process:ValueOf ;
+           process:fromProcess process:TheParentPerform ;
+           process:theVar :informContactPersonComposed .
+
+_:genid16 rdf:type process:ValueOf ;
+           process:fromProcess process:TheParentPerform ;
+           process:theVar :obtainDetailsKnownComposed .
+
+_:genid18 rdf:type process:ValueOf ;
+           process:fromProcess process:TheParentPerform ;
+           process:theVar :reactiveFlagComposed .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#InformDetailsAppointment
+:InformDetailsAppointment rdf:type owl:NamedIndividual ,
+                                   process:AtomicProcess ;
+                          process:hasInput :informAppointmentDocuments ,
+                                           :obtainConfirmationDetailsAppointment .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#InformDetailsAppointmentPerform
+:InformDetailsAppointmentPerform rdf:type owl:NamedIndividual ,
+                                          process:Perform ;
+                                 process:hasDataFrom _:genid19 ,
+                                                     _:genid21 ;
+                                 process:process :InformDetailsAppointment .
+
+_:genid19 rdf:type process:InputBinding ;
+           process:toParam :informAppointmentDocuments ;
+           process:valueSource _:genid20 .
+
+_:genid21 rdf:type process:InputBinding ;
+           process:toParam :obtainConfirmationDetailsAppointment ;
+           process:valueSource _:genid22 .
+
+_:genid20 rdf:type process:ValueOf ;
+           process:fromProcess process:TheParentPerform ;
+           process:theVar :informAppointmentDocumentsComposed .
+
+_:genid22 rdf:type process:ValueOf ;
+           process:fromProcess process:TheParentPerform ;
+           process:theVar :obtainConfirmationDetailsAppointmentComposed .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#MakeAppointment
+:MakeAppointment rdf:type owl:NamedIndividual ,
+                          process:AtomicProcess ;
+                 process:hasInput :confirmTimeSlot ,
+                                  :informMatterConcern ,
+                                  :informNeedAppointment ,
+                                  :obtainMatterConcernStatus ,
+                                  :proposeTimeSlot ,
+                                  :reactiveFlag .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#MakeAppointmentPerform
+:MakeAppointmentPerform rdf:type owl:NamedIndividual ,
+                                 process:Perform ;
+                        process:hasDataFrom _:genid23 ;
+                        process:process :MakeAppointment .
+
+_:genid23 rdf:type process:InputBinding ;
+           process:toParam :reactiveFlag ;
+           process:valueSource _:genid24 .
+
+_:genid24 rdf:type process:ValueOf ;
+           process:fromProcess process:TheParentPerform ;
+           process:theVar :reactiveFlagComposed .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#NormalClosing
+:NormalClosing rdf:type owl:NamedIndividual ,
+                        process:AtomicProcess ;
+               process:hasInput :informEnd ,
+                                :obtainConfirmationNormalClosing .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#NormalClosingPerform
+:NormalClosingPerform rdf:type owl:NamedIndividual ,
+                               process:Perform ;
+                      process:hasDataFrom _:genid25 ,
+                                          _:genid27 ;
+                      process:process :NormalClosing .
+
+_:genid25 rdf:type process:InputBinding ;
+           process:toParam :informEnd ;
+           process:valueSource _:genid26 .
+
+_:genid27 rdf:type process:InputBinding ;
+           process:toParam :obtainConfirmationNormalClosing ;
+           process:valueSource _:genid28 .
+
+_:genid26 rdf:type process:ValueOf ;
+           process:fromProcess process:TheParentPerform ;
+           process:theVar :informEndComposed .
+
+_:genid28 rdf:type process:ValueOf ;
+           process:fromProcess process:TheParentPerform ;
+           process:theVar :obtainConfirmationNormalClosingComposed .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#ObtainTCNInformation
+:ObtainTCNInformation rdf:type owl:NamedIndividual ,
+                               process:AtomicProcess ;
+                      process:hasInput :obtainBirthDay ,
+                                       :obtainBirthMonth ,
+                                       :obtainBirthYear ,
+                                       :obtainName ,
+                                       :obtainSurname ,
+                                       :reactiveFlag .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#ObtainTCNInformationPerform
+:ObtainTCNInformationPerform rdf:type owl:NamedIndividual ,
+                                      process:Perform ;
+                             process:hasDataFrom _:genid29 ,
+                                                 _:genid31 ,
+                                                 _:genid33 ,
+                                                 _:genid35 ,
+                                                 _:genid37 ,
+                                                 _:genid39 ;
+                             process:process :ObtainTCNInformation .
+
+_:genid29 rdf:type process:InputBinding ;
+           process:toParam :obtainName ;
+           process:valueSource _:genid30 .
+
+_:genid31 rdf:type process:InputBinding ;
+           process:toParam :obtainSurname ;
+           process:valueSource _:genid32 .
+
+_:genid33 rdf:type process:InputBinding ;
+           process:toParam :obtainBirthDay ;
+           process:valueSource _:genid34 .
+
+_:genid35 rdf:type process:InputBinding ;
+           process:toParam :obtainBirthMonth ;
+           process:valueSource _:genid36 .
+
+_:genid37 rdf:type process:InputBinding ;
+           process:toParam :obtainBirthYear ;
+           process:valueSource _:genid38 .
+
+_:genid39 rdf:type process:InputBinding ;
+           process:toParam :reactiveFlag ;
+           process:valueSource _:genid40 .
+
+_:genid30 rdf:type process:ValueOf ;
+           process:fromProcess process:TheParentPerform ;
+           process:theVar :obtainNameComposed .
+
+_:genid32 rdf:type process:ValueOf ;
+           process:fromProcess process:TheParentPerform ;
+           process:theVar :obtainSurnameComposed .
+
+_:genid34 rdf:type process:ValueOf ;
+           process:fromProcess process:TheParentPerform ;
+           process:theVar :obtainBirthDayComposed .
+
+_:genid36 rdf:type process:ValueOf ;
+           process:fromProcess process:TheParentPerform ;
+           process:theVar :obtainBirthMonthComposed .
+
+_:genid38 rdf:type process:ValueOf ;
+           process:fromProcess process:TheParentPerform ;
+           process:theVar :obtainBirthYearComposed .
+
+_:genid40 rdf:type process:ValueOf ;
+           process:fromProcess process:TheParentPerform ;
+           process:theVar :reactiveFlagComposed .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#ScenarioIntroduction
+:ScenarioIntroduction rdf:type owl:NamedIndividual ,
+                               process:AtomicProcess ;
+                      process:hasInput :informPersonNameIntro ,
+                                       :informSimulation ,
+                                       :obtainReadiness .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#ScenarioIntroductionPerform
+:ScenarioIntroductionPerform rdf:type owl:NamedIndividual ,
+                                      process:Perform ;
+                             process:hasDataFrom _:genid41 ,
+                                                 _:genid43 ,
+                                                 _:genid45 ;
+                             process:process :ScenarioIntroduction .
+
+_:genid41 rdf:type process:InputBinding ;
+           process:toParam :informSimulation ;
+           process:valueSource _:genid42 .
+
+_:genid43 rdf:type process:InputBinding ;
+           process:toParam :informPersonNameIntro ;
+           process:valueSource _:genid44 .
+
+_:genid45 rdf:type process:InputBinding ;
+           process:toParam :obtainReadiness ;
+           process:valueSource _:genid46 .
+
+_:genid42 rdf:type process:ValueOf ;
+           process:fromProcess process:TheParentPerform ;
+           process:theVar :informSimulationComposed .
+
+_:genid44 rdf:type process:ValueOf ;
+           process:fromProcess process:TheParentPerform ;
+           process:theVar :informPersonNameIntroComposed .
+
+_:genid46 rdf:type process:ValueOf ;
+           process:fromProcess process:TheParentPerform ;
+           process:theVar :obtainReadinessComposed .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#SimulateAppointmentComposite
+:SimulateAppointmentComposite rdf:type owl:NamedIndividual ,
+                                       process:CompositeProcess ;
+                              process:composedOf _:genid47 ;
+                              process:hasInput :confirmTimeSlotComposed ,
+                                               :informAppointmentDocumentsComposed ,
+                                               :informAuthorityComposed ,
+                                               :informContactOtherInfoComposed ,
+                                               :informContactPersonComposed ,
+                                               :informContactPhoneComposed ,
+                                               :informEndComposed ,
+                                               :informGenericCARITASContactComposed ,
+                                               :informMatterConcernComposed ,
+                                               :informNeedAppointmentComposed ,
+                                               :informPersonNameComposed ,
+                                               :informPersonNameIntroComposed ,
+                                               :informSimulationComposed ,
+                                               :informSimulationEndComposed ,
+                                               :obtainBirthDayComposed ,
+                                               :obtainBirthMonthComposed ,
+                                               :obtainBirthYearComposed ,
+                                               :obtainConfirmationComposed ,
+                                               :obtainConfirmationContactDetailsComposed ,
+                                               :obtainConfirmationDetailsAppointmentComposed ,
+                                               :obtainConfirmationNormalClosingComposed ,
+                                               :obtainDetailsKnownComposed ,
+                                               :obtainMatterConcernComposed ,
+                                               :obtainMatterConcernStatusComposed ,
+                                               :obtainNameComposed ,
+                                               :obtainReadinessComposed ,
+                                               :obtainSurnameComposed ,
+                                               :proposeTimeSlotComposed ,
+                                               :reactiveFlagComposed ;
+                              process:hasLocal :TCNDialogueUser ;
+                              process:hasPrecondition :SimulatePhoneAppointmentCondition ;
+                              process:hasResult :SimulatePhoneAppointmentServiceResult ;
+                              service:describes :SimulatePhoneAppointmentService .
+
+_:genid47 rdf:type process:Sequence ;
+           process:components _:genid48 .
+
+_:genid48 rdf:type process:ControlConstructList ;
+           objList:first :ScenarioIntroductionPerform ;
+           objList:rest _:genid49 .
+
+_:genid49 rdf:type process:ControlConstructList ;
+           objList:first :SimulationIntroductionPerform ;
+           objList:rest _:genid50 .
+
+_:genid50 rdf:type process:ControlConstructList ;
+           objList:first :ObtainTCNInformationPerform ;
+           objList:rest _:genid51 .
+
+_:genid51 rdf:type process:ControlConstructList ;
+           objList:first :MakeAppointmentPerform ;
+           objList:rest _:genid52 .
+
+_:genid52 rdf:type process:ControlConstructList ;
+           objList:first :InformDetailsAppointmentPerform ;
+           objList:rest _:genid53 .
+
+_:genid53 rdf:type process:ControlConstructList ;
+           objList:first :InformContactPerform ;
+           objList:rest _:genid54 .
+
+_:genid54 rdf:type process:ControlConstructList ;
+           objList:first :InformContactDetailsPerform ;
+           objList:rest _:genid55 .
+
+_:genid55 rdf:type process:ControlConstructList ;
+           objList:first :SimulationClosingPerform ;
+           objList:rest _:genid56 .
+
+_:genid56 rdf:type process:ControlConstructList ;
+           objList:first :NormalClosingPerform ;
+           objList:rest _:genid57 .
+
+_:genid57 rdf:type process:ControlConstructList ;
+           objList:first :InformContactNGOPerform ;
+           objList:rest objList:nil .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#SimulatePhoneAppointmentCondition
+:SimulatePhoneAppointmentCondition rdf:type owl:NamedIndividual ,
+                                            pddlexpr:PDDL-Expression ;
+                                   expr:expressionBody " (https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DialogueUser ?http://localhost:8080/services/SimulatePhoneAppointmentService.owl#TCNDialogueUser) "^^xsd:string .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#SimulatePhoneAppointmentProfile
+:SimulatePhoneAppointmentProfile rdf:type owl:NamedIndividual ,
+                                          profile:Profile ;
+                                 profile:contactInformation welcome:Caritasverband_Hamm ;
+                                 profile:hasInput :confirmTimeSlotComposed ,
+                                                  :informAppointmentDocumentsComposed ,
+                                                  :informAuthorityComposed ,
+                                                  :informContactOtherInfoComposed ,
+                                                  :informContactPersonComposed ,
+                                                  :informContactPhoneComposed ,
+                                                  :informEndComposed ,
+                                                  :informGenericCARITASContactComposed ,
+                                                  :informMatterConcernComposed ,
+                                                  :informNeedAppointmentComposed ,
+                                                  :informPersonNameComposed ,
+                                                  :informPersonNameIntroComposed ,
+                                                  :informSimulationComposed ,
+                                                  :informSimulationEndComposed ,
+                                                  :obtainBirthDayComposed ,
+                                                  :obtainBirthMonthComposed ,
+                                                  :obtainBirthYearComposed ,
+                                                  :obtainConfirmationComposed ,
+                                                  :obtainConfirmationContactDetailsComposed ,
+                                                  :obtainConfirmationDetailsAppointmentComposed ,
+                                                  :obtainConfirmationNormalClosingComposed ,
+                                                  :obtainDetailsKnownComposed ,
+                                                  :obtainMatterConcernComposed ,
+                                                  :obtainMatterConcernStatusComposed ,
+                                                  :obtainNameComposed ,
+                                                  :obtainReadinessComposed ,
+                                                  :obtainSurnameComposed ,
+                                                  :proposeTimeSlotComposed ,
+                                                  :reactiveFlagComposed ;
+                                 profile:hasPrecondition :SimulatePhoneAppointmentCondition ;
+                                 profile:hasResult :SimulatePhoneAppointmentServiceResult ;
+                                 profile:has_process :SimulateAppointmentComposite ;
+                                 service:presentedBy :SimulatePhoneAppointmentService ;
+                                 profile:serviceName "Simulate Appointment by Phone with Job Center"^^xsd:string ;
+                                 profile:textDescription "After arriving in the host country, TCNs have to establish their living and social environment. Therefore, communicating with authorities is essential. The Jobcenter is one of different German authorities. The Jobcenter is supporting a TCN to find a job or options for further vocational education and training. Further, the Jobcenter is responsible to grant social benefits while unemployment. TCNs that have a valid residence permit, e.g. recognized refugees or subsidiary protection, can approach the Jobcenter and make an appointment to discuss these issues. TCNs without a residence permit, e.g. asylum seekers with a preliminary residence permit or a Duldung, need to contact the social welfare office (Sozialamt). With this service, TCNs have the possibility to simulate a phone call with the Jobcenter and practice to make an appointment. "^^xsd:string .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#SimulatePhoneAppointmentService
+:SimulatePhoneAppointmentService rdf:type owl:NamedIndividual ,
+                                          service:Service ;
+                                 service:describedBy :SimulateAppointmentComposite ;
+                                 service:presents :SimulatePhoneAppointmentProfile .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#SimulatePhoneAppointmentServiceResult
+:SimulatePhoneAppointmentServiceResult rdf:type owl:NamedIndividual ,
+                                                process:Result ;
+                                       process:hasEffect [ rdf:type pddlexpr:PDDL-Expression ;
+                                                           expr:expressionBody """(and 
+								(https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#InformedSimulateAppointment ?http://localhost:8080/services/SimulatePhoneAppointmentService.owl#informPersonNameIntro)
+							)"""^^xsd:string
+                                                         ] ;
+                                       process:inCondition expr:AlwaysTrue .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#SimulationClosing
+:SimulationClosing rdf:type owl:NamedIndividual ,
+                            process:AtomicProcess ;
+                   process:hasInput :informSimulationEnd .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#SimulationClosingPerform
+:SimulationClosingPerform rdf:type owl:NamedIndividual ,
+                                   process:Perform ;
+                          process:hasDataFrom _:genid59 ;
+                          process:process :SimulationClosing .
+
+_:genid59 rdf:type process:InputBinding ;
+           process:toParam :informSimulationEnd ;
+           process:valueSource _:genid60 .
+
+_:genid60 rdf:type process:ValueOf ;
+           process:fromProcess process:TheParentPerform ;
+           process:theVar :informSimulationEndComposed .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#SimulationIntroduction
+:SimulationIntroduction rdf:type owl:NamedIndividual ,
+                                 process:AtomicProcess ;
+                        process:hasInput :informAuthority ,
+                                         :informPersonName ,
+                                         :obtainMatterConcern .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#SimulationIntroductionPerform
+:SimulationIntroductionPerform rdf:type owl:NamedIndividual ,
+                                        process:Perform ;
+                               process:hasDataFrom _:genid61 ,
+                                                   _:genid63 ,
+                                                   _:genid65 ;
+                               process:process :SimulationIntroduction .
+
+_:genid61 rdf:type process:InputBinding ;
+           process:toParam :informAuthority ;
+           process:valueSource _:genid62 .
+
+_:genid63 rdf:type process:InputBinding ;
+           process:toParam :informPersonName ;
+           process:valueSource _:genid64 .
+
+_:genid65 rdf:type process:InputBinding ;
+           process:toParam :obtainMatterConcern ;
+           process:valueSource _:genid66 .
+
+_:genid62 rdf:type process:ValueOf ;
+           process:fromProcess process:TheParentPerform ;
+           process:theVar :informAuthorityComposed .
+
+_:genid64 rdf:type process:ValueOf ;
+           process:fromProcess process:TheParentPerform ;
+           process:theVar :informPersonNameComposed .
+
+_:genid66 rdf:type process:ValueOf ;
+           process:fromProcess process:TheParentPerform ;
+           process:theVar :obtainMatterConcernComposed .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#TCNDialogueUser
+:TCNDialogueUser rdf:type owl:NamedIndividual ,
+                          process:Local ;
+                 process:parameterType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DialogueUser"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#confirmTimeSlot
+:confirmTimeSlot rdf:type owl:NamedIndividual ,
+                          process:Input ;
+                 process:parameterType "http://www.w3.org/2001/XMLSchema#boolean"^^xsd:anyURI ;
+                 welcome:hasTemplateId "TConfirmTimeSlot"^^xsd:string ;
+                 welcome:isOptional "false"^^xsd:boolean ;
+                 welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#confirmTimeSlotComposed
+:confirmTimeSlotComposed rdf:type owl:NamedIndividual ,
+                                  process:Input ;
+                         process:parameterType "http://www.w3.org/2001/XMLSchema#boolean"^^xsd:anyURI ;
+                         welcome:hasTemplateId "TConfirmTimeSlot"^^xsd:string ;
+                         welcome:isOptional "false"^^xsd:boolean ;
+                         welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#informAppointmentDocuments
+:informAppointmentDocuments rdf:type owl:NamedIndividual ,
+                                     process:Input ;
+                            process:parameterType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template"^^xsd:anyURI ;
+                            welcome:hasTemplateId "TInformAppointmentDocuments"^^xsd:string ;
+                            welcome:isOptional "false"^^xsd:boolean ;
+                            welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#informAppointmentDocumentsComposed
+:informAppointmentDocumentsComposed rdf:type owl:NamedIndividual ,
+                                             process:Input ;
+                                    process:parameterType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template"^^xsd:anyURI ;
+                                    welcome:hasTemplateId "TInformAppointmentDocuments"^^xsd:string ;
+                                    welcome:isOptional "false"^^xsd:boolean ;
+                                    welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#informAuthority
+:informAuthority rdf:type owl:NamedIndividual ,
+                          process:Input ;
+                 process:parameterType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template"^^xsd:anyURI ;
+                 welcome:hasTemplateId "TInformAuthority"^^xsd:string ;
+                 welcome:isOptional "false"^^xsd:boolean ;
+                 welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#informAuthorityComposed
+:informAuthorityComposed rdf:type owl:NamedIndividual ,
+                                  process:Input ;
+                         process:parameterType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template"^^xsd:anyURI ;
+                         welcome:hasTemplateId "TInformAuthority"^^xsd:string ;
+                         welcome:isOptional "false"^^xsd:boolean ;
+                         welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#informContactOtherInfo
+:informContactOtherInfo rdf:type owl:NamedIndividual ,
+                                 process:Input ;
+                        process:parameterType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template"^^xsd:anyURI ;
+                        welcome:hasTemplateId "TInformContactOtherInfo"^^xsd:string ;
+                        welcome:isOptional "false"^^xsd:boolean ;
+                        welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#informContactOtherInfoComposed
+:informContactOtherInfoComposed rdf:type owl:NamedIndividual ,
+                                         process:Input ;
+                                process:parameterType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template"^^xsd:anyURI ;
+                                welcome:hasTemplateId "TInformContactOtherInfo"^^xsd:string ;
+                                welcome:isOptional "false"^^xsd:boolean ;
+                                welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#informContactPerson
+:informContactPerson rdf:type owl:NamedIndividual ,
+                              process:Input ;
+                     process:parameterType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template"^^xsd:anyURI ;
+                     welcome:hasTemplateId "TInformContactPerson"^^xsd:string ;
+                     welcome:isOptional "false"^^xsd:boolean ;
+                     welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#informContactPersonComposed
+:informContactPersonComposed rdf:type owl:NamedIndividual ,
+                                      process:Input ;
+                             process:parameterType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template"^^xsd:anyURI ;
+                             welcome:hasTemplateId "TInformContactPerson"^^xsd:string ;
+                             welcome:isOptional "false"^^xsd:boolean ;
+                             welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#informContactPhone
+:informContactPhone rdf:type owl:NamedIndividual ,
+                             process:Input ;
+                    process:parameterType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template"^^xsd:anyURI ;
+                    welcome:hasTemplateId "TInformContactPhone"^^xsd:string ;
+                    welcome:isOptional "false"^^xsd:boolean ;
+                    welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#informContactPhoneComposed
+:informContactPhoneComposed rdf:type owl:NamedIndividual ,
+                                     process:Input ;
+                            process:parameterType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template"^^xsd:anyURI ;
+                            welcome:hasTemplateId "TInformContactPhone"^^xsd:string ;
+                            welcome:isOptional "false"^^xsd:boolean ;
+                            welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#informEnd
+:informEnd rdf:type owl:NamedIndividual ,
+                    process:Input ;
+           process:parameterType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template"^^xsd:anyURI ;
+           welcome:hasTemplateId "TInformEnd_CARITAS_s3"^^xsd:string ;
+           welcome:isOptional "false"^^xsd:boolean ;
+           welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#informEndComposed
+:informEndComposed rdf:type owl:NamedIndividual ,
+                            process:Input ;
+                   process:parameterType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template"^^xsd:anyURI ;
+                   welcome:hasTemplateId "TInformEnd_CARITAS_s3"^^xsd:string ;
+                   welcome:isOptional "false"^^xsd:boolean ;
+                   welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#informGenericCARITASContact
+:informGenericCARITASContact rdf:type owl:NamedIndividual ,
+                                      process:Input ;
+                             process:parameterType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template"^^xsd:anyURI ;
+                             welcome:hasTemplateId "TInformGenericContact"^^xsd:string ;
+                             welcome:isOptional "false"^^xsd:boolean ;
+                             welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#informGenericCARITASContactComposed
+:informGenericCARITASContactComposed rdf:type owl:NamedIndividual ,
+                                              process:Input ;
+                                     process:parameterType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template"^^xsd:anyURI ;
+                                     welcome:hasTemplateId "TInformGenericContact"^^xsd:string ;
+                                     welcome:isOptional "false"^^xsd:boolean ;
+                                     welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#informMatterConcern
+:informMatterConcern rdf:type owl:NamedIndividual ,
+                              process:Input ;
+                     process:parameterType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template"^^xsd:anyURI ;
+                     welcome:hasTemplateId "TInformMatterConcern"^^xsd:string ;
+                     welcome:isOptional "false"^^xsd:boolean ;
+                     welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#informMatterConcernComposed
+:informMatterConcernComposed rdf:type owl:NamedIndividual ,
+                                      process:Input ;
+                             process:parameterType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template"^^xsd:anyURI ;
+                             welcome:hasTemplateId "TInformMatterConcern"^^xsd:string ;
+                             welcome:isOptional "false"^^xsd:boolean ;
+                             welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#informNeedAppointment
+:informNeedAppointment rdf:type owl:NamedIndividual ,
+                                process:Input ;
+                       process:parameterType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template"^^xsd:anyURI ;
+                       welcome:hasTemplateId "TInformNeedAppointment"^^xsd:string ;
+                       welcome:isOptional "false"^^xsd:boolean ;
+                       welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#informNeedAppointmentComposed
+:informNeedAppointmentComposed rdf:type owl:NamedIndividual ,
+                                        process:Input ;
+                               process:parameterType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template"^^xsd:anyURI ;
+                               welcome:hasTemplateId "TInformNeedAppointment"^^xsd:string ;
+                               welcome:isOptional "false"^^xsd:boolean ;
+                               welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#informPersonName
+:informPersonName rdf:type owl:NamedIndividual ,
+                           process:Input ;
+                  process:parameterType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template"^^xsd:anyURI ;
+                  welcome:hasTemplateId "TInformPersonName"^^xsd:string ;
+                  welcome:isOptional "false"^^xsd:boolean ;
+                  welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#informPersonNameComposed
+:informPersonNameComposed rdf:type owl:NamedIndividual ,
+                                   process:Input ;
+                          process:parameterType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template"^^xsd:anyURI ;
+                          welcome:hasTemplateId "TInformPersonName"^^xsd:string ;
+                          welcome:isOptional "false"^^xsd:boolean ;
+                          welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#informPersonNameIntro
+:informPersonNameIntro rdf:type owl:NamedIndividual ,
+                                process:Input ;
+                       process:parameterType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template"^^xsd:anyURI ;
+                       welcome:hasTemplateId "TInformPersonName_Introduction"^^xsd:string ;
+                       welcome:isOptional "false"^^xsd:boolean ;
+                       welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#informPersonNameIntroComposed
+:informPersonNameIntroComposed rdf:type owl:NamedIndividual ,
+                                        process:Input ;
+                               process:parameterType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template"^^xsd:anyURI ;
+                               welcome:hasTemplateId "TInformPersonName_Introduction"^^xsd:string ;
+                               welcome:isOptional "false"^^xsd:boolean ;
+                               welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#informSimulation
+:informSimulation rdf:type owl:NamedIndividual ,
+                           process:Input ;
+                  process:parameterType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template"^^xsd:anyURI ;
+                  welcome:hasTemplateId "TInformSimulation"^^xsd:string ;
+                  welcome:isOptional "false"^^xsd:boolean ;
+                  welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#informSimulationComposed
+:informSimulationComposed rdf:type owl:NamedIndividual ,
+                                   process:Input ;
+                          process:parameterType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template"^^xsd:anyURI ;
+                          welcome:hasTemplateId "TInformSimulation"^^xsd:string ;
+                          welcome:isOptional "false"^^xsd:boolean ;
+                          welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#informSimulationEnd
+:informSimulationEnd rdf:type owl:NamedIndividual ,
+                              process:Input ;
+                     process:parameterType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template"^^xsd:anyURI ;
+                     welcome:hasTemplateId "TInformSimulationEnd"^^xsd:string ;
+                     welcome:isOptional "false"^^xsd:boolean ;
+                     welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#informSimulationEndComposed
+:informSimulationEndComposed rdf:type owl:NamedIndividual ,
+                                      process:Input ;
+                             process:parameterType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template"^^xsd:anyURI ;
+                             welcome:hasTemplateId "TInformSimulationEnd"^^xsd:string ;
+                             welcome:isOptional "false"^^xsd:boolean ;
+                             welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#obtainBirthDay
+:obtainBirthDay rdf:type owl:NamedIndividual ,
+                         process:Input ;
+                process:parameterType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Birthday"^^xsd:anyURI ;
+                welcome:hasTemplateId "TObtainBirthDay"^^xsd:string ;
+                welcome:isOptional "false"^^xsd:boolean ;
+                welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#obtainBirthDayComposed
+:obtainBirthDayComposed rdf:type owl:NamedIndividual ,
+                                 process:Input ;
+                        process:parameterType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Birthday"^^xsd:anyURI ;
+                        welcome:hasTemplateId "TObtainBirthDay"^^xsd:string ;
+                        welcome:isOptional "false"^^xsd:boolean ;
+                        welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#obtainBirthMonth
+:obtainBirthMonth rdf:type owl:NamedIndividual ,
+                           process:Input ;
+                  process:parameterType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#BirthMonth"^^xsd:anyURI ;
+                  welcome:hasTemplateId "TObtainBirthDay"^^xsd:string ;
+                  welcome:isOptional "false"^^xsd:boolean ;
+                  welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#obtainBirthMonthComposed
+:obtainBirthMonthComposed rdf:type owl:NamedIndividual ,
+                                   process:Input ;
+                          process:parameterType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#BirthMonth"^^xsd:anyURI ;
+                          welcome:hasTemplateId "TObtainBirthDay"^^xsd:string ;
+                          welcome:isOptional "false"^^xsd:boolean ;
+                          welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#obtainBirthYear
+:obtainBirthYear rdf:type owl:NamedIndividual ,
+                          process:Input ;
+                 process:parameterType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#BirthYear"^^xsd:anyURI ;
+                 welcome:hasTemplateId "TObtainBirthDay"^^xsd:string ;
+                 welcome:isOptional "false"^^xsd:boolean ;
+                 welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#obtainBirthYearComposed
+:obtainBirthYearComposed rdf:type owl:NamedIndividual ,
+                                  process:Input ;
+                         process:parameterType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#BirthYear"^^xsd:anyURI ;
+                         welcome:hasTemplateId "TObtainBirthDay"^^xsd:string ;
+                         welcome:isOptional "false"^^xsd:boolean ;
+                         welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#obtainConfirmation
+:obtainConfirmation rdf:type owl:NamedIndividual ,
+                             process:Input ;
+                    process:parameterType "http://www.w3.org/2001/XMLSchema#boolean"^^xsd:anyURI ;
+                    welcome:hasTemplateId "TObtainConfirmation"^^xsd:string ;
+                    welcome:isOptional "false"^^xsd:boolean ;
+                    welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ConfirmationRequest"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#obtainConfirmationComposed
+:obtainConfirmationComposed rdf:type owl:NamedIndividual ,
+                                     process:Input ;
+                            process:parameterType "http://www.w3.org/2001/XMLSchema#boolean"^^xsd:anyURI ;
+                            welcome:hasTemplateId "TObtainConfirmation"^^xsd:string ;
+                            welcome:isOptional "false"^^xsd:boolean ;
+                            welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ConfirmationRequest"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#obtainConfirmationContactDetails
+:obtainConfirmationContactDetails rdf:type owl:NamedIndividual ,
+                                           process:Input ;
+                                  process:parameterType "http://www.w3.org/2001/XMLSchema#boolean"^^xsd:anyURI ;
+                                  welcome:hasTemplateId "TObtainConfirmation"^^xsd:string ;
+                                  welcome:isOptional "false"^^xsd:boolean ;
+                                  welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ConfirmationRequest"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#obtainConfirmationContactDetailsComposed
+:obtainConfirmationContactDetailsComposed rdf:type owl:NamedIndividual ,
+                                                   process:Input ;
+                                          process:parameterType "http://www.w3.org/2001/XMLSchema#boolean"^^xsd:anyURI ;
+                                          welcome:hasTemplateId "TObtainConfirmation"^^xsd:string ;
+                                          welcome:isOptional "false"^^xsd:boolean ;
+                                          welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ConfirmationRequest"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#obtainConfirmationDetailsAppointment
+:obtainConfirmationDetailsAppointment rdf:type owl:NamedIndividual ,
+                                               process:Input ;
+                                      process:parameterType "http://www.w3.org/2001/XMLSchema#boolean"^^xsd:anyURI ;
+                                      welcome:hasTemplateId "TObtainConfirmation"^^xsd:string ;
+                                      welcome:isOptional "false"^^xsd:boolean ;
+                                      welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ConfirmationRequest"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#obtainConfirmationDetailsAppointmentComposed
+:obtainConfirmationDetailsAppointmentComposed rdf:type owl:NamedIndividual ,
+                                                       process:Input ;
+                                              process:parameterType "http://www.w3.org/2001/XMLSchema#boolean"^^xsd:anyURI ;
+                                              welcome:hasTemplateId "TObtainConfirmation"^^xsd:string ;
+                                              welcome:isOptional "false"^^xsd:boolean ;
+                                              welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ConfirmationRequest"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#obtainConfirmationNormalClosing
+:obtainConfirmationNormalClosing rdf:type owl:NamedIndividual ,
+                                          process:Input ;
+                                 process:parameterType "http://www.w3.org/2001/XMLSchema#boolean"^^xsd:anyURI ;
+                                 welcome:hasTemplateId "TObtainConfirmation"^^xsd:string ;
+                                 welcome:isOptional "false"^^xsd:boolean ;
+                                 welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ConfirmationRequest"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#obtainConfirmationNormalClosingComposed
+:obtainConfirmationNormalClosingComposed rdf:type owl:NamedIndividual ,
+                                                  process:Input ;
+                                         process:parameterType "http://www.w3.org/2001/XMLSchema#boolean"^^xsd:anyURI ;
+                                         welcome:hasTemplateId "TObtainConfirmation"^^xsd:string ;
+                                         welcome:isOptional "false"^^xsd:boolean ;
+                                         welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ConfirmationRequest"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#obtainDetailsKnown
+:obtainDetailsKnown rdf:type owl:NamedIndividual ,
+                             process:Input ;
+                    process:parameterType "http://www.w3.org/2001/XMLSchema#boolean"^^xsd:anyURI ;
+                    welcome:hasTemplateId "TObtainDetailsKnown"^^xsd:string ;
+                    welcome:isOptional "false"^^xsd:boolean ;
+                    welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#obtainDetailsKnownComposed
+:obtainDetailsKnownComposed rdf:type owl:NamedIndividual ,
+                                     process:Input ;
+                            process:parameterType "http://www.w3.org/2001/XMLSchema#boolean"^^xsd:anyURI ;
+                            welcome:hasTemplateId "TObtainDetailsKnown"^^xsd:string ;
+                            welcome:isOptional "false"^^xsd:boolean ;
+                            welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#obtainMatterConcern
+:obtainMatterConcern rdf:type owl:NamedIndividual ,
+                              process:Input ;
+                     process:parameterType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AppointmentConcern"^^xsd:anyURI ;
+                     welcome:hasTemplateId "TObtainMatterConcern"^^xsd:string ;
+                     welcome:isOptional "false"^^xsd:boolean ;
+                     welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#obtainMatterConcernComposed
+:obtainMatterConcernComposed rdf:type owl:NamedIndividual ,
+                                      process:Input ;
+                             process:parameterType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AppointmentConcern"^^xsd:anyURI ;
+                             welcome:hasTemplateId "TObtainMatterConcern"^^xsd:string ;
+                             welcome:isOptional "false"^^xsd:boolean ;
+                             welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#obtainMatterConcernStatus
+:obtainMatterConcernStatus rdf:type owl:NamedIndividual ,
+                                    process:Input ;
+                           process:parameterType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#MatterConcernStatus"^^xsd:anyURI ;
+                           welcome:hasTemplateId "TObtainMatterConcernStatus"^^xsd:string ;
+                           welcome:isOptional "false"^^xsd:boolean ;
+                           welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#obtainMatterConcernStatusComposed
+:obtainMatterConcernStatusComposed rdf:type owl:NamedIndividual ,
+                                            process:Input ;
+                                   process:parameterType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#MatterConcernStatus"^^xsd:anyURI ;
+                                   welcome:hasTemplateId "TObtainMatterConcernStatus"^^xsd:string ;
+                                   welcome:isOptional "false"^^xsd:boolean ;
+                                   welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#obtainName
+:obtainName rdf:type owl:NamedIndividual ,
+                     process:Input ;
+            process:parameterType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Name"^^xsd:anyURI ;
+            welcome:hasTemplateId "TObtainName"^^xsd:string ;
+            welcome:isOptional "false"^^xsd:boolean ;
+            welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#obtainNameComposed
+:obtainNameComposed rdf:type owl:NamedIndividual ,
+                             process:Input ;
+                    process:parameterType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Name"^^xsd:anyURI ;
+                    welcome:hasTemplateId "TObtainName"^^xsd:string ;
+                    welcome:isOptional "false"^^xsd:boolean ;
+                    welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#obtainReadiness
+:obtainReadiness rdf:type owl:NamedIndividual ,
+                          process:Input ;
+                 process:parameterType "http://www.w3.org/2001/XMLSchema#boolean"^^xsd:anyURI ;
+                 welcome:hasTemplateId "TObtainReadiness"^^xsd:string ;
+                 welcome:isOptional "false"^^xsd:boolean ;
+                 welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#obtainReadinessComposed
+:obtainReadinessComposed rdf:type owl:NamedIndividual ,
+                                  process:Input ;
+                         process:parameterType "http://www.w3.org/2001/XMLSchema#boolean"^^xsd:anyURI ;
+                         welcome:hasTemplateId "TObtainReadiness"^^xsd:string ;
+                         welcome:isOptional "false"^^xsd:boolean ;
+                         welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#obtainSurname
+:obtainSurname rdf:type owl:NamedIndividual ,
+                        process:Input ;
+               process:parameterType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#FirstSurname"^^xsd:anyURI ;
+               welcome:hasTemplateId "TObtainName"^^xsd:string ;
+               welcome:isOptional "false"^^xsd:boolean ;
+               welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#obtainSurnameComposed
+:obtainSurnameComposed rdf:type owl:NamedIndividual ,
+                                process:Input ;
+                       process:parameterType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#FirstSurname"^^xsd:anyURI ;
+                       welcome:hasTemplateId "TObtainName"^^xsd:string ;
+                       welcome:isOptional "false"^^xsd:boolean ;
+                       welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#proposeTimeSlot
+:proposeTimeSlot rdf:type owl:NamedIndividual ,
+                          process:Input ;
+                 process:parameterType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template"^^xsd:anyURI ;
+                 welcome:hasTemplateId "TProposeTimeSlot"^^xsd:string ;
+                 welcome:isOptional "false"^^xsd:boolean ;
+                 welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#proposeTimeSlotComposed
+:proposeTimeSlotComposed rdf:type owl:NamedIndividual ,
+                                  process:Input ;
+                         process:parameterType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template"^^xsd:anyURI ;
+                         welcome:hasTemplateId "TProposeTimeSlot"^^xsd:string ;
+                         welcome:isOptional "false"^^xsd:boolean ;
+                         welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#reactiveFlag
+:reactiveFlag rdf:type owl:NamedIndividual ,
+                       process:Input ;
+              process:parameterType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AppointmentConcern"^^xsd:anyURI ;
+              welcome:isOptional "false"^^xsd:boolean ;
+              welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"^^xsd:anyURI .
+
+
+###  http://localhost:8080/services/SimulatePhoneAppointmentService.owl#reactiveFlagComposed
+:reactiveFlagComposed rdf:type owl:NamedIndividual ,
+                               process:Input ;
+                      process:parameterType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AppointmentConcern"^^xsd:anyURI ;
+                      welcome:isOptional "false"^^xsd:boolean ;
+                      welcome:hasSlotType "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"^^xsd:anyURI .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Caritasverband_Hamm
+welcome:Caritasverband_Hamm rdf:type owl:NamedIndividual .
+
+
+_:genid67 rdf:type process:InputBinding ;
+          process:toParam :informMatterConcern ;
+          process:valueSource _:genid68 .
+
+_:genid68 rdf:type process:ValueOf ;
+           process:fromProcess process:TheParentPerform ;
+           process:theVar :informMatterConcernComposed .
+
+_:genid69 rdf:type process:InputBinding ;
+           process:toParam :obtainMatterConcernStatus ;
+           process:valueSource _:genid70 .
+
+_:genid70 rdf:type process:ValueOf ;
+           process:fromProcess process:TheParentPerform ;
+           process:theVar :obtainMatterConcernStatusComposed .
+
+_:genid71 rdf:type process:InputBinding ;
+           process:toParam :informNeedAppointment ;
+           process:valueSource _:genid72 .
+
+_:genid72 rdf:type process:ValueOf ;
+           process:fromProcess process:TheParentPerform ;
+           process:theVar :informNeedAppointmentComposed .
+
+_:genid73 rdf:type process:InputBinding ;
+           process:toParam :proposeTimeSlot ;
+           process:valueSource _:genid74 .
+
+_:genid74 rdf:type process:ValueOf ;
+           process:fromProcess process:TheParentPerform ;
+           process:theVar :proposeTimeSlotComposed .
+
+_:genid75 rdf:type process:InputBinding ;
+           process:toParam :confirmTimeSlot ;
+           process:valueSource _:genid76 .
+
+_:genid76 rdf:type process:ValueOf ;
+           process:fromProcess process:TheParentPerform ;
+           process:theVar :confirmTimeSlotComposed .
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
