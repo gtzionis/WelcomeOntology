@@ -1,0 +1,1035 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://localhost:8080/services/SimulatePhoneAppointmentService.owl#"
+     xml:base="http://localhost:8080/services/SimulatePhoneAppointmentService.owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	 xmlns:welcome="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#"     
+     xmlns:service="http://www.daml.org/services/owl-s/1.1/Service.owl#"
+	 xmlns:process="http://www.daml.org/services/owl-s/1.1/Process.owl#"      
+     xmlns:profile="http://www.daml.org/services/owl-s/1.1/Profile.owl#"
+     xmlns:objList = "http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#"
+	 xmlns:expr="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#"  
+	 xmlns:pddlexpr="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/PDDLExpression.owl#">
+	<owl:Ontology rdf:about="http://localhost:8080/services/SimulatePhoneAppointmentService.owl">
+         <!-- All the services should have this property -->
+		<owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.1/Service.owl"/>
+		<owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl"/>
+        <owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.1/Profile.owl"/>
+		<owl:imports rdf:resource="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl"/>        
+		<owl:imports rdf:resource="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/PDDLExpression.owl"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Semantic Service Description Simulate an Appointment by Phone with Authority - Job Center</rdfs:comment>
+    </owl:Ontology>
+
+	<!-- ******************************************* -->
+	<!-- 			Version: 06 July 2021			 -->
+	<!-- ******************************************* -->
+	<service:Service rdf:ID="SimulatePhoneAppointmentService">
+        <service:describedBy rdf:resource="#SimulateAppointmentComposite"/>
+        <service:presents rdf:resource="#SimulatePhoneAppointmentProfile"/>
+    </service:Service>
+	
+	<process:CompositeProcess rdf:ID="SimulateAppointmentComposite">
+		<service:describes rdf:resource="#SimulatePhoneAppointmentService"/>
+		<!-- Precondition -->
+		<process:hasPrecondition>
+			<pddlexpr:PDDL-Expression rdf:ID="SimulatePhoneAppointmentCondition">
+				<expr:expressionBody rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> (https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DialogueUser ?http://localhost:8080/services/SimulatePhoneAppointmentService.owl#TCNDialogueUser) </expr:expressionBody>
+			</pddlexpr:PDDL-Expression>
+		</process:hasPrecondition>
+		<!-- List of Local -->
+		<process:hasLocal>
+			<process:Local rdf:ID="TCNDialogueUser">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DialogueUser</process:parameterType>
+			</process:Local>
+		</process:hasLocal>
+		<!-- List of Inputs and Outputs -->
+		<process:hasInput>
+			<process:Input rdf:ID="informSimulationComposed">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TInformSimulation</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="informPersonNameIntroComposed">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TInformPersonName_Introduction</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="obtainReadinessComposed">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/2001/XMLSchema#boolean</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TObtainReadiness</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="informAuthorityComposed">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TInformAuthority</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="informPersonNameComposed">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TInformPersonName</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="obtainMatterConcernComposed">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AppointmentConcern</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TObtainMatterConcern</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="obtainNameComposed">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Name</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TObtainName</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="obtainSurnameComposed">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#FirstSurname</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TObtainName</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="obtainBirthDayComposed">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Birthday</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TObtainBirthDay</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="obtainBirthMonthComposed">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#BirthMonth</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TObtainBirthDay</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="obtainBirthYearComposed">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#BirthYear</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TObtainBirthDay</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="reactiveFlagComposed">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AppointmentConcern</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand</welcome:hasSlotType>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="informMatterConcernComposed">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TInformMatterConcern</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="obtainMatterConcernStatusComposed">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#MatterConcernStatus</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TObtainMatterConcernStatus</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="informNeedAppointmentComposed">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TInformNeedAppointment</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="proposeTimeSlotComposed">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TProposeTimeSlot</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="confirmTimeSlotComposed">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/2001/XMLSchema#boolean</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TConfirmTimeSlot</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="informAppointmentDocumentsComposed">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TInformAppointmentDocuments</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="obtainConfirmationDetailsAppointmentComposed">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/2001/XMLSchema#boolean</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ConfirmationRequest</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TObtainConfirmation</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="informContactPersonComposed">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TInformContactPerson</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="obtainDetailsKnownComposed">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/2001/XMLSchema#boolean</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TObtainDetailsKnown</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="informContactPhoneComposed">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TInformContactPhone</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="informContactOtherInfoComposed">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TInformContactOtherInfo</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="obtainConfirmationContactDetailsComposed">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/2001/XMLSchema#boolean</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ConfirmationRequest</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TObtainConfirmation</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="informSimulationEndComposed">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TInformSimulationEnd</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="informEndComposed">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TInformEnd_CARITAS_s3</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="obtainConfirmationNormalClosingComposed">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/2001/XMLSchema#boolean</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ConfirmationRequest</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TObtainConfirmation</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="informGenericCARITASContactComposed">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TInformGenericContact</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="obtainConfirmationComposed">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/2001/XMLSchema#boolean</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ConfirmationRequest</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TObtainConfirmation</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<!-- Composite Process -->		
+		<process:composedOf>
+			<process:Sequence>
+				<process:components>
+					<process:ControlConstructList>
+						<objList:first>
+							<process:Perform rdf:ID="ScenarioIntroductionPerform">
+								<process:process rdf:resource="#ScenarioIntroduction"/>
+								<process:hasDataFrom>
+									<process:InputBinding>
+										<process:toParam rdf:resource="#informSimulation"/>
+										<process:valueSource>
+											<process:ValueOf>
+												<process:theVar rdf:resource="#informSimulationComposed"/>
+												<process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+											</process:ValueOf>
+										</process:valueSource>
+									</process:InputBinding>
+								</process:hasDataFrom>
+								<process:hasDataFrom>
+									<process:InputBinding>
+										<process:toParam rdf:resource="#informPersonNameIntro"/>
+										<process:valueSource>
+											<process:ValueOf>
+												<process:theVar rdf:resource="#informPersonNameIntroComposed"/>
+												<process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+											</process:ValueOf>
+										</process:valueSource>
+									</process:InputBinding>
+								</process:hasDataFrom>
+								<process:hasDataFrom>
+									<process:InputBinding>
+										<process:toParam rdf:resource="#obtainReadiness"/>
+										<process:valueSource>
+											<process:ValueOf>
+												<process:theVar rdf:resource="#obtainReadinessComposed"/>
+												<process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+											</process:ValueOf>
+										</process:valueSource>
+									</process:InputBinding>
+								</process:hasDataFrom>
+							</process:Perform>
+						</objList:first>
+						<objList:rest>
+							<process:ControlConstructList>
+								<objList:first>
+									<process:Perform rdf:ID="SimulationIntroductionPerform">
+										<process:process rdf:resource="#SimulationIntroduction"/>										
+										<process:hasDataFrom>
+											<process:InputBinding>
+												<process:toParam rdf:resource="#informAuthority"/>
+												<process:valueSource>
+													<process:ValueOf>
+														<process:theVar rdf:resource="#informAuthorityComposed"/>
+														<process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+													</process:ValueOf>
+												</process:valueSource>
+											</process:InputBinding>
+										</process:hasDataFrom>
+										<process:hasDataFrom>
+											<process:InputBinding>
+												<process:toParam rdf:resource="#informPersonName"/>
+												<process:valueSource>
+													<process:ValueOf>
+														<process:theVar rdf:resource="#informPersonNameComposed"/>
+														<process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+													</process:ValueOf>
+												</process:valueSource>
+											</process:InputBinding>
+										</process:hasDataFrom>	
+										<process:hasDataFrom>
+											<process:InputBinding>
+												<process:toParam rdf:resource="#obtainMatterConcern"/>
+												<process:valueSource>
+													<process:ValueOf>
+														<process:theVar rdf:resource="#obtainMatterConcernComposed"/>
+														<process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+													</process:ValueOf>
+												</process:valueSource>
+											</process:InputBinding>
+										</process:hasDataFrom>											
+									</process:Perform>
+								</objList:first>
+								<objList:rest>
+									<process:ControlConstructList>
+										<objList:first>
+											<process:Perform rdf:ID="ObtainTCNInformationPerform">
+												<process:process rdf:resource="#ObtainTCNInformation"/>												
+												<process:hasDataFrom>
+													<process:InputBinding>
+														<process:toParam rdf:resource="#obtainName"/>
+														<process:valueSource>
+															<process:ValueOf>
+																<process:theVar rdf:resource="#obtainNameComposed"/>
+																<process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+															</process:ValueOf>
+														</process:valueSource>
+													</process:InputBinding>
+												</process:hasDataFrom>
+												<process:hasDataFrom>
+													<process:InputBinding>
+														<process:toParam rdf:resource="#obtainSurname"/>
+														<process:valueSource>
+															<process:ValueOf>
+																<process:theVar rdf:resource="#obtainSurnameComposed"/>
+																<process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+															</process:ValueOf>
+														</process:valueSource>
+													</process:InputBinding>
+												</process:hasDataFrom>
+												<process:hasDataFrom>
+													<process:InputBinding>
+														<process:toParam rdf:resource="#obtainBirthDay"/>
+														<process:valueSource>
+															<process:ValueOf>
+																<process:theVar rdf:resource="#obtainBirthDayComposed"/>
+																<process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+															</process:ValueOf>
+														</process:valueSource>
+													</process:InputBinding>
+												</process:hasDataFrom>
+												<process:hasDataFrom>
+													<process:InputBinding>
+														<process:toParam rdf:resource="#obtainBirthMonth"/>
+														<process:valueSource>
+															<process:ValueOf>
+																<process:theVar rdf:resource="#obtainBirthMonthComposed"/>
+																<process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+															</process:ValueOf>
+														</process:valueSource>
+													</process:InputBinding>
+												</process:hasDataFrom>
+												<process:hasDataFrom>
+													<process:InputBinding>
+														<process:toParam rdf:resource="#obtainBirthYear"/>
+														<process:valueSource>
+															<process:ValueOf>
+																<process:theVar rdf:resource="#obtainBirthYearComposed"/>
+																<process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+															</process:ValueOf>
+														</process:valueSource>
+													</process:InputBinding>
+												</process:hasDataFrom>
+												<process:hasDataFrom>
+													<process:InputBinding>
+														<process:toParam rdf:resource="#reactiveFlag"/>
+														<process:valueSource>
+															<process:ValueOf>
+																<process:theVar rdf:resource="#reactiveFlagComposed"/>
+																<process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+															</process:ValueOf>
+														</process:valueSource>
+													</process:InputBinding>
+												</process:hasDataFrom>
+											</process:Perform>
+										</objList:first>
+										<objList:rest>
+											<process:ControlConstructList>
+												<objList:first>
+													<process:Perform rdf:ID="MakeAppointmentPerform">
+														<process:process rdf:resource="#MakeAppointment"/>
+														<process:hasDataFrom>
+															<process:InputBinding>
+																<process:toParam rdf:resource="#informMatterConcern"/>
+																<process:valueSource>
+																	<process:ValueOf>
+																		<process:theVar rdf:resource="#informMatterConcernComposed"/>
+																		<process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+																	</process:ValueOf>
+																</process:valueSource>
+															</process:InputBinding>
+															<process:InputBinding>
+																<process:toParam rdf:resource="#obtainMatterConcernStatus"/>
+																<process:valueSource>
+																	<process:ValueOf>
+																		<process:theVar rdf:resource="#obtainMatterConcernStatusComposed"/>
+																		<process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+																	</process:ValueOf>
+																</process:valueSource>
+															</process:InputBinding>
+															<process:InputBinding>
+																<process:toParam rdf:resource="#informNeedAppointment"/>
+																<process:valueSource>
+																	<process:ValueOf>
+																		<process:theVar rdf:resource="#informNeedAppointmentComposed"/>
+																		<process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+																	</process:ValueOf>
+																</process:valueSource>
+															</process:InputBinding>
+															<process:InputBinding>
+																<process:toParam rdf:resource="#proposeTimeSlot"/>
+																<process:valueSource>
+																	<process:ValueOf>
+																		<process:theVar rdf:resource="#proposeTimeSlotComposed"/>
+																		<process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+																	</process:ValueOf>
+																</process:valueSource>
+															</process:InputBinding>
+															<process:InputBinding>
+																<process:toParam rdf:resource="#confirmTimeSlot"/>
+																<process:valueSource>
+																	<process:ValueOf>
+																		<process:theVar rdf:resource="#confirmTimeSlotComposed"/>
+																		<process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+																	</process:ValueOf>
+																</process:valueSource>
+															</process:InputBinding>
+															<process:InputBinding>
+																<process:toParam rdf:resource="#reactiveFlag"/>
+																<process:valueSource>
+																	<process:ValueOf>
+																		<process:theVar rdf:resource="#reactiveFlagComposed"/>
+																		<process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+																	</process:ValueOf>
+																</process:valueSource>
+															</process:InputBinding>
+														</process:hasDataFrom>												
+													</process:Perform>
+												</objList:first>
+												<objList:rest>
+													<process:ControlConstructList>
+														<objList:first>
+															<process:Perform rdf:ID="InformDetailsAppointmentPerform">
+																<process:process rdf:resource="#InformDetailsAppointment"/>
+																<process:hasDataFrom>
+																	<process:InputBinding>
+																		<process:toParam rdf:resource="#informAppointmentDocuments"/>
+																		<process:valueSource>
+																			<process:ValueOf>
+																				<process:theVar rdf:resource="#informAppointmentDocumentsComposed"/>
+																				<process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+																			</process:ValueOf>
+																		</process:valueSource>
+																	</process:InputBinding>
+																</process:hasDataFrom>
+																<process:hasDataFrom>
+																	<process:InputBinding>
+																		<process:toParam rdf:resource="#obtainConfirmationDetailsAppointment"/>
+																		<process:valueSource>
+																			<process:ValueOf>
+																				<process:theVar rdf:resource="#obtainConfirmationDetailsAppointmentComposed"/>
+																				<process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+																			</process:ValueOf>
+																		</process:valueSource>
+																	</process:InputBinding>
+																</process:hasDataFrom>																																	
+															</process:Perform>
+														</objList:first>
+														<objList:rest>
+															<process:ControlConstructList>
+																<objList:first>
+																	<process:Perform rdf:ID="InformContactPerform">
+																		<process:process rdf:resource="#InformContact"/>
+																		<process:hasDataFrom>
+																			<process:InputBinding>
+																				<process:toParam rdf:resource="#informContactPerson"/>
+																				<process:valueSource>
+																					<process:ValueOf>
+																						<process:theVar rdf:resource="#informContactPersonComposed"/>
+																						<process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+																					</process:ValueOf>
+																				</process:valueSource>
+																			</process:InputBinding>
+																		</process:hasDataFrom>
+																		<process:hasDataFrom>
+																			<process:InputBinding>
+																				<process:toParam rdf:resource="#obtainDetailsKnown"/>
+																				<process:valueSource>
+																					<process:ValueOf>
+																						<process:theVar rdf:resource="#obtainDetailsKnownComposed"/>
+																						<process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+																					</process:ValueOf>
+																				</process:valueSource>
+																			</process:InputBinding>
+																		</process:hasDataFrom>
+																		<process:hasDataFrom>
+																			<process:InputBinding>
+																				<process:toParam rdf:resource="#reactiveFlag"/>
+																				<process:valueSource>
+																					<process:ValueOf>
+																						<process:theVar rdf:resource="#reactiveFlagComposed"/>
+																						<process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+																					</process:ValueOf>
+																				</process:valueSource>
+																			</process:InputBinding>
+																		</process:hasDataFrom>
+																	</process:Perform>
+																</objList:first>
+																<objList:rest>
+																	<process:ControlConstructList>
+																		<objList:first>
+																			<process:Perform rdf:ID="InformContactDetailsPerform">
+																				<process:process rdf:resource="#InformContactDetails"/>
+																				<process:hasDataFrom>
+																					<process:InputBinding>
+																						<process:toParam rdf:resource="#informContactPhone"/>
+																						<process:valueSource>
+																							<process:ValueOf>
+																								<process:theVar rdf:resource="#informContactPhoneComposed"/>
+																								<process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+																							</process:ValueOf>
+																						</process:valueSource>
+																					</process:InputBinding>
+																				</process:hasDataFrom>
+																				<process:hasDataFrom>
+																					<process:InputBinding>
+																						<process:toParam rdf:resource="#informContactOtherInfo"/>
+																						<process:valueSource>
+																							<process:ValueOf>
+																								<process:theVar rdf:resource="#informContactOtherInfoComposed"/>
+																								<process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+																							</process:ValueOf>
+																						</process:valueSource>
+																					</process:InputBinding>
+																				</process:hasDataFrom>
+																				<process:hasDataFrom>
+																					<process:InputBinding>
+																						<process:toParam rdf:resource="#obtainConfirmationContactDetails"/>
+																						<process:valueSource>
+																							<process:ValueOf>
+																								<process:theVar rdf:resource="#obtainConfirmationContactDetailsComposed"/>
+																								<process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+																							</process:ValueOf>
+																						</process:valueSource>
+																					</process:InputBinding>
+																				</process:hasDataFrom>
+																				<process:hasDataFrom>
+																					<process:InputBinding>
+																						<process:toParam rdf:resource="#reactiveFlag"/>
+																						<process:valueSource>
+																							<process:ValueOf>
+																								<process:theVar rdf:resource="#reactiveFlagComposed"/>
+																								<process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+																							</process:ValueOf>
+																						</process:valueSource>
+																					</process:InputBinding>
+																				</process:hasDataFrom>																				
+																			</process:Perform>
+																		</objList:first>
+																		<objList:rest>
+																			<process:ControlConstructList>
+																				<objList:first>
+																					<process:Perform rdf:ID="SimulationClosingPerform">
+																						<process:process rdf:resource="#SimulationClosing"/>
+																						<process:hasDataFrom>
+																							<process:InputBinding>
+																								<process:toParam rdf:resource="#informSimulationEnd"/>
+																								<process:valueSource>
+																									<process:ValueOf>
+																										<process:theVar rdf:resource="#informSimulationEndComposed"/>
+																										<process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+																									</process:ValueOf>
+																								</process:valueSource>
+																							</process:InputBinding>
+																						</process:hasDataFrom>																				
+																					</process:Perform>
+																				</objList:first>
+																				<objList:rest>
+																					<process:ControlConstructList>
+																						<objList:first>
+																							<process:Perform rdf:ID="NormalClosingPerform">
+																								<process:process rdf:resource="#NormalClosing"/>
+																								<process:hasDataFrom>
+																									<process:InputBinding>
+																										<process:toParam rdf:resource="#informEnd"/>
+																										<process:valueSource>
+																											<process:ValueOf>
+																												<process:theVar rdf:resource="#informEndComposed"/>
+																												<process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+																											</process:ValueOf>
+																										</process:valueSource>
+																									</process:InputBinding>
+																								</process:hasDataFrom>
+																								<process:hasDataFrom>
+																									<process:InputBinding>
+																										<process:toParam rdf:resource="#obtainConfirmationNormalClosing"/>
+																										<process:valueSource>
+																											<process:ValueOf>
+																												<process:theVar rdf:resource="#obtainConfirmationNormalClosingComposed"/>
+																												<process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+																											</process:ValueOf>
+																										</process:valueSource>
+																									</process:InputBinding>
+																								</process:hasDataFrom>	
+																							</process:Perform>
+																						</objList:first>
+																						<objList:rest>
+																							<process:ControlConstructList>
+																								<objList:first>
+																									<process:Perform rdf:ID="InformContactNGOPerform">
+																										<process:process rdf:resource="#InformContactNGO"/>
+																										<process:hasDataFrom>
+																											<process:InputBinding>
+																												<process:toParam rdf:resource="#informGenericCARITASContact"/>
+																												<process:valueSource>
+																													<process:ValueOf>
+																														<process:theVar rdf:resource="#informGenericCARITASContactComposed"/>
+																														<process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+																													</process:ValueOf>
+																												</process:valueSource>
+																											</process:InputBinding>
+																										</process:hasDataFrom>
+																										<process:hasDataFrom>
+																											<process:InputBinding>
+																												<process:toParam rdf:resource="#obtainConfirmation"/>
+																												<process:valueSource>
+																													<process:ValueOf>
+																														<process:theVar rdf:resource="#obtainConfirmationComposed"/>
+																														<process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+																													</process:ValueOf>
+																												</process:valueSource>
+																											</process:InputBinding>
+																										</process:hasDataFrom>	
+																									</process:Perform>
+																								</objList:first>
+																								<objList:rest rdf:resource="http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#nil"/>
+																							</process:ControlConstructList>
+																						</objList:rest>
+																					</process:ControlConstructList>
+																				</objList:rest>
+																			</process:ControlConstructList>
+																		</objList:rest>
+																	</process:ControlConstructList>
+																</objList:rest>
+															</process:ControlConstructList>
+														</objList:rest>
+													</process:ControlConstructList>
+												</objList:rest>
+											</process:ControlConstructList>
+										</objList:rest>
+									</process:ControlConstructList>
+								</objList:rest>
+							</process:ControlConstructList>
+						</objList:rest>
+					</process:ControlConstructList>
+				</process:components>
+			</process:Sequence>
+		</process:composedOf>
+		<process:hasResult>
+			<process:Result rdf:ID="SimulatePhoneAppointmentServiceResult">
+				<process:inCondition rdf:resource="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#AlwaysTrue"/>
+				<process:hasEffect>
+					<pddlexpr:PDDL-Expression>
+						<expr:expressionBody rdf:datatype="http://www.w3.org/2001/XMLSchema#string">(and 
+								(https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#InformedSimulateAppointment ?http://localhost:8080/services/SimulatePhoneAppointmentService.owl#informPersonNameIntro)
+							)</expr:expressionBody>
+					</pddlexpr:PDDL-Expression>
+				</process:hasEffect>
+			</process:Result>
+		  </process:hasResult>		
+	</process:CompositeProcess>
+	
+	<profile:Profile rdf:ID="SimulatePhoneAppointmentProfile">
+		<service:presentedBy rdf:resource="#SimulatePhoneAppointmentService"/>
+		<profile:contactInformation rdf:resource="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Caritasverband_Hamm"/>
+		<profile:hasInput rdf:resource="#informSimulationComposed"/>
+		<profile:hasInput rdf:resource="#informPersonNameIntroComposed"/>
+		<profile:hasInput rdf:resource="#obtainReadinessComposed"/>
+		<profile:hasInput rdf:resource="#informAuthorityComposed"/>
+		<profile:hasInput rdf:resource="#informPersonNameComposed"/>
+		<profile:hasInput rdf:resource="#obtainMatterConcernComposed"/>
+		<profile:hasInput rdf:resource="#obtainNameComposed"/>
+		<profile:hasInput rdf:resource="#obtainSurnameComposed"/>
+		<profile:hasInput rdf:resource="#obtainBirthDayComposed"/>
+		<profile:hasInput rdf:resource="#obtainBirthMonthComposed"/>
+		<profile:hasInput rdf:resource="#obtainBirthYearComposed"/>
+		<profile:hasInput rdf:resource="#reactiveFlagComposed"/>
+		<profile:hasInput rdf:resource="#informMatterConcernComposed"/>
+		<profile:hasInput rdf:resource="#obtainMatterConcernStatusComposed"/>
+		<profile:hasInput rdf:resource="#informNeedAppointmentComposed"/>
+		<profile:hasInput rdf:resource="#proposeTimeSlotComposed"/>
+		<profile:hasInput rdf:resource="#confirmTimeSlotComposed"/>
+		<profile:hasInput rdf:resource="#informAppointmentDocumentsComposed"/>
+		<profile:hasInput rdf:resource="#obtainConfirmationDetailsAppointmentComposed"/>
+		<profile:hasInput rdf:resource="#informContactPersonComposed"/>
+		<profile:hasInput rdf:resource="#obtainDetailsKnownComposed"/>
+		<profile:hasInput rdf:resource="#informContactPhoneComposed"/>
+		<profile:hasInput rdf:resource="#informContactOtherInfoComposed"/>
+		<profile:hasInput rdf:resource="#obtainConfirmationContactDetailsComposed"/>
+		<profile:hasInput rdf:resource="#informSimulationEndComposed"/>
+		<profile:hasInput rdf:resource="#informEndComposed"/>
+		<profile:hasInput rdf:resource="#obtainConfirmationNormalClosingComposed"/>
+		<profile:hasInput rdf:resource="#informGenericCARITASContactComposed"/>
+		<profile:hasInput rdf:resource="#obtainConfirmationComposed"/>		
+		<profile:hasResult rdf:resource="#SimulatePhoneAppointmentServiceResult"/>
+		<profile:hasPrecondition rdf:resource="#SimulatePhoneAppointmentCondition"/>
+        <profile:has_process rdf:resource="#SimulateAppointmentComposite"/>
+        <profile:serviceName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Simulate Appointment by Phone with Job Center</profile:serviceName>
+        <profile:textDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">After arriving in the host country, TCNs have to establish their living and social environment. Therefore, communicating with authorities is essential. The Jobcenter is one of different German authorities. The Jobcenter is supporting a TCN to find a job or options for further vocational education and training. Further, the Jobcenter is responsible to grant social benefits while unemployment. TCNs that have a valid residence permit, e.g. recognized refugees or subsidiary protection, can approach the Jobcenter and make an appointment to discuss these issues. TCNs without a residence permit, e.g. asylum seekers with a preliminary residence permit or a Duldung, need to contact the social welfare office (Sozialamt). With this service, TCNs have the possibility to simulate a phone call with the Jobcenter and practice to make an appointment. </profile:textDescription>
+	</profile:Profile>
+	
+	<process:AtomicProcess rdf:ID="ScenarioIntroduction">
+        <process:hasInput>
+			<process:Input rdf:ID="informSimulation">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TInformSimulation</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="informPersonNameIntro">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TInformPersonName_Introduction</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="obtainReadiness">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/2001/XMLSchema#boolean</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TObtainReadiness</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+    </process:AtomicProcess>
+	
+	<process:AtomicProcess rdf:ID="SimulationIntroduction">
+		<process:hasInput>
+			<process:Input rdf:ID="informAuthority">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TInformAuthority</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="informPersonName">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TInformPersonName</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="obtainMatterConcern">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AppointmentConcern</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TObtainMatterConcern</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+    </process:AtomicProcess>
+	
+	<process:AtomicProcess rdf:ID="ObtainTCNInformation">
+        <process:hasInput>
+			<process:Input rdf:ID="obtainName">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Name</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TObtainName</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="obtainSurname">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#FirstSurname</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TObtainName</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="obtainBirthDay">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Birthday</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TObtainBirthDay</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="obtainBirthMonth">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#BirthMonth</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TObtainBirthDay</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="obtainBirthYear">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#BirthYear</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TObtainBirthDay</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="reactiveFlag">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AppointmentConcern</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand</welcome:hasSlotType>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+    </process:AtomicProcess>
+	
+	<process:AtomicProcess rdf:ID="MakeAppointment">
+		<process:hasInput>
+			<process:Input rdf:ID="informMatterConcern">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TInformMatterConcern</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="obtainMatterConcernStatus">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#MatterConcernStatus</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TObtainMatterConcernStatus</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="informNeedAppointment">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TInformNeedAppointment</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="proposeTimeSlot">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TProposeTimeSlot</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="confirmTimeSlot">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/2001/XMLSchema#boolean</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TConfirmTimeSlot</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput rdf:resource="#reactiveFlag"/>
+    </process:AtomicProcess>
+	
+	<process:AtomicProcess rdf:ID="InformDetailsAppointment">
+		<process:hasInput>
+			<process:Input rdf:ID="informAppointmentDocuments">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TInformAppointmentDocuments</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="obtainConfirmationDetailsAppointment">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/2001/XMLSchema#boolean</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ConfirmationRequest</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TObtainConfirmation</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+    </process:AtomicProcess>
+	
+	<process:AtomicProcess rdf:ID="InformContact">
+		<process:hasInput>
+			<process:Input rdf:ID="informContactPerson">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TInformContactPerson</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="obtainDetailsKnown">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/2001/XMLSchema#boolean</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TObtainDetailsKnown</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput rdf:resource="#reactiveFlag"/>
+    </process:AtomicProcess>
+	
+	<process:AtomicProcess rdf:ID="InformContactDetails">
+		<process:hasInput>
+			<process:Input rdf:ID="informContactPhone">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TInformContactPhone</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="informContactOtherInfo">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TInformContactOtherInfo</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="obtainConfirmationContactDetails">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/2001/XMLSchema#boolean</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ConfirmationRequest</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TObtainConfirmation</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput rdf:resource="#reactiveFlag"/>
+    </process:AtomicProcess>
+	
+	<process:AtomicProcess rdf:ID="SimulationClosing">
+		<process:hasInput>
+			<process:Input rdf:ID="informSimulationEnd">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TInformSimulationEnd</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+    </process:AtomicProcess>
+	
+	<process:AtomicProcess rdf:ID="NormalClosing">
+		<process:hasInput>
+			<process:Input rdf:ID="informEnd">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TInformEnd_CARITAS_s3</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="obtainConfirmationNormalClosing">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/2001/XMLSchema#boolean</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ConfirmationRequest</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TObtainConfirmation</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+    </process:AtomicProcess>
+	
+	<process:AtomicProcess rdf:ID="InformContactNGO">
+        <process:hasInput>
+			<process:Input rdf:ID="informGenericCARITASContact">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TInformGenericContact</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+		<process:hasInput>
+			<process:Input rdf:ID="obtainConfirmation">
+				<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/2001/XMLSchema#boolean</process:parameterType>
+				<welcome:hasSlotType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ConfirmationRequest</welcome:hasSlotType>
+				<welcome:hasTemplateId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TObtainConfirmation</welcome:hasTemplateId>
+				<welcome:isOptional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</welcome:isOptional>
+			</process:Input>
+		</process:hasInput>
+    </process:AtomicProcess>
+	
+</rdf:RDF>
