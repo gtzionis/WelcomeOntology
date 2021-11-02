@@ -10,7 +10,7 @@
 	xmlns:service="http://www.daml.org/services/owl-s/1.1/Service.owl#"
 	xmlns:process="http://www.daml.org/services/owl-s/1.1/Process.owl#"
 	xmlns:profile="http://www.daml.org/services/owl-s/1.1/Profile.owl#"
-	xmlns:objList="http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#"
+	xmlns:objList = "http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#"
 	xmlns:expr="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#"  
 	xmlns:pddlexpr="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/PDDLExpression.owl#">
 	<owl:Ontology rdf:about="http://localhost:8080/services/SimulatePhoneAppointmentService.owl">

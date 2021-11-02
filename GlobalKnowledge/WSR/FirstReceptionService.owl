@@ -6,12 +6,12 @@
 	xmlns:xml="http://www.w3.org/XML/1998/namespace"
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
 	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-	xmlns:welcome="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#"
+	xmlns:welcome="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#"     
 	xmlns:service="http://www.daml.org/services/owl-s/1.1/Service.owl#"
 	xmlns:process="http://www.daml.org/services/owl-s/1.1/Process.owl#"
 	xmlns:profile="http://www.daml.org/services/owl-s/1.1/Profile.owl#"
-	xmlns:objList="http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#"
-	xmlns:expr="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#"
+	xmlns:objList = "http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#"
+	xmlns:expr="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#"  
 	xmlns:pddlexpr="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/PDDLExpression.owl#">
 	<owl:Ontology rdf:about="http://localhost:8080/services/FirstReceptionService.owl">
 		<!-- All the services should have this property -->
