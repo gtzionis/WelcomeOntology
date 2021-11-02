@@ -1688,7 +1688,8 @@ welcome:Email rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#EmailNotifications
 welcome:EmailNotifications rdf:type owl:Class ;
-                           rdfs:subClassOf welcome:Personal .
+                           rdfs:subClassOf welcome:Personal ;
+                           welcome:dependsOn "NotificationPreferences" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Entrance
@@ -2079,7 +2080,8 @@ welcome:Role rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SMSNotifications
 welcome:SMSNotifications rdf:type owl:Class ;
-                         rdfs:subClassOf welcome:Personal .
+                         rdfs:subClassOf welcome:Personal ;
+                         welcome:dependsOn "NotificationPreferences" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Scenario
