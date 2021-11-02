@@ -1,35 +1,35 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://localhost:8080/services/SimulatePhoneAppointmentService.owl#"
-	xml:base="http://localhost:8080/services/SimulatePhoneAppointmentService.owl"
-	xmlns:owl="http://www.w3.org/2002/07/owl#"
-	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-	xmlns:xml="http://www.w3.org/XML/1998/namespace"
-	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-	xmlns:welcome="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#"
-	xmlns:service="http://www.daml.org/services/owl-s/1.1/Service.owl#"
-	xmlns:process="http://www.daml.org/services/owl-s/1.1/Process.owl#"
-	xmlns:profile="http://www.daml.org/services/owl-s/1.1/Profile.owl#"
-	xmlns:objList = "http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#"
-	xmlns:expr="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#"  
-	xmlns:pddlexpr="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/PDDLExpression.owl#">
+     xml:base="http://localhost:8080/services/SimulatePhoneAppointmentService.owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	 xmlns:welcome="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#"     
+     xmlns:service="http://www.daml.org/services/owl-s/1.1/Service.owl#"
+	 xmlns:process="http://www.daml.org/services/owl-s/1.1/Process.owl#"      
+     xmlns:profile="http://www.daml.org/services/owl-s/1.1/Profile.owl#"
+     xmlns:objList = "http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#"
+	 xmlns:expr="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#"  
+	 xmlns:pddlexpr="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/PDDLExpression.owl#">
 	<owl:Ontology rdf:about="http://localhost:8080/services/SimulatePhoneAppointmentService.owl">
-		<!-- All the services should have this property -->
+         <!-- All the services should have this property -->
 		<owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.1/Service.owl"/>
 		<owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl"/>
-		<owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.1/Profile.owl"/>
-		<owl:imports rdf:resource="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl"/>
+        <owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.1/Profile.owl"/>
+		<owl:imports rdf:resource="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl"/>        
 		<owl:imports rdf:resource="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/PDDLExpression.owl"/>
-		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Semantic Service Description Simulate an Appointment by Phone with Authority - Job Center</rdfs:comment>
-	</owl:Ontology>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Semantic Service Description Simulate an Appointment by Phone with Authority - Job Center</rdfs:comment>
+    </owl:Ontology>
 
 	<!-- ******************************************* -->
 	<!-- 			Version: 06 July 2021			 -->
 	<!-- ******************************************* -->
 	<service:Service rdf:ID="SimulatePhoneAppointmentService">
-		<service:describedBy rdf:resource="#SimulateAppointmentComposite"/>
-		<service:presents rdf:resource="#SimulatePhoneAppointmentProfile"/>
-	</service:Service>
+        <service:describedBy rdf:resource="#SimulateAppointmentComposite"/>
+        <service:presents rdf:resource="#SimulatePhoneAppointmentProfile"/>
+    </service:Service>
 	
 	<process:CompositeProcess rdf:ID="SimulateAppointmentComposite">
 		<service:describes rdf:resource="#SimulatePhoneAppointmentService"/>
