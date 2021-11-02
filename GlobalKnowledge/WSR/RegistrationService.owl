@@ -7,7 +7,7 @@
 	xmlns:service="http://www.daml.org/services/owl-s/1.1/Service.owl#"
 	xmlns:process="http://www.daml.org/services/owl-s/1.1/Process.owl#"
 	xmlns:profile="http://www.daml.org/services/owl-s/1.1/Profile.owl#"
-	xmlns:expr="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#"  
+	xmlns:expr="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#"
 	xmlns:pddlexpr="http://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/PDDLExpression.owl#"
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
 	xmlns:xml="http://www.w3.org/XML/1998/namespace"
