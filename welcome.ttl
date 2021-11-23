@@ -1099,6 +1099,11 @@ welcome:isUnaccompanied rdf:type owl:DatatypeProperty ;
                         rdfs:range xsd:boolean .
 
 
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#iso3code
+welcome:iso3code rdf:type owl:DatatypeProperty .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#languageName
 welcome:languageName rdf:type owl:DatatypeProperty .
 
@@ -1496,6 +1501,21 @@ welcome:CountryOfBirth rdf:type owl:Class ;
                        <http://purl.org/dc/terms/isRequiredBy> "obtainCountryOfBirth" .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CountryOfBirthCode
+welcome:CountryOfBirthCode rdf:type owl:Class ;
+                           rdfs:subClassOf welcome:Personal .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CountryOfOrigin
+welcome:CountryOfOrigin rdf:type owl:Class ;
+                        rdfs:subClassOf welcome:Personal .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CountryOfOriginCode
+welcome:CountryOfOriginCode rdf:type owl:Class ;
+                            rdfs:subClassOf welcome:Personal .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Course
 welcome:Course rdf:type owl:Class ;
                rdfs:subClassOf welcome:Education .
@@ -1725,6 +1745,16 @@ welcome:GovermentalOrganisation rdf:type owl:Class ;
                                 rdfs:subClassOf welcome:Organisation .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#HostCountry
+welcome:HostCountry rdf:type owl:Class ;
+                    rdfs:subClassOf welcome:PhysicalAddress .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#HostCountryCode
+welcome:HostCountryCode rdf:type owl:Class ;
+                        rdfs:subClassOf welcome:PhysicalAddress .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#HostingInformation
 welcome:HostingInformation rdf:type owl:Class ;
                            rdfs:subClassOf welcome:Descriptors .
@@ -1735,6 +1765,11 @@ welcome:IDCountry rdf:type owl:Class ;
                   rdfs:subClassOf welcome:Personal ;
                   <http://purl.org/dc/terms/component> "NLG" ;
                   <http://purl.org/dc/terms/isRequiredBy> "obtainNationality" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#IDCountryCode
+welcome:IDCountryCode rdf:type owl:Class ;
+                      rdfs:subClassOf welcome:Personal .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#IDNumber
@@ -1813,6 +1848,7 @@ welcome:Landline rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Language
 welcome:Language rdf:type owl:Class ;
+                 owl:equivalentClass welcome:PreferredLanguage ;
                  <http://purl.org/dc/terms/component> "NLG" ;
                  <http://purl.org/dc/terms/isRequiredBy> "confirmLanguage" ,
                                                          "informTimeSlot" .
@@ -1968,6 +2004,11 @@ welcome:Nationality rdf:type owl:Class ;
                     rdfs:subClassOf welcome:Personal .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NationalityCode
+welcome:NationalityCode rdf:type owl:Class ;
+                        rdfs:subClassOf welcome:Personal .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NotificationPreferences
 welcome:NotificationPreferences rdf:type owl:Class ;
                                 rdfs:subClassOf welcome:Personal .
@@ -2030,6 +2071,14 @@ welcome:PostCode rdf:type owl:Class ;
                  rdfs:subClassOf welcome:AddressInfo .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#PreferredLanguage
+welcome:PreferredLanguage rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#PreferredLanguageCode
+welcome:PreferredLanguageCode rdf:type owl:Class .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#PreviousResidenceCatalonia
 welcome:PreviousResidenceCatalonia rdf:type owl:Class ;
                                    rdfs:subClassOf welcome:Other .
@@ -2038,6 +2087,11 @@ welcome:PreviousResidenceCatalonia rdf:type owl:Class ;
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#PreviousResidenceOther
 welcome:PreviousResidenceOther rdf:type owl:Class ;
                                rdfs:subClassOf welcome:Other .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#PreviousResidenceOtherCode
+welcome:PreviousResidenceOtherCode rdf:type owl:Class ;
+                                   rdfs:subClassOf welcome:Other .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#PreviousResidenceSpain
@@ -2283,6 +2337,16 @@ gn:Feature rdf:type owl:Class .
 #    Individuals
 #################################################################
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Afghanistan
+welcome:Afghanistan rdf:type owl:NamedIndividual ,
+                             welcome:Country ,
+                             welcome:Location ;
+                    welcome:countryName "Afghanistan" ;
+                    welcome:hasValue "Afghanistan" ;
+                    welcome:iso2code "AF" ;
+                    welcome:iso3code "AFG" .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AgentNGO
 welcome:AgentNGO rdf:type owl:NamedIndividual ,
                           foaf:Agent ;
@@ -2354,6 +2418,96 @@ welcome:AgentNGO rdf:type owl:NamedIndividual ,
  ] .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Aland_Islands
+welcome:Aland_Islands rdf:type owl:NamedIndividual ,
+                               welcome:Country ,
+                               welcome:Location ;
+                      welcome:countryName "Aland Islands" ;
+                      welcome:hasValue "Aland Islands" ;
+                      welcome:iso2code "AX" ;
+                      welcome:iso3code "ALA" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Albania
+welcome:Albania rdf:type owl:NamedIndividual ,
+                         welcome:Country ,
+                         welcome:Location ;
+                welcome:countryName "Albania" ;
+                welcome:hasValue "Albania" ;
+                welcome:iso2code "AL" ;
+                welcome:iso3code "ALB" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Algeria
+welcome:Algeria rdf:type owl:NamedIndividual ,
+                         welcome:Country ,
+                         welcome:Location ;
+                welcome:countryName "Algeria" ;
+                welcome:hasValue "Algeria" ;
+                welcome:iso2code "DZ" ;
+                welcome:iso3code "DZA" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#American_Samoa
+welcome:American_Samoa rdf:type owl:NamedIndividual ,
+                                welcome:Country ,
+                                welcome:Location ;
+                       welcome:countryName "American Samoa" ;
+                       welcome:hasValue "American Samoa" ;
+                       welcome:iso2code "AS" ;
+                       welcome:iso3code "ASM" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Andorra
+welcome:Andorra rdf:type owl:NamedIndividual ,
+                         welcome:Country ,
+                         welcome:Location ;
+                welcome:countryName "Andorra" ;
+                welcome:hasValue "Andorra" ;
+                welcome:iso2code "AD" ;
+                welcome:iso3code "AND" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Angola
+welcome:Angola rdf:type owl:NamedIndividual ,
+                        welcome:Country ,
+                        welcome:Location ;
+               welcome:countryName "Angola" ;
+               welcome:hasValue "Angola" ;
+               welcome:iso2code "AO" ;
+               welcome:iso3code "AGO" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Anguilla
+welcome:Anguilla rdf:type owl:NamedIndividual ,
+                          welcome:Country ,
+                          welcome:Location ;
+                 welcome:countryName "Anguilla" ;
+                 welcome:hasValue "Anguilla" ;
+                 welcome:iso2code "AI" ;
+                 welcome:iso3code "AIA" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Antarctica
+welcome:Antarctica rdf:type owl:NamedIndividual ,
+                            welcome:Country ,
+                            welcome:Location ;
+                   welcome:countryName "Antarctica" ;
+                   welcome:hasValue "Antarctica" ;
+                   welcome:iso2code "AQ" ;
+                   welcome:iso3code "ATA" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Antigua_and_Barbuda
+welcome:Antigua_and_Barbuda rdf:type owl:NamedIndividual ,
+                                     welcome:Country ,
+                                     welcome:Location ;
+                            welcome:countryName "Antigua and Barbuda" ;
+                            welcome:hasValue "Antigua and Barbuda" ;
+                            welcome:iso2code "AG" ;
+                            welcome:iso3code "ATG" .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AppName
 welcome:AppName rdf:type owl:NamedIndividual ,
                          welcome:App ;
@@ -2380,6 +2534,36 @@ welcome:Arabic rdf:type owl:NamedIndividual ,
                welcome:languageName "Arabic" .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Argentina
+welcome:Argentina rdf:type owl:NamedIndividual ,
+                           welcome:Country ,
+                           welcome:Location ;
+                  welcome:countryName "Argentina" ;
+                  welcome:hasValue "Argentina" ;
+                  welcome:iso2code "AR" ;
+                  welcome:iso3code "ARG" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Armenia
+welcome:Armenia rdf:type owl:NamedIndividual ,
+                         welcome:Country ,
+                         welcome:Location ;
+                welcome:countryName "Armenia" ;
+                welcome:hasValue "Armenia" ;
+                welcome:iso2code "AM" ;
+                welcome:iso3code "ARM" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Aruba
+welcome:Aruba rdf:type owl:NamedIndividual ,
+                       welcome:Country ,
+                       welcome:Location ;
+              welcome:countryName "Aruba" ;
+              welcome:hasValue "Aruba" ;
+              welcome:iso2code "AW" ;
+              welcome:iso3code "ABW" .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Athens
 welcome:Athens rdf:type owl:NamedIndividual ,
                         welcome:City ,
@@ -2389,6 +2573,256 @@ welcome:Athens rdf:type owl:NamedIndividual ,
                welcome:long 23.72753 .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Australia
+welcome:Australia rdf:type owl:NamedIndividual ,
+                           welcome:Country ,
+                           welcome:Location ;
+                  welcome:countryName "Australia" ;
+                  welcome:hasValue "Australia" ;
+                  welcome:iso2code "AU" ;
+                  welcome:iso3code "AUS" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Austria
+welcome:Austria rdf:type owl:NamedIndividual ,
+                         welcome:Country ,
+                         welcome:Location ;
+                welcome:countryName "Austria" ;
+                welcome:hasValue "Austria" ;
+                welcome:iso2code "AT" ;
+                welcome:iso3code "AUT" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Azerbaijan
+welcome:Azerbaijan rdf:type owl:NamedIndividual ,
+                            welcome:Country ,
+                            welcome:Location ;
+                   welcome:countryName "Azerbaijan" ;
+                   welcome:hasValue "Azerbaijan" ;
+                   welcome:iso2code "AZ" ;
+                   welcome:iso3code "AZE" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Bahamas
+welcome:Bahamas rdf:type owl:NamedIndividual ,
+                         welcome:Country ,
+                         welcome:Location ;
+                welcome:countryName "Bahamas" ;
+                welcome:hasValue "Bahamas" ;
+                welcome:iso2code "BS" ;
+                welcome:iso3code "BHS" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Bahrain
+welcome:Bahrain rdf:type owl:NamedIndividual ,
+                         welcome:Country ,
+                         welcome:Location ;
+                welcome:countryName "Bahrain" ;
+                welcome:hasValue "Bahrain" ;
+                welcome:iso2code "BH" ;
+                welcome:iso3code "BHR" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Bangladesh
+welcome:Bangladesh rdf:type owl:NamedIndividual ,
+                            welcome:Country ,
+                            welcome:Location ;
+                   welcome:countryName "Bangladesh" ;
+                   welcome:hasValue "Bangladesh" ;
+                   welcome:iso2code "BD" ;
+                   welcome:iso3code "BGD" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Barbados
+welcome:Barbados rdf:type owl:NamedIndividual ,
+                          welcome:Country ,
+                          welcome:Location ;
+                 welcome:countryName "Barbados" ;
+                 welcome:hasValue "Barbados" ;
+                 welcome:iso2code "BB" ;
+                 welcome:iso3code "BRB" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Belarus
+welcome:Belarus rdf:type owl:NamedIndividual ,
+                         welcome:Country ,
+                         welcome:Location ;
+                welcome:countryName "Belarus" ;
+                welcome:hasValue "Belarus" ;
+                welcome:iso2code "BY" ;
+                welcome:iso3code "BLR" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Belgium
+welcome:Belgium rdf:type owl:NamedIndividual ,
+                         welcome:Country ,
+                         welcome:Location ;
+                welcome:countryName "Belgium" ;
+                welcome:hasValue "Belgium" ;
+                welcome:iso2code "BE" ;
+                welcome:iso3code "BEL" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Belize
+welcome:Belize rdf:type owl:NamedIndividual ,
+                        welcome:Country ,
+                        welcome:Location ;
+               welcome:countryName "Belize" ;
+               welcome:hasValue "Belize" ;
+               welcome:iso2code "BZ" ;
+               welcome:iso3code "BLZ" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Benin
+welcome:Benin rdf:type owl:NamedIndividual ,
+                       welcome:Country ,
+                       welcome:Location ;
+              welcome:countryName "Benin" ;
+              welcome:hasValue "Benin" ;
+              welcome:iso2code "BJ" ;
+              welcome:iso3code "BEN" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Bermuda
+welcome:Bermuda rdf:type owl:NamedIndividual ,
+                         welcome:Country ,
+                         welcome:Location ;
+                welcome:countryName "Bermuda" ;
+                welcome:hasValue "Bermuda" ;
+                welcome:iso2code "BM" ;
+                welcome:iso3code "BMU" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Bhutan
+welcome:Bhutan rdf:type owl:NamedIndividual ,
+                        welcome:Country ,
+                        welcome:Location ;
+               welcome:countryName "Bhutan" ;
+               welcome:hasValue "Bhutan" ;
+               welcome:iso2code "BT" ;
+               welcome:iso3code "BTN" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Bolivia
+welcome:Bolivia rdf:type owl:NamedIndividual ,
+                         welcome:Country ,
+                         welcome:Location ;
+                welcome:countryName "Bolivia" ;
+                welcome:hasValue "Bolivia" ;
+                welcome:iso2code "BO" ;
+                welcome:iso3code "BOL" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Bosnia_and_Herzegovina
+welcome:Bosnia_and_Herzegovina rdf:type owl:NamedIndividual ,
+                                        welcome:Country ,
+                                        welcome:Location ;
+                               welcome:countryName "Bosnia and Herzegovina" ;
+                               welcome:hasValue "Bosnia and Herzegovina" ;
+                               welcome:iso2code "BA" ;
+                               welcome:iso3code "BIH" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Botswana
+welcome:Botswana rdf:type owl:NamedIndividual ,
+                          welcome:Country ,
+                          welcome:Location ;
+                 welcome:countryName "Botswana" ;
+                 welcome:hasValue "Botswana" ;
+                 welcome:iso2code "BW" ;
+                 welcome:iso3code "BWA" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Bouvet_Island
+welcome:Bouvet_Island rdf:type owl:NamedIndividual ,
+                               welcome:Country ,
+                               welcome:Location ;
+                      welcome:countryName "Bouvet Island" ;
+                      welcome:hasValue "Bouvet Island" ;
+                      welcome:iso2code "BV" ;
+                      welcome:iso3code "BVT" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Brazil
+welcome:Brazil rdf:type owl:NamedIndividual ,
+                        welcome:Country ,
+                        welcome:Location ;
+               welcome:countryName "Brazil" ;
+               welcome:hasValue "Brazil" ;
+               welcome:iso2code "BR" ;
+               welcome:iso3code "BRA" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#British_Indian_Ocean_Territory
+welcome:British_Indian_Ocean_Territory rdf:type owl:NamedIndividual ,
+                                                welcome:Country ,
+                                                welcome:Location ;
+                                       welcome:countryName "British Indian Ocean Territory" ;
+                                       welcome:hasValue "British Indian Ocean Territory" ;
+                                       welcome:iso2code "IO" ;
+                                       welcome:iso3code "IOT" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#British_Virgin_Islands
+welcome:British_Virgin_Islands rdf:type owl:NamedIndividual ,
+                                        welcome:Country ,
+                                        welcome:Location ;
+                               welcome:countryName "British Virgin Islands" ;
+                               welcome:hasValue "British Virgin Islands" ;
+                               welcome:iso2code "VG" ;
+                               welcome:iso3code "VGB" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Brunei
+welcome:Brunei rdf:type owl:NamedIndividual ,
+                        welcome:Country ,
+                        welcome:Location ;
+               welcome:countryName "Brunei" ;
+               welcome:hasValue "Brunei" ;
+               welcome:iso2code "BN" ;
+               welcome:iso3code "BRN" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Bulgaria
+welcome:Bulgaria rdf:type owl:NamedIndividual ,
+                          welcome:Country ,
+                          welcome:Location ;
+                 welcome:countryName "Bulgaria" ;
+                 welcome:hasValue "Bulgaria" ;
+                 welcome:iso2code "BG" ;
+                 welcome:iso3code "BGR" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Burkina_Faso
+welcome:Burkina_Faso rdf:type owl:NamedIndividual ,
+                              welcome:Country ,
+                              welcome:Location ;
+                     welcome:countryName "Burkina Faso" ;
+                     welcome:hasValue "Burkina Faso" ;
+                     welcome:iso2code "BF" ;
+                     welcome:iso3code "BFA" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Burundi
+welcome:Burundi rdf:type owl:NamedIndividual ,
+                         welcome:Country ,
+                         welcome:Location ;
+                welcome:countryName "Burundi" ;
+                welcome:hasValue "Burundi" ;
+                welcome:iso2code "BI" ;
+                welcome:iso3code "BDI" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Cambodia
+welcome:Cambodia rdf:type owl:NamedIndividual ,
+                          welcome:Country ,
+                          welcome:Location ;
+                 welcome:countryName "Cambodia" ;
+                 welcome:hasValue "Cambodia" ;
+                 welcome:iso2code "KH" ;
+                 welcome:iso3code "KHM" .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Cambrils
 welcome:Cambrils rdf:type owl:NamedIndividual ,
                           welcome:City ,
@@ -2396,6 +2830,46 @@ welcome:Cambrils rdf:type owl:NamedIndividual ,
                  welcome:hasValue "Cambrils" ;
                  welcome:lat 41.06667 ;
                  welcome:long 1.06036 .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Cameroon
+welcome:Cameroon rdf:type owl:NamedIndividual ,
+                          welcome:Country ,
+                          welcome:Location ;
+                 welcome:countryName "Cameroon" ;
+                 welcome:hasValue "Cameroon" ;
+                 welcome:iso2code "CM" ;
+                 welcome:iso3code "CMR" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Canada
+welcome:Canada rdf:type owl:NamedIndividual ,
+                        welcome:Country ,
+                        welcome:Location ;
+               welcome:countryName "Canada" ;
+               welcome:hasValue "Canada" ;
+               welcome:iso2code "CA" ;
+               welcome:iso3code "CAN" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Cape_Verde
+welcome:Cape_Verde rdf:type owl:NamedIndividual ,
+                            welcome:Country ,
+                            welcome:Location ;
+                   welcome:countryName "Cape Verde" ;
+                   welcome:hasValue "Cape Verde" ;
+                   welcome:iso2code "CV" ;
+                   welcome:iso3code "CPV" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Caribbean_Netherlands
+welcome:Caribbean_Netherlands rdf:type owl:NamedIndividual ,
+                                       welcome:Country ,
+                                       welcome:Location ;
+                              welcome:countryName "Caribbean Netherlands" ;
+                              welcome:hasValue "Caribbean Netherlands" ;
+                              welcome:iso2code "BQ" ;
+                              welcome:iso3code "BES" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Catalan
@@ -2435,10 +2909,150 @@ welcome:Catalonia rdf:type owl:NamedIndividual ,
  ] .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Cayman_Islands
+welcome:Cayman_Islands rdf:type owl:NamedIndividual ,
+                                welcome:Country ,
+                                welcome:Location ;
+                       welcome:countryName "Cayman Islands" ;
+                       welcome:hasValue "Cayman Islands" ;
+                       welcome:iso2code "KY" ;
+                       welcome:iso3code "CYM" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Central_African_Republic
+welcome:Central_African_Republic rdf:type owl:NamedIndividual ,
+                                          welcome:Country ,
+                                          welcome:Location ;
+                                 welcome:countryName "Central African Republic" ;
+                                 welcome:hasValue "Central African Republic" ;
+                                 welcome:iso2code "CF" ;
+                                 welcome:iso3code "CAF" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Chad
+welcome:Chad rdf:type owl:NamedIndividual ,
+                      welcome:Country ,
+                      welcome:Location ;
+             welcome:countryName "Chad" ;
+             welcome:hasValue "Chad" ;
+             welcome:iso2code "TD" ;
+             welcome:iso3code "TCD" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Chile
+welcome:Chile rdf:type owl:NamedIndividual ,
+                       welcome:Country ,
+                       welcome:Location ;
+              welcome:countryName "Chile" ;
+              welcome:hasValue "Chile" ;
+              welcome:iso2code "CL" ;
+              welcome:iso3code "CHL" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#China
+welcome:China rdf:type owl:NamedIndividual ,
+                       welcome:Country ,
+                       welcome:Location ;
+              welcome:countryName "China" ;
+              welcome:hasValue "China" ;
+              welcome:iso2code "CN" ;
+              welcome:iso3code "CHN" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Christmas_Island
+welcome:Christmas_Island rdf:type owl:NamedIndividual ,
+                                  welcome:Country ,
+                                  welcome:Location ;
+                         welcome:countryName "Christmas Island" ;
+                         welcome:hasValue "Christmas Island" ;
+                         welcome:iso2code "CX" ;
+                         welcome:iso3code "CXR" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Cocos_Keeling_Islands
+welcome:Cocos_Keeling_Islands rdf:type owl:NamedIndividual ,
+                                       welcome:Country ,
+                                       welcome:Location ;
+                              welcome:countryName "Cocos Keeling Islands" ;
+                              welcome:hasValue "Cocos Keeling Islands" ;
+                              welcome:iso2code "CC" ;
+                              welcome:iso3code "CCK" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Colombia
+welcome:Colombia rdf:type owl:NamedIndividual ,
+                          welcome:Country ,
+                          welcome:Location ;
+                 welcome:countryName "Colombia" ;
+                 welcome:hasValue "Colombia" ;
+                 welcome:iso2code "CO" ;
+                 welcome:iso3code "COL" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Comoros
+welcome:Comoros rdf:type owl:NamedIndividual ,
+                         welcome:Country ,
+                         welcome:Location ;
+                welcome:countryName "Comoros" ;
+                welcome:hasValue "Comoros" ;
+                welcome:iso2code "KM" ;
+                welcome:iso3code "COM" .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Completed
 welcome:Completed rdf:type owl:NamedIndividual ,
                            welcome:DIPStatus ;
                   rdfs:label "Status completed" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Congo-Brazzaville
+welcome:Congo-Brazzaville rdf:type owl:NamedIndividual ,
+                                   welcome:Country ,
+                                   welcome:Location ;
+                          welcome:countryName "Congo - Brazzaville" ;
+                          welcome:hasValue "Congo - Brazzaville" ;
+                          welcome:iso2code "CG" ;
+                          welcome:iso3code "COG" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Congo-Kinshasa
+welcome:Congo-Kinshasa rdf:type owl:NamedIndividual ,
+                                welcome:Country ,
+                                welcome:Location ;
+                       welcome:countryName "Congo - Kinshasa" ;
+                       welcome:hasValue "Congo - Kinshasa" ;
+                       welcome:iso2code "CD" ;
+                       welcome:iso3code "COD" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Cook_Islands
+welcome:Cook_Islands rdf:type owl:NamedIndividual ,
+                              welcome:Country ,
+                              welcome:Location ;
+                     welcome:countryName "Cook Islands" ;
+                     welcome:hasValue "Cook Islands" ;
+                     welcome:iso2code "CK" ;
+                     welcome:iso3code "COK" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Costa_Rica
+welcome:Costa_Rica rdf:type owl:NamedIndividual ,
+                            welcome:Country ,
+                            welcome:Location ;
+                   welcome:countryName "Costa Rica" ;
+                   welcome:hasValue "Costa Rica" ;
+                   welcome:iso2code "CR" ;
+                   welcome:iso3code "CRI" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Cote_Ivoire
+welcome:Cote_Ivoire rdf:type owl:NamedIndividual ,
+                             welcome:Country ,
+                             welcome:Location ;
+                    welcome:countryName "Cote Ivoire" ;
+                    welcome:hasValue "Cote Ivoire" ;
+                    welcome:iso2code "CI" ;
+                    welcome:iso3code "CIV" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Crete
@@ -2448,6 +3062,66 @@ welcome:Crete rdf:type owl:NamedIndividual ,
               welcome:hasValue "Crete" ;
               welcome:lat 35.24011 ;
               welcome:long 24.80926 .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Croatia
+welcome:Croatia rdf:type owl:NamedIndividual ,
+                         welcome:Country ,
+                         welcome:Location ;
+                welcome:countryName "Croatia" ;
+                welcome:hasValue "Croatia" ;
+                welcome:iso2code "HR" ;
+                welcome:iso3code "HRV" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Cuba
+welcome:Cuba rdf:type owl:NamedIndividual ,
+                      welcome:Country ,
+                      welcome:Location ;
+             welcome:countryName "Cuba" ;
+             welcome:hasValue "Cuba" ;
+             welcome:iso2code "CU" ;
+             welcome:iso3code "CUB" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Curacao
+welcome:Curacao rdf:type owl:NamedIndividual ,
+                         welcome:Country ,
+                         welcome:Location ;
+                welcome:countryName "Curacao" ;
+                welcome:hasValue "Curacao" ;
+                welcome:iso2code "CW" ;
+                welcome:iso3code "CUW" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Cyprus
+welcome:Cyprus rdf:type owl:NamedIndividual ,
+                        welcome:Country ,
+                        welcome:Location ;
+               welcome:countryName "Cyprus" ;
+               welcome:hasValue "Cyprus" ;
+               welcome:iso2code "CY" ;
+               welcome:iso3code "CYP" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Czechia
+welcome:Czechia rdf:type owl:NamedIndividual ,
+                         welcome:Country ,
+                         welcome:Location ;
+                welcome:countryName "Czechia" ;
+                welcome:hasValue "Czechia" ;
+                welcome:iso2code "CZ" ;
+                welcome:iso3code "CZE" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Denmark
+welcome:Denmark rdf:type owl:NamedIndividual ,
+                         welcome:Country ,
+                         welcome:Location ;
+                welcome:countryName "Denmark" ;
+                welcome:hasValue "Denmark" ;
+                welcome:iso2code "DK" ;
+                welcome:iso3code "DNK" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DepartmentName
@@ -2472,10 +3146,110 @@ welcome:DepartmentName rdf:type owl:NamedIndividual ,
  ] .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Djibouti
+welcome:Djibouti rdf:type owl:NamedIndividual ,
+                          welcome:Country ,
+                          welcome:Location ;
+                 welcome:countryName "Djibouti" ;
+                 welcome:hasValue "Djibouti" ;
+                 welcome:iso2code "DJ" ;
+                 welcome:iso3code "DJI" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Dominica
+welcome:Dominica rdf:type owl:NamedIndividual ,
+                          welcome:Country ,
+                          welcome:Location ;
+                 welcome:countryName "Dominica" ;
+                 welcome:hasValue "Dominica" ;
+                 welcome:iso2code "DM" ;
+                 welcome:iso3code "DMA" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Dominican_Republic
+welcome:Dominican_Republic rdf:type owl:NamedIndividual ,
+                                    welcome:Country ,
+                                    welcome:Location ;
+                           welcome:countryName "Dominican Republic" ;
+                           welcome:hasValue "Dominican Republic" ;
+                           welcome:iso2code "DO" ;
+                           welcome:iso3code "DOM" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Ecuador
+welcome:Ecuador rdf:type owl:NamedIndividual ,
+                         welcome:Country ,
+                         welcome:Location ;
+                welcome:countryName "Ecuador" ;
+                welcome:hasValue "Ecuador" ;
+                welcome:iso2code "EC" ;
+                welcome:iso3code "ECU" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Egypt
+welcome:Egypt rdf:type owl:NamedIndividual ,
+                       welcome:Country ,
+                       welcome:Location ;
+              welcome:countryName "Egypt" ;
+              welcome:hasValue "Egypt" ;
+              welcome:iso2code "EG" ;
+              welcome:iso3code "EGY" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#El_Salvador
+welcome:El_Salvador rdf:type owl:NamedIndividual ,
+                             welcome:Country ,
+                             welcome:Location ;
+                    welcome:countryName "El Salvador" ;
+                    welcome:hasValue "El Salvador" ;
+                    welcome:iso2code "SV" ;
+                    welcome:iso3code "SLV" .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#English
 welcome:English rdf:type owl:NamedIndividual ,
                          welcome:Language ;
                 welcome:languageName "English" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Equatorial_Guinea
+welcome:Equatorial_Guinea rdf:type owl:NamedIndividual ,
+                                   welcome:Country ,
+                                   welcome:Location ;
+                          welcome:countryName "Equatorial Guinea" ;
+                          welcome:hasValue "Equatorial Guinea" ;
+                          welcome:iso2code "GQ" ;
+                          welcome:iso3code "GNQ" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Eritrea
+welcome:Eritrea rdf:type owl:NamedIndividual ,
+                         welcome:Country ,
+                         welcome:Location ;
+                welcome:countryName "Eritrea" ;
+                welcome:hasValue "Eritrea" ;
+                welcome:iso2code "ER" ;
+                welcome:iso3code "ERI" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Estonia
+welcome:Estonia rdf:type owl:NamedIndividual ,
+                         welcome:Country ,
+                         welcome:Location ;
+                welcome:countryName "Estonia" ;
+                welcome:hasValue "Estonia" ;
+                welcome:iso2code "EE" ;
+                welcome:iso3code "EST" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Ethiopia
+welcome:Ethiopia rdf:type owl:NamedIndividual ,
+                          welcome:Country ,
+                          welcome:Location ;
+                 welcome:countryName "Ethiopia" ;
+                 welcome:hasValue "Ethiopia" ;
+                 welcome:iso2code "ET" ;
+                 welcome:iso3code "ETH" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#FailedAnalysis
@@ -2484,10 +3258,150 @@ welcome:FailedAnalysis rdf:type owl:NamedIndividual ,
                        rdfs:label "Status failed analysis" .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Falkland_Islands
+welcome:Falkland_Islands rdf:type owl:NamedIndividual ,
+                                  welcome:Country ,
+                                  welcome:Location ;
+                         welcome:countryName "Falkland Islands" ;
+                         welcome:hasValue "Falkland Islands" ;
+                         welcome:iso2code "FK" ;
+                         welcome:iso3code "FLK" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Faroe_Islands
+welcome:Faroe_Islands rdf:type owl:NamedIndividual ,
+                               welcome:Country ,
+                               welcome:Location ;
+                      welcome:countryName "Faroe Islands" ;
+                      welcome:hasValue "Faroe Islands" ;
+                      welcome:iso2code "FO" ;
+                      welcome:iso3code "FRO" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Fiji
+welcome:Fiji rdf:type owl:NamedIndividual ,
+                      welcome:Country ,
+                      welcome:Location ;
+             welcome:countryName "Fiji" ;
+             welcome:hasValue "Fiji" ;
+             welcome:iso2code "FJ" ;
+             welcome:iso3code "FJI" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Finland
+welcome:Finland rdf:type owl:NamedIndividual ,
+                         welcome:Country ,
+                         welcome:Location ;
+                welcome:countryName "Finland" ;
+                welcome:hasValue "Finland" ;
+                welcome:iso2code "FI" ;
+                welcome:iso3code "FIN" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#France
+welcome:France rdf:type owl:NamedIndividual ,
+                        welcome:Country ,
+                        welcome:Location ;
+               welcome:countryName "France" ;
+               welcome:hasValue "France" ;
+               welcome:iso2code "FR" ;
+               welcome:iso3code "FRA" .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#French
 welcome:French rdf:type owl:NamedIndividual ,
                         welcome:Language ;
                welcome:languageName "French" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#French_Guiana
+welcome:French_Guiana rdf:type owl:NamedIndividual ,
+                               welcome:Country ,
+                               welcome:Location ;
+                      welcome:countryName "French Guiana" ;
+                      welcome:hasValue "French Guiana" ;
+                      welcome:iso2code "GF" ;
+                      welcome:iso3code "GUF" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#French_Polynesia
+welcome:French_Polynesia rdf:type owl:NamedIndividual ,
+                                  welcome:Country ,
+                                  welcome:Location ;
+                         welcome:countryName "French Polynesia" ;
+                         welcome:hasValue "French Polynesia" ;
+                         welcome:iso2code "PF" ;
+                         welcome:iso3code "PYF" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#French_Southern_Territories
+welcome:French_Southern_Territories rdf:type owl:NamedIndividual ,
+                                             welcome:Country ,
+                                             welcome:Location ;
+                                    welcome:countryName "French Southern Territories" ;
+                                    welcome:hasValue "French Southern Territories" ;
+                                    welcome:iso2code "TF" ;
+                                    welcome:iso3code "ATF" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Gabon
+welcome:Gabon rdf:type owl:NamedIndividual ,
+                       welcome:Country ,
+                       welcome:Location ;
+              welcome:countryName "Gabon" ;
+              welcome:hasValue "Gabon" ;
+              welcome:iso2code "GA" ;
+              welcome:iso3code "GAB" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Gambia
+welcome:Gambia rdf:type owl:NamedIndividual ,
+                        welcome:Country ,
+                        welcome:Location ;
+               welcome:countryName "Gambia" ;
+               welcome:hasValue "Gambia" ;
+               welcome:iso2code "GM" ;
+               welcome:iso3code "GMB" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Georgia
+welcome:Georgia rdf:type owl:NamedIndividual ,
+                         welcome:Country ,
+                         welcome:Location ;
+                welcome:countryName "Georgia" ;
+                welcome:hasValue "Georgia" ;
+                welcome:iso2code "GE" ;
+                welcome:iso3code "GEO" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Germany
+welcome:Germany rdf:type owl:NamedIndividual ,
+                         welcome:Country ,
+                         welcome:Location ;
+                welcome:countryName "Germany" ;
+                welcome:hasValue "Germany" ;
+                welcome:iso2code "DE" ;
+                welcome:iso3code "DEU" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Ghana
+welcome:Ghana rdf:type owl:NamedIndividual ,
+                       welcome:Country ,
+                       welcome:Location ;
+              welcome:countryName "Ghana" ;
+              welcome:hasValue "Ghana" ;
+              welcome:iso2code "GH" ;
+              welcome:iso3code "GHA" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Gibraltar
+welcome:Gibraltar rdf:type owl:NamedIndividual ,
+                           welcome:Country ,
+                           welcome:Location ;
+                  welcome:countryName "Gibraltar" ;
+                  welcome:hasValue "Gibraltar" ;
+                  welcome:iso2code "GI" ;
+                  welcome:iso3code "GIB" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Greece
@@ -2495,7 +3409,109 @@ welcome:Greece rdf:type owl:NamedIndividual ,
                         welcome:Country ,
                         welcome:Location ;
                welcome:countryName "Greece" ;
-               welcome:hasValue "Greece" .
+               welcome:hasValue "Greece" ;
+               welcome:iso2code "GR" ;
+               welcome:iso3code "GRC" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Greenland
+welcome:Greenland rdf:type owl:NamedIndividual ,
+                           welcome:Country ,
+                           welcome:Location ;
+                  welcome:countryName "Greenland" ;
+                  welcome:hasValue "Greenland" ;
+                  welcome:iso2code "GL" ;
+                  welcome:iso3code "GRL" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Grenada
+welcome:Grenada rdf:type owl:NamedIndividual ,
+                         welcome:Country ,
+                         welcome:Location ;
+                welcome:countryName "Grenada" ;
+                welcome:hasValue "Grenada" ;
+                welcome:iso2code "GD" ;
+                welcome:iso3code "GRD" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Guadeloupe
+welcome:Guadeloupe rdf:type owl:NamedIndividual ,
+                            welcome:Country ,
+                            welcome:Location ;
+                   welcome:countryName "Guadeloupe" ;
+                   welcome:hasValue "Guadeloupe" ;
+                   welcome:iso2code "GP" ;
+                   welcome:iso3code "GLP" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Guam
+welcome:Guam rdf:type owl:NamedIndividual ,
+                      welcome:Country ,
+                      welcome:Location ;
+             welcome:countryName "Guam" ;
+             welcome:hasValue "Guam" ;
+             welcome:iso2code "GU" ;
+             welcome:iso3code "GUM" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Guatemala
+welcome:Guatemala rdf:type owl:NamedIndividual ,
+                           welcome:Country ,
+                           welcome:Location ;
+                  welcome:countryName "Guatemala" ;
+                  welcome:hasValue "Guatemala" ;
+                  welcome:iso2code "GT" ;
+                  welcome:iso3code "GTM" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Guernsey
+welcome:Guernsey rdf:type owl:NamedIndividual ,
+                          welcome:Country ,
+                          welcome:Location ;
+                 welcome:countryName "Guernsey" ;
+                 welcome:hasValue "Guernsey" ;
+                 welcome:iso2code "GG" ;
+                 welcome:iso3code "GGY" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Guinea
+welcome:Guinea rdf:type owl:NamedIndividual ,
+                        welcome:Country ,
+                        welcome:Location ;
+               welcome:countryName "Guinea" ;
+               welcome:hasValue "Guinea" ;
+               welcome:iso2code "GN" ;
+               welcome:iso3code "GIN" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Guinea-Bissau
+welcome:Guinea-Bissau rdf:type owl:NamedIndividual ,
+                               welcome:Country ,
+                               welcome:Location ;
+                      welcome:countryName "Guinea-Bissau" ;
+                      welcome:hasValue "Guinea-Bissau" ;
+                      welcome:iso2code "GW" ;
+                      welcome:iso3code "GNB" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Guyana
+welcome:Guyana rdf:type owl:NamedIndividual ,
+                        welcome:Country ,
+                        welcome:Location ;
+               welcome:countryName "Guyana" ;
+               welcome:hasValue "Guyana" ;
+               welcome:iso2code "GY" ;
+               welcome:iso3code "GUY" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Haiti
+welcome:Haiti rdf:type owl:NamedIndividual ,
+                       welcome:Country ,
+                       welcome:Location ;
+              welcome:countryName "Haiti" ;
+              welcome:hasValue "Haiti" ;
+              welcome:iso2code "HT" ;
+              welcome:iso3code "HTI" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Hamm
@@ -2512,6 +3528,256 @@ welcome:Hamm rdf:type owl:NamedIndividual ,
  ] .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Heard_and_McDonald_Islands
+welcome:Heard_and_McDonald_Islands rdf:type owl:NamedIndividual ,
+                                            welcome:Country ,
+                                            welcome:Location ;
+                                   welcome:countryName "Heard and McDonald Islands" ;
+                                   welcome:hasValue "Heard and McDonald Islands" ;
+                                   welcome:iso2code "HM" ;
+                                   welcome:iso3code "HMD" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Honduras
+welcome:Honduras rdf:type owl:NamedIndividual ,
+                          welcome:Country ,
+                          welcome:Location ;
+                 welcome:countryName "Honduras" ;
+                 welcome:hasValue "Honduras" ;
+                 welcome:iso2code "HN" ;
+                 welcome:iso3code "HND" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Hong_Kong_SAR_China
+welcome:Hong_Kong_SAR_China rdf:type owl:NamedIndividual ,
+                                     welcome:Country ,
+                                     welcome:Location ;
+                            welcome:countryName "Hong Kong SAR China" ;
+                            welcome:hasValue "Hong Kong SAR China" ;
+                            welcome:iso2code "HK" ;
+                            welcome:iso3code "HKG" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Hungary
+welcome:Hungary rdf:type owl:NamedIndividual ,
+                         welcome:Country ,
+                         welcome:Location ;
+                welcome:countryName "Hungary" ;
+                welcome:hasValue "Hungary" ;
+                welcome:iso2code "HU" ;
+                welcome:iso3code "HUN" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Iceland
+welcome:Iceland rdf:type owl:NamedIndividual ,
+                         welcome:Country ,
+                         welcome:Location ;
+                welcome:countryName "Iceland" ;
+                welcome:hasValue "Iceland" ;
+                welcome:iso2code "IS" ;
+                welcome:iso3code "ISL" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#India
+welcome:India rdf:type owl:NamedIndividual ,
+                       welcome:Country ,
+                       welcome:Location ;
+              welcome:countryName "India" ;
+              welcome:hasValue "India" ;
+              welcome:iso2code "IN" ;
+              welcome:iso3code "IND" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Indonesia
+welcome:Indonesia rdf:type owl:NamedIndividual ,
+                           welcome:Country ,
+                           welcome:Location ;
+                  welcome:countryName "Indonesia" ;
+                  welcome:hasValue "Indonesia" ;
+                  welcome:iso2code "ID" ;
+                  welcome:iso3code "IDN" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Iran
+welcome:Iran rdf:type owl:NamedIndividual ,
+                      welcome:Country ,
+                      welcome:Location ;
+             welcome:countryName "Iran" ;
+             welcome:hasValue "Iran" ;
+             welcome:iso2code "IR" ;
+             welcome:iso3code "IRN" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Iraq
+welcome:Iraq rdf:type owl:NamedIndividual ,
+                      welcome:Country ,
+                      welcome:Location ;
+             welcome:countryName "Iraq" ;
+             welcome:hasValue "Iraq" ;
+             welcome:iso2code "IQ" ;
+             welcome:iso3code "IRQ" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Ireland
+welcome:Ireland rdf:type owl:NamedIndividual ,
+                         welcome:Country ,
+                         welcome:Location ;
+                welcome:countryName "Ireland" ;
+                welcome:hasValue "Ireland" ;
+                welcome:iso2code "IE" ;
+                welcome:iso3code "IRL" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Isle_of_Man
+welcome:Isle_of_Man rdf:type owl:NamedIndividual ,
+                             welcome:Country ,
+                             welcome:Location ;
+                    welcome:countryName "Isle of Man" ;
+                    welcome:hasValue "Isle of Man" ;
+                    welcome:iso2code "IM" ;
+                    welcome:iso3code "IMN" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Israel
+welcome:Israel rdf:type owl:NamedIndividual ,
+                        welcome:Country ,
+                        welcome:Location ;
+               welcome:countryName "Israel" ;
+               welcome:hasValue "Israel" ;
+               welcome:iso2code "IL" ;
+               welcome:iso3code "ISR" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Italy
+welcome:Italy rdf:type owl:NamedIndividual ,
+                       welcome:Country ,
+                       welcome:Location ;
+              welcome:countryName "Italy" ;
+              welcome:hasValue "Italy" ;
+              welcome:iso2code "IT" ;
+              welcome:iso3code "ITA" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Jamaica
+welcome:Jamaica rdf:type owl:NamedIndividual ,
+                         welcome:Country ,
+                         welcome:Location ;
+                welcome:countryName "Jamaica" ;
+                welcome:hasValue "Jamaica" ;
+                welcome:iso2code "JM" ;
+                welcome:iso3code "JAM" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Japan
+welcome:Japan rdf:type owl:NamedIndividual ,
+                       welcome:Country ,
+                       welcome:Location ;
+              welcome:countryName "Japan" ;
+              welcome:hasValue "Japan" ;
+              welcome:iso2code "JP" ;
+              welcome:iso3code "JPN" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Jersey
+welcome:Jersey rdf:type owl:NamedIndividual ,
+                        welcome:Country ,
+                        welcome:Location ;
+               welcome:countryName "Jersey" ;
+               welcome:hasValue "Jersey" ;
+               welcome:iso2code "JE" ;
+               welcome:iso3code "JEY" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Jordan
+welcome:Jordan rdf:type owl:NamedIndividual ,
+                        welcome:Country ,
+                        welcome:Location ;
+               welcome:countryName "Jordan" ;
+               welcome:hasValue "Jordan" ;
+               welcome:iso2code "JO" ;
+               welcome:iso3code "JOR" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Kazakhstan
+welcome:Kazakhstan rdf:type owl:NamedIndividual ,
+                            welcome:Country ,
+                            welcome:Location ;
+                   welcome:countryName "Kazakhstan" ;
+                   welcome:hasValue "Kazakhstan" ;
+                   welcome:iso2code "KZ" ;
+                   welcome:iso3code "KAZ" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Kenya
+welcome:Kenya rdf:type owl:NamedIndividual ,
+                       welcome:Country ,
+                       welcome:Location ;
+              welcome:countryName "Kenya" ;
+              welcome:hasValue "Kenya" ;
+              welcome:iso2code "KE" ;
+              welcome:iso3code "KEN" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Kiribati
+welcome:Kiribati rdf:type owl:NamedIndividual ,
+                          welcome:Country ,
+                          welcome:Location ;
+                 welcome:countryName "Kiribati" ;
+                 welcome:hasValue "Kiribati" ;
+                 welcome:iso2code "KI" ;
+                 welcome:iso3code "KIR" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Kuwait
+welcome:Kuwait rdf:type owl:NamedIndividual ,
+                        welcome:Country ,
+                        welcome:Location ;
+               welcome:countryName "Kuwait" ;
+               welcome:hasValue "Kuwait" ;
+               welcome:iso2code "KW" ;
+               welcome:iso3code "KWT" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Kyrgyzstan
+welcome:Kyrgyzstan rdf:type owl:NamedIndividual ,
+                            welcome:Country ,
+                            welcome:Location ;
+                   welcome:countryName "Kyrgyzstan" ;
+                   welcome:hasValue "Kyrgyzstan" ;
+                   welcome:iso2code "KG" ;
+                   welcome:iso3code "KGZ" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Laos
+welcome:Laos rdf:type owl:NamedIndividual ,
+                      welcome:Country ,
+                      welcome:Location ;
+             welcome:countryName "Laos" ;
+             welcome:hasValue "Laos" ;
+             welcome:iso2code "LA" ;
+             welcome:iso3code "LAO" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Latvia
+welcome:Latvia rdf:type owl:NamedIndividual ,
+                        welcome:Country ,
+                        welcome:Location ;
+               welcome:countryName "Latvia" ;
+               welcome:hasValue "Latvia" ;
+               welcome:iso2code "LV" ;
+               welcome:iso3code "LVA" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Lebanon
+welcome:Lebanon rdf:type owl:NamedIndividual ,
+                         welcome:Country ,
+                         welcome:Location ;
+                welcome:countryName "Lebanon" ;
+                welcome:hasValue "Lebanon" ;
+                welcome:iso2code "LB" ;
+                welcome:iso3code "LBN" .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Leros
 welcome:Leros rdf:type owl:NamedIndividual ,
                        welcome:City ,
@@ -2519,6 +3785,436 @@ welcome:Leros rdf:type owl:NamedIndividual ,
               welcome:hasValue "Leros" ;
               welcome:lat 37.14091 ;
               welcome:long 26.84884 .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Lesotho
+welcome:Lesotho rdf:type owl:NamedIndividual ,
+                         welcome:Country ,
+                         welcome:Location ;
+                welcome:countryName "Lesotho" ;
+                welcome:hasValue "Lesotho" ;
+                welcome:iso2code "LS" ;
+                welcome:iso3code "LSO" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Liberia
+welcome:Liberia rdf:type owl:NamedIndividual ,
+                         welcome:Country ,
+                         welcome:Location ;
+                welcome:countryName "Liberia" ;
+                welcome:hasValue "Liberia" ;
+                welcome:iso2code "LR" ;
+                welcome:iso3code "LBR" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Libya
+welcome:Libya rdf:type owl:NamedIndividual ,
+                       welcome:Country ,
+                       welcome:Location ;
+              welcome:countryName "Libya" ;
+              welcome:hasValue "Libya" ;
+              welcome:iso2code "LY" ;
+              welcome:iso3code "LBY" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Liechtenstein
+welcome:Liechtenstein rdf:type owl:NamedIndividual ,
+                               welcome:Country ,
+                               welcome:Location ;
+                      welcome:countryName "Liechtenstein" ;
+                      welcome:hasValue "Liechtenstein" ;
+                      welcome:iso2code "LI" ;
+                      welcome:iso3code "LIE" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Lithuania
+welcome:Lithuania rdf:type owl:NamedIndividual ,
+                           welcome:Country ,
+                           welcome:Location ;
+                  welcome:countryName "Lithuania" ;
+                  welcome:hasValue "Lithuania" ;
+                  welcome:iso2code "LT" ;
+                  welcome:iso3code "LTU" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Luxembourg
+welcome:Luxembourg rdf:type owl:NamedIndividual ,
+                            welcome:Country ,
+                            welcome:Location ;
+                   welcome:countryName "Luxembourg" ;
+                   welcome:hasValue "Luxembourg" ;
+                   welcome:iso2code "LU" ;
+                   welcome:iso3code "LUX" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Macau_SAR_China
+welcome:Macau_SAR_China rdf:type owl:NamedIndividual ,
+                                 welcome:Country ,
+                                 welcome:Location ;
+                        welcome:countryName "Macau SAR China" ;
+                        welcome:hasValue "Macau SAR China" ;
+                        welcome:iso2code "MO" ;
+                        welcome:iso3code "MAC" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Macedonia
+welcome:Macedonia rdf:type owl:NamedIndividual ,
+                           welcome:Country ,
+                           welcome:Location ;
+                  welcome:countryName "Macedonia" ;
+                  welcome:hasValue "Macedonia" ;
+                  welcome:iso2code "MK" ;
+                  welcome:iso3code "MKD" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Madagascar
+welcome:Madagascar rdf:type owl:NamedIndividual ,
+                            welcome:Country ,
+                            welcome:Location ;
+                   welcome:countryName "Madagascar" ;
+                   welcome:hasValue "Madagascar" ;
+                   welcome:iso2code "MG" ;
+                   welcome:iso3code "MDG" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Malawi
+welcome:Malawi rdf:type owl:NamedIndividual ,
+                        welcome:Country ,
+                        welcome:Location ;
+               welcome:countryName "Malawi" ;
+               welcome:hasValue "Malawi" ;
+               welcome:iso2code "MW" ;
+               welcome:iso3code "MWI" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Malaysia
+welcome:Malaysia rdf:type owl:NamedIndividual ,
+                          welcome:Country ,
+                          welcome:Location ;
+                 welcome:countryName "Malaysia" ;
+                 welcome:hasValue "Malaysia" ;
+                 welcome:iso2code "MY" ;
+                 welcome:iso3code "MYS" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Maldives
+welcome:Maldives rdf:type owl:NamedIndividual ,
+                          welcome:Country ,
+                          welcome:Location ;
+                 welcome:countryName "Maldives" ;
+                 welcome:hasValue "Maldives" ;
+                 welcome:iso2code "MV" ;
+                 welcome:iso3code "MDV" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Mali
+welcome:Mali rdf:type owl:NamedIndividual ,
+                      welcome:Country ,
+                      welcome:Location ;
+             welcome:countryName "Mali" ;
+             welcome:hasValue "Mali" ;
+             welcome:iso2code "ML" ;
+             welcome:iso3code "MLI" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Malta
+welcome:Malta rdf:type owl:NamedIndividual ,
+                       welcome:Country ,
+                       welcome:Location ;
+              welcome:countryName "Malta" ;
+              welcome:hasValue "Malta" ;
+              welcome:iso2code "MT" ;
+              welcome:iso3code "MLT" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Marshall_Islands
+welcome:Marshall_Islands rdf:type owl:NamedIndividual ,
+                                  welcome:Country ,
+                                  welcome:Location ;
+                         welcome:countryName "Marshall Islands" ;
+                         welcome:hasValue "Marshall Islands" ;
+                         welcome:iso2code "MH" ;
+                         welcome:iso3code "MHL" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Martinique
+welcome:Martinique rdf:type owl:NamedIndividual ,
+                            welcome:Country ,
+                            welcome:Location ;
+                   welcome:countryName "Martinique" ;
+                   welcome:hasValue "Martinique" ;
+                   welcome:iso2code "MQ" ;
+                   welcome:iso3code "MTQ" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Mauritania
+welcome:Mauritania rdf:type owl:NamedIndividual ,
+                            welcome:Country ,
+                            welcome:Location ;
+                   welcome:countryName "Mauritania" ;
+                   welcome:hasValue "Mauritania" ;
+                   welcome:iso2code "MR" ;
+                   welcome:iso3code "MRT" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Mauritius
+welcome:Mauritius rdf:type owl:NamedIndividual ,
+                           welcome:Country ,
+                           welcome:Location ;
+                  welcome:countryName "Mauritius" ;
+                  welcome:hasValue "Mauritius" ;
+                  welcome:iso2code "MU" ;
+                  welcome:iso3code "MUS" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Mayotte
+welcome:Mayotte rdf:type owl:NamedIndividual ,
+                         welcome:Country ,
+                         welcome:Location ;
+                welcome:countryName "Mayotte" ;
+                welcome:hasValue "Mayotte" ;
+                welcome:iso2code "YT" ;
+                welcome:iso3code "MYT" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Mexico
+welcome:Mexico rdf:type owl:NamedIndividual ,
+                        welcome:Country ,
+                        welcome:Location ;
+               welcome:countryName "Mexico" ;
+               welcome:hasValue "Mexico" ;
+               welcome:iso2code "MX" ;
+               welcome:iso3code "MEX" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Micronesia
+welcome:Micronesia rdf:type owl:NamedIndividual ,
+                            welcome:Country ,
+                            welcome:Location ;
+                   welcome:countryName "Micronesia" ;
+                   welcome:hasValue "Micronesia" ;
+                   welcome:iso2code "FM" ;
+                   welcome:iso3code "FSM" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Moldova
+welcome:Moldova rdf:type owl:NamedIndividual ,
+                         welcome:Country ,
+                         welcome:Location ;
+                welcome:countryName "Moldova" ;
+                welcome:hasValue "Moldova" ;
+                welcome:iso2code "MD" ;
+                welcome:iso3code "MDA" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Monaco
+welcome:Monaco rdf:type owl:NamedIndividual ,
+                        welcome:Country ,
+                        welcome:Location ;
+               welcome:countryName "Monaco" ;
+               welcome:hasValue "Monaco" ;
+               welcome:iso2code "MC" ;
+               welcome:iso3code "MCO" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Mongolia
+welcome:Mongolia rdf:type owl:NamedIndividual ,
+                          welcome:Country ,
+                          welcome:Location ;
+                 welcome:countryName "Mongolia" ;
+                 welcome:hasValue "Mongolia" ;
+                 welcome:iso2code "MN" ;
+                 welcome:iso3code "MNG" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Montenegro
+welcome:Montenegro rdf:type owl:NamedIndividual ,
+                            welcome:Country ,
+                            welcome:Location ;
+                   welcome:countryName "Montenegro" ;
+                   welcome:hasValue "Montenegro" ;
+                   welcome:iso2code "ME" ;
+                   welcome:iso3code "MNE" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Montserrat
+welcome:Montserrat rdf:type owl:NamedIndividual ,
+                            welcome:Country ,
+                            welcome:Location ;
+                   welcome:countryName "Montserrat" ;
+                   welcome:hasValue "Montserrat" ;
+                   welcome:iso2code "MS" ;
+                   welcome:iso3code "MSR" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Morocco
+welcome:Morocco rdf:type owl:NamedIndividual ,
+                         welcome:Country ,
+                         welcome:Location ;
+                welcome:countryName "Morocco" ;
+                welcome:hasValue "Morocco" ;
+                welcome:iso2code "MA" ;
+                welcome:iso3code "MAR" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Mozambique
+welcome:Mozambique rdf:type owl:NamedIndividual ,
+                            welcome:Country ,
+                            welcome:Location ;
+                   welcome:countryName "Mozambique" ;
+                   welcome:hasValue "Mozambique" ;
+                   welcome:iso2code "MZ" ;
+                   welcome:iso3code "MOZ" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Myanmar_Burma
+welcome:Myanmar_Burma rdf:type owl:NamedIndividual ,
+                               welcome:Country ,
+                               welcome:Location ;
+                      welcome:countryName "Myanmar Burma" ;
+                      welcome:hasValue "Myanmar Burma" ;
+                      welcome:iso2code "MM" ;
+                      welcome:iso3code "MMR" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Namibia
+welcome:Namibia rdf:type owl:NamedIndividual ,
+                         welcome:Country ,
+                         welcome:Location ;
+                welcome:countryName "Namibia" ;
+                welcome:hasValue "Namibia" ;
+                welcome:iso2code "NA" ;
+                welcome:iso3code "NAM" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Nauru
+welcome:Nauru rdf:type owl:NamedIndividual ,
+                       welcome:Country ,
+                       welcome:Location ;
+              welcome:countryName "Nauru" ;
+              welcome:hasValue "Nauru" ;
+              welcome:iso2code "NR" ;
+              welcome:iso3code "NRU" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Nepal
+welcome:Nepal rdf:type owl:NamedIndividual ,
+                       welcome:Country ,
+                       welcome:Location ;
+              welcome:countryName "Nepal" ;
+              welcome:hasValue "Nepal" ;
+              welcome:iso2code "NP" ;
+              welcome:iso3code "NPL" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Netherlands
+welcome:Netherlands rdf:type owl:NamedIndividual ,
+                             welcome:Country ,
+                             welcome:Location ;
+                    welcome:countryName "Netherlands" ;
+                    welcome:hasValue "Netherlands" ;
+                    welcome:iso2code "NL" ;
+                    welcome:iso3code "NLD" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#New_Caledonia
+welcome:New_Caledonia rdf:type owl:NamedIndividual ,
+                               welcome:Country ,
+                               welcome:Location ;
+                      welcome:countryName "New Caledonia" ;
+                      welcome:hasValue "New Caledonia" ;
+                      welcome:iso2code "NC" ;
+                      welcome:iso3code "NCL" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#New_Zealand
+welcome:New_Zealand rdf:type owl:NamedIndividual ,
+                             welcome:Country ,
+                             welcome:Location ;
+                    welcome:countryName "New Zealand" ;
+                    welcome:hasValue "New Zealand" ;
+                    welcome:iso2code "NZ" ;
+                    welcome:iso3code "NZL" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Nicaragua
+welcome:Nicaragua rdf:type owl:NamedIndividual ,
+                           welcome:Country ,
+                           welcome:Location ;
+                  welcome:countryName "Nicaragua" ;
+                  welcome:hasValue "Nicaragua" ;
+                  welcome:iso2code "NI" ;
+                  welcome:iso3code "NIC" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Niger
+welcome:Niger rdf:type owl:NamedIndividual ,
+                       welcome:Country ,
+                       welcome:Location ;
+              welcome:countryName "Niger" ;
+              welcome:hasValue "Niger" ;
+              welcome:iso2code "NE" ;
+              welcome:iso3code "NER" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Nigeria
+welcome:Nigeria rdf:type owl:NamedIndividual ,
+                         welcome:Country ,
+                         welcome:Location ;
+                welcome:countryName "Nigeria" ;
+                welcome:hasValue "Nigeria" ;
+                welcome:iso2code "NG" ;
+                welcome:iso3code "NGA" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Niue
+welcome:Niue rdf:type owl:NamedIndividual ,
+                      welcome:Country ,
+                      welcome:Location ;
+             welcome:countryName "Niue" ;
+             welcome:hasValue "Niue" ;
+             welcome:iso2code "NU" ;
+             welcome:iso3code "NIU" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Norfolk_Island
+welcome:Norfolk_Island rdf:type owl:NamedIndividual ,
+                                welcome:Country ,
+                                welcome:Location ;
+                       welcome:countryName "Norfolk Island" ;
+                       welcome:hasValue "Norfolk Island" ;
+                       welcome:iso2code "NF" ;
+                       welcome:iso3code "NFK" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#North_Korea
+welcome:North_Korea rdf:type owl:NamedIndividual ,
+                             welcome:Country ,
+                             welcome:Location ;
+                    welcome:countryName "North Korea" ;
+                    welcome:hasValue "North Korea" ;
+                    welcome:iso2code "KP" ;
+                    welcome:iso3code "PRK" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Northern_Mariana_Islands
+welcome:Northern_Mariana_Islands rdf:type owl:NamedIndividual ,
+                                          welcome:Country ,
+                                          welcome:Location ;
+                                 welcome:countryName "Northern Mariana Islands" ;
+                                 welcome:hasValue "Northern Mariana Islands" ;
+                                 welcome:iso2code "MP" ;
+                                 welcome:iso3code "MNP" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Norway
+welcome:Norway rdf:type owl:NamedIndividual ,
+                        welcome:Country ,
+                        welcome:Location ;
+               welcome:countryName "Norway" ;
+               welcome:hasValue "Norway" ;
+               welcome:iso2code "NO" ;
+               welcome:iso3code "NOR" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OAC_Cambrils
@@ -2638,6 +4334,76 @@ welcome:OAC_PlacaDido rdf:type owl:NamedIndividual ,
                       schema:opens "09:00" .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Oman
+welcome:Oman rdf:type owl:NamedIndividual ,
+                      welcome:Country ,
+                      welcome:Location ;
+             welcome:countryName "Oman" ;
+             welcome:hasValue "Oman" ;
+             welcome:iso2code "OM" ;
+             welcome:iso3code "OMN" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Pakistan
+welcome:Pakistan rdf:type owl:NamedIndividual ,
+                          welcome:Country ,
+                          welcome:Location ;
+                 welcome:countryName "Pakistan" ;
+                 welcome:hasValue "Pakistan" ;
+                 welcome:iso2code "PK" ;
+                 welcome:iso3code "PAK" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Palau
+welcome:Palau rdf:type owl:NamedIndividual ,
+                       welcome:Country ,
+                       welcome:Location ;
+              welcome:countryName "Palau" ;
+              welcome:hasValue "Palau" ;
+              welcome:iso2code "PW" ;
+              welcome:iso3code "PLW" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Palestinian_Territories
+welcome:Palestinian_Territories rdf:type owl:NamedIndividual ,
+                                         welcome:Country ,
+                                         welcome:Location ;
+                                welcome:countryName "Palestinian Territories" ;
+                                welcome:hasValue "Palestinian Territories" ;
+                                welcome:iso2code "PS" ;
+                                welcome:iso3code "PSE" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Panama
+welcome:Panama rdf:type owl:NamedIndividual ,
+                        welcome:Country ,
+                        welcome:Location ;
+               welcome:countryName "Panama" ;
+               welcome:hasValue "Panama" ;
+               welcome:iso2code "PA" ;
+               welcome:iso3code "PAN" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Papua_New_Guinea
+welcome:Papua_New_Guinea rdf:type owl:NamedIndividual ,
+                                  welcome:Country ,
+                                  welcome:Location ;
+                         welcome:countryName "Papua New Guinea" ;
+                         welcome:hasValue "Papua New Guinea" ;
+                         welcome:iso2code "PG" ;
+                         welcome:iso3code "PNG" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Paraguay
+welcome:Paraguay rdf:type owl:NamedIndividual ,
+                          welcome:Country ,
+                          welcome:Location ;
+                 welcome:countryName "Paraguay" ;
+                 welcome:hasValue "Paraguay" ;
+                 welcome:iso2code "PY" ;
+                 welcome:iso3code "PRY" .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Patra
 welcome:Patra rdf:type owl:NamedIndividual ,
                        welcome:City ,
@@ -2653,6 +4419,86 @@ welcome:Pending rdf:type owl:NamedIndividual ,
                 rdfs:label "Status pending" .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Peru
+welcome:Peru rdf:type owl:NamedIndividual ,
+                      welcome:Country ,
+                      welcome:Location ;
+             welcome:countryName "Peru" ;
+             welcome:hasValue "Peru" ;
+             welcome:iso2code "PE" ;
+             welcome:iso3code "PER" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Philippines
+welcome:Philippines rdf:type owl:NamedIndividual ,
+                             welcome:Country ,
+                             welcome:Location ;
+                    welcome:countryName "Philippines" ;
+                    welcome:hasValue "Philippines" ;
+                    welcome:iso2code "PH" ;
+                    welcome:iso3code "PHL" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Pitcairn_Islands
+welcome:Pitcairn_Islands rdf:type owl:NamedIndividual ,
+                                  welcome:Country ,
+                                  welcome:Location ;
+                         welcome:countryName "Pitcairn Islands" ;
+                         welcome:hasValue "Pitcairn Islands" ;
+                         welcome:iso2code "PN" ;
+                         welcome:iso3code "PCN" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Poland
+welcome:Poland rdf:type owl:NamedIndividual ,
+                        welcome:Country ,
+                        welcome:Location ;
+               welcome:countryName "Poland" ;
+               welcome:hasValue "Poland" ;
+               welcome:iso2code "PL" ;
+               welcome:iso3code "POL" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Portugal
+welcome:Portugal rdf:type owl:NamedIndividual ,
+                          welcome:Country ,
+                          welcome:Location ;
+                 welcome:countryName "Portugal" ;
+                 welcome:hasValue "Portugal" ;
+                 welcome:iso2code "PT" ;
+                 welcome:iso3code "PRT" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Puerto_Rico
+welcome:Puerto_Rico rdf:type owl:NamedIndividual ,
+                             welcome:Country ,
+                             welcome:Location ;
+                    welcome:countryName "Puerto Rico" ;
+                    welcome:hasValue "Puerto Rico" ;
+                    welcome:iso2code "PR" ;
+                    welcome:iso3code "PRI" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Qatar
+welcome:Qatar rdf:type owl:NamedIndividual ,
+                       welcome:Country ,
+                       welcome:Location ;
+              welcome:countryName "Qatar" ;
+              welcome:hasValue "Qatar" ;
+              welcome:iso2code "QA" ;
+              welcome:iso3code "QAT" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Reunion
+welcome:Reunion rdf:type owl:NamedIndividual ,
+                         welcome:Country ,
+                         welcome:Location ;
+                welcome:countryName "Reunion" ;
+                welcome:hasValue "Reunion" ;
+                welcome:iso2code "RE" ;
+                welcome:iso3code "REU" .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Rodos
 welcome:Rodos rdf:type owl:NamedIndividual ,
                        welcome:City ,
@@ -2660,6 +4506,86 @@ welcome:Rodos rdf:type owl:NamedIndividual ,
               welcome:hasValue "Rodos" ;
               welcome:lat 36.43405 ;
               welcome:long 28.21763 .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Romania
+welcome:Romania rdf:type owl:NamedIndividual ,
+                         welcome:Country ,
+                         welcome:Location ;
+                welcome:countryName "Romania" ;
+                welcome:hasValue "Romania" ;
+                welcome:iso2code "RO" ;
+                welcome:iso3code "ROU" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Russia
+welcome:Russia rdf:type owl:NamedIndividual ,
+                        welcome:Country ,
+                        welcome:Location ;
+               welcome:countryName "Russia" ;
+               welcome:hasValue "Russia" ;
+               welcome:iso2code "RU" ;
+               welcome:iso3code "RUS" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Rwanda
+welcome:Rwanda rdf:type owl:NamedIndividual ,
+                        welcome:Country ,
+                        welcome:Location ;
+               welcome:countryName "Rwanda" ;
+               welcome:hasValue "Rwanda" ;
+               welcome:iso2code "RW" ;
+               welcome:iso3code "RWA" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Samoa
+welcome:Samoa rdf:type owl:NamedIndividual ,
+                       welcome:Country ,
+                       welcome:Location ;
+              welcome:countryName "Samoa" ;
+              welcome:hasValue "Samoa" ;
+              welcome:iso2code "WS" ;
+              welcome:iso3code "WSM" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#San_Marino
+welcome:San_Marino rdf:type owl:NamedIndividual ,
+                            welcome:Country ,
+                            welcome:Location ;
+                   welcome:countryName "San Marino" ;
+                   welcome:hasValue "San Marino" ;
+                   welcome:iso2code "SM" ;
+                   welcome:iso3code "SMR" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Saudi_Arabia
+welcome:Saudi_Arabia rdf:type owl:NamedIndividual ,
+                              welcome:Country ,
+                              welcome:Location ;
+                     welcome:countryName "Saudi Arabia" ;
+                     welcome:hasValue "Saudi Arabia" ;
+                     welcome:iso2code "SA" ;
+                     welcome:iso3code "SAU" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Senegal
+welcome:Senegal rdf:type owl:NamedIndividual ,
+                         welcome:Country ,
+                         welcome:Location ;
+                welcome:countryName "Senegal" ;
+                welcome:hasValue "Senegal" ;
+                welcome:iso2code "SN" ;
+                welcome:iso3code "SEN" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Serbia
+welcome:Serbia rdf:type owl:NamedIndividual ,
+                        welcome:Country ,
+                        welcome:Location ;
+               welcome:countryName "Serbia" ;
+               welcome:hasValue "Serbia" ;
+               welcome:iso2code "RS" ;
+               welcome:iso3code "SRB" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ServiceName
@@ -2675,6 +4601,26 @@ welcome:ServiceName rdf:type owl:NamedIndividual ,
                                            "informConnection" ,
                                            "informPurpose"
  ] .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Seychelles
+welcome:Seychelles rdf:type owl:NamedIndividual ,
+                            welcome:Country ,
+                            welcome:Location ;
+                   welcome:countryName "Seychelles" ;
+                   welcome:hasValue "Seychelles" ;
+                   welcome:iso2code "SC" ;
+                   welcome:iso3code "SYC" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Sierra_Leone
+welcome:Sierra_Leone rdf:type owl:NamedIndividual ,
+                              welcome:Country ,
+                              welcome:Location ;
+                     welcome:countryName "Sierra Leone" ;
+                     welcome:hasValue "Sierra Leone" ;
+                     welcome:iso2code "SL" ;
+                     welcome:iso3code "SLE" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SimulationAgent
@@ -2727,12 +4673,114 @@ welcome:SimulationScenario rdf:type owl:NamedIndividual ,
  ] .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Singapore
+welcome:Singapore rdf:type owl:NamedIndividual ,
+                           welcome:Country ,
+                           welcome:Location ;
+                  welcome:countryName "Singapore" ;
+                  welcome:hasValue "Singapore" ;
+                  welcome:iso2code "SG" ;
+                  welcome:iso3code "SGP" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Sint_Maarten
+welcome:Sint_Maarten rdf:type owl:NamedIndividual ,
+                              welcome:Country ,
+                              welcome:Location ;
+                     welcome:countryName "Sint Maarten" ;
+                     welcome:hasValue "Sint Maarten" ;
+                     welcome:iso2code "SX" ;
+                     welcome:iso3code "SXM" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Slovakia
+welcome:Slovakia rdf:type owl:NamedIndividual ,
+                          welcome:Country ,
+                          welcome:Location ;
+                 welcome:countryName "Slovakia" ;
+                 welcome:hasValue "Slovakia" ;
+                 welcome:iso2code "SK" ;
+                 welcome:iso3code "SVK" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Slovenia
+welcome:Slovenia rdf:type owl:NamedIndividual ,
+                          welcome:Country ,
+                          welcome:Location ;
+                 welcome:countryName "Slovenia" ;
+                 welcome:hasValue "Slovenia" ;
+                 welcome:iso2code "SI" ;
+                 welcome:iso3code "SVN" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Solomon_Islands
+welcome:Solomon_Islands rdf:type owl:NamedIndividual ,
+                                 welcome:Country ,
+                                 welcome:Location ;
+                        welcome:countryName "Solomon Islands" ;
+                        welcome:hasValue "Solomon Islands" ;
+                        welcome:iso2code "SB" ;
+                        welcome:iso3code "SLB" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Somalia
+welcome:Somalia rdf:type owl:NamedIndividual ,
+                         welcome:Country ,
+                         welcome:Location ;
+                welcome:countryName "Somalia" ;
+                welcome:hasValue "Somalia" ;
+                welcome:iso2code "SO" ;
+                welcome:iso3code "SOM" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#South_Africa
+welcome:South_Africa rdf:type owl:NamedIndividual ,
+                              welcome:Country ,
+                              welcome:Location ;
+                     welcome:countryName "South Africa" ;
+                     welcome:hasValue "South Africa" ;
+                     welcome:iso2code "ZA" ;
+                     welcome:iso3code "ZAF" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#South_Georgia_and_South_Sandwich_Islands
+welcome:South_Georgia_and_South_Sandwich_Islands rdf:type owl:NamedIndividual ,
+                                                          welcome:Country ,
+                                                          welcome:Location ;
+                                                 welcome:countryName "South Georgia and South Sandwich Islands" ;
+                                                 welcome:hasValue "South Georgia and South Sandwich Islands" ;
+                                                 welcome:iso2code "GS" ;
+                                                 welcome:iso3code "SGS" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#South_Korea
+welcome:South_Korea rdf:type owl:NamedIndividual ,
+                             welcome:Country ,
+                             welcome:Location ;
+                    welcome:countryName "South Korea" ;
+                    welcome:hasValue "South Korea" ;
+                    welcome:iso2code "KR" ;
+                    welcome:iso3code "KOR" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#South_Sudan
+welcome:South_Sudan rdf:type owl:NamedIndividual ,
+                             welcome:Country ,
+                             welcome:Location ;
+                    welcome:countryName "South Sudan" ;
+                    welcome:hasValue "South Sudan" ;
+                    welcome:iso2code "SS" ;
+                    welcome:iso3code "SSD" .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Spain
 welcome:Spain rdf:type owl:NamedIndividual ,
                        welcome:Country ,
                        welcome:Location ;
               welcome:countryName "Spain" ;
               welcome:hasValue "Spain" ;
+              welcome:iso2code "ES" ;
+              welcome:iso3code "ESP" ;
               welcome:lat 40.46366 ;
               welcome:long -3.74922 .
 
@@ -2758,6 +4806,86 @@ welcome:Spanish rdf:type owl:NamedIndividual ,
  ] .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Sri_Lanka
+welcome:Sri_Lanka rdf:type owl:NamedIndividual ,
+                           welcome:Country ,
+                           welcome:Location ;
+                  welcome:countryName "Sri Lanka" ;
+                  welcome:hasValue "Sri Lanka" ;
+                  welcome:iso2code "LK" ;
+                  welcome:iso3code "LKA" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#St_Barthelemy
+welcome:St_Barthelemy rdf:type owl:NamedIndividual ,
+                               welcome:Country ,
+                               welcome:Location ;
+                      welcome:countryName "St. Barthelemy" ;
+                      welcome:hasValue "St. Barthelemy" ;
+                      welcome:iso2code "BL" ;
+                      welcome:iso3code "BLM" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#St_Helena
+welcome:St_Helena rdf:type owl:NamedIndividual ,
+                           welcome:Country ,
+                           welcome:Location ;
+                  welcome:countryName "St. Helena" ;
+                  welcome:hasValue "St. Helena" ;
+                  welcome:iso2code "SH" ;
+                  welcome:iso3code "SHN" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#St_Kitts_and_Nevis
+welcome:St_Kitts_and_Nevis rdf:type owl:NamedIndividual ,
+                                    welcome:Country ,
+                                    welcome:Location ;
+                           welcome:countryName "St. Kitts and Nevis" ;
+                           welcome:hasValue "St. Kitts and Nevis" ;
+                           welcome:iso2code "KN" ;
+                           welcome:iso3code "KNA" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#St_Lucia
+welcome:St_Lucia rdf:type owl:NamedIndividual ,
+                          welcome:Country ,
+                          welcome:Location ;
+                 welcome:countryName "St. Lucia" ;
+                 welcome:hasValue "St. Lucia" ;
+                 welcome:iso2code "LC" ;
+                 welcome:iso3code "LCA" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#St_Martin
+welcome:St_Martin rdf:type owl:NamedIndividual ,
+                           welcome:Country ,
+                           welcome:Location ;
+                  welcome:countryName "St. Martin" ;
+                  welcome:hasValue "St. Martin" ;
+                  welcome:iso2code "MF" ;
+                  welcome:iso3code "MAF" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#St_Pierre_and_Miquelon
+welcome:St_Pierre_and_Miquelon rdf:type owl:NamedIndividual ,
+                                        welcome:Country ,
+                                        welcome:Location ;
+                               welcome:countryName "St. Pierre and Miquelon" ;
+                               welcome:hasValue "St. Pierre and Miquelon" ;
+                               welcome:iso2code "PM" ;
+                               welcome:iso3code "SPM" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#St_Vincent_and_Grenadines
+welcome:St_Vincent_and_Grenadines rdf:type owl:NamedIndividual ,
+                                           welcome:Country ,
+                                           welcome:Location ;
+                                  welcome:countryName "St. Vincent and Grenadines" ;
+                                  welcome:hasValue "St. Vincent and Grenadines" ;
+                                  welcome:iso2code "VC" ;
+                                  welcome:iso3code "VCT" .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Status_Free
 welcome:Status_Free rdf:type owl:NamedIndividual ,
                              schema:ActionStatusType ;
@@ -2776,10 +4904,120 @@ welcome:Status_Reserved rdf:type owl:NamedIndividual ,
                         welcome:hasValue "Reserved" .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Sudan
+welcome:Sudan rdf:type owl:NamedIndividual ,
+                       welcome:Country ,
+                       welcome:Location ;
+              welcome:countryName "Sudan" ;
+              welcome:hasValue "Sudan" ;
+              welcome:iso2code "SD" ;
+              welcome:iso3code "SDN" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Suriname
+welcome:Suriname rdf:type owl:NamedIndividual ,
+                          welcome:Country ,
+                          welcome:Location ;
+                 welcome:countryName "Suriname" ;
+                 welcome:hasValue "Suriname" ;
+                 welcome:iso2code "SR" ;
+                 welcome:iso3code "SUR" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Svalbard_and_Jan_Mayen
+welcome:Svalbard_and_Jan_Mayen rdf:type owl:NamedIndividual ,
+                                        welcome:Country ,
+                                        welcome:Location ;
+                               welcome:countryName "Svalbard and Jan Mayen" ;
+                               welcome:hasValue "Svalbard and Jan Mayen" ;
+                               welcome:iso2code "SJ" ;
+                               welcome:iso3code "SJM" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Swaziland
+welcome:Swaziland rdf:type owl:NamedIndividual ,
+                           welcome:Country ,
+                           welcome:Location ;
+                  welcome:countryName "Swaziland" ;
+                  welcome:hasValue "Swaziland" ;
+                  welcome:iso2code "SZ" ;
+                  welcome:iso3code "SWZ" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Sweden
+welcome:Sweden rdf:type owl:NamedIndividual ,
+                        welcome:Country ,
+                        welcome:Location ;
+               welcome:countryName "Sweden" ;
+               welcome:hasValue "Sweden" ;
+               welcome:iso2code "SE" ;
+               welcome:iso3code "SWE" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Switzerland
+welcome:Switzerland rdf:type owl:NamedIndividual ,
+                             welcome:Country ,
+                             welcome:Location ;
+                    welcome:countryName "Switzerland" ;
+                    welcome:hasValue "Switzerland" ;
+                    welcome:iso2code "CH" ;
+                    welcome:iso3code "CHE" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Syria
+welcome:Syria rdf:type owl:NamedIndividual ,
+                       welcome:Country ,
+                       welcome:Location ;
+              welcome:countryName "Syria" ;
+              welcome:hasValue "Syria" ;
+              welcome:iso2code "SY" ;
+              welcome:iso3code "SYR" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#São_Tome_and_Príncipe
+welcome:São_Tome_and_Príncipe rdf:type owl:NamedIndividual ,
+                                       welcome:Country ,
+                                       welcome:Location ;
+                              welcome:countryName "São Tome and Príncipe" ;
+                              welcome:hasValue "São Tome and Príncipe" ;
+                              welcome:iso2code "ST" ;
+                              welcome:iso3code "STP" .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#TCNClarifyRequest
 welcome:TCNClarifyRequest rdf:type owl:NamedIndividual ,
                                    welcome:DIPStatus ;
                           rdfs:label "Status tcn clarify request" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Taiwan
+welcome:Taiwan rdf:type owl:NamedIndividual ,
+                        welcome:Country ,
+                        welcome:Location ;
+               welcome:countryName "Taiwan" ;
+               welcome:hasValue "Taiwan" ;
+               welcome:iso2code "TW" ;
+               welcome:iso3code "TWN" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Tajikistan
+welcome:Tajikistan rdf:type owl:NamedIndividual ,
+                            welcome:Country ,
+                            welcome:Location ;
+                   welcome:countryName "Tajikistan" ;
+                   welcome:hasValue "Tajikistan" ;
+                   welcome:iso2code "TJ" ;
+                   welcome:iso3code "TJK" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Tanzania
+welcome:Tanzania rdf:type owl:NamedIndividual ,
+                          welcome:Country ,
+                          welcome:Location ;
+                 welcome:countryName "Tanzania" ;
+                 welcome:hasValue "Tanzania" ;
+                 welcome:iso2code "TZ" ;
+                 welcome:iso3code "TZA" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Terrassa
@@ -2791,6 +5029,16 @@ welcome:Terrassa rdf:type owl:NamedIndividual ,
                  welcome:long 2.00887 .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Thailand
+welcome:Thailand rdf:type owl:NamedIndividual ,
+                          welcome:Country ,
+                          welcome:Location ;
+                 welcome:countryName "Thailand" ;
+                 welcome:hasValue "Thailand" ;
+                 welcome:iso2code "TH" ;
+                 welcome:iso3code "THA" .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Thessaloniki
 welcome:Thessaloniki rdf:type owl:NamedIndividual ,
                               welcome:City ,
@@ -2800,16 +5048,296 @@ welcome:Thessaloniki rdf:type owl:NamedIndividual ,
                      welcome:long 22.94441 .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Timor-Leste
+welcome:Timor-Leste rdf:type owl:NamedIndividual ,
+                             welcome:Country ,
+                             welcome:Location ;
+                    welcome:countryName "Timor-Leste" ;
+                    welcome:hasValue "Timor-Leste" ;
+                    welcome:iso2code "TL" ;
+                    welcome:iso3code "TLS" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Togo
+welcome:Togo rdf:type owl:NamedIndividual ,
+                      welcome:Country ,
+                      welcome:Location ;
+             welcome:countryName "Togo" ;
+             welcome:hasValue "Togo" ;
+             welcome:iso2code "TG" ;
+             welcome:iso3code "TGO" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Tokelau
+welcome:Tokelau rdf:type owl:NamedIndividual ,
+                         welcome:Country ,
+                         welcome:Location ;
+                welcome:countryName "Tokelau" ;
+                welcome:hasValue "Tokelau" ;
+                welcome:iso2code "TK" ;
+                welcome:iso3code "TKL" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Tonga
+welcome:Tonga rdf:type owl:NamedIndividual ,
+                       welcome:Country ,
+                       welcome:Location ;
+              welcome:countryName "Tonga" ;
+              welcome:hasValue "Tonga" ;
+              welcome:iso2code "TO" ;
+              welcome:iso3code "TON" .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#TopicSwitch
 welcome:TopicSwitch rdf:type owl:NamedIndividual ,
                              welcome:DIPStatus ;
                     rdfs:label "Status topic switch" .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Trinidad_and_Tobago
+welcome:Trinidad_and_Tobago rdf:type owl:NamedIndividual ,
+                                     welcome:Country ,
+                                     welcome:Location ;
+                            welcome:countryName "Trinidad and Tobago" ;
+                            welcome:hasValue "Trinidad and Tobago" ;
+                            welcome:iso2code "TT" ;
+                            welcome:iso3code "TTO" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Tunisia
+welcome:Tunisia rdf:type owl:NamedIndividual ,
+                         welcome:Country ,
+                         welcome:Location ;
+                welcome:countryName "Tunisia" ;
+                welcome:hasValue "Tunisia" ;
+                welcome:iso2code "TN" ;
+                welcome:iso3code "TUN" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Turkey
+welcome:Turkey rdf:type owl:NamedIndividual ,
+                        welcome:Country ,
+                        welcome:Location ;
+               welcome:countryName "Turkey" ;
+               welcome:hasValue "Turkey" ;
+               welcome:iso2code "TR" ;
+               welcome:iso3code "TUR" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Turkmenistan
+welcome:Turkmenistan rdf:type owl:NamedIndividual ,
+                              welcome:Country ,
+                              welcome:Location ;
+                     welcome:countryName "Turkmenistan" ;
+                     welcome:hasValue "Turkmenistan" ;
+                     welcome:iso2code "TM" ;
+                     welcome:iso3code "TKM" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Turks_and_Caicos_Islands
+welcome:Turks_and_Caicos_Islands rdf:type owl:NamedIndividual ,
+                                          welcome:Country ,
+                                          welcome:Location ;
+                                 welcome:countryName "Turks and Caicos Islands" ;
+                                 welcome:hasValue "Turks and Caicos Islands" ;
+                                 welcome:iso2code "TC" ;
+                                 welcome:iso3code "TCA" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Tuvalu
+welcome:Tuvalu rdf:type owl:NamedIndividual ,
+                        welcome:Country ,
+                        welcome:Location ;
+               welcome:countryName "Tuvalu" ;
+               welcome:hasValue "Tuvalu" ;
+               welcome:iso2code "TV" ;
+               welcome:iso3code "TUV" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#US_Outlying_Islands
+welcome:US_Outlying_Islands rdf:type owl:NamedIndividual ,
+                                     welcome:Country ,
+                                     welcome:Location ;
+                            welcome:countryName "U.S. Outlying Islands" ;
+                            welcome:hasValue "U.S. Outlying Islands" ;
+                            welcome:iso2code "UM" ;
+                            welcome:iso3code "UMI" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#US_Virgin_Islands
+welcome:US_Virgin_Islands rdf:type owl:NamedIndividual ,
+                                   welcome:Country ,
+                                   welcome:Location ;
+                          welcome:countryName "U.S. Virgin Islands" ;
+                          welcome:hasValue "U.S. Virgin Islands" ;
+                          welcome:iso2code "VI" ;
+                          welcome:iso3code "VIR" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Uganda
+welcome:Uganda rdf:type owl:NamedIndividual ,
+                        welcome:Country ,
+                        welcome:Location ;
+               welcome:countryName "Uganda" ;
+               welcome:hasValue "Uganda" ;
+               welcome:iso2code "UG" ;
+               welcome:iso3code "UGA" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Ukraine
+welcome:Ukraine rdf:type owl:NamedIndividual ,
+                         welcome:Country ,
+                         welcome:Location ;
+                welcome:countryName "Ukraine" ;
+                welcome:hasValue "Ukraine" ;
+                welcome:iso2code "UA" ;
+                welcome:iso3code "UKR" .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#UnclearAnalysis
 welcome:UnclearAnalysis rdf:type owl:NamedIndividual ,
                                  welcome:DIPStatus ;
                         rdfs:label "Status unclear analysis" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#United_Arab_Emirates
+welcome:United_Arab_Emirates rdf:type owl:NamedIndividual ,
+                                      welcome:Country ,
+                                      welcome:Location ;
+                             welcome:countryName "United Arab Emirates" ;
+                             welcome:hasValue "United Arab Emirates" ;
+                             welcome:iso2code "AE" ;
+                             welcome:iso3code "ARE" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#United_Kingdom
+welcome:United_Kingdom rdf:type owl:NamedIndividual ,
+                                welcome:Country ,
+                                welcome:Location ;
+                       welcome:countryName "United Kingdom" ;
+                       welcome:hasValue "United Kingdom" ;
+                       welcome:iso2code "GB" ;
+                       welcome:iso3code "GBR" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#United_States
+welcome:United_States rdf:type owl:NamedIndividual ,
+                               welcome:Country ,
+                               welcome:Location ;
+                      welcome:countryName "United States" ;
+                      welcome:hasValue "United States" ;
+                      welcome:iso2code "US" ;
+                      welcome:iso3code "USA" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Uruguay
+welcome:Uruguay rdf:type owl:NamedIndividual ,
+                         welcome:Country ,
+                         welcome:Location ;
+                welcome:countryName "Uruguay" ;
+                welcome:hasValue "Uruguay" ;
+                welcome:iso2code "UY" ;
+                welcome:iso3code "URY" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Uzbekistan
+welcome:Uzbekistan rdf:type owl:NamedIndividual ,
+                            welcome:Country ,
+                            welcome:Location ;
+                   welcome:countryName "Uzbekistan" ;
+                   welcome:hasValue "Uzbekistan" ;
+                   welcome:iso2code "UZ" ;
+                   welcome:iso3code "UZB" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Vanuatu
+welcome:Vanuatu rdf:type owl:NamedIndividual ,
+                         welcome:Country ,
+                         welcome:Location ;
+                welcome:countryName "Vanuatu" ;
+                welcome:hasValue "Vanuatu" ;
+                welcome:iso2code "VU" ;
+                welcome:iso3code "VUT" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Vatican_City
+welcome:Vatican_City rdf:type owl:NamedIndividual ,
+                              welcome:Country ,
+                              welcome:Location ;
+                     welcome:countryName "Vatican City" ;
+                     welcome:hasValue "Vatican City" ;
+                     welcome:iso2code "VA" ;
+                     welcome:iso3code "VAT" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Venezuela
+welcome:Venezuela rdf:type owl:NamedIndividual ,
+                           welcome:Country ,
+                           welcome:Location ;
+                  welcome:countryName "Venezuela" ;
+                  welcome:hasValue "Venezuela" ;
+                  welcome:iso2code "VE" ;
+                  welcome:iso3code "VEN" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Vietnam
+welcome:Vietnam rdf:type owl:NamedIndividual ,
+                         welcome:Country ,
+                         welcome:Location ;
+                welcome:countryName "Vietnam" ;
+                welcome:hasValue "Vietnam" ;
+                welcome:iso2code "VN" ;
+                welcome:iso3code "VNM" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Wallis_and_Futuna
+welcome:Wallis_and_Futuna rdf:type owl:NamedIndividual ,
+                                   welcome:Country ,
+                                   welcome:Location ;
+                          welcome:countryName "Wallis and Futuna" ;
+                          welcome:hasValue "Wallis and Futuna" ;
+                          welcome:iso2code "WF" ;
+                          welcome:iso3code "WLF" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Western_Sahara
+welcome:Western_Sahara rdf:type owl:NamedIndividual ,
+                                welcome:Country ,
+                                welcome:Location ;
+                       welcome:countryName "Western Sahara" ;
+                       welcome:hasValue "Western Sahara" ;
+                       welcome:iso2code "EH" ;
+                       welcome:iso3code "ESH" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Yemen
+welcome:Yemen rdf:type owl:NamedIndividual ,
+                       welcome:Country ,
+                       welcome:Location ;
+              welcome:countryName "Yemen" ;
+              welcome:hasValue "Yemen" ;
+              welcome:iso2code "YE" ;
+              welcome:iso3code "YEM" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Zambia
+welcome:Zambia rdf:type owl:NamedIndividual ,
+                        welcome:Country ,
+                        welcome:Location ;
+               welcome:countryName "Zambia" ;
+               welcome:hasValue "Zambia" ;
+               welcome:iso2code "ZM" ;
+               welcome:iso3code "ZMB" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Zimbabwe
+welcome:Zimbabwe rdf:type owl:NamedIndividual ,
+                          welcome:Country ,
+                          welcome:Location ;
+                 welcome:countryName "Zimbabwe" ;
+                 welcome:hasValue "Zimbabwe" ;
+                 welcome:iso2code "ZW" ;
+                 welcome:iso3code "ZWE" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#address_cambrils
