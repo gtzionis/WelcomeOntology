@@ -1099,6 +1099,9 @@ welcome:isUnaccompanied rdf:type owl:DatatypeProperty ;
                         rdfs:range xsd:boolean .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#iso2code
+welcome:iso2code rdf:type owl:DatatypeProperty .
+
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#iso3code
 welcome:iso3code rdf:type owl:DatatypeProperty .
