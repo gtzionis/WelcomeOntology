@@ -74,6 +74,10 @@ wgs84_pos:long rdf:type owl:AnnotationProperty ;
 welcome:dependsOn rdf:type owl:AnnotationProperty .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#needsUpdate
+welcome:needsUpdate rdf:type owl:AnnotationProperty .
+
+
 #################################################################
 #    Object Properties
 #################################################################
@@ -1386,7 +1390,8 @@ welcome:BuildingName rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#BuildingType
 welcome:BuildingType rdf:type owl:Class ;
-                     rdfs:subClassOf welcome:AddressInfo .
+                     rdfs:subClassOf welcome:AddressInfo ;
+                     welcome:needsUpdate "true"^^xsd:boolean .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CatalanCourse
@@ -1706,7 +1711,8 @@ welcome:Education rdf:type owl:Class ;
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Email
 welcome:Email rdf:type owl:Class ;
               rdfs:subClassOf welcome:InternetAddress ,
-                              welcome:Personal .
+                              welcome:Personal ;
+              welcome:needsUpdate "true"^^xsd:boolean .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#EmailNotifications
@@ -1735,7 +1741,8 @@ welcome:FirstTimeAsylumClaim rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#FloorNumber
 welcome:FloorNumber rdf:type owl:Class ;
-                    rdfs:subClassOf welcome:AddressInfo .
+                    rdfs:subClassOf welcome:AddressInfo ;
+                    welcome:needsUpdate "true"^^xsd:boolean .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Gender
@@ -1767,7 +1774,8 @@ welcome:HostingInformation rdf:type owl:Class ;
 welcome:IDCountry rdf:type owl:Class ;
                   rdfs:subClassOf welcome:Personal ;
                   <http://purl.org/dc/terms/component> "NLG" ;
-                  <http://purl.org/dc/terms/isRequiredBy> "obtainNationality" .
+                  <http://purl.org/dc/terms/isRequiredBy> "obtainNationality" ;
+                  welcome:needsUpdate "true"^^xsd:boolean .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#IDCountryCode
@@ -1777,12 +1785,14 @@ welcome:IDCountryCode rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#IDNumber
 welcome:IDNumber rdf:type owl:Class ;
-                 rdfs:subClassOf welcome:Personal .
+                 rdfs:subClassOf welcome:Personal ;
+                 welcome:needsUpdate "true"^^xsd:boolean .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#IDType
 welcome:IDType rdf:type owl:Class ;
-               rdfs:subClassOf welcome:Personal .
+               rdfs:subClassOf welcome:Personal ;
+               welcome:needsUpdate "true"^^xsd:boolean .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Illiteracy
@@ -1846,7 +1856,8 @@ welcome:LabourModule rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Landline
 welcome:Landline rdf:type owl:Class ;
-                 rdfs:subClassOf welcome:Personal .
+                 rdfs:subClassOf welcome:Personal ;
+                 welcome:needsUpdate "true"^^xsd:boolean .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Language
@@ -1874,7 +1885,8 @@ welcome:Location rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#MaritalStatus
 welcome:MaritalStatus rdf:type owl:Class ;
-                      rdfs:subClassOf welcome:Other .
+                      rdfs:subClassOf welcome:Other ;
+                      welcome:needsUpdate "true"^^xsd:boolean .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Minigame
@@ -1883,12 +1895,8 @@ welcome:Minigame rdf:type owl:Class .
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#MobilePhone
 welcome:MobilePhone rdf:type owl:Class ;
-                    rdfs:subClassOf welcome:Personal .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Mobile_phone_number
-welcome:Mobile_phone_number rdf:type owl:Class ;
-                            rdfs:subClassOf welcome:PhysicalAddress .
+                    rdfs:subClassOf welcome:Personal ;
+                    welcome:needsUpdate "true"^^xsd:boolean .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Module
@@ -2071,7 +2079,8 @@ welcome:PlannerRequest rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#PostCode
 welcome:PostCode rdf:type owl:Class ;
-                 rdfs:subClassOf welcome:AddressInfo .
+                 rdfs:subClassOf welcome:AddressInfo ;
+                 welcome:needsUpdate "true"^^xsd:boolean .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#PreferredLanguage
@@ -2212,7 +2221,8 @@ welcome:StreetName rdf:type owl:Class ;
                                    welcome:PhysicalAddress ;
                    <http://purl.org/dc/terms/component> "NLG" ;
                    <http://purl.org/dc/terms/isRequiredBy> "obtainResidenceAddressStreet" ,
-                                                           "obtainStreetType" .
+                                                           "obtainStreetType" ;
+                   welcome:needsUpdate "true"^^xsd:boolean .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#StreetNumber
@@ -2220,7 +2230,8 @@ welcome:StreetNumber rdf:type owl:Class ;
                      rdfs:subClassOf welcome:AddressInfo ,
                                      welcome:PhysicalAddress ;
                      <http://purl.org/dc/terms/component> "NLG" ;
-                     <http://purl.org/dc/terms/isRequiredBy> "obtainResidenceAddressNumber" .
+                     <http://purl.org/dc/terms/isRequiredBy> "obtainResidenceAddressNumber" ;
+                     welcome:needsUpdate "true"^^xsd:boolean .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#StreetType
