@@ -1,0 +1,375 @@
+@prefix : <http://www.semanticweb.org/amalia/ontologies/2021/11/topics.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl> .
+
+<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl> rdf:type owl:Ontology .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#Appartment
+:Appartment rdf:type owl:Class ;
+            rdfs:subClassOf :HouseType ;
+            rdfs:label "Appartment" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#Appointment
+:Appointment rdf:type owl:Class ;
+             rdfs:subClassOf :Topics ;
+             rdfs:label "Appointment" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#Asylum
+:Asylum rdf:type owl:Class ;
+        rdfs:subClassOf :Reception ;
+        rdfs:label "Asylum" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#Availability
+:Availability rdf:type owl:Class ;
+              rdfs:subClassOf :Appointment ;
+              rdfs:label "Availability" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#Book
+:Book rdf:type owl:Class ;
+      rdfs:subClassOf :Appointment ;
+      rdfs:label "Book" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#Bungalow
+:Bungalow rdf:type owl:Class ;
+          rdfs:subClassOf :HouseType ;
+          rdfs:label "Bungalow" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#COVID19
+:COVID19 rdf:type owl:Class ;
+         rdfs:subClassOf :Health ;
+         rdfs:label "COVID-19" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#COVID19Restrictions
+:COVID19Restrictions rdf:type owl:Class ;
+                     rdfs:subClassOf :Reception .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#Cancel
+:Cancel rdf:type owl:Class ;
+        rdfs:subClassOf :Appointment ;
+        rdfs:label "Cancel" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#Cohabitation
+:Cohabitation rdf:type owl:Class ;
+              rdfs:subClassOf :Housing ;
+              rdfs:label "Cohabitation" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#Condominium
+:Condominium rdf:type owl:Class ;
+             rdfs:subClassOf :HouseType ;
+             rdfs:label "Condominium" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#Cottage
+:Cottage rdf:type owl:Class ;
+         rdfs:subClassOf :HouseType ;
+         rdfs:label "Cottage" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#Culture
+:Culture rdf:type owl:Class ;
+         rdfs:subClassOf :Topics ;
+         rdfs:label "Culture" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#Dyslexia
+:Dyslexia rdf:type owl:Class ;
+          rdfs:subClassOf :LearningDisabilities ;
+          rdfs:label "Dyslexia" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#EducationalSystem
+:EducationalSystem rdf:type owl:Class ;
+                   rdfs:subClassOf :School ;
+                   rdfs:label "Educational System" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#EmploymentContract
+:EmploymentContract rdf:type owl:Class ;
+                    rdfs:subClassOf :Job ;
+                    rdfs:label "Employment contract" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#EnrollementForm
+:EnrollementForm rdf:type owl:Class ;
+                 rdfs:subClassOf :SchoolDocument ;
+                 rdfs:label "Enrollement form" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#Family
+:Family rdf:type owl:Class ;
+        rdfs:subClassOf :Topics ;
+        rdfs:label "Family" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#Festival
+:Festival rdf:type owl:Class ;
+          rdfs:subClassOf :Culture ;
+          rdfs:label "Festival" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#FixedΤerm
+:FixedΤerm rdf:type owl:Class ;
+           rdfs:subClassOf :EmploymentContract ;
+           rdfs:label "Fixed term" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#Flat
+:Flat rdf:type owl:Class ;
+      rdfs:subClassOf :HouseType ;
+      rdfs:label "Flat" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#FullTime
+:FullTime rdf:type owl:Class ;
+          rdfs:subClassOf :EmploymentContract ;
+          rdfs:label "Full time" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#GrantsAndAids
+:GrantsAndAids rdf:type owl:Class ;
+               rdfs:subClassOf :PracticalAspects ;
+               rdfs:label "grants and aids" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#Health
+:Health rdf:type owl:Class ;
+        rdfs:subClassOf :Topics ;
+        rdfs:label "Health" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#Hospital
+:Hospital rdf:type owl:Class ;
+          rdfs:subClassOf :Health ;
+          rdfs:label "Hospital" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#HouseSearch
+:HouseSearch rdf:type owl:Class ;
+             rdfs:subClassOf :Housing ;
+             rdfs:label "House search" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#HouseType
+:HouseType rdf:type owl:Class ;
+           rdfs:subClassOf :Housing ;
+           rdfs:label "House type" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#Housing
+:Housing rdf:type owl:Class ;
+         rdfs:subClassOf :Topics ;
+         rdfs:label "Housing" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#ID
+:ID rdf:type owl:Class ;
+    rdfs:subClassOf :Reception ;
+    rdfs:label "ID" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#Inclusion
+:Inclusion rdf:type owl:Class ;
+           rdfs:subClassOf :Topics ;
+           rdfs:label "Inclusion" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#Job
+:Job rdf:type owl:Class ;
+     rdfs:subClassOf :Topics ;
+     rdfs:label "Job" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#JobSearch
+:JobSearch rdf:type owl:Class ;
+           rdfs:subClassOf :Job ;
+           rdfs:label "Job search" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#Language
+:Language rdf:type owl:Class ;
+          rdfs:subClassOf :Topics ;
+          rdfs:label "Language" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#LearningDisabilities
+:LearningDisabilities rdf:type owl:Class ;
+                      rdfs:subClassOf :School ;
+                      rdfs:label "Learning disabilities" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#Legal
+:Legal rdf:type owl:Class ;
+       rdfs:subClassOf :Topics ;
+       rdfs:label "Legal" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#Legislation
+:Legislation rdf:type owl:Class ;
+             rdfs:subClassOf :Legal ;
+             rdfs:label "Legislation" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#MedicalExamination
+:MedicalExamination rdf:type owl:Class ;
+                    rdfs:subClassOf :Health ;
+                    rdfs:label "Medical examination" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#PartTime
+:PartTime rdf:type owl:Class ;
+          rdfs:subClassOf :EmploymentContract ;
+          rdfs:label "Part time" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#Passport
+:Passport rdf:type owl:Class ;
+          rdfs:subClassOf :Reception ;
+          rdfs:label "Passport" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#Permanent
+:Permanent rdf:type owl:Class ;
+           rdfs:subClassOf :EmploymentContract ;
+           rdfs:label "Permanent" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#PracticalAspects
+:PracticalAspects rdf:type owl:Class ;
+                  rdfs:subClassOf :School ;
+                  rdfs:label "Practical aspects" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#PreRegistrationProcedure
+:PreRegistrationProcedure rdf:type owl:Class ;
+                          rdfs:subClassOf :Asylum .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#Reception
+:Reception rdf:type owl:Class ;
+           rdfs:subClassOf :Topics ;
+           rdfs:label "Reception" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#Rental
+:Rental rdf:type owl:Class ;
+        rdfs:subClassOf :Housing ;
+        rdfs:label "Rental" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#RightsAndDuties
+:RightsAndDuties rdf:type owl:Class ;
+                 rdfs:subClassOf :PracticalAspects ;
+                 rdfs:label "Rights and duties" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#Roles
+:Roles rdf:type owl:Class ;
+       rdfs:subClassOf :PracticalAspects ;
+       rdfs:label "Roles" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#Scheduled
+:Scheduled rdf:type owl:Class ;
+           rdfs:subClassOf :Appointment ;
+           rdfs:label "Scheduled" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#School
+:School rdf:type owl:Class ;
+        rdfs:subClassOf :Topics ;
+        rdfs:label "School" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#SchoolDocument
+:SchoolDocument rdf:type owl:Class ;
+                rdfs:subClassOf :School ;
+                rdfs:label "School document" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#SchoolRegistration
+:SchoolRegistration rdf:type owl:Class ;
+                    rdfs:subClassOf :PracticalAspects ;
+                    rdfs:label "School registration" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#SchoolStatement
+:SchoolStatement rdf:type owl:Class ;
+                 rdfs:subClassOf :SchoolDocument ;
+                 rdfs:label "School statement" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#Theater
+:Theater rdf:type owl:Class ;
+         rdfs:subClassOf :Culture ;
+         rdfs:label "Theater" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#Topics
+:Topics rdf:type owl:Class ;
+        rdfs:subClassOf owl:Thing ;
+        rdfs:label "Topics" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#Townhome
+:Townhome rdf:type owl:Class ;
+          rdfs:subClassOf :HouseType ;
+          rdfs:label "Town home" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/topics.ttl#Tradition
+:Tradition rdf:type owl:Class ;
+           rdfs:subClassOf :Culture ;
+           rdfs:label "Tradition" .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Appartment
+                :Bungalow
+                :Condominium
+                :Cottage
+                :Flat
+                :Townhome
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Festival
+                :Theater
+                :Tradition
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :GrantsAndAids
+                :RightsAndDuties
+                :Roles
+                :SchoolRegistration
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
