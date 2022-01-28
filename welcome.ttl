@@ -18,6 +18,9 @@
 @base <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl> .
 
 <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl> rdf:type owl:Ontology ;
+                                                                               owl:imports <http://www.daml.org/services/owl-s/1.1/Process.owl> ,
+                                                                                           <http://www.daml.org/services/owl-s/1.1/Profile.owl> ,
+                                                                                           <http://www.daml.org/services/owl-s/1.1/Service.owl> ;
                                                                                <http://purl.org/vocab/vann/preferredNamespacePrefix> "welcome" ;
                                                                                rdfs:label "Welcome Global Ontology" .
 
