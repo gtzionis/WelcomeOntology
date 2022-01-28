@@ -539,14 +539,6 @@ welcome:hasSlot rdf:type owl:ObjectProperty ;
                 rdfs:range welcome:Slot .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasSlotTemplate
-welcome:hasSlotTemplate rdf:type owl:ObjectProperty .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasSlotType
-welcome:hasSlotType rdf:type owl:ObjectProperty .
-
-
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasSpeechActAgent
 welcome:hasSpeechActAgent rdf:type owl:ObjectProperty ;
                           rdfs:range welcome:DialogueUser .
@@ -1026,6 +1018,10 @@ welcome:hasRelationId rdf:type owl:DatatypeProperty .
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasSkypeId
 welcome:hasSkypeId rdf:type owl:DatatypeProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasSlotType
+welcome:hasSlotType rdf:type owl:DatatypeProperty .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTemplateId
