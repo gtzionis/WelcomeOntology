@@ -18,9 +18,6 @@
 @base <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl> .
 
 <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl> rdf:type owl:Ontology ;
-                                                                               owl:imports <http://www.daml.org/services/owl-s/1.1/Process.owl> ,
-                                                                                           <http://www.daml.org/services/owl-s/1.1/Profile.owl> ,
-                                                                                           <http://www.daml.org/services/owl-s/1.1/Service.owl> ;
                                                                                <http://purl.org/vocab/vann/preferredNamespacePrefix> "welcome" ;
                                                                                rdfs:label "Welcome Global Ontology" .
 
@@ -68,6 +65,10 @@ wgs84_pos:long rdf:type owl:AnnotationProperty ;
 
 ###  http://www.w3.org/2007/05/powder-s#describedby
 <http://www.w3.org/2007/05/powder-s#describedby> rdf:type owl:AnnotationProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#conditionValue
+welcome:conditionValue rdf:type owl:AnnotationProperty .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#dependsOn
@@ -1223,6 +1224,11 @@ schema:startTime rdf:type owl:DatatypeProperty ;
                  rdfs:domain <https://schema.org/ScheduleAction#ScheduleAction> .
 
 
+###  https://schema.org/validFrom
+schema:validFrom rdf:type owl:DatatypeProperty ;
+                 rdfs:domain <https://schema.org/ScheduleAction#ScheduleAction> .
+
+
 #################################################################
 #    Classes
 #################################################################
@@ -1392,6 +1398,11 @@ welcome:BuildingName rdf:type owl:Class ;
 welcome:BuildingType rdf:type owl:Class ;
                      rdfs:subClassOf welcome:AddressInfo ;
                      welcome:needsUpdate "true"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CardNumber
+welcome:CardNumber rdf:type owl:Class ;
+                   rdfs:subClassOf welcome:Other .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CatalanCourse
@@ -2028,6 +2039,11 @@ welcome:NotificationPreferences rdf:type owl:Class ;
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Office
 welcome:Office rdf:type owl:Class ;
                rdfs:subClassOf welcome:GovermentalOrganisation .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OfficerRoleFlag
+welcome:OfficerRoleFlag rdf:type owl:Class ;
+                        rdfs:subClassOf welcome:Other .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Organisation
@@ -4705,6 +4721,13 @@ welcome:Sint_Maarten rdf:type owl:NamedIndividual ,
                      welcome:hasValue "Sint Maarten" ;
                      welcome:iso2code "SX" ;
                      welcome:iso3code "SXM" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Slot_informBehaviorRepetition
+welcome:Slot_informBehaviorRepetition rdf:type owl:NamedIndividual ,
+                                               welcome:Slot ;
+                                      welcome:conditionValue "true"^^xsd:boolean ;
+                                      welcome:dependsOn "OfficerRoleFlag" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Slovakia
