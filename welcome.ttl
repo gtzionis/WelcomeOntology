@@ -82,6 +82,10 @@ welcome:dependsOn rdf:type owl:AnnotationProperty .
 welcome:needsUpdate rdf:type owl:AnnotationProperty .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#requiresValue
+welcome:requiresValue rdf:type owl:AnnotationProperty .
+
+
 #################################################################
 #    Object Properties
 #################################################################
@@ -1115,6 +1119,10 @@ welcome:iso3code rdf:type owl:DatatypeProperty .
 welcome:languageName rdf:type owl:DatatypeProperty .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#lastUpdated
+welcome:lastUpdated rdf:type owl:DatatypeProperty .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#lat
 welcome:lat rdf:type owl:DatatypeProperty ;
             rdfs:domain locn:Address ,
@@ -1734,6 +1742,10 @@ welcome:EmailNotifications rdf:type owl:Class ;
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Entrance
 welcome:Entrance rdf:type owl:Class ;
                  rdfs:subClassOf welcome:AddressInfo .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ExpirationPeriod
+welcome:ExpirationPeriod rdf:type owl:Class .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#FirstSurname
@@ -4722,6 +4734,12 @@ welcome:Sint_Maarten rdf:type owl:NamedIndividual ,
                      welcome:iso3code "SXM" .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Slot_flagPRAKSISCard
+welcome:Slot_flagPRAKSISCard rdf:type owl:NamedIndividual ,
+                                      welcome:Slot ;
+                             welcome:requiresValue "true"^^xsd:boolean .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Slot_informBehaviorRepetition
 welcome:Slot_informBehaviorRepetition rdf:type owl:NamedIndividual ,
                                                welcome:Slot ;
@@ -5724,6 +5742,12 @@ welcome:course_spanishLanguage rdf:type owl:NamedIndividual ,
    owl:annotatedTarget 90 ;
    <http://purl.org/dc/terms/isRequiredBy> "informLanguageModule"
  ] .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#expiration_period
+welcome:expiration_period rdf:type owl:NamedIndividual ,
+                                   welcome:ExpirationPeriod ;
+                          welcome:duration "0.0"^^xsd:double .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#jobcenter
