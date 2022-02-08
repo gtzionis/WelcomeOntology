@@ -1020,6 +1020,10 @@ welcome:hasPhone rdf:type owl:DatatypeProperty .
 welcome:hasRelationId rdf:type owl:DatatypeProperty .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasRole
+welcome:hasRole rdf:type owl:DatatypeProperty .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasSkypeId
 welcome:hasSkypeId rdf:type owl:DatatypeProperty .
 
@@ -4678,14 +4682,44 @@ welcome:SimulationAgent rdf:type owl:NamedIndividual ,
                                                   welcome:sa_8 ,
                                                   welcome:sa_9 ;
                         welcome:worksFor welcome:jobcenter ;
-                        welcome:hasName "Mr. Muller" .
+                        welcome:hasName "Mr. Muller" ,
+                                        "PRAKSIS"^^xsd:string ;
+                        welcome:hasRole "a lawyer"^^xsd:string ,
+                                        "an officer"^^xsd:string .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:SimulationAgent ;
    owl:annotatedProperty welcome:hasName ;
    owl:annotatedTarget "Mr. Muller" ;
    <http://purl.org/dc/terms/isRequiredBy> "informPersonName" ,
-                                           "informPersonNameIntro"
+                                           "informPersonNameIntro" ;
+   welcome:conditionValue "DE" ;
+   welcome:dependsOn "CountryCode"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:SimulationAgent ;
+   owl:annotatedProperty welcome:hasName ;
+   owl:annotatedTarget "PRAKSIS"^^xsd:string ;
+   <http://purl.org/dc/terms/isRequiredBy> "informAuthorityOrPersonName"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:SimulationAgent ;
+   owl:annotatedProperty welcome:hasRole ;
+   owl:annotatedTarget "a lawyer"^^xsd:string ;
+   <http://purl.org/dc/terms/isRequiredBy> "informAuthorityOrPersonName" ;
+   welcome:conditionValue "false"^^xsd:boolean ;
+   welcome:dependsOn "OfficerRoleFlag"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:SimulationAgent ;
+   owl:annotatedProperty welcome:hasRole ;
+   owl:annotatedTarget "an officer"^^xsd:string ;
+   <http://purl.org/dc/terms/isRequiredBy> "informAuthorityOrPersonName" ;
+   welcome:conditionValue "true"^^xsd:boolean ;
+   welcome:dependsOn "OfficerRoleFlag"
  ] .
 
 
