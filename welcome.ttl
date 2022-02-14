@@ -1382,17 +1382,23 @@ welcome:AppointmentConcern rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AppointmentDate
 welcome:AppointmentDate rdf:type owl:Class ;
-                        rdfs:subClassOf welcome:Appointment .
+                        rdfs:subClassOf welcome:Appointment ;
+                        <http://purl.org/dc/terms/component> "NLG" ;
+                        <http://purl.org/dc/terms/isRequiredBy> "informAppointmentBooked" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AppointmentDay
 welcome:AppointmentDay rdf:type owl:Class ;
-                       rdfs:subClassOf welcome:Appointment .
+                       rdfs:subClassOf welcome:Appointment ;
+                       <http://purl.org/dc/terms/component> "NLG" ;
+                       <http://purl.org/dc/terms/isRequiredBy> "informAppointmentBooked" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AppointmentTime
 welcome:AppointmentTime rdf:type owl:Class ;
-                        rdfs:subClassOf welcome:Appointment .
+                        rdfs:subClassOf welcome:Appointment ;
+                        <http://purl.org/dc/terms/component> "NLG" ;
+                        <http://purl.org/dc/terms/isRequiredBy> "informAppointmentBooked" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AppointmentTimeEarlier
