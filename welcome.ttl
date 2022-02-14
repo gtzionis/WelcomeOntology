@@ -1368,11 +1368,36 @@ welcome:AddressInfo rdf:type owl:Class ;
 welcome:App rdf:type owl:Class .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Appointment
+welcome:Appointment rdf:type owl:Class ;
+                    rdfs:subClassOf welcome:Descriptors .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AppointmentConcern
 welcome:AppointmentConcern rdf:type owl:Class ;
-                           rdfs:subClassOf welcome:Descriptors ;
+                           rdfs:subClassOf welcome:Appointment ;
                            <http://purl.org/dc/terms/component> "NLG" ;
                            <http://purl.org/dc/terms/isRequiredBy> "reactiveFlag" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AppointmentDate
+welcome:AppointmentDate rdf:type owl:Class ;
+                        rdfs:subClassOf welcome:Appointment .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AppointmentDay
+welcome:AppointmentDay rdf:type owl:Class ;
+                       rdfs:subClassOf welcome:Appointment .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AppointmentTime
+welcome:AppointmentTime rdf:type owl:Class ;
+                        rdfs:subClassOf welcome:Appointment .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AppointmentTimeEarlier
+welcome:AppointmentTimeEarlier rdf:type owl:Class ;
+                               rdfs:subClassOf welcome:Appointment .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AsylumClaim
@@ -2033,7 +2058,9 @@ welcome:Name rdf:type owl:Class ;
              rdfs:subClassOf welcome:Personal ;
              <http://purl.org/dc/terms/component> "NLG" ;
              <http://purl.org/dc/terms/isRequiredBy> "informEnd" ,
-                                                     "obtainName" .
+                                                     "obtainCardNumber" ,
+                                                     "obtainName" ,
+                                                     "obtainNameAppointment" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Nationality
@@ -2400,15 +2427,16 @@ welcome:AgentNGO rdf:type owl:NamedIndividual ,
                               "https://www.caritas-hamm.de/einrichtungen/beratungszentrum/beratungszentrum" ;
                  welcome:agentName "CARITAS" ,
                                    "DTASF" ,
-                                   "PRAKSIS NGO" ;
+                                   "PRAKSIS" ;
                  welcome:contactPurpose "inform you where such a service is available" ,
                                         "schedule an appointment with a professional" .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:AgentNGO ;
    owl:annotatedProperty welcome:agentName ;
-   owl:annotatedTarget "PRAKSIS NGO" ;
+   owl:annotatedTarget "PRAKSIS" ;
    <http://purl.org/dc/terms/isRequiredBy> "informGenericPRAKSISContact" ,
+                                           "informInabilityAssist" ,
                                            "informNeedContact" ,
                                            "informPRAKSISContact"
  ] .
@@ -4684,7 +4712,8 @@ welcome:SimulationAgent rdf:type owl:NamedIndividual ,
                         welcome:worksFor welcome:jobcenter ;
                         welcome:hasName "Mr. Muller" ,
                                         "PRAKSIS"^^xsd:string ;
-                        welcome:hasRole "a lawyer"^^xsd:string ,
+                        welcome:hasRole "PRAKSIS' reception officer" ,
+                                        "a lawyer"^^xsd:string ,
                                         "an officer"^^xsd:string .
 
 [ rdf:type owl:Axiom ;
@@ -4707,8 +4736,18 @@ welcome:SimulationAgent rdf:type owl:NamedIndividual ,
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:SimulationAgent ;
    owl:annotatedProperty welcome:hasRole ;
+   owl:annotatedTarget "PRAKSIS' reception officer" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informPersonNameIntro" ;
+   welcome:conditionValue "true"^^xsd:boolean ;
+   welcome:dependsOn "OfficerRoleFlag"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:SimulationAgent ;
+   owl:annotatedProperty welcome:hasRole ;
    owl:annotatedTarget "a lawyer"^^xsd:string ;
-   <http://purl.org/dc/terms/isRequiredBy> "informAuthorityOrPersonName" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informAuthorityOrPersonName" ,
+                                           "informPersonNameIntro" ;
    welcome:conditionValue "false"^^xsd:boolean ;
    welcome:dependsOn "OfficerRoleFlag"
  ] .
