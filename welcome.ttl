@@ -1196,6 +1196,10 @@ welcome:slotOrder rdf:type owl:DatatypeProperty ;
 welcome:stage rdf:type owl:DatatypeProperty .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#startTimeEarly
+welcome:startTimeEarly rdf:type owl:DatatypeProperty .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#time
 welcome:time rdf:type owl:DatatypeProperty .
 
@@ -1404,7 +1408,9 @@ welcome:AppointmentTime rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AppointmentTimeEarlier
 welcome:AppointmentTimeEarlier rdf:type owl:Class ;
-                               rdfs:subClassOf welcome:Appointment .
+                               rdfs:subClassOf welcome:Appointment ;
+                               <http://purl.org/dc/terms/component> "NLG" ;
+                               <http://purl.org/dc/terms/isRequiredBy> "informAforetimeAppointment" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AsylumClaim
@@ -6094,6 +6100,7 @@ welcome:sa_1 rdf:type owl:NamedIndividual ,
              schema:scheduledTime schema:Monday ;
              welcome:daytime "morning" ;
              welcome:slotOrder 1 ;
+             welcome:startTimeEarly "09:30" ;
              schema:endTime "10:30" ;
              schema:startTime "10:00" ;
              <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
@@ -6106,6 +6113,7 @@ welcome:sa_10 rdf:type owl:NamedIndividual ,
               schema:scheduledTime schema:Thursday ;
               welcome:daytime "morning" ;
               welcome:slotOrder 8 ;
+              welcome:startTimeEarly "09:30" ;
               schema:endTime "10:30" ;
               schema:startTime "10:00" ;
               <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
@@ -6118,6 +6126,7 @@ welcome:sa_11 rdf:type owl:NamedIndividual ,
               schema:scheduledTime schema:Friday ;
               welcome:daytime "morning" ;
               welcome:slotOrder 9 ;
+              welcome:startTimeEarly "09:30" ;
               schema:endTime "10:30" ;
               schema:startTime "10:00" ;
               <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
@@ -6130,6 +6139,7 @@ welcome:sa_12 rdf:type owl:NamedIndividual ,
               schema:scheduledTime schema:Friday ;
               welcome:daytime "afternoon" ;
               welcome:slotOrder 10 ;
+              welcome:startTimeEarly "12:30" ;
               schema:endTime "13:30" ;
               schema:startTime "13:00" ;
               <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
@@ -6142,6 +6152,7 @@ welcome:sa_2 rdf:type owl:NamedIndividual ,
              schema:scheduledTime schema:Monday ;
              welcome:daytime "afternoon" ;
              welcome:slotOrder 2 ;
+             welcome:startTimeEarly "12:30" ;
              schema:endTime "13:30" ;
              schema:startTime "13:00" ;
              <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
@@ -6154,6 +6165,7 @@ welcome:sa_5 rdf:type owl:NamedIndividual ,
              schema:scheduledTime schema:Tuesday ;
              welcome:daytime "morning" ;
              welcome:slotOrder 3 ;
+             welcome:startTimeEarly "10:30" ;
              schema:endTime "11:30" ;
              schema:startTime "11:00" ;
              <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
@@ -6166,6 +6178,7 @@ welcome:sa_6 rdf:type owl:NamedIndividual ,
              schema:scheduledTime schema:Tuesday ;
              welcome:daytime "afternoon" ;
              welcome:slotOrder 4 ;
+             welcome:startTimeEarly "11:30" ;
              schema:endTime "12:30" ;
              schema:startTime "12:00" ;
              <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
@@ -6178,8 +6191,9 @@ welcome:sa_7 rdf:type owl:NamedIndividual ,
              schema:scheduledTime schema:Wednesday ;
              welcome:daytime "morning" ;
              welcome:slotOrder 5 ;
-             schema:endTime "09:30" ;
-             schema:startTime "09:00" ;
+             welcome:startTimeEarly "09:30" ;
+             schema:endTime "10:30" ;
+             schema:startTime "10:00" ;
              <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
 
 
@@ -6190,6 +6204,7 @@ welcome:sa_8 rdf:type owl:NamedIndividual ,
              schema:scheduledTime schema:Wednesday ;
              welcome:daytime "afternoon" ;
              welcome:slotOrder 6 ;
+             welcome:startTimeEarly "12:30" ;
              schema:endTime "13:30" ;
              schema:startTime "13:00" ;
              <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
@@ -6202,6 +6217,7 @@ welcome:sa_9 rdf:type owl:NamedIndividual ,
              schema:scheduledTime schema:Thursday ;
              welcome:daytime "afternoon" ;
              welcome:slotOrder 7 ;
+             welcome:startTimeEarly "15:30" ;
              schema:endTime "16:30" ;
              schema:startTime "16:00" ;
              <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
