@@ -86,6 +86,10 @@ welcome:needsUpdate rdf:type owl:AnnotationProperty .
 welcome:requiresValue rdf:type owl:AnnotationProperty .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#supportsRepetition
+welcome:supportsRepetition rdf:type owl:AnnotationProperty .
+
+
 #################################################################
 #    Object Properties
 #################################################################
@@ -1413,6 +1417,11 @@ welcome:AppointmentTimeEarlier rdf:type owl:Class ;
                                <http://purl.org/dc/terms/isRequiredBy> "informAforetimeAppointment" .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AsylumApplicationKnowledge
+welcome:AsylumApplicationKnowledge rdf:type owl:Class ;
+                                   rdfs:subClassOf welcome:Other .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AsylumClaim
 welcome:AsylumClaim rdf:type owl:Class ;
                     rdfs:subClassOf welcome:Other .
@@ -1421,6 +1430,12 @@ welcome:AsylumClaim rdf:type owl:Class ;
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AsylumOffice
 welcome:AsylumOffice rdf:type owl:Class ;
                      rdfs:subClassOf welcome:Office .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AsylumPreRegistrationNumber
+welcome:AsylumPreRegistrationNumber rdf:type owl:Class ;
+                                    rdfs:subClassOf welcome:Other ;
+                                    welcome:needsUpdate "true"^^xsd:boolean .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Avatar
@@ -3198,6 +3213,13 @@ welcome:Czechia rdf:type owl:NamedIndividual ,
                 welcome:hasValue "Czechia" ;
                 welcome:iso2code "CZ" ;
                 welcome:iso3code "CZE" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIP_EducationInformation
+welcome:DIP_EducationInformation rdf:type owl:NamedIndividual ;
+                                 welcome:conditionValue "true"^^xsd:boolean ;
+                                 welcome:dependsOn "AdditionalEducation" ;
+                                 welcome:supportsRepetition "true"^^xsd:boolean .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Denmark
