@@ -70,8 +70,24 @@ wgs84_pos:long rdf:type owl:AnnotationProperty ;
 <http://www.w3.org/2007/05/powder-s#describedby> rdf:type owl:AnnotationProperty .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#conditionValue
+welcome:conditionValue rdf:type owl:AnnotationProperty .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#dependsOn
 welcome:dependsOn rdf:type owl:AnnotationProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#needsUpdate
+welcome:needsUpdate rdf:type owl:AnnotationProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#requiresValue
+welcome:requiresValue rdf:type owl:AnnotationProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#supportsRepetition
+welcome:supportsRepetition rdf:type owl:AnnotationProperty .
 
 
 #################################################################
@@ -529,10 +545,6 @@ welcome:hasSkypeInfo rdf:type owl:ObjectProperty .
 welcome:hasSlot rdf:type owl:ObjectProperty ;
                 rdfs:domain welcome:DIP ;
                 rdfs:range welcome:Slot .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasSlotTemplate
-welcome:hasSlotTemplate rdf:type owl:ObjectProperty .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasSpeechActAgent
@@ -1012,6 +1024,10 @@ welcome:hasPhone rdf:type owl:DatatypeProperty .
 welcome:hasRelationId rdf:type owl:DatatypeProperty .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasRole
+welcome:hasRole rdf:type owl:DatatypeProperty .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasSkypeId
 welcome:hasSkypeId rdf:type owl:DatatypeProperty .
 
@@ -1111,6 +1127,10 @@ welcome:iso3code rdf:type owl:DatatypeProperty .
 welcome:languageName rdf:type owl:DatatypeProperty .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#lastUpdated
+welcome:lastUpdated rdf:type owl:DatatypeProperty .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#lat
 welcome:lat rdf:type owl:DatatypeProperty ;
             rdfs:domain locn:Address ,
@@ -1180,6 +1200,10 @@ welcome:slotOrder rdf:type owl:DatatypeProperty ;
 welcome:stage rdf:type owl:DatatypeProperty .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#startTimeEarly
+welcome:startTimeEarly rdf:type owl:DatatypeProperty .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#time
 welcome:time rdf:type owl:DatatypeProperty .
 
@@ -1216,6 +1240,11 @@ schema:opens rdf:type owl:DatatypeProperty .
 
 ###  https://schema.org/startTime
 schema:startTime rdf:type owl:DatatypeProperty ;
+                 rdfs:domain <https://schema.org/ScheduleAction#ScheduleAction> .
+
+
+###  https://schema.org/validFrom
+schema:validFrom rdf:type owl:DatatypeProperty ;
                  rdfs:domain <https://schema.org/ScheduleAction#ScheduleAction> .
 
 
@@ -1347,11 +1376,50 @@ welcome:AddressInfo rdf:type owl:Class ;
 welcome:App rdf:type owl:Class .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Appointment
+welcome:Appointment rdf:type owl:Class ;
+                    rdfs:subClassOf welcome:Descriptors .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AppointmentConcern
 welcome:AppointmentConcern rdf:type owl:Class ;
-                           rdfs:subClassOf welcome:Descriptors ;
+                           rdfs:subClassOf welcome:Appointment ;
                            <http://purl.org/dc/terms/component> "NLG" ;
                            <http://purl.org/dc/terms/isRequiredBy> "reactiveFlag" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AppointmentDate
+welcome:AppointmentDate rdf:type owl:Class ;
+                        rdfs:subClassOf welcome:Appointment ;
+                        <http://purl.org/dc/terms/component> "NLG" ;
+                        <http://purl.org/dc/terms/isRequiredBy> "informAppointmentBooked" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AppointmentDay
+welcome:AppointmentDay rdf:type owl:Class ;
+                       rdfs:subClassOf welcome:Appointment ;
+                       <http://purl.org/dc/terms/component> "NLG" ;
+                       <http://purl.org/dc/terms/isRequiredBy> "informAppointmentBooked" ,
+                                                               "informAppointmentSummary" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AppointmentTime
+welcome:AppointmentTime rdf:type owl:Class ;
+                        rdfs:subClassOf welcome:Appointment ;
+                        <http://purl.org/dc/terms/component> "NLG" ;
+                        <http://purl.org/dc/terms/isRequiredBy> "informAppointmentBooked" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AppointmentTimeEarlier
+welcome:AppointmentTimeEarlier rdf:type owl:Class ;
+                               rdfs:subClassOf welcome:Appointment ;
+                               <http://purl.org/dc/terms/component> "NLG" ;
+                               <http://purl.org/dc/terms/isRequiredBy> "informAforetimeAppointment" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AsylumApplicationKnowledge
+welcome:AsylumApplicationKnowledge rdf:type owl:Class ;
+                                   rdfs:subClassOf welcome:Other .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AsylumClaim
@@ -1362,6 +1430,12 @@ welcome:AsylumClaim rdf:type owl:Class ;
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AsylumOffice
 welcome:AsylumOffice rdf:type owl:Class ;
                      rdfs:subClassOf welcome:Office .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AsylumPreRegistrationNumber
+welcome:AsylumPreRegistrationNumber rdf:type owl:Class ;
+                                    rdfs:subClassOf welcome:Other ;
+                                    welcome:needsUpdate "true"^^xsd:boolean .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Avatar
@@ -1386,7 +1460,13 @@ welcome:BuildingName rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#BuildingType
 welcome:BuildingType rdf:type owl:Class ;
-                     rdfs:subClassOf welcome:AddressInfo .
+                     rdfs:subClassOf welcome:AddressInfo ;
+                     welcome:needsUpdate "true"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CardNumber
+welcome:CardNumber rdf:type owl:Class ;
+                   rdfs:subClassOf welcome:Other .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CatalanCourse
@@ -1706,7 +1786,8 @@ welcome:Education rdf:type owl:Class ;
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Email
 welcome:Email rdf:type owl:Class ;
               rdfs:subClassOf welcome:InternetAddress ,
-                              welcome:Personal .
+                              welcome:Personal ;
+              welcome:needsUpdate "true"^^xsd:boolean .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#EmailNotifications
@@ -1718,6 +1799,10 @@ welcome:EmailNotifications rdf:type owl:Class ;
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Entrance
 welcome:Entrance rdf:type owl:Class ;
                  rdfs:subClassOf welcome:AddressInfo .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ExpirationPeriod
+welcome:ExpirationPeriod rdf:type owl:Class .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#FirstSurname
@@ -1735,7 +1820,8 @@ welcome:FirstTimeAsylumClaim rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#FloorNumber
 welcome:FloorNumber rdf:type owl:Class ;
-                    rdfs:subClassOf welcome:AddressInfo .
+                    rdfs:subClassOf welcome:AddressInfo ;
+                    welcome:needsUpdate "true"^^xsd:boolean .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Gender
@@ -1767,7 +1853,8 @@ welcome:HostingInformation rdf:type owl:Class ;
 welcome:IDCountry rdf:type owl:Class ;
                   rdfs:subClassOf welcome:Personal ;
                   <http://purl.org/dc/terms/component> "NLG" ;
-                  <http://purl.org/dc/terms/isRequiredBy> "obtainNationality" .
+                  <http://purl.org/dc/terms/isRequiredBy> "obtainNationality" ;
+                  welcome:needsUpdate "true"^^xsd:boolean .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#IDCountryCode
@@ -1777,12 +1864,14 @@ welcome:IDCountryCode rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#IDNumber
 welcome:IDNumber rdf:type owl:Class ;
-                 rdfs:subClassOf welcome:Personal .
+                 rdfs:subClassOf welcome:Personal ;
+                 welcome:needsUpdate "true"^^xsd:boolean .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#IDType
 welcome:IDType rdf:type owl:Class ;
-               rdfs:subClassOf welcome:Personal .
+               rdfs:subClassOf welcome:Personal ;
+               welcome:needsUpdate "true"^^xsd:boolean .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Illiteracy
@@ -1846,7 +1935,8 @@ welcome:LabourModule rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Landline
 welcome:Landline rdf:type owl:Class ;
-                 rdfs:subClassOf welcome:Personal .
+                 rdfs:subClassOf welcome:Personal ;
+                 welcome:needsUpdate "true"^^xsd:boolean .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Language
@@ -1874,7 +1964,8 @@ welcome:Location rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#MaritalStatus
 welcome:MaritalStatus rdf:type owl:Class ;
-                      rdfs:subClassOf welcome:Other .
+                      rdfs:subClassOf welcome:Other ;
+                      welcome:needsUpdate "true"^^xsd:boolean .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Minigame
@@ -1883,12 +1974,8 @@ welcome:Minigame rdf:type owl:Class .
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#MobilePhone
 welcome:MobilePhone rdf:type owl:Class ;
-                    rdfs:subClassOf welcome:Personal .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Mobile_phone_number
-welcome:Mobile_phone_number rdf:type owl:Class ;
-                            rdfs:subClassOf welcome:PhysicalAddress .
+                    rdfs:subClassOf welcome:Personal ;
+                    welcome:needsUpdate "true"^^xsd:boolean .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Module
@@ -1999,7 +2086,9 @@ welcome:Name rdf:type owl:Class ;
              rdfs:subClassOf welcome:Personal ;
              <http://purl.org/dc/terms/component> "NLG" ;
              <http://purl.org/dc/terms/isRequiredBy> "informEnd" ,
-                                                     "obtainName" .
+                                                     "obtainCardNumber" ,
+                                                     "obtainName" ,
+                                                     "obtainNameAppointment" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Nationality
@@ -2020,6 +2109,11 @@ welcome:NotificationPreferences rdf:type owl:Class ;
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Office
 welcome:Office rdf:type owl:Class ;
                rdfs:subClassOf welcome:GovermentalOrganisation .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OfficerRoleFlag
+welcome:OfficerRoleFlag rdf:type owl:Class ;
+                        rdfs:subClassOf welcome:Other .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Organisation
@@ -2071,7 +2165,8 @@ welcome:PlannerRequest rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#PostCode
 welcome:PostCode rdf:type owl:Class ;
-                 rdfs:subClassOf welcome:AddressInfo .
+                 rdfs:subClassOf welcome:AddressInfo ;
+                 welcome:needsUpdate "true"^^xsd:boolean .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#PreferredLanguage
@@ -2212,7 +2307,8 @@ welcome:StreetName rdf:type owl:Class ;
                                    welcome:PhysicalAddress ;
                    <http://purl.org/dc/terms/component> "NLG" ;
                    <http://purl.org/dc/terms/isRequiredBy> "obtainResidenceAddressStreet" ,
-                                                           "obtainStreetType" .
+                                                           "obtainStreetType" ;
+                   welcome:needsUpdate "true"^^xsd:boolean .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#StreetNumber
@@ -2220,7 +2316,8 @@ welcome:StreetNumber rdf:type owl:Class ;
                      rdfs:subClassOf welcome:AddressInfo ,
                                      welcome:PhysicalAddress ;
                      <http://purl.org/dc/terms/component> "NLG" ;
-                     <http://purl.org/dc/terms/isRequiredBy> "obtainResidenceAddressNumber" .
+                     <http://purl.org/dc/terms/isRequiredBy> "obtainResidenceAddressNumber" ;
+                     welcome:needsUpdate "true"^^xsd:boolean .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#StreetType
@@ -2358,15 +2455,16 @@ welcome:AgentNGO rdf:type owl:NamedIndividual ,
                               "https://www.caritas-hamm.de/einrichtungen/beratungszentrum/beratungszentrum" ;
                  welcome:agentName "CARITAS" ,
                                    "DTASF" ,
-                                   "PRAKSIS NGO" ;
+                                   "PRAKSIS" ;
                  welcome:contactPurpose "inform you where such a service is available" ,
                                         "schedule an appointment with a professional" .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:AgentNGO ;
    owl:annotatedProperty welcome:agentName ;
-   owl:annotatedTarget "PRAKSIS NGO" ;
+   owl:annotatedTarget "PRAKSIS" ;
    <http://purl.org/dc/terms/isRequiredBy> "informGenericPRAKSISContact" ,
+                                           "informInabilityAssist" ,
                                            "informNeedContact" ,
                                            "informPRAKSISContact"
  ] .
@@ -3115,6 +3213,13 @@ welcome:Czechia rdf:type owl:NamedIndividual ,
                 welcome:hasValue "Czechia" ;
                 welcome:iso2code "CZ" ;
                 welcome:iso3code "CZE" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIP_EducationInformation
+welcome:DIP_EducationInformation rdf:type owl:NamedIndividual ;
+                                 welcome:conditionValue "true"^^xsd:boolean ;
+                                 welcome:dependsOn "AdditionalEducation" ;
+                                 welcome:supportsRepetition "true"^^xsd:boolean .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Denmark
@@ -4640,14 +4745,55 @@ welcome:SimulationAgent rdf:type owl:NamedIndividual ,
                                                   welcome:sa_8 ,
                                                   welcome:sa_9 ;
                         welcome:worksFor welcome:jobcenter ;
-                        welcome:hasName "Mr. Muller" .
+                        welcome:hasName "Mr. Muller" ,
+                                        "PRAKSIS"^^xsd:string ;
+                        welcome:hasRole "PRAKSIS' reception officer" ,
+                                        "a lawyer"^^xsd:string ,
+                                        "an officer"^^xsd:string .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:SimulationAgent ;
    owl:annotatedProperty welcome:hasName ;
    owl:annotatedTarget "Mr. Muller" ;
    <http://purl.org/dc/terms/isRequiredBy> "informPersonName" ,
-                                           "informPersonNameIntro"
+                                           "informPersonNameIntro" ;
+   welcome:conditionValue "DE" ;
+   welcome:dependsOn "CountryCode"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:SimulationAgent ;
+   owl:annotatedProperty welcome:hasName ;
+   owl:annotatedTarget "PRAKSIS"^^xsd:string ;
+   <http://purl.org/dc/terms/isRequiredBy> "informAuthorityOrPersonName"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:SimulationAgent ;
+   owl:annotatedProperty welcome:hasRole ;
+   owl:annotatedTarget "PRAKSIS' reception officer" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informPersonNameIntro" ;
+   welcome:conditionValue "true"^^xsd:boolean ;
+   welcome:dependsOn "OfficerRoleFlag"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:SimulationAgent ;
+   owl:annotatedProperty welcome:hasRole ;
+   owl:annotatedTarget "a lawyer"^^xsd:string ;
+   <http://purl.org/dc/terms/isRequiredBy> "informAuthorityOrPersonName" ,
+                                           "informPersonNameIntro" ;
+   welcome:conditionValue "false"^^xsd:boolean ;
+   welcome:dependsOn "OfficerRoleFlag"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:SimulationAgent ;
+   owl:annotatedProperty welcome:hasRole ;
+   owl:annotatedTarget "an officer"^^xsd:string ;
+   <http://purl.org/dc/terms/isRequiredBy> "informAuthorityOrPersonName" ;
+   welcome:conditionValue "true"^^xsd:boolean ;
+   welcome:dependsOn "OfficerRoleFlag"
  ] .
 
 
@@ -4694,6 +4840,19 @@ welcome:Sint_Maarten rdf:type owl:NamedIndividual ,
                      welcome:hasValue "Sint Maarten" ;
                      welcome:iso2code "SX" ;
                      welcome:iso3code "SXM" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Slot_flagPRAKSISCard
+welcome:Slot_flagPRAKSISCard rdf:type owl:NamedIndividual ,
+                                      welcome:Slot ;
+                             welcome:requiresValue "true"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Slot_informBehaviorRepetition
+welcome:Slot_informBehaviorRepetition rdf:type owl:NamedIndividual ,
+                                               welcome:Slot ;
+                                      welcome:conditionValue "true"^^xsd:boolean ;
+                                      welcome:dependsOn "OfficerRoleFlag" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Slovakia
@@ -5693,6 +5852,12 @@ welcome:course_spanishLanguage rdf:type owl:NamedIndividual ,
  ] .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#expiration_period
+welcome:expiration_period rdf:type owl:NamedIndividual ,
+                                   welcome:ExpirationPeriod ;
+                          welcome:duration "0.0"^^xsd:double .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#jobcenter
 welcome:jobcenter rdf:type owl:NamedIndividual ,
                            welcome:JobCenter ;
@@ -5957,6 +6122,7 @@ welcome:sa_1 rdf:type owl:NamedIndividual ,
              schema:scheduledTime schema:Monday ;
              welcome:daytime "morning" ;
              welcome:slotOrder 1 ;
+             welcome:startTimeEarly "09:30" ;
              schema:endTime "10:30" ;
              schema:startTime "10:00" ;
              <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
@@ -5969,6 +6135,7 @@ welcome:sa_10 rdf:type owl:NamedIndividual ,
               schema:scheduledTime schema:Thursday ;
               welcome:daytime "morning" ;
               welcome:slotOrder 8 ;
+              welcome:startTimeEarly "09:30" ;
               schema:endTime "10:30" ;
               schema:startTime "10:00" ;
               <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
@@ -5981,6 +6148,7 @@ welcome:sa_11 rdf:type owl:NamedIndividual ,
               schema:scheduledTime schema:Friday ;
               welcome:daytime "morning" ;
               welcome:slotOrder 9 ;
+              welcome:startTimeEarly "09:30" ;
               schema:endTime "10:30" ;
               schema:startTime "10:00" ;
               <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
@@ -5993,6 +6161,7 @@ welcome:sa_12 rdf:type owl:NamedIndividual ,
               schema:scheduledTime schema:Friday ;
               welcome:daytime "afternoon" ;
               welcome:slotOrder 10 ;
+              welcome:startTimeEarly "12:30" ;
               schema:endTime "13:30" ;
               schema:startTime "13:00" ;
               <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
@@ -6005,6 +6174,7 @@ welcome:sa_2 rdf:type owl:NamedIndividual ,
              schema:scheduledTime schema:Monday ;
              welcome:daytime "afternoon" ;
              welcome:slotOrder 2 ;
+             welcome:startTimeEarly "12:30" ;
              schema:endTime "13:30" ;
              schema:startTime "13:00" ;
              <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
@@ -6017,6 +6187,7 @@ welcome:sa_5 rdf:type owl:NamedIndividual ,
              schema:scheduledTime schema:Tuesday ;
              welcome:daytime "morning" ;
              welcome:slotOrder 3 ;
+             welcome:startTimeEarly "10:30" ;
              schema:endTime "11:30" ;
              schema:startTime "11:00" ;
              <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
@@ -6029,6 +6200,7 @@ welcome:sa_6 rdf:type owl:NamedIndividual ,
              schema:scheduledTime schema:Tuesday ;
              welcome:daytime "afternoon" ;
              welcome:slotOrder 4 ;
+             welcome:startTimeEarly "11:30" ;
              schema:endTime "12:30" ;
              schema:startTime "12:00" ;
              <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
@@ -6041,8 +6213,9 @@ welcome:sa_7 rdf:type owl:NamedIndividual ,
              schema:scheduledTime schema:Wednesday ;
              welcome:daytime "morning" ;
              welcome:slotOrder 5 ;
-             schema:endTime "09:30" ;
-             schema:startTime "09:00" ;
+             welcome:startTimeEarly "09:30" ;
+             schema:endTime "10:30" ;
+             schema:startTime "10:00" ;
              <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
 
 
@@ -6053,6 +6226,7 @@ welcome:sa_8 rdf:type owl:NamedIndividual ,
              schema:scheduledTime schema:Wednesday ;
              welcome:daytime "afternoon" ;
              welcome:slotOrder 6 ;
+             welcome:startTimeEarly "12:30" ;
              schema:endTime "13:30" ;
              schema:startTime "13:00" ;
              <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
@@ -6065,6 +6239,7 @@ welcome:sa_9 rdf:type owl:NamedIndividual ,
              schema:scheduledTime schema:Thursday ;
              welcome:daytime "afternoon" ;
              welcome:slotOrder 7 ;
+             welcome:startTimeEarly "15:30" ;
              schema:endTime "16:30" ;
              schema:startTime "16:00" ;
              <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
