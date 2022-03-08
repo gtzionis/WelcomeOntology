@@ -1846,7 +1846,9 @@ welcome:FloorNumber rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Gender
 welcome:Gender rdf:type owl:Class ;
-               rdfs:subClassOf welcome:Personal .
+               rdfs:subClassOf welcome:Personal ;
+               <http://purl.org/dc/terms/component> "NLG" ;
+               <http://purl.org/dc/terms/isRequiredBy> "obtainCardNumber" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#GovermentalOrganisation
