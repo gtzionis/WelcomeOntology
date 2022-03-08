@@ -1579,7 +1579,9 @@ welcome:Coordinates rdf:type owl:Class ;
 welcome:Country rdf:type owl:Class ;
                 rdfs:subClassOf welcome:PhysicalAddress ;
                 <http://purl.org/dc/terms/component> "NLG" ;
-                <http://purl.org/dc/terms/isRequiredBy> "informRequiredInformation" ,
+                <http://purl.org/dc/terms/isRequiredBy> "informFormDisclaimer" ,
+                                                        "informPrefilledFormUse" ,
+                                                        "informRequiredInformation" ,
                                                         "informScenarioIntroduction" ,
                                                         "obtainAsylumClaim" ,
                                                         "obtainCity" ,
@@ -2484,7 +2486,9 @@ welcome:AgentNGO rdf:type owl:NamedIndividual ,
    <http://purl.org/dc/terms/isRequiredBy> "informAsylumClaimRequired" ,
                                            "informGenericPRAKSISContact" ,
                                            "informInabilityAssist" ,
+                                           "informLanguageSelection" ,
                                            "informNeedContact" ,
+                                           "informOtherQuestion" ,
                                            "informPRAKSISContact"
  ] .
 
@@ -2506,7 +2510,8 @@ welcome:AgentNGO rdf:type owl:NamedIndividual ,
    owl:annotatedSource welcome:AgentNGO ;
    owl:annotatedProperty actor:webURL ;
    owl:annotatedTarget "https://apps.migration.gov.gr/selfregistration/login" ;
-   <http://purl.org/dc/terms/isRequiredBy> "informRequiredInformation"
+   <http://purl.org/dc/terms/isRequiredBy> "informFormDisclaimer" ,
+                                           "informRequiredInformation"
  ] .
 
 [ rdf:type owl:Axiom ;
@@ -2638,7 +2643,9 @@ welcome:AppName rdf:type owl:NamedIndividual ,
    owl:annotatedSource welcome:AppName ;
    owl:annotatedProperty welcome:hasValue ;
    owl:annotatedTarget "MyWELCOME App" ;
-   <http://purl.org/dc/terms/isRequiredBy> "informAsylumClaimRequired"
+   <http://purl.org/dc/terms/isRequiredBy> "informAsylumClaimRequired" ,
+                                           "informFormDisclaimer" ;
+   rdfs:comment "informPrefilledFormUse"
  ] .
 
 [ rdf:type owl:Axiom ;
