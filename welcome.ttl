@@ -2621,7 +2621,15 @@ welcome:Antigua_and_Barbuda rdf:type owl:NamedIndividual ,
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AppName
 welcome:AppName rdf:type owl:NamedIndividual ,
                          welcome:App ;
-                welcome:hasValue "Skype" .
+                welcome:hasValue "MyWELCOME App" ,
+                                 "Skype" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:AppName ;
+   owl:annotatedProperty welcome:hasValue ;
+   owl:annotatedTarget "MyWELCOME App" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informAsylumClaimRequired"
+ ] .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:AppName ;
