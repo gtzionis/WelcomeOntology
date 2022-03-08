@@ -1579,7 +1579,8 @@ welcome:Coordinates rdf:type owl:Class ;
 welcome:Country rdf:type owl:Class ;
                 rdfs:subClassOf welcome:PhysicalAddress ;
                 <http://purl.org/dc/terms/component> "NLG" ;
-                <http://purl.org/dc/terms/isRequiredBy> "informScenarioIntroduction" ,
+                <http://purl.org/dc/terms/isRequiredBy> "informRequiredInformation" ,
+                                                        "informScenarioIntroduction" ,
                                                         "obtainAsylumClaim" ,
                                                         "obtainCity" ,
                                                         "obtainFirstApplication" ,
@@ -2459,7 +2460,8 @@ welcome:Afghanistan rdf:type owl:NamedIndividual ,
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AgentNGO
 welcome:AgentNGO rdf:type owl:NamedIndividual ,
                           foaf:Agent ;
-                 actor:webURL "https://praksis.gr/contact/" ,
+                 actor:webURL "https://apps.migration.gov.gr/selfregistration/login" ,
+                              "https://praksis.gr/contact/" ,
                               "https://treballiaferssocials.gencat.cat/ca/ambits_tematics/immigracio/" ,
                               "https://www.caritas-hamm.de/einrichtungen/beratungszentrum/beratungszentrum" ;
                  welcome:agentName "CARITAS" ,
@@ -2467,6 +2469,13 @@ welcome:AgentNGO rdf:type owl:NamedIndividual ,
                                    "PRAKSIS" ;
                  welcome:contactPurpose "inform you where such a service is available" ,
                                         "schedule an appointment with a professional" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:AgentNGO ;
+   owl:annotatedProperty welcome:agentName ;
+   owl:annotatedTarget "DTASF" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informGenericDTASFContact"
+ ] .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:AgentNGO ;
@@ -2496,6 +2505,13 @@ welcome:AgentNGO rdf:type owl:NamedIndividual ,
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:AgentNGO ;
    owl:annotatedProperty actor:webURL ;
+   owl:annotatedTarget "https://apps.migration.gov.gr/selfregistration/login" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informRequiredInformation"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:AgentNGO ;
+   owl:annotatedProperty actor:webURL ;
    owl:annotatedTarget "https://praksis.gr/contact/" ;
    <http://purl.org/dc/terms/isRequiredBy> "informGenericPRAKSISContact"
  ] .
@@ -2519,13 +2535,6 @@ welcome:AgentNGO rdf:type owl:NamedIndividual ,
    owl:annotatedProperty welcome:agentName ;
    owl:annotatedTarget "CARITAS" ;
    <http://purl.org/dc/terms/isRequiredBy> "informGenericCARITASContact"
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource welcome:AgentNGO ;
-   owl:annotatedProperty welcome:agentName ;
-   owl:annotatedTarget "DTASF" ;
-   <http://purl.org/dc/terms/isRequiredBy> "informGenericDTASFContact"
  ] .
 
 
