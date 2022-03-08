@@ -139,7 +139,6 @@ welcome:hasCountryOrigin rdf:type owl:ObjectProperty ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasDIP
 welcome:hasDIP rdf:type owl:ObjectProperty ;
-               rdfs:domain welcome:SpeechActContainer ;
                rdfs:range welcome:DIP .
 
 
@@ -1114,7 +1113,6 @@ welcome:isLastContainer rdf:type owl:DatatypeProperty ;
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isOptional
 welcome:isOptional rdf:type owl:DatatypeProperty ,
                             owl:FunctionalProperty ;
-                   rdfs:domain welcome:Slot ;
                    rdfs:range xsd:boolean .
 
 
@@ -1446,6 +1444,11 @@ welcome:AsylumPreRegistrationNumber rdf:type owl:Class ;
                                     welcome:needsUpdate "true"^^xsd:boolean .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AsylumPreregistration
+welcome:AsylumPreregistration rdf:type owl:Class ;
+                              rdfs:subClassOf welcome:Other .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Avatar
 welcome:Avatar rdf:type owl:Class ;
                rdfs:subClassOf foaf:Agent .
@@ -1553,6 +1556,11 @@ welcome:CompletionYearLabourMarket rdf:type owl:Class ;
 welcome:CompletionYearSpanish rdf:type owl:Class ;
                               rdfs:subClassOf welcome:CompletionYear ;
                               welcome:dependsOn "CoursesSpanish" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ConfirmationRequest
+welcome:ConfirmationRequest rdf:type owl:Class ;
+                            rdfs:subClassOf welcome:DIPType .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ContactInformation
