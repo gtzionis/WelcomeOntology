@@ -961,6 +961,10 @@ welcome:hasContainerId rdf:type owl:DatatypeProperty ;
                        rdfs:domain welcome:SpeechActContainer .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasCorrelationID
+welcome:hasCorrelationID rdf:type owl:DatatypeProperty .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasCourseName
 welcome:hasCourseName rdf:type owl:DatatypeProperty .
 
@@ -1043,6 +1047,10 @@ welcome:hasTemplateId rdf:type owl:DatatypeProperty ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTimestamp
 welcome:hasTimestamp rdf:type owl:DatatypeProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTurnID
+welcome:hasTurnID rdf:type owl:DatatypeProperty .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasUserId
@@ -1571,7 +1579,8 @@ welcome:Coordinates rdf:type owl:Class ;
 welcome:Country rdf:type owl:Class ;
                 rdfs:subClassOf welcome:PhysicalAddress ;
                 <http://purl.org/dc/terms/component> "NLG" ;
-                <http://purl.org/dc/terms/isRequiredBy> "obtainAsylumClaim" ,
+                <http://purl.org/dc/terms/isRequiredBy> "informScenarioIntroduction" ,
+                                                        "obtainAsylumClaim" ,
                                                         "obtainCity" ,
                                                         "obtainFirstApplication" ,
                                                         "obtainResidenceAddressCity" .
