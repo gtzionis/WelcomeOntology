@@ -2472,7 +2472,8 @@ welcome:AgentNGO rdf:type owl:NamedIndividual ,
    owl:annotatedSource welcome:AgentNGO ;
    owl:annotatedProperty welcome:agentName ;
    owl:annotatedTarget "PRAKSIS" ;
-   <http://purl.org/dc/terms/isRequiredBy> "informGenericPRAKSISContact" ,
+   <http://purl.org/dc/terms/isRequiredBy> "informAsylumClaimRequired" ,
+                                           "informGenericPRAKSISContact" ,
                                            "informInabilityAssist" ,
                                            "informNeedContact" ,
                                            "informPRAKSISContact"
