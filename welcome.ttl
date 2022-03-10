@@ -2654,8 +2654,8 @@ welcome:AppName rdf:type owl:NamedIndividual ,
    owl:annotatedProperty welcome:hasValue ;
    owl:annotatedTarget "MyWELCOME App" ;
    <http://purl.org/dc/terms/isRequiredBy> "informAsylumClaimRequired" ,
-                                           "informFormDisclaimer" ;
-   rdfs:comment "informPrefilledFormUse"
+                                           "informFormDisclaimer" ,
+                                           "informPrefilledFormUse"
  ] .
 
 [ rdf:type owl:Axiom ;
