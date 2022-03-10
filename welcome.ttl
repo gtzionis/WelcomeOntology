@@ -6169,7 +6169,8 @@ welcome:sa_1 rdf:type owl:NamedIndividual ,
              welcome:startTimeEarly "09:30" ;
              schema:endTime "10:30" ;
              schema:startTime "10:00" ;
-             <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
+             <http://purl.org/dc/terms/isRequiredBy> "informProposeTimeSlot" ,
+                                                     "proposeTimeSlot" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#sa_10
@@ -6182,7 +6183,8 @@ welcome:sa_10 rdf:type owl:NamedIndividual ,
               welcome:startTimeEarly "09:30" ;
               schema:endTime "10:30" ;
               schema:startTime "10:00" ;
-              <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
+              <http://purl.org/dc/terms/isRequiredBy> "informProposeTimeSlot" ,
+                                                      "proposeTimeSlot" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#sa_11
@@ -6195,7 +6197,8 @@ welcome:sa_11 rdf:type owl:NamedIndividual ,
               welcome:startTimeEarly "09:30" ;
               schema:endTime "10:30" ;
               schema:startTime "10:00" ;
-              <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
+              <http://purl.org/dc/terms/isRequiredBy> "informProposeTimeSlot" ,
+                                                      "proposeTimeSlot" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#sa_12
@@ -6208,7 +6211,8 @@ welcome:sa_12 rdf:type owl:NamedIndividual ,
               welcome:startTimeEarly "12:30" ;
               schema:endTime "13:30" ;
               schema:startTime "13:00" ;
-              <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
+              <http://purl.org/dc/terms/isRequiredBy> "informProposeTimeSlot" ,
+                                                      "proposeTimeSlot" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#sa_2
@@ -6221,7 +6225,8 @@ welcome:sa_2 rdf:type owl:NamedIndividual ,
              welcome:startTimeEarly "12:30" ;
              schema:endTime "13:30" ;
              schema:startTime "13:00" ;
-             <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
+             <http://purl.org/dc/terms/isRequiredBy> "informProposeTimeSlot" ,
+                                                     "proposeTimeSlot" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#sa_5
@@ -6234,7 +6239,8 @@ welcome:sa_5 rdf:type owl:NamedIndividual ,
              welcome:startTimeEarly "10:30" ;
              schema:endTime "11:30" ;
              schema:startTime "11:00" ;
-             <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
+             <http://purl.org/dc/terms/isRequiredBy> "informProposeTimeSlot" ,
+                                                     "proposeTimeSlot" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#sa_6
@@ -6247,7 +6253,8 @@ welcome:sa_6 rdf:type owl:NamedIndividual ,
              welcome:startTimeEarly "11:30" ;
              schema:endTime "12:30" ;
              schema:startTime "12:00" ;
-             <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
+             <http://purl.org/dc/terms/isRequiredBy> "informProposeTimeSlot" ,
+                                                     "proposeTimeSlot" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#sa_7
@@ -6260,7 +6267,8 @@ welcome:sa_7 rdf:type owl:NamedIndividual ,
              welcome:startTimeEarly "09:30" ;
              schema:endTime "10:30" ;
              schema:startTime "10:00" ;
-             <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
+             <http://purl.org/dc/terms/isRequiredBy> "informProposeTimeSlot" ,
+                                                     "proposeTimeSlot" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#sa_8
@@ -6273,7 +6281,8 @@ welcome:sa_8 rdf:type owl:NamedIndividual ,
              welcome:startTimeEarly "12:30" ;
              schema:endTime "13:30" ;
              schema:startTime "13:00" ;
-             <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
+             <http://purl.org/dc/terms/isRequiredBy> "informProposeTimeSlot" ,
+                                                     "proposeTimeSlot" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#sa_9
@@ -6286,7 +6295,8 @@ welcome:sa_9 rdf:type owl:NamedIndividual ,
              welcome:startTimeEarly "15:30" ;
              schema:endTime "16:30" ;
              schema:startTime "16:00" ;
-             <http://purl.org/dc/terms/isRequiredBy> "proposeTimeSlot" .
+             <http://purl.org/dc/terms/isRequiredBy> "informProposeTimeSlot" ,
+                                                     "proposeTimeSlot" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#skype_informArabic
