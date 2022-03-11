@@ -5921,7 +5921,7 @@ welcome:course_spanishLanguage rdf:type owl:NamedIndividual ,
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#expiration_period
 welcome:expiration_period rdf:type owl:NamedIndividual ,
                                    welcome:ExpirationPeriod ;
-                          welcome:duration "0.0"^^xsd:double .
+                          welcome:duration "1.0"^^xsd:double .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#jobcenter
