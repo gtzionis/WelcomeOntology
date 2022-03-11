@@ -78,6 +78,10 @@ welcome:conditionValue rdf:type owl:AnnotationProperty .
 welcome:dependsOn rdf:type owl:AnnotationProperty .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#dependsOnSlot
+welcome:dependsOnSlot rdf:type owl:AnnotationProperty .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#needsUpdate
 welcome:needsUpdate rdf:type owl:AnnotationProperty .
 
@@ -1466,12 +1470,16 @@ welcome:Building rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#BuildingName
 welcome:BuildingName rdf:type owl:Class ;
-                     rdfs:subClassOf welcome:AddressInfo .
+                     rdfs:subClassOf welcome:AddressInfo ;
+                     welcome:conditionValue "Yes" ;
+                     welcome:dependsOnSlot "obtainIncludeFullAddress" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#BuildingType
 welcome:BuildingType rdf:type owl:Class ;
                      rdfs:subClassOf welcome:AddressInfo ;
+                     welcome:conditionValue "Yes" ;
+                     welcome:dependsOnSlot "obtainIncludeFullAddress" ;
                      welcome:needsUpdate "true"^^xsd:boolean .
 
 
@@ -1766,7 +1774,9 @@ welcome:DialogueUserTurn rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DoorNumber
 welcome:DoorNumber rdf:type owl:Class ;
-                   rdfs:subClassOf welcome:AddressInfo .
+                   rdfs:subClassOf welcome:AddressInfo ;
+                   welcome:conditionValue "Yes" ;
+                   welcome:dependsOnSlot "obtainIncludeFullAddress" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Duration
@@ -1818,7 +1828,9 @@ welcome:EmailNotifications rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Entrance
 welcome:Entrance rdf:type owl:Class ;
-                 rdfs:subClassOf welcome:AddressInfo .
+                 rdfs:subClassOf welcome:AddressInfo ;
+                 welcome:conditionValue "Yes" ;
+                 welcome:dependsOnSlot "obtainIncludeFullAddress" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ExpirationPeriod
@@ -1841,6 +1853,8 @@ welcome:FirstTimeAsylumClaim rdf:type owl:Class ;
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#FloorNumber
 welcome:FloorNumber rdf:type owl:Class ;
                     rdfs:subClassOf welcome:AddressInfo ;
+                    welcome:conditionValue "Yes" ;
+                    welcome:dependsOnSlot "obtainIncludeFullAddress" ;
                     welcome:needsUpdate "true"^^xsd:boolean .
 
 
@@ -2006,7 +2020,9 @@ welcome:Module rdf:type owl:Class .
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Municipality
 welcome:Municipality rdf:type owl:Class ;
-                     rdfs:subClassOf welcome:AddressInfo .
+                     rdfs:subClassOf welcome:AddressInfo ;
+                     welcome:conditionValue "Yes" ;
+                     welcome:dependsOnSlot "obtainIncludeFullAddress" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NER
@@ -2188,6 +2204,8 @@ welcome:PlannerRequest rdf:type owl:Class ;
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#PostCode
 welcome:PostCode rdf:type owl:Class ;
                  rdfs:subClassOf welcome:AddressInfo ;
+                 welcome:conditionValue "Yes" ;
+                 welcome:dependsOnSlot "obtainIncludeFullAddress" ;
                  welcome:needsUpdate "true"^^xsd:boolean .
 
 
@@ -2221,7 +2239,9 @@ welcome:PreviousResidenceSpain rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Province
 welcome:Province rdf:type owl:Class ;
-                 rdfs:subClassOf welcome:AddressInfo .
+                 rdfs:subClassOf welcome:AddressInfo ;
+                 welcome:conditionValue "Yes" ;
+                 welcome:dependsOnSlot "obtainIncludeFullAddress" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Region
@@ -2339,6 +2359,8 @@ welcome:StreetNumber rdf:type owl:Class ;
                                      welcome:PhysicalAddress ;
                      <http://purl.org/dc/terms/component> "NLG" ;
                      <http://purl.org/dc/terms/isRequiredBy> "obtainResidenceAddressNumber" ;
+                     welcome:conditionValue "Yes" ;
+                     welcome:dependsOnSlot "obtainIncludeFullAddress" ;
                      welcome:needsUpdate "true"^^xsd:boolean .
 
 
