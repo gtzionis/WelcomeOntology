@@ -90,6 +90,14 @@ welcome:needsUpdate rdf:type owl:AnnotationProperty .
 welcome:requiresValue rdf:type owl:AnnotationProperty .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#secondaryCondition
+welcome:secondaryCondition rdf:type owl:AnnotationProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#secondaryDependency
+welcome:secondaryDependency rdf:type owl:AnnotationProperty .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#supportsRepetition
 welcome:supportsRepetition rdf:type owl:AnnotationProperty .
 
@@ -1380,6 +1388,15 @@ welcome:AccessSpanishTraining rdf:type owl:Class ;
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AddressInfo
 welcome:AddressInfo rdf:type owl:Class ;
                     rdfs:subClassOf welcome:ContactInformation .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ApartmentNumber
+welcome:ApartmentNumber rdf:type owl:Class ;
+                        rdfs:subClassOf welcome:AddressInfo ;
+                        welcome:conditionValue "Yes" ;
+                        welcome:dependsOnSlot "obtainIncludeFullAddress" ;
+                        welcome:secondaryCondition "Apartment"@en ;
+                        welcome:secondaryDependency "BuildingType" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#App
