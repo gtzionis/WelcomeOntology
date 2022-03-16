@@ -1,0 +1,153 @@
+@prefix : <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl> .
+
+<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/isRequiredBy
+<http://purl.org/dc/terms/isRequiredBy> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasCV
+:hasCV rdf:type owl:ObjectProperty ;
+       rdfs:domain :DialogueUser ;
+       rdfs:range :CV .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasCourseNumber
+:hasCourseNumber rdf:type owl:ObjectProperty ;
+                 rdfs:domain :EducationElement ;
+                 rdfs:range :CompletedCourses .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasDegreeCertificate
+:hasDegreeCertificate rdf:type owl:ObjectProperty ;
+                      rdfs:domain :EducationElement ;
+                      rdfs:range :DegreeCertificate .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasDegreeGrade
+:hasDegreeGrade rdf:type owl:ObjectProperty ;
+                rdfs:domain :EducationElement ;
+                rdfs:range :DegreeGrade .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasDegreeTitle
+:hasDegreeTitle rdf:type owl:ObjectProperty ;
+                rdfs:domain :EducationElement ;
+                rdfs:range :DegreeTitle .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasElem
+:hasElem rdf:type owl:ObjectProperty ;
+         rdfs:domain :CV ;
+         rdfs:range :Elem .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasGraduationStatus
+:hasGraduationStatus rdf:type owl:ObjectProperty ;
+                     rdfs:domain :EducationElement ;
+                     rdfs:range :GraduationStatus .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasGraduationYear
+:hasGraduationYear rdf:type owl:ObjectProperty ;
+                   rdfs:domain :EducationElement ;
+                   rdfs:range :GraduationYear .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasInstitutionName
+:hasInstitutionName rdf:type owl:ObjectProperty ;
+                    rdfs:domain :EducationElement ;
+                    rdfs:range :InstitutionName .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalEducation
+:AdditionalEducation rdf:type owl:Class ;
+                     rdfs:subClassOf :Education_Parameters .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Agent
+:Agent rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CV
+:CV rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CompletedCourses
+:CompletedCourses rdf:type owl:Class ;
+                  rdfs:subClassOf :Education_Parameters .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DegreeCertificate
+:DegreeCertificate rdf:type owl:Class ;
+                   rdfs:subClassOf :Education_Parameters .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DegreeGrade
+:DegreeGrade rdf:type owl:Class ;
+             rdfs:subClassOf :Education_Parameters .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DegreeTitle
+:DegreeTitle rdf:type owl:Class ;
+             rdfs:subClassOf :Education_Parameters .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DialogueUser
+:DialogueUser rdf:type owl:Class ;
+              rdfs:subClassOf :Agent .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#EducationElement
+:EducationElement rdf:type owl:Class ;
+                  rdfs:subClassOf :Elem ;
+                  <http://purl.org/dc/terms/isRequiredBy> "obtainAdditionalEducation" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Education_Parameters
+:Education_Parameters rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Elem
+:Elem rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#GraduationStatus
+:GraduationStatus rdf:type owl:Class ;
+                  rdfs:subClassOf :Education_Parameters .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#GraduationYear
+:GraduationYear rdf:type owl:Class ;
+                rdfs:subClassOf :Education_Parameters .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#InstitutionName
+:InstitutionName rdf:type owl:Class ;
+                 rdfs:subClassOf :Education_Parameters .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#LanguageElement
+:LanguageElement rdf:type owl:Class ;
+                 rdfs:subClassOf :Elem .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

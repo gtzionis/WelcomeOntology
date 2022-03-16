@@ -4251,6 +4251,26 @@ welcome:Myanmar_Burma rdf:type owl:NamedIndividual ,
                       welcome:iso3code "MMR" .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NamePart
+welcome:NamePart rdf:type owl:NamedIndividual ;
+                 welcome:hasValue "name" ,
+                                  "surname" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:NamePart ;
+   owl:annotatedProperty welcome:hasValue ;
+   owl:annotatedTarget "name" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informNameFormat"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:NamePart ;
+   owl:annotatedProperty welcome:hasValue ;
+   owl:annotatedTarget "surname" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informSurnameFormat"
+ ] .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Namibia
 welcome:Namibia rdf:type owl:NamedIndividual ,
                          welcome:Country ,
