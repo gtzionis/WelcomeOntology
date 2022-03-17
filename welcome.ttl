@@ -1396,7 +1396,7 @@ welcome:ApartmentNumber rdf:type owl:Class ;
                         welcome:conditionValue "Yes" ;
                         welcome:dependsOnSlot "obtainIncludeFullAddress" ;
                         welcome:secondaryCondition "Apartment"@en ;
-                        welcome:secondaryDependency "BuildingType" .
+                        welcome:secondaryDependency "obtainBuildingType" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#App
@@ -1872,7 +1872,9 @@ welcome:FloorNumber rdf:type owl:Class ;
                     rdfs:subClassOf welcome:AddressInfo ;
                     welcome:conditionValue "Yes" ;
                     welcome:dependsOnSlot "obtainIncludeFullAddress" ;
-                    welcome:needsUpdate "true"^^xsd:boolean .
+                    welcome:needsUpdate "true"^^xsd:boolean ;
+                    welcome:secondaryCondition "Apartment"@en ;
+                    welcome:secondaryDependency "obtainBuildingType" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Gender
