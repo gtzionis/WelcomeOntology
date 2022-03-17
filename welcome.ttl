@@ -4960,6 +4960,12 @@ welcome:Slot_informBehaviorRepetition rdf:type owl:NamedIndividual ,
                                       welcome:dependsOn "OfficerRoleFlag" .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Slot_obtainCardNumber
+welcome:Slot_obtainCardNumber rdf:type owl:NamedIndividual ,
+                                       welcome:Slot ;
+                              welcome:requiresValue "true"^^xsd:boolean .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Slovakia
 welcome:Slovakia rdf:type owl:NamedIndividual ,
                           welcome:Country ,
