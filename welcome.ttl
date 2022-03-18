@@ -1043,6 +1043,10 @@ welcome:hasRelationId rdf:type owl:DatatypeProperty .
 welcome:hasRole rdf:type owl:DatatypeProperty .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasRoleSummary
+welcome:hasRoleSummary rdf:type owl:DatatypeProperty .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasSkypeId
 welcome:hasSkypeId rdf:type owl:DatatypeProperty .
 
@@ -4850,11 +4854,22 @@ welcome:SimulationAgent rdf:type owl:NamedIndividual ,
                                                   welcome:sa_8 ,
                                                   welcome:sa_9 ;
                         welcome:worksFor welcome:jobcenter ;
-                        welcome:hasName "Mr. Muller" ,
+                        welcome:hasName "Mr. Balaskas" ,
+                                        "Mr. Muller" ,
                                         "PRAKSIS"^^xsd:string ;
-                        welcome:hasRole "PRAKSIS' reception officer" ,
-                                        "a lawyer"^^xsd:string ,
-                                        "an officer"^^xsd:string .
+                        welcome:hasRole "a lawyer"^^xsd:string ,
+                                        "an officer"^^xsd:string ;
+                        welcome:hasRoleSummary "PRAKSIS' reception officer" ,
+                                               "one of PRAKSIS’ Legal Service lawyers" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:SimulationAgent ;
+   owl:annotatedProperty welcome:hasName ;
+   owl:annotatedTarget "Mr. Balaskas" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informAuthorityOrPersonName" ;
+   welcome:conditionValue "false"^^xsd:boolean ;
+   welcome:dependsOn "OfficerRoleFlag"
+ ] .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:SimulationAgent ;
@@ -4870,14 +4885,7 @@ welcome:SimulationAgent rdf:type owl:NamedIndividual ,
    owl:annotatedSource welcome:SimulationAgent ;
    owl:annotatedProperty welcome:hasName ;
    owl:annotatedTarget "PRAKSIS"^^xsd:string ;
-   <http://purl.org/dc/terms/isRequiredBy> "informAuthorityOrPersonName"
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource welcome:SimulationAgent ;
-   owl:annotatedProperty welcome:hasRole ;
-   owl:annotatedTarget "PRAKSIS' reception officer" ;
-   <http://purl.org/dc/terms/isRequiredBy> "informPersonNameIntro" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informAuthorityOrPersonName" ;
    welcome:conditionValue "true"^^xsd:boolean ;
    welcome:dependsOn "OfficerRoleFlag"
  ] .
@@ -4886,8 +4894,7 @@ welcome:SimulationAgent rdf:type owl:NamedIndividual ,
    owl:annotatedSource welcome:SimulationAgent ;
    owl:annotatedProperty welcome:hasRole ;
    owl:annotatedTarget "a lawyer"^^xsd:string ;
-   <http://purl.org/dc/terms/isRequiredBy> "informAuthorityOrPersonName" ,
-                                           "informPersonNameIntro" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informAuthorityOrPersonName" ;
    welcome:conditionValue "false"^^xsd:boolean ;
    welcome:dependsOn "OfficerRoleFlag"
  ] .
@@ -4898,6 +4905,24 @@ welcome:SimulationAgent rdf:type owl:NamedIndividual ,
    owl:annotatedTarget "an officer"^^xsd:string ;
    <http://purl.org/dc/terms/isRequiredBy> "informAuthorityOrPersonName" ;
    welcome:conditionValue "true"^^xsd:boolean ;
+   welcome:dependsOn "OfficerRoleFlag"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:SimulationAgent ;
+   owl:annotatedProperty welcome:hasRoleSummary ;
+   owl:annotatedTarget "PRAKSIS' reception officer" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informPersonNameIntro" ;
+   welcome:conditionValue "true"^^xsd:boolean ;
+   welcome:dependsOn "OfficerRoleFlag"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:SimulationAgent ;
+   owl:annotatedProperty welcome:hasRoleSummary ;
+   owl:annotatedTarget "one of PRAKSIS’ Legal Service lawyers" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informPersonNameIntro" ;
+   welcome:conditionValue "false"^^xsd:boolean ;
    welcome:dependsOn "OfficerRoleFlag"
  ] .
 
@@ -4917,13 +4942,33 @@ welcome:SimulationConcern rdf:type owl:NamedIndividual ;
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SimulationScenario
 welcome:SimulationScenario rdf:type owl:NamedIndividual ,
                                     welcome:Scenario ;
-                           welcome:scenarioName "how to make an appointment by simulating a phone call" .
+                           welcome:scenarioName "how to make an appointment by simulating a phone call" ,
+                                                "how to make an appointment with a lawyer by simulating a phone call." ,
+                                                "the situation when a lawyer is available." .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:SimulationScenario ;
    owl:annotatedProperty welcome:scenarioName ;
    owl:annotatedTarget "how to make an appointment by simulating a phone call" ;
    <http://purl.org/dc/terms/isRequiredBy> "informSimulation"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:SimulationScenario ;
+   owl:annotatedProperty welcome:scenarioName ;
+   owl:annotatedTarget "how to make an appointment with a lawyer by simulating a phone call." ;
+   <http://purl.org/dc/terms/isRequiredBy> "informSimulation" ;
+   welcome:conditionValue "true"^^xsd:boolean ;
+   welcome:dependsOn "OfficerRoleFlag"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:SimulationScenario ;
+   owl:annotatedProperty welcome:scenarioName ;
+   owl:annotatedTarget "the situation when a lawyer is available." ;
+   <http://purl.org/dc/terms/isRequiredBy> "informSimulation" ;
+   welcome:conditionValue "false"^^xsd:boolean ;
+   welcome:dependsOn "OfficerRoleFlag"
  ] .
 
 
@@ -5966,7 +6011,7 @@ welcome:course_spanishLanguage rdf:type owl:NamedIndividual ,
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#expiration_period
 welcome:expiration_period rdf:type owl:NamedIndividual ,
                                    welcome:ExpirationPeriod ;
-                          welcome:duration "1.0"^^xsd:double .
+                          welcome:duration "10.0"^^xsd:double .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#jobcenter
