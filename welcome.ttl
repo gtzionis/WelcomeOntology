@@ -4950,7 +4950,9 @@ welcome:SimulationScenario rdf:type owl:NamedIndividual ,
    owl:annotatedSource welcome:SimulationScenario ;
    owl:annotatedProperty welcome:scenarioName ;
    owl:annotatedTarget "how to make an appointment by simulating a phone call" ;
-   <http://purl.org/dc/terms/isRequiredBy> "informSimulation"
+   <http://purl.org/dc/terms/isRequiredBy> "informSimulation" ;
+   welcome:conditionValue "Training Appointment" ;
+   welcome:dependsOn "Scenario"
  ] .
 
 [ rdf:type owl:Axiom ;
