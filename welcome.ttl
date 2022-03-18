@@ -4943,8 +4943,8 @@ welcome:SimulationConcern rdf:type owl:NamedIndividual ;
 welcome:SimulationScenario rdf:type owl:NamedIndividual ,
                                     welcome:Scenario ;
                            welcome:scenarioName "how to make an appointment by simulating a phone call" ,
-                                                "how to make an appointment with a lawyer by simulating a phone call." ,
-                                                "the situation when a lawyer is available." .
+                                                "how to make an appointment with a lawyer by simulating a phone call" ,
+                                                "the situation when a lawyer is available" .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:SimulationScenario ;
@@ -4958,7 +4958,7 @@ welcome:SimulationScenario rdf:type owl:NamedIndividual ,
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:SimulationScenario ;
    owl:annotatedProperty welcome:scenarioName ;
-   owl:annotatedTarget "how to make an appointment with a lawyer by simulating a phone call." ;
+   owl:annotatedTarget "how to make an appointment with a lawyer by simulating a phone call" ;
    <http://purl.org/dc/terms/isRequiredBy> "informSimulation" ;
    welcome:conditionValue "true"^^xsd:boolean ;
    welcome:dependsOn "OfficerRoleFlag"
@@ -4967,7 +4967,7 @@ welcome:SimulationScenario rdf:type owl:NamedIndividual ,
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:SimulationScenario ;
    owl:annotatedProperty welcome:scenarioName ;
-   owl:annotatedTarget "the situation when a lawyer is available." ;
+   owl:annotatedTarget "the situation when a lawyer is available" ;
    <http://purl.org/dc/terms/isRequiredBy> "informSimulation" ;
    welcome:conditionValue "false"^^xsd:boolean ;
    welcome:dependsOn "OfficerRoleFlag"
