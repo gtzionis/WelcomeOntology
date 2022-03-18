@@ -4858,7 +4858,7 @@ welcome:SimulationAgent rdf:type owl:NamedIndividual ,
                                         "Mr. Muller" ,
                                         "PRAKSIS"^^xsd:string ;
                         welcome:hasRole "a lawyer"^^xsd:string ,
-                                        "an officer"^^xsd:string ;
+                                        "a reception officer"^^xsd:string ;
                         welcome:hasRoleSummary "PRAKSIS' reception officer" ,
                                                "one of PRAKSIS’ Legal Service lawyers" .
 
@@ -4902,7 +4902,7 @@ welcome:SimulationAgent rdf:type owl:NamedIndividual ,
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:SimulationAgent ;
    owl:annotatedProperty welcome:hasRole ;
-   owl:annotatedTarget "an officer"^^xsd:string ;
+   owl:annotatedTarget "a reception officer"^^xsd:string ;
    <http://purl.org/dc/terms/isRequiredBy> "informAuthorityOrPersonName" ;
    welcome:conditionValue "true"^^xsd:boolean ;
    welcome:dependsOn "OfficerRoleFlag"
