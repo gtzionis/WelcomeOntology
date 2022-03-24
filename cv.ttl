@@ -16,6 +16,14 @@
 <http://purl.org/dc/terms/isRequiredBy> rdf:type owl:AnnotationProperty .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#conditionValue
+:conditionValue rdf:type owl:AnnotationProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#dependsOnSlot
+:dependsOnSlot rdf:type owl:AnnotationProperty .
+
+
 #################################################################
 #    Object Properties
 #################################################################
@@ -75,12 +83,22 @@
 
 
 #################################################################
+#    Data properties
+#################################################################
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#educationElements
+:educationElements rdf:type owl:DatatypeProperty .
+
+
+#################################################################
 #    Classes
 #################################################################
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalEducation
 :AdditionalEducation rdf:type owl:Class ;
-                     rdfs:subClassOf :Education_Parameters .
+                     rdfs:subClassOf :Education_Parameters ;
+                     :conditionValue "Yes" ;
+                     :dependsOnSlot "obtainMoreDegreeTitle" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Agent
@@ -93,17 +111,23 @@
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CompletedCourses
 :CompletedCourses rdf:type owl:Class ;
-                  rdfs:subClassOf :Education_Parameters .
+                  rdfs:subClassOf :Education_Parameters ;
+                  :conditionValue "Yes" ;
+                  :dependsOnSlot "obtainMoreDegreeTitle" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DegreeCertificate
 :DegreeCertificate rdf:type owl:Class ;
-                   rdfs:subClassOf :Education_Parameters .
+                   rdfs:subClassOf :Education_Parameters ;
+                   :conditionValue "Yes" ;
+                   :dependsOnSlot "obtainMoreDegreeTitle" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DegreeGrade
 :DegreeGrade rdf:type owl:Class ;
-             rdfs:subClassOf :Education_Parameters .
+             rdfs:subClassOf :Education_Parameters ;
+             :conditionValue "Yes" ;
+             :dependsOnSlot "obtainMoreDegreeTitle" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DegreeTitle
@@ -132,17 +156,23 @@
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#GraduationStatus
 :GraduationStatus rdf:type owl:Class ;
-                  rdfs:subClassOf :Education_Parameters .
+                  rdfs:subClassOf :Education_Parameters ;
+                  :conditionValue "Yes" ;
+                  :dependsOnSlot "obtainMoreDegreeTitle" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#GraduationYear
 :GraduationYear rdf:type owl:Class ;
-                rdfs:subClassOf :Education_Parameters .
+                rdfs:subClassOf :Education_Parameters ;
+                :conditionValue "Yes" ;
+                :dependsOnSlot "obtainMoreDegreeTitle" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#InstitutionName
 :InstitutionName rdf:type owl:Class ;
-                 rdfs:subClassOf :Education_Parameters .
+                 rdfs:subClassOf :Education_Parameters ;
+                 :conditionValue "Yes" ;
+                 :dependsOnSlot "obtainMoreDegreeTitle" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#LanguageElement
