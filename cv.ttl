@@ -24,6 +24,30 @@
 :dependsOnSlot rdf:type owl:AnnotationProperty .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#fourthCondition
+:fourthCondition rdf:type owl:AnnotationProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#fourthDependency
+:fourthDependency rdf:type owl:AnnotationProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#secondaryCondition
+:secondaryCondition rdf:type owl:AnnotationProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#secondaryDependency
+:secondaryDependency rdf:type owl:AnnotationProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#thirdCondition
+:thirdCondition rdf:type owl:AnnotationProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#thirdDependency
+:thirdDependency rdf:type owl:AnnotationProperty .
+
+
 #################################################################
 #    Object Properties
 #################################################################
@@ -106,6 +130,182 @@
                      rdfs:subClassOf :Education_Parameters ;
                      :conditionValue "Yes" ;
                      :dependsOnSlot "obtainMoreDegreeTitle" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguage
+:AdditionalLanguage rdf:type owl:Class ;
+                    rdfs:subClassOf :Language_Parameters ;
+                    :conditionValue "Yes" ;
+                    :dependsOnSlot "obtainAdditionalLanguageConfirmation" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguageCertificate
+:AdditionalLanguageCertificate rdf:type owl:Class ;
+                               rdfs:subClassOf :Language_Parameters ;
+                               :conditionValue "Yes" ;
+                               :dependsOnSlot "obtainAdditionalLanguageConfirmation" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguageCountry
+:AdditionalLanguageCountry rdf:type owl:Class ;
+                           rdfs:subClassOf :Other_Parameters ;
+                           :conditionValue "Yes" ;
+                           :dependsOnSlot "obtainAdditionalLanguageConfirmation" ;
+                           :secondaryCondition "Yes" ;
+                           :secondaryDependency "obtainAdditionalLanguageOther" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguageCountryDuration
+:AdditionalLanguageCountryDuration rdf:type owl:Class ;
+                                   rdfs:subClassOf :Other_Parameters ;
+                                   :conditionValue "Yes" ;
+                                   :dependsOnSlot "obtainAdditionalLanguageConfirmation" ;
+                                   :fourthCondition "Yes" ;
+                                   :fourthDependency "obtainAdditionalLanguageCountryInclude" ;
+                                   :secondaryCondition "Yes" ;
+                                   :secondaryDependency "obtainAdditionalLanguageOther" ;
+                                   :thirdCondition "Yes" ;
+                                   :thirdDependency "obtainAdditionalLanguageCountry" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguageCountryInclude
+:AdditionalLanguageCountryInclude rdf:type owl:Class ;
+                                  rdfs:subClassOf :Other_Parameters ;
+                                  :conditionValue "Yes" ;
+                                  :dependsOnSlot "obtainAdditionalLanguageConfirmation" ;
+                                  :secondaryCondition "Yes" ;
+                                  :secondaryDependency "obtainAdditionalLanguageOther" ;
+                                  :thirdCondition "Yes" ;
+                                  :thirdDependency "obtainAdditionalLanguageCountry" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguageCountryName
+:AdditionalLanguageCountryName rdf:type owl:Class ;
+                               rdfs:subClassOf :Other_Parameters ;
+                               :conditionValue "Yes" ;
+                               :dependsOnSlot "obtainAdditionalLanguageConfirmation" ;
+                               :fourthCondition "Yes" ;
+                               :fourthDependency "obtainAdditionalLanguageCountryInclude" ;
+                               :secondaryCondition "Yes" ;
+                               :secondaryDependency "obtainAdditionalLanguageOther" ;
+                               :thirdDependency "Yes" ,
+                                                "obtainAdditionalLanguageCountry" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguageCourse
+:AdditionalLanguageCourse rdf:type owl:Class ;
+                          rdfs:subClassOf :Other_Parameters ;
+                          :conditionValue "Yes" ;
+                          :dependsOnSlot "obtainAdditionalLanguageConfirmation" ;
+                          :secondaryCondition "Yes" ;
+                          :secondaryDependency "obtainAdditionalLanguageOther" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguageCourseCertificate
+:AdditionalLanguageCourseCertificate rdf:type owl:Class ;
+                                     rdfs:subClassOf :Other_Parameters ;
+                                     :conditionValue "Yes" ;
+                                     :dependsOnSlot "obtainAdditionalLanguageConfirmation" ;
+                                     :secondaryCondition "Yes" ;
+                                     :secondaryDependency "obtainAdditionalLanguageOther" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguageCourseDuration
+:AdditionalLanguageCourseDuration rdf:type owl:Class ;
+                                  rdfs:subClassOf :Other_Parameters ;
+                                  :conditionValue "Yes" ;
+                                  :dependsOnSlot "obtainAdditionalLanguageConfirmation" ;
+                                  :secondaryCondition "Yes" ;
+                                  :secondaryDependency "obtainAdditionalLanguageOther" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguageCourseGrade
+:AdditionalLanguageCourseGrade rdf:type owl:Class ;
+                               rdfs:subClassOf :Other_Parameters ;
+                               :conditionValue "Yes" ;
+                               :dependsOnSlot "obtainAdditionalLanguageConfirmation" ;
+                               :secondaryCondition "Yes" ;
+                               :secondaryDependency "obtainAdditionalLanguageOther" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguageCourseName
+:AdditionalLanguageCourseName rdf:type owl:Class ;
+                              rdfs:subClassOf :Other_Parameters ;
+                              :conditionValue "Yes" ;
+                              :dependsOnSlot "obtainAdditionalLanguageConfirmation" ;
+                              :secondaryCondition "Yes" ;
+                              :secondaryDependency "obtainAdditionalLanguageOther" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguageCourseSchool
+:AdditionalLanguageCourseSchool rdf:type owl:Class ;
+                                rdfs:subClassOf :Other_Parameters ;
+                                :conditionValue "Yes" ;
+                                :dependsOnSlot "obtainAdditionalLanguageConfirmation" ;
+                                :secondaryCondition "Yes" ;
+                                :secondaryDependency "obtainAdditionalLanguageOther" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguageCourseSchoolType
+:AdditionalLanguageCourseSchoolType rdf:type owl:Class ;
+                                    rdfs:subClassOf :Other_Parameters ;
+                                    :conditionValue "Yes" ;
+                                    :dependsOnSlot "obtainAdditionalLanguageConfirmation" ;
+                                    :secondaryCondition "Yes" ;
+                                    :secondaryDependency "obtainAdditionalLanguageOther" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguageCourseStatus
+:AdditionalLanguageCourseStatus rdf:type owl:Class ;
+                                rdfs:subClassOf :Other_Parameters ;
+                                :conditionValue "Yes" ;
+                                :dependsOnSlot "obtainAdditionalLanguageConfirmation" ;
+                                :secondaryCondition "Yes" ;
+                                :secondaryDependency "obtainAdditionalLanguageOther" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguageCourseYear
+:AdditionalLanguageCourseYear rdf:type owl:Class ;
+                              rdfs:subClassOf :Other_Parameters ;
+                              :conditionValue "Yes" ;
+                              :dependsOnSlot "obtainAdditionalLanguageConfirmation" ;
+                              :secondaryCondition "Yes" ;
+                              :secondaryDependency "obtainAdditionalLanguageOther" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguageDegree
+:AdditionalLanguageDegree rdf:type owl:Class ;
+                          rdfs:subClassOf :Language_Parameters ;
+                          :conditionValue "Yes" ;
+                          :dependsOnSlot "obtainAdditionalLanguageConfirmation" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguageLevel
+:AdditionalLanguageLevel rdf:type owl:Class ;
+                         rdfs:subClassOf :Language_Parameters ;
+                         :conditionValue "Yes" ;
+                         :dependsOnSlot "obtainAdditionalLanguageConfirmation" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguageName
+:AdditionalLanguageName rdf:type owl:Class ;
+                        rdfs:subClassOf :Language_Parameters ;
+                        :conditionValue "Yes" ;
+                        :dependsOnSlot "obtainAdditionalLanguageConfirmation" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguageOther
+:AdditionalLanguageOther rdf:type owl:Class ;
+                         rdfs:subClassOf :Other_Parameters ;
+                         :conditionValue "Yes" ;
+                         :dependsOnSlot "obtainAdditionalLanguageConfirmation" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguageProcedure
+:AdditionalLanguageProcedure rdf:type owl:Class ;
+                             rdfs:subClassOf :Language_Parameters ;
+                             :conditionValue "Yes" ;
+                             :dependsOnSlot "obtainAdditionalLanguageConfirmation" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Agent
@@ -240,6 +440,11 @@
                 :dependsOnSlot "obtainMoreDegreeTitle" .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#IncludeAdditionalLanguage
+:IncludeAdditionalLanguage rdf:type owl:Class ;
+                           rdfs:subClassOf :Language_Parameters .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#InstitutionName
 :InstitutionName rdf:type owl:Class ;
                  rdfs:subClassOf :Education_Parameters ;
@@ -254,6 +459,15 @@
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Language_Parameters
 :Language_Parameters rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NativeLanguageName
+:NativeLanguageName rdf:type owl:Class ;
+                    rdfs:subClassOf :Language_Parameters .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Other_Parameters
+:Other_Parameters rdf:type owl:Class .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
