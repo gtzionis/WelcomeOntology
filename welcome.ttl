@@ -2520,10 +2520,10 @@ welcome:AgentNGO rdf:type owl:NamedIndividual ,
                           foaf:Agent ;
                  actor:webURL "https://apps.migration.gov.gr/selfregistration/login" ,
                               "https://praksis.gr/contact/" ,
-                              "https://treballiaferssocials.gencat.cat/ca/ambits_tematics/immigracio/" ,
+                              "https://treball.gencat.cat/ca/contacte/punts_d_atencio/oac/oac_barcelona/" ,
                               "https://www.caritas-hamm.de/einrichtungen/beratungszentrum/beratungszentrum" ;
                  welcome:agentName "CARITAS" ,
-                                   "DTASF" ,
+                                   "DIFE" ,
                                    "PRAKSIS" ;
                  welcome:contactPurpose "inform you where such a service is available" ,
                                         "schedule an appointment with a professional" .
@@ -2531,7 +2531,7 @@ welcome:AgentNGO rdf:type owl:NamedIndividual ,
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:AgentNGO ;
    owl:annotatedProperty welcome:agentName ;
-   owl:annotatedTarget "DTASF" ;
+   owl:annotatedTarget "DIFE" ;
    <http://purl.org/dc/terms/isRequiredBy> "informGenericDTASFContact"
  ] .
 
@@ -2580,7 +2580,7 @@ welcome:AgentNGO rdf:type owl:NamedIndividual ,
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:AgentNGO ;
    owl:annotatedProperty actor:webURL ;
-   owl:annotatedTarget "https://treballiaferssocials.gencat.cat/ca/ambits_tematics/immigracio/" ;
+   owl:annotatedTarget "https://treball.gencat.cat/ca/contacte/punts_d_atencio/oac/oac_barcelona/" ;
    <http://purl.org/dc/terms/isRequiredBy> "informGenericDTASFContact"
  ] .
 
