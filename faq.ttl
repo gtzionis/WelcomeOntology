@@ -1,0 +1,287 @@
+@prefix : <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/faq.ttl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/faq.ttl> .
+
+<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/faq.ttl> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/faq.ttl#hasFollowUp
+:hasFollowUp rdf:type owl:ObjectProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/faq.ttl#hasRelevantSlot
+:hasRelevantSlot rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/faq.ttl#faqAnswer
+:faqAnswer rdf:type owl:DatatypeProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/faq.ttl#faqID
+:faqID rdf:type owl:DatatypeProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/faq.ttl#faqQuestion
+:faqQuestion rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/faq.ttl#ExternalFAQ
+:ExternalFAQ rdf:type owl:Class ;
+             rdfs:subClassOf :FAQ .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/faq.ttl#FAQ
+:FAQ rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/faq.ttl#InternalFAQ
+:InternalFAQ rdf:type owl:Class ;
+             rdfs:subClassOf :FAQ .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/faq.ttl#Slot
+:Slot rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/faq.ttl#FAQ_obtainCVCreationInterest
+:FAQ_obtainCVCreationInterest rdf:type owl:NamedIndividual ,
+                                       :Slot .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/faq.ttl#FAQ_obtainSuggestOtherEducation
+:FAQ_obtainSuggestOtherEducation rdf:type owl:NamedIndividual ,
+                                          :Slot .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/faq.ttl#faq_11
+:faq_11 rdf:type owl:NamedIndividual ,
+                 :InternalFAQ ;
+        :hasFollowUp :faq_12 ;
+        :hasRelevantSlot :FAQ_obtainCVCreationInterest ;
+        :faqAnswer "The CV (or Curriculum Vitae) is a document that includes your personal data and your academic and professional background. Among others, you can send your CV to a company or a recruiter when applying for a job or an internship. Also, it can be required if you are applying for a scholarship." ;
+        :faqID 11 ;
+        :faqQuestion "What is a CV?" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/faq.ttl#faq_12
+:faq_12 rdf:type owl:NamedIndividual ,
+                 :InternalFAQ ;
+        :faqAnswer "Personal data will help the recruiter to know your profile, and to contact you if your professional and academic background fits the needs of the company. Among others, it includes your full name, address, email and telephone. Was this information sufficient?" ;
+        :faqID 12 ;
+        :faqQuestion "What do you mean by personal data?" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/faq.ttl#faq_21
+:faq_21 rdf:type owl:NamedIndividual ,
+                 :InternalFAQ ;
+        :hasFollowUp :faq_22 ;
+        :faqAnswer "It is not mandatory to write your full address. Generally, people write their postal address. On the one hand, it might help employers if they are looking for candidates who live close to the workplace and can join immediately. On the other hand, some recruiters may interpret that you are showing transparency. Still, this is private data, and you are in your right to safeguard your privacy." ;
+        :faqID 21 ;
+        :faqQuestion "Do I write my full address?" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/faq.ttl#faq_22
+:faq_22 rdf:type owl:NamedIndividual ,
+                 :InternalFAQ ;
+        :faqAnswer "The CV creation scenario will allow you to avoid providing an address. Just leave it empty." ;
+        :faqID 22 ;
+        :faqQuestion "I do not want to provide an address." .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/faq.ttl#faq_31
+:faq_31 rdf:type owl:NamedIndividual ,
+                 :InternalFAQ ;
+        :hasFollowUp :faq_32 ;
+        :faqAnswer "Generally, people write the date of birth (day, month and year). This helps to keep this part of your CV up to date, because you won't have to change it every time you have your birthday." ;
+        :faqID 31 ;
+        :faqQuestion "Should I write the date of birth or my age?" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/faq.ttl#faq_32
+:faq_32 rdf:type owl:NamedIndividual ,
+                 :InternalFAQ ;
+        :faqAnswer "You are in your right to avoid providing the information about the place you were born. Still, you can offer this information or modify it on the final document once it is created." ;
+        :faqID 32 ;
+        :faqQuestion "Do I have to provide information about the place where I was born?" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/faq.ttl#faq_41
+:faq_41 rdf:type owl:NamedIndividual ,
+                 :InternalFAQ ;
+        :hasFollowUp :faq_42 ;
+        :hasRelevantSlot :FAQ_obtainSuggestOtherEducation ;
+        :faqAnswer "You can include an unfinished course. However, it is recommended to indicate that you have not completed it or are still enrolled. Remember, it is preferable that you include courses related to the job you want, and it is better if you can demonstrate that you have done them with an official certificate. Some recruiters may request it during the selection process." ;
+        :faqID 41 ;
+        :faqQuestion "Should I include the unfinished courses?" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/faq.ttl#faq_42
+:faq_42 rdf:type owl:NamedIndividual ,
+                 :InternalFAQ ;
+        :faqAnswer "If you consider you learnt something related to the job during the course, you can provide the list of relevant subjects in the CV." ;
+        :faqID 42 ;
+        :faqQuestion "What should I do if I did not pass the course?" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/faq.ttl#faq_51
+:faq_51 rdf:type owl:NamedIndividual ,
+                 :InternalFAQ ;
+        :hasFollowUp :faq_52 ;
+        :hasRelevantSlot :FAQ_obtainSuggestOtherEducation ;
+        :faqAnswer "Yes, you can include it. Remember, it is preferable that you include courses that are related to the job you want, and it is better if you can demonstrate that you have done them with an official certificate. Some recruiters may request it during the selection process." ;
+        :faqID 51 ;
+        :faqQuestion "I finished a course, but I do not have a certificate. Can I include it?" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/faq.ttl#faq_52
+:faq_52 rdf:type owl:NamedIndividual ,
+                 :InternalFAQ ;
+        :faqAnswer "You can always provide this information and prepare your enrolment certificate or your grades if the interviewer asks for more details." ;
+        :faqID 52 ;
+        :faqQuestion "Ok. But is there any way to demonstrate that I finished a course?" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/faq.ttl#faq_61
+:faq_61 rdf:type owl:NamedIndividual ,
+                 :InternalFAQ ;
+        :hasFollowUp :faq_62 ;
+        :hasRelevantSlot :FAQ_obtainSuggestOtherEducation ;
+        :faqAnswer "No, some people include their grades to show transparency in front of the recruiters. Still, it is up to you to provide this information." ;
+        :faqID 61 ;
+        :faqQuestion "Do I have to include my grades?" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/faq.ttl#faq_62
+:faq_62 rdf:type owl:NamedIndividual ,
+                 :InternalFAQ ;
+        :faqAnswer "You can always explain what your grade means in your CV. Still, if you have some doubts, you can ask for an appointment with a professional." ;
+        :faqID 62 ;
+        :faqQuestion "My graduation grades are not in the same scale as in Spain/Greece/Germany." .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/faq.ttl#faq_external_1
+:faq_external_1 rdf:type owl:NamedIndividual ,
+                         :ExternalFAQ ;
+                :faqAnswer "You can visit the Europass website which provides information in Greek, English and other languages on how to create a CV. You can also refer to the Welcome App page in the CV creation section. In addition, you could ask the Social Service of the PRAKSIS Polyclinic in Thessaloniki and the Community Center in Athens for more information." ;
+                :faqID 1 ;
+                :faqQuestion "How do I create my CV? Where can I get help to write it?" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/faq.ttl#faq_external_10
+:faq_external_10 rdf:type owl:NamedIndividual ,
+                          :ExternalFAQ ;
+                 :faqAnswer "The responsible organization for granting benefits is OPEKA (the welfare benefits and social solidarity organisation). Based on income criteria and health problems, you may be granted some kind of financial support after being examined by a competent committee. You could ask the Social Service of the PRAKSIS Polyclinic in Thessaloniki and the Community Center in Athens for more update information." ;
+                 :faqID 10 ;
+                 :faqQuestion "How can I be informed about any benefits I am entitled to?" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/faq.ttl#faq_external_11
+:faq_external_11 rdf:type owl:NamedIndividual ,
+                          :ExternalFAQ ;
+                 :faqAnswer "There are NGOs that provide accountant services for free. You could ask the Social Service of the PRAKSIS Polyclinic in Thessaloniki and the Community Center in Athens for more update information." ;
+                 :faqID 11 ;
+                 :faqQuestion "Where can I go to talk to an accountant about tax issues? Are there any free services?" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/faq.ttl#faq_external_12
+:faq_external_12 rdf:type owl:NamedIndividual ,
+                          :ExternalFAQ ;
+                 :faqAnswer "There are free public kindergartens which accept children based on income criteria. You can ask social services and an accountant for information so that you can make your application via taxisnet. You could ask the Social Service of the PRAKSIS Polyclinic in Thessaloniki and the Community Center in Athens for more updated information." ;
+                 :faqID 12 ;
+                 :faqQuestion "Where can I leave my children to work?" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/faq.ttl#faq_external_13
+:faq_external_13 rdf:type owl:NamedIndividual ,
+                          :ExternalFAQ ;
+                 :faqAnswer "Greek is the first official language in Greece and English the second unofficial language. For these reasons, you need to know one of the two languages. There are NGOs that offer free Greek and English lessons. You could ask the Social Service of the PRAKSIS Polyclinic in Thessaloniki and the Community Center in Athens for more updated information." ;
+                 :faqID 13 ;
+                 :faqQuestion "Is it possible if I do not speak Greek well to work in Greece or do I have to know the language well?" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/faq.ttl#faq_external_2
+:faq_external_2 rdf:type owl:NamedIndividual ,
+                         :ExternalFAQ ;
+                :faqAnswer """You need an official translation of your degree/diplomas. The Ministry of Foreign Affairs can help you with this. For more information you should visit the Ministry's website https://www.mfa.gr/en/citizen-services/translation-service/translation-service.html . 
+For the recognition of your degree you need to contact the DOATAP (Diepisthmonikos Organismos Anagnorisis titlon akadhmaikon kai pliroforisis). It is a public service that undertakes the recognition of qualifications. For more information, visit the website https://e-doatap.doatap.gr/?lang=en. You could also ask the Social Service of the PRAKSIS Polyclinic in Thessaloniki and the Community Center in Athens for more information.""" ;
+                :faqID 2 ;
+                :faqQuestion "How can I translate my degrees/diplomas? How can I have recognized my qualifications in Greece?" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/faq.ttl#faq_external_3
+:faq_external_3 rdf:type owl:NamedIndividual ,
+                         :ExternalFAQ ;
+                :faqAnswer "Once your qualifications have been recognised, you can take the relative exams and continue your studies in a corresponding department in Greece." ;
+                :faqID 3 ;
+                :faqQuestion "How can I continue and complete my studies so that I can work?" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/faq.ttl#faq_external_4
+:faq_external_4 rdf:type owl:NamedIndividual ,
+                         :ExternalFAQ ;
+                :faqAnswer "You could visit the following: www.kariera.gr, www.skywalker.gr, www.indeed.gr, www.xe.gr" ;
+                :faqID 4 ;
+                :faqQuestion "Which websites can I search for a job?" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/faq.ttl#faq_external_5
+:faq_external_5 rdf:type owl:NamedIndividual ,
+                         :ExternalFAQ ;
+                :faqAnswer "Yes, depending on the ending of the link you can search for jobs in different countries. For example indeed.co.uk is for the United Kingdom." ;
+                :faqID 5 ;
+                :faqQuestion "Are there websites that I can search for work both in Greece and abroad at the same time?" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/faq.ttl#faq_external_6
+:faq_external_6 rdf:type owl:NamedIndividual ,
+                         :ExternalFAQ ;
+                :faqAnswer "You could ask the Social Service of the PRAKSIS Polyclinic in Thessaloniki and the Community Center in Athens for more update information. Generally, there are social services with job counselors who could help you to make your CV and find a job." ;
+                :faqID 6 ;
+                :faqQuestion "Which organizations can I contact for job counseling?" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/faq.ttl#faq_external_7
+:faq_external_7 rdf:type owl:NamedIndividual ,
+                         :ExternalFAQ ;
+                :faqAnswer "You will have to: a) Enter the service and then press on “Initial registration” and “Natural person” «phisiko prosopo», b) Fill in the form. You will need: a) your ID number, b) your tax registration number (AFM), c) a valid and active bank account number (IBAN), in which you are the sole beneficiary or co-beneficiary, d) your mobile phone number and the mobile phone company (provider) (mobile phone bill). You could find information on this link: www.gov.gr . If you need help, you can ask for help from an NGO or a professional accountant. You could ask the Social Service of the PRAKSIS Polyclinic in Thessaloniki and the Community Center in Athens for more updated information." ;
+                :faqID 7 ;
+                :faqQuestion "What documents do I need to start working?" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/faq.ttl#faq_external_8
+:faq_external_8 rdf:type owl:NamedIndividual ,
+                         :ExternalFAQ ;
+                :faqAnswer """If you register, you may benefit from OAED services, such as: a) Unemployment card
+b) to be referred to a job if there is a vacant position corresponding to your qualifications and interests. You may also access services and get advice including CV registration, preparation of an individual action plan, opportunities to participate in employment or vocational training programs. To access the unemployment card, you need to present the following: a) The original and a copy of your valid “asylum seeker’s card” or living permit ID, b) ΑΜΚΑ or PAAYPA, c) Tax clearance (ekkatharistiko eforias) or an official declaration that you have not submitted an income tax return in Greece, d) An utility bill or a lease contract for proving your address, e) Any other document that OAED may consider necessary for verifying that you are unemployed.""" ;
+                :faqID 8 ;
+                :faqQuestion "If I do not work or stop working, how do I register with OAED (Manpower Employment Organisation – Organismos Apasholiseos Ergatikou Dynamikou in Greek) services?" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/faq.ttl#faq_external_9
+:faq_external_9 rdf:type owl:NamedIndividual ,
+                         :ExternalFAQ ;
+                :faqAnswer "If you have worked in several EU countries, you may have accumulated pension rights in each of them. You should apply to the pension institution in the country where you last lived or worked. If you have never worked in the country where you live, your host country will forward your claim to the country where you last worked. That country is responsible for processing your claim and for collecting all the information on the contributions you have paid in all the countries where you have worked. In some countries, the pension institution must send you the claim form before you reach the retirement age in that country. If you do not receive it, contact your pension institution to find out whether it will be sent to you automatically. For more information you could visit the website europa.eu. You could ask the Social Service of the PRAKSIS Polyclinic in Thessaloniki and the Community Center in Athens for more update information." ;
+                :faqID 9 ;
+                :faqQuestion "Is there a way to count my work experience in the previous country I was in so that I could retire at some point?" .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
