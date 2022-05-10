@@ -1,12 +1,13 @@
-@prefix : <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#> .
+@prefix : <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl> .
+@prefix welcome: <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#> .
+@base <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl> .
 
-<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl> rdf:type owl:Ontology .
+<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl> rdf:type owl:Ontology .
 
 #################################################################
 #    Annotation properties
@@ -17,35 +18,35 @@
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#conditionValue
-:conditionValue rdf:type owl:AnnotationProperty .
+welcome:conditionValue rdf:type owl:AnnotationProperty .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#dependsOnSlot
-:dependsOnSlot rdf:type owl:AnnotationProperty .
+welcome:dependsOnSlot rdf:type owl:AnnotationProperty .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#fourthCondition
-:fourthCondition rdf:type owl:AnnotationProperty .
+welcome:fourthCondition rdf:type owl:AnnotationProperty .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#fourthDependency
-:fourthDependency rdf:type owl:AnnotationProperty .
+welcome:fourthDependency rdf:type owl:AnnotationProperty .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#secondaryCondition
-:secondaryCondition rdf:type owl:AnnotationProperty .
+welcome:secondaryCondition rdf:type owl:AnnotationProperty .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#secondaryDependency
-:secondaryDependency rdf:type owl:AnnotationProperty .
+welcome:secondaryDependency rdf:type owl:AnnotationProperty .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#thirdCondition
-:thirdCondition rdf:type owl:AnnotationProperty .
+welcome:thirdCondition rdf:type owl:AnnotationProperty .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#thirdDependency
-:thirdDependency rdf:type owl:AnnotationProperty .
+welcome:thirdDependency rdf:type owl:AnnotationProperty .
 
 
 #################################################################
@@ -53,57 +54,57 @@
 #################################################################
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasCV
-:hasCV rdf:type owl:ObjectProperty ;
-       rdfs:domain :DialogueUser ;
-       rdfs:range :CV .
+welcome:hasCV rdf:type owl:ObjectProperty ;
+              rdfs:domain welcome:DialogueUser ;
+              rdfs:range welcome:CV .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasCourseNumber
-:hasCourseNumber rdf:type owl:ObjectProperty ;
-                 rdfs:domain :EducationElement ;
-                 rdfs:range :CompletedCourses .
+welcome:hasCourseNumber rdf:type owl:ObjectProperty ;
+                        rdfs:domain welcome:EducationElement ;
+                        rdfs:range welcome:CompletedCourses .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasDegreeCertificate
-:hasDegreeCertificate rdf:type owl:ObjectProperty ;
-                      rdfs:domain :EducationElement ;
-                      rdfs:range :DegreeCertificate .
+welcome:hasDegreeCertificate rdf:type owl:ObjectProperty ;
+                             rdfs:domain welcome:EducationElement ;
+                             rdfs:range welcome:DegreeCertificate .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasDegreeGrade
-:hasDegreeGrade rdf:type owl:ObjectProperty ;
-                rdfs:domain :EducationElement ;
-                rdfs:range :DegreeGrade .
+welcome:hasDegreeGrade rdf:type owl:ObjectProperty ;
+                       rdfs:domain welcome:EducationElement ;
+                       rdfs:range welcome:DegreeGrade .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasDegreeTitle
-:hasDegreeTitle rdf:type owl:ObjectProperty ;
-                rdfs:domain :EducationElement ;
-                rdfs:range :DegreeTitle .
+welcome:hasDegreeTitle rdf:type owl:ObjectProperty ;
+                       rdfs:domain welcome:EducationElement ;
+                       rdfs:range welcome:DegreeTitle .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasElem
-:hasElem rdf:type owl:ObjectProperty ;
-         rdfs:domain :CV ;
-         rdfs:range :Elem .
+welcome:hasElem rdf:type owl:ObjectProperty ;
+                rdfs:domain welcome:CV ;
+                rdfs:range welcome:Elem .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasGraduationStatus
-:hasGraduationStatus rdf:type owl:ObjectProperty ;
-                     rdfs:domain :EducationElement ;
-                     rdfs:range :GraduationStatus .
+welcome:hasGraduationStatus rdf:type owl:ObjectProperty ;
+                            rdfs:domain welcome:EducationElement ;
+                            rdfs:range welcome:GraduationStatus .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasGraduationYear
-:hasGraduationYear rdf:type owl:ObjectProperty ;
-                   rdfs:domain :EducationElement ;
-                   rdfs:range :GraduationYear .
+welcome:hasGraduationYear rdf:type owl:ObjectProperty ;
+                          rdfs:domain welcome:EducationElement ;
+                          rdfs:range welcome:GraduationYear .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasInstitutionName
-:hasInstitutionName rdf:type owl:ObjectProperty ;
-                    rdfs:domain :EducationElement ;
-                    rdfs:range :InstitutionName .
+welcome:hasInstitutionName rdf:type owl:ObjectProperty ;
+                           rdfs:domain welcome:EducationElement ;
+                           rdfs:range welcome:InstitutionName .
 
 
 #################################################################
@@ -111,7 +112,7 @@
 #################################################################
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#educationElements
-:educationElements rdf:type owl:DatatypeProperty .
+welcome:educationElements rdf:type owl:DatatypeProperty .
 
 
 #################################################################
@@ -119,1144 +120,1144 @@
 #################################################################
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Ability_to_work_under_pressure
-:Ability_to_work_under_pressure rdf:type owl:Class ;
-                                rdfs:subClassOf :Skills .
+welcome:Ability_to_work_under_pressure rdf:type owl:Class ;
+                                       rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Abstract_thinking
-:Abstract_thinking rdf:type owl:Class ;
-                   rdfs:subClassOf :Skills .
+welcome:Abstract_thinking rdf:type owl:Class ;
+                          rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Access
-:Access rdf:type owl:Class ;
-        rdfs:subClassOf :Skills .
+welcome:Access rdf:type owl:Class ;
+               rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Acrobat
-:Acrobat rdf:type owl:Class ;
-         rdfs:subClassOf :Skills .
+welcome:Acrobat rdf:type owl:Class ;
+                rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Active_listening
-:Active_listening rdf:type owl:Class ;
-                  rdfs:subClassOf :Skills .
+welcome:Active_listening rdf:type owl:Class ;
+                         rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdWords_Facebook_Paid_Ads
-:AdWords_Facebook_Paid_Ads rdf:type owl:Class ;
-                           rdfs:subClassOf :Skills .
+welcome:AdWords_Facebook_Paid_Ads rdf:type owl:Class ;
+                                  rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Adaptability
-:Adaptability rdf:type owl:Class ;
-              rdfs:subClassOf :Skills .
+welcome:Adaptability rdf:type owl:Class ;
+                     rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalCourse
-:AdditionalCourse rdf:type owl:Class ;
-                  rdfs:subClassOf :Course_Parameters ;
-                  :conditionValue "Yes" ;
-                  :dependsOnSlot "obtainSuggestOtherEducation" .
+welcome:AdditionalCourse rdf:type owl:Class ;
+                         rdfs:subClassOf welcome:Course_Parameters ;
+                         welcome:conditionValue "Yes" ;
+                         welcome:dependsOnSlot "obtainSuggestOtherEducation" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalEducation
-:AdditionalEducation rdf:type owl:Class ;
-                     rdfs:subClassOf :Education_Parameters ;
-                     :conditionValue "Yes" ;
-                     :dependsOnSlot "obtainMoreDegreeTitle" .
+welcome:AdditionalEducation rdf:type owl:Class ;
+                            rdfs:subClassOf welcome:Education_Parameters ;
+                            welcome:conditionValue "Yes" ;
+                            welcome:dependsOnSlot "obtainMoreDegreeTitle" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalEmployment
-:AdditionalEmployment rdf:type owl:Class ;
-                      rdfs:subClassOf :Employment_Parameters ;
-                      :conditionValue "Yes" ;
-                      :dependsOnSlot "obtainPreviousEmploymentStatus" .
+welcome:AdditionalEmployment rdf:type owl:Class ;
+                             rdfs:subClassOf welcome:Employment_Parameters ;
+                             welcome:conditionValue "Yes" ;
+                             welcome:dependsOnSlot "obtainPreviousEmploymentStatus" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguage
-:AdditionalLanguage rdf:type owl:Class ;
-                    rdfs:subClassOf :Language_Parameters ;
-                    :conditionValue "Yes" ;
-                    :dependsOnSlot "obtainAdditionalLanguageConfirmation" .
+welcome:AdditionalLanguage rdf:type owl:Class ;
+                           rdfs:subClassOf welcome:Language_Parameters ;
+                           welcome:conditionValue "Yes" ;
+                           welcome:dependsOnSlot "obtainAdditionalLanguageConfirmation" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguageCertificate
-:AdditionalLanguageCertificate rdf:type owl:Class ;
-                               rdfs:subClassOf :Language_Parameters ;
-                               :conditionValue "Yes" ;
-                               :dependsOnSlot "obtainAdditionalLanguageConfirmation" .
+welcome:AdditionalLanguageCertificate rdf:type owl:Class ;
+                                      rdfs:subClassOf welcome:Language_Parameters ;
+                                      welcome:conditionValue "Yes" ;
+                                      welcome:dependsOnSlot "obtainAdditionalLanguageConfirmation" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguageCountry
-:AdditionalLanguageCountry rdf:type owl:Class ;
-                           rdfs:subClassOf :Language_Other_Parameters ;
-                           :conditionValue "Yes" ;
-                           :dependsOnSlot "obtainAdditionalLanguageConfirmation" ;
-                           :secondaryCondition "Yes" ;
-                           :secondaryDependency "obtainAdditionalLanguageOther" .
+welcome:AdditionalLanguageCountry rdf:type owl:Class ;
+                                  rdfs:subClassOf welcome:Language_Other_Parameters ;
+                                  welcome:conditionValue "Yes" ;
+                                  welcome:dependsOnSlot "obtainAdditionalLanguageConfirmation" ;
+                                  welcome:secondaryCondition "Yes" ;
+                                  welcome:secondaryDependency "obtainAdditionalLanguageOther" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguageCountryDuration
-:AdditionalLanguageCountryDuration rdf:type owl:Class ;
-                                   rdfs:subClassOf :Language_Other_Parameters ;
-                                   :conditionValue "Yes" ;
-                                   :dependsOnSlot "obtainAdditionalLanguageConfirmation" ;
-                                   :fourthCondition "Yes" ;
-                                   :fourthDependency "obtainAdditionalLanguageCountryInclude" ;
-                                   :secondaryCondition "Yes" ;
-                                   :secondaryDependency "obtainAdditionalLanguageOther" ;
-                                   :thirdCondition "Yes" ;
-                                   :thirdDependency "obtainAdditionalLanguageCountry" .
+welcome:AdditionalLanguageCountryDuration rdf:type owl:Class ;
+                                          rdfs:subClassOf welcome:Language_Other_Parameters ;
+                                          welcome:conditionValue "Yes" ;
+                                          welcome:dependsOnSlot "obtainAdditionalLanguageConfirmation" ;
+                                          welcome:fourthCondition "Yes" ;
+                                          welcome:fourthDependency "obtainAdditionalLanguageCountryInclude" ;
+                                          welcome:secondaryCondition "Yes" ;
+                                          welcome:secondaryDependency "obtainAdditionalLanguageOther" ;
+                                          welcome:thirdCondition "Yes" ;
+                                          welcome:thirdDependency "obtainAdditionalLanguageCountry" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguageCountryInclude
-:AdditionalLanguageCountryInclude rdf:type owl:Class ;
-                                  rdfs:subClassOf :Language_Other_Parameters ;
-                                  :conditionValue "Yes" ;
-                                  :dependsOnSlot "obtainAdditionalLanguageConfirmation" ;
-                                  :secondaryCondition "Yes" ;
-                                  :secondaryDependency "obtainAdditionalLanguageOther" ;
-                                  :thirdCondition "Yes" ;
-                                  :thirdDependency "obtainAdditionalLanguageCountry" .
+welcome:AdditionalLanguageCountryInclude rdf:type owl:Class ;
+                                         rdfs:subClassOf welcome:Language_Other_Parameters ;
+                                         welcome:conditionValue "Yes" ;
+                                         welcome:dependsOnSlot "obtainAdditionalLanguageConfirmation" ;
+                                         welcome:secondaryCondition "Yes" ;
+                                         welcome:secondaryDependency "obtainAdditionalLanguageOther" ;
+                                         welcome:thirdCondition "Yes" ;
+                                         welcome:thirdDependency "obtainAdditionalLanguageCountry" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguageCountryName
-:AdditionalLanguageCountryName rdf:type owl:Class ;
-                               rdfs:subClassOf :Language_Other_Parameters ;
-                               :conditionValue "Yes" ;
-                               :dependsOnSlot "obtainAdditionalLanguageConfirmation" ;
-                               :fourthCondition "Yes" ;
-                               :fourthDependency "obtainAdditionalLanguageCountryInclude" ;
-                               :secondaryCondition "Yes" ;
-                               :secondaryDependency "obtainAdditionalLanguageOther" ;
-                               :thirdDependency "Yes" ,
-                                                "obtainAdditionalLanguageCountry" .
+welcome:AdditionalLanguageCountryName rdf:type owl:Class ;
+                                      rdfs:subClassOf welcome:Language_Other_Parameters ;
+                                      welcome:conditionValue "Yes" ;
+                                      welcome:dependsOnSlot "obtainAdditionalLanguageConfirmation" ;
+                                      welcome:fourthCondition "Yes" ;
+                                      welcome:fourthDependency "obtainAdditionalLanguageCountryInclude" ;
+                                      welcome:secondaryCondition "Yes" ;
+                                      welcome:secondaryDependency "obtainAdditionalLanguageOther" ;
+                                      welcome:thirdDependency "Yes" ,
+                                                              "obtainAdditionalLanguageCountry" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguageCourse
-:AdditionalLanguageCourse rdf:type owl:Class ;
-                          rdfs:subClassOf :Language_Other_Parameters ;
-                          :conditionValue "Yes" ;
-                          :dependsOnSlot "obtainAdditionalLanguageConfirmation" ;
-                          :secondaryCondition "Yes" ;
-                          :secondaryDependency "obtainAdditionalLanguageOther" .
+welcome:AdditionalLanguageCourse rdf:type owl:Class ;
+                                 rdfs:subClassOf welcome:Language_Other_Parameters ;
+                                 welcome:conditionValue "Yes" ;
+                                 welcome:dependsOnSlot "obtainAdditionalLanguageConfirmation" ;
+                                 welcome:secondaryCondition "Yes" ;
+                                 welcome:secondaryDependency "obtainAdditionalLanguageOther" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguageCourseCertificate
-:AdditionalLanguageCourseCertificate rdf:type owl:Class ;
-                                     rdfs:subClassOf :Language_Other_Parameters ;
-                                     :conditionValue "Yes" ;
-                                     :dependsOnSlot "obtainAdditionalLanguageConfirmation" ;
-                                     :secondaryCondition "Yes" ;
-                                     :secondaryDependency "obtainAdditionalLanguageOther" .
+welcome:AdditionalLanguageCourseCertificate rdf:type owl:Class ;
+                                            rdfs:subClassOf welcome:Language_Other_Parameters ;
+                                            welcome:conditionValue "Yes" ;
+                                            welcome:dependsOnSlot "obtainAdditionalLanguageConfirmation" ;
+                                            welcome:secondaryCondition "Yes" ;
+                                            welcome:secondaryDependency "obtainAdditionalLanguageOther" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguageCourseDuration
-:AdditionalLanguageCourseDuration rdf:type owl:Class ;
-                                  rdfs:subClassOf :Language_Other_Parameters ;
-                                  :conditionValue "Yes" ;
-                                  :dependsOnSlot "obtainAdditionalLanguageConfirmation" ;
-                                  :secondaryCondition "Yes" ;
-                                  :secondaryDependency "obtainAdditionalLanguageOther" .
+welcome:AdditionalLanguageCourseDuration rdf:type owl:Class ;
+                                         rdfs:subClassOf welcome:Language_Other_Parameters ;
+                                         welcome:conditionValue "Yes" ;
+                                         welcome:dependsOnSlot "obtainAdditionalLanguageConfirmation" ;
+                                         welcome:secondaryCondition "Yes" ;
+                                         welcome:secondaryDependency "obtainAdditionalLanguageOther" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguageCourseGrade
-:AdditionalLanguageCourseGrade rdf:type owl:Class ;
-                               rdfs:subClassOf :Language_Other_Parameters ;
-                               :conditionValue "Yes" ;
-                               :dependsOnSlot "obtainAdditionalLanguageConfirmation" ;
-                               :secondaryCondition "Yes" ;
-                               :secondaryDependency "obtainAdditionalLanguageOther" .
+welcome:AdditionalLanguageCourseGrade rdf:type owl:Class ;
+                                      rdfs:subClassOf welcome:Language_Other_Parameters ;
+                                      welcome:conditionValue "Yes" ;
+                                      welcome:dependsOnSlot "obtainAdditionalLanguageConfirmation" ;
+                                      welcome:secondaryCondition "Yes" ;
+                                      welcome:secondaryDependency "obtainAdditionalLanguageOther" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguageCourseName
-:AdditionalLanguageCourseName rdf:type owl:Class ;
-                              rdfs:subClassOf :Language_Other_Parameters ;
-                              :conditionValue "Yes" ;
-                              :dependsOnSlot "obtainAdditionalLanguageConfirmation" ;
-                              :secondaryCondition "Yes" ;
-                              :secondaryDependency "obtainAdditionalLanguageOther" .
+welcome:AdditionalLanguageCourseName rdf:type owl:Class ;
+                                     rdfs:subClassOf welcome:Language_Other_Parameters ;
+                                     welcome:conditionValue "Yes" ;
+                                     welcome:dependsOnSlot "obtainAdditionalLanguageConfirmation" ;
+                                     welcome:secondaryCondition "Yes" ;
+                                     welcome:secondaryDependency "obtainAdditionalLanguageOther" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguageCourseSchool
-:AdditionalLanguageCourseSchool rdf:type owl:Class ;
-                                rdfs:subClassOf :Language_Other_Parameters ;
-                                :conditionValue "Yes" ;
-                                :dependsOnSlot "obtainAdditionalLanguageConfirmation" ;
-                                :secondaryCondition "Yes" ;
-                                :secondaryDependency "obtainAdditionalLanguageOther" .
+welcome:AdditionalLanguageCourseSchool rdf:type owl:Class ;
+                                       rdfs:subClassOf welcome:Language_Other_Parameters ;
+                                       welcome:conditionValue "Yes" ;
+                                       welcome:dependsOnSlot "obtainAdditionalLanguageConfirmation" ;
+                                       welcome:secondaryCondition "Yes" ;
+                                       welcome:secondaryDependency "obtainAdditionalLanguageOther" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguageCourseSchoolType
-:AdditionalLanguageCourseSchoolType rdf:type owl:Class ;
-                                    rdfs:subClassOf :Language_Other_Parameters ;
-                                    :conditionValue "Yes" ;
-                                    :dependsOnSlot "obtainAdditionalLanguageConfirmation" ;
-                                    :secondaryCondition "Yes" ;
-                                    :secondaryDependency "obtainAdditionalLanguageOther" .
+welcome:AdditionalLanguageCourseSchoolType rdf:type owl:Class ;
+                                           rdfs:subClassOf welcome:Language_Other_Parameters ;
+                                           welcome:conditionValue "Yes" ;
+                                           welcome:dependsOnSlot "obtainAdditionalLanguageConfirmation" ;
+                                           welcome:secondaryCondition "Yes" ;
+                                           welcome:secondaryDependency "obtainAdditionalLanguageOther" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguageCourseStatus
-:AdditionalLanguageCourseStatus rdf:type owl:Class ;
-                                rdfs:subClassOf :Language_Other_Parameters ;
-                                :conditionValue "Yes" ;
-                                :dependsOnSlot "obtainAdditionalLanguageConfirmation" ;
-                                :secondaryCondition "Yes" ;
-                                :secondaryDependency "obtainAdditionalLanguageOther" .
+welcome:AdditionalLanguageCourseStatus rdf:type owl:Class ;
+                                       rdfs:subClassOf welcome:Language_Other_Parameters ;
+                                       welcome:conditionValue "Yes" ;
+                                       welcome:dependsOnSlot "obtainAdditionalLanguageConfirmation" ;
+                                       welcome:secondaryCondition "Yes" ;
+                                       welcome:secondaryDependency "obtainAdditionalLanguageOther" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguageCourseYear
-:AdditionalLanguageCourseYear rdf:type owl:Class ;
-                              rdfs:subClassOf :Language_Other_Parameters ;
-                              :conditionValue "Yes" ;
-                              :dependsOnSlot "obtainAdditionalLanguageConfirmation" ;
-                              :secondaryCondition "Yes" ;
-                              :secondaryDependency "obtainAdditionalLanguageOther" .
+welcome:AdditionalLanguageCourseYear rdf:type owl:Class ;
+                                     rdfs:subClassOf welcome:Language_Other_Parameters ;
+                                     welcome:conditionValue "Yes" ;
+                                     welcome:dependsOnSlot "obtainAdditionalLanguageConfirmation" ;
+                                     welcome:secondaryCondition "Yes" ;
+                                     welcome:secondaryDependency "obtainAdditionalLanguageOther" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguageDegree
-:AdditionalLanguageDegree rdf:type owl:Class ;
-                          rdfs:subClassOf :Language_Parameters ;
-                          :conditionValue "Yes" ;
-                          :dependsOnSlot "obtainAdditionalLanguageConfirmation" .
+welcome:AdditionalLanguageDegree rdf:type owl:Class ;
+                                 rdfs:subClassOf welcome:Language_Parameters ;
+                                 welcome:conditionValue "Yes" ;
+                                 welcome:dependsOnSlot "obtainAdditionalLanguageConfirmation" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguageLevel
-:AdditionalLanguageLevel rdf:type owl:Class ;
-                         rdfs:subClassOf :Language_Parameters ;
-                         :conditionValue "Yes" ;
-                         :dependsOnSlot "obtainAdditionalLanguageConfirmation" .
+welcome:AdditionalLanguageLevel rdf:type owl:Class ;
+                                rdfs:subClassOf welcome:Language_Parameters ;
+                                welcome:conditionValue "Yes" ;
+                                welcome:dependsOnSlot "obtainAdditionalLanguageConfirmation" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguageName
-:AdditionalLanguageName rdf:type owl:Class ;
-                        rdfs:subClassOf :Language_Parameters ;
-                        :conditionValue "Yes" ;
-                        :dependsOnSlot "obtainAdditionalLanguageConfirmation" .
+welcome:AdditionalLanguageName rdf:type owl:Class ;
+                               rdfs:subClassOf welcome:Language_Parameters ;
+                               welcome:conditionValue "Yes" ;
+                               welcome:dependsOnSlot "obtainAdditionalLanguageConfirmation" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguageOther
-:AdditionalLanguageOther rdf:type owl:Class ;
-                         rdfs:subClassOf :Language_Other_Parameters ;
-                         :conditionValue "Yes" ;
-                         :dependsOnSlot "obtainAdditionalLanguageConfirmation" .
+welcome:AdditionalLanguageOther rdf:type owl:Class ;
+                                rdfs:subClassOf welcome:Language_Other_Parameters ;
+                                welcome:conditionValue "Yes" ;
+                                welcome:dependsOnSlot "obtainAdditionalLanguageConfirmation" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguageProcedure
-:AdditionalLanguageProcedure rdf:type owl:Class ;
-                             rdfs:subClassOf :Language_Parameters ;
-                             :conditionValue "Yes" ;
-                             :dependsOnSlot "obtainAdditionalLanguageConfirmation" .
+welcome:AdditionalLanguageProcedure rdf:type owl:Class ;
+                                    rdfs:subClassOf welcome:Language_Parameters ;
+                                    welcome:conditionValue "Yes" ;
+                                    welcome:dependsOnSlot "obtainAdditionalLanguageConfirmation" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Agent
-:Agent rdf:type owl:Class .
+welcome:Agent rdf:type owl:Class .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Agriculture_Environmental_and_Related_Studies
-:Agriculture_Environmental_and_Related_Studies rdf:type owl:Class ;
-                                               rdfs:subClassOf :DegreeTitle .
+welcome:Agriculture_Environmental_and_Related_Studies rdf:type owl:Class ;
+                                                      rdfs:subClassOf welcome:DegreeTitle .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Analyzing
-:Analyzing rdf:type owl:Class ;
-           rdfs:subClassOf :Skills .
+welcome:Analyzing rdf:type owl:Class ;
+                  rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Architecture_and_Building
-:Architecture_and_Building rdf:type owl:Class ;
-                           rdfs:subClassOf :DegreeTitle .
+welcome:Architecture_and_Building rdf:type owl:Class ;
+                                  rdfs:subClassOf welcome:DegreeTitle .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Artistic_design
-:Artistic_design rdf:type owl:Class ;
-                 rdfs:subClassOf :Skills .
+welcome:Artistic_design rdf:type owl:Class ;
+                        rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Basic_writing_grammar_punctuation_spelling_vocabulary
-:Basic_writing_grammar_punctuation_spelling_vocabulary rdf:type owl:Class ;
-                                                       rdfs:subClassOf :Skills .
+welcome:Basic_writing_grammar_punctuation_spelling_vocabulary rdf:type owl:Class ;
+                                                              rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Brainstorming
-:Brainstorming rdf:type owl:Class ;
-               rdfs:subClassOf :Skills .
+welcome:Brainstorming rdf:type owl:Class ;
+                      rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Business_knowledge
-:Business_knowledge rdf:type owl:Class ;
-                    rdfs:subClassOf :Skills .
+welcome:Business_knowledge rdf:type owl:Class ;
+                           rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CV
-:CV rdf:type owl:Class .
+welcome:CV rdf:type owl:Class .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#C_Programming_Language
-:C_Programming_Language rdf:type owl:Class ;
-                        rdfs:subClassOf :Skills .
+welcome:C_Programming_Language rdf:type owl:Class ;
+                               rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CarPossession
-:CarPossession rdf:type owl:Class ;
-               rdfs:subClassOf :Other_Parameters ;
-               :conditionValue "Yes" ;
-               :dependsOnSlot "obtainIncludeCarInfo" .
+welcome:CarPossession rdf:type owl:Class ;
+                      rdfs:subClassOf welcome:Other_Parameters ;
+                      welcome:conditionValue "Yes" ;
+                      welcome:dependsOnSlot "obtainIncludeCarInfo" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Clear_speech_and_writing
-:Clear_speech_and_writing rdf:type owl:Class ;
-                          rdfs:subClassOf :Skills .
+welcome:Clear_speech_and_writing rdf:type owl:Class ;
+                                 rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Collaboration
-:Collaboration rdf:type owl:Class ;
-               rdfs:subClassOf :Skills .
+welcome:Collaboration rdf:type owl:Class ;
+                      rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Communication
-:Communication rdf:type owl:Class ;
-               rdfs:subClassOf :Skills .
+welcome:Communication rdf:type owl:Class ;
+                      rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CompletedCourses
-:CompletedCourses rdf:type owl:Class ;
-                  rdfs:subClassOf :Education_Parameters ;
-                  :conditionValue "Yes" ;
-                  :dependsOnSlot "obtainMoreDegreeTitle" .
+welcome:CompletedCourses rdf:type owl:Class ;
+                         rdfs:subClassOf welcome:Education_Parameters ;
+                         welcome:conditionValue "Yes" ;
+                         welcome:dependsOnSlot "obtainMoreDegreeTitle" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Confidence
-:Confidence rdf:type owl:Class ;
-            rdfs:subClassOf :Skills .
+welcome:Confidence rdf:type owl:Class ;
+                   rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Conflict_resolution
-:Conflict_resolution rdf:type owl:Class ;
-                     rdfs:subClassOf :Skills .
+welcome:Conflict_resolution rdf:type owl:Class ;
+                            rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CourseCertificate
-:CourseCertificate rdf:type owl:Class ;
-                   rdfs:subClassOf :Course_Parameters ;
-                   :conditionValue "Yes" ;
-                   :dependsOnSlot "obtainSuggestOtherEducation" .
+welcome:CourseCertificate rdf:type owl:Class ;
+                          rdfs:subClassOf welcome:Course_Parameters ;
+                          welcome:conditionValue "Yes" ;
+                          welcome:dependsOnSlot "obtainSuggestOtherEducation" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CourseDuration
-:CourseDuration rdf:type owl:Class ;
-                rdfs:subClassOf :Course_Parameters ;
-                :conditionValue "Yes" ;
-                :dependsOnSlot "obtainSuggestOtherEducation" .
+welcome:CourseDuration rdf:type owl:Class ;
+                       rdfs:subClassOf welcome:Course_Parameters ;
+                       welcome:conditionValue "Yes" ;
+                       welcome:dependsOnSlot "obtainSuggestOtherEducation" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CourseElement
-:CourseElement rdf:type owl:Class ;
-               rdfs:subClassOf :Elem .
+welcome:CourseElement rdf:type owl:Class ;
+                      rdfs:subClassOf welcome:Elem .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CourseGrade
-:CourseGrade rdf:type owl:Class ;
-             rdfs:subClassOf :Course_Parameters ;
-             :conditionValue "Yes" ;
-             :dependsOnSlot "obtainSuggestOtherEducation" .
+welcome:CourseGrade rdf:type owl:Class ;
+                    rdfs:subClassOf welcome:Course_Parameters ;
+                    welcome:conditionValue "Yes" ;
+                    welcome:dependsOnSlot "obtainSuggestOtherEducation" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CourseName
-:CourseName rdf:type owl:Class ;
-            rdfs:subClassOf :Course_Parameters ;
-            :conditionValue "Yes" ;
-            :dependsOnSlot "obtainSuggestOtherEducation" .
+welcome:CourseName rdf:type owl:Class ;
+                   rdfs:subClassOf welcome:Course_Parameters ;
+                   welcome:conditionValue "Yes" ;
+                   welcome:dependsOnSlot "obtainSuggestOtherEducation" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CourseSchool
-:CourseSchool rdf:type owl:Class ;
-              rdfs:subClassOf :Course_Parameters ;
-              :conditionValue "Yes" ;
-              :dependsOnSlot "obtainSuggestOtherEducation" .
+welcome:CourseSchool rdf:type owl:Class ;
+                     rdfs:subClassOf welcome:Course_Parameters ;
+                     welcome:conditionValue "Yes" ;
+                     welcome:dependsOnSlot "obtainSuggestOtherEducation" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CourseSchoolType
-:CourseSchoolType rdf:type owl:Class ;
-                  rdfs:subClassOf :Course_Parameters ;
-                  :conditionValue "Yes" ;
-                  :dependsOnSlot "obtainSuggestOtherEducation" .
+welcome:CourseSchoolType rdf:type owl:Class ;
+                         rdfs:subClassOf welcome:Course_Parameters ;
+                         welcome:conditionValue "Yes" ;
+                         welcome:dependsOnSlot "obtainSuggestOtherEducation" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CourseStatus
-:CourseStatus rdf:type owl:Class ;
-              rdfs:subClassOf :Course_Parameters ;
-              :conditionValue "Yes" ;
-              :dependsOnSlot "obtainSuggestOtherEducation" .
+welcome:CourseStatus rdf:type owl:Class ;
+                     rdfs:subClassOf welcome:Course_Parameters ;
+                     welcome:conditionValue "Yes" ;
+                     welcome:dependsOnSlot "obtainSuggestOtherEducation" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CourseYear
-:CourseYear rdf:type owl:Class ;
-            rdfs:subClassOf :Course_Parameters ;
-            :conditionValue "Yes" ;
-            :dependsOnSlot "obtainSuggestOtherEducation" .
+welcome:CourseYear rdf:type owl:Class ;
+                   rdfs:subClassOf welcome:Course_Parameters ;
+                   welcome:conditionValue "Yes" ;
+                   welcome:dependsOnSlot "obtainSuggestOtherEducation" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Course_Parameters
-:Course_Parameters rdf:type owl:Class .
+welcome:Course_Parameters rdf:type owl:Class .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Creative_Arts
-:Creative_Arts rdf:type owl:Class ;
-               rdfs:subClassOf :DegreeTitle .
+welcome:Creative_Arts rdf:type owl:Class ;
+                      rdfs:subClassOf welcome:DegreeTitle .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Creative_thinking
-:Creative_thinking rdf:type owl:Class ;
-                   rdfs:subClassOf :Skills .
+welcome:Creative_thinking rdf:type owl:Class ;
+                          rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Creative_writing
-:Creative_writing rdf:type owl:Class ;
-                  rdfs:subClassOf :Skills .
+welcome:Creative_writing rdf:type owl:Class ;
+                         rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Creativity
-:Creativity rdf:type owl:Class ;
-            rdfs:subClassOf :Skills .
+welcome:Creativity rdf:type owl:Class ;
+                   rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Critical_thinking
-:Critical_thinking rdf:type owl:Class ;
-                   rdfs:subClassOf :Skills .
+welcome:Critical_thinking rdf:type owl:Class ;
+                          rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Cross_cultural_communication
-:Cross_cultural_communication rdf:type owl:Class ;
-                              rdfs:subClassOf :Skills .
+welcome:Cross_cultural_communication rdf:type owl:Class ;
+                                     rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CurrentEmployerAddress
-:CurrentEmployerAddress rdf:type owl:Class ;
-                        rdfs:subClassOf :Employment_Parameters ;
-                        :conditionValue "Yes" ;
-                        :dependsOnSlot "obtainEmploymentStatus" .
+welcome:CurrentEmployerAddress rdf:type owl:Class ;
+                               rdfs:subClassOf welcome:Employment_Parameters ;
+                               welcome:conditionValue "Yes" ;
+                               welcome:dependsOnSlot "obtainEmploymentStatus" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CurrentEmployerName
-:CurrentEmployerName rdf:type owl:Class ;
-                     rdfs:subClassOf :Employment_Parameters ;
-                     :conditionValue "Yes" ;
-                     :dependsOnSlot "obtainEmploymentStatus" .
+welcome:CurrentEmployerName rdf:type owl:Class ;
+                            rdfs:subClassOf welcome:Employment_Parameters ;
+                            welcome:conditionValue "Yes" ;
+                            welcome:dependsOnSlot "obtainEmploymentStatus" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CurrentMainActivities
-:CurrentMainActivities rdf:type owl:Class ;
-                       rdfs:subClassOf :Employment_Parameters ;
-                       :conditionValue "Yes" ;
-                       :dependsOnSlot "obtainEmploymentStatus" .
+welcome:CurrentMainActivities rdf:type owl:Class ;
+                              rdfs:subClassOf welcome:Employment_Parameters ;
+                              welcome:conditionValue "Yes" ;
+                              welcome:dependsOnSlot "obtainEmploymentStatus" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CurrentOccupation
-:CurrentOccupation rdf:type owl:Class ;
-                   rdfs:subClassOf :Employment_Parameters ;
-                   :conditionValue "Yes" ;
-                   :dependsOnSlot "obtainEmploymentStatus" .
+welcome:CurrentOccupation rdf:type owl:Class ;
+                          rdfs:subClassOf welcome:Employment_Parameters ;
+                          welcome:conditionValue "Yes" ;
+                          welcome:dependsOnSlot "obtainEmploymentStatus" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CurrentStartingDate
-:CurrentStartingDate rdf:type owl:Class ;
-                     rdfs:subClassOf :Employment_Parameters ;
-                     :conditionValue "Yes" ;
-                     :dependsOnSlot "obtainEmploymentStatus" .
+welcome:CurrentStartingDate rdf:type owl:Class ;
+                            rdfs:subClassOf welcome:Employment_Parameters ;
+                            welcome:conditionValue "Yes" ;
+                            welcome:dependsOnSlot "obtainEmploymentStatus" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Data_analysis
-:Data_analysis rdf:type owl:Class ;
-               rdfs:subClassOf :Skills .
+welcome:Data_analysis rdf:type owl:Class ;
+                      rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Data_mining
-:Data_mining rdf:type owl:Class ;
-             rdfs:subClassOf :Skills .
+welcome:Data_mining rdf:type owl:Class ;
+                    rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Data_presentation
-:Data_presentation rdf:type owl:Class ;
-                   rdfs:subClassOf :Skills .
+welcome:Data_presentation rdf:type owl:Class ;
+                          rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Data_visualization
-:Data_visualization rdf:type owl:Class ;
-                    rdfs:subClassOf :Skills .
+welcome:Data_visualization rdf:type owl:Class ;
+                           rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Database_Management
-:Database_Management rdf:type owl:Class ;
-                     rdfs:subClassOf :Skills .
+welcome:Database_Management rdf:type owl:Class ;
+                            rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Decision_making
-:Decision_making rdf:type owl:Class ;
-                 rdfs:subClassOf :Skills .
+welcome:Decision_making rdf:type owl:Class ;
+                        rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DegreeCertificate
-:DegreeCertificate rdf:type owl:Class ;
-                   rdfs:subClassOf :Education_Parameters ;
-                   :conditionValue "Yes" ;
-                   :dependsOnSlot "obtainMoreDegreeTitle" .
+welcome:DegreeCertificate rdf:type owl:Class ;
+                          rdfs:subClassOf welcome:Education_Parameters ;
+                          welcome:conditionValue "Yes" ;
+                          welcome:dependsOnSlot "obtainMoreDegreeTitle" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DegreeGrade
-:DegreeGrade rdf:type owl:Class ;
-             rdfs:subClassOf :Education_Parameters ;
-             :conditionValue "Yes" ;
-             :dependsOnSlot "obtainMoreDegreeTitle" .
+welcome:DegreeGrade rdf:type owl:Class ;
+                    rdfs:subClassOf welcome:Education_Parameters ;
+                    welcome:conditionValue "Yes" ;
+                    welcome:dependsOnSlot "obtainMoreDegreeTitle" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DegreeTitle
-:DegreeTitle rdf:type owl:Class ;
-             rdfs:subClassOf :Education_Parameters .
+welcome:DegreeTitle rdf:type owl:Class ;
+                    rdfs:subClassOf welcome:Education_Parameters .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Dependability
-:Dependability rdf:type owl:Class ;
-               rdfs:subClassOf :Skills .
+welcome:Dependability rdf:type owl:Class ;
+                      rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DialogueUser
-:DialogueUser rdf:type owl:Class ;
-              rdfs:subClassOf :Agent .
+welcome:DialogueUser rdf:type owl:Class ;
+                     rdfs:subClassOf welcome:Agent .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DrivingLicense
-:DrivingLicense rdf:type owl:Class ;
-                rdfs:subClassOf :Other_Parameters ;
-                :conditionValue "Yes" ;
-                :dependsOnSlot "obtainIncludeCarInfo" .
+welcome:DrivingLicense rdf:type owl:Class ;
+                       rdfs:subClassOf welcome:Other_Parameters ;
+                       welcome:conditionValue "Yes" ;
+                       welcome:dependsOnSlot "obtainIncludeCarInfo" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Editing
-:Editing rdf:type owl:Class ;
-         rdfs:subClassOf :Skills .
+welcome:Editing rdf:type owl:Class ;
+                rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Education
-:Education rdf:type owl:Class ;
-           rdfs:subClassOf :DegreeTitle .
+welcome:Education rdf:type owl:Class ;
+                  rdfs:subClassOf welcome:DegreeTitle .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#EducationElement
-:EducationElement rdf:type owl:Class ;
-                  rdfs:subClassOf :Elem ;
-                  <http://purl.org/dc/terms/isRequiredBy> "obtainAdditionalEducation" .
+welcome:EducationElement rdf:type owl:Class ;
+                         rdfs:subClassOf welcome:Elem ;
+                         <http://purl.org/dc/terms/isRequiredBy> "obtainAdditionalEducation" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Education_Parameters
-:Education_Parameters rdf:type owl:Class .
+welcome:Education_Parameters rdf:type owl:Class .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Elem
-:Elem rdf:type owl:Class .
+welcome:Elem rdf:type owl:Class .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Email
-:Email rdf:type owl:Class ;
-       rdfs:subClassOf :Skills .
+welcome:Email rdf:type owl:Class ;
+              rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Email_writing
-:Email_writing rdf:type owl:Class ;
-               rdfs:subClassOf :Skills .
+welcome:Email_writing rdf:type owl:Class ;
+                      rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Emotional_intelligence
-:Emotional_intelligence rdf:type owl:Class ;
-                        rdfs:subClassOf :Skills .
+welcome:Emotional_intelligence rdf:type owl:Class ;
+                               rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#EmploymentElement
-:EmploymentElement rdf:type owl:Class ;
-                   rdfs:subClassOf :Elem .
+welcome:EmploymentElement rdf:type owl:Class ;
+                          rdfs:subClassOf welcome:Elem .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Employment_Parameters
-:Employment_Parameters rdf:type owl:Class .
+welcome:Employment_Parameters rdf:type owl:Class .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Engineering_and_Related_Technologies
-:Engineering_and_Related_Technologies rdf:type owl:Class ;
-                                      rdfs:subClassOf :DegreeTitle .
+welcome:Engineering_and_Related_Technologies rdf:type owl:Class ;
+                                             rdfs:subClassOf welcome:DegreeTitle .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Evaluating
-:Evaluating rdf:type owl:Class ;
-            rdfs:subClassOf :Skills .
+welcome:Evaluating rdf:type owl:Class ;
+                   rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Excel
-:Excel rdf:type owl:Class ;
-       rdfs:subClassOf :Skills .
+welcome:Excel rdf:type owl:Class ;
+              rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Explanation
-:Explanation rdf:type owl:Class ;
-             rdfs:subClassOf :Skills .
+welcome:Explanation rdf:type owl:Class ;
+                    rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Finance
-:Finance rdf:type owl:Class ;
-         rdfs:subClassOf :Skills .
+welcome:Finance rdf:type owl:Class ;
+                rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Food_Hospitality_and_Personal_Services
-:Food_Hospitality_and_Personal_Services rdf:type owl:Class ;
-                                        rdfs:subClassOf :DegreeTitle .
+welcome:Food_Hospitality_and_Personal_Services rdf:type owl:Class ;
+                                               rdfs:subClassOf welcome:DegreeTitle .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Forecasting
-:Forecasting rdf:type owl:Class ;
-             rdfs:subClassOf :Skills .
+welcome:Forecasting rdf:type owl:Class ;
+                    rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Friendliness
-:Friendliness rdf:type owl:Class ;
-              rdfs:subClassOf :Skills .
+welcome:Friendliness rdf:type owl:Class ;
+                     rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Goal_setting
-:Goal_setting rdf:type owl:Class ;
-              rdfs:subClassOf :Skills .
+welcome:Goal_setting rdf:type owl:Class ;
+                     rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Google_Analytics_and_Google_Search_Console
-:Google_Analytics_and_Google_Search_Console rdf:type owl:Class ;
-                                            rdfs:subClassOf :Skills .
+welcome:Google_Analytics_and_Google_Search_Console rdf:type owl:Class ;
+                                                   rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Google_Drive
-:Google_Drive rdf:type owl:Class ;
-              rdfs:subClassOf :Skills .
+welcome:Google_Drive rdf:type owl:Class ;
+                     rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#GraduationStatus
-:GraduationStatus rdf:type owl:Class ;
-                  rdfs:subClassOf :Education_Parameters ;
-                  :conditionValue "Yes" ;
-                  :dependsOnSlot "obtainMoreDegreeTitle" .
+welcome:GraduationStatus rdf:type owl:Class ;
+                         rdfs:subClassOf welcome:Education_Parameters ;
+                         welcome:conditionValue "Yes" ;
+                         welcome:dependsOnSlot "obtainMoreDegreeTitle" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#GraduationYear
-:GraduationYear rdf:type owl:Class ;
-                rdfs:subClassOf :Education_Parameters ;
-                :conditionValue "Yes" ;
-                :dependsOnSlot "obtainMoreDegreeTitle" .
+welcome:GraduationYear rdf:type owl:Class ;
+                       rdfs:subClassOf welcome:Education_Parameters ;
+                       welcome:conditionValue "Yes" ;
+                       welcome:dependsOnSlot "obtainMoreDegreeTitle" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Graphics
-:Graphics rdf:type owl:Class ;
-          rdfs:subClassOf :Skills .
+welcome:Graphics rdf:type owl:Class ;
+                 rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#HTML_CSS
-:HTML_CSS rdf:type owl:Class ;
-          rdfs:subClassOf :Skills .
+welcome:HTML_CSS rdf:type owl:Class ;
+                 rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Health
-:Health rdf:type owl:Class ;
-        rdfs:subClassOf :DegreeTitle .
+welcome:Health rdf:type owl:Class ;
+               rdfs:subClassOf welcome:DegreeTitle .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Hiring
-:Hiring rdf:type owl:Class ;
-        rdfs:subClassOf :Skills .
+welcome:Hiring rdf:type owl:Class ;
+               rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Illustrator
-:Illustrator rdf:type owl:Class ;
-             rdfs:subClassOf :Skills .
+welcome:Illustrator rdf:type owl:Class ;
+                    rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#IncludeAdditionalLanguage
-:IncludeAdditionalLanguage rdf:type owl:Class ;
-                           rdfs:subClassOf :Language_Parameters .
+welcome:IncludeAdditionalLanguage rdf:type owl:Class ;
+                                  rdfs:subClassOf welcome:Language_Parameters .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#IncludeCarInfo
-:IncludeCarInfo rdf:type owl:Class ;
-                rdfs:subClassOf :Other_Parameters .
+welcome:IncludeCarInfo rdf:type owl:Class ;
+                       rdfs:subClassOf welcome:Other_Parameters .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Influencing
-:Influencing rdf:type owl:Class ;
-             rdfs:subClassOf :Skills .
+welcome:Influencing rdf:type owl:Class ;
+                    rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Information_Technology
-:Information_Technology rdf:type owl:Class ;
-                        rdfs:subClassOf :DegreeTitle .
+welcome:Information_Technology rdf:type owl:Class ;
+                               rdfs:subClassOf welcome:DegreeTitle .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Innovating
-:Innovating rdf:type owl:Class ;
-            rdfs:subClassOf :Skills .
+welcome:Innovating rdf:type owl:Class ;
+                   rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#InstitutionName
-:InstitutionName rdf:type owl:Class ;
-                 rdfs:subClassOf :Education_Parameters ;
-                 :conditionValue "Yes" ;
-                 :dependsOnSlot "obtainMoreDegreeTitle" .
+welcome:InstitutionName rdf:type owl:Class ;
+                        rdfs:subClassOf welcome:Education_Parameters ;
+                        welcome:conditionValue "Yes" ;
+                        welcome:dependsOnSlot "obtainMoreDegreeTitle" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Interpreting
-:Interpreting rdf:type owl:Class ;
-              rdfs:subClassOf :Skills .
+welcome:Interpreting rdf:type owl:Class ;
+                     rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Java
-:Java rdf:type owl:Class ;
-      rdfs:subClassOf :Skills .
+welcome:Java rdf:type owl:Class ;
+             rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#JavaScript
-:JavaScript rdf:type owl:Class ;
-            rdfs:subClassOf :Skills .
+welcome:JavaScript rdf:type owl:Class ;
+                   rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Journalism
-:Journalism rdf:type owl:Class ;
-            rdfs:subClassOf :Skills .
+welcome:Journalism rdf:type owl:Class ;
+                   rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#LanguageElement
-:LanguageElement rdf:type owl:Class ;
-                 rdfs:subClassOf :Elem .
+welcome:LanguageElement rdf:type owl:Class ;
+                        rdfs:subClassOf welcome:Elem .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Language_Other_Parameters
-:Language_Other_Parameters rdf:type owl:Class .
+welcome:Language_Other_Parameters rdf:type owl:Class .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Language_Parameters
-:Language_Parameters rdf:type owl:Class .
+welcome:Language_Parameters rdf:type owl:Class .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Letter_writing
-:Letter_writing rdf:type owl:Class ;
-                rdfs:subClassOf :Skills .
+welcome:Letter_writing rdf:type owl:Class ;
+                       rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Listening
-:Listening rdf:type owl:Class ;
-           rdfs:subClassOf :Skills .
+welcome:Listening rdf:type owl:Class ;
+                  rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Logical_thinking
-:Logical_thinking rdf:type owl:Class ;
-                  rdfs:subClassOf :Skills .
+welcome:Logical_thinking rdf:type owl:Class ;
+                         rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Logistics
-:Logistics rdf:type owl:Class ;
-           rdfs:subClassOf :Skills .
+welcome:Logistics rdf:type owl:Class ;
+                  rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#MS_Office
-:MS_Office rdf:type owl:Class ;
-           rdfs:subClassOf :Skills .
+welcome:MS_Office rdf:type owl:Class ;
+                  rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Management_and_Commerce
-:Management_and_Commerce rdf:type owl:Class ;
-                         rdfs:subClassOf :DegreeTitle .
+welcome:Management_and_Commerce rdf:type owl:Class ;
+                                rdfs:subClassOf welcome:DegreeTitle .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Managing_appointments
-:Managing_appointments rdf:type owl:Class ;
-                       rdfs:subClassOf :Skills .
+welcome:Managing_appointments rdf:type owl:Class ;
+                              rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Mediation
-:Mediation rdf:type owl:Class ;
-           rdfs:subClassOf :Skills .
+welcome:Mediation rdf:type owl:Class ;
+                  rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Meeting_deadlines
-:Meeting_deadlines rdf:type owl:Class ;
-                   rdfs:subClassOf :Skills .
+welcome:Meeting_deadlines rdf:type owl:Class ;
+                          rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Mixed_Programmes
-:Mixed_Programmes rdf:type owl:Class ;
-                  rdfs:subClassOf :DegreeTitle .
+welcome:Mixed_Programmes rdf:type owl:Class ;
+                         rdfs:subClassOf welcome:DegreeTitle .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Multitasking
-:Multitasking rdf:type owl:Class ;
-              rdfs:subClassOf :Skills .
+welcome:Multitasking rdf:type owl:Class ;
+                     rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#MySQL
-:MySQL rdf:type owl:Class ;
-       rdfs:subClassOf :Skills .
+welcome:MySQL rdf:type owl:Class ;
+              rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Natural_and_Physical_Sciences
-:Natural_and_Physical_Sciences rdf:type owl:Class ;
-                               rdfs:subClassOf :DegreeTitle .
+welcome:Natural_and_Physical_Sciences rdf:type owl:Class ;
+                                      rdfs:subClassOf welcome:DegreeTitle .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Negotiating
-:Negotiating rdf:type owl:Class ;
-             rdfs:subClassOf :Skills .
+welcome:Negotiating rdf:type owl:Class ;
+                    rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#None
-:None rdf:type owl:Class ;
-      rdfs:subClassOf :DegreeTitle .
+welcome:None rdf:type owl:Class ;
+             rdfs:subClassOf welcome:DegreeTitle .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Nonverbal_communication
-:Nonverbal_communication rdf:type owl:Class ;
-                         rdfs:subClassOf :Skills .
+welcome:Nonverbal_communication rdf:type owl:Class ;
+                                rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Note_taking
-:Note_taking rdf:type owl:Class ;
-             rdfs:subClassOf :Skills .
+welcome:Note_taking rdf:type owl:Class ;
+                    rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Office_management_skills
-:Office_management_skills rdf:type owl:Class ;
-                          rdfs:subClassOf :Skills .
+welcome:Office_management_skills rdf:type owl:Class ;
+                                 rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OneNote
-:OneNote rdf:type owl:Class ;
-         rdfs:subClassOf :Skills .
+welcome:OneNote rdf:type owl:Class ;
+                rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Open_mindedness
-:Open_mindedness rdf:type owl:Class ;
-                 rdfs:subClassOf :Skills .
+welcome:Open_mindedness rdf:type owl:Class ;
+                        rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Openness
-:Openness rdf:type owl:Class ;
-          rdfs:subClassOf :Skills .
+welcome:Openness rdf:type owl:Class ;
+                 rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Oral_communication_skills
-:Oral_communication_skills rdf:type owl:Class ;
-                           rdfs:subClassOf :Skills .
+welcome:Oral_communication_skills rdf:type owl:Class ;
+                                  rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Organizational_skills
-:Organizational_skills rdf:type owl:Class ;
-                       rdfs:subClassOf :Skills .
+welcome:Organizational_skills rdf:type owl:Class ;
+                              rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OtherElement
-:OtherElement rdf:type owl:Class ;
-              rdfs:subClassOf :Elem .
+welcome:OtherElement rdf:type owl:Class ;
+                     rdfs:subClassOf welcome:Elem .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Other_Parameters
-:Other_Parameters rdf:type owl:Class .
+welcome:Other_Parameters rdf:type owl:Class .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Outlook
-:Outlook rdf:type owl:Class ;
-         rdfs:subClassOf :Skills .
+welcome:Outlook rdf:type owl:Class ;
+                rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#PHP
-:PHP rdf:type owl:Class ;
-     rdfs:subClassOf :Skills .
+welcome:PHP rdf:type owl:Class ;
+            rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Patience
-:Patience rdf:type owl:Class ;
-          rdfs:subClassOf :Skills .
+welcome:Patience rdf:type owl:Class ;
+                 rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Persuasion
-:Persuasion rdf:type owl:Class ;
-            rdfs:subClassOf :Skills .
+welcome:Persuasion rdf:type owl:Class ;
+                   rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Photoshop
-:Photoshop rdf:type owl:Class ;
-           rdfs:subClassOf :Skills .
+welcome:Photoshop rdf:type owl:Class ;
+                  rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Planning
-:Planning rdf:type owl:Class ;
-          rdfs:subClassOf :Skills .
+welcome:Planning rdf:type owl:Class ;
+                 rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Planning_skills
-:Planning_skills rdf:type owl:Class ;
-                 rdfs:subClassOf :Skills .
+welcome:Planning_skills rdf:type owl:Class ;
+                        rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Powerpoint
-:Powerpoint rdf:type owl:Class ;
-            rdfs:subClassOf :Skills .
+welcome:Powerpoint rdf:type owl:Class ;
+                   rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Presentation_writing
-:Presentation_writing rdf:type owl:Class ;
-                      rdfs:subClassOf :Skills .
+welcome:Presentation_writing rdf:type owl:Class ;
+                             rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Presentations_Slideshows
-:Presentations_Slideshows rdf:type owl:Class ;
-                          rdfs:subClassOf :Skills .
+welcome:Presentations_Slideshows rdf:type owl:Class ;
+                                 rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#PreviousEmployerAddress
-:PreviousEmployerAddress rdf:type owl:Class ;
-                         rdfs:subClassOf :Employment_Parameters ;
-                         :conditionValue "Yes" ;
-                         :dependsOnSlot "obtainPreviousEmploymentStatus" .
+welcome:PreviousEmployerAddress rdf:type owl:Class ;
+                                rdfs:subClassOf welcome:Employment_Parameters ;
+                                welcome:conditionValue "Yes" ;
+                                welcome:dependsOnSlot "obtainPreviousEmploymentStatus" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#PreviousEmployerName
-:PreviousEmployerName rdf:type owl:Class ;
-                      rdfs:subClassOf :Employment_Parameters ;
-                      :conditionValue "Yes" ;
-                      :dependsOnSlot "obtainPreviousEmploymentStatus" .
+welcome:PreviousEmployerName rdf:type owl:Class ;
+                             rdfs:subClassOf welcome:Employment_Parameters ;
+                             welcome:conditionValue "Yes" ;
+                             welcome:dependsOnSlot "obtainPreviousEmploymentStatus" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#PreviousEmploymentStatus
-:PreviousEmploymentStatus rdf:type owl:Class ;
-                          rdfs:subClassOf :Employment_Parameters ;
-                          :conditionValue "Yes" ;
-                          :dependsOnSlot "obtainPreviousEmploymentStatus" .
+welcome:PreviousEmploymentStatus rdf:type owl:Class ;
+                                 rdfs:subClassOf welcome:Employment_Parameters ;
+                                 welcome:conditionValue "Yes" ;
+                                 welcome:dependsOnSlot "obtainPreviousEmploymentStatus" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#PreviousEndDate
-:PreviousEndDate rdf:type owl:Class ;
-                 rdfs:subClassOf :Employment_Parameters ;
-                 :conditionValue "Yes" ;
-                 :dependsOnSlot "obtainPreviousEmploymentStatus" .
+welcome:PreviousEndDate rdf:type owl:Class ;
+                        rdfs:subClassOf welcome:Employment_Parameters ;
+                        welcome:conditionValue "Yes" ;
+                        welcome:dependsOnSlot "obtainPreviousEmploymentStatus" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#PreviousMainActivities
-:PreviousMainActivities rdf:type owl:Class ;
-                        rdfs:subClassOf :Employment_Parameters ;
-                        :conditionValue "Yes" ;
-                        :dependsOnSlot "obtainPreviousEmploymentStatus" .
+welcome:PreviousMainActivities rdf:type owl:Class ;
+                               rdfs:subClassOf welcome:Employment_Parameters ;
+                               welcome:conditionValue "Yes" ;
+                               welcome:dependsOnSlot "obtainPreviousEmploymentStatus" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#PreviousNumberHours
-:PreviousNumberHours rdf:type owl:Class ;
-                     rdfs:subClassOf :Employment_Parameters ;
-                     :conditionValue "Yes" ;
-                     :dependsOnSlot "obtainPreviousEmploymentStatus" ;
-                     :secondaryCondition "Yes" ;
-                     :secondaryDependency "obtainPreviousNumberHoursConfirmation" .
+welcome:PreviousNumberHours rdf:type owl:Class ;
+                            rdfs:subClassOf welcome:Employment_Parameters ;
+                            welcome:conditionValue "Yes" ;
+                            welcome:dependsOnSlot "obtainPreviousEmploymentStatus" ;
+                            welcome:secondaryCondition "Yes" ;
+                            welcome:secondaryDependency "obtainPreviousNumberHoursConfirmation" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#PreviousOccupation
-:PreviousOccupation rdf:type owl:Class ;
-                    rdfs:subClassOf :Employment_Parameters .
+welcome:PreviousOccupation rdf:type owl:Class ;
+                           rdfs:subClassOf welcome:Employment_Parameters .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#PreviousStartingDate
-:PreviousStartingDate rdf:type owl:Class ;
-                      rdfs:subClassOf :Employment_Parameters ;
-                      :conditionValue "Yes" ;
-                      :dependsOnSlot "obtainPreviousEmploymentStatus" .
+welcome:PreviousStartingDate rdf:type owl:Class ;
+                             rdfs:subClassOf welcome:Employment_Parameters ;
+                             welcome:conditionValue "Yes" ;
+                             welcome:dependsOnSlot "obtainPreviousEmploymentStatus" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Prioritizing
-:Prioritizing rdf:type owl:Class ;
-              rdfs:subClassOf :Skills .
+welcome:Prioritizing rdf:type owl:Class ;
+                     rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Problem_solving
-:Problem_solving rdf:type owl:Class ;
-                 rdfs:subClassOf :Skills .
+welcome:Problem_solving rdf:type owl:Class ;
+                        rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Project_lifecycle_management
-:Project_lifecycle_management rdf:type owl:Class ;
-                              rdfs:subClassOf :Skills .
+welcome:Project_lifecycle_management rdf:type owl:Class ;
+                                     rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Project_management
-:Project_management rdf:type owl:Class ;
-                    rdfs:subClassOf :Skills .
+welcome:Project_management rdf:type owl:Class ;
+                           rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Python
-:Python rdf:type owl:Class ;
-        rdfs:subClassOf :Skills .
+welcome:Python rdf:type owl:Class ;
+               rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Relationship_building
-:Relationship_building rdf:type owl:Class ;
-                       rdfs:subClassOf :Skills .
+welcome:Relationship_building rdf:type owl:Class ;
+                              rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Reliability
-:Reliability rdf:type owl:Class ;
-             rdfs:subClassOf :Skills .
+welcome:Reliability rdf:type owl:Class ;
+                    rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Reporting
-:Reporting rdf:type owl:Class ;
-           rdfs:subClassOf :Skills .
+welcome:Reporting rdf:type owl:Class ;
+                  rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Research
-:Research rdf:type owl:Class ;
-          rdfs:subClassOf :Skills .
+welcome:Research rdf:type owl:Class ;
+                 rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Resource_management
-:Resource_management rdf:type owl:Class ;
-                     rdfs:subClassOf :Skills .
+welcome:Resource_management rdf:type owl:Class ;
+                            rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Respectfulness
-:Respectfulness rdf:type owl:Class ;
-                rdfs:subClassOf :Skills .
+welcome:Respectfulness rdf:type owl:Class ;
+                       rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Responsibility
-:Responsibility rdf:type owl:Class ;
-                rdfs:subClassOf :Skills .
+welcome:Responsibility rdf:type owl:Class ;
+                       rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Ruby_on_Rails
-:Ruby_on_Rails rdf:type owl:Class ;
-               rdfs:subClassOf :Skills .
+welcome:Ruby_on_Rails rdf:type owl:Class ;
+                      rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SEO
-:SEO rdf:type owl:Class ;
-     rdfs:subClassOf :Skills .
+welcome:SEO rdf:type owl:Class ;
+            rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SQL
-:SQL rdf:type owl:Class ;
-     rdfs:subClassOf :Skills .
+welcome:SQL rdf:type owl:Class ;
+            rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Scheduling
-:Scheduling rdf:type owl:Class ;
-            rdfs:subClassOf :Skills .
+welcome:Scheduling rdf:type owl:Class ;
+                   rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Self_motivation
-:Self_motivation rdf:type owl:Class ;
-                 rdfs:subClassOf :Skills .
+welcome:Self_motivation rdf:type owl:Class ;
+                        rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Self_regulation
-:Self_regulation rdf:type owl:Class ;
-                 rdfs:subClassOf :Skills .
+welcome:Self_regulation rdf:type owl:Class ;
+                        rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Skills
-:Skills rdf:type owl:Class .
+welcome:Skills rdf:type owl:Class .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Slideshows
-:Slideshows rdf:type owl:Class ;
-            rdfs:subClassOf :Skills .
+welcome:Slideshows rdf:type owl:Class ;
+                   rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Social_media
-:Social_media rdf:type owl:Class ;
-              rdfs:subClassOf :Skills .
+welcome:Social_media rdf:type owl:Class ;
+                     rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Social_media_marketing_and_paid_social_media_advertising
-:Social_media_marketing_and_paid_social_media_advertising rdf:type owl:Class ;
-                                                          rdfs:subClassOf :Skills .
+welcome:Social_media_marketing_and_paid_social_media_advertising rdf:type owl:Class ;
+                                                                 rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Society_and_Culture
-:Society_and_Culture rdf:type owl:Class ;
-                     rdfs:subClassOf :DegreeTitle .
+welcome:Society_and_Culture rdf:type owl:Class ;
+                            rdfs:subClassOf welcome:DegreeTitle .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Spreadsheets
-:Spreadsheets rdf:type owl:Class ;
-              rdfs:subClassOf :Skills .
+welcome:Spreadsheets rdf:type owl:Class ;
+                     rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Team_decision_making
-:Team_decision_making rdf:type owl:Class ;
-                      rdfs:subClassOf :Skills .
+welcome:Team_decision_making rdf:type owl:Class ;
+                             rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Teamwork_Collaboration
-:Teamwork_Collaboration rdf:type owl:Class ;
-                        rdfs:subClassOf :Skills .
+welcome:Teamwork_Collaboration rdf:type owl:Class ;
+                               rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Time_management
-:Time_management rdf:type owl:Class ;
-                 rdfs:subClassOf :Skills .
+welcome:Time_management rdf:type owl:Class ;
+                        rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Tolerance
-:Tolerance rdf:type owl:Class ;
-           rdfs:subClassOf :Skills .
+welcome:Tolerance rdf:type owl:Class ;
+                  rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Typing
-:Typing rdf:type owl:Class ;
-        rdfs:subClassOf :Skills .
+welcome:Typing rdf:type owl:Class ;
+               rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#UX_Design
-:UX_Design rdf:type owl:Class ;
-           rdfs:subClassOf :Skills .
+welcome:UX_Design rdf:type owl:Class ;
+                  rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#UX_UI_design
-:UX_UI_design rdf:type owl:Class ;
-              rdfs:subClassOf :Skills .
+welcome:UX_UI_design rdf:type owl:Class ;
+                     rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Visual_communication
-:Visual_communication rdf:type owl:Class ;
-                      rdfs:subClassOf :Skills .
+welcome:Visual_communication rdf:type owl:Class ;
+                             rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Web
-:Web rdf:type owl:Class ;
-     rdfs:subClassOf :Skills .
+welcome:Web rdf:type owl:Class ;
+            rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Word
-:Word rdf:type owl:Class ;
-      rdfs:subClassOf :Skills .
+welcome:Word rdf:type owl:Class ;
+             rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Work_life_balance
-:Work_life_balance rdf:type owl:Class ;
-                   rdfs:subClassOf :Skills .
+welcome:Work_life_balance rdf:type owl:Class ;
+                          rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Writing
-:Writing rdf:type owl:Class ;
-         rdfs:subClassOf :Skills .
+welcome:Writing rdf:type owl:Class ;
+                rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Written_communication_skills
-:Written_communication_skills rdf:type owl:Class ;
-                              rdfs:subClassOf :Skills .
+welcome:Written_communication_skills rdf:type owl:Class ;
+                                     rdfs:subClassOf welcome:Skills .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#iOS_Swift
-:iOS_Swift rdf:type owl:Class ;
-           rdfs:subClassOf :Skills .
+welcome:iOS_Swift rdf:type owl:Class ;
+                  rdfs:subClassOf welcome:Skills .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
