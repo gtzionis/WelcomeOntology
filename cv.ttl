@@ -119,266 +119,6 @@ welcome:educationElements rdf:type owl:DatatypeProperty .
 #    Classes
 #################################################################
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Agriculture
-:Agriculture rdf:type owl:Class ;
-             rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Anthropology
-:Anthropology rdf:type owl:Class ;
-              rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Applied_mathematics
-:Applied_mathematics rdf:type owl:Class ;
-                     rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Archaeology
-:Archaeology rdf:type owl:Class ;
-             rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Architecture_and_design
-:Architecture_and_design rdf:type owl:Class ;
-                         rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Area_studies
-:Area_studies rdf:type owl:Class ;
-              rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Astronomy
-:Astronomy rdf:type owl:Class ;
-           rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Biology
-:Biology rdf:type owl:Class ;
-         rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Business
-:Business rdf:type owl:Class ;
-          rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Chemistry
-:Chemistry rdf:type owl:Class ;
-           rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Computer_sciences
-:Computer_sciences rdf:type owl:Class ;
-                   rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Culinary_arts
-:Culinary_arts rdf:type owl:Class ;
-               rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Divinity
-:Divinity rdf:type owl:Class ;
-          rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Earth_sciences
-:Earth_sciences rdf:type owl:Class ;
-                rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Economics
-:Economics rdf:type owl:Class ;
-           rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Education
-:Education rdf:type owl:Class ;
-           rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Engineering_and_technology
-:Engineering_and_technology rdf:type owl:Class ;
-                            rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Environmental_studies
-:Environmental_studies rdf:type owl:Class ;
-                       rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Ethnic_and_cultural_studies
-:Ethnic_and_cultural_studies rdf:type owl:Class ;
-                             rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Family_and_consumer_science
-:Family_and_consumer_science rdf:type owl:Class ;
-                             rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Forestry
-:Forestry rdf:type owl:Class ;
-          rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Gender_and_sexuality_studies
-:Gender_and_sexuality_studies rdf:type owl:Class ;
-                              rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Geography
-:Geography rdf:type owl:Class ;
-           rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#History
-:History rdf:type owl:Class ;
-         rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Human_physical_performance_and_recreation
-:Human_physical_performance_and_recreation rdf:type owl:Class ;
-                                           rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Interdisciplinary_studies
-:Interdisciplinary_studies rdf:type owl:Class ;
-                           rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Law
-:Law rdf:type owl:Class ;
-     rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Library_studies
-:Library_studies rdf:type owl:Class ;
-                 rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Linguistics_and_languages
-:Linguistics_and_languages rdf:type owl:Class ;
-                           rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Literature
-:Literature rdf:type owl:Class ;
-            rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Logic
-:Logic rdf:type owl:Class ;
-       rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Mathematics
-:Mathematics rdf:type owl:Class ;
-             rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Media_studies
-:Media_studies rdf:type owl:Class ;
-               rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Medicine
-:Medicine rdf:type owl:Class ;
-          rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Military_sciences
-:Military_sciences rdf:type owl:Class ;
-                   rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Museum_studies
-:Museum_studies rdf:type owl:Class ;
-                rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Organizational_studies
-:Organizational_studies rdf:type owl:Class ;
-                        rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Performing_arts
-:Performing_arts rdf:type owl:Class ;
-                 rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Philosophy
-:Philosophy rdf:type owl:Class ;
-            rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Physics
-:Physics rdf:type owl:Class ;
-         rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Political_science
-:Political_science rdf:type owl:Class ;
-                   rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Psychology
-:Psychology rdf:type owl:Class ;
-            rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Public_administration
-:Public_administration rdf:type owl:Class ;
-                       rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Pure_mathematics
-:Pure_mathematics rdf:type owl:Class ;
-                  rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Religion
-:Religion rdf:type owl:Class ;
-          rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Social_work
-:Social_work rdf:type owl:Class ;
-             rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Sociology
-:Sociology rdf:type owl:Class ;
-           rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Space_sciences
-:Space_sciences rdf:type owl:Class ;
-                rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Statistics
-:Statistics rdf:type owl:Class ;
-            rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Systems_science
-:Systems_science rdf:type owl:Class ;
-                 rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Transportation
-:Transportation rdf:type owl:Class ;
-                rdfs:subClassOf welcome:DegreeTitle .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Visual_arts
-:Visual_arts rdf:type owl:Class ;
-             rdfs:subClassOf welcome:DegreeTitle .
-
-
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Ability_to_work_under_pressure
 welcome:Ability_to_work_under_pressure rdf:type owl:Class ;
                                        rdfs:subClassOf welcome:Skills .
@@ -615,9 +355,39 @@ welcome:AdditionalLanguageProcedure rdf:type owl:Class ;
 welcome:Agent rdf:type owl:Class .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Agriculture
+welcome:Agriculture rdf:type owl:Class ;
+                    rdfs:subClassOf welcome:DegreeTitle .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Analyzing
 welcome:Analyzing rdf:type owl:Class ;
                   rdfs:subClassOf welcome:Skills .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Anthropology
+welcome:Anthropology rdf:type owl:Class ;
+                     rdfs:subClassOf welcome:DegreeTitle .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Applied_mathematics
+welcome:Applied_mathematics rdf:type owl:Class ;
+                            rdfs:subClassOf welcome:DegreeTitle .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Archaeology
+welcome:Archaeology rdf:type owl:Class ;
+                    rdfs:subClassOf welcome:DegreeTitle .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Architecture_and_design
+welcome:Architecture_and_design rdf:type owl:Class ;
+                                rdfs:subClassOf welcome:DegreeTitle .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Area_studies
+welcome:Area_studies rdf:type owl:Class ;
+                     rdfs:subClassOf welcome:DegreeTitle .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Artistic_design
@@ -625,14 +395,29 @@ welcome:Artistic_design rdf:type owl:Class ;
                         rdfs:subClassOf welcome:Skills .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Astronomy
+welcome:Astronomy rdf:type owl:Class ;
+                  rdfs:subClassOf welcome:DegreeTitle .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Basic_writing_grammar_punctuation_spelling_vocabulary
 welcome:Basic_writing_grammar_punctuation_spelling_vocabulary rdf:type owl:Class ;
                                                               rdfs:subClassOf welcome:Skills .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Biology
+welcome:Biology rdf:type owl:Class ;
+                rdfs:subClassOf welcome:DegreeTitle .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Brainstorming
 welcome:Brainstorming rdf:type owl:Class ;
                       rdfs:subClassOf welcome:Skills .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Business
+welcome:Business rdf:type owl:Class ;
+                 rdfs:subClassOf welcome:DegreeTitle .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Business_knowledge
@@ -656,6 +441,11 @@ welcome:CarPossession rdf:type owl:Class ;
                       welcome:dependsOnSlot "obtainIncludeCarInfo" .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Chemistry
+welcome:Chemistry rdf:type owl:Class ;
+                  rdfs:subClassOf welcome:DegreeTitle .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Clear_speech_and_writing
 welcome:Clear_speech_and_writing rdf:type owl:Class ;
                                  rdfs:subClassOf welcome:Skills .
@@ -676,6 +466,11 @@ welcome:CompletedCourses rdf:type owl:Class ;
                          rdfs:subClassOf welcome:Education_Parameters ;
                          welcome:conditionValue "Yes" ;
                          welcome:dependsOnSlot "obtainMoreDegreeTitle" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Computer_sciences
+welcome:Computer_sciences rdf:type owl:Class ;
+                          rdfs:subClassOf welcome:DegreeTitle .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Confidence
@@ -778,6 +573,11 @@ welcome:Cross_cultural_communication rdf:type owl:Class ;
                                      rdfs:subClassOf welcome:Skills .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Culinary_arts
+welcome:Culinary_arts rdf:type owl:Class ;
+                      rdfs:subClassOf welcome:DegreeTitle .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CurrentEmployerAddress
 welcome:CurrentEmployerAddress rdf:type owl:Class ;
                                rdfs:subClassOf welcome:Employment_Parameters ;
@@ -872,6 +672,11 @@ welcome:DialogueUser rdf:type owl:Class ;
                      rdfs:subClassOf welcome:Agent .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Divinity
+welcome:Divinity rdf:type owl:Class ;
+                 rdfs:subClassOf welcome:DegreeTitle .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DrivingLicense
 welcome:DrivingLicense rdf:type owl:Class ;
                        rdfs:subClassOf welcome:Other_Parameters ;
@@ -879,9 +684,24 @@ welcome:DrivingLicense rdf:type owl:Class ;
                        welcome:dependsOnSlot "obtainIncludeCarInfo" .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Earth_sciences
+welcome:Earth_sciences rdf:type owl:Class ;
+                       rdfs:subClassOf welcome:DegreeTitle .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Economics
+welcome:Economics rdf:type owl:Class ;
+                  rdfs:subClassOf welcome:DegreeTitle .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Editing
 welcome:Editing rdf:type owl:Class ;
                 rdfs:subClassOf welcome:Skills .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Education
+welcome:Education rdf:type owl:Class ;
+                  rdfs:subClassOf welcome:DegreeTitle .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#EducationElement
@@ -922,6 +742,21 @@ welcome:EmploymentElement rdf:type owl:Class ;
 welcome:Employment_Parameters rdf:type owl:Class .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Engineering_and_technology
+welcome:Engineering_and_technology rdf:type owl:Class ;
+                                   rdfs:subClassOf welcome:DegreeTitle .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Environmental_studies
+welcome:Environmental_studies rdf:type owl:Class ;
+                              rdfs:subClassOf welcome:DegreeTitle .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Ethnic_and_cultural_studies
+welcome:Ethnic_and_cultural_studies rdf:type owl:Class ;
+                                    rdfs:subClassOf welcome:DegreeTitle .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Evaluating
 welcome:Evaluating rdf:type owl:Class ;
                    rdfs:subClassOf welcome:Skills .
@@ -937,6 +772,11 @@ welcome:Explanation rdf:type owl:Class ;
                     rdfs:subClassOf welcome:Skills .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Family_and_consumer_science
+welcome:Family_and_consumer_science rdf:type owl:Class ;
+                                    rdfs:subClassOf welcome:DegreeTitle .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Finance
 welcome:Finance rdf:type owl:Class ;
                 rdfs:subClassOf welcome:Skills .
@@ -947,9 +787,24 @@ welcome:Forecasting rdf:type owl:Class ;
                     rdfs:subClassOf welcome:Skills .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Forestry
+welcome:Forestry rdf:type owl:Class ;
+                 rdfs:subClassOf welcome:DegreeTitle .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Friendliness
 welcome:Friendliness rdf:type owl:Class ;
                      rdfs:subClassOf welcome:Skills .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Gender_and_sexuality_studies
+welcome:Gender_and_sexuality_studies rdf:type owl:Class ;
+                                     rdfs:subClassOf welcome:DegreeTitle .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Geography
+welcome:Geography rdf:type owl:Class ;
+                  rdfs:subClassOf welcome:DegreeTitle .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Goal_setting
@@ -996,6 +851,16 @@ welcome:Hiring rdf:type owl:Class ;
                rdfs:subClassOf welcome:Skills .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#History
+welcome:History rdf:type owl:Class ;
+                rdfs:subClassOf welcome:DegreeTitle .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Human_physical_performance_and_recreation
+welcome:Human_physical_performance_and_recreation rdf:type owl:Class ;
+                                                  rdfs:subClassOf welcome:DegreeTitle .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Illustrator
 welcome:Illustrator rdf:type owl:Class ;
                     rdfs:subClassOf welcome:Skills .
@@ -1028,6 +893,11 @@ welcome:InstitutionName rdf:type owl:Class ;
                         welcome:dependsOnSlot "obtainMoreDegreeTitle" .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Interdisciplinary_studies
+welcome:Interdisciplinary_studies rdf:type owl:Class ;
+                                  rdfs:subClassOf welcome:DegreeTitle .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Interpreting
 welcome:Interpreting rdf:type owl:Class ;
                      rdfs:subClassOf welcome:Skills .
@@ -1045,8 +915,7 @@ welcome:JavaScript rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Journalism
 welcome:Journalism rdf:type owl:Class ;
-                   rdfs:subClassOf welcome:DegreeTitle ,
-                                   welcome:Skills .
+                   rdfs:subClassOf welcome:DegreeTitle .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#LanguageElement
@@ -1062,14 +931,39 @@ welcome:Language_Other_Parameters rdf:type owl:Class .
 welcome:Language_Parameters rdf:type owl:Class .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Law
+welcome:Law rdf:type owl:Class ;
+            rdfs:subClassOf welcome:DegreeTitle .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Letter_writing
 welcome:Letter_writing rdf:type owl:Class ;
                        rdfs:subClassOf welcome:Skills .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Library_studies
+welcome:Library_studies rdf:type owl:Class ;
+                        rdfs:subClassOf welcome:DegreeTitle .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Linguistics_and_languages
+welcome:Linguistics_and_languages rdf:type owl:Class ;
+                                  rdfs:subClassOf welcome:DegreeTitle .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Listening
 welcome:Listening rdf:type owl:Class ;
                   rdfs:subClassOf welcome:Skills .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Literature
+welcome:Literature rdf:type owl:Class ;
+                   rdfs:subClassOf welcome:DegreeTitle .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Logic
+welcome:Logic rdf:type owl:Class ;
+              rdfs:subClassOf welcome:DegreeTitle .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Logical_thinking
@@ -1092,9 +986,24 @@ welcome:Managing_appointments rdf:type owl:Class ;
                               rdfs:subClassOf welcome:Skills .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Mathematics
+welcome:Mathematics rdf:type owl:Class ;
+                    rdfs:subClassOf welcome:DegreeTitle .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Media_studies
+welcome:Media_studies rdf:type owl:Class ;
+                      rdfs:subClassOf welcome:DegreeTitle .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Mediation
 welcome:Mediation rdf:type owl:Class ;
                   rdfs:subClassOf welcome:Skills .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Medicine
+welcome:Medicine rdf:type owl:Class ;
+                 rdfs:subClassOf welcome:DegreeTitle .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Meeting_deadlines
@@ -1102,9 +1011,19 @@ welcome:Meeting_deadlines rdf:type owl:Class ;
                           rdfs:subClassOf welcome:Skills .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Military_sciences
+welcome:Military_sciences rdf:type owl:Class ;
+                          rdfs:subClassOf welcome:DegreeTitle .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Multitasking
 welcome:Multitasking rdf:type owl:Class ;
                      rdfs:subClassOf welcome:Skills .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Museum_studies
+welcome:Museum_studies rdf:type owl:Class ;
+                       rdfs:subClassOf welcome:DegreeTitle .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#MySQL
@@ -1157,6 +1076,11 @@ welcome:Organizational_skills rdf:type owl:Class ;
                               rdfs:subClassOf welcome:Skills .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Organizational_studies
+welcome:Organizational_studies rdf:type owl:Class ;
+                               rdfs:subClassOf welcome:DegreeTitle .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OtherElement
 welcome:OtherElement rdf:type owl:Class ;
                      rdfs:subClassOf welcome:Elem .
@@ -1181,14 +1105,29 @@ welcome:Patience rdf:type owl:Class ;
                  rdfs:subClassOf welcome:Skills .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Performing_arts
+welcome:Performing_arts rdf:type owl:Class ;
+                        rdfs:subClassOf welcome:DegreeTitle .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Persuasion
 welcome:Persuasion rdf:type owl:Class ;
                    rdfs:subClassOf welcome:Skills .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Philosophy
+welcome:Philosophy rdf:type owl:Class ;
+                   rdfs:subClassOf welcome:DegreeTitle .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Photoshop
 welcome:Photoshop rdf:type owl:Class ;
                   rdfs:subClassOf welcome:Skills .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Physics
+welcome:Physics rdf:type owl:Class ;
+                rdfs:subClassOf welcome:DegreeTitle .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Planning
@@ -1199,6 +1138,11 @@ welcome:Planning rdf:type owl:Class ;
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Planning_skills
 welcome:Planning_skills rdf:type owl:Class ;
                         rdfs:subClassOf welcome:Skills .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Political_science
+welcome:Political_science rdf:type owl:Class ;
+                          rdfs:subClassOf welcome:DegreeTitle .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Powerpoint
@@ -1292,6 +1236,21 @@ welcome:Project_management rdf:type owl:Class ;
                            rdfs:subClassOf welcome:Skills .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Psychology
+welcome:Psychology rdf:type owl:Class ;
+                   rdfs:subClassOf welcome:DegreeTitle .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Public_administration
+welcome:Public_administration rdf:type owl:Class ;
+                              rdfs:subClassOf welcome:DegreeTitle .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Pure_mathematics
+welcome:Pure_mathematics rdf:type owl:Class ;
+                         rdfs:subClassOf welcome:DegreeTitle .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Python
 welcome:Python rdf:type owl:Class ;
                rdfs:subClassOf welcome:Skills .
@@ -1305,6 +1264,11 @@ welcome:Relationship_building rdf:type owl:Class ;
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Reliability
 welcome:Reliability rdf:type owl:Class ;
                     rdfs:subClassOf welcome:Skills .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Religion
+welcome:Religion rdf:type owl:Class ;
+                 rdfs:subClassOf welcome:DegreeTitle .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Reporting
@@ -1381,9 +1345,34 @@ welcome:Social_media_marketing_and_paid_social_media_advertising rdf:type owl:Cl
                                                                  rdfs:subClassOf welcome:Skills .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Social_work
+welcome:Social_work rdf:type owl:Class ;
+                    rdfs:subClassOf welcome:DegreeTitle .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Sociology
+welcome:Sociology rdf:type owl:Class ;
+                  rdfs:subClassOf welcome:DegreeTitle .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Space_sciences
+welcome:Space_sciences rdf:type owl:Class ;
+                       rdfs:subClassOf welcome:DegreeTitle .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Spreadsheets
 welcome:Spreadsheets rdf:type owl:Class ;
                      rdfs:subClassOf welcome:Skills .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Statistics
+welcome:Statistics rdf:type owl:Class ;
+                   rdfs:subClassOf welcome:DegreeTitle .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Systems_science
+welcome:Systems_science rdf:type owl:Class ;
+                        rdfs:subClassOf welcome:DegreeTitle .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Team_decision_making
@@ -1406,6 +1395,11 @@ welcome:Tolerance rdf:type owl:Class ;
                   rdfs:subClassOf welcome:Skills .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Transportation
+welcome:Transportation rdf:type owl:Class ;
+                       rdfs:subClassOf welcome:DegreeTitle .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Typing
 welcome:Typing rdf:type owl:Class ;
                rdfs:subClassOf welcome:Skills .
@@ -1419,6 +1413,11 @@ welcome:UX_Design rdf:type owl:Class ;
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#UX_UI_design
 welcome:UX_UI_design rdf:type owl:Class ;
                      rdfs:subClassOf welcome:Skills .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Visual_arts
+welcome:Visual_arts rdf:type owl:Class ;
+                    rdfs:subClassOf welcome:DegreeTitle .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Visual_communication
