@@ -119,6 +119,25 @@ welcome:educationElements rdf:type owl:DatatypeProperty .
 #    Classes
 #################################################################
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Advanced
+:Advanced rdf:type owl:Class ;
+          rdfs:subClassOf welcome:AdditionalLanguageLevel .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Beginner
+          rdfs:subClassOf welcome:AdditionalLanguageLevel .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Bilingual
+:Bilingual rdf:type owl:Class ;
+           rdfs:subClassOf welcome:AdditionalLanguageLevel .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Elementary
+:Elementary rdf:type owl:Class ;
+            rdfs:subClassOf welcome:AdditionalLanguageLevel .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Elementary_school
 :Elementary_school rdf:type owl:Class ;
                    rdfs:subClassOf welcome:CourseSchoolType .
@@ -132,6 +151,11 @@ welcome:educationElements rdf:type owl:DatatypeProperty .
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Highschool
 :Highschool rdf:type owl:Class ;
             rdfs:subClassOf welcome:CourseSchoolType .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Intermediate
+:Intermediate rdf:type owl:Class ;
+              rdfs:subClassOf welcome:AdditionalLanguageLevel .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Lyceum
@@ -152,6 +176,11 @@ welcome:educationElements rdf:type owl:DatatypeProperty .
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Primary_school
 :Primary_school rdf:type owl:Class ;
                 rdfs:subClassOf welcome:CourseSchoolType .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Proficient
+:Proficient rdf:type owl:Class ;
+            rdfs:subClassOf welcome:AdditionalLanguageLevel .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Technical_school
