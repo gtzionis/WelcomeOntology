@@ -119,6 +119,63 @@ welcome:educationElements rdf:type owl:DatatypeProperty .
 #    Classes
 #################################################################
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#CourseReview
+:CourseReview rdf:type owl:Class ;
+              rdfs:subClassOf welcome:Course_Parameters ;
+              welcome:conditionValue "Yes" ;
+              welcome:dependsOnSlot "obtainSuggestOtherEducation" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Elementary_school
+:Elementary_school rdf:type owl:Class ;
+                   rdfs:subClassOf welcome:CourseSchoolType .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Gymnasium
+:Gymnasium rdf:type owl:Class ;
+           rdfs:subClassOf welcome:CourseSchoolType .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Highschool
+:Highschool rdf:type owl:Class ;
+            rdfs:subClassOf welcome:CourseSchoolType .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Lyceum
+:Lyceum rdf:type owl:Class ;
+        rdfs:subClassOf welcome:CourseSchoolType .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Online_school
+:Online_school rdf:type owl:Class ;
+               rdfs:subClassOf welcome:CourseSchoolType .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Preschool
+:Preschool rdf:type owl:Class ;
+           rdfs:subClassOf welcome:CourseSchoolType .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Primary_school
+:Primary_school rdf:type owl:Class ;
+                rdfs:subClassOf welcome:CourseSchoolType .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Technical_school
+:Technical_school rdf:type owl:Class ;
+                  rdfs:subClassOf welcome:CourseSchoolType .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#University
+:University rdf:type owl:Class ;
+            rdfs:subClassOf welcome:CourseSchoolType .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Vocational_school
+:Vocational_school rdf:type owl:Class ;
+                   rdfs:subClassOf welcome:CourseSchoolType .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Ability_to_work_under_pressure
 welcome:Ability_to_work_under_pressure rdf:type owl:Class ;
                                        rdfs:subClassOf welcome:Skills .
