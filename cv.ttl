@@ -149,9 +149,14 @@ welcome:educationElements rdf:type owl:DatatypeProperty .
            rdfs:subClassOf welcome:CourseSchoolType .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Highschool
-:Highschool rdf:type owl:Class ;
-            rdfs:subClassOf welcome:CourseSchoolType .
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#High
+:High rdf:type owl:Class ;
+      rdfs:subClassOf welcome:AdditionalLanguageCourseGrade .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#High_school
+:High_school rdf:type owl:Class ;
+             rdfs:subClassOf welcome:CourseSchoolType .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Intermediate
@@ -159,9 +164,19 @@ welcome:educationElements rdf:type owl:DatatypeProperty .
               rdfs:subClassOf welcome:AdditionalLanguageLevel .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Low
+:Low rdf:type owl:Class ;
+     rdfs:subClassOf welcome:AdditionalLanguageCourseGrade .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Lyceum
 :Lyceum rdf:type owl:Class ;
         rdfs:subClassOf welcome:CourseSchoolType .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Medium
+:Medium rdf:type owl:Class ;
+        rdfs:subClassOf welcome:AdditionalLanguageCourseGrade .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Online_school
