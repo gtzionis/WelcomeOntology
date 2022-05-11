@@ -330,7 +330,9 @@ welcome:AdditionalLanguageCourseCertificate rdf:type owl:Class ;
                                             welcome:conditionValue "Yes" ;
                                             welcome:dependsOnSlot "obtainAdditionalLanguageConfirmation" ;
                                             welcome:secondaryCondition "Yes" ;
-                                            welcome:secondaryDependency "obtainAdditionalLanguageOther" .
+                                            welcome:secondaryDependency "obtainAdditionalLanguageOther" ;
+                                            welcome:thirdCondition "Yes" ;
+                                            welcome:thirdDependency "obtainAdditionalLanguageCourse" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguageCourseDuration
@@ -339,7 +341,9 @@ welcome:AdditionalLanguageCourseDuration rdf:type owl:Class ;
                                          welcome:conditionValue "Yes" ;
                                          welcome:dependsOnSlot "obtainAdditionalLanguageConfirmation" ;
                                          welcome:secondaryCondition "Yes" ;
-                                         welcome:secondaryDependency "obtainAdditionalLanguageOther" .
+                                         welcome:secondaryDependency "obtainAdditionalLanguageOther" ;
+                                         welcome:thirdCondition "Yes" ;
+                                         welcome:thirdDependency "obtainAdditionalLanguageCourse" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguageCourseGrade
@@ -348,7 +352,9 @@ welcome:AdditionalLanguageCourseGrade rdf:type owl:Class ;
                                       welcome:conditionValue "Yes" ;
                                       welcome:dependsOnSlot "obtainAdditionalLanguageConfirmation" ;
                                       welcome:secondaryCondition "Yes" ;
-                                      welcome:secondaryDependency "obtainAdditionalLanguageOther" .
+                                      welcome:secondaryDependency "obtainAdditionalLanguageOther" ;
+                                      welcome:thirdCondition "Yes" ;
+                                      welcome:thirdDependency "obtainAdditionalLanguageCourse" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguageCourseName
@@ -357,7 +363,9 @@ welcome:AdditionalLanguageCourseName rdf:type owl:Class ;
                                      welcome:conditionValue "Yes" ;
                                      welcome:dependsOnSlot "obtainAdditionalLanguageConfirmation" ;
                                      welcome:secondaryCondition "Yes" ;
-                                     welcome:secondaryDependency "obtainAdditionalLanguageOther" .
+                                     welcome:secondaryDependency "obtainAdditionalLanguageOther" ;
+                                     welcome:thirdCondition "Yes" ;
+                                     welcome:thirdDependency "obtainAdditionalLanguageCourse" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguageCourseSchool
@@ -366,7 +374,9 @@ welcome:AdditionalLanguageCourseSchool rdf:type owl:Class ;
                                        welcome:conditionValue "Yes" ;
                                        welcome:dependsOnSlot "obtainAdditionalLanguageConfirmation" ;
                                        welcome:secondaryCondition "Yes" ;
-                                       welcome:secondaryDependency "obtainAdditionalLanguageOther" .
+                                       welcome:secondaryDependency "obtainAdditionalLanguageOther" ;
+                                       welcome:thirdCondition "Yes" ;
+                                       welcome:thirdDependency "obtainAdditionalLanguageCourse" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguageCourseSchoolType
@@ -375,7 +385,9 @@ welcome:AdditionalLanguageCourseSchoolType rdf:type owl:Class ;
                                            welcome:conditionValue "Yes" ;
                                            welcome:dependsOnSlot "obtainAdditionalLanguageConfirmation" ;
                                            welcome:secondaryCondition "Yes" ;
-                                           welcome:secondaryDependency "obtainAdditionalLanguageOther" .
+                                           welcome:secondaryDependency "obtainAdditionalLanguageOther" ;
+                                           welcome:thirdCondition "Yes" ;
+                                           welcome:thirdDependency "obtainAdditionalLanguageCourse" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguageCourseStatus
@@ -384,7 +396,9 @@ welcome:AdditionalLanguageCourseStatus rdf:type owl:Class ;
                                        welcome:conditionValue "Yes" ;
                                        welcome:dependsOnSlot "obtainAdditionalLanguageConfirmation" ;
                                        welcome:secondaryCondition "Yes" ;
-                                       welcome:secondaryDependency "obtainAdditionalLanguageOther" .
+                                       welcome:secondaryDependency "obtainAdditionalLanguageOther" ;
+                                       welcome:thirdCondition "Yes" ;
+                                       welcome:thirdDependency "obtainAdditionalLanguageCourse" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguageCourseYear
@@ -393,7 +407,9 @@ welcome:AdditionalLanguageCourseYear rdf:type owl:Class ;
                                      welcome:conditionValue "Yes" ;
                                      welcome:dependsOnSlot "obtainAdditionalLanguageConfirmation" ;
                                      welcome:secondaryCondition "Yes" ;
-                                     welcome:secondaryDependency "obtainAdditionalLanguageOther" .
+                                     welcome:secondaryDependency "obtainAdditionalLanguageOther" ;
+                                     welcome:thirdCondition "Yes" ;
+                                     welcome:thirdDependency "obtainAdditionalLanguageCourse" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AdditionalLanguageDegree
