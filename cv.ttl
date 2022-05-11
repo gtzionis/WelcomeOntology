@@ -125,6 +125,7 @@ welcome:educationElements rdf:type owl:DatatypeProperty .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Beginner
+:Beginner rdf:type owl:Class ;
           rdfs:subClassOf welcome:AdditionalLanguageLevel .
 
 
