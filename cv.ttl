@@ -444,6 +444,13 @@ welcome:educationElements rdf:type owl:DatatypeProperty .
            rdfs:subClassOf welcome:CourseSchoolType .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#PreviousNumberHoursConfirmation
+:PreviousNumberHoursConfirmation rdf:type owl:Class ;
+                                 rdfs:subClassOf welcome:Employment_Parameters ;
+                                 welcome:conditionValue "Yes" ;
+                                 welcome:dependsOnSlot "obtainPreviousEmploymentStatus" .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Primary_school
 :Primary_school rdf:type owl:Class ;
                 rdfs:subClassOf welcome:CourseSchoolType .
