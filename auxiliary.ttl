@@ -52,6 +52,47 @@ welcome:tcnUtterance rdf:type owl:Class ;
 #    Individuals
 #################################################################
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/auxiliary.ttl#Status_obtainMoreSchoolCompleted_Completed
+:Status_obtainMoreSchoolCompleted_Completed rdf:type owl:NamedIndividual ;
+                                            welcome:hasFullSentence "Yes I completed it."@en ,
+                                                                    "Yes I did."@en ,
+                                                                    "Yes I finished it."@en ;
+                                            welcome:effectLabel "Completed" ;
+                                            welcome:slotLabel "obtainAdditionalLanguageCourseStatus" ,
+                                                              "obtainMoreEducationalCourseStatus" ,
+                                                              "obtainMoreSchoolCompleted" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/auxiliary.ttl#Status_obtainMoreSchoolCompleted_Enrolled
+:Status_obtainMoreSchoolCompleted_Enrolled rdf:type owl:NamedIndividual ;
+                                           welcome:hasFullSentence "I am attending some courses online."@en ,
+                                                                   "I am still a student."@en ,
+                                                                   "I am still attending some classes."@en ,
+                                                                   "I am still enrolled."@en ,
+                                                                   "I have not fnished it yet."@en ,
+                                                                   "I will complete it in a few months."@en ,
+                                                                   "Not yet."@en ;
+                                           welcome:effectLabel "Still Enrolled" ;
+                                           welcome:slotLabel "obtainAdditionalLanguageCourseStatus" ,
+                                                             "obtainMoreEducationalCourseStatus" ,
+                                                             "obtainMoreSchoolCompleted" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/auxiliary.ttl#Status_obtainMoreSchoolCompleted_Incomplete
+:Status_obtainMoreSchoolCompleted_Incomplete rdf:type owl:NamedIndividual ;
+                                             welcome:hasFullSentence "Almost. I just did not pass a course."@en ,
+                                                                     "I did not finish the last grade because my family had to flee."@en ,
+                                                                     "I did not pass a few subjects."@en ,
+                                                                     "I finished the first 3 years of Highschool in our village. Then, we fled."@en ,
+                                                                     "I had to abandon it because my family moved to another city."@en ,
+                                                                     "No, because we had to flee, I did not finish the last grade of the highschool."@en ,
+                                                                     "Only the first 5 grades because then we moved to another city and I could continue to go to school."@en ;
+                                             welcome:effectLabel "Incomplete" ;
+                                             welcome:slotLabel "obtainAdditionalLanguageCourseStatus" ,
+                                                               "obtainMoreEducationalCourseStatus" ,
+                                                               "obtainMoreSchoolCompleted" .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CVPurpose_obtainCVCreationInterest_Completed
 welcome:CVPurpose_obtainCVCreationInterest_Completed rdf:type owl:NamedIndividual ;
                                                      welcome:hasFullSentence "Can you show me the completed one?"@en ,
