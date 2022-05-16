@@ -121,17 +121,17 @@ welcome:educationElements rdf:type owl:DatatypeProperty .
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Accountant
 :Accountant rdf:type owl:Class ;
-            rdfs:subClassOf welcome:CurrentOccupation .
+            rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Actor
 :Actor rdf:type owl:Class ;
-       rdfs:subClassOf welcome:CurrentOccupation .
+       rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Actress
 :Actress rdf:type owl:Class ;
-         rdfs:subClassOf welcome:CurrentOccupation .
+         rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Advanced
@@ -141,37 +141,37 @@ welcome:educationElements rdf:type owl:DatatypeProperty .
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Air_traffic_controller
 :Air_traffic_controller rdf:type owl:Class ;
-                        rdfs:subClassOf welcome:CurrentOccupation .
+                        rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Architect
 :Architect rdf:type owl:Class ;
-           rdfs:subClassOf welcome:CurrentOccupation .
+           rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Artist
 :Artist rdf:type owl:Class ;
-        rdfs:subClassOf welcome:CurrentOccupation .
+        rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Attorney
 :Attorney rdf:type owl:Class ;
-          rdfs:subClassOf welcome:CurrentOccupation .
+          rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Banker
 :Banker rdf:type owl:Class ;
-        rdfs:subClassOf welcome:CurrentOccupation .
+        rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Barber
 :Barber rdf:type owl:Class ;
-        rdfs:subClassOf welcome:CurrentOccupation .
+        rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Bartender
 :Bartender rdf:type owl:Class ;
-           rdfs:subClassOf welcome:CurrentOccupation .
+           rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Beginner
@@ -186,97 +186,97 @@ welcome:educationElements rdf:type owl:DatatypeProperty .
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Bookkeeper
 :Bookkeeper rdf:type owl:Class ;
-            rdfs:subClassOf welcome:CurrentOccupation .
+            rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Builder
 :Builder rdf:type owl:Class ;
-         rdfs:subClassOf welcome:CurrentOccupation .
+         rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Businessman
 :Businessman rdf:type owl:Class ;
-             rdfs:subClassOf welcome:CurrentOccupation .
+             rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Businessperson
 :Businessperson rdf:type owl:Class ;
-                rdfs:subClassOf welcome:CurrentOccupation .
+                rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Businesswoman
 :Businesswoman rdf:type owl:Class ;
-               rdfs:subClassOf welcome:CurrentOccupation .
+               rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Butcher
 :Butcher rdf:type owl:Class ;
-         rdfs:subClassOf welcome:CurrentOccupation .
+         rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Carpenter
 :Carpenter rdf:type owl:Class ;
-           rdfs:subClassOf welcome:CurrentOccupation .
+           rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Cashier
 :Cashier rdf:type owl:Class ;
-         rdfs:subClassOf welcome:CurrentOccupation .
+         rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Chef
 :Chef rdf:type owl:Class ;
-      rdfs:subClassOf welcome:CurrentOccupation .
+      rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Coach
 :Coach rdf:type owl:Class ;
-       rdfs:subClassOf welcome:CurrentOccupation .
+       rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Dental_hygienist
 :Dental_hygienist rdf:type owl:Class ;
-                  rdfs:subClassOf welcome:CurrentOccupation .
+                  rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Dentist
 :Dentist rdf:type owl:Class ;
-         rdfs:subClassOf welcome:CurrentOccupation .
+         rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Designer
 :Designer rdf:type owl:Class ;
-          rdfs:subClassOf welcome:CurrentOccupation .
+          rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Developer
 :Developer rdf:type owl:Class ;
-           rdfs:subClassOf welcome:CurrentOccupation .
+           rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Dietician
 :Dietician rdf:type owl:Class ;
-           rdfs:subClassOf welcome:CurrentOccupation .
+           rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Doctor
 :Doctor rdf:type owl:Class ;
-        rdfs:subClassOf welcome:CurrentOccupation .
+        rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Economist
 :Economist rdf:type owl:Class ;
-           rdfs:subClassOf welcome:CurrentOccupation .
+           rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Editor
 :Editor rdf:type owl:Class ;
-        rdfs:subClassOf welcome:CurrentOccupation .
+        rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Electrician
 :Electrician rdf:type owl:Class ;
-             rdfs:subClassOf welcome:CurrentOccupation .
+             rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Elementary
@@ -291,27 +291,27 @@ welcome:educationElements rdf:type owl:DatatypeProperty .
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Engineer
 :Engineer rdf:type owl:Class ;
-          rdfs:subClassOf welcome:CurrentOccupation .
+          rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Farmer
 :Farmer rdf:type owl:Class ;
-        rdfs:subClassOf welcome:CurrentOccupation .
+        rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Filmmaker
 :Filmmaker rdf:type owl:Class ;
-           rdfs:subClassOf welcome:CurrentOccupation .
+           rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Fisherman
 :Fisherman rdf:type owl:Class ;
-           rdfs:subClassOf welcome:CurrentOccupation .
+           rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Flight_attendant
 :Flight_attendant rdf:type owl:Class ;
-                  rdfs:subClassOf welcome:CurrentOccupation .
+                  rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Gymnasium
@@ -336,17 +336,17 @@ welcome:educationElements rdf:type owl:DatatypeProperty .
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Jeweler
 :Jeweler rdf:type owl:Class ;
-         rdfs:subClassOf welcome:CurrentOccupation .
+         rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Judge
 :Judge rdf:type owl:Class ;
-       rdfs:subClassOf welcome:CurrentOccupation .
+       rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Lawyer
 :Lawyer rdf:type owl:Class ;
-        rdfs:subClassOf welcome:CurrentOccupation .
+        rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Low
@@ -361,7 +361,7 @@ welcome:educationElements rdf:type owl:DatatypeProperty .
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Mechanic
 :Mechanic rdf:type owl:Class ;
-          rdfs:subClassOf welcome:CurrentOccupation .
+          rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Medium
@@ -371,17 +371,17 @@ welcome:educationElements rdf:type owl:DatatypeProperty .
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Musician
 :Musician rdf:type owl:Class ;
-          rdfs:subClassOf welcome:CurrentOccupation .
+          rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Nurse
 :Nurse rdf:type owl:Class ;
-       rdfs:subClassOf welcome:CurrentOccupation .
+       rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Nutritionist
 :Nutritionist rdf:type owl:Class ;
-              rdfs:subClassOf welcome:CurrentOccupation .
+              rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Online_school
@@ -391,52 +391,52 @@ welcome:educationElements rdf:type owl:DatatypeProperty .
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Optician
 :Optician rdf:type owl:Class ;
-          rdfs:subClassOf welcome:CurrentOccupation .
+          rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Painter
 :Painter rdf:type owl:Class ;
-         rdfs:subClassOf welcome:CurrentOccupation .
+         rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Pharmacist
 :Pharmacist rdf:type owl:Class ;
-            rdfs:subClassOf welcome:CurrentOccupation .
+            rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Photographer
 :Photographer rdf:type owl:Class ;
-              rdfs:subClassOf welcome:CurrentOccupation .
+              rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Physician
 :Physician rdf:type owl:Class ;
-           rdfs:subClassOf welcome:CurrentOccupation .
+           rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Physician_assistant
 :Physician_assistant rdf:type owl:Class ;
-                     rdfs:subClassOf welcome:CurrentOccupation .
+                     rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Pilot
 :Pilot rdf:type owl:Class ;
-       rdfs:subClassOf welcome:CurrentOccupation .
+       rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Plumber
 :Plumber rdf:type owl:Class ;
-         rdfs:subClassOf welcome:CurrentOccupation .
+         rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Police_officer
 :Police_officer rdf:type owl:Class ;
-                rdfs:subClassOf welcome:CurrentOccupation .
+                rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Politician
 :Politician rdf:type owl:Class ;
-            rdfs:subClassOf welcome:CurrentOccupation .
+            rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Preschool
@@ -458,7 +458,7 @@ welcome:educationElements rdf:type owl:DatatypeProperty .
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Professor
 :Professor rdf:type owl:Class ;
-           rdfs:subClassOf welcome:CurrentOccupation .
+           rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Proficient
@@ -468,52 +468,52 @@ welcome:educationElements rdf:type owl:DatatypeProperty .
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Programmer
 :Programmer rdf:type owl:Class ;
-            rdfs:subClassOf welcome:CurrentOccupation .
+            rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Psychologist
 :Psychologist rdf:type owl:Class ;
-              rdfs:subClassOf welcome:CurrentOccupation .
+              rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Receptionist
 :Receptionist rdf:type owl:Class ;
-              rdfs:subClassOf welcome:CurrentOccupation .
+              rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Salesman
 :Salesman rdf:type owl:Class ;
-          rdfs:subClassOf welcome:CurrentOccupation .
+          rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Salesperson
 :Salesperson rdf:type owl:Class ;
-             rdfs:subClassOf welcome:CurrentOccupation .
+             rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Saleswoman
 :Saleswoman rdf:type owl:Class ;
-            rdfs:subClassOf welcome:CurrentOccupation .
+            rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Secretary
 :Secretary rdf:type owl:Class ;
-           rdfs:subClassOf welcome:CurrentOccupation .
+           rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Singer
 :Singer rdf:type owl:Class ;
-        rdfs:subClassOf welcome:CurrentOccupation .
+        rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Surgeon
 :Surgeon rdf:type owl:Class ;
-         rdfs:subClassOf welcome:CurrentOccupation .
+         rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Teacher
 :Teacher rdf:type owl:Class ;
-         rdfs:subClassOf welcome:CurrentOccupation .
+         rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Technical_school
@@ -523,17 +523,17 @@ welcome:educationElements rdf:type owl:DatatypeProperty .
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Therapist
 :Therapist rdf:type owl:Class ;
-           rdfs:subClassOf welcome:CurrentOccupation .
+           rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Translator
 :Translator rdf:type owl:Class ;
-            rdfs:subClassOf welcome:CurrentOccupation .
+            rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Undertaker
 :Undertaker rdf:type owl:Class ;
-            rdfs:subClassOf welcome:CurrentOccupation .
+            rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#University
@@ -543,12 +543,12 @@ welcome:educationElements rdf:type owl:DatatypeProperty .
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Veterinarian
 :Veterinarian rdf:type owl:Class ;
-              rdfs:subClassOf welcome:CurrentOccupation .
+              rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Videographer
 :Videographer rdf:type owl:Class ;
-              rdfs:subClassOf welcome:CurrentOccupation .
+              rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Vocational_school
@@ -558,17 +558,17 @@ welcome:educationElements rdf:type owl:DatatypeProperty .
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Waiter
 :Waiter rdf:type owl:Class ;
-        rdfs:subClassOf welcome:CurrentOccupation .
+        rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Waitress
 :Waitress rdf:type owl:Class ;
-          rdfs:subClassOf welcome:CurrentOccupation .
+          rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Writer
 :Writer rdf:type owl:Class ;
-        rdfs:subClassOf welcome:CurrentOccupation .
+        rdfs:subClassOf welcome:Occupation .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Ability_to_work_under_pressure
@@ -1046,41 +1046,6 @@ welcome:Culinary_arts rdf:type owl:Class ;
                       rdfs:subClassOf welcome:DegreeTitle .
 
 
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CurrentEmployerAddress
-welcome:CurrentEmployerAddress rdf:type owl:Class ;
-                               rdfs:subClassOf welcome:Employment_Parameters ;
-                               welcome:conditionValue "Yes" ;
-                               welcome:dependsOnSlot "obtainEmploymentStatus" .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CurrentEmployerName
-welcome:CurrentEmployerName rdf:type owl:Class ;
-                            rdfs:subClassOf welcome:Employment_Parameters ;
-                            welcome:conditionValue "Yes" ;
-                            welcome:dependsOnSlot "obtainEmploymentStatus" .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CurrentMainActivities
-welcome:CurrentMainActivities rdf:type owl:Class ;
-                              rdfs:subClassOf welcome:Employment_Parameters ;
-                              welcome:conditionValue "Yes" ;
-                              welcome:dependsOnSlot "obtainEmploymentStatus" .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CurrentOccupation
-welcome:CurrentOccupation rdf:type owl:Class ;
-                          rdfs:subClassOf welcome:Employment_Parameters ;
-                          welcome:conditionValue "Yes" ;
-                          welcome:dependsOnSlot "obtainEmploymentStatus" .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CurrentStartingDate
-welcome:CurrentStartingDate rdf:type owl:Class ;
-                            rdfs:subClassOf welcome:Employment_Parameters ;
-                            welcome:conditionValue "Yes" ;
-                            welcome:dependsOnSlot "obtainEmploymentStatus" .
-
-
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Data_analysis
 welcome:Data_analysis rdf:type owl:Class ;
                       rdfs:subClassOf welcome:Skills .
@@ -1199,6 +1164,20 @@ welcome:Email_writing rdf:type owl:Class ;
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Emotional_intelligence
 welcome:Emotional_intelligence rdf:type owl:Class ;
                                rdfs:subClassOf welcome:Skills .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#EmployerAddress
+welcome:EmployerAddress rdf:type owl:Class ;
+                        rdfs:subClassOf welcome:Employment_Parameters ;
+                        welcome:conditionValue "Yes" ;
+                        welcome:dependsOnSlot "obtainEmploymentStatus" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#EmployerName
+welcome:EmployerName rdf:type owl:Class ;
+                     rdfs:subClassOf welcome:Employment_Parameters ;
+                     welcome:conditionValue "Yes" ;
+                     welcome:dependsOnSlot "obtainEmploymentStatus" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#EmploymentElement
@@ -1449,6 +1428,13 @@ welcome:MS_Office rdf:type owl:Class ;
                   rdfs:subClassOf welcome:Skills .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#MainActivities
+welcome:MainActivities rdf:type owl:Class ;
+                       rdfs:subClassOf welcome:Employment_Parameters ;
+                       welcome:conditionValue "Yes" ;
+                       welcome:dependsOnSlot "obtainEmploymentStatus" .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Managing_appointments
 welcome:Managing_appointments rdf:type owl:Class ;
                               rdfs:subClassOf welcome:Skills .
@@ -1512,6 +1498,13 @@ welcome:Nonverbal_communication rdf:type owl:Class ;
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Note_taking
 welcome:Note_taking rdf:type owl:Class ;
                     rdfs:subClassOf welcome:Skills .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Occupation
+welcome:Occupation rdf:type owl:Class ;
+                   rdfs:subClassOf welcome:Employment_Parameters ;
+                   welcome:conditionValue "Yes" ;
+                   welcome:dependsOnSlot "obtainEmploymentStatus" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Office_management_skills
@@ -1831,6 +1824,13 @@ welcome:Space_sciences rdf:type owl:Class ;
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Spreadsheets
 welcome:Spreadsheets rdf:type owl:Class ;
                      rdfs:subClassOf welcome:Skills .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#StartingDate
+welcome:StartingDate rdf:type owl:Class ;
+                     rdfs:subClassOf welcome:Employment_Parameters ;
+                     welcome:conditionValue "Yes" ;
+                     welcome:dependsOnSlot "obtainEmploymentStatus" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Statistics
