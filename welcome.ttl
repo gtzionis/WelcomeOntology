@@ -6006,6 +6006,58 @@ welcome:course_spanishLanguage rdf:type owl:NamedIndividual ,
  ] .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#cvSection
+welcome:cvSection rdf:type owl:NamedIndividual ;
+                  welcome:hasValue "additional complementary achievements" ,
+                                   "education" ,
+                                   "languages" ,
+                                   "other information" ,
+                                   "personal information" ,
+                                   "work experience" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:cvSection ;
+   owl:annotatedProperty welcome:hasValue ;
+   owl:annotatedTarget "additional complementary achievements" ;
+   <http://purl.org/dc/terms/isRequiredBy> "obtainMoreEducationalInformationConfirmation"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:cvSection ;
+   owl:annotatedProperty welcome:hasValue ;
+   owl:annotatedTarget "education" ;
+   <http://purl.org/dc/terms/isRequiredBy> "obtainEducationalInformationConfirmation"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:cvSection ;
+   owl:annotatedProperty welcome:hasValue ;
+   owl:annotatedTarget "languages" ;
+   <http://purl.org/dc/terms/isRequiredBy> "obtainLanguageInformationConfirmation"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:cvSection ;
+   owl:annotatedProperty welcome:hasValue ;
+   owl:annotatedTarget "other information" ;
+   <http://purl.org/dc/terms/isRequiredBy> "obtainOtherInformationConfirmation"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:cvSection ;
+   owl:annotatedProperty welcome:hasValue ;
+   owl:annotatedTarget "personal information" ;
+   <http://purl.org/dc/terms/isRequiredBy> "obtainPersonalInfoConfirmation"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:cvSection ;
+   owl:annotatedProperty welcome:hasValue ;
+   owl:annotatedTarget "work experience" ;
+   <http://purl.org/dc/terms/isRequiredBy> "obtainEmploymentInformationConfirmation"
+ ] .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#expiration_period
 welcome:expiration_period rdf:type owl:NamedIndividual ,
                                    welcome:ExpirationPeriod ;
