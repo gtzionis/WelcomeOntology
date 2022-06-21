@@ -1667,7 +1667,9 @@ welcome:PreviousNumberHours rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#PreviousOccupation
 welcome:PreviousOccupation rdf:type owl:Class ;
-                           rdfs:subClassOf welcome:Employment_Parameters .
+                           rdfs:subClassOf welcome:Employment_Parameters ;
+                           welcome:conditionValue "Yes" ;
+                           welcome:dependsOnSlot "obtainPreviousEmploymentStatus" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#PreviousStartingDate
