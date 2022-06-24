@@ -2542,6 +2542,7 @@ welcome:AgentNGO rdf:type owl:NamedIndividual ,
    owl:annotatedProperty welcome:agentName ;
    owl:annotatedTarget "PRAKSIS" ;
    <http://purl.org/dc/terms/isRequiredBy> "informAsylumClaimRequired" ,
+                                           "informGenericContact" ,
                                            "informGenericPRAKSISContact" ,
                                            "informInabilityAssist" ,
                                            "informLanguageSelection" ,
@@ -2576,7 +2577,8 @@ welcome:AgentNGO rdf:type owl:NamedIndividual ,
    owl:annotatedSource welcome:AgentNGO ;
    owl:annotatedProperty actor:webURL ;
    owl:annotatedTarget "https://praksis.gr/contact/" ;
-   <http://purl.org/dc/terms/isRequiredBy> "informGenericPRAKSISContact"
+   <http://purl.org/dc/terms/isRequiredBy> "informGenericPRAKSISContact" ;
+   rdfs:comment "informGenericContact"
  ] .
 
 [ rdf:type owl:Axiom ;
