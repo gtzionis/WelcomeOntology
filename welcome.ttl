@@ -2583,8 +2583,8 @@ welcome:AgentNGO rdf:type owl:NamedIndividual ,
    owl:annotatedSource welcome:AgentNGO ;
    owl:annotatedProperty actor:webURL ;
    owl:annotatedTarget "https://praksis.gr/contact/" ;
-   <http://purl.org/dc/terms/isRequiredBy> "informGenericPRAKSISContact" ;
-   rdfs:comment "informGenericContact" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informGenericContact" ,
+                                           "informGenericPRAKSISContact" ;
    welcome:conditionValue "GR" ;
    welcome:dependsOn "CountryCode"
  ] .
