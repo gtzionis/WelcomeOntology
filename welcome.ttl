@@ -2534,7 +2534,10 @@ welcome:AgentNGO rdf:type owl:NamedIndividual ,
    owl:annotatedSource welcome:AgentNGO ;
    owl:annotatedProperty welcome:agentName ;
    owl:annotatedTarget "DIFE" ;
-   <http://purl.org/dc/terms/isRequiredBy> "informGenericDTASFContact"
+   <http://purl.org/dc/terms/isRequiredBy> "informGenericContact" ,
+                                           "informGenericDTASFContact" ;
+   welcome:conditionValue "ES" ;
+   welcome:dependsOn "CountryCode"
  ] .
 
 [ rdf:type owl:Axiom ;
@@ -2548,7 +2551,9 @@ welcome:AgentNGO rdf:type owl:NamedIndividual ,
                                            "informLanguageSelection" ,
                                            "informNeedContact" ,
                                            "informOtherQuestion" ,
-                                           "informPRAKSISContact"
+                                           "informPRAKSISContact" ;
+   welcome:conditionValue "GR" ;
+   welcome:dependsOn "CountryCode"
  ] .
 
 [ rdf:type owl:Axiom ;
@@ -2599,7 +2604,10 @@ welcome:AgentNGO rdf:type owl:NamedIndividual ,
    owl:annotatedSource welcome:AgentNGO ;
    owl:annotatedProperty welcome:agentName ;
    owl:annotatedTarget "CARITAS" ;
-   <http://purl.org/dc/terms/isRequiredBy> "informGenericCARITASContact"
+   <http://purl.org/dc/terms/isRequiredBy> "informGenericCARITASContact" ,
+                                           "informGenericContact" ;
+   welcome:conditionValue "DE" ;
+   welcome:dependsOn "CountryCode"
  ] .
 
 
