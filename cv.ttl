@@ -344,6 +344,11 @@ welcome:educationElements rdf:type owl:DatatypeProperty .
        rdfs:subClassOf welcome:Occupation .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Language_school
+:Language_school rdf:type owl:Class ;
+                 rdfs:subClassOf welcome:CourseSchoolType .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Lawyer
 :Lawyer rdf:type owl:Class ;
         rdfs:subClassOf welcome:Occupation .
