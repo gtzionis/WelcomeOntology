@@ -54,9 +54,9 @@ welcome:tcnUtterance rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/auxiliary.ttl#Status_obtainMoreSchoolCompleted_Completed
 :Status_obtainMoreSchoolCompleted_Completed rdf:type owl:NamedIndividual ;
-                                            welcome:hasFullSentence "Yes I completed it."@en ,
-                                                                    "Yes I did."@en ,
-                                                                    "Yes I finished it."@en ;
+                                            welcome:hasFullSentence "Yes I completed it." ,
+                                                                    "Yes I did." ,
+                                                                    "Yes I finished it." ;
                                             welcome:effectLabel "Completed" ;
                                             welcome:slotLabel "obtainAdditionalLanguageCourseStatus" ,
                                                               "obtainMoreEducationalCourseStatus" ,
@@ -65,13 +65,13 @@ welcome:tcnUtterance rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/auxiliary.ttl#Status_obtainMoreSchoolCompleted_Enrolled
 :Status_obtainMoreSchoolCompleted_Enrolled rdf:type owl:NamedIndividual ;
-                                           welcome:hasFullSentence "I am attending some courses online."@en ,
-                                                                   "I am still a student."@en ,
-                                                                   "I am still attending some classes."@en ,
-                                                                   "I am still enrolled."@en ,
-                                                                   "I have not fnished it yet."@en ,
-                                                                   "I will complete it in a few months."@en ,
-                                                                   "Not yet."@en ;
+                                           welcome:hasFullSentence "I am attending some courses online." ,
+                                                                   "I am still a student." ,
+                                                                   "I am still attending some classes." ,
+                                                                   "I am still enrolled." ,
+                                                                   "I have not fnished it yet." ,
+                                                                   "I will complete it in a few months." ,
+                                                                   "Not yet." ;
                                            welcome:effectLabel "Still Enrolled" ;
                                            welcome:slotLabel "obtainAdditionalLanguageCourseStatus" ,
                                                              "obtainMoreEducationalCourseStatus" ,
@@ -80,13 +80,13 @@ welcome:tcnUtterance rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/auxiliary.ttl#Status_obtainMoreSchoolCompleted_Incomplete
 :Status_obtainMoreSchoolCompleted_Incomplete rdf:type owl:NamedIndividual ;
-                                             welcome:hasFullSentence "Almost. I just did not pass a course."@en ,
-                                                                     "I did not finish the last grade because my family had to flee."@en ,
-                                                                     "I did not pass a few subjects."@en ,
-                                                                     "I finished the first 3 years of Highschool in our village. Then, we fled."@en ,
-                                                                     "I had to abandon it because my family moved to another city."@en ,
-                                                                     "No, because we had to flee, I did not finish the last grade of the highschool."@en ,
-                                                                     "Only the first 5 grades because then we moved to another city and I could continue to go to school."@en ;
+                                             welcome:hasFullSentence "Almost. I just did not pass a course." ,
+                                                                     "I did not finish the last grade because my family had to flee." ,
+                                                                     "I did not pass a few subjects." ,
+                                                                     "I finished the first 3 years of Highschool in our village. Then, we fled." ,
+                                                                     "I had to abandon it because my family moved to another city." ,
+                                                                     "No, because we had to flee, I did not finish the last grade of the highschool." ,
+                                                                     "Only the first 5 grades because then we moved to another city and I could continue to go to school." ;
                                              welcome:effectLabel "Incomplete" ;
                                              welcome:slotLabel "obtainAdditionalLanguageCourseStatus" ,
                                                                "obtainMoreEducationalCourseStatus" ,
@@ -95,32 +95,32 @@ welcome:tcnUtterance rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CVPurpose_obtainCVCreationInterest_Completed
 welcome:CVPurpose_obtainCVCreationInterest_Completed rdf:type owl:NamedIndividual ;
-                                                     welcome:hasFullSentence "Can you show me the completed one?"@en ,
-                                                                             "I want to review the already completed one."@en ,
-                                                                             "review completed"@en ;
-                                                     welcome:effectLabel "Review Completed"@en ;
+                                                     welcome:hasFullSentence "Can you show me the completed one?" ,
+                                                                             "I want to review the already completed one." ,
+                                                                             "review completed" ;
+                                                     welcome:effectLabel "Review Completed" ;
                                                      welcome:slotLabel "obtainCVCreationInterest" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CVPurpose_obtainCVCreationInterest_Incomplete
 welcome:CVPurpose_obtainCVCreationInterest_Incomplete rdf:type owl:NamedIndividual ;
-                                                      welcome:hasFullSentence "Can I see what we already introduced?"@en ,
-                                                                              "I want to continue."@en ,
-                                                                              "Let's continue!"@en ,
-                                                                              "Let's continue, but I would like to correct some information we introduced before"@en ,
-                                                                              "continue incomplet"@en ;
-                                                      welcome:effectLabel "Continue Incomplete"@en ;
+                                                      welcome:hasFullSentence "Can I see what we already introduced?" ,
+                                                                              "I want to continue." ,
+                                                                              "Let's continue!" ,
+                                                                              "Let's continue, but I would like to correct some information we introduced before" ,
+                                                                              "continue incomplet" ;
+                                                      welcome:effectLabel "Continue Incomplete" ;
                                                       welcome:slotLabel "obtainCVCreationInterest" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CVPurpose_obtainCVCreationInterest_New
 welcome:CVPurpose_obtainCVCreationInterest_New rdf:type owl:NamedIndividual ;
-                                               welcome:hasFullSentence "I want to restart with a new version."@en ,
-                                                                       "I want to start with a new version."@en ,
-                                                                       "I would like to create a new one."@en ,
-                                                                       "Let's start from the beginning!"@en ,
-                                                                       "create new"@en ;
-                                               welcome:effectLabel "Create New"@en ;
+                                               welcome:hasFullSentence "I want to restart with a new version." ,
+                                                                       "I want to start with a new version." ,
+                                                                       "I would like to create a new one." ,
+                                                                       "Let's start from the beginning!" ,
+                                                                       "create new" ;
+                                               welcome:effectLabel "Create New" ;
                                                welcome:slotLabel "obtainCVCreationInterest" .
 
 
