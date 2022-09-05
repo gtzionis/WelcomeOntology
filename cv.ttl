@@ -234,6 +234,13 @@ welcome:educationElements rdf:type owl:DatatypeProperty .
        rdfs:subClassOf welcome:Occupation .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#CourseReview
+:CourseReview rdf:type owl:Class ;
+              rdfs:subClassOf welcome:Course_Parameters ;
+              welcome:conditionValue "Yes" ;
+              welcome:dependsOnSlot "obtainSuggestOtherEducation" .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/cv.ttl#Dental_hygienist
 :Dental_hygienist rdf:type owl:Class ;
                   rdfs:subClassOf welcome:Occupation .
