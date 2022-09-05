@@ -86,9 +86,9 @@ welcome:Albanian rdf:type owl:NamedIndividual ,
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Algerian_Saharan_Arabic
 welcome:Algerian_Saharan_Arabic rdf:type owl:NamedIndividual ,
                                          welcome:Language ;
-                                welcome:hasValue "Algerian Saharan Arabic " ;
+                                welcome:hasValue "Algerian Saharan Arabic" ;
                                 welcome:iso3code "AAO" ;
-                                welcome:languageName "Algerian Saharan Arabic " .
+                                welcome:languageName "Algerian Saharan Arabic" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Amharic
@@ -798,9 +798,9 @@ welcome:Latvian rdf:type owl:NamedIndividual ,
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Libyan_Arabic
 welcome:Libyan_Arabic rdf:type owl:NamedIndividual ,
                                welcome:Language ;
-                      welcome:hasValue "Libyan Arabic " ;
+                      welcome:hasValue "Libyan Arabic" ;
                       welcome:iso3code "AYL" ;
-                      welcome:languageName "Libyan Arabic " .
+                      welcome:languageName "Libyan Arabic" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Limburgan
@@ -926,9 +926,9 @@ welcome:Mongolian rdf:type owl:NamedIndividual ,
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Moroccan_Arabic
 welcome:Moroccan_Arabic rdf:type owl:NamedIndividual ,
                                  welcome:Language ;
-                        welcome:hasValue "Moroccan Arabic " ;
+                        welcome:hasValue "Moroccan Arabic" ;
                         welcome:iso3code "ARY" ;
-                        welcome:languageName "Moroccan Arabic " .
+                        welcome:languageName "Moroccan Arabic" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Nauru
@@ -966,9 +966,9 @@ welcome:Nepali rdf:type owl:NamedIndividual ,
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#North_Levantine_Arabic
 welcome:North_Levantine_Arabic rdf:type owl:NamedIndividual ,
                                         welcome:Language ;
-                               welcome:hasValue "North Levantine Arabic " ;
+                               welcome:hasValue "North Levantine Arabic" ;
                                welcome:iso3code "APC" ;
-                               welcome:languageName "North Levantine Arabic " .
+                               welcome:languageName "North Levantine Arabic" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#North_Ndebele
@@ -1238,9 +1238,9 @@ welcome:Somali rdf:type owl:NamedIndividual ,
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#South_Levantine_Arabic
 welcome:South_Levantine_Arabic rdf:type owl:NamedIndividual ,
                                         welcome:Language ;
-                               welcome:hasValue "South Levantine Arabic " ;
+                               welcome:hasValue "South Levantine Arabic" ;
                                welcome:iso3code "AJP" ;
-                               welcome:languageName "South Levantine Arabic " .
+                               welcome:languageName "South Levantine Arabic" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#South_Ndebele
@@ -1270,9 +1270,9 @@ welcome:Spanish rdf:type owl:NamedIndividual ,
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Standard_Arabic
 welcome:Standard_Arabic rdf:type owl:NamedIndividual ,
                                  welcome:Language ;
-                        welcome:hasValue "Standard Arabic " ;
+                        welcome:hasValue "Standard Arabic" ;
                         welcome:iso3code "ARB" ;
-                        welcome:languageName "Standard Arabic " .
+                        welcome:languageName "Standard Arabic" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Sundanese
@@ -1406,9 +1406,9 @@ welcome:Tswana rdf:type owl:NamedIndividual ,
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Tunisian_Arabic
 welcome:Tunisian_Arabic rdf:type owl:NamedIndividual ,
                                  welcome:Language ;
-                        welcome:hasValue "Tunisian Arabic " ;
+                        welcome:hasValue "Tunisian Arabic" ;
                         welcome:iso3code "AEB" ;
-                        welcome:languageName "Tunisian Arabic " .
+                        welcome:languageName "Tunisian Arabic" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Turkish
