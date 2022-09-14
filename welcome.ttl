@@ -6032,9 +6032,8 @@ welcome:cvSection rdf:type owl:NamedIndividual ;
                                    "education" ,
                                    "languages" ,
                                    "other information" ,
-                                   "personal information"@eng ,
-                                   "work experience" ,
-                                   "προσωπικές πληροφορίες"@ell .
+                                   "personal information" ,
+                                   "work experience" .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:cvSection ;
@@ -6067,7 +6066,7 @@ welcome:cvSection rdf:type owl:NamedIndividual ;
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:cvSection ;
    owl:annotatedProperty welcome:hasValue ;
-   owl:annotatedTarget "personal information"@eng ;
+   owl:annotatedTarget "personal information" ;
    <http://purl.org/dc/terms/isRequiredBy> "obtainPersonalInfoConfirmation"
  ] .
 
@@ -6076,13 +6075,6 @@ welcome:cvSection rdf:type owl:NamedIndividual ;
    owl:annotatedProperty welcome:hasValue ;
    owl:annotatedTarget "work experience" ;
    <http://purl.org/dc/terms/isRequiredBy> "obtainEmploymentInformationConfirmation"
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource welcome:cvSection ;
-   owl:annotatedProperty welcome:hasValue ;
-   owl:annotatedTarget "προσωπικές πληροφορίες"@ell ;
-   <http://purl.org/dc/terms/isRequiredBy> "obtainPersonalInfoConfirmation"
  ] .
 
 
