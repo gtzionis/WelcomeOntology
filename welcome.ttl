@@ -6028,100 +6028,13 @@ welcome:course_spanishLanguage rdf:type owl:NamedIndividual ,
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#cvSection
 welcome:cvSection rdf:type owl:NamedIndividual ;
-                  welcome:hasValue "Altra informació"@cat ,
-                                   "Andere Informationen"@deu ,
-                                   "Berufserfahrung"@deu ,
-                                   "Educació"@cat ,
-                                   "Experiència Laboral"@cat ,
-                                   "Fähigkeiten"@deu ,
-                                   "Habilitats"@cat ,
-                                   "Idiomes"@cat ,
-                                   "Informació Personal"@cat ,
-                                   "Persönlichen Daten"@deu ,
-                                   "Schulausbildung"@deu ,
-                                   "Sprachen"@deu ,
-                                   "additional complementary achievements"@eng ,
+                  welcome:hasValue "additional complementary achievements"@eng ,
                                    "education"@eng ,
                                    "languages"@eng ,
                                    "other information"@eng ,
                                    "personal information"@eng ,
                                    "work experience"@eng ,
-                                   "Άλλες Πληροφορίες"@ell ,
-                                   "Γλωσσικές Δεξιότητες"@ell ,
-                                   "Δεξιότητές"@ell ,
-                                   "Εκπαίδευση"@ell ,
-                                   "Επαγγελματική Εμπειρία"@ell ,
                                    "Προσωπικές Πληροφορίες"@ell .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource welcome:cvSection ;
-   owl:annotatedProperty welcome:hasValue ;
-   owl:annotatedTarget "Altra informació"@cat ;
-   rdfs:comment "obtainOtherInformationConfirmation"
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource welcome:cvSection ;
-   owl:annotatedProperty welcome:hasValue ;
-   owl:annotatedTarget "Andere Informationen"@deu ;
-   <http://purl.org/dc/terms/isRequiredBy> "obtainOtherInformationConfirmation"
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource welcome:cvSection ;
-   owl:annotatedProperty welcome:hasValue ;
-   owl:annotatedTarget "Berufserfahrung"@deu ;
-   <http://purl.org/dc/terms/isRequiredBy> "obtainEmploymentInformationConfirmation"
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource welcome:cvSection ;
-   owl:annotatedProperty welcome:hasValue ;
-   owl:annotatedTarget "Educació"@cat ;
-   <http://purl.org/dc/terms/isRequiredBy> "obtainEducationalInformationConfirmation"
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource welcome:cvSection ;
-   owl:annotatedProperty welcome:hasValue ;
-   owl:annotatedTarget "Experiència Laboral"@cat ;
-   <http://purl.org/dc/terms/isRequiredBy> "obtainEmploymentInformationConfirmation"
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource welcome:cvSection ;
-   owl:annotatedProperty welcome:hasValue ;
-   owl:annotatedTarget "Idiomes"@cat ;
-   <http://purl.org/dc/terms/isRequiredBy> "obtainLanguageInformationConfirmation"
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource welcome:cvSection ;
-   owl:annotatedProperty welcome:hasValue ;
-   owl:annotatedTarget "Informació Personal"@cat ;
-   <http://purl.org/dc/terms/isRequiredBy> "obtainPersonalInfoConfirmation"
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource welcome:cvSection ;
-   owl:annotatedProperty welcome:hasValue ;
-   owl:annotatedTarget "Persönlichen Daten"@deu ;
-   <http://purl.org/dc/terms/isRequiredBy> "obtainPersonalInfoConfirmation"
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource welcome:cvSection ;
-   owl:annotatedProperty welcome:hasValue ;
-   owl:annotatedTarget "Schulausbildung"@deu ;
-   <http://purl.org/dc/terms/isRequiredBy> "obtainEducationalInformationConfirmation"
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource welcome:cvSection ;
-   owl:annotatedProperty welcome:hasValue ;
-   owl:annotatedTarget "Sprachen"@deu ;
-   <http://purl.org/dc/terms/isRequiredBy> "obtainLanguageInformationConfirmation"
- ] .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:cvSection ;
@@ -6162,34 +6075,6 @@ welcome:cvSection rdf:type owl:NamedIndividual ;
    owl:annotatedSource welcome:cvSection ;
    owl:annotatedProperty welcome:hasValue ;
    owl:annotatedTarget "work experience"@eng ;
-   <http://purl.org/dc/terms/isRequiredBy> "obtainEmploymentInformationConfirmation"
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource welcome:cvSection ;
-   owl:annotatedProperty welcome:hasValue ;
-   owl:annotatedTarget "Άλλες Πληροφορίες"@ell ;
-   <http://purl.org/dc/terms/isRequiredBy> "obtainOtherInformationConfirmation"
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource welcome:cvSection ;
-   owl:annotatedProperty welcome:hasValue ;
-   owl:annotatedTarget "Γλωσσικές Δεξιότητες"@ell ;
-   <http://purl.org/dc/terms/isRequiredBy> "obtainLanguageInformationConfirmation"
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource welcome:cvSection ;
-   owl:annotatedProperty welcome:hasValue ;
-   owl:annotatedTarget "Εκπαίδευση"@ell ;
-   <http://purl.org/dc/terms/isRequiredBy> "obtainEducationalInformationConfirmation"
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource welcome:cvSection ;
-   owl:annotatedProperty welcome:hasValue ;
-   owl:annotatedTarget "Επαγγελματική Εμπειρία"@ell ;
    <http://purl.org/dc/terms/isRequiredBy> "obtainEmploymentInformationConfirmation"
  ] .
 
