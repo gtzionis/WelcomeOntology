@@ -6028,31 +6028,17 @@ welcome:course_spanishLanguage rdf:type owl:NamedIndividual ,
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#cvSection
 welcome:cvSection rdf:type owl:NamedIndividual ;
-<<<<<<< HEAD
                   welcome:hasValue "additional complementary achievements" ,
                                    "education" ,
                                    "languages" ,
                                    "other information" ,
                                    "personal information" ,
                                    "work experience" .
-=======
-                  welcome:hasValue "additional complementary achievements"@eng ,
-                                   "education"@eng ,
-                                   "languages"@eng ,
-                                   "other information"@eng ,
-                                   "personal information"@eng ,
-                                   "work experience"@eng ,
-                                   "Προσωπικές Πληροφορίες"@ell .
->>>>>>> parent of 8296550 (Update welcome.ttl)
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:cvSection ;
    owl:annotatedProperty welcome:hasValue ;
-<<<<<<< HEAD
    owl:annotatedTarget "additional complementary achievements" ;
-=======
-   owl:annotatedTarget "additional complementary achievements"@eng ;
->>>>>>> parent of 8296550 (Update welcome.ttl)
    <http://purl.org/dc/terms/isRequiredBy> "obtainMoreEducationalInformationConfirmation"
  ] .
 
@@ -6091,16 +6077,6 @@ welcome:cvSection rdf:type owl:NamedIndividual ;
    <http://purl.org/dc/terms/isRequiredBy> "obtainEmploymentInformationConfirmation"
  ] .
 
-<<<<<<< HEAD
-=======
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource welcome:cvSection ;
-   owl:annotatedProperty welcome:hasValue ;
-   owl:annotatedTarget "Προσωπικές Πληροφορίες"@ell ;
-   <http://purl.org/dc/terms/isRequiredBy> "obtainPersonalInfoConfirmation"
- ] .
-
->>>>>>> parent of 8296550 (Update welcome.ttl)
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#expiration_period
 welcome:expiration_period rdf:type owl:NamedIndividual ,
