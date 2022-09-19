@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1625143758654" name="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/PDDLExpression.owl" uri="PDDLExpression.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1625143758654" name="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.owl" uri="welcome.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1663578570751" name="http://localhost:8080/services/FirstReceptionService.owl" uri="GlobalKnowledge/WSR/FirstReceptionService.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1663578570751" name="http://localhost:8080/services/PreregistrationProcedureService.owl" uri="GlobalKnowledge/WSR/PreregistrationProcedureService.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1663578570751" name="http://localhost:8080/services/RegistrationService.owl" uri="GlobalKnowledge/WSR/RegistrationService.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1663578570751" name="http://localhost:8080/services/SimulatePhoneAppointmentService.owl" uri="GlobalKnowledge/WSR/SimulatePhoneAppointmentService.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1663578570751" name="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/PDDLExpression.owl" uri="PDDLExpression.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1663578570751" name="https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.owl" uri="welcome.owl"/>
     </group>
 </catalog>
