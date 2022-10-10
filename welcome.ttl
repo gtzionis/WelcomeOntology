@@ -1239,6 +1239,10 @@ welcome:toPeriod rdf:type owl:DatatypeProperty ;
                  rdfs:subPropertyOf owl:topDataProperty .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#topicName
+welcome:topicName rdf:type owl:DatatypeProperty .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#versionJsonNumber
 welcome:versionJsonNumber rdf:type owl:DatatypeProperty .
 
@@ -2428,6 +2432,11 @@ welcome:Temporal rdf:type owl:Class ;
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Time
 welcome:Time rdf:type owl:Class ;
              rdfs:subClassOf welcome:Temporal .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Topic
+welcome:Topic rdf:type owl:Class ;
+              rdfs:subClassOf welcome:DialogueCommunication .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Training
@@ -4806,6 +4815,71 @@ welcome:Saudi_Arabia rdf:type owl:NamedIndividual ,
                      welcome:hasValue "Saudi Arabia" ;
                      welcome:iso2code "SA" ;
                      welcome:iso3code "SAU" .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SchoolingTopic
+welcome:SchoolingTopic rdf:type owl:NamedIndividual ,
+                                welcome:Topic ;
+                       welcome:topicName "recognition of foreign master and university degrees" ,
+                                         "recognition of non-university qualifications" ,
+                                         "recognition of professional skills" ,
+                                         "recognition of school degree" ,
+                                         "recognition of university diploma" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:SchoolingTopic ;
+   owl:annotatedProperty welcome:topicName ;
+   owl:annotatedTarget "recognition of foreign master and university degrees" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informScenarioIntroduction" ;
+   welcome:conditionValue "ES" ;
+   welcome:dependsOn "CountryCode" ;
+   welcome:secondaryCondition "Schooling Scenario DIFE" ;
+   welcome:secondaryDependency "Scenario"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:SchoolingTopic ;
+   owl:annotatedProperty welcome:topicName ;
+   owl:annotatedTarget "recognition of non-university qualifications" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informScenarioIntroduction" ;
+   welcome:conditionValue "ES" ;
+   welcome:dependsOn "CountryCode" ;
+   welcome:secondaryCondition "Schooling Scenario DIFE" ;
+   welcome:secondaryDependency "Scenario"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:SchoolingTopic ;
+   owl:annotatedProperty welcome:topicName ;
+   owl:annotatedTarget "recognition of professional skills" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informScenarioIntroduction" ;
+   welcome:conditionValue "ES" ;
+   welcome:dependsOn "CountryCode" ;
+   welcome:secondaryCondition "Schooling Scenario DIFE" ;
+   welcome:secondaryDependency "Scenario"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:SchoolingTopic ;
+   owl:annotatedProperty welcome:topicName ;
+   owl:annotatedTarget "recognition of school degree" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informScenarioIntroduction" ;
+   welcome:conditionValue "DE" ;
+   welcome:dependsOn "CountryCode" ;
+   welcome:secondaryCondition "Schooling Scenario CARITAS" ;
+   welcome:secondaryDependency "Scenario"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:SchoolingTopic ;
+   owl:annotatedProperty welcome:topicName ;
+   owl:annotatedTarget "recognition of university diploma" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informScenarioIntroduction" ;
+   welcome:conditionValue "DE" ;
+   welcome:dependsOn "CountryCode" ;
+   welcome:secondaryCondition "Schooling Scenario CARITAS" ;
+   welcome:secondaryDependency "Scenario"
+ ] .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Senegal
