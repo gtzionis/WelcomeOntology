@@ -1,0 +1,160 @@
+@prefix : <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ajan: <http://www.ajan.de/ajan-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/activeAgentsExample.ttl> .
+
+<https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/activeAgentsExample.ttl> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.ajan.de/ajan-ns#agentId
+ajan:agentId rdf:type owl:AnnotationProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasAddress
+:hasAddress rdf:type owl:AnnotationProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStatus
+:hasStatus rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.ajan.de/ajan-ns#Agent
+ajan:Agent rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://localhost:8060/welcome/integration/coordination/ajan/agents/majanagent1
+<http://localhost:8060/welcome/integration/coordination/ajan/agents/majanagent1> rdf:type owl:NamedIndividual ,
+                                                                                          ajan:Agent ;
+                                                                                 ajan:agentId "majanagent1" ;
+                                                                                 :hasAddress "http://localhost:8060/welcome/integration/coordination/ajan/agents/majanagent1" ;
+                                                                                 :hasStatus :active .
+
+
+###  http://localhost:8060/welcome/integration/coordination/ajan/agents/majanagent10
+<http://localhost:8060/welcome/integration/coordination/ajan/agents/majanagent10> rdf:type owl:NamedIndividual ,
+                                                                                           ajan:Agent ;
+                                                                                  ajan:agentId "majanagent10" ;
+                                                                                  :hasAddress "http://localhost:8060/welcome/integration/coordination/ajan/agents/majanagent10" ;
+                                                                                  :hasStatus :active .
+
+
+###  http://localhost:8060/welcome/integration/coordination/ajan/agents/majanagent11
+<http://localhost:8060/welcome/integration/coordination/ajan/agents/majanagent11> rdf:type owl:NamedIndividual ,
+                                                                                           ajan:Agent ;
+                                                                                  ajan:agentId "majanagent11" ;
+                                                                                  :hasAddress "http://localhost:8060/welcome/integration/coordination/ajan/agents/majanagent11" ;
+                                                                                  :hasStatus :active .
+
+
+###  http://localhost:8060/welcome/integration/coordination/ajan/agents/majanagent12
+<http://localhost:8060/welcome/integration/coordination/ajan/agents/majanagent12> rdf:type owl:NamedIndividual ,
+                                                                                           ajan:Agent ;
+                                                                                  ajan:agentId "majanagent12" ;
+                                                                                  :hasAddress "http://localhost:8060/welcome/integration/coordination/ajan/agents/majanagent12" ;
+                                                                                  :hasStatus :active .
+
+
+###  http://localhost:8060/welcome/integration/coordination/ajan/agents/majanagent13
+<http://localhost:8060/welcome/integration/coordination/ajan/agents/majanagent13> rdf:type owl:NamedIndividual ,
+                                                                                           ajan:Agent ;
+                                                                                  ajan:agentId "majanagent13" ;
+                                                                                  :hasAddress "http://localhost:8060/welcome/integration/coordination/ajan/agents/majanagent13" ;
+                                                                                  :hasStatus :active .
+
+
+###  http://localhost:8060/welcome/integration/coordination/ajan/agents/majanagent14
+<http://localhost:8060/welcome/integration/coordination/ajan/agents/majanagent14> rdf:type owl:NamedIndividual ,
+                                                                                           ajan:Agent ;
+                                                                                  ajan:agentId "majanagent14" ;
+                                                                                  :hasAddress "http://localhost:8060/welcome/integration/coordination/ajan/agents/majanagent14" ;
+                                                                                  :hasStatus :in_coordination .
+
+
+###  http://localhost:8060/welcome/integration/coordination/ajan/agents/majanagent15
+<http://localhost:8060/welcome/integration/coordination/ajan/agents/majanagent15> rdf:type owl:NamedIndividual ,
+                                                                                           ajan:Agent ;
+                                                                                  ajan:agentId "majanagent15" ;
+                                                                                  :hasAddress "http://localhost:8060/welcome/integration/coordination/ajan/agents/majanagent15" ;
+                                                                                  :hasStatus :active .
+
+
+###  http://localhost:8060/welcome/integration/coordination/ajan/agents/majanagent2
+<http://localhost:8060/welcome/integration/coordination/ajan/agents/majanagent2> rdf:type owl:NamedIndividual ,
+                                                                                          ajan:Agent ;
+                                                                                 ajan:agentId "majanagent2" ;
+                                                                                 :hasAddress "http://localhost:8060/welcome/integration/coordination/ajan/agents/majanagent2" ;
+                                                                                 :hasStatus :active .
+
+
+###  http://localhost:8060/welcome/integration/coordination/ajan/agents/majanagent3
+<http://localhost:8060/welcome/integration/coordination/ajan/agents/majanagent3> rdf:type owl:NamedIndividual ,
+                                                                                          ajan:Agent ;
+                                                                                 ajan:agentId "majanagent3" ;
+                                                                                 :hasAddress "http://localhost:8060/welcome/integration/coordination/ajan/agents/majanagent3" ;
+                                                                                 :hasStatus :active .
+
+
+###  http://localhost:8060/welcome/integration/coordination/ajan/agents/majanagent4
+<http://localhost:8060/welcome/integration/coordination/ajan/agents/majanagent4> rdf:type owl:NamedIndividual ,
+                                                                                          ajan:Agent ;
+                                                                                 ajan:agentId "majanagent4" ;
+                                                                                 :hasAddress "http://localhost:8060/welcome/integration/coordination/ajan/agents/majanagent4" ;
+                                                                                 :hasStatus :active .
+
+
+###  http://localhost:8060/welcome/integration/coordination/ajan/agents/majanagent5
+<http://localhost:8060/welcome/integration/coordination/ajan/agents/majanagent5> rdf:type owl:NamedIndividual ,
+                                                                                          ajan:Agent ;
+                                                                                 ajan:agentId "majanagent5" ;
+                                                                                 :hasAddress "http://localhost:8060/welcome/integration/coordination/ajan/agents/majanagent5" ;
+                                                                                 :hasStatus :active .
+
+
+###  http://localhost:8060/welcome/integration/coordination/ajan/agents/majanagent6
+<http://localhost:8060/welcome/integration/coordination/ajan/agents/majanagent6> rdf:type owl:NamedIndividual ,
+                                                                                          ajan:Agent ;
+                                                                                 ajan:agentId "majanagent6" ;
+                                                                                 :hasAddress "http://localhost:8060/welcome/integration/coordination/ajan/agents/majanagent6" ;
+                                                                                 :hasStatus :active .
+
+
+###  http://localhost:8060/welcome/integration/coordination/ajan/agents/majanagent7
+<http://localhost:8060/welcome/integration/coordination/ajan/agents/majanagent7> rdf:type owl:NamedIndividual ,
+                                                                                          ajan:Agent ;
+                                                                                 ajan:agentId "majanagent7" ;
+                                                                                 :hasAddress "http://localhost:8060/welcome/integration/coordination/ajan/agents/majanagent7" ;
+                                                                                 :hasStatus :active .
+
+
+###  http://localhost:8060/welcome/integration/coordination/ajan/agents/majanagent8
+<http://localhost:8060/welcome/integration/coordination/ajan/agents/majanagent8> rdf:type owl:NamedIndividual ,
+                                                                                          ajan:Agent ;
+                                                                                 ajan:agentId "majanagent8" ;
+                                                                                 :hasAddress "http://localhost:8060/welcome/integration/coordination/ajan/agents/majanagent8" ;
+                                                                                 :hasStatus :active .
+
+
+###  http://localhost:8060/welcome/integration/coordination/ajan/agents/majanagent9
+<http://localhost:8060/welcome/integration/coordination/ajan/agents/majanagent9> rdf:type owl:NamedIndividual ,
+                                                                                          ajan:Agent ;
+                                                                                 ajan:agentId "majanagent9" ;
+                                                                                 :hasAddress "http://localhost:8060/welcome/integration/coordination/ajan/agents/majanagent9" ;
+                                                                                 :hasStatus :active .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
