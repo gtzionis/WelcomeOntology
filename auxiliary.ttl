@@ -138,8 +138,16 @@ welcome:CVPurpose_obtainCVCreationInterest_New rdf:type owl:NamedIndividual ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ScenarioIntroduction_obtainSubtopic_DE
 welcome:ScenarioIntroduction_obtainSubtopic_DE rdf:type owl:NamedIndividual ;
-                                               welcome:hasFullSentence "recognition of school degree" ,
-                                                                       "recognition of university diploma" ;
+                                               welcome:hasFullSentence "recognition of bachelor degree" ,
+                                                                       "recognition of doctorate degree" ,
+                                                                       "recognition of high school degree" ,
+                                                                       "recognition of master degree" ,
+                                                                       "recognition of online school degree" ,
+                                                                       "recognition of primary school degree" ,
+                                                                       "recognition of school degree" ,
+                                                                       "recognition of technical school degree" ,
+                                                                       "recognition of university diploma" ,
+                                                                       "recognition of vocational school degree" ;
                                                welcome:conditionValue "DE" ;
                                                welcome:dependsOn "CountryCode" ;
                                                welcome:slotLabel "obtainSubtopic" .
@@ -147,7 +155,63 @@ welcome:ScenarioIntroduction_obtainSubtopic_DE rdf:type owl:NamedIndividual ;
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:ScenarioIntroduction_obtainSubtopic_DE ;
    owl:annotatedProperty welcome:hasFullSentence ;
+   owl:annotatedTarget "recognition of bachelor degree" ;
+   welcome:effectLabel "flagUDiplomaRequested"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:ScenarioIntroduction_obtainSubtopic_DE ;
+   owl:annotatedProperty welcome:hasFullSentence ;
+   owl:annotatedTarget "recognition of vocational school degree" ;
+   welcome:effectLabel "flagSchoolDegreeRequested"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:ScenarioIntroduction_obtainSubtopic_DE ;
+   owl:annotatedProperty welcome:hasFullSentence ;
+   owl:annotatedTarget "recognition of doctorate degree" ;
+   welcome:effectLabel "flagUDiplomaRequested"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:ScenarioIntroduction_obtainSubtopic_DE ;
+   owl:annotatedProperty welcome:hasFullSentence ;
+   owl:annotatedTarget "recognition of high school degree" ;
+   welcome:effectLabel "flagSchoolDegreeRequested"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:ScenarioIntroduction_obtainSubtopic_DE ;
+   owl:annotatedProperty welcome:hasFullSentence ;
+   owl:annotatedTarget "recognition of master degree" ;
+   welcome:effectLabel "flagUDiplomaRequested"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:ScenarioIntroduction_obtainSubtopic_DE ;
+   owl:annotatedProperty welcome:hasFullSentence ;
+   owl:annotatedTarget "recognition of online school degree" ;
+   welcome:effectLabel "flagSchoolDegreeRequested"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:ScenarioIntroduction_obtainSubtopic_DE ;
+   owl:annotatedProperty welcome:hasFullSentence ;
+   owl:annotatedTarget "recognition of primary school degree" ;
+   welcome:effectLabel "flagSchoolDegreeRequested"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:ScenarioIntroduction_obtainSubtopic_DE ;
+   owl:annotatedProperty welcome:hasFullSentence ;
    owl:annotatedTarget "recognition of school degree" ;
+   welcome:effectLabel "flagSchoolDegreeRequested"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:ScenarioIntroduction_obtainSubtopic_DE ;
+   owl:annotatedProperty welcome:hasFullSentence ;
+   owl:annotatedTarget "recognition of technical school degree" ;
    welcome:effectLabel "flagSchoolDegreeRequested"
  ] .
 
