@@ -102,6 +102,14 @@ welcome:secondaryDependency rdf:type owl:AnnotationProperty .
 welcome:supportsRepetition rdf:type owl:AnnotationProperty .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#thirdCondition
+welcome:thirdCondition rdf:type owl:AnnotationProperty .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#thirdDependency
+welcome:thirdDependency rdf:type owl:AnnotationProperty .
+
+
 #################################################################
 #    Object Properties
 #################################################################
@@ -4831,10 +4839,13 @@ welcome:SchoolingTopic rdf:type owl:NamedIndividual ,
    owl:annotatedProperty welcome:topicName ;
    owl:annotatedTarget "recognition of foreign master and university degrees" ;
    <http://purl.org/dc/terms/isRequiredBy> "informScenarioIntroduction" ;
+   <http://www.w3.org/2007/05/powder-s#describedby> "flagUMasterRecogInformed" ;
    welcome:conditionValue "ES" ;
    welcome:dependsOn "CountryCode" ;
    welcome:secondaryCondition "Schooling Scenario DIFE" ;
-   welcome:secondaryDependency "Scenario"
+   welcome:secondaryDependency "Scenario" ;
+   welcome:thirdCondition "Pending" ;
+   welcome:thirdDependency "flagUMasterRecogInformed"
  ] .
 
 [ rdf:type owl:Axiom ;
@@ -4842,10 +4853,13 @@ welcome:SchoolingTopic rdf:type owl:NamedIndividual ,
    owl:annotatedProperty welcome:topicName ;
    owl:annotatedTarget "recognition of non-university qualifications" ;
    <http://purl.org/dc/terms/isRequiredBy> "informScenarioIntroduction" ;
+   <http://www.w3.org/2007/05/powder-s#describedby> "flagNonUQualificationInformed" ;
    welcome:conditionValue "ES" ;
    welcome:dependsOn "CountryCode" ;
    welcome:secondaryCondition "Schooling Scenario DIFE" ;
-   welcome:secondaryDependency "Scenario"
+   welcome:secondaryDependency "Scenario" ;
+   welcome:thirdCondition "Pending" ;
+   welcome:thirdDependency "flagNonUQualificationInformed"
  ] .
 
 [ rdf:type owl:Axiom ;
@@ -4853,10 +4867,13 @@ welcome:SchoolingTopic rdf:type owl:NamedIndividual ,
    owl:annotatedProperty welcome:topicName ;
    owl:annotatedTarget "recognition of professional skills" ;
    <http://purl.org/dc/terms/isRequiredBy> "informScenarioIntroduction" ;
+   <http://www.w3.org/2007/05/powder-s#describedby> "flagProfSkillRecogInformed" ;
    welcome:conditionValue "ES" ;
    welcome:dependsOn "CountryCode" ;
    welcome:secondaryCondition "Schooling Scenario DIFE" ;
-   welcome:secondaryDependency "Scenario"
+   welcome:secondaryDependency "Scenario" ;
+   welcome:thirdCondition "Pending" ;
+   welcome:thirdDependency "flagProfSkillRecogInformed"
  ] .
 
 [ rdf:type owl:Axiom ;
@@ -4864,10 +4881,13 @@ welcome:SchoolingTopic rdf:type owl:NamedIndividual ,
    owl:annotatedProperty welcome:topicName ;
    owl:annotatedTarget "recognition of school degree" ;
    <http://purl.org/dc/terms/isRequiredBy> "informScenarioIntroduction" ;
+   <http://www.w3.org/2007/05/powder-s#describedby> "flagSchoolDegreeInformed" ;
    welcome:conditionValue "DE" ;
    welcome:dependsOn "CountryCode" ;
    welcome:secondaryCondition "Schooling Scenario CARITAS" ;
-   welcome:secondaryDependency "Scenario"
+   welcome:secondaryDependency "Scenario" ;
+   welcome:thirdCondition "Pending" ;
+   welcome:thirdDependency "flagSchoolDegreeInformed"
  ] .
 
 [ rdf:type owl:Axiom ;
@@ -4875,10 +4895,13 @@ welcome:SchoolingTopic rdf:type owl:NamedIndividual ,
    owl:annotatedProperty welcome:topicName ;
    owl:annotatedTarget "recognition of university diploma" ;
    <http://purl.org/dc/terms/isRequiredBy> "informScenarioIntroduction" ;
+   <http://www.w3.org/2007/05/powder-s#describedby> "flagUDiplomaInformed" ;
    welcome:conditionValue "DE" ;
    welcome:dependsOn "CountryCode" ;
    welcome:secondaryCondition "Schooling Scenario CARITAS" ;
-   welcome:secondaryDependency "Scenario"
+   welcome:secondaryDependency "Scenario" ;
+   welcome:thirdCondition "Pending" ;
+   welcome:thirdDependency "flagUDiplomaInformed"
  ] .
 
 
