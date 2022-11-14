@@ -22,12 +22,12 @@
 #    Data properties
 #################################################################
 
+###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#hasNutsCode
+:hasNutsCode rdf:type owl:DatatypeProperty .
+
+
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#hasPostCode
 :hasPostCode rdf:type owl:DatatypeProperty .
-
-
-###  https://raw.githubusercontent.com/gtzionis/PostCodesOntology/main/welcome.ttl#hasNutsCode
-:hasNutsCode rdf:type owl:DatatypeProperty .
 
 
 #################################################################
@@ -49,6 +49,7 @@
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Achaea
 :Achaea rdf:type owl:NamedIndividual ,
                  :PostCodeGreece ;
+        :hasNutsCode "EL632"^^xsd:string ;
         :hasPostCode "25xxx"^^xsd:string ,
                      "26xxx"^^xsd:string .
 
@@ -56,6 +57,7 @@
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Aetolia-Acarnania
 :Aetolia-Acarnania rdf:type owl:NamedIndividual ,
                             :PostCodeGreece ;
+                   :hasNutsCode "EL631"^^xsd:string ;
                    :hasPostCode "30xxx"^^xsd:string .
 
 
@@ -73,30 +75,35 @@
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Andros
 :Andros rdf:type owl:NamedIndividual ,
                  :PostCodeGreece ;
+        :hasNutsCode "EL422"^^xsd:string ;
         :hasPostCode "845xx"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Antiparos
 :Antiparos rdf:type owl:NamedIndividual ,
                     :PostCodeGreece ;
+           :hasNutsCode "EL422"^^xsd:string ;
            :hasPostCode "84007"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Arcadia
 :Arcadia rdf:type owl:NamedIndividual ,
                   :PostCodeGreece ;
+         :hasNutsCode "EL651"^^xsd:string ;
          :hasPostCode "22xxx"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Argolis
 :Argolis rdf:type owl:NamedIndividual ,
                   :PostCodeGreece ;
+         :hasNutsCode "EL651"^^xsd:string ;
          :hasPostCode "21xxx"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Arta
 :Arta rdf:type owl:NamedIndividual ,
                :PostCodeGreece ;
+      :hasNutsCode "EL541"^^xsd:string ;
       :hasPostCode "47xxx"^^xsd:string .
 
 
@@ -109,6 +116,7 @@
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Boeotia
 :Boeotia rdf:type owl:NamedIndividual ,
                   :PostCodeGreece ;
+         :hasNutsCode "EL641"^^xsd:string ;
          :hasPostCode "19012"^^xsd:string ,
                       "32xxx"^^xsd:string .
 
@@ -116,6 +124,7 @@
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Central_Athens
 :Central_Athens rdf:type owl:NamedIndividual ,
                          :PostCodeGreece ;
+                :hasNutsCode "EL303"^^xsd:string ;
                 :hasPostCode "111xx"^^xsd:string ,
                              "143xx"^^xsd:string ,
                              "157xx"^^xsd:string ,
@@ -128,18 +137,21 @@
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Cephalonia
 :Cephalonia rdf:type owl:NamedIndividual ,
                      :PostCodeGreece ;
+            :hasNutsCode "EL623"^^xsd:string ;
             :hasPostCode "280xx"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Chalkidiki
 :Chalkidiki rdf:type owl:NamedIndividual ,
                      :PostCodeGreece ;
+            :hasNutsCode "EL527"^^xsd:string ;
             :hasPostCode "63xxx"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Chania
 :Chania rdf:type owl:NamedIndividual ,
                  :PostCodeGreece ;
+        :hasNutsCode "EL434"^^xsd:string ;
         :hasPostCode "73xxx"^^xsd:string ,
                      "74055"^^xsd:string .
 
@@ -147,30 +159,35 @@
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Chios
 :Chios rdf:type owl:NamedIndividual ,
                 :PostCodeGreece ;
+       :hasNutsCode "EL413"^^xsd:string ;
        :hasPostCode "82xxx"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Corfu
 :Corfu rdf:type owl:NamedIndividual ,
                 :PostCodeGreece ;
+       :hasNutsCode "EL622"^^xsd:string ;
        :hasPostCode "49xxx"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Corinthia
 :Corinthia rdf:type owl:NamedIndividual ,
                     :PostCodeGreece ;
+           :hasNutsCode "EL652"^^xsd:string ;
            :hasPostCode "20xxx"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Drama
 :Drama rdf:type owl:NamedIndividual ,
                 :PostCodeGreece ;
+       :hasNutsCode "EL514"^^xsd:string ;
        :hasPostCode "66xxx"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#East_Attica
 :East_Attica rdf:type owl:NamedIndividual ,
                       :PostCodeGreece ;
+             :hasNutsCode "EL305"^^xsd:string ;
              :hasPostCode "136xx"^^xsd:string ,
                           "14576"^^xsd:string ,
                           "15349"^^xsd:string ,
@@ -185,12 +202,14 @@
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Elis
 :Elis rdf:type owl:NamedIndividual ,
                :PostCodeGreece ;
+      :hasNutsCode "633"^^xsd:string ;
       :hasPostCode "27xxx"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Euboea
 :Euboea rdf:type owl:NamedIndividual ,
                  :PostCodeGreece ;
+        :hasNutsCode "EL642"^^xsd:string ;
         :hasPostCode "34001"^^xsd:string ,
                      "34007"^^xsd:string ,
                      "34008"^^xsd:string ,
@@ -203,24 +222,28 @@
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Evros
 :Evros rdf:type owl:NamedIndividual ,
                 :PostCodeGreece ;
+       :hasNutsCode "EL511"^^xsd:string ;
        :hasPostCode "68xxx"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Evrytania
 :Evrytania rdf:type owl:NamedIndividual ,
                     :PostCodeGreece ;
+           :hasNutsCode "EL643"^^xsd:string ;
            :hasPostCode "36xxx"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Florina
 :Florina rdf:type owl:NamedIndividual ,
                   :PostCodeGreece ;
+         :hasNutsCode "EL533"^^xsd:string ;
          :hasPostCode "53xxx"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Grevena
 :Grevena rdf:type owl:NamedIndividual ,
                   :PostCodeGreece ;
+         :hasNutsCode "EL531"^^xsd:string ;
          :hasPostCode "51xxx"^^xsd:string .
 
 
@@ -233,6 +256,7 @@
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Heraklion
 :Heraklion rdf:type owl:NamedIndividual ,
                     :PostCodeGreece ;
+           :hasNutsCode "EL431"^^xsd:string ;
            :hasPostCode "70xxx"^^xsd:string ,
                         "71xxx"^^xsd:string .
 
@@ -240,18 +264,21 @@
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Ikaria
 :Ikaria rdf:type owl:NamedIndividual ,
                  :PostCodeGreece ;
+        :hasNutsCode "EL412"^^xsd:string ;
         :hasPostCode "833xx"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Imathia
 :Imathia rdf:type owl:NamedIndividual ,
                   :PostCodeGreece ;
+         :hasNutsCode "EL521"^^xsd:string ;
          :hasPostCode "59xxx"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Ioannina
 :Ioannina rdf:type owl:NamedIndividual ,
                    :PostCodeGreece ;
+          :hasNutsCode "EL543"^^xsd:string ;
           :hasPostCode "44xxx"^^xsd:string ,
                        "45xxx"^^xsd:string .
 
@@ -259,6 +286,7 @@
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Islands
 :Islands rdf:type owl:NamedIndividual ,
                   :PostCodeGreece ;
+         :hasNutsCode "EL307"^^xsd:string ;
          :hasPostCode "18010"^^xsd:string ,
                       "18011"^^xsd:string ,
                       "18020"^^xsd:string ,
@@ -271,24 +299,28 @@
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Ithaca
 :Ithaca rdf:type owl:NamedIndividual ,
                  :PostCodeGreece ;
+        :hasNutsCode "EL623"^^xsd:string ;
         :hasPostCode "2830x"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Kalymnos
 :Kalymnos rdf:type owl:NamedIndividual ,
                    :PostCodeGreece ;
+          :hasNutsCode "EL421"^^xsd:string ;
           :hasPostCode "85200"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Karditsa
 :Karditsa rdf:type owl:NamedIndividual ,
                    :PostCodeGreece ;
+          :hasNutsCode "EL611"^^xsd:string ;
           :hasPostCode "43xxx"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Karpathos
 :Karpathos rdf:type owl:NamedIndividual ,
                     :PostCodeGreece ;
+           :hasNutsCode "EL421"^^xsd:string ;
            :hasPostCode "85700"^^xsd:string .
 
 
@@ -307,12 +339,14 @@
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Kastoria
 :Kastoria rdf:type owl:NamedIndividual ,
                    :PostCodeGreece ;
+          :hasNutsCode "EL532"^^xsd:string ;
           :hasPostCode "52xxx"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Kavala
 :Kavala rdf:type owl:NamedIndividual ,
                  :PostCodeGreece ;
+        :hasNutsCode "EL515"^^xsd:string ;
         :hasPostCode "64xxx"^^xsd:string ,
                      "65xxx"^^xsd:string .
 
@@ -320,6 +354,7 @@
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Kea
 :Kea rdf:type owl:NamedIndividual ,
               :PostCodeGreece ;
+     :hasNutsCode "EL422"^^xsd:string ;
      :hasPostCode "84002"^^xsd:string .
 
 
@@ -332,12 +367,14 @@
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Kos
 :Kos rdf:type owl:NamedIndividual ,
               :PostCodeGreece ;
+     :hasNutsCode "EL421"^^xsd:string ;
      :hasPostCode "853xx"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Kozani
 :Kozani rdf:type owl:NamedIndividual ,
                  :PostCodeGreece ;
+        :hasNutsCode "EL531"^^xsd:string ;
         :hasPostCode "50xxx"^^xsd:string .
 
 
@@ -350,18 +387,21 @@
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Laconia
 :Laconia rdf:type owl:NamedIndividual ,
                   :PostCodeGreece ;
+         :hasNutsCode "EL653"^^xsd:string ;
          :hasPostCode "23xxx"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Larissa
 :Larissa rdf:type owl:NamedIndividual ,
                   :PostCodeGreece ;
+         :hasNutsCode "EL612"^^xsd:string ;
          :hasPostCode "40xxx"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Lasithi
 :Lasithi rdf:type owl:NamedIndividual ,
                   :PostCodeGreece ;
+         :hasNutsCode "EL432"^^xsd:string ;
          :hasPostCode "72xxx"^^xsd:string .
 
 
@@ -374,6 +414,7 @@
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Lemnos
 :Lemnos rdf:type owl:NamedIndividual ,
                  :PostCodeGreece ;
+        :hasNutsCode "EL411"^^xsd:string ;
         :hasPostCode "81400"^^xsd:string ,
                      "81500"^^xsd:string .
 
@@ -387,12 +428,14 @@
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Lesbos
 :Lesbos rdf:type owl:NamedIndividual ,
                  :PostCodeGreece ;
+        :hasNutsCode "EL411"^^xsd:string ;
         :hasPostCode "81xxx"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Magnesia
 :Magnesia rdf:type owl:NamedIndividual ,
                    :PostCodeGreece ;
+          :hasNutsCode "EL613"^^xsd:string ;
           :hasPostCode "37xxx"^^xsd:string ,
                        "38xxx"^^xsd:string .
 
@@ -400,12 +443,14 @@
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Messenia
 :Messenia rdf:type owl:NamedIndividual ,
                    :PostCodeGreece ;
+          :hasNutsCode "EL653"^^xsd:string ;
           :hasPostCode "24xxx"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Milos
 :Milos rdf:type owl:NamedIndividual ,
                 :PostCodeGreece ;
+       :hasNutsCode "EL422"^^xsd:string ;
        :hasPostCode "84800"^^xsd:string ,
                     "84801"^^xsd:string .
 
@@ -413,12 +458,14 @@
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Mykonos
 :Mykonos rdf:type owl:NamedIndividual ,
                   :PostCodeGreece ;
+         :hasNutsCode "EL422"^^xsd:string ;
          :hasPostCode "84600"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Naxos
 :Naxos rdf:type owl:NamedIndividual ,
                 :PostCodeGreece ;
+       :hasNutsCode "EL422"^^xsd:string ;
        :hasPostCode "843xx"^^xsd:string .
 
 
@@ -432,6 +479,7 @@
 :North_Athens rdf:type owl:NamedIndividual ,
                        :PostCodeGreece ;
               :hasSmallerRegion :Agia_Paraskevi ;
+              :hasNutsCode "EL301"^^xsd:string ;
               :hasPostCode "141xx" ,
                            "142xx" ,
                            "1445x" ,
@@ -449,6 +497,7 @@
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Paros
 :Paros rdf:type owl:NamedIndividual ,
                 :PostCodeGreece ;
+       :hasNutsCode "EL422"^^xsd:string ;
        :hasPostCode "84400"^^xsd:string .
 
 
@@ -461,30 +510,35 @@
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Pella
 :Pella rdf:type owl:NamedIndividual ,
                 :PostCodeGreece ;
+       :hasNutsCode "EL524"^^xsd:string ;
        :hasPostCode "61xxx"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Phocis
 :Phocis rdf:type owl:NamedIndividual ,
                  :PostCodeGreece ;
+        :hasNutsCode "EL645"^^xsd:string ;
         :hasPostCode "33xxx"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Phtiotis
 :Phtiotis rdf:type owl:NamedIndividual ,
                    :PostCodeGreece ;
+          :hasNutsCode "EL644"^^xsd:string ;
           :hasPostCode "35xxx"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Pieria
 :Pieria rdf:type owl:NamedIndividual ,
                  :PostCodeGreece ;
+        :hasNutsCode "EL525"^^xsd:string ;
         :hasPostCode "60xxx"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Piraeus
 :Piraeus rdf:type owl:NamedIndividual ,
                   :PostCodeGreece ;
+         :hasNutsCode "EL307"^^xsd:string ;
          :hasPostCode "181xx"^^xsd:string ,
                       "182xx"^^xsd:string ,
                       "184xx"^^xsd:string ,
@@ -495,18 +549,21 @@
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Preveza
 :Preveza rdf:type owl:NamedIndividual ,
                   :PostCodeGreece ;
+         :hasNutsCode "EL541"^^xsd:string ;
          :hasPostCode "48xxx"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Rethymno
 :Rethymno rdf:type owl:NamedIndividual ,
                    :PostCodeGreece ;
+          :hasNutsCode "EL433"^^xsd:string ;
           :hasPostCode "74xxx"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Rhodes
 :Rhodes rdf:type owl:NamedIndividual ,
                  :PostCodeGreece ;
+        :hasNutsCode "EL421"^^xsd:string ;
         :hasPostCode "85100"^^xsd:string ,
                      "85131"^^xsd:string ,
                      "85132"^^xsd:string ,
@@ -516,12 +573,14 @@
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Rhodope
 :Rhodope rdf:type owl:NamedIndividual ,
                   :PostCodeGreece ;
+         :hasNutsCode "EL513"^^xsd:string ;
          :hasPostCode "69xxx"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Samos
 :Samos rdf:type owl:NamedIndividual ,
                 :PostCodeGreece ;
+       :hasNutsCode "EL412"^^xsd:string ;
        :hasPostCode "831xx"^^xsd:string .
 
 
@@ -534,6 +593,7 @@
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Serres
 :Serres rdf:type owl:NamedIndividual ,
                  :PostCodeGreece ;
+        :hasNutsCode "EL526"^^xsd:string ;
         :hasPostCode "62xxx"^^xsd:string .
 
 
@@ -564,6 +624,7 @@
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#South_Athens
 :South_Athens rdf:type owl:NamedIndividual ,
                        :PostCodeGreece ;
+              :hasNutsCode "EL304"^^xsd:string ;
               :hasPostCode "164xx"^^xsd:string ,
                            "165xx"^^xsd:string ,
                            "166xx"^^xsd:string ,
@@ -589,18 +650,21 @@
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Thasos
 :Thasos rdf:type owl:NamedIndividual ,
                  :PostCodeGreece ;
+        :hasNutsCode "EL515"^^xsd:string ;
         :hasPostCode "64004"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Thesprotia
 :Thesprotia rdf:type owl:NamedIndividual ,
                      :PostCodeGreece ;
+            :hasNutsCode "EL542"^^xsd:string ;
             :hasPostCode "46xxx"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Thessaloniki
 :Thessaloniki rdf:type owl:NamedIndividual ,
                        :PostCodeGreece ;
+              :hasNutsCode "EL522"^^xsd:string ;
               :hasPostCode "54xxx"^^xsd:string ,
                            "55xxx"^^xsd:string ,
                            "56xxx"^^xsd:string ,
@@ -616,12 +680,14 @@
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Trikala
 :Trikala rdf:type owl:NamedIndividual ,
                   :PostCodeGreece ;
+         :hasNutsCode "EL611"^^xsd:string ;
          :hasPostCode "42xxx"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#West_Athens
 :West_Athens rdf:type owl:NamedIndividual ,
                       :PostCodeGreece ;
+             :hasNutsCode "EL302"^^xsd:string ;
              :hasPostCode "121xx" ,
                           "122xx" ,
                           "12351"^^xsd:string ,
@@ -637,6 +703,7 @@
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#West_Attics
 :West_Attics rdf:type owl:NamedIndividual ,
                       :PostCodeGreece ;
+             :hasNutsCode "EL306"^^xsd:string ;
              :hasPostCode "133xx"^^xsd:string ,
                           "19006"^^xsd:string ,
                           "19008"^^xsd:string ,
@@ -650,12 +717,14 @@
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Xanthi
 :Xanthi rdf:type owl:NamedIndividual ,
                  :PostCodeGreece ;
+        :hasNutsCode "EL512"^^xsd:string ;
         :hasPostCode "67xxx"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/gtzionis_local/ontologies/2022/10/untitled-ontology-40#Zakynthos
 :Zakynthos rdf:type owl:NamedIndividual ,
                     :PostCodeGreece ;
+           :hasNutsCode "EL621"^^xsd:string ;
            :hasPostCode "29xxx"^^xsd:string .
 
 
