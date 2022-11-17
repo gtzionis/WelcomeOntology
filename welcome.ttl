@@ -2537,15 +2537,101 @@ welcome:Afghanistan rdf:type owl:NamedIndividual ,
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AgentNGO
 welcome:AgentNGO rdf:type owl:NamedIndividual ,
                           foaf:Agent ;
-                 actor:webURL "https://apps.migration.gov.gr/selfregistration/login" ,
+                 actor:webURL "https://anabin.kmk.org/anabin.html" ,
+                              "https://apps.migration.gov.gr/selfregistration/login" ,
+                              "https://fp.gencat.cat/ca/acreditacio/em-vull-acreditar/cercador-punts-informacio/" ,
+                              "https://fp.gencat.cat/ca/acreditacio/em-vull-acreditar/inscripcio/" ,
+                              "https://igualtat.gencat.cat/ca/ambits-dactuacio/antiracisme-migracions-i-refugi/serveis/servei-dacompanyament-al-reconeixement-universitari/" ,
                               "https://praksis.gr/contact/" ,
+                              "https://serviceportal.hamm.de/suche/-/egov-bis-detail/dienstleistung/1421/show" ,
                               "https://treball.gencat.cat/ca/contacte/punts_d_atencio/oac/oac_barcelona/" ,
-                              "https://www.caritas-hamm.de/einrichtungen/beratungszentrum/beratungszentrum" ;
+                              "https://web.gencat.cat/ca/tramits/tramits-temes/20264_homologacio_titols?category=254c193b-ca70-11e5-8c48-005056924a59" ,
+                              "https://www.bezreg-koeln.nrw.de/brk_internet/leistungen/abteilung04/48/anerkennung/auslaendische_schulzeugnisse/" ,
+                              "https://www.brd.nrw.de/themen/schule-bildung/schulrecht-verwaltung/zeugnisanerkennung" ,
+                              "https://www.caritas-hamm.de/einrichtungen/beratungszentrum/beratungszentrum" ,
+                              "https://www.exteriores.gob.es/es/ServiciosAlCiudadano/Paginas/Traductores-Interpretes-Jurados.aspx" ;
                  welcome:agentName "CARITAS" ,
                                    "DIFE" ,
                                    "PRAKSIS" ;
                  welcome:contactPurpose "inform you where such a service is available" ,
                                         "schedule an appointment with a professional" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:AgentNGO ;
+   owl:annotatedProperty actor:webURL ;
+   owl:annotatedTarget "https://praksis.gr/contact/" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informGenericContact" ,
+                                           "informGenericPRAKSISContact" ;
+   welcome:conditionValue "GR" ;
+   welcome:dependsOn "CountryCode"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:AgentNGO ;
+   owl:annotatedProperty actor:webURL ;
+   owl:annotatedTarget "https://serviceportal.hamm.de/suche/-/egov-bis-detail/dienstleistung/1421/show" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informCertifiedCopyNeed"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:AgentNGO ;
+   owl:annotatedProperty actor:webURL ;
+   owl:annotatedTarget "https://treball.gencat.cat/ca/contacte/punts_d_atencio/oac/oac_barcelona/" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informGenericContact" ,
+                                           "informGenericDTASFContact" ;
+   welcome:conditionValue "ES" ;
+   welcome:dependsOn "CountryCode"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:AgentNGO ;
+   owl:annotatedProperty actor:webURL ;
+   owl:annotatedTarget "https://web.gencat.cat/ca/tramits/tramits-temes/20264_homologacio_titols?category=254c193b-ca70-11e5-8c48-005056924a59" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informAppointmentContact" ,
+                                           "informEducationDepartment"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:AgentNGO ;
+   owl:annotatedProperty actor:webURL ;
+   owl:annotatedTarget "https://www.bezreg-koeln.nrw.de/brk_internet/leistungen/abteilung04/48/anerkennung/auslaendische_schulzeugnisse/" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informSchoolRecogProcedure"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:AgentNGO ;
+   owl:annotatedProperty actor:webURL ;
+   owl:annotatedTarget "https://www.brd.nrw.de/themen/schule-bildung/schulrecht-verwaltung/zeugnisanerkennung" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informHighSchoolRecogProcedure"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:AgentNGO ;
+   owl:annotatedProperty actor:webURL ;
+   owl:annotatedTarget "https://www.caritas-hamm.de/einrichtungen/beratungszentrum/beratungszentrum" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informGenericCARITASContact" ,
+                                           "informGenericContact" ;
+   welcome:conditionValue "DE" ;
+   welcome:dependsOn "CountryCode"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:AgentNGO ;
+   owl:annotatedProperty actor:webURL ;
+   owl:annotatedTarget "https://www.exteriores.gob.es/es/ServiciosAlCiudadano/Paginas/Traductores-Interpretes-Jurados.aspx" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informTranslationOptions"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:AgentNGO ;
+   owl:annotatedProperty welcome:agentName ;
+   owl:annotatedTarget "CARITAS" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informGenericCARITASContact" ,
+                                           "informGenericContact" ,
+                                           "informInabilityAssist" ;
+   welcome:conditionValue "DE" ;
+   welcome:dependsOn "CountryCode"
+ ] .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:AgentNGO ;
@@ -2591,6 +2677,13 @@ welcome:AgentNGO rdf:type owl:NamedIndividual ,
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:AgentNGO ;
    owl:annotatedProperty actor:webURL ;
+   owl:annotatedTarget "https://anabin.kmk.org/anabin.html" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informURecognitionProceedure"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:AgentNGO ;
+   owl:annotatedProperty actor:webURL ;
    owl:annotatedTarget "https://apps.migration.gov.gr/selfregistration/login" ;
    <http://purl.org/dc/terms/isRequiredBy> "informFormDisclaimer" ,
                                            "informRequiredInformation"
@@ -2599,42 +2692,23 @@ welcome:AgentNGO rdf:type owl:NamedIndividual ,
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:AgentNGO ;
    owl:annotatedProperty actor:webURL ;
-   owl:annotatedTarget "https://praksis.gr/contact/" ;
-   <http://purl.org/dc/terms/isRequiredBy> "informGenericContact" ,
-                                           "informGenericPRAKSISContact" ;
-   welcome:conditionValue "GR" ;
-   welcome:dependsOn "CountryCode"
+   owl:annotatedTarget "https://fp.gencat.cat/ca/acreditacio/em-vull-acreditar/cercador-punts-informacio/" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informOrientationPoint"
  ] .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:AgentNGO ;
    owl:annotatedProperty actor:webURL ;
-   owl:annotatedTarget "https://treball.gencat.cat/ca/contacte/punts_d_atencio/oac/oac_barcelona/" ;
-   <http://purl.org/dc/terms/isRequiredBy> "informGenericContact" ,
-                                           "informGenericDTASFContact" ;
-   welcome:conditionValue "ES" ;
-   welcome:dependsOn "CountryCode"
+   owl:annotatedTarget "https://fp.gencat.cat/ca/acreditacio/em-vull-acreditar/inscripcio/" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informAccreditationServiceContact"
  ] .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:AgentNGO ;
    owl:annotatedProperty actor:webURL ;
-   owl:annotatedTarget "https://www.caritas-hamm.de/einrichtungen/beratungszentrum/beratungszentrum" ;
-   <http://purl.org/dc/terms/isRequiredBy> "informGenericCARITASContact" ,
-                                           "informGenericContact" ;
-   welcome:conditionValue "DE" ;
-   welcome:dependsOn "CountryCode"
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource welcome:AgentNGO ;
-   owl:annotatedProperty welcome:agentName ;
-   owl:annotatedTarget "CARITAS" ;
-   <http://purl.org/dc/terms/isRequiredBy> "informGenericCARITASContact" ,
-                                           "informGenericContact" ,
-                                           "informInabilityAssist" ;
-   welcome:conditionValue "DE" ;
-   welcome:dependsOn "CountryCode"
+   owl:annotatedTarget "https://igualtat.gencat.cat/ca/ambits-dactuacio/antiracisme-migracions-i-refugi/serveis/servei-dacompanyament-al-reconeixement-universitari/" ;
+   <http://purl.org/dc/terms/isRequiredBy> "infomUMasterRecognition" ,
+                                           "informSARUService"
  ] .
 
 
@@ -4828,17 +4902,18 @@ welcome:Saudi_Arabia rdf:type owl:NamedIndividual ,
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SchoolingTopic
 welcome:SchoolingTopic rdf:type owl:NamedIndividual ,
                                 welcome:Topic ;
-                       welcome:topicName "recognition of foreign master and university degrees" ,
-                                         "recognition of non-university qualifications" ,
-                                         "recognition of professional skills" ,
-                                         "recognition of school degree" ,
-                                         "recognition of university diploma" .
+                       welcome:topicName "foreign master and university degrees" ,
+                                         "non-university qualifications" ,
+                                         "professional skills" ,
+                                         "school degrees" ,
+                                         "university diplomas" .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:SchoolingTopic ;
    owl:annotatedProperty welcome:topicName ;
-   owl:annotatedTarget "recognition of foreign master and university degrees" ;
-   <http://purl.org/dc/terms/isRequiredBy> "informScenarioIntroduction" ;
+   owl:annotatedTarget "foreign master and university degrees" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informScenarioIntroduction" ,
+                                           "informUMasterRecogSubtopic" ;
    <http://www.w3.org/2007/05/powder-s#describedby> "flagUMasterRecogInformed" ;
    welcome:conditionValue "ES" ;
    welcome:dependsOn "CountryCode" ;
@@ -4851,8 +4926,9 @@ welcome:SchoolingTopic rdf:type owl:NamedIndividual ,
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:SchoolingTopic ;
    owl:annotatedProperty welcome:topicName ;
-   owl:annotatedTarget "recognition of non-university qualifications" ;
-   <http://purl.org/dc/terms/isRequiredBy> "informScenarioIntroduction" ;
+   owl:annotatedTarget "non-university qualifications" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informEducationSubtopic" ,
+                                           "informScenarioIntroduction" ;
    <http://www.w3.org/2007/05/powder-s#describedby> "flagNonUQualificationInformed" ;
    welcome:conditionValue "ES" ;
    welcome:dependsOn "CountryCode" ;
@@ -4865,8 +4941,9 @@ welcome:SchoolingTopic rdf:type owl:NamedIndividual ,
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:SchoolingTopic ;
    owl:annotatedProperty welcome:topicName ;
-   owl:annotatedTarget "recognition of professional skills" ;
-   <http://purl.org/dc/terms/isRequiredBy> "informScenarioIntroduction" ;
+   owl:annotatedTarget "professional skills" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informAccreditationSubtopic" ,
+                                           "informScenarioIntroduction" ;
    <http://www.w3.org/2007/05/powder-s#describedby> "flagProfSkillRecogInformed" ;
    welcome:conditionValue "ES" ;
    welcome:dependsOn "CountryCode" ;
@@ -4879,8 +4956,9 @@ welcome:SchoolingTopic rdf:type owl:NamedIndividual ,
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:SchoolingTopic ;
    owl:annotatedProperty welcome:topicName ;
-   owl:annotatedTarget "recognition of school degree" ;
-   <http://purl.org/dc/terms/isRequiredBy> "informScenarioIntroduction" ;
+   owl:annotatedTarget "school degrees" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informScenarioIntroduction" ,
+                                           "informSchoolDegreeSubtopic" ;
    <http://www.w3.org/2007/05/powder-s#describedby> "flagSchoolDegreeInformed" ;
    welcome:conditionValue "DE" ;
    welcome:dependsOn "CountryCode" ;
@@ -4893,7 +4971,7 @@ welcome:SchoolingTopic rdf:type owl:NamedIndividual ,
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:SchoolingTopic ;
    owl:annotatedProperty welcome:topicName ;
-   owl:annotatedTarget "recognition of university diploma" ;
+   owl:annotatedTarget "university diplomas" ;
    <http://purl.org/dc/terms/isRequiredBy> "informScenarioIntroduction" ;
    <http://www.w3.org/2007/05/powder-s#describedby> "flagUDiplomaInformed" ;
    welcome:conditionValue "DE" ;
