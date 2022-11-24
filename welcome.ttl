@@ -9,9 +9,9 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix actor: <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#> .
 @prefix schema: <https://schema.org/> .
-@prefix process: <http://www.daml.org/services/owl-s/1.1/Process.owl> .
-@prefix profile: <http://www.daml.org/services/owl-s/1.1/Profile.owl> .
-@prefix service: <http://www.daml.org/services/owl-s/1.1/Service.owl> .
+@prefix process: <http://www.daml.org/services/owl-s/1.1/Process.owl#> .
+@prefix profile: <http://www.daml.org/services/owl-s/1.1/Profile.owl#> .
+@prefix service: <http://www.daml.org/services/owl-s/1.1/Service.owl#> .
 @prefix welcome: <https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#> .
 @prefix geovocab: <http://geovocab.org/spatial#> .
 @prefix wgs84_pos: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
@@ -739,7 +739,7 @@ welcome:isPovidedBy rdf:type owl:ObjectProperty ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isRelatedToUser
 welcome:isRelatedToUser rdf:type owl:ObjectProperty ;
-                        rdfs:domain <http://www.daml.org/services/owl-s/1.1/Service.owl#Service> ;
+                        rdfs:domain service:Service ;
                         rdfs:range welcome:DialogueUser .
 
 
@@ -1314,11 +1314,11 @@ actor:Actor rdf:type owl:Class ;
 
 
 ###  http://www.daml.org/services/owl-s/1.1/Profile.owl#Profile
-<http://www.daml.org/services/owl-s/1.1/Profile.owl#Profile> rdf:type owl:Class .
+profile:Profile rdf:type owl:Class .
 
 
 ###  http://www.daml.org/services/owl-s/1.1/Service.owl#Service
-<http://www.daml.org/services/owl-s/1.1/Service.owl#Service> rdf:type owl:Class .
+service:Service rdf:type owl:Class .
 
 
 ###  http://www.w3.org/2003/01/geo/wgs84_pos#Point
@@ -5005,7 +5005,7 @@ welcome:Serbia rdf:type owl:NamedIndividual ,
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ServiceName
 welcome:ServiceName rdf:type owl:NamedIndividual ,
-                             <http://www.daml.org/services/owl-s/1.1/Service.owl#Service> ;
+                             service:Service ;
                     welcome:hasValue "Asylum Service" .
 
 [ rdf:type owl:Axiom ;
