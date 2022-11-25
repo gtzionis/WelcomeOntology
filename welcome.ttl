@@ -4917,7 +4917,7 @@ welcome:SchoolingTopic rdf:type owl:NamedIndividual ,
    <http://www.w3.org/2007/05/powder-s#describedby> "flagUMasterRecogInformed" ;
    welcome:conditionValue "ES" ;
    welcome:dependsOn "CountryCode" ;
-   welcome:secondaryCondition "Schooling Scenario DIFE" ;
+   welcome:secondaryCondition "Schooling Professional Skills Recognition Diploma University Master Non-University qualification Spain" ;
    welcome:secondaryDependency "Scenario" ;
    welcome:thirdCondition "Pending" ;
    welcome:thirdDependency "flagUMasterRecogInformed"
@@ -4932,7 +4932,7 @@ welcome:SchoolingTopic rdf:type owl:NamedIndividual ,
    <http://www.w3.org/2007/05/powder-s#describedby> "flagNonUQualificationInformed" ;
    welcome:conditionValue "ES" ;
    welcome:dependsOn "CountryCode" ;
-   welcome:secondaryCondition "Schooling Scenario DIFE" ;
+   welcome:secondaryCondition "Schooling Professional Skills Recognition Diploma University Master Non-University qualification Spain" ;
    welcome:secondaryDependency "Scenario" ;
    welcome:thirdCondition "Pending" ;
    welcome:thirdDependency "flagNonUQualificationInformed"
@@ -4947,7 +4947,7 @@ welcome:SchoolingTopic rdf:type owl:NamedIndividual ,
    <http://www.w3.org/2007/05/powder-s#describedby> "flagProfSkillRecogInformed" ;
    welcome:conditionValue "ES" ;
    welcome:dependsOn "CountryCode" ;
-   welcome:secondaryCondition "Schooling Scenario DIFE" ;
+   welcome:secondaryCondition "Schooling Professional Skills Recognition Diploma University Master Non-University qualification Spain" ;
    welcome:secondaryDependency "Scenario" ;
    welcome:thirdCondition "Pending" ;
    welcome:thirdDependency "flagProfSkillRecogInformed"
