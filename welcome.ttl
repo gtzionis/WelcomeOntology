@@ -4915,7 +4915,6 @@ welcome:SchoolingTopic rdf:type owl:NamedIndividual ,
    <http://purl.org/dc/terms/isRequiredBy> "informScenarioIntroduction" ,
                                            "informUMasterRecogSubtopic" ,
                                            "obtainSubtopic" ;
-   rdfs:comment "obtainSubtopic" ;
    <http://www.w3.org/2007/05/powder-s#describedby> "flagUMasterRecogInformed" ;
    welcome:conditionValue "ES" ;
    welcome:dependsOn "CountryCode" ;
@@ -4930,7 +4929,8 @@ welcome:SchoolingTopic rdf:type owl:NamedIndividual ,
    owl:annotatedProperty welcome:topicName ;
    owl:annotatedTarget "non-university qualifications" ;
    <http://purl.org/dc/terms/isRequiredBy> "informEducationSubtopic" ,
-                                           "informScenarioIntroduction" ;
+                                           "informScenarioIntroduction" ,
+                                           "obtainSubtopic" ;
    <http://www.w3.org/2007/05/powder-s#describedby> "flagNonUQualificationInformed" ;
    welcome:conditionValue "ES" ;
    welcome:dependsOn "CountryCode" ;
@@ -4962,7 +4962,8 @@ welcome:SchoolingTopic rdf:type owl:NamedIndividual ,
    owl:annotatedProperty welcome:topicName ;
    owl:annotatedTarget "school degrees" ;
    <http://purl.org/dc/terms/isRequiredBy> "informScenarioIntroduction" ,
-                                           "informSchoolDegreeSubtopic" ;
+                                           "informSchoolDegreeSubtopic" ,
+                                           "obtainSubtopic" ;
    <http://www.w3.org/2007/05/powder-s#describedby> "flagSchoolDegreeInformed" ;
    welcome:conditionValue "DE" ;
    welcome:dependsOn "CountryCode" ;
