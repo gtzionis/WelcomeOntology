@@ -37,11 +37,11 @@ ajan:Agent rdf:type owl:Class .
 #    Individuals
 #################################################################
 
-###  http://192.168.32.10:8060/welcome/integration/coordination/ajan/agents/agent-core-7058f504-d769-4d82-8d2b-f07179264ed1
-<http://192.168.32.10:8060/welcome/integration/coordination/ajan/agents/agent-core-7058f504-d769-4d82-8d2b-f07179264ed1> rdf:type owl:NamedIndividual ,
+###  http://192.168.32.8:8060/welcome/integration/coordination/ajan/agents/agent-core-7058f504-d769-4d82-8d2b-f07179264ed1
+<http://192.168.32.8:8060/welcome/integration/coordination/ajan/agents/agent-core-7058f504-d769-4d82-8d2b-f07179264ed1> rdf:type owl:NamedIndividual ,
                                                                                                                                   ajan:Agent ;
                                                                                                                          ajan:agentName "agent-core-7058f504-d769-4d82-8d2b-f07179264ed1" ;
-                                                                                                                         :hasAddress "http://192.168.32.10:8060/welcome/integration/coordination/ajan/agents/agent-core-7058f504-d769-4d82-8d2b-f07179264ed1" ;
+                                                                                                                         :hasAddress "http://192.168.32.8:8060/welcome/integration/coordination/ajan/agents/agent-core-7058f504-d769-4d82-8d2b-f07179264ed1" ;
                                                                                                                          :hasStatus :active .
 
 
@@ -53,11 +53,11 @@ ajan:Agent rdf:type owl:Class .
                                                                                                                         :hasStatus :active .
 
 
-###  http://192.168.32.8:8060/welcome/integration/coordination/ajan/agents/agent-core-1c5e1192-dd02-4325-ba7c-5a8a908682a2
-<http://192.168.32.8:8060/welcome/integration/coordination/ajan/agents/agent-core-1c5e1192-dd02-4325-ba7c-5a8a908682a2> rdf:type owl:NamedIndividual ,
+###  http://192.168.32.10:8060/welcome/integration/coordination/ajan/agents/agent-core-1c5e1192-dd02-4325-ba7c-5a8a908682a2
+<http://192.168.32.10:8060/welcome/integration/coordination/ajan/agents/agent-core-1c5e1192-dd02-4325-ba7c-5a8a908682a2> rdf:type owl:NamedIndividual ,
                                                                                                                                  ajan:Agent ;
                                                                                                                         ajan:agentName "agent-core-1c5e1192-dd02-4325-ba7c-5a8a908682a2" ;
-                                                                                                                        :hasAddress "http://192.168.32.8:8060/welcome/integration/coordination/ajan/agents/agent-core-1c5e1192-dd02-4325-ba7c-5a8a908682a2" ;
+                                                                                                                        :hasAddress "http://192.168.32.10:8060/welcome/integration/coordination/ajan/agents/agent-core-1c5e1192-dd02-4325-ba7c-5a8a908682a2" ;
                                                                                                                         :hasStatus :active .
 
 
