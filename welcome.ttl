@@ -6219,7 +6219,7 @@ welcome:cvSection rdf:type owl:NamedIndividual ;
                                    "Persönlichen Daten"@deu ,
                                    "Schulausbildung"@deu ,
                                    "Sprachen"@deu ,
-                                   "additional complementary achievements"@eng ,
+                                   "complementary achievements"@eng ,
                                    "education"@eng ,
                                    "languages"@eng ,
                                    "other information"@eng ,
@@ -6304,7 +6304,7 @@ welcome:cvSection rdf:type owl:NamedIndividual ;
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:cvSection ;
    owl:annotatedProperty welcome:hasValue ;
-   owl:annotatedTarget "additional complementary achievements"@eng ;
+   owl:annotatedTarget "complementary achievements"@eng ;
    <http://purl.org/dc/terms/isRequiredBy> "obtainMoreEducationalInformationConfirmation"
  ] .
 
