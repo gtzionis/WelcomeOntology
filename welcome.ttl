@@ -3839,6 +3839,43 @@ welcome:Hamm rdf:type owl:NamedIndividual ,
  ] .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#HealthTopic
+welcome:HealthTopic rdf:type owl:NamedIndividual ,
+                             welcome:Topic ;
+                    welcome:topicName "how to access regular health care by registering to the personal doctor" ,
+                                      "what to do in case of a medical emergency" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:HealthTopic ;
+   owl:annotatedProperty welcome:topicName ;
+   owl:annotatedTarget "how to access regular health care by registering to the personal doctor" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informScenarioIntroduction" ,
+                                           "obtainSubtopic" ;
+   <http://www.w3.org/2007/05/powder-s#describedby> "flagDocRegistrationInformed" ;
+   welcome:conditionValue "GR" ;
+   welcome:dependsOn "CountryCode" ;
+   welcome:secondaryCondition "Health Scenario" ;
+   welcome:secondaryDependency "Scenario" ;
+   welcome:thirdCondition "Pending" ;
+   welcome:thirdDependency "flagDocRegistrationInformed"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:HealthTopic ;
+   owl:annotatedProperty welcome:topicName ;
+   owl:annotatedTarget "what to do in case of a medical emergency" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informScenarioIntroduction" ,
+                                           "obtainSubtopic" ;
+   <http://www.w3.org/2007/05/powder-s#describedby> "flagMedEmergencyInformed" ;
+   welcome:conditionValue "GR" ;
+   welcome:dependsOn "CountryCode" ;
+   welcome:secondaryCondition "Health Scenario" ;
+   welcome:secondaryDependency "Scenario" ;
+   welcome:thirdCondition "Pending" ;
+   welcome:thirdDependency "flagMedEmergencyInformed"
+ ] .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Heard_and_McDonald_Islands
 welcome:Heard_and_McDonald_Islands rdf:type owl:NamedIndividual ,
                                             welcome:Country ,
@@ -6483,15 +6520,15 @@ welcome:module_labour_hours rdf:type owl:NamedIndividual ,
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:module_labour_hours ;
-   owl:annotatedProperty schema:closes ;
-   owl:annotatedTarget "21:00" ;
+   owl:annotatedProperty schema:opens ;
+   owl:annotatedTarget "19:00" ;
    <http://purl.org/dc/terms/isRequiredBy> "informLabourModuleHours"
  ] .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:module_labour_hours ;
-   owl:annotatedProperty schema:opens ;
-   owl:annotatedTarget "19:00" ;
+   owl:annotatedProperty schema:closes ;
+   owl:annotatedTarget "21:00" ;
    <http://purl.org/dc/terms/isRequiredBy> "informLabourModuleHours"
  ] .
 
@@ -6509,18 +6546,18 @@ welcome:module_language rdf:type owl:NamedIndividual ,
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:module_language ;
-   owl:annotatedProperty welcome:moduleName ;
-   owl:annotatedTarget "Languages" ;
-   <http://purl.org/dc/terms/isRequiredBy> "informLanguageModule"
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource welcome:module_language ;
    owl:annotatedProperty welcome:moduleLabel ;
    owl:annotatedTarget "A" ;
    <http://purl.org/dc/terms/isRequiredBy> "informLanguageModule" ,
                                            "informLanguageModuleAddress" ,
                                            "informLanguageModuleHours"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:module_language ;
+   owl:annotatedProperty welcome:moduleName ;
+   owl:annotatedTarget "Languages" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informLanguageModule"
  ] .
 
 
