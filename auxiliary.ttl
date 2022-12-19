@@ -304,10 +304,10 @@ welcome:ScenarioIntroduction_obtainSubtopic_GR rdf:type owl:NamedIndividual ;
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SimulationIntroduction_obtainMatterConcern_DE
 welcome:SimulationIntroduction_obtainMatterConcern_DE rdf:type owl:NamedIndividual ;
                                                       welcome:hasFullSentence "I need your help." ,
-                                                                              "I received a letter." ,
-                                                                              "I received a message." ,
-                                                                              "I received a phone call." ,
-                                                                              "I received an email." ,
+                                                                              "I received a letter and I want to book an appointment." ,
+                                                                              "I received a message and I want to book an appointment." ,
+                                                                              "I received a phone call and I want to book an appointment." ,
+                                                                              "I received an email and I want to book an appointment." ,
                                                                               "I want to book an appointment." ;
                                                       welcome:conditionValue "DE" ;
                                                       welcome:dependsOn "CountryCode" ;
@@ -323,28 +323,28 @@ welcome:SimulationIntroduction_obtainMatterConcern_DE rdf:type owl:NamedIndividu
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:SimulationIntroduction_obtainMatterConcern_DE ;
    owl:annotatedProperty welcome:hasFullSentence ;
-   owl:annotatedTarget "I received a letter." ;
+   owl:annotatedTarget "I received a letter and I want to book an appointment." ;
    welcome:effectLabel "True"^^xsd:string
  ] .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:SimulationIntroduction_obtainMatterConcern_DE ;
    owl:annotatedProperty welcome:hasFullSentence ;
-   owl:annotatedTarget "I received a message." ;
+   owl:annotatedTarget "I received a message and I want to book an appointment." ;
    welcome:effectLabel "True"^^xsd:string
  ] .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:SimulationIntroduction_obtainMatterConcern_DE ;
    owl:annotatedProperty welcome:hasFullSentence ;
-   owl:annotatedTarget "I received a phone call." ;
+   owl:annotatedTarget "I received a phone call and I want to book an appointment." ;
    welcome:effectLabel "True"^^xsd:string
  ] .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:SimulationIntroduction_obtainMatterConcern_DE ;
    owl:annotatedProperty welcome:hasFullSentence ;
-   owl:annotatedTarget "I received an email." ;
+   owl:annotatedTarget "I received an email and I want to book an appointment." ;
    welcome:effectLabel "True"^^xsd:string
  ] .
 
