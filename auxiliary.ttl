@@ -66,9 +66,9 @@ welcome:tcnUtterance rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/auxiliary.ttl#Status_obtainMoreSchoolCompleted_Completed
 :Status_obtainMoreSchoolCompleted_Completed rdf:type owl:NamedIndividual ;
-                                            welcome:hasFullSentence "Yes I completed it." ,
+                                            welcome:hasFullSentence "Yes I completed the degree." ,
                                                                     "Yes I did." ,
-                                                                    "Yes I finished it." ;
+                                                                    "Yes I finished the degree." ;
                                             welcome:effectLabel "Completed" ;
                                             welcome:slotLabel "obtainAdditionalLanguageCourseStatus" ,
                                                               "obtainMoreEducationalCourseStatus" ,
@@ -83,6 +83,7 @@ welcome:tcnUtterance rdf:type owl:Class ;
                                                                    "I am still enrolled." ,
                                                                    "I have not fnished it yet." ,
                                                                    "I will complete it in a few months." ,
+                                                                   "I will complete it soon." ,
                                                                    "Not yet." ;
                                            welcome:effectLabel "Still Enrolled" ;
                                            welcome:slotLabel "obtainAdditionalLanguageCourseStatus" ,
