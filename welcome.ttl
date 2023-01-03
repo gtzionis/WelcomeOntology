@@ -2404,7 +2404,9 @@ welcome:StreetNumber rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#StreetType
 welcome:StreetType rdf:type owl:Class ;
-                   rdfs:subClassOf welcome:AddressInfo .
+                   rdfs:subClassOf welcome:AddressInfo ;
+                   welcome:conditionValue "Yes" ;
+                   welcome:dependsOnSlot "obtainStreetName" .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand
