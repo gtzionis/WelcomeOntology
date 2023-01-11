@@ -2874,7 +2874,8 @@ welcome:Aruba rdf:type owl:NamedIndividual ,
 welcome:Athens rdf:type owl:NamedIndividual ,
                         welcome:City ,
                         welcome:Location ;
-               welcome:hasValue "Athens" ;
+               welcome:hasValue "Athens" ,
+                                "Αθήνα" ;
                welcome:lat 37.9838 ;
                welcome:long 23.72753 .
 
@@ -5599,7 +5600,8 @@ welcome:Thailand rdf:type owl:NamedIndividual ,
 welcome:Thessaloniki rdf:type owl:NamedIndividual ,
                               welcome:City ,
                               welcome:Location ;
-                     welcome:hasValue "Thessaloniki" ;
+                     welcome:hasValue "Thessaloniki" ,
+                                      "Θεσσαλονίκη" ;
                      welcome:lat 40.64006 ;
                      welcome:long 22.94441 .
 
