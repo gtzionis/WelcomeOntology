@@ -4942,19 +4942,83 @@ welcome:Saudi_Arabia rdf:type owl:NamedIndividual ,
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SchoolingTopic
 welcome:SchoolingTopic rdf:type owl:NamedIndividual ,
                                 welcome:Topic ;
-                       welcome:topicName "foreign master and university degrees"@eng ,
-										 "máster y títulos universitarios extranjeros"@esp ,
-										 "màster i títols universitaris estrangers"@cat ,
+                       welcome:topicName "Schulabschlüsse"@deu ,
+                                         "Universitätsabschlüsse"@deu ,
+                                         "aptituds professionals"@cat ,
+                                         "calificaciones no universitarias"@esp ,
+                                         "foreign master and university degrees"@eng ,
+                                         "habilidades profesionales"@esp ,
+                                         "màster i títols universitaris estrangers"@cat ,
+                                         "máster y títulos universitarios extranjeros"@esp ,
                                          "non-university qualifications"@eng ,
-										 "calificaciones no universitarias"@esp ,
-										 "qualificacions no universitaries"@cat ,
                                          "professional skills"@eng ,
-										 "habilidades profesionales"@esp ,
-										 "aptituds professionals"@cat ,
+                                         "qualificacions no universitaries"@cat ,
                                          "school degrees"@eng ,
-										 "Schulabschlüsse"@deu ,
-                                         "university diplomas"@eng ,
-										 "Universitätsabschlüsse"@deu .
+                                         "university diplomas"@eng .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:SchoolingTopic ;
+   owl:annotatedProperty welcome:topicName ;
+   owl:annotatedTarget "Schulabschlüsse"@deu ;
+   <http://purl.org/dc/terms/isRequiredBy> "informScenarioIntroduction" ,
+                                           "informSchoolDegreeSubtopic" ,
+                                           "obtainSubtopic" ;
+   <http://www.w3.org/2007/05/powder-s#describedby> "flagSchoolDegreeInformed" ;
+   welcome:conditionValue "DE" ;
+   welcome:dependsOn "CountryCode" ;
+   welcome:secondaryCondition "Schooling school degree university diploma recognition germany CARITAS" ;
+   welcome:secondaryDependency "Scenario" ;
+   welcome:thirdCondition "Pending" ;
+   welcome:thirdDependency "flagSchoolDegreeInformed"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:SchoolingTopic ;
+   owl:annotatedProperty welcome:topicName ;
+   owl:annotatedTarget "Universitätsabschlüsse"@deu ;
+   <http://purl.org/dc/terms/isRequiredBy> "informScenarioIntroduction" ,
+                                           "obtainSubtopic" ;
+   <http://www.w3.org/2007/05/powder-s#describedby> "flagUDiplomaInformed" ;
+   welcome:conditionValue "DE" ;
+   welcome:dependsOn "CountryCode" ;
+   welcome:secondaryCondition "Schooling school degree university diploma recognition germany CARITAS" ;
+   welcome:secondaryDependency "Scenario" ;
+   welcome:thirdCondition "Pending" ;
+   welcome:thirdDependency "flagUDiplomaInformed"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:SchoolingTopic ;
+   owl:annotatedProperty welcome:topicName ;
+   owl:annotatedTarget "aptituds professionals"@cat ;
+   <http://purl.org/dc/terms/isRequiredBy> "informAccreditationSubtopic" ,
+                                           "informScenarioIntroduction" ,
+                                           "obtainSubtopic" ;
+   rdfs:comment "obtainSubtopic" ;
+   <http://www.w3.org/2007/05/powder-s#describedby> "flagProfSkillRecogInformed" ;
+   welcome:conditionValue "ES" ;
+   welcome:dependsOn "CountryCode" ;
+   welcome:secondaryCondition "Schooling Professional Skills Recognition Diploma University Master Non-University qualification Spain" ;
+   welcome:secondaryDependency "Scenario" ;
+   welcome:thirdCondition "Pending" ;
+   welcome:thirdDependency "flagProfSkillRecogInformed"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:SchoolingTopic ;
+   owl:annotatedProperty welcome:topicName ;
+   owl:annotatedTarget "calificaciones no universitarias"@esp ;
+   <http://purl.org/dc/terms/isRequiredBy> "informEducationSubtopic" ,
+                                           "informScenarioIntroduction" ,
+                                           "obtainSubtopic" ;
+   <http://www.w3.org/2007/05/powder-s#describedby> "flagNonUQualificationInformed" ;
+   welcome:conditionValue "ES" ;
+   welcome:dependsOn "CountryCode" ;
+   welcome:secondaryCondition "Schooling Professional Skills Recognition Diploma University Master Non-University qualification Spain" ;
+   welcome:secondaryDependency "Scenario" ;
+   welcome:thirdCondition "Pending" ;
+   welcome:thirdDependency "flagNonUQualificationInformed"
+ ] .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:SchoolingTopic ;
@@ -4971,23 +5035,24 @@ welcome:SchoolingTopic rdf:type owl:NamedIndividual ,
    welcome:thirdCondition "Pending" ;
    welcome:thirdDependency "flagUMasterRecogInformed"
  ] .
- 
+
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:SchoolingTopic ;
    owl:annotatedProperty welcome:topicName ;
-   owl:annotatedTarget "máster y títulos universitarios extranjeros"@esp ;
-   <http://purl.org/dc/terms/isRequiredBy> "informScenarioIntroduction" ,
-                                           "informUMasterRecogSubtopic" ,
+   owl:annotatedTarget "habilidades profesionales"@esp ;
+   <http://purl.org/dc/terms/isRequiredBy> "informAccreditationSubtopic" ,
+                                           "informScenarioIntroduction" ,
                                            "obtainSubtopic" ;
-   <http://www.w3.org/2007/05/powder-s#describedby> "flagUMasterRecogInformed" ;
+   rdfs:comment "obtainSubtopic" ;
+   <http://www.w3.org/2007/05/powder-s#describedby> "flagProfSkillRecogInformed" ;
    welcome:conditionValue "ES" ;
    welcome:dependsOn "CountryCode" ;
    welcome:secondaryCondition "Schooling Professional Skills Recognition Diploma University Master Non-University qualification Spain" ;
    welcome:secondaryDependency "Scenario" ;
    welcome:thirdCondition "Pending" ;
-   welcome:thirdDependency "flagUMasterRecogInformed"
+   welcome:thirdDependency "flagProfSkillRecogInformed"
  ] .
- 
+
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:SchoolingTopic ;
    owl:annotatedProperty welcome:topicName ;
@@ -5007,39 +5072,23 @@ welcome:SchoolingTopic rdf:type owl:NamedIndividual ,
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:SchoolingTopic ;
    owl:annotatedProperty welcome:topicName ;
+   owl:annotatedTarget "máster y títulos universitarios extranjeros"@esp ;
+   <http://purl.org/dc/terms/isRequiredBy> "informScenarioIntroduction" ,
+                                           "informUMasterRecogSubtopic" ,
+                                           "obtainSubtopic" ;
+   <http://www.w3.org/2007/05/powder-s#describedby> "flagUMasterRecogInformed" ;
+   welcome:conditionValue "ES" ;
+   welcome:dependsOn "CountryCode" ;
+   welcome:secondaryCondition "Schooling Professional Skills Recognition Diploma University Master Non-University qualification Spain" ;
+   welcome:secondaryDependency "Scenario" ;
+   welcome:thirdCondition "Pending" ;
+   welcome:thirdDependency "flagUMasterRecogInformed"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:SchoolingTopic ;
+   owl:annotatedProperty welcome:topicName ;
    owl:annotatedTarget "non-university qualifications"@eng ;
-   <http://purl.org/dc/terms/isRequiredBy> "informEducationSubtopic" ,
-                                           "informScenarioIntroduction" ,
-                                           "obtainSubtopic" ;
-   <http://www.w3.org/2007/05/powder-s#describedby> "flagNonUQualificationInformed" ;
-   welcome:conditionValue "ES" ;
-   welcome:dependsOn "CountryCode" ;
-   welcome:secondaryCondition "Schooling Professional Skills Recognition Diploma University Master Non-University qualification Spain" ;
-   welcome:secondaryDependency "Scenario" ;
-   welcome:thirdCondition "Pending" ;
-   welcome:thirdDependency "flagNonUQualificationInformed"
- ] .
- 
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource welcome:SchoolingTopic ;
-   owl:annotatedProperty welcome:topicName ;
-   owl:annotatedTarget "calificaciones no universitarias"@esp ;
-   <http://purl.org/dc/terms/isRequiredBy> "informEducationSubtopic" ,
-                                           "informScenarioIntroduction" ,
-                                           "obtainSubtopic" ;
-   <http://www.w3.org/2007/05/powder-s#describedby> "flagNonUQualificationInformed" ;
-   welcome:conditionValue "ES" ;
-   welcome:dependsOn "CountryCode" ;
-   welcome:secondaryCondition "Schooling Professional Skills Recognition Diploma University Master Non-University qualification Spain" ;
-   welcome:secondaryDependency "Scenario" ;
-   welcome:thirdCondition "Pending" ;
-   welcome:thirdDependency "flagNonUQualificationInformed"
- ] .
- 
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource welcome:SchoolingTopic ;
-   owl:annotatedProperty welcome:topicName ;
-   owl:annotatedTarget "qualificacions no universitaries"@cat ;
    <http://purl.org/dc/terms/isRequiredBy> "informEducationSubtopic" ,
                                            "informScenarioIntroduction" ,
                                            "obtainSubtopic" ;
@@ -5068,39 +5117,21 @@ welcome:SchoolingTopic rdf:type owl:NamedIndividual ,
    welcome:thirdCondition "Pending" ;
    welcome:thirdDependency "flagProfSkillRecogInformed"
  ] .
- 
+
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:SchoolingTopic ;
    owl:annotatedProperty welcome:topicName ;
-   owl:annotatedTarget "habilidades profesionales"@esp ;
-   <http://purl.org/dc/terms/isRequiredBy> "informAccreditationSubtopic" ,
+   owl:annotatedTarget "qualificacions no universitaries"@cat ;
+   <http://purl.org/dc/terms/isRequiredBy> "informEducationSubtopic" ,
                                            "informScenarioIntroduction" ,
                                            "obtainSubtopic" ;
-   rdfs:comment "obtainSubtopic" ;
-   <http://www.w3.org/2007/05/powder-s#describedby> "flagProfSkillRecogInformed" ;
+   <http://www.w3.org/2007/05/powder-s#describedby> "flagNonUQualificationInformed" ;
    welcome:conditionValue "ES" ;
    welcome:dependsOn "CountryCode" ;
    welcome:secondaryCondition "Schooling Professional Skills Recognition Diploma University Master Non-University qualification Spain" ;
    welcome:secondaryDependency "Scenario" ;
    welcome:thirdCondition "Pending" ;
-   welcome:thirdDependency "flagProfSkillRecogInformed"
- ] .
- 
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource welcome:SchoolingTopic ;
-   owl:annotatedProperty welcome:topicName ;
-   owl:annotatedTarget "aptituds professionals"@cat ;
-   <http://purl.org/dc/terms/isRequiredBy> "informAccreditationSubtopic" ,
-                                           "informScenarioIntroduction" ,
-                                           "obtainSubtopic" ;
-   rdfs:comment "obtainSubtopic" ;
-   <http://www.w3.org/2007/05/powder-s#describedby> "flagProfSkillRecogInformed" ;
-   welcome:conditionValue "ES" ;
-   welcome:dependsOn "CountryCode" ;
-   welcome:secondaryCondition "Schooling Professional Skills Recognition Diploma University Master Non-University qualification Spain" ;
-   welcome:secondaryDependency "Scenario" ;
-   welcome:thirdCondition "Pending" ;
-   welcome:thirdDependency "flagProfSkillRecogInformed"
+   welcome:thirdDependency "flagNonUQualificationInformed"
  ] .
 
 [ rdf:type owl:Axiom ;
@@ -5118,42 +5149,11 @@ welcome:SchoolingTopic rdf:type owl:NamedIndividual ,
    welcome:thirdCondition "Pending" ;
    welcome:thirdDependency "flagSchoolDegreeInformed"
  ] .
- 
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource welcome:SchoolingTopic ;
-   owl:annotatedProperty welcome:topicName ;
-   owl:annotatedTarget "Schulabschlüsse"@deu ;
-   <http://purl.org/dc/terms/isRequiredBy> "informScenarioIntroduction" ,
-                                           "informSchoolDegreeSubtopic" ,
-                                           "obtainSubtopic" ;
-   <http://www.w3.org/2007/05/powder-s#describedby> "flagSchoolDegreeInformed" ;
-   welcome:conditionValue "DE" ;
-   welcome:dependsOn "CountryCode" ;
-   welcome:secondaryCondition "Schooling school degree university diploma recognition germany CARITAS" ;
-   welcome:secondaryDependency "Scenario" ;
-   welcome:thirdCondition "Pending" ;
-   welcome:thirdDependency "flagSchoolDegreeInformed"
- ] .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:SchoolingTopic ;
    owl:annotatedProperty welcome:topicName ;
    owl:annotatedTarget "university diplomas"@eng ;
-   <http://purl.org/dc/terms/isRequiredBy> "informScenarioIntroduction" ,
-                                           "obtainSubtopic" ;
-   <http://www.w3.org/2007/05/powder-s#describedby> "flagUDiplomaInformed" ;
-   welcome:conditionValue "DE" ;
-   welcome:dependsOn "CountryCode" ;
-   welcome:secondaryCondition "Schooling school degree university diploma recognition germany CARITAS" ;
-   welcome:secondaryDependency "Scenario" ;
-   welcome:thirdCondition "Pending" ;
-   welcome:thirdDependency "flagUDiplomaInformed"
- ] .
- 
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource welcome:SchoolingTopic ;
-   owl:annotatedProperty welcome:topicName ;
-   owl:annotatedTarget "Universitätsabschlüsse"@deu ;
    <http://purl.org/dc/terms/isRequiredBy> "informScenarioIntroduction" ,
                                            "obtainSubtopic" ;
    <http://www.w3.org/2007/05/powder-s#describedby> "flagUDiplomaInformed" ;
@@ -6415,6 +6415,20 @@ welcome:cvSection rdf:type owl:NamedIndividual ;
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:cvSection ;
    owl:annotatedProperty welcome:hasValue ;
+   owl:annotatedTarget "Προσωπικές Πληροφορίες"@ell ;
+   <http://purl.org/dc/terms/isRequiredBy> "obtainPersonalInfoConfirmation"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:cvSection ;
+   owl:annotatedProperty welcome:hasValue ;
+   owl:annotatedTarget "Συμπληρωματικά Επιτεύγματα"@ell ;
+   <http://purl.org/dc/terms/isRequiredBy> "obtainMoreEducationalInformationConfirmation"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:cvSection ;
+   owl:annotatedProperty welcome:hasValue ;
    owl:annotatedTarget "Altra informació"@cat ;
    rdfs:comment "obtainOtherInformationConfirmation"
  ] .
@@ -6566,20 +6580,6 @@ welcome:cvSection rdf:type owl:NamedIndividual ;
    <http://purl.org/dc/terms/isRequiredBy> "obtainEmploymentInformationConfirmation"
  ] .
 
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource welcome:cvSection ;
-   owl:annotatedProperty welcome:hasValue ;
-   owl:annotatedTarget "Προσωπικές Πληροφορίες"@ell ;
-   <http://purl.org/dc/terms/isRequiredBy> "obtainPersonalInfoConfirmation"
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource welcome:cvSection ;
-   owl:annotatedProperty welcome:hasValue ;
-   owl:annotatedTarget "Συμπληρωματικά Επιτεύγματα"@ell ;
-   <http://purl.org/dc/terms/isRequiredBy> "obtainMoreEducationalInformationConfirmation"
- ] .
-
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#expiration_period
 welcome:expiration_period rdf:type owl:NamedIndividual ,
@@ -6661,15 +6661,15 @@ welcome:module_labour_hours rdf:type owl:NamedIndividual ,
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:module_labour_hours ;
-   owl:annotatedProperty schema:opens ;
-   owl:annotatedTarget "19:00" ;
+   owl:annotatedProperty schema:closes ;
+   owl:annotatedTarget "21:00" ;
    <http://purl.org/dc/terms/isRequiredBy> "informLabourModuleHours"
  ] .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:module_labour_hours ;
-   owl:annotatedProperty schema:closes ;
-   owl:annotatedTarget "21:00" ;
+   owl:annotatedProperty schema:opens ;
+   owl:annotatedTarget "19:00" ;
    <http://purl.org/dc/terms/isRequiredBy> "informLabourModuleHours"
  ] .
 
