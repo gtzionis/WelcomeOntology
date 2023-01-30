@@ -3865,7 +3865,7 @@ welcome:HealthTopic rdf:type owl:NamedIndividual ,
    <http://www.w3.org/2007/05/powder-s#describedby> "flagDocRegistrationInformed" ;
    welcome:conditionValue "GR" ;
    welcome:dependsOn "CountryCode" ;
-   welcome:secondaryCondition "Health Scenario" ;
+   welcome:secondaryCondition "Greek Health System Healthcare" ;
    welcome:secondaryDependency "Scenario" ;
    welcome:thirdCondition "Pending" ;
    welcome:thirdDependency "flagDocRegistrationInformed"
@@ -3880,7 +3880,7 @@ welcome:HealthTopic rdf:type owl:NamedIndividual ,
    <http://www.w3.org/2007/05/powder-s#describedby> "flagMedEmergencyInformed" ;
    welcome:conditionValue "GR" ;
    welcome:dependsOn "CountryCode" ;
-   welcome:secondaryCondition "Health Scenario" ;
+   welcome:secondaryCondition "Greek Health System Healthcare" ;
    welcome:secondaryDependency "Scenario" ;
    welcome:thirdCondition "Pending" ;
    welcome:thirdDependency "flagMedEmergencyInformed"
