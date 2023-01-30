@@ -3853,13 +3853,30 @@ welcome:Hamm rdf:type owl:NamedIndividual ,
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#HealthTopic
 welcome:HealthTopic rdf:type owl:NamedIndividual ,
                              welcome:Topic ;
-                    welcome:topicName "how to access regular health care by registering to the personal doctor" ,
-                                      "what to do in case of a medical emergency" .
+                    welcome:topicName "how to access regular health care by registering to the personal doctor"@eng ,
+                                      "what to do in case of a medical emergency"@eng ,
+									  "το τί πρέπει να κάνετε σε περίπτωση επείγοντος ιατρικού περιστατικού"@ell ,
+									  "τον τρόπο πρόσβασης στην τακτική υγειονομική περίθαλψη κάνοντας εγγραφή στο σύστημα προσωπικού ιατρού"@ell .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:HealthTopic ;
    owl:annotatedProperty welcome:topicName ;
-   owl:annotatedTarget "how to access regular health care by registering to the personal doctor" ;
+   owl:annotatedTarget "how to access regular health care by registering to the personal doctor"@eng ;
+   <http://purl.org/dc/terms/isRequiredBy> "informScenarioIntroduction" ,
+                                           "obtainSubtopic" ;
+   <http://www.w3.org/2007/05/powder-s#describedby> "flagDocRegistrationInformed" ;
+   welcome:conditionValue "GR" ;
+   welcome:dependsOn "CountryCode" ;
+   welcome:secondaryCondition "Greek Health System Healthcare" ;
+   welcome:secondaryDependency "Scenario" ;
+   welcome:thirdCondition "Pending" ;
+   welcome:thirdDependency "flagDocRegistrationInformed"
+ ] .
+ 
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:HealthTopic ;
+   owl:annotatedProperty welcome:topicName ;
+   owl:annotatedTarget "τον τρόπο πρόσβασης στην τακτική υγειονομική περίθαλψη κάνοντας εγγραφή στο σύστημα προσωπικού ιατρού"@ell ;
    <http://purl.org/dc/terms/isRequiredBy> "informScenarioIntroduction" ,
                                            "obtainSubtopic" ;
    <http://www.w3.org/2007/05/powder-s#describedby> "flagDocRegistrationInformed" ;
@@ -3874,7 +3891,7 @@ welcome:HealthTopic rdf:type owl:NamedIndividual ,
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:HealthTopic ;
    owl:annotatedProperty welcome:topicName ;
-   owl:annotatedTarget "what to do in case of a medical emergency" ;
+   owl:annotatedTarget "what to do in case of a medical emergency"@eng ;
    <http://purl.org/dc/terms/isRequiredBy> "informScenarioIntroduction" ,
                                            "obtainSubtopic" ;
    <http://www.w3.org/2007/05/powder-s#describedby> "flagMedEmergencyInformed" ;
@@ -3885,7 +3902,21 @@ welcome:HealthTopic rdf:type owl:NamedIndividual ,
    welcome:thirdCondition "Pending" ;
    welcome:thirdDependency "flagMedEmergencyInformed"
  ] .
-
+ 
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:HealthTopic ;
+   owl:annotatedProperty welcome:topicName ;
+   owl:annotatedTarget "το τί πρέπει να κάνετε σε περίπτωση επείγοντος ιατρικού περιστατικού"@ell ;
+   <http://purl.org/dc/terms/isRequiredBy> "informScenarioIntroduction" ,
+                                           "obtainSubtopic" ;
+   <http://www.w3.org/2007/05/powder-s#describedby> "flagMedEmergencyInformed" ;
+   welcome:conditionValue "GR" ;
+   welcome:dependsOn "CountryCode" ;
+   welcome:secondaryCondition "Greek Health System Healthcare" ;
+   welcome:secondaryDependency "Scenario" ;
+   welcome:thirdCondition "Pending" ;
+   welcome:thirdDependency "flagMedEmergencyInformed"
+ ] .
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Heard_and_McDonald_Islands
 welcome:Heard_and_McDonald_Islands rdf:type owl:NamedIndividual ,
