@@ -2551,7 +2551,8 @@ welcome:AgentNGO rdf:type owl:NamedIndividual ,
                               "https://www.bezreg-koeln.nrw.de/brk_internet/leistungen/abteilung04/48/anerkennung/auslaendische_schulzeugnisse/" ,
                               "https://www.brd.nrw.de/themen/schule-bildung/schulrecht-verwaltung/zeugnisanerkennung" ,
                               "https://www.caritas-hamm.de/einrichtungen/beratungszentrum/beratungszentrum" ,
-                              "https://www.exteriores.gob.es/es/ServiciosAlCiudadano/Paginas/Traductores-Interpretes-Jurados.aspx" ;
+                              "https://www.exteriores.gob.es/es/ServiciosAlCiudadano/Paginas/Traductores-Interpretes-Jurados.aspx" ,
+                              "https://www.gov.gr/upourgeia/upourgeio-ugeias/ugeias/eggraphe-se-prosopiko-iatro" ;
                  welcome:agentName "CARITAS" ,
                                    "DIFE" ,
                                    "PRAKSIS" ;
@@ -2622,6 +2623,13 @@ welcome:AgentNGO rdf:type owl:NamedIndividual ,
    owl:annotatedProperty actor:webURL ;
    owl:annotatedTarget "https://www.exteriores.gob.es/es/ServiciosAlCiudadano/Paginas/Traductores-Interpretes-Jurados.aspx" ;
    <http://purl.org/dc/terms/isRequiredBy> "informTranslationOptions"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:AgentNGO ;
+   owl:annotatedProperty actor:webURL ;
+   owl:annotatedTarget "https://www.gov.gr/upourgeia/upourgeio-ugeias/ugeias/eggraphe-se-prosopiko-iatro" ;
+   <http://purl.org/dc/terms/isRequiredBy> "informRegistraionProcedure"
  ] .
 
 [ rdf:type owl:Axiom ;
@@ -6415,6 +6423,13 @@ welcome:cvSection rdf:type owl:NamedIndividual ;
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:cvSection ;
    owl:annotatedProperty welcome:hasValue ;
+   owl:annotatedTarget "Επαγγελματική Εμπειρία"@ell ;
+   <http://purl.org/dc/terms/isRequiredBy> "obtainEmploymentInformationConfirmation"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:cvSection ;
+   owl:annotatedProperty welcome:hasValue ;
    owl:annotatedTarget "Προσωπικές Πληροφορίες"@ell ;
    <http://purl.org/dc/terms/isRequiredBy> "obtainPersonalInfoConfirmation"
  ] .
@@ -6571,13 +6586,6 @@ welcome:cvSection rdf:type owl:NamedIndividual ;
    owl:annotatedProperty welcome:hasValue ;
    owl:annotatedTarget "Εκπαίδευση"@ell ;
    <http://purl.org/dc/terms/isRequiredBy> "obtainEducationalInformationConfirmation"
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource welcome:cvSection ;
-   owl:annotatedProperty welcome:hasValue ;
-   owl:annotatedTarget "Επαγγελματική Εμπειρία"@ell ;
-   <http://purl.org/dc/terms/isRequiredBy> "obtainEmploymentInformationConfirmation"
  ] .
 
 
