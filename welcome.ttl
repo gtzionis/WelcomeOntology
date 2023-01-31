@@ -4984,11 +4984,11 @@ welcome:SchoolingTopic rdf:type owl:NamedIndividual ,
                        welcome:topicName "Schulabschlüsse"@deu ,
                                          "Universitätsabschlüsse"@deu ,
                                          "aptituds professionals"@cat ,
-                                         "calificaciones no universitarias"@esp ,
+                                         "calificaciones no universitarias"@spa ,
                                          "foreign master and university degrees"@eng ,
-                                         "habilidades profesionales"@esp ,
+                                         "habilidades profesionales"@spa ,
                                          "màster i títols universitaris estrangers"@cat ,
-                                         "máster y títulos universitarios extranjeros"@esp ,
+                                         "máster y títulos universitarios extranjeros"@spa ,
                                          "non-university qualifications"@eng ,
                                          "professional skills"@eng ,
                                          "qualificacions no universitaries"@cat ,
@@ -5046,7 +5046,7 @@ welcome:SchoolingTopic rdf:type owl:NamedIndividual ,
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:SchoolingTopic ;
    owl:annotatedProperty welcome:topicName ;
-   owl:annotatedTarget "calificaciones no universitarias"@esp ;
+   owl:annotatedTarget "calificaciones no universitarias"@spa ;
    <http://purl.org/dc/terms/isRequiredBy> "informEducationSubtopic" ,
                                            "informScenarioIntroduction" ,
                                            "obtainSubtopic" ;
@@ -5078,7 +5078,7 @@ welcome:SchoolingTopic rdf:type owl:NamedIndividual ,
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:SchoolingTopic ;
    owl:annotatedProperty welcome:topicName ;
-   owl:annotatedTarget "habilidades profesionales"@esp ;
+   owl:annotatedTarget "habilidades profesionales"@spa ;
    <http://purl.org/dc/terms/isRequiredBy> "informAccreditationSubtopic" ,
                                            "informScenarioIntroduction" ,
                                            "obtainSubtopic" ;
@@ -5111,7 +5111,7 @@ welcome:SchoolingTopic rdf:type owl:NamedIndividual ,
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:SchoolingTopic ;
    owl:annotatedProperty welcome:topicName ;
-   owl:annotatedTarget "máster y títulos universitarios extranjeros"@esp ;
+   owl:annotatedTarget "máster y títulos universitarios extranjeros"@spa ;
    <http://purl.org/dc/terms/isRequiredBy> "informScenarioIntroduction" ,
                                            "informUMasterRecogSubtopic" ,
                                            "obtainSubtopic" ;
