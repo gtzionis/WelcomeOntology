@@ -2629,7 +2629,7 @@ welcome:AgentNGO rdf:type owl:NamedIndividual ,
    owl:annotatedSource welcome:AgentNGO ;
    owl:annotatedProperty actor:webURL ;
    owl:annotatedTarget "https://www.gov.gr/upourgeia/upourgeio-ugeias/ugeias/eggraphe-se-prosopiko-iatro" ;
-   <http://purl.org/dc/terms/isRequiredBy> "informRegistraionProcedure"
+   <http://purl.org/dc/terms/isRequiredBy> "informRegistrationProcedure"
  ] .
 
 [ rdf:type owl:Axiom ;
@@ -3855,28 +3855,13 @@ welcome:HealthTopic rdf:type owl:NamedIndividual ,
                              welcome:Topic ;
                     welcome:topicName "how to access regular health care by registering to the personal doctor"@eng ,
                                       "what to do in case of a medical emergency"@eng ,
-									  "το τί πρέπει να κάνετε σε περίπτωση επείγοντος ιατρικού περιστατικού"@ell ,
-									  "τον τρόπο πρόσβασης στην τακτική υγειονομική περίθαλψη κάνοντας εγγραφή στο σύστημα προσωπικού ιατρού"@ell .
+                                      "το τί πρέπει να κάνετε σε περίπτωση επείγοντος ιατρικού περιστατικού"@ell ,
+                                      "τον τρόπο πρόσβασης στην τακτική υγειονομική περίθαλψη κάνοντας εγγραφή στο σύστημα προσωπικού ιατρού"@ell .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:HealthTopic ;
    owl:annotatedProperty welcome:topicName ;
    owl:annotatedTarget "how to access regular health care by registering to the personal doctor"@eng ;
-   <http://purl.org/dc/terms/isRequiredBy> "informScenarioIntroduction" ,
-                                           "obtainSubtopic" ;
-   <http://www.w3.org/2007/05/powder-s#describedby> "flagDocRegistrationInformed" ;
-   welcome:conditionValue "GR" ;
-   welcome:dependsOn "CountryCode" ;
-   welcome:secondaryCondition "Greek Health System Healthcare" ;
-   welcome:secondaryDependency "Scenario" ;
-   welcome:thirdCondition "Pending" ;
-   welcome:thirdDependency "flagDocRegistrationInformed"
- ] .
- 
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource welcome:HealthTopic ;
-   owl:annotatedProperty welcome:topicName ;
-   owl:annotatedTarget "τον τρόπο πρόσβασης στην τακτική υγειονομική περίθαλψη κάνοντας εγγραφή στο σύστημα προσωπικού ιατρού"@ell ;
    <http://purl.org/dc/terms/isRequiredBy> "informScenarioIntroduction" ,
                                            "obtainSubtopic" ;
    <http://www.w3.org/2007/05/powder-s#describedby> "flagDocRegistrationInformed" ;
@@ -3902,7 +3887,7 @@ welcome:HealthTopic rdf:type owl:NamedIndividual ,
    welcome:thirdCondition "Pending" ;
    welcome:thirdDependency "flagMedEmergencyInformed"
  ] .
- 
+
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:HealthTopic ;
    owl:annotatedProperty welcome:topicName ;
@@ -3917,6 +3902,22 @@ welcome:HealthTopic rdf:type owl:NamedIndividual ,
    welcome:thirdCondition "Pending" ;
    welcome:thirdDependency "flagMedEmergencyInformed"
  ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:HealthTopic ;
+   owl:annotatedProperty welcome:topicName ;
+   owl:annotatedTarget "τον τρόπο πρόσβασης στην τακτική υγειονομική περίθαλψη κάνοντας εγγραφή στο σύστημα προσωπικού ιατρού"@ell ;
+   <http://purl.org/dc/terms/isRequiredBy> "informScenarioIntroduction" ,
+                                           "obtainSubtopic" ;
+   <http://www.w3.org/2007/05/powder-s#describedby> "flagDocRegistrationInformed" ;
+   welcome:conditionValue "GR" ;
+   welcome:dependsOn "CountryCode" ;
+   welcome:secondaryCondition "Greek Health System Healthcare" ;
+   welcome:secondaryDependency "Scenario" ;
+   welcome:thirdCondition "Pending" ;
+   welcome:thirdDependency "flagDocRegistrationInformed"
+ ] .
+
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Heard_and_McDonald_Islands
 welcome:Heard_and_McDonald_Islands rdf:type owl:NamedIndividual ,
@@ -6454,6 +6455,20 @@ welcome:cvSection rdf:type owl:NamedIndividual ;
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:cvSection ;
    owl:annotatedProperty welcome:hasValue ;
+   owl:annotatedTarget "Γλωσσικές Δεξιότητες"@ell ;
+   <http://purl.org/dc/terms/isRequiredBy> "obtainLanguageInformationConfirmation"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:cvSection ;
+   owl:annotatedProperty welcome:hasValue ;
+   owl:annotatedTarget "Εκπαίδευση"@ell ;
+   <http://purl.org/dc/terms/isRequiredBy> "obtainEducationalInformationConfirmation"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:cvSection ;
+   owl:annotatedProperty welcome:hasValue ;
    owl:annotatedTarget "Επαγγελματική Εμπειρία"@ell ;
    <http://purl.org/dc/terms/isRequiredBy> "obtainEmploymentInformationConfirmation"
  ] .
@@ -6603,20 +6618,6 @@ welcome:cvSection rdf:type owl:NamedIndividual ;
    owl:annotatedProperty welcome:hasValue ;
    owl:annotatedTarget "Άλλες Πληροφορίες"@ell ;
    <http://purl.org/dc/terms/isRequiredBy> "obtainOtherInformationConfirmation"
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource welcome:cvSection ;
-   owl:annotatedProperty welcome:hasValue ;
-   owl:annotatedTarget "Γλωσσικές Δεξιότητες"@ell ;
-   <http://purl.org/dc/terms/isRequiredBy> "obtainLanguageInformationConfirmation"
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource welcome:cvSection ;
-   owl:annotatedProperty welcome:hasValue ;
-   owl:annotatedTarget "Εκπαίδευση"@ell ;
-   <http://purl.org/dc/terms/isRequiredBy> "obtainEducationalInformationConfirmation"
  ] .
 
 
