@@ -2717,8 +2717,8 @@ welcome:AgentNGO rdf:type owl:NamedIndividual ,
    owl:annotatedSource welcome:AgentNGO ;
    owl:annotatedProperty actor:webURL ;
    owl:annotatedTarget "https://igualtat.gencat.cat/ca/ambits-dactuacio/antiracisme-migracions-i-refugi/serveis/servei-dacompanyament-al-reconeixement-universitari/" ;
-   <http://purl.org/dc/terms/isRequiredBy> "infomUMasterRecognition" ,
-                                           "informSARUService"
+   <http://purl.org/dc/terms/isRequiredBy> "informSARUService" ,
+                                           "informUMasterRecognition"
  ] .
 
 
