@@ -3190,20 +3190,52 @@ welcome:Caribbean_Netherlands rdf:type owl:NamedIndividual ,
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Catalan
 welcome:Catalan rdf:type owl:NamedIndividual ,
                          welcome:Language ;
-                welcome:languageName "Catalan" ;
-                welcome:requiresLanguage "Catalan" .
+                welcome:languageName "Catalan"@eng ;
+				welcome:languageName "Catalán"@spa ;
+				welcome:languageName "Català"@cat ;
+                welcome:requiresLanguage "Catalan"@eng ; 
+				welcome:requiresLanguage "Catalán"@spa ;
+				welcome:requiresLanguage "Català"@cat .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:Catalan ;
    owl:annotatedProperty welcome:languageName ;
-   owl:annotatedTarget "Catalan" ;
+   owl:annotatedTarget "Catalan"@eng ;
+   <http://purl.org/dc/terms/isRequiredBy> "informDetailsLanguage"
+ ] .
+ 
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:Catalan ;
+   owl:annotatedProperty welcome:languageName ;
+   owl:annotatedTarget "Catalán"@spa ;
+   <http://purl.org/dc/terms/isRequiredBy> "informDetailsLanguage"
+ ] .
+ 
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:Catalan ;
+   owl:annotatedProperty welcome:languageName ;
+   owl:annotatedTarget "Català"@cat ;
    <http://purl.org/dc/terms/isRequiredBy> "informDetailsLanguage"
  ] .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:Catalan ;
    owl:annotatedProperty welcome:requiresLanguage ;
-   owl:annotatedTarget "Catalan" ;
+   owl:annotatedTarget "Catalan"@eng ;
+   <http://purl.org/dc/terms/isRequiredBy> "informDetailsLanguage"
+ ] .
+ 
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:Catalan ;
+   owl:annotatedProperty welcome:requiresLanguage ;
+   owl:annotatedTarget "Catalán"@spa ;
+   <http://purl.org/dc/terms/isRequiredBy> "informDetailsLanguage"
+ ] .
+ 
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:Catalan ;
+   owl:annotatedProperty welcome:requiresLanguage ;
+   owl:annotatedTarget "Català"@cat ;
    <http://purl.org/dc/terms/isRequiredBy> "informDetailsLanguage"
  ] .
 
@@ -5530,14 +5562,31 @@ welcome:Spain rdf:type owl:NamedIndividual ,
 welcome:Spanish rdf:type owl:NamedIndividual ,
                          welcome:Language ;
                 welcome:languageName "Spanish" ;
-                welcome:requiresLanguage "Spanish" .
+                welcome:requiresLanguage "Spanish"@eng ;
+				welcome:requiresLanguage "Español"@spa ;
+				welcome:requiresLanguage "Castellà"@cat .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:Spanish ;
    owl:annotatedProperty welcome:requiresLanguage ;
-   owl:annotatedTarget "Spanish" ;
+   owl:annotatedTarget "Spanish"@eng ;
    <http://purl.org/dc/terms/isRequiredBy> "informDetailsLanguage"
  ] .
+ 
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:Spanish ;
+   owl:annotatedProperty welcome:requiresLanguage ;
+   owl:annotatedTarget "Español"@spa  ;
+   <http://purl.org/dc/terms/isRequiredBy> "informDetailsLanguage"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:Spanish ;
+   owl:annotatedProperty welcome:requiresLanguage ;
+   owl:annotatedTarget "Castellà"@cat ;
+   <http://purl.org/dc/terms/isRequiredBy> "informDetailsLanguage"
+ ] .
+
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Sri_Lanka
@@ -6646,13 +6695,29 @@ welcome:module rdf:type owl:NamedIndividual ,
                         welcome:Module ;
                welcome:requiresLang welcome:Catalan ,
                                     welcome:Spanish ;
-               welcome:duration "2 years" ;
+               welcome:duration "2 anys"@cat ,
+                                "2 años"@spa ,
+                                "2 years"@eng ;
                welcome:percentage "75%" .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource welcome:module ;
    owl:annotatedProperty welcome:duration ;
-   owl:annotatedTarget "2 years" ;
+   owl:annotatedTarget "2 anys"@cat ;
+   <http://purl.org/dc/terms/isRequiredBy> "informDetailsTime"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:module ;
+   owl:annotatedProperty welcome:duration ;
+   owl:annotatedTarget "2 años"@spa ;
+   rdfs:comment "informDetailsTime"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource welcome:module ;
+   owl:annotatedProperty welcome:duration ;
+   owl:annotatedTarget "2 years"@eng ;
    <http://purl.org/dc/terms/isRequiredBy> "informDetailsTime"
  ] .
 
@@ -7153,13 +7218,29 @@ welcome:slot_ef_thes rdf:type owl:NamedIndividual ,
 ###  https://schema.org/Friday
 schema:Friday rdf:type owl:NamedIndividual ,
                        schema:DayOfWeek ;
-              welcome:dayOfWeek "Fridays" ;
+              welcome:dayOfWeek "Fridays"@eng ,
+                                "Viernes"@cat ,
+                                "Viernes"@spa ;
               welcome:dayOfWeekNoRepeat "Friday" .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource schema:Friday ;
    owl:annotatedProperty welcome:dayOfWeek ;
-   owl:annotatedTarget "Fridays" ;
+   owl:annotatedTarget "Fridays"@eng ;
+   <http://purl.org/dc/terms/isRequiredBy> "informLanguageModuleHours"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource schema:Friday ;
+   owl:annotatedProperty welcome:dayOfWeek ;
+   owl:annotatedTarget "Viernes"@cat ;
+   <http://purl.org/dc/terms/isRequiredBy> "informLanguageModuleHours"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource schema:Friday ;
+   owl:annotatedProperty welcome:dayOfWeek ;
+   owl:annotatedTarget "Viernes"@spa ;
    <http://purl.org/dc/terms/isRequiredBy> "informLanguageModuleHours"
  ] .
 
@@ -7167,13 +7248,29 @@ schema:Friday rdf:type owl:NamedIndividual ,
 ###  https://schema.org/Monday
 schema:Monday rdf:type owl:NamedIndividual ,
                        schema:DayOfWeek ;
-              welcome:dayOfWeek "Mondays" ;
+              welcome:dayOfWeek "Mondays"@eng ;
+			  welcome:dayOfWeek "Lunes"@spa ;
+			  welcome:dayOfWeek "Dilluns"@cat ;
               welcome:dayOfWeekNoRepeat "Monday" .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource schema:Monday ;
    owl:annotatedProperty welcome:dayOfWeek ;
-   owl:annotatedTarget "Mondays" ;
+   owl:annotatedTarget "Mondays"@eng ;
+   <http://purl.org/dc/terms/isRequiredBy> "informLanguageModuleHours"
+ ] .
+ 
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource schema:Monday ;
+   owl:annotatedProperty welcome:dayOfWeek ;
+   owl:annotatedTarget "Lunes"@spa ;
+   <http://purl.org/dc/terms/isRequiredBy> "informLanguageModuleHours"
+ ] .
+ 
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource schema:Monday ;
+   owl:annotatedProperty welcome:dayOfWeek ;
+   owl:annotatedTarget "Dilluns"@cat ;
    <http://purl.org/dc/terms/isRequiredBy> "informLanguageModuleHours"
  ] .
 
@@ -7181,41 +7278,67 @@ schema:Monday rdf:type owl:NamedIndividual ,
 ###  https://schema.org/Saturday
 schema:Saturday rdf:type owl:NamedIndividual ,
                          schema:DayOfWeek ;
-                welcome:dayOfWeek "Saturdays" ;
+                welcome:dayOfWeek "Saturdays"@eng ;
+				welcome:dayOfWeek "Sábado"@spa ;
+				welcome:dayOfWeek "Dissabte"@cat ;
                 welcome:dayOfWeekNoRepeat "Saturday" .
 
 
 ###  https://schema.org/Sunday
 schema:Sunday rdf:type owl:NamedIndividual ,
                        schema:DayOfWeek ;
-              welcome:dayOfWeek "Sundays" ;
+              welcome:dayOfWeek "Sundays"@eng ;
+			  welcome:dayOfWeek "Domingo"@spa ;
+			  welcome:dayOfWeek "Diumenge"@cat ;
               welcome:dayOfWeekNoRepeat "Sunday" .
 
 
 ###  https://schema.org/Thursday
 schema:Thursday rdf:type owl:NamedIndividual ,
                          schema:DayOfWeek ;
-                welcome:dayOfWeek "Thursdays" ;
+                welcome:dayOfWeek "Thursdays"@eng ;
+				welcome:dayOfWeek "Jueves"@spa ;
+				welcome:dayOfWeek "Dijous"@cat ;
                 welcome:dayOfWeekNoRepeat "Thursday" .
 
 
 ###  https://schema.org/Tuesday
 schema:Tuesday rdf:type owl:NamedIndividual ,
                         schema:DayOfWeek ;
-               welcome:dayOfWeek "Tuesdays" ;
+               welcome:dayOfWeek "Tuesdays"@eng ;
+			   welcome:dayOfWeek "Martes"@spa ;
+			   welcome:dayOfWeek "Dimarts"@spa ;
                welcome:dayOfWeekNoRepeat "Tuesday" .
 
 
 ###  https://schema.org/Wednesday
 schema:Wednesday rdf:type owl:NamedIndividual ,
                           schema:DayOfWeek ;
-                 welcome:dayOfWeek "Wednesdays" ;
+                 welcome:dayOfWeek "Wednesdays"@eng ;
+				 welcome:dayOfWeek "Miércoles"@spa ;
+				 welcome:dayOfWeek "Dimecres"@cat ;
                  welcome:dayOfWeekNoRepeat "Wednesday" .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource schema:Wednesday ;
    owl:annotatedProperty welcome:dayOfWeek ;
-   owl:annotatedTarget "Wednesdays" ;
+   owl:annotatedTarget "Wednesdays"@eng ;
+   <http://purl.org/dc/terms/isRequiredBy> "informLabourModuleHours" ,
+                                           "informSocietyModuleHours"
+ ] .
+ 
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource schema:Wednesday ;
+   owl:annotatedProperty welcome:dayOfWeek ;
+   owl:annotatedTarget "Miércoles"@spa ;
+   <http://purl.org/dc/terms/isRequiredBy> "informLabourModuleHours" ,
+                                           "informSocietyModuleHours"
+ ] .
+ 
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource schema:Wednesday ;
+   owl:annotatedProperty welcome:dayOfWeek ;
+   owl:annotatedTarget "Dimecres"@cat ;
    <http://purl.org/dc/terms/isRequiredBy> "informLabourModuleHours" ,
                                            "informSocietyModuleHours"
  ] .
