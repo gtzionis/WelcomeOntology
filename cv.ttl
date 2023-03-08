@@ -1696,6 +1696,16 @@ welcome:Prioritizing rdf:type owl:Class ;
                      rdfs:subClassOf welcome:Skills .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Private_institution
+welcome:Private_institution rdf:type owl:Class ;
+                            rdfs:subClassOf welcome:CourseSchoolType .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Private_school
+welcome:Private_school rdf:type owl:Class ;
+                       rdfs:subClassOf welcome:CourseSchoolType .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Problem_solving
 welcome:Problem_solving rdf:type owl:Class ;
                         rdfs:subClassOf welcome:Skills .
