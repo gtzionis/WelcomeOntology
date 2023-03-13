@@ -1357,6 +1357,11 @@ welcome:Interdisciplinary_studies rdf:type owl:Class ;
                                   rdfs:subClassOf welcome:DegreeTitle .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#International_organization
+welcome:International_organization rdf:type owl:Class ;
+                                   rdfs:subClassOf welcome:CourseSchoolType .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Interpreting
 welcome:Interpreting rdf:type owl:Class ;
                      rdfs:subClassOf welcome:Skills .
