@@ -67,6 +67,7 @@ welcome:tcnUtterance rdf:type owl:Class ;
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/auxiliary.ttl#Status_obtainMoreSchoolCompleted_Completed
 :Status_obtainMoreSchoolCompleted_Completed rdf:type owl:NamedIndividual ;
                                             welcome:hasFullSentence "All of it." ,
+                                                                    "Completed." ,
                                                                     "The entire degree." ,
                                                                     "Yes I completed the degree." ,
                                                                     "Yes I did." ,
