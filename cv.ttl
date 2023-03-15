@@ -963,6 +963,11 @@ welcome:Conflict_resolution rdf:type owl:Class ;
                             rdfs:subClassOf welcome:Skills .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Continuing_education_program
+welcome:Continuing_education_program rdf:type owl:Class ;
+                                     rdfs:subClassOf welcome:CourseSchoolType .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CourseCertificate
 welcome:CourseCertificate rdf:type owl:Class ;
                           rdfs:subClassOf welcome:Course_Parameters ;
@@ -1157,11 +1162,6 @@ welcome:EducationElement rdf:type owl:Class ;
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Education_Parameters
 welcome:Education_Parameters rdf:type owl:Class .
-
-
-###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Education_program
-welcome:Education_program rdf:type owl:Class ;
-                          rdfs:subClassOf welcome:CourseSchoolType .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Elem
