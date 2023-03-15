@@ -1159,6 +1159,11 @@ welcome:EducationElement rdf:type owl:Class ;
 welcome:Education_Parameters rdf:type owl:Class .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Education_program
+welcome:Education_program rdf:type owl:Class ;
+                          rdfs:subClassOf welcome:CourseSchoolType .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Elem
 welcome:Elem rdf:type owl:Class .
 
@@ -1385,6 +1390,11 @@ welcome:Journalism rdf:type owl:Class ;
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#LanguageElement
 welcome:LanguageElement rdf:type owl:Class ;
                         rdfs:subClassOf welcome:Elem .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Language_Instructor
+welcome:Language_Instructor rdf:type owl:Class ;
+                            rdfs:subClassOf welcome:CourseSchoolType .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Language_Other_Parameters
@@ -1711,6 +1721,11 @@ welcome:Private_school rdf:type owl:Class ;
                        rdfs:subClassOf welcome:CourseSchoolType .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Private_tutor
+welcome:Private_tutor rdf:type owl:Class ;
+                      rdfs:subClassOf welcome:CourseSchoolType .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Problem_solving
 welcome:Problem_solving rdf:type owl:Class ;
                         rdfs:subClassOf welcome:Skills .
@@ -1734,6 +1749,11 @@ welcome:Psychology rdf:type owl:Class ;
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Public_administration
 welcome:Public_administration rdf:type owl:Class ;
                               rdfs:subClassOf welcome:DegreeTitle .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Public_school
+welcome:Public_school rdf:type owl:Class ;
+                      rdfs:subClassOf welcome:CourseSchoolType .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Pure_mathematics
