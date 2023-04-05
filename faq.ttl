@@ -38,6 +38,10 @@ faq:faqID rdf:type owl:DatatypeProperty ;
 faq:faqQuestion rdf:type owl:DatatypeProperty .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/faq.ttl#scenario
+faq:scenario rdf:type owl:DatatypeProperty .
+
+
 #################################################################
 #    Classes
 #################################################################
@@ -448,7 +452,8 @@ faq:PRAKSIS_Q21_1 rdf:type owl:NamedIndividual ,
                                                                                                      faq:InternalFAQ ;
                                                                                             faq:faqAnswer "If you are experiencing a medical emergency, and require immediate and urgent medical attention, you can access medical services at the Emergency Department of a hospital that is on duty."^^xsd:string ;
                                                                                             faq:faqID "43274c8e-42b6-4eb3-948f-ae812aa1f237"^^xsd:string ;
-                                                                                            faq:faqQuestion "Can I go to any hospital any time I face a medical emergency?"^^xsd:string .
+                                                                                            faq:faqQuestion "Can I go to any hospital any time I face a medical emergency?"^^xsd:string ;
+                                                                                            faq:scenario "health"^^xsd:string .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#PRAKSIS_Q23_1
@@ -456,7 +461,8 @@ faq:PRAKSIS_Q21_1 rdf:type owl:NamedIndividual ,
                                                                                                      faq:InternalFAQ ;
                                                                                             faq:faqAnswer "Hospitals in Greece work on rotational shifts to cover emergencies in the late afternoon and overnight (generally, 8 p.m. to 8 a.m.)"^^xsd:string ;
                                                                                             faq:faqID "da325ee6-3ab5-47ff-b300-20520b73231e"^^xsd:string ;
-                                                                                            faq:faqQuestion "Which are hospital’s working hours?"^^xsd:string .
+                                                                                            faq:faqQuestion "Which are hospital’s working hours?"^^xsd:string ;
+                                                                                            faq:scenario "health"^^xsd:string .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#PRAKSIS_Q24_1
@@ -464,7 +470,8 @@ faq:PRAKSIS_Q21_1 rdf:type owl:NamedIndividual ,
                                                                                                      faq:InternalFAQ ;
                                                                                             faq:faqAnswer "For the hospitals on duty to respond the emergencies and their schedule, you can visit the following websites:  The following websites provided information in Greek for Athens and Thessaloniki: https://www.moh.gov.gr/articles/citizen/efhmeries-nosokomeiwn https://www.4ype.gr/efimeries-etous-2022/ You can find also information in English in the following websites: For Athens go to website: https://www.vrisko.gr/en/hospital-duties/athens/all-clinics For Thessaloniki go to website: https://www.vrisko.gr/en/hospital-duties/thessaloniki/all-clinics"^^xsd:string ;
                                                                                             faq:faqID "b10c4635-fa39-438d-8dc0-ca7a1c21a5ff"^^xsd:string ;
-                                                                                            faq:faqQuestion "Where can I check which hospitals are open per day?"^^xsd:string .
+                                                                                            faq:faqQuestion "Where can I check which hospitals are open per day?"^^xsd:string ;
+                                                                                            faq:scenario "health"^^xsd:string .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#PRAKSIS_Q25_1
@@ -472,7 +479,8 @@ faq:PRAKSIS_Q21_1 rdf:type owl:NamedIndividual ,
                                                                                                      faq:InternalFAQ ;
                                                                                             faq:faqAnswer "You have to enter the application with your personal Taxisnet passwords and confirm your AMKA, fill in your personal details and select a personal doctor from those available to complete your registration. Please keep in mind that the platform is available only in Greek. If you don’t know Greek, please contact PRAKSIS NGO in order to schedule an appointment with a professional for further information."^^xsd:string ;
                                                                                             faq:faqID "76fd1dbd-a2bf-4336-916f-aebe9ca779fb"^^xsd:string ;
-                                                                                            faq:faqQuestion "How do I complete the registration for the personal doctor?"^^xsd:string .
+                                                                                            faq:faqQuestion "How do I complete the registration for the personal doctor?"^^xsd:string ;
+                                                                                            faq:scenario "health"^^xsd:string .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#PRAKSIS_Q26_1
@@ -480,7 +488,8 @@ faq:PRAKSIS_Q21_1 rdf:type owl:NamedIndividual ,
                                                                                                      faq:InternalFAQ ;
                                                                                             faq:faqAnswer "If you apply for international protection in Greece now, the Asylum Service will provide you with a Full Registration Card, on which PAAYPA is indicated. As long as you remain a full registration card holder, PAAYPA remains valid, giving you free access to health care.  If you have applied for international protection before January 2020 and you are still an asylum seeker, you will get a PAAYPA number, next time you renew your full registration card. If you already have an AMKA and you are still an asylum seeker, AMKA will automatically turn into PAAYPA. This will be indicated on you full registration card, next time you renew it. You can access the electronic platform of IDIKA (https://www.amka.gr/have-paaypa/) and check if you have PAAYPA (Provisional Social Security and Health Care Number -PAAYPA), without the need to visit the offices."^^xsd:string ;
                                                                                             faq:faqID "d4ce8c1d-656e-4b30-bf86-6eff3b3f6d8f"^^xsd:string ;
-                                                                                            faq:faqQuestion "How can I get a PAYPPA (Social Security Number). What is the procedure?"^^xsd:string .
+                                                                                            faq:faqQuestion "How can I get a PAYPPA (Social Security Number). What is the procedure?"^^xsd:string ;
+                                                                                            faq:scenario "health"^^xsd:string .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
