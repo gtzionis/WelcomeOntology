@@ -1310,6 +1310,12 @@ welcome:HTML_CSS rdf:type owl:Class ;
                  rdfs:subClassOf welcome:Skills .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#High
+welcome:High rdf:type owl:Class ;
+             rdfs:subClassOf welcome:CourseGrade ,
+                             welcome:DegreeGrade .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Hiring
 welcome:Hiring rdf:type owl:Class ;
                rdfs:subClassOf welcome:Skills .
@@ -1450,6 +1456,12 @@ welcome:Logistics rdf:type owl:Class ;
                   rdfs:subClassOf welcome:Skills .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Low
+welcome:Low rdf:type owl:Class ;
+            rdfs:subClassOf welcome:CourseGrade ,
+                            welcome:DegreeGrade .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#MS_Office
 welcome:MS_Office rdf:type owl:Class ;
                   rdfs:subClassOf welcome:Skills .
@@ -1485,6 +1497,12 @@ welcome:Mediation rdf:type owl:Class ;
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Medicine
 welcome:Medicine rdf:type owl:Class ;
                  rdfs:subClassOf welcome:DegreeTitle .
+
+
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Medium
+welcome:Medium rdf:type owl:Class ;
+               rdfs:subClassOf welcome:CourseGrade ,
+                               welcome:DegreeGrade .
 
 
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Meeting_deadlines
