@@ -931,6 +931,11 @@ welcome:Clear_speech_and_writing rdf:type owl:Class ;
                                  rdfs:subClassOf welcome:Skills .
 
 
+###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Clinical_psychology
+welcome:Clinical_psychology rdf:type owl:Class ;
+                            rdfs:subClassOf welcome:DegreeTitle .
+
+
 ###  https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Collaboration
 welcome:Collaboration rdf:type owl:Class ;
                       rdfs:subClassOf welcome:Skills .
